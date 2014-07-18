@@ -1,19 +1,26 @@
 package com.exam;
 
 
-import android.app.*;
-import android.appwidget.*;
-import android.bluetooth.*;
-import android.content.*;
+import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProvider;
+import android.bluetooth.BluetoothAdapter;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.usb.UsbManager;
-import android.net.*;
-import android.net.wifi.*;
-import android.provider.*;
-import android.support.v4.app.*;
-import android.util.*;
-import android.widget.*;
+import android.net.wifi.WifiManager;
+import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.exam.helper.SnowWiFiMonitor;
 
 public class coinBlockWidgetProvider extends AppWidgetProvider {
+	
+	private SnowWiFiMonitor m_SnowWifiMonitor = null;
+	
 
 	public static final String TAG = "block";
 	public static final String TAG2 = "anim";
@@ -42,6 +49,10 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		for (int x : appWidgetIds) {
 			((CoinBlockWidgetApp) context.getApplicationContext()).DeleteWidget(x);
 		}
+		
+		//context.getApplicationContext().unregisterReceiver(m_SnowWifiMonitor);
+		Log.i("coinBlockWidgetProvider", "unregisterReceiver ");
+		
 	}
 
 	@Override
@@ -75,10 +86,89 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		context.startService(intent);
 		
 		
+		//check wifi
+		m_SnowWifiMonitor = new SnowWiFiMonitor(context);
+        m_SnowWifiMonitor.setOnChangeNetworkStatusListener(SnowChangedListener);
+        
+        Log.i("coinBlockWidgetProvider", "m_SnowWifiMonitor ");
+        
+        //registerReceiver(m_SnowWifiMonitor, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        context.getApplicationContext().registerReceiver(m_SnowWifiMonitor, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+		
+        Log.i("coinBlockWidgetProvider", "registerReceiver ");
 		
 		const_builder = new NotificationCompat.Builder(context);
 		
 	}
+	
+
+	
+	SnowWiFiMonitor.OnChangeNetworkStatusListener SnowChangedListener 
+	= new SnowWiFiMonitor.OnChangeNetworkStatusListener()
+{
+	@Override
+	public void OnChanged(Intent intent, Context context, int status) 
+	{
+		switch(status)
+		{
+		case SnowWiFiMonitor.WIFI_STATE_DISABLED:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_DISABLED");
+			break;
+			
+		case SnowWiFiMonitor.WIFI_STATE_DISABLING:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_DISABLING");
+			
+			int id = intent.getIntExtra("widgetId31", 0);	
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(73).OnWifi();
+			Log.d("coinBlockWidgetProvider", "OnWifi()  "+id+"  "+intent+"  "+context);
+			
+			
+			
+			break;
+			
+		case SnowWiFiMonitor.WIFI_STATE_ENABLED:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_ENABLED");
+			break; 
+			 
+		case SnowWiFiMonitor.WIFI_STATE_ENABLING:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_ENABLING");
+			break;
+			
+		case SnowWiFiMonitor.WIFI_STATE_UNKNOWN:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_UNKNOWN");
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_CONNECTED:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] NETWORK_STATE_CONNECTED");
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_CONNECTING:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] NETWORK_STATE_CONNECTING");
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_DISCONNECTED:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] NETWORK_STATE_DISCONNECTED");
+			
+			
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_DISCONNECTING:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] NETWORK_STATE_DISCONNECTING");
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_SUSPENDED:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] NETWORK_STATE_SUSPENDED");
+			break;
+			
+		case SnowWiFiMonitor.NETWORK_STATE_UNKNOWN:
+			Log.i("coinBlockWidgetProvider", "[WifiMonitor] WIFI_STATE_DISABLED");
+			break;
+ 	
+		}
+	}
+};
+	
+	
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -89,7 +179,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		if (intent.getAction().startsWith("com.gueei")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-			Log.d(TAG,"com.gueei");
+			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
 
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
@@ -154,7 +244,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 
 		// WiFi
 		else if (intent.getAction().startsWith("android.net.wifi.STATE_CHANGE"))
-		{
+		{/*
 			Log.v("coinBlockWidgetProvider", "currentTime: " + Long.toString(System.currentTimeMillis()));
 			Log.v("coinBlockWidgetProvider","wifi_cool: " + wifi_cool);
 			
@@ -174,7 +264,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
 			}
 			else
-				Log.v("coinBlockWidgetProvider","Cooltime break");
+				Log.v("coinBlockWidgetProvider","Cooltime break");*/
 		}
 
 		// Plane mode

@@ -58,13 +58,16 @@ public class Lv2State implements ICoinBlockViewState {
 			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
 			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
 
-//			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-//					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
 
 			if (blockVib < 7) { 
 				blockVib++;
-			}
-
+			} 
+ 
+			
+			
+			
 			/*
 			if (blockVib >= 7){
 				context.setState(new Lv0WaitState(context));
