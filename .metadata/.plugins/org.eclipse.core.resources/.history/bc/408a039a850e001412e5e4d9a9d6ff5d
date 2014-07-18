@@ -80,7 +80,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 	
 	private class Lv0_1WifiAnim implements IAnimatable {
 		private int blockVib = 0;	
-		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+		private int[] widthModifier = { 64, -64, 32, -32, 16, -16, 8, 0 };	// here
 
 		public boolean AnimationFinished() {
 			return false;
@@ -201,16 +201,32 @@ public class Lv0_1State implements ICoinBlockViewState {
 						
 						//lv0Anim.Draw2(Bitmap.createBitmap(mViewContext.cwidth, mViewContext.cheight, Bitmap.Config.ARGB_8888));
 						//mViewContext.scheduleRedraw();
+						
 					}
 				}
 			}, 3000);
-		}
+			
+			
+		} 
 
 		public void OnClick(CoinBlockView viewContext) {
-			viewContext.removeAnimatable(lv0clAnim);			
 			
-			lv0clAnim = new Lv0ClickAnim();
+
+			
+			 
+			viewContext.removeAnimatable(lv0clAnim);
+			
+			
+			lv0clAnim = new Lv0ClickAnim();			
 			viewContext.addAnimatable(lv0clAnim);
+			
+			/*
+			
+			viewContext.removeAnimatable(lv0ofAnim);
+			lv0ofAnim = new Lv0OftenAnim();			
+			viewContext.addAnimatable(lv0ofAnim);
+			
+			*/
 			
 			snd.seekTo(0);
 			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -219,23 +235,30 @@ public class Lv0_1State implements ICoinBlockViewState {
 				}
 			});
 			
+			
+			
 			Log.v("Lv0_1State", "CoinBlockView.clicount  1"+CoinBlockView.CliCount0_1); 
-			CoinBlockView.CliCount0_1++;
+			CoinBlockView.CliCount0_1++;			
 			
-			CoinBlockView.mPref.Ready();
-			CoinBlockView.mPref.WriteInt("clicount0_1", CoinBlockView.CliCount0_1);
+			CoinBlockView.mPref.Ready();			
+			CoinBlockView.mPref.WriteInt("clicount0_1", CoinBlockView.CliCount0_1);			
 			CoinBlockView.mPref.CommitWrite();
+		
 			
-			Log.v("Lv0_1State", "CoinBlockView.clicount0_1   2"+CoinBlockView.CliCount0_1);
+			
+			Log.v("Lv0_1State", "CoinBlockView.clicount0_1   2"+CoinBlockView.CliCount0_1); 
+			
+			
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter);
 		}
 
-		public boolean NeedRedraw() {
+		public boolean NeedRedraw() { 
 			return false;
 		}
+
 		
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {
@@ -322,12 +345,13 @@ public class Lv0_1State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			Log.v("WIFI", "OnWifi");
 			
-			viewContext.removeAnimatable(lv0_1wifi);
+			viewContext.removeAnimatable(lv0_1wifi );
 
-			lv0_1wifi = new Lv0_1WifiAnim();	
+			lv0_1wifi = new Lv0_1WifiAnim();			
 			viewContext.addAnimatable(lv0_1wifi);
 
-			Log.v("WIFI", "addAnimatable");			
+			Log.v("WIFI", "addAnimatable");
+			
 			
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -335,6 +359,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 					snd1.start();
 				}
 			});
+
+			Log.v("WIFI", "Entering Wifi Anim");
 		}
 	}
 	

@@ -31,7 +31,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 	private int nowBattery;
 	private static boolean isAdditionalListenerCreated = false;
 	
-	private static long wifi_cool = 0;
 	
 	NotificationCompat.Builder const_builder;
 	
@@ -154,28 +153,17 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// WiFi
 		else if (intent.getAction().startsWith("android.net.wifi.STATE_CHANGE"))
 		{
-			Log.v("WIFI", "currentTime: " + Long.toString(System.currentTimeMillis()));
-			Log.v("WIFI","wifi_cool: " + wifi_cool);
-			if(System.currentTimeMillis() - wifi_cool >= 5000)
-			{
-				wifi_cool = System.currentTimeMillis();
-				Log.v("WIFI", "Wifi Connect state changed");
-				NetworkInfo netInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
-				isWifiConnected = netInfo.isConnected();
-				Toast.makeText(context, "Wifi status changed", Toast.LENGTH_SHORT).show();
-	
-				int id = intent.getIntExtra("widgetId89", 0);
-				
-				
-				
-				
-				AppWidgetManager manager = AppWidgetManager.getInstance(context);
-				this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
-				
-				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
-			}
-			else
-				Log.v("WIFI","Cooltime break");
+			Log.v("WIFI", "Wifi Connect state changed");
+			NetworkInfo netInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
+			isWifiConnected = netInfo.isConnected();
+			Toast.makeText(context, "Wifi status changed", Toast.LENGTH_SHORT).show();
+
+			int id = intent.getIntExtra("widgetId89", 0);
+			
+			AppWidgetManager manager = AppWidgetManager.getInstance(context);
+			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
+			
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
 		}
 
 		// Plane mode

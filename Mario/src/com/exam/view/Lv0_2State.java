@@ -84,7 +84,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 	
 	private class Lv0_2WifiAnim implements IAnimatable {
 		private int blockVib = 0;	
-		private int[] widthModifier = { 64, -64, 32, -32, 16, -16, 8, 0 };	// here
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
 
 		public boolean AnimationFinished() {
 			return false;
