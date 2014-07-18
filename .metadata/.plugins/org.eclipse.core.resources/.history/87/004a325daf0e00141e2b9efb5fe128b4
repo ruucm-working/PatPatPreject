@@ -1,0 +1,89 @@
+package com.example.snowwifimonitor;
+
+import android.app.Activity;
+import android.content.IntentFilter;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.util.Log;
+
+public class ActSnowWiFiMonitor extends Activity 
+{
+	private SnowWiFiMonitor m_SnowWifiMonitor = null; 
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        m_SnowWifiMonitor = new SnowWiFiMonitor(this);
+        m_SnowWifiMonitor.setOnChangeNetworkStatusListener(SnowChangedListener);
+        
+        //registerReceiver(m_SnowWifiMonitor, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+		registerReceiver(m_SnowWifiMonitor, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+    }
+    
+	@Override
+	protected void onDestroy() 
+	{
+		super.onDestroy();
+		
+		unregisterReceiver(m_SnowWifiMonitor);
+	}
+	
+	SnowWiFiMonitor.OnChangeNetworkStatusListener SnowChangedListener 
+		= new SnowWiFiMonitor.OnChangeNetworkStatusListener()
+	{
+		@Override
+		public void OnChanged(int status) 
+		{
+			switch(status)
+			{
+			case SnowWiFiMonitor.WIFI_STATE_DISABLED:
+				Log.i("", "[WifiMonitor] WIFI_STATE_DISABLED");
+				break;
+				
+			case SnowWiFiMonitor.WIFI_STATE_DISABLING:
+				Log.i("", "[WifiMonitor] WIFI_STATE_DISABLING");
+				break;
+				
+			case SnowWiFiMonitor.WIFI_STATE_ENABLED:
+				Log.i("", "[WifiMonitor] WIFI_STATE_ENABLED");
+				break;
+				
+			case SnowWiFiMonitor.WIFI_STATE_ENABLING:
+				Log.i("", "[WifiMonitor] WIFI_STATE_ENABLING");
+				break;
+				
+			case SnowWiFiMonitor.WIFI_STATE_UNKNOWN:
+				Log.i("", "[WifiMonitor] WIFI_STATE_UNKNOWN");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_CONNECTED:
+				Log.i("", "[WifiMonitor] NETWORK_STATE_CONNECTED");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_CONNECTING:
+				Log.i("", "[WifiMonitor] NETWORK_STATE_CONNECTING");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_DISCONNECTED:
+				Log.i("", "[WifiMonitor] NETWORK_STATE_DISCONNECTED");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_DISCONNECTING:
+				Log.i("", "[WifiMonitor] NETWORK_STATE_DISCONNECTING");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_SUSPENDED:
+				Log.i("", "[WifiMonitor] NETWORK_STATE_SUSPENDED");
+				break;
+				
+			case SnowWiFiMonitor.NETWORK_STATE_UNKNOWN:
+				Log.i("", "[WifiMonitor] WIFI_STATE_DISABLED");
+				break;
+	 	
+			}
+		}
+	};
+}
