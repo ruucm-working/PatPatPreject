@@ -155,8 +155,8 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// WiFi
 		else if (intent.getAction().startsWith("android.net.wifi.STATE_CHANGE"))
 		{
-			Log.v("coinBlockWidgetProvider", "currentTime: " + Long.toString(System.currentTimeMillis()));
-			Log.v("coinBlockWidgetProvider","wifi_cool: " + wifi_cool);
+			Log.v("WIFI", "currentTime: " + Long.toString(System.currentTimeMillis()));
+			Log.v("WIFI","wifi_cool: " + wifi_cool);
 			
 			if(System.currentTimeMillis() - wifi_cool >= 5000)
 			{
