@@ -161,7 +161,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			if(System.currentTimeMillis() - wifi_cool >= 5000)
 			{
 				wifi_cool = System.currentTimeMillis();
-				Log.v("coinBlockWidgetProvider", "Wifi Connect state changed");
+				Log.v("WIFI", "Wifi Connect state changed");
 				NetworkInfo netInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 				isWifiConnected = netInfo.isConnected();
 				Toast.makeText(context, "Wifi status changed", Toast.LENGTH_SHORT).show();
@@ -174,7 +174,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
 			}
 			else
-				Log.v("coinBlockWidgetProvider","Cooltime break");
+				Log.v("WIFI","Cooltime break");
 		}
 
 		// Plane mode

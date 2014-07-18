@@ -170,7 +170,6 @@ public class Lv2State implements ICoinBlockViewState {
 			//viewContext.removeAnimatable(lv2Anim);
 			//viewContext.removeAnimatable(lv2ofAnim);
 			
-			Log.v("Lv2State", "OnClick3");
 			
 			
 			viewContext.setState(new Lv2WaitState(viewContext));
@@ -336,7 +335,7 @@ public class Lv2State implements ICoinBlockViewState {
 				}
 			});
 
-			Log.v("Lv2State", "Entering Wifi Anim3");
+			Log.v("WIFI", "Entering Wifi Anim3");
 		}
 
 		@Override
