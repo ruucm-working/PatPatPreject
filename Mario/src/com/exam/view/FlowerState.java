@@ -99,6 +99,24 @@ public class FlowerState implements ICoinBlockViewState {
 			
 		}
 
+		@Override
+		public void OnDblClick(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnWifi(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnPowerConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 
 	}
@@ -135,6 +153,24 @@ public class FlowerState implements ICoinBlockViewState {
 
 	@Override
 	public void OnInit(CoinBlockView coinBlockView) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnDblClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}
