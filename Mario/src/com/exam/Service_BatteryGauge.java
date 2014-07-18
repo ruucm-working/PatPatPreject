@@ -86,6 +86,8 @@ public class Service_BatteryGauge extends Service {
 			const_builder.setSmallIcon(R.drawable.samsung_sample);
 			const_builder.setTicker("쓰담쓰담위젯");
 			const_builder.setContentTitle("쓰담쓰담위젯");
+			//알림창에서 진행중 으로 띄우기
+			const_builder.setOngoing(true);
 			
 			if(Setting.nowBattery == -1)
 				const_builder.setContentText("배터리 잔량을 확인 중입니다.");
