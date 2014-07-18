@@ -99,7 +99,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			int id = intent.getIntExtra("widgetId10", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
 
-
 			Log.d("tag2","provider - onenvolve");
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_INIT_FORMAT")){ 
@@ -154,13 +153,17 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// WiFi
 		else if (intent.getAction().startsWith("android.net.wifi.STATE_CHANGE"))
 		{
-			Log.v(TAG, "Wifi Connect state changed");
+			Log.v("WIFI", "Wifi Connect state changed");
 			NetworkInfo netInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 			isWifiConnected = netInfo.isConnected();
 			Toast.makeText(context, "Wifi status changed", Toast.LENGTH_SHORT).show();
 
+			int id = intent.getIntExtra("widgetId89", 0);
+			
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
+			
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
 		}
 
 		// Plane mode

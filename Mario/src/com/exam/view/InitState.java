@@ -293,6 +293,18 @@ public class InitState implements ICoinBlockViewState {
 			
 		}
 
+		@Override
+		public void OnDblClick(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnWifi(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 
 	}
@@ -351,10 +363,6 @@ public class InitState implements ICoinBlockViewState {
 			}
 			
 			*/
-			
-			
-			
-			
 		}
 
 		
@@ -444,6 +452,18 @@ public class InitState implements ICoinBlockViewState {
 		statetxt.setText(txt);
 		
     }
+
+	@Override
+	public void OnDblClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 	

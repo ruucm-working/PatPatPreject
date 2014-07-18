@@ -15,4 +15,7 @@ interface ICoinBlockViewState {
 
 	public void OnInit(CoinBlockView coinBlockView);
 
+	public void OnDblClick(CoinBlockView viewContext);
+	
+	public void OnWifi(CoinBlockView viewContext);
 }

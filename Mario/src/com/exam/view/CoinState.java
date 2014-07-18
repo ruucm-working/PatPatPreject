@@ -84,5 +84,15 @@ class CoinState implements ICoinBlockViewState {
 		
 	}
 
+	@Override
+	public void OnDblClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 }

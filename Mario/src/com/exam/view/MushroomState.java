@@ -57,4 +57,16 @@ class MushroomState implements ICoinBlockViewState{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void OnDblClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 }

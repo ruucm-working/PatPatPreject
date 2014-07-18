@@ -424,25 +424,29 @@ public class CoinBlockView {
 	public void OnClick() {
 		state.OnClick(this);
 	}
+	
+	public void OnDblClick() {
+		state.OnDblClick(this);
+	}
 
 	public void OnOften() {
 		state.OnOften(this);
 //		/scheduleRedraw();
 	}
 
-
 	public void OnEvolve() {
 		state.OnEvolve(this);
-		Log.d("tag3", "state.OnEvolve");
-
 	}
 	
 	public void OnInit() {
 		state.OnInit(this);
 		Log.d("tag3", "state.OnInit");
-		
 	}
 	
+	public void OnWifi() {
+		state.OnWifi(this);
+		Log.d("WIFI", "Wifi On");
+	}
 
 	public  void Redraw(Context context) {		// 이 함수는 ㅈ나 많이 루프된다. 입력 안하고 가만있어도 계속 반복되는 듯
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
