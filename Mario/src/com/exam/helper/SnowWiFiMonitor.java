@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
+import android.util.Log;
+
+import com.exam.CoinBlockWidgetApp;
+import com.exam.view.CoinBlockView;
 
 public class SnowWiFiMonitor extends BroadcastReceiver 
 {
@@ -53,10 +57,22 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 		
 		if (strAction.equals(WifiManager.WIFI_STATE_CHANGED_ACTION))
 		{
+			
+			Log.d("SnowWiFiMonitor","WIFI_STATE_CHANGED_ACTION   "+ context);
+			
 			switch(m_WifiManager.getWifiState())
 			{
 			case WifiManager.WIFI_STATE_DISABLED:
 				m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_DISABLED);
+				
+				int id = CoinBlockView.mWidgetId;
+				Log.d("SnowWiFiMonitor","id  "+id+"  "+ context);
+				
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
+				
+				Log.d("SnowWiFiMonitor","CoinBlockWidgetApp  "+id+"  "+ context);
+				
+				
 				break;
 				
 			case WifiManager.WIFI_STATE_DISABLING:
@@ -78,6 +94,9 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 		}
 		else if (strAction.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION))
 		{
+			
+			Log.d("SnowWiFiMonitor","NETWORK_STATE_CHANGED_ACTION    "+ context);
+			
 			NetworkInfo networkInfo = m_ConnManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 			if ( (networkInfo != null) && (networkInfo.isAvailable() == true) )
 			{

@@ -116,6 +116,13 @@
         		<action android:name=".Service_BatteryGauge" />
         	</intent-filter>
         </service>
+        
+        <service android:name=".Service_SnowWiFiMonitor" android:enabled="true">
+            <intent-filter>
+        		<action android:name=".Service_SnowWiFiMonitor" />
+        	</intent-filter>
+        	
+        </service>
            
 
         <activity

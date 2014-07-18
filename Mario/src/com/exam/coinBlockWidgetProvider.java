@@ -61,7 +61,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
 		if(!isAdditionalListenerCreated)
 		{
-			//context.getApplicationContext().registerReceiver(this, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+			context.getApplicationContext().registerReceiver(this, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 			context.getApplicationContext().registerReceiver(this, new IntentFilter(Intent.ACTION_HEADSET_PLUG));
 			context.getApplicationContext().registerReceiver(this, new IntentFilter(UsbManager.ACTION_USB_ACCESSORY_ATTACHED));
 			context.getApplicationContext().registerReceiver(this, new IntentFilter(UsbManager.ACTION_USB_ACCESSORY_DETACHED));
@@ -79,13 +79,24 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
 		
 		// Run service
+		/*
 		Intent nintent = new Intent(context, Service_Notify.class);
-		context.startService(nintent);
+		context.startService(nintent);*/
 		
 		Intent intent = new Intent(context, Service_BatteryGauge.class);
 		context.startService(intent);
 		
 		
+		Log.d("coinBlockWidgetProvider","startService intent1  "+intent);
+		
+		Intent intent2 = new Intent(context, Service_SnowWiFiMonitor.class);
+		context.startService(intent2);
+		
+		
+		Log.d("coinBlockWidgetProvider","startService intent2  "+intent2);
+		
+		
+		/*
 		//check wifi
 		m_SnowWifiMonitor = new SnowWiFiMonitor(context);
         m_SnowWifiMonitor.setOnChangeNetworkStatusListener(SnowChangedListener);
@@ -97,11 +108,13 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
         Log.i("coinBlockWidgetProvider", "registerReceiver ");
 		
+        
+        */
 		const_builder = new NotificationCompat.Builder(context);
 		
 	}
 	
-
+/*
 	
 	SnowWiFiMonitor.OnChangeNetworkStatusListener SnowChangedListener 
 	= new SnowWiFiMonitor.OnChangeNetworkStatusListener()
@@ -167,7 +180,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		}
 	}
 };
-	
+	*/
 	
 
 	@Override
