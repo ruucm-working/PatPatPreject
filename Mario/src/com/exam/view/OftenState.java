@@ -150,6 +150,12 @@ public class OftenState implements ICoinBlockViewState {
 			
 		}
 
+		@Override
+		public void OnPowerConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 
 	}
@@ -221,6 +227,12 @@ public class OftenState implements ICoinBlockViewState {
 
 	@Override
 	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

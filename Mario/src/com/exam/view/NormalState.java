@@ -69,4 +69,10 @@ class NormalState implements ICoinBlockViewState {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void OnPowerConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 }

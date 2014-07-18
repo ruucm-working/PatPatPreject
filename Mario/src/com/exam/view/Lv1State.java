@@ -24,6 +24,8 @@ public class Lv1State implements ICoinBlockViewState {
 	Lv1Animation lv1Anim; 
 	Lv1ClickAnim lv1clAnim;
 	Lv1WifiAnim lv1wifi;
+	Lv1PowerConnectedAnim lv1power;
+	
 	CoinBlockView context;
 
 	public Lv1State(CoinBlockView viewContext) {
@@ -41,6 +43,37 @@ public class Lv1State implements ICoinBlockViewState {
 		});
 	}
 
+	private class Lv1PowerConnectedAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+			
+			Log.v("WIFI", "Drawanim");
+
+//			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
+	//				-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
+
+			/*
+			if (blockVib >= 7){
+				context.setState(new Lv0WaitState(context));
+				Log.v("tag4", "blockVib >= heightModifier.length)"+Integer.toString(blockVib));
+			}
+			 */
+		}
+	}
+	
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 		// Draw the brick at bottom
 
@@ -92,6 +125,8 @@ public class Lv1State implements ICoinBlockViewState {
 			viewContext.removeAnimatable(lv1Anim);
 			viewContext.removeAnimatable(lv1ofAnim);
 			viewContext.removeAnimatable(lv1clAnim);
+			viewContext.removeAnimatable(lv1power);
+			viewContext.removeAnimatable(lv1wifi);
 
 			lv1clAnim = new Lv1ClickAnim();			
 			viewContext.addAnimatable(lv1clAnim);
@@ -172,7 +207,7 @@ public class Lv1State implements ICoinBlockViewState {
 		@Override
 		public void OnWifi(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-//			viewContext.removeAnimatable(lv1wifi);
+			//			viewContext.removeAnimatable(lv1wifi);
 
 			lv1wifi = new Lv1WifiAnim();
 			viewContext.addAnimatable(lv1wifi);
@@ -185,6 +220,26 @@ public class Lv1State implements ICoinBlockViewState {
 			});
 
 			Log.v("WIFI", "Entering Wifi Anim3");
+		}
+
+		@Override
+		public void OnPowerConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			Log.v("POWER", "OnPower");
+
+			viewContext.removeAnimatable(lv1power);
+
+			lv1power = new Lv1PowerConnectedAnim();	
+			viewContext.addAnimatable(lv1power);
+
+			Log.v("WIFI", "addAnimatable");			
+
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
 		}
 
 
@@ -434,6 +489,12 @@ public class Lv1State implements ICoinBlockViewState {
 
 	@Override
 	public void OnWifi(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 
 	}

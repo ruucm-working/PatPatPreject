@@ -75,5 +75,11 @@ class DisabledState implements ICoinBlockViewState {
 		
 	}
 
+	@Override
+	public void OnPowerConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 

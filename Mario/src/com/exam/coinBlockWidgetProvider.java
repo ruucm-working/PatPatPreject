@@ -5,6 +5,7 @@ import android.app.*;
 import android.appwidget.*;
 import android.bluetooth.*;
 import android.content.*;
+import android.hardware.usb.UsbManager;
 import android.net.*;
 import android.net.wifi.*;
 import android.provider.*;
@@ -35,9 +36,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 	
 	NotificationCompat.Builder const_builder;
 	
-	
-	
-
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		super.onDeleted(context, appWidgetIds);
@@ -54,6 +52,9 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		{
 			//context.getApplicationContext().registerReceiver(this, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 			context.getApplicationContext().registerReceiver(this, new IntentFilter(Intent.ACTION_HEADSET_PLUG));
+			context.getApplicationContext().registerReceiver(this, new IntentFilter(UsbManager.ACTION_USB_ACCESSORY_ATTACHED));
+			context.getApplicationContext().registerReceiver(this, new IntentFilter(UsbManager.ACTION_USB_ACCESSORY_DETACHED));
+			
 			isAdditionalListenerCreated = true;
 		}
 
@@ -156,6 +157,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		{
 			Log.v("WIFI", "currentTime: " + Long.toString(System.currentTimeMillis()));
 			Log.v("WIFI","wifi_cool: " + wifi_cool);
+			
 			if(System.currentTimeMillis() - wifi_cool >= 5000)
 			{
 				wifi_cool = System.currentTimeMillis();
@@ -164,10 +166,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				isWifiConnected = netInfo.isConnected();
 				Toast.makeText(context, "Wifi status changed", Toast.LENGTH_SHORT).show();
 	
-				int id = intent.getIntExtra("widgetId89", 0);
-				
-				
-				
+				int id = intent.getIntExtra("widgetId31", 0);
 				
 				AppWidgetManager manager = AppWidgetManager.getInstance(context);
 				this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
@@ -214,6 +213,10 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
+			
+			int id = intent.getIntExtra("widgetId32", 0);
+			
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPowerConnected();
 		}
 
 		// Power disconnected
@@ -257,6 +260,10 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
+			
+			int id = intent.getIntExtra("widgetId41", 0);
+			
+	//		((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPowerConnected();
 		}
 
 		// PC disconnected (I don't sure it working or not)

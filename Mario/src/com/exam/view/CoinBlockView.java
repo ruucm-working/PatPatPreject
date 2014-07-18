@@ -447,6 +447,11 @@ public class CoinBlockView {
 		state.OnWifi(this);
 		Log.d("WIFI", "Wifi On");
 	}
+	
+	public void OnPowerConnected() {
+		state.OnPowerConnected(this);
+		Log.d("POWER", "Power Connected");
+	}
 
 	public  void Redraw(Context context) {		// 이 함수는 ㅈ나 많이 루프된다. 입력 안하고 가만있어도 계속 반복되는 듯
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
