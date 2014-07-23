@@ -12,19 +12,23 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
-		<item value="true" key="wholeword"/>
-		<item value="wifi_cool" key="selection"/>
+		<item value="false" key="wholeword"/>
+		<item value="Service_SnowWiFiMonitor" key="selection"/>
 		<list key="findhistory">
-			<item value="wifi_cool"/>
-			<item value="wifi"/>
-			<item value="battery"/>
-			<item value="onclick"/>
-			<item value="onwifi"/>
-			<item value="WIFI"/>
-			<item value="widthModifier"/>
-			<item value="sp"/>
+			<item value="coinBlockWidgetProvider"/>
+			<item value="ActSnowWiFiMonitor"/>
+			<item value="Log.d("/>
+			<item value="log"/>
+			<item value="onBind"/>
+			<item value="IBinder"/>
+			<item value="registerReceiver"/>
+			<item value="SnowWiFiMonitor"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Service_SnowWiFiMonitor"/>
+			<item value="coinBlockWidgetProvider"/>
+			<item value="OnChanged(intent, context, "/>
+			<item value="i(&quot;ActSnowWiFiMonitor&quot;"/>
 		</list>
 	</section>
 </section>

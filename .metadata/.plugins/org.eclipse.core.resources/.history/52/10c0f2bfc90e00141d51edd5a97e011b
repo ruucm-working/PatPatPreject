@@ -1,0 +1,133 @@
+package com.exam;
+
+
+import com.exam.view.CoinBlockView;
+
+import android.app.*;
+import android.appwidget.*;
+import android.content.*;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
+import android.os.*;
+import android.support.v4.app.*;
+import android.util.*;
+import android.widget.*;
+
+public class Service_SnowWiFiMonitor extends Service {
+	
+	NotificationCompat.Builder const_builder;	
+	private static boolean isBatteryLow = false;
+	
+	
+	
+	
+	public int onStartCommand (Intent intent, int flags, int startId) {
+		super.onStartCommand(intent, flags, startId);
+		
+		Log.d("battersv","onStartCommand");
+		
+		
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+		registerReceiver(mBRBattery, filter);
+		return START_STICKY;
+	}
+
+	public IBinder onBind(Intent arg0) {
+		return null;
+	}
+	
+	
+	public void onCreate()
+	{
+		
+		Log.d("battersv","onCreate");
+		
+		const_builder = new NotificationCompat.Builder(Service_SnowWiFiMonitor.this);
+	}
+	
+	public void onDestroy() {
+		super.onDestroy();
+		unregisterReceiver(mBRBattery);
+	}
+
+	BroadcastReceiver mSnMonitor = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent)
+		{
+			if (m_OnChangeNetworkStatusListener == null)
+			{
+				return;
+			}
+			
+			String strAction = intent.getAction();
+			
+			if (strAction.equals(WifiManager.WIFI_STATE_CHANGED_ACTION))
+			{
+				switch(m_WifiManager.getWifiState())
+				{
+				case WifiManager.WIFI_STATE_DISABLED:
+					m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_DISABLED);
+					
+					int id = CoinBlockView.mWidgetId;
+					Log.d("SnowWiFiMonitor","id  "+id+"  "+ context);
+					
+					((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
+					
+					Log.d("SnowWiFiMonitor","CoinBlockWidgetApp  "+id+"  "+ context);
+					
+					
+					break;
+					
+				case WifiManager.WIFI_STATE_DISABLING:
+					m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_DISABLING);
+					break;
+					
+				case WifiManager.WIFI_STATE_ENABLED:
+					m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_ENABLED);
+					break;
+					
+				case WifiManager.WIFI_STATE_ENABLING:
+					m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_ENABLING);
+					break;
+					
+				case WifiManager.WIFI_STATE_UNKNOWN:
+					m_OnChangeNetworkStatusListener.OnChanged(intent, context, WIFI_STATE_UNKNOWN);
+					break;
+				}
+			}
+			else if (strAction.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION))
+			{
+				NetworkInfo networkInfo = m_ConnManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+				if ( (networkInfo != null) && (networkInfo.isAvailable() == true) )
+				{
+					if (networkInfo.getState() == NetworkInfo.State.CONNECTED)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_CONNECTED);
+					}
+					else if (networkInfo.getState() == NetworkInfo.State.CONNECTING)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_CONNECTING);
+					}
+					else if (networkInfo.getState() == NetworkInfo.State.DISCONNECTED)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_DISCONNECTED);
+					}
+					else if (networkInfo.getState() == NetworkInfo.State.DISCONNECTING)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_DISCONNECTING);
+					}
+					else if (networkInfo.getState() == NetworkInfo.State.SUSPENDED)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_SUSPENDED);
+					}
+					else if (networkInfo.getState() == NetworkInfo.State.UNKNOWN)
+					{
+						m_OnChangeNetworkStatusListener.OnChanged(intent, context, NETWORK_STATE_UNKNOWN);
+					}
+				}
+			}
+		}
+	};
+};

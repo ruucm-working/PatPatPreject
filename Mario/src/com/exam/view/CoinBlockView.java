@@ -27,7 +27,7 @@ public class CoinBlockView {
 	private float density;
 
 	private long lastRedrawMillis = 0;
-	private static int mWidgetId;
+	public static int mWidgetId;
 	
 	
 	
