@@ -14,7 +14,7 @@ public class Lv2State implements ICoinBlockViewState {
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite evolve = MediaAssets.getInstance().getSprite(R.drawable.samsungevolve_sprites_4);
 	MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
-	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.notify_sound);
+	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
 	MediaPlayer snd2 = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_1_up);
 	
 	private int animStage = 0;
@@ -58,13 +58,16 @@ public class Lv2State implements ICoinBlockViewState {
 			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
 			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
 
-//			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-//					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
 
 			if (blockVib < 7) { 
 				blockVib++;
-			}
-
+			} 
+ 
+			
+			
+			
 			/*
 			if (blockVib >= 7){
 				context.setState(new Lv0WaitState(context));
