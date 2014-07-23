@@ -38,7 +38,7 @@ public class Service_BatteryGauge extends Service {
 	{
 		
 		Log.d("battersv","onCreate");
-		
+		 
 		const_builder = new NotificationCompat.Builder(Service_BatteryGauge.this);
 	}
 	

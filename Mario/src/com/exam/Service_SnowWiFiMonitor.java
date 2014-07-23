@@ -45,7 +45,7 @@ public class Service_SnowWiFiMonitor extends Service {
 		return null;
 	}
 	
-	
+	 
 	public void onCreate()
 	{
 		

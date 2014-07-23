@@ -91,7 +91,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
 		Intent intent2 = new Intent(context, Service_SnowWiFiMonitor.class);
 		context.startService(intent2);
-		
+		 
 		
 		Log.d("coinBlockWidgetProvider","startService intent2  "+intent2);
 		
