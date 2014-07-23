@@ -33,7 +33,6 @@ public class Service_SnowWiFiMonitor extends Service {
 		
 		
 		mSnMonitor = new SnowWiFiMonitor(this);
-		mSnMonitor.setOnChangeNetworkStatusListener(SnowChangedListener);
 		
 		registerReceiver(mSnMonitor, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 		

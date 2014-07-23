@@ -79,9 +79,9 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
 		
 		// Run service
-		
+		/*
 		Intent nintent = new Intent(context, Service_Notify.class);
-		context.startService(nintent);
+		context.startService(nintent);*/
 		
 		Intent intent = new Intent(context, Service_BatteryGauge.class);
 		context.startService(intent);

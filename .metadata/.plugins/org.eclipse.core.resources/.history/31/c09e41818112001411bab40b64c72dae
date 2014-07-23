@@ -28,13 +28,8 @@ public class Service_SnowWiFiMonitor extends Service {
 		Log.d("Service_SnowWiFiMonitor","onStartCommand");
 		
 		
-		//IntentFilter filter = new IntentFilter();
+		IntentFilter filter = new IntentFilter();
 		//filter.addAction(Intent.ACTION_CALL);
-		
-		
-		mSnMonitor = new SnowWiFiMonitor(this);
-		mSnMonitor.setOnChangeNetworkStatusListener(SnowChangedListener);
-		
 		registerReceiver(mSnMonitor, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 		
 		
@@ -56,12 +51,9 @@ public class Service_SnowWiFiMonitor extends Service {
 	public void onCreate()
 	{
 		
-		
-		//mSnMonitor = new SnowWiFiMonitor(this);
+		mSnMonitor = new SnowWiFiMonitor(this);
 		
 		Log.d("Service_SnowWiFiMonitor","onCreate");
-		
-		
 		
 		//const_builder = new NotificationCompat.Builder(Service_SnowWiFiMonitor.this);
 		
@@ -136,10 +128,6 @@ public class Service_SnowWiFiMonitor extends Service {
 };
 	
 	
-SnowWiFiMonitor mSnMonitor ;
-
-
-
 	
 	/*
 
