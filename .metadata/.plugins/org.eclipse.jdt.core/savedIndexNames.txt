@@ -1,10 +1,7 @@
 INDEX VERSION 1.127+C:\GitHub\PatPatPreject\.metadata\.plugins\org.eclipse.jdt.core
 1917140701.index
-2418613990.index
 3065416851.index
 2410429036.index
-2906227785.index
-1209215046.index
 4001048346.index
 3610277288.index
 1935088990.index

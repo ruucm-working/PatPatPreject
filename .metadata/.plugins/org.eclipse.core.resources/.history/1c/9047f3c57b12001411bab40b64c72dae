@@ -14,7 +14,7 @@ public class Lv2State implements ICoinBlockViewState {
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite evolve = MediaAssets.getInstance().getSprite(R.drawable.samsungevolve_sprites_4);
 	MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
-	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
+	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.notify_sound);
 	MediaPlayer snd2 = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_1_up);
 	
 	private int animStage = 0;
