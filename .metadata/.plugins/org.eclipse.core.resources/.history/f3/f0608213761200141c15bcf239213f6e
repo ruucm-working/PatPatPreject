@@ -87,7 +87,7 @@ public class Lv2State implements ICoinBlockViewState {
 			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
 			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
 			
-			Log.v("Lv2State", "Drawanim");
+			Log.v("WIFI", "Drawanim");
 
 //			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 	//				-(int)(widthModifier[blockVib] * context.getDensity()),0);
@@ -349,7 +349,7 @@ public class Lv2State implements ICoinBlockViewState {
 			lv2power = new Lv2PowerConnectedAnim();	
 			viewContext.addAnimatable(lv2power);
 
-			Log.v("Lv2State", "addAnimatable");			
+			Log.v("WIFI", "addAnimatable");			
 			
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {

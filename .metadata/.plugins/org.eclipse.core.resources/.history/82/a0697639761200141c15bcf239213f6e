@@ -61,9 +61,9 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		for (int i=0; i<appWidgetIds.length; i++)
 		{
 			((CoinBlockWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
-			Log.d("coinBlockWidgetProvider","onUpdate"+appWidgetIds);
+			Log.d(TAG,"onUpdate"+appWidgetIds);
 		}
-		Log.d("coinBlockWidgetProvider","onUpdate;");
+		Log.d(coinBlockWidgetProvider.TAG,"onUpdate;");
 		
 		
 		
@@ -84,12 +84,12 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 	public void onReceive(Context context, Intent intent) {
 		super.onReceive(context, intent);
 
-		Log.d("coinBlockWidgetProvider","onReceive");
+		Log.d(TAG,"onReceive");
 
 		if (intent.getAction().startsWith("com.gueei")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-			Log.d("coinBlockWidgetProvider","com.gueei");
+			Log.d(TAG,"com.gueei");
 
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
@@ -114,7 +114,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// SMS
 		else if (intent.getAction().startsWith("android.provider.Telephony.SMS_RECEIVED"))
 		{
-			Log.v("coinBlockWidgetProvider", "SMS Received");
+			Log.v(TAG, "SMS Received");
 
 			isSMSNotRead = true;
 			Toast.makeText(context, "Get SMS", Toast.LENGTH_SHORT).show();
@@ -130,7 +130,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			
 			
 			int bLevel = intent.getIntExtra("level", 0);
-			Log.v("coinBlockWidgetProvider", "Battery level changed: " + bLevel);
+			Log.v(TAG, "Battery level changed: " + bLevel);
 			
 			
 			
@@ -186,7 +186,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				isPlaneMode = false;
 
 			//Toast.makeText(context, "Plane mode status changed", Toast.LENGTH_SHORT).show();
-			Log.v("coinBlockWidgetProvider", "isPlaneMode: " + isPlaneMode);
+			Log.v(TAG, "isPlaneMode: " + isPlaneMode);
 
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
@@ -195,7 +195,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Bluetooth
 		else if (intent.getAction().startsWith("android.bluetooth.adapter.action.STATE_CHANGED"))
 		{
-			Log.v("coinBlockWidgetProvider", "Bluetooth");
+			Log.v(TAG, "Bluetooth");
 			BluetoothAdapter mBTAdapter = BluetoothAdapter.getDefaultAdapter();
 			isBluetoothActivated = mBTAdapter.isEnabled();
 			//Toast.makeText(context, "Bluetooth status changed", Toast.LENGTH_SHORT).show();
@@ -207,7 +207,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Power connected
 		else if (intent.getAction().startsWith("android.intent.action.ACTION_POWER_CONNECTED"))
 		{
-			Log.v("coinBlockWidgetProvider", "Power Connected");
+			Log.v(TAG, "Power Connected");
 			isPowerConnected = true;
 			//Toast.makeText(context, "Power connected", Toast.LENGTH_SHORT).show();
 
@@ -222,7 +222,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Power disconnected
 		else if (intent.getAction().startsWith("android.intent.action.ACTION_POWER_DISCONNECTED"))
 		{
-			Log.v("coinBlockWidgetProvider", "Power Disconnected");
+			Log.v(TAG, "Power Disconnected");
 			isPowerConnected = false;
 			//Toast.makeText(context, "Power disconnected", Toast.LENGTH_SHORT).show();
 
@@ -233,7 +233,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Headset
 		else if (intent.getAction().startsWith("android.intent.action.HEADSET_PLUG"))
 		{
-			Log.v("coinBlockWidgetProvider", "Entering headset");
+			Log.v(TAG, "Entering headset");
 
 			if(intent.getIntExtra("state", -1) == 1)
 			{
@@ -254,7 +254,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// PC connected (not working)
 		else if (intent.getAction().startsWith("android.hardware.usb.action.USB_ACCESSORY_ATTACHED"))
 		{
-			Log.v("coinBlockWidgetProvider", "USB Attached");
+			Log.v(TAG, "USB Attached");
 			isUsbAttached = true;
 			Toast.makeText(context, "USB attached", Toast.LENGTH_SHORT).show();
 
@@ -269,7 +269,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// PC disconnected (I don't sure it working or not)
 		else if (intent.getAction().startsWith("android.hardware.usb.action.USB_ACCESSORY_DETACHED"))
 		{
-			Log.v("coinBlockWidgetProvider", "USB Detached");
+			Log.v(TAG, "USB Detached");
 			isUsbAttached = false;
 			Toast.makeText(context, "USB detached", Toast.LENGTH_SHORT).show();
 
