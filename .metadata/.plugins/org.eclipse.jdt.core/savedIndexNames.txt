@@ -3,7 +3,13 @@ INDEX VERSION 1.127+C:\GitHub\PatPatPreject\.metadata\.plugins\org.eclipse.jdt.c
 3065416851.index
 2410429036.index
 <<<<<<< HEAD
+<<<<<<< HEAD
 4001048346.index
+=======
+2906227785.index
+4001048346.index
+3610277288.index
+>>>>>>> origin/wifichect_0.3(using-SnowWifiMonitor)
 =======
 2906227785.index
 4001048346.index
