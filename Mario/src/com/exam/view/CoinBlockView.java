@@ -78,12 +78,6 @@ public class CoinBlockView {
 	public static int CliCount1 = 0;
 	public static int CliCount2 = 0;
 
-	
-	
-	
-	
-
-
 	public CoinBlockView(Context context, int widgetId) {
 		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics metrics = new DisplayMetrics();
@@ -452,7 +446,12 @@ public class CoinBlockView {
 		state.OnPowerConnected(this);
 		Log.d("POWER", "Power Connected");
 	}
-
+	
+	public void OnHeadsetConnected() {
+		state.OnHeadsetConnected(this);
+		Log.d("HEADSET", "Headset Connected");
+	}
+	
 	public  void Redraw(Context context) {		// 이 함수는 ㅈ나 많이 루프된다. 입력 안하고 가만있어도 계속 반복되는 듯
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
 		Bitmap canvas = Bitmap.createBitmap(cwidth, cheight, Bitmap.Config.ARGB_8888);

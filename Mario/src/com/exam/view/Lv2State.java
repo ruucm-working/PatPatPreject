@@ -25,6 +25,7 @@ public class Lv2State implements ICoinBlockViewState {
 	Lv2Animation lv2Anim; 
 	Lv2ClickAnim lv2clAnim;
 	Lv2WifiAnim lv2wifi;
+	Lv2HeadsetAnim lv2headset;
 	Lv2PowerConnectedAnim lv2power;
 	
 	CoinBlockView context;
@@ -63,17 +64,29 @@ public class Lv2State implements ICoinBlockViewState {
 
 			if (blockVib < 7) { 
 				blockVib++;
-			} 
- 
-			
-			
-			
-			/*
-			if (blockVib >= 7){
-				context.setState(new Lv0WaitState(context));
-				Log.v("tag4", "blockVib >= heightModifier.length)"+Integer.toString(blockVib));
 			}
-			 */
+		}
+	}
+	
+	private class Lv2HeadsetAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
 		}
 	}
 	
@@ -362,8 +375,21 @@ public class Lv2State implements ICoinBlockViewState {
 			});
 		}
 
+		@Override
+		public void OnHeadsetConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			lv2headset = new Lv2HeadsetAnim();
+			viewContext.addAnimatable(lv2headset);
 
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
 
+			Log.v("HEADSET", "Headset lv2");
+		}
 	}
 
 	private class Lv2Animation implements IAnimatable {
@@ -571,6 +597,12 @@ public class Lv2State implements ICoinBlockViewState {
 
 	@Override
 	public void OnPowerConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnHeadsetConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

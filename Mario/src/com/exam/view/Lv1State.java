@@ -25,6 +25,7 @@ public class Lv1State implements ICoinBlockViewState {
 	Lv1ClickAnim lv1clAnim;
 	Lv1WifiAnim lv1wifi;
 	Lv1PowerConnectedAnim lv1power;
+	Lv1HeadsetAnim lv1headset;
 	
 	CoinBlockView context;
 
@@ -41,6 +42,28 @@ public class Lv1State implements ICoinBlockViewState {
 				snd.start();
 			}
 		});
+	}
+	
+	private class Lv1HeadsetAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
+		}
 	}
 
 	private class Lv1PowerConnectedAnim implements IAnimatable {
@@ -240,6 +263,22 @@ public class Lv1State implements ICoinBlockViewState {
 					snd1.start();
 				}
 			});
+		}
+
+		@Override
+		public void OnHeadsetConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			lv1headset = new Lv1HeadsetAnim();
+			viewContext.addAnimatable(lv1headset);
+
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
+
+			Log.v("HEADSET", "Headset lv1");
 		}
 
 
@@ -497,5 +536,11 @@ public class Lv1State implements ICoinBlockViewState {
 	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void OnHeadsetConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
 	}
 }

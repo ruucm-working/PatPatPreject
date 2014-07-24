@@ -20,4 +20,6 @@ interface ICoinBlockViewState {
 	public void OnWifi(CoinBlockView viewContext);
 	
 	public void OnPowerConnected(CoinBlockView viewContext);
+	
+	public void OnHeadsetConnected(CoinBlockView viewContext);
 }

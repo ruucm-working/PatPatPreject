@@ -11,6 +11,7 @@ import com.exam.*;
 
 public class Lv0_2State implements ICoinBlockViewState {
 
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.egg_break);
 	Sprite sp2 = MediaAssets.getInstance().getSprite(R.drawable.eggsbreak_sprites_4);
 
@@ -29,6 +30,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 	Lv0_2DblClickAnim lv0_2dblClick;
 	Lv0_2WifiAnim lv0_2wifi;
 	Lv0_2PowerConnectedAnim lv0_2power;
+	Lv0_2HeadsetAnim lv0_2headset;
 
 	boolean fuck = false;   
 	CoinBlockView context;
@@ -109,6 +111,28 @@ public class Lv0_2State implements ICoinBlockViewState {
 				Log.v("tag4", "blockVib >= heightModifier.length)"+Integer.toString(blockVib));
 			}
 			 */
+		}
+	}
+	
+	private class Lv0_2HeadsetAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
 		}
 	}
 
@@ -443,6 +467,22 @@ public class Lv0_2State implements ICoinBlockViewState {
 				}
 			});
 		}
+
+		@Override
+		public void OnHeadsetConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			lv0_2headset = new Lv0_2HeadsetAnim();
+			viewContext.addAnimatable(lv0_2headset);
+
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
+
+			Log.v("HEADSET", "Headset lv0-1");
+		}
 	}
 
 	/*
@@ -613,5 +653,11 @@ public class Lv0_2State implements ICoinBlockViewState {
 	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void OnHeadsetConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
 	}
 }

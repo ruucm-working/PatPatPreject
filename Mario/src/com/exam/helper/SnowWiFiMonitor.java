@@ -57,7 +57,6 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 		
 		if (strAction.equals(WifiManager.WIFI_STATE_CHANGED_ACTION))
 		{
-			
 			Log.d("SnowWiFiMonitor","WIFI_STATE_CHANGED_ACTION   "+ context);
 			
 			switch(m_WifiManager.getWifiState())
@@ -71,10 +70,6 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
 				
 				Log.d("SnowWiFiMonitor","CoinBlockWidgetApp widgetid  "+id+"  "+ context);
-				
-				
-				
-				
 				break;
 				
 			case WifiManager.WIFI_STATE_DISABLING:

@@ -69,7 +69,7 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
 	static long count = 0;
 	public static long second = 0;
 	
-	int tasktime ;
+	long tasktime ;
 	
 	
 	
@@ -450,7 +450,7 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
 			//thread.onStop();		
 			
 			tasktime = taskTimer1.GetTime();
-			Log.v("tag9", "tasktiem" +Integer.toString(tasktime));
+			Log.v("tag9", "tasktiem" +Long.toString(tasktime));
 			taskTimer1.isCanceled = true;
 			
 			

@@ -117,6 +117,12 @@ public class FlowerState implements ICoinBlockViewState {
 			
 		}
 
+		@Override
+		public void OnHeadsetConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 
 	}
@@ -171,6 +177,12 @@ public class FlowerState implements ICoinBlockViewState {
 
 	@Override
 	public void OnPowerConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnHeadsetConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

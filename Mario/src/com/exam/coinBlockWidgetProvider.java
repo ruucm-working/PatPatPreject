@@ -16,6 +16,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.exam.helper.SnowWiFiMonitor;
+import com.exam.view.CoinBlockView;
 
 public class coinBlockWidgetProvider extends AppWidgetProvider {
 	
@@ -192,16 +193,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		if (intent.getAction().startsWith("com.gueei")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-<<<<<<< HEAD
-<<<<<<< HEAD
-			Log.d("coinBlockWidgetProvider","com.gueei");
-=======
 			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
->>>>>>> origin/wifichect_0.3(using-SnowWifiMonitor)
-=======
-			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
->>>>>>> origin/wifichect_0.3(using-SnowWifiMonitor)
-
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
 			int id = intent.getIntExtra("widgetId2", 0);
@@ -344,12 +336,14 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Headset
 		else if (intent.getAction().startsWith("android.intent.action.HEADSET_PLUG"))
 		{
+			int id = CoinBlockView.mWidgetId;
 			Log.v("coinBlockWidgetProvider", "Entering headset");
 
 			if(intent.getIntExtra("state", -1) == 1)
 			{
 				Toast.makeText(context, "Headset connected", Toast.LENGTH_SHORT).show();
 				isHeadset = true;
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnHeadsetConnected();
 			}	
 
 			else
@@ -365,6 +359,8 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// PC connected (not working)
 		else if (intent.getAction().startsWith("android.hardware.usb.action.USB_ACCESSORY_ATTACHED"))
 		{
+			int id = CoinBlockView.mWidgetId;
+			
 			Log.v("coinBlockWidgetProvider", "USB Attached");
 			isUsbAttached = true;
 			Toast.makeText(context, "USB attached", Toast.LENGTH_SHORT).show();
@@ -372,9 +368,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 			
-			int id = intent.getIntExtra("widgetId41", 0);
-			
-	//		((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPowerConnected();
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPowerConnected();
 		}
 
 		// PC disconnected (I don't sure it working or not)

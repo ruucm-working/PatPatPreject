@@ -75,4 +75,10 @@ class MushroomState implements ICoinBlockViewState{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void OnHeadsetConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 }
