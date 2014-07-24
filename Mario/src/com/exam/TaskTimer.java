@@ -89,7 +89,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	// you're not allowed to modify UI
 	@Override
 	protected String doInBackground(String... params) {
-
+ 
 		Log.d("TaskTimer", "doInBackground");
 
 		while(time >= 0 && !isCanceled) { 
