@@ -44,13 +44,13 @@
                 
             </intent-filter>
             
-        </activity>
         
             
-       <activity android:label="@string/app_name" android:name=".TabNavigationCollapsed" android:theme="@style/Theme.Sherlock">
+       <activity android:label="@string/tab_navigation" android:name=".TabNavigationCollapsed" android:theme="@style/Theme.Sherlock">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.actionbarsherlock.sample.demos.EXAMPLE"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 
             </intent-filter>
@@ -59,7 +59,7 @@
                 
            
            
-       
+        </activity>
         
         <activity
             android:name=".coinBlockIntroActivity"
