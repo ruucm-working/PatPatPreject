@@ -1286,11 +1286,11 @@ containing a value of this type.
         public static final int showTitle=0x7f060009;
         public static final int small=0x7f060000;
         public static final int tabMode=0x7f060005;
-        public static final int text=0x7f060053;
+        public static final int text02=0x7f060054;
         public static final int textView1=0x7f06005c;
         public static final int time0=0x7f060056;
         public static final int useLogo=0x7f060006;
-        public static final int welcome=0x7f060054;
+        public static final int welcome=0x7f060053;
         public static final int widget=0x7f060034;
         public static final int wrap_content=0x7f060003;
     }
@@ -1393,9 +1393,9 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f090021;
-        public static final int app_id=0x7f09002a;
+        public static final int app_id=0x7f09002b;
         public static final int app_name=0x7f090027;
-        public static final int board_detail_activity_title=0x7f090029;
+        public static final int board_detail_activity_title=0x7f09002a;
         public static final int click_intent=0x7f090028;
         public static final int com_facebook_choose_friends=0x7f09000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f090000;
@@ -1423,6 +1423,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f090008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f090009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f09000a;
+        public static final int tab_navigation=0x7f090029;
     }
     public static final class style {
         /** 

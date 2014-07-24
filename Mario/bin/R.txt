@@ -497,11 +497,11 @@ int id showHome 0x7f060007
 int id showTitle 0x7f060009
 int id small 0x7f060000
 int id tabMode 0x7f060005
-int id text 0x7f060053
+int id text02 0x7f060054
 int id textView1 0x7f06005c
 int id time0 0x7f060056
 int id useLogo 0x7f060006
-int id welcome 0x7f060054
+int id welcome 0x7f060053
 int id widget 0x7f060034
 int id wrap_content 0x7f060003
 int integer abs__max_action_buttons 0x7f0c0000
@@ -570,9 +570,9 @@ int string abs__searchview_description_submit 0x7f090025
 int string abs__searchview_description_voice 0x7f090026
 int string abs__shareactionprovider_share_with 0x7f090020
 int string abs__shareactionprovider_share_with_application 0x7f090021
-int string app_id 0x7f09002a
+int string app_id 0x7f09002b
 int string app_name 0x7f090027
-int string board_detail_activity_title 0x7f090029
+int string board_detail_activity_title 0x7f09002a
 int string click_intent 0x7f090028
 int string com_facebook_choose_friends 0x7f09000f
 int string com_facebook_dialogloginactivity_ok_button 0x7f090000
@@ -600,6 +600,7 @@ int string com_facebook_tooltip_default 0x7f090019
 int string com_facebook_usersettingsfragment_log_in_button 0x7f090008
 int string com_facebook_usersettingsfragment_logged_in 0x7f090009
 int string com_facebook_usersettingsfragment_not_logged_in 0x7f09000a
+int string tab_navigation 0x7f090029
 int style AppBaseTheme 0x7f0a005c
 int style AppTheme 0x7f0a005d
 int style Sherlock___TextAppearance_Small 0x7f0a0049
