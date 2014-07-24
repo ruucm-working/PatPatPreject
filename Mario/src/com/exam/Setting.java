@@ -15,16 +15,12 @@ public class Setting extends Activity {
 	private static final String TAG = "Setting_TAG";
 	private static final boolean DEVELOPER_MODE = true;
 
-	
-	
-	
 	//facebook profile
 	String userFirstName ;
 	String userLastName ;
-	
-	
+
+
 	//count click
-	
 	TextView clicountinit;
 	TextView clicount0_1;
 	TextView clicount0_2;
@@ -33,40 +29,40 @@ public class Setting extends Activity {
 	TextView clisp0;
 	TextView clisp1;
 	TextView clisp2;
-	
-	
-	
+
+
+
 	//Mesuring Time
 	static long count = 0;
 	static TextView time;	
 	//public static long second = 60;
 
 	//프레퍼런스 값들
-	 public static TextPref mPref;		
-	 public static TextPref fbPref;	
+	public static TextPref mPref;		
+	public static TextPref fbPref;	
 	String stNum1;
 	String stNum2;
-	
+
 	int spTag1;
 	int spTag2;
 	int spTag3;
 	Boolean checked[] = new Boolean[20];
-	
-	
-	
-	
-	
+
+
+
+
+
 	//스피너 변수들
 	ArrayAdapter<CharSequence> adspin1;
 	ArrayAdapter<CharSequence> adspin2;
 	ArrayAdapter<CharSequence> adspin3;
 	boolean mInitSpinner;
-	
-	
+
+
 	//for dialog
-	
+
 	boolean preinit;
-	
+
 	//static variables	
 	public static boolean init = false;
 	public static boolean lv0_1 = false;
@@ -74,20 +70,20 @@ public class Setting extends Activity {
 	public static boolean lv1 = false;
 	public static boolean lv2 = false;
 
-	
+
 	public static int CliCountinit;
 	public static int CliCount0_1;
 	public static int CliCount0_2;
 	public static int CliCount1;
 	public static int CliCount2;
-	
+	public static int DblClickCount;
 	public static int nowBattery = -1;
-	
+
 	float CliSp0;
-	
-	
-	
-	
+
+
+
+
 
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	public void onCreate(Bundle savedInstanceState) {
@@ -103,12 +99,12 @@ public class Setting extends Activity {
 		super.onCreate(savedInstanceState);        
 		setContentView(R.layout.settingpage);             
 		Log.d(TAG, "setting view"); 
-		 
+
 		//time = (TextView)findViewById(R.id.time);
-		
-		
-	
-		
+
+
+
+
 		Log.d(TAG, "time01");
 		Log.d("tag3", "time01");
 
@@ -123,7 +119,7 @@ public class Setting extends Activity {
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
 			fbPref = new TextPref("mnt/sdcard/SsdamSsdam/facebookprofile.txt");
-			
+
 			Log.d("Setting", "fbPref");
 
 		} catch (Exception e) { 
@@ -133,8 +129,8 @@ public class Setting extends Activity {
 
 		mPref.Ready();
 		fbPref.Ready();
-		
-		
+
+
 
 		TextView Num1;
 		TextView Num2;
@@ -145,15 +141,15 @@ public class Setting extends Activity {
 		spTag1 = mPref.ReadInt("Tag1", 0);
 		spTag2 = mPref.ReadInt("Tag2", 0);
 		spTag3 = mPref.ReadInt("Tag3", 0); 
-		
-		
+
+
 		CliCountinit = mPref.ReadInt("clicountinit", 0);
 		CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
 		CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
 		CliCount1 = mPref.ReadInt("clicount1", 0);
 		CliCount2 = mPref.ReadInt("clicount2", 0);
-		
-		
+
+
 		clicountinit = (TextView)findViewById(R.id.clicountinit);		
 		clicountinit.setText( CliCountinit + "번 ");
 		clicount0_1 = (TextView)findViewById(R.id.clicount0);		
@@ -169,14 +165,14 @@ public class Setting extends Activity {
 		CliSp0 =  getSecondperCount(600);	
 		clisp0 = (TextView)findViewById(R.id.clisp0);		
 		clisp0.setText( "(" + CliSp0 + "/m)");
-		
-		
+
+
 
 		Log.d("Setting","init1"+init);
-		
-		
-		
-		
+
+
+
+
 		//state's preference
 		preinit = mPref.ReadBoolean("preinitstate", true);
 		init = mPref.ReadBoolean("initstate", false);
@@ -185,9 +181,9 @@ public class Setting extends Activity {
 		lv1 = mPref.ReadBoolean("lv1state", false);
 		lv2 = mPref.ReadBoolean("lv2state", false);
 		Log.d("Setting","init2"+init);
-		
-		
-		
+
+
+
 		checked[0] = mPref.ReadBoolean("checked0", false);
 		checked[1] = mPref.ReadBoolean("checked1", false);
 		checked[2] = mPref.ReadBoolean("checked2", false);
@@ -203,19 +199,19 @@ public class Setting extends Activity {
 		checked[12] = mPref.ReadBoolean("checked12", false);
 		checked[13] = mPref.ReadBoolean("checked13", false);
 
-		
+
 		userFirstName = fbPref.ReadString("userFirstName", "");
 		Log.d("Setting", "fbPref.ReadString();");
 		userLastName = fbPref.ReadString("userLastName", "");
 		Log.d("Setting", "fbPref.userLastName();");
-		
-		
+
+
 		mPref.EndReady();
 		fbPref.EndReady();
 
-		
+
 		Log.d("Setting", "init"+init);
-		
+
 		//체크박스 값에 따라 체크해주기
 
 		if(checked[0]){
@@ -283,9 +279,9 @@ public class Setting extends Activity {
 		adspin1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spin1.setAdapter(adspin1);
 
-		
+
 		Log.d("Setting", "setAdapter.EndReady();");
-		
+
 		spin1.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> parent, View view, 
 					int position, long id) {
@@ -328,9 +324,9 @@ public class Setting extends Activity {
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
 		});
-		
+
 		Log.d("Setting", "onNothingSelected.EndReady();");
-		
+
 		//스피너 초기값지정
 		spin2.setSelection(spTag2);
 
@@ -343,7 +339,7 @@ public class Setting extends Activity {
 		spin3.setAdapter(adspin3);
 
 		Log.d("Setting", "spin3.setAdapter.EndReady();");
-		
+
 		spin3.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> parent, View view, 
 					int position, long id) {
@@ -357,16 +353,16 @@ public class Setting extends Activity {
 			}
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
-			
-			
-			
+
+
+
 		});
-		
+
 		Log.d("Setting", "setOnItemSelectedListener.setAdapter.EndReady();");
 		//스피너 초기값지정
 		spin3.setSelection(spTag3);
 		Log.d("Setting", "spin3.setAdapter.EndReady();");
-		
+
 
 	} 
 
@@ -376,38 +372,38 @@ public class Setting extends Activity {
 		secondValue = milli / 10; 
 		return secondValue;
 	}
-	
+
 	public static long getMinute(long milli){
 		long secondValue = 0;
 		secondValue = milli / 600;
 		return secondValue;
 	}
-	
-	
+
+
 	public static float getMinuteperCount(int clickcount){
-		
+
 		float clisp = 0 ;
-		
+
 		if (count > 10){
-		clisp = clickcount/count*600;
+			clisp = clickcount/count*600;
 		}		
-		
-		
+
+
 		return clisp;
 	}
-	
+
 	public static float getSecondperCount(int clickcount){
-		
+
 		float clisp = 0 ;
-		
+
 		if (count > 10){
-		clisp = clickcount/count*10;
+			clisp = clickcount/count*10;
 		}		
-		
-		
+
+
 		return clisp;
 	}
-	
+
 
 	public void onPause() {
 		super.onPause();
@@ -446,7 +442,7 @@ public class Setting extends Activity {
 			mPref.WriteInt("clicount1", CliCount1); 
 			mPref.WriteInt("clicount2", CliCount2);
 
-			
+
 			mPref.WriteBoolean("checked0", checked[0]);
 			mPref.WriteBoolean("checked1", checked[1]);
 			mPref.WriteBoolean("checked2", checked[2]);
@@ -461,18 +457,18 @@ public class Setting extends Activity {
 			mPref.WriteBoolean("checked11", checked[11]);
 			mPref.WriteBoolean("checked12", checked[12]);
 			mPref.WriteBoolean("checked13", checked[13]);
-			
-			
+
+
 			mPref.WriteBoolean("lv0_1state", lv0_1);
 			mPref.WriteBoolean("lv0_2state", lv0_2);
 			mPref.WriteBoolean("lv1state", lv1);
 			mPref.WriteBoolean("lv2state", lv2);
-			
-			
+
+
 
 			mPref.CommitWrite();
-			 
-			
+
+
 			if (preinit){
 				DialogSimple();
 				preinit = false ;
@@ -484,11 +480,11 @@ public class Setting extends Activity {
 			}
 			else 
 				finish();
-			
-			
-			
+
+
+
 			//finish();
-			
+
 			break;
 
 		case R.id.cancled:
@@ -503,22 +499,22 @@ public class Setting extends Activity {
 			spin3.setSelection(0);
 			break;
 
-	
-			
+
+
 		case R.id.reset4:
-			 
+
 			CliCountinit = 0;
 			CliCount0_1 = 0;
 			CliCount0_2 = 0;
 			CliCount1 = 0;
 			CliCount2 = 0;
-			
+
 			clicountinit.setText( CliCountinit + "번 ");
 			clicount0_1.setText( clicount0_1 + "번 ");
 			clicount0_2.setText( CliCount0_2 + "번 ");
 			clicount1.setText( CliCount1 + "번 ");
 			clicount2.setText( CliCount2 + "번 ");
-			
+
 			break;
 
 		case R.id.kind1:
@@ -566,37 +562,34 @@ public class Setting extends Activity {
 			break;
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	private void DialogSimple(){
-        AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
-        alt_bld.setMessage(userFirstName +" "+ userLastName+" 님 당신의 위젯은 아직 깨어나지 않았습니다. 홈화면에서 위젯을 설치하고, 위젯을 자극해서 알을 받으세요! 핸드폰의 기종와 IMEI 번호를 반영해 알이 배정될 예정입니다.").setCancelable(
-                false).setPositiveButton("Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Action for 'Yes' Button
-                    	
-                    	finish();
-                    }
-                }).setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Action for 'NO' Button
-                    	
-                    	
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alt_bld.create();
-        // Title for AlertDialog
-        alert.setTitle("반갑습니다");
-        // Icon for AlertDialog
-        alert.setIcon(R.drawable.icon);
-        alert.show();
-    }
-	
-	
-	
+		AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
+		alt_bld.setMessage(userFirstName +" "+ userLastName+" 님 당신의 위젯은 아직 깨어나지 않았습니다. 홈화면에서 위젯을 설치하고, 위젯을 자극해서 알을 받으세요! 핸드폰의 기종와 IMEI 번호를 반영해 알이 배정될 예정입니다.").setCancelable(
+				false).setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// Action for 'Yes' Button
+
+						finish();
+					}
+				}).setNegativeButton("No",
+						new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// Action for 'NO' Button
+
+
+						dialog.cancel();
+					}
+				});
+		AlertDialog alert = alt_bld.create();
+		// Title for AlertDialog
+		alert.setTitle("반갑습니다");
+		// Icon for AlertDialog
+		alert.setIcon(R.drawable.icon);
+		alert.show();
+	}
 }
