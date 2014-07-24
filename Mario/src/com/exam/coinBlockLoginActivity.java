@@ -2,19 +2,32 @@ package com.exam;
 
 
 
-import java.io.*;
+import java.io.File;
 
-import android.annotation.*;
-import android.app.*;
-import android.content.*;
-import android.os.*;
-import android.util.*;
-import android.view.*;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.*;
+import android.widget.Button;
 
-import com.facebook.*;
-import com.facebook.model.*;
+import com.facebook.LoggingBehavior;
+import com.facebook.Request;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.SessionState;
+import com.facebook.Settings;
+import com.facebook.model.GraphUser;
+
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+
+
+
 
 
 public class coinBlockLoginActivity extends Activity

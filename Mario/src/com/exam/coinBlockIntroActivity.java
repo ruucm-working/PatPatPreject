@@ -2,30 +2,63 @@ package com.exam;
 
 
 
-import java.io.*;
-import java.net.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-import android.annotation.*;
-import android.app.*;
-import android.content.*;
-import android.graphics.*;
-import android.os.*;
-import android.util.*;
-import android.view.*;
-import android.view.View.OnClickListener;
-import android.widget.*;
+import android.annotation.SuppressLint;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle; 
+import android.os.Environment;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.exam.view.*;
-import com.facebook.widget.*;
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Window;
+import com.facebook.widget.ProfilePictureView;
 
 
-public class coinBlockIntroActivity extends Activity implements OnClickListener
+public class coinBlockIntroActivity extends SherlockActivity implements ActionBar.TabListener 
 {
 	/** Called when the activity is first created. */
 	
 	
 	
-	//static boolean initstate;
+	//add Actionbar
+	
+	private TextView mSelected;
+    
+    
+    
+    Handler mHandler = new Handler();
+    Runnable mProgressRunner = new Runnable() {
+        @Override
+        public void run() {
+            mProgress += 2;
+
+            //Normalize our progress along the progress bar's scale
+            int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * mProgress;
+            setSupportProgress(progress);
+
+            if (mProgress < 100) {
+                mHandler.postDelayed(mProgressRunner, 50);
+            }
+        } 
+    };
+    
+    private int mProgress = 100; 
 	
 	
 	
@@ -113,20 +146,6 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
 		
 		
 		
-		
-		
-		Log.d("coinBlockIntroActivity","onCreate.");
-		
-		// Run service
-				//Intent intent = new Intent(this, Service_Notify.class);
-				//startService(intent);
-				
-				 
-				
-				Log.d("coinBlockIntroActivity", "startService(intent)fbPref.Ready();");
-				
-				
-		
 		instance = this;
 		Log.d("coinBlockIntroActivity", "instance"+instance);
 		
@@ -175,42 +194,67 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
 		//boolean lv0state = mPref.ReadBoolean("lv0state", false);
 		
 		
-		Log.d("coinBlockIntroActivity", "fbPref.Ready();(intent)fbPref.Ready();");
+		
+		
+		
+		
+		int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * 30;
+        setSupportProgress(progress);
+        
+        requestWindowFeature(Window.FEATURE_PROGRESS);
+		
+		
 		
         	
-    			setContentView(R.layout.main); 
-    			
-    		
-    			
-    	  		
-    			welcome = (TextView)findViewById(R.id.welcome);		
-    			welcome.setText(userFirstName+" "+userLastName+" 님 환영합니다 위젯을 시작하려면 Set-up 버튼을 누르세요");
-    			
-    			
-    			
-    			
-    			
-    			
-    			UpdateIntroView();
-    			
-    			
-    		
-        	
-        	profilePic = (ProfilePictureView)findViewById(R.id.profilepic);
-        	
-        	Log.d("coinBlockIntroActivity", "profilePic = (Pr;"+userId);
-        	
-        	
-        //	profilePic.setCropped(true);
-        	profilePic.setPresetSize(ProfilePictureView.LARGE);
-        	
-        	profilePic.setProfileId(userId);
-        	
-        	
-        	Log.d("coinBlockIntroActivity", "profilePic.setProfileId(userPref.Ready();");
-        	
-      
+		setContentView(R.layout.main); 
 		
+		//run progress
+        if (mProgress == 100) {
+            mProgress = 0;
+            mProgressRunner.run();
+        }
+        
+        
+        
+        mSelected = (TextView)findViewById(R.id.text);
+
+        getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        for (int i = 1; i <= 3; i++) {
+            ActionBar.Tab tab = getSupportActionBar().newTab();
+            tab.setText("Tab " + i);
+            tab.setTabListener(this);
+            getSupportActionBar().addTab(tab);
+        }
+		
+		
+	
+		
+  		
+		welcome = (TextView)findViewById(R.id.welcome);		
+		welcome.setText(userFirstName+" "+userLastName+" 님 환영합니다 위젯을 시작하려면 Set-up 버튼을 누르세요");
+		
+		
+		
+		UpdateIntroView();
+			
+			
+		
+    	
+    	profilePic = (ProfilePictureView)findViewById(R.id.profilepic);
+    	
+    	Log.d("coinBlockIntroActivity", "profilePic = (Pr;"+userId);
+    	
+    	
+    //	profilePic.setCropped(true);
+    	profilePic.setPresetSize(ProfilePictureView.LARGE);
+    	
+    	profilePic.setProfileId(userId);
+    	
+    	
+    	Log.d("coinBlockIntroActivity", "profilePic.setProfileId(userPref.Ready();");
+    	
+  
+	
   		
   		
   		fbPref.EndReady();
@@ -219,74 +263,6 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
   		Log.d("coinBlockIntroActivity","EndReady");
   		
   		
-  		
-		
-
-		
-        
-		
-		/*
-		
-		init();
-        dataInit();
-        facebookInit(savedInstanceState);
-		
-         */
-       
-        
-        //welcome.setText(coinBlockLoginActivity.userFirstName+" "+coinBlockLoginActivity.userLastName+" 님 환영합니다 위젯을 시작하려면 Set-up 버튼을 누르세요" );
-        
-        
-		
-		//measuring time
-		//time = (TextView)findViewById(R.id.time0);
-		
-		//mButton = (Button) findViewById(R.id.btn_stop);        
-        //mButton.setOnClickListener(this);
-		
-        /*
-    	
-        
-        Button btnStart = (Button)findViewById(R.id.btn_start);
-        Button btnPause = (Button)findViewById(R.id.btn_pause); 
-        Button btnStop = (Button)findViewById(R.id.btn_stop);       
-        
-		
-		
-        
-    	//시작 버튼
-        btnStart.setOnClickListener(new OnClickListener() {
-    		public void onClick(View v) {
-    			thread.onStart();
-    		}
-        });
-        //일시정지 버튼
-        btnPause.setOnClickListener(new OnClickListener() {
-    		public void onClick(View v) {
-    			thread.onStop();				
-    		}
-        });   
-        //정지 버튼
-        btnStop.setOnClickListener(new OnClickListener() {
-    		public void onClick(View v) {
-    			thread.onStop();				
-    			count = 0; //시간값 초기화
-    			time.setText("");
-    		}
-        });       
-
-*/
-        
-        
-        /*
-
-		// Run service
-		Intent intent = new Intent(this, Notify.class);
-		startService(intent);
-		
-		*/
-          	      
-        
         
         
 	} 
@@ -798,6 +774,33 @@ public class coinBlockIntroActivity extends Activity implements OnClickListener
     			
     		 
     	 }
+    	 
+    	 
+    
+
+
+			@Override
+			public void onTabSelected(Tab tab,
+					android.support.v4.app.FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+
+			@Override
+			public void onTabUnselected(Tab tab,
+					android.support.v4.app.FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+
+			@Override
+			public void onTabReselected(Tab tab,
+					android.support.v4.app.FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
     	 
     	
 		
