@@ -51,50 +51,23 @@ public class Service_BatteryGauge extends Service {
 		public void onReceive(Context context, Intent intent) {
 			
 			
-			
-			
-		String action = intent.getAction();
-			if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
-			
-			int plugType = intent.getIntExtra("plugged", 0);
-			Log.d("Service_BatteryGauge","plugType  "+plugType);
-			int level = intent.getIntExtra("level", 0);
-			Log.d("Service_BatteryGauge","level  "+level);
-			int scale = intent.getIntExtra("scale", 100);
-			Log.d("Service_BatteryGauge","scale  "+scale);
-			int voltage = intent.getIntExtra("voltage", 0);
-			Log.d("Service_BatteryGauge","voltage  "+voltage);
-			String temper = Integer.toString(intent.getIntExtra("temperature", 0));
-			Log.d("Service_BatteryGauge","temper  "+temper);
-			String tech = intent.getStringExtra("technology");
-			Log.d("Service_BatteryGauge","tech  "+tech);
-			int health = intent.getIntExtra("health", BatteryManager.BATTERY_HEALTH_UNKNOWN);
-			Log.d("Service_BatteryGauge","health  "+health);
-			String strPlug = null;
-			 
-			
-			Toast.makeText(context, "plugType  "+ plugType, Toast.LENGTH_SHORT).show();
-			
-			
-			}
-			
-			
 			int bLevel = intent.getIntExtra("level", 0);
-			//Log.v(TAG, "Battery level changed: " + bLevel);			
+			//Log.v(TAG, "Battery level changed: " + bLevel);
+			
 			
 			
 			
 			Setting.nowBattery = bLevel;
 			coinBlockIntroActivity.bLevel = bLevel;
 
-			if(bLevel < 15)
+			if(bLevel < 20)
 				isBatteryLow = true;
 			else
 				isBatteryLow = false;
 			
 			
 			
-			//String action = intent.getAction();
+			String action = intent.getAction();
 			 
 			
 			Log.d("battersv","onReceive");

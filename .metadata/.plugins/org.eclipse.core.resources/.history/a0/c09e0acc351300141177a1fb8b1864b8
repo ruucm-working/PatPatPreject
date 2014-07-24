@@ -70,10 +70,9 @@ public class Service_BatteryGauge extends Service {
 			Log.d("Service_BatteryGauge","tech  "+tech);
 			int health = intent.getIntExtra("health", BatteryManager.BATTERY_HEALTH_UNKNOWN);
 			Log.d("Service_BatteryGauge","health  "+health);
-			String strPlug = null;
+			String strPlug;
 			 
-			
-			Toast.makeText(context, "plugType  "+ plugType, Toast.LENGTH_SHORT).show();
+			Log.d("Service_BatteryGauge","strPlug  "+strPlug);
 			
 			
 			}

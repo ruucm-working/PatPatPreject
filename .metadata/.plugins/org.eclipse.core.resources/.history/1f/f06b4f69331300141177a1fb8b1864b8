@@ -39,7 +39,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
 	
 	private TextView mSelected;
     
-	static int bLevel;
+	int bLevel;
     
     
     Handler mHandler = new Handler();
@@ -52,11 +52,8 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
             int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * mProgress;
             setSupportProgress(progress);
 
-            if (mProgress < bLevel) {
+            if (mProgress < 100) {
                 mHandler.postDelayed(mProgressRunner, 50);
-                Log.i("coinBlockIntroActivity","mProgress  "+ mProgress);
-                Log.i("coinBlockIntroActivity","bLevel  "+ bLevel);
-                
             }
         } 
     };
@@ -201,7 +198,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
 		
 		
 		
-		int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * bLevel;
+		int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * 30;
         setSupportProgress(progress);
         
         requestWindowFeature(Window.FEATURE_PROGRESS);

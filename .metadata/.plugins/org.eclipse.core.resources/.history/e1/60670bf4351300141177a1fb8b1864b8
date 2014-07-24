@@ -201,7 +201,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
 		
 		
 		
-		int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * bLevel;
+		int progress = (Window.PROGRESS_END - Window.PROGRESS_START) / 100 * 30;
         setSupportProgress(progress);
         
         requestWindowFeature(Window.FEATURE_PROGRESS);
