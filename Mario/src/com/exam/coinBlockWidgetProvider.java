@@ -192,15 +192,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		if (intent.getAction().startsWith("com.gueei")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-<<<<<<< HEAD
-<<<<<<< HEAD
-			Log.d("coinBlockWidgetProvider","com.gueei");
-=======
-			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
->>>>>>> origin/wifichect_0.3(using-SnowWifiMonitor)
-=======
-			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
->>>>>>> origin/wifichect_0.3(using-SnowWifiMonitor)
 
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
