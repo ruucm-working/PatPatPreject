@@ -73,7 +73,6 @@ public class Service_BatteryGauge extends Service {
 			String strPlug = null;
 			 
 			
-			if (plugType == 2)			
 			Toast.makeText(context, "plugType  "+ plugType, Toast.LENGTH_SHORT).show();
 			
 			
