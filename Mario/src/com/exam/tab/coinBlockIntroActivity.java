@@ -37,7 +37,7 @@ import com.exam.R.layout;
 import com.facebook.widget.ProfilePictureView;
 
 
-public class coinBlockIntroActivity extends SherlockActivity implements ActionBar.TabListener 
+public class coinBlockIntroActivity extends SherlockActivity
 {
 	/** Called when the activity is first created. */
 	
@@ -186,12 +186,39 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
 		//boolean lv0state = mPref.ReadBoolean("lv0state", false);
 		
 		
+		final android.app.ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+ 
+        actionBar.addTab(actionBar
+                .newTab()
+                .setText("Tab1")
+                .setTabListener(
+                        new TabListener<FragmentTab1>(this, "tab1",
+                                FragmentTab1.class)));
+        actionBar.addTab(actionBar
+                .newTab()
+                .setText("Tab2")
+                .setTabListener(
+                        new TabListener<FragmentTab2>(this, "tab3",
+                                FragmentTab2.class)));
+        actionBar.addTab(actionBar
+                .newTab()
+                .setText("Tab3")
+                .setTabListener(
+                        new TabListener<FragmentTab3>(this, "tab3",
+                                FragmentTab3.class)));
+ 
+        if (savedInstanceState != null) {
+            actionBar.setSelectedNavigationItem(savedInstanceState.getInt(
+                    "selectedTab", 0));
+        }
 		
-		
+        
+        
 	
 		
         	
-		setContentView(R.layout.states); 
+		//setContentView(R.layout.states); 
 		
 	
         
@@ -239,7 +266,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
   
     	
     	
-    	
+    	/*
     	mSelected = (TextView)findViewById(R.id.text02);
 
         getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -257,7 +284,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
             getSupportActionBar().addTab(tab);
         } 
          
-        
+        */
     	
 	
   		
@@ -272,6 +299,13 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
         
 	} 
 	
+	
+	 @Override
+	    protected void onSaveInstanceState(Bundle outState) {
+	        super.onSaveInstanceState(outState);
+	        outState.putInt("selectedTab", getActionBar()
+	                .getSelectedNavigationIndex());
+	    }
 	
 	
 	
@@ -791,39 +825,7 @@ public class coinBlockIntroActivity extends SherlockActivity implements ActionBa
     
 
 
-			@Override
-			public void onTabSelected(Tab tab,
-					android.support.v4.app.FragmentTransaction ft) {
-				mSelected.setText("Selected: " + tab.getText());	
-				
-				/*
-				
-				if(tab.getText().equals("Tab 2")){
-					Intent intent = new Intent(this, Setting.class);
-				startActivityForResult(intent, SETTING ); 
-				}
-				tab.getCustomView()
-				
-				*/
-				
-			}
-
-
-			@Override
-			public void onTabUnselected(Tab tab,
-					android.support.v4.app.FragmentTransaction ft) {
-								
-			}
-
-
-			@Override
-			public void onTabReselected(Tab tab,
-					android.support.v4.app.FragmentTransaction ft) {
-				// TODO Auto-generated method stub
-				
-			}
-    	 
-    	
+		
 		
 		
 	

@@ -4187,3 +4187,17 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/ActionbarTab/s
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2014-07-31 08:18:32.120
 !MESSAGE Resource '/ActionbarTab/src/com/example/actionbartab/FragmentTab3.java' does not exist.
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-07-31 08:36:08.977
+!MESSAGE An internal error occurred during: "Check Android SDK".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator.next(AbstractMapBasedMultimap.java:486)
+	at com.android.sdklib.repository.local.LocalSdk.hasChanged(LocalSdk.java:296)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:136)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:124)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk.haveTargetsChanged(Sdk.java:410)
+	at com.android.ide.eclipse.adt.AdtPlugin$12.run(AdtPlugin.java:1846)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
