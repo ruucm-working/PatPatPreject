@@ -1,0 +1,107 @@
+package mobi.intuitit.android.example.widget.animated;
+
+/**
+ * 
+ * @author bo
+ * 
+ */
+public final class HppIntent {
+
+    /**
+     * 
+     */
+    public static final String PNAME = "mobi.intuitit.android.hpp.";
+
+    /**
+     * 
+     * @author bo
+     * 
+     */
+    public static final class BROADCAST {
+
+        public static final String BROADCAST_HOME_PAUSE = PNAME + "BROADCAST_HOME_PAUSE";
+        public static final String BROADCAST_HOME_RESUME = PNAME + "BROADCAST_HOME_RESUME";
+
+    }
+
+    /**
+     * 
+     * @author bo
+     * 
+     */
+    public static final class NOTIFICATION {
+
+        public static final String NOTIFICATION_IN_VIEWPORT = PNAME + "NOTIFICATION_IN_VIEWPORT";
+        public static final String NOTIFICATION_OUT_VIEWPORT = PNAME + "NOTIFICATION_OUT_VIEWPORT";
+
+        public static final String NOTIFICATION_WIDGET_SETTINGS_CHANGED = PNAME
+                + "NOTIFICATION_WIDGET_SETTINGS_CHANGED";
+
+        public static final String NOTIFICATION_FRAME_ANIMATION_STARTED = PNAME
+                + "NOTIFICATION_FRAME_ANIMATION_STARTED";
+        public static final String NOTIFICATION_FRAME_ANIMATION_STOPPED = PNAME
+                + "NOTIFICATION_FRAME_ANIMATION_STOPPED";
+
+    }
+
+    /**
+     * 
+     * @author bo
+     * 
+     */
+    public static final class ACTION {
+
+        public static final String ACTION_READY = PNAME + "ACTION_READY";
+
+        public static final String ACTION_START_FRAME_ANIMATION = PNAME
+                + "ACTION_START_FRAME_ANIMATION";
+        public static final String ACTION_STOP_FRAME_ANIMATION = PNAME
+                + "ACTION_STOP_FRAME_ANIMATION";
+
+        public static final String ACTION_START_TWEEN_ANIMATION = PNAME
+                + "ACTION_START_TWEEN_ANIMATION";
+        public static final String ACTION_STOP_TWEEN_ANIMATION = PNAME
+                + "ACTION_STOP_TWEEN_ANIMATION";
+
+    }
+
+    /**
+     * 
+     * @author bo
+     * 
+     */
+    public static final class ERROR {
+
+        public static final String ERROR_FRAME_ANIMATION = PNAME + "ERROR_FRAME_ANIMATION";
+        public static final String ERROR_TWEEN_ANIMATION = PNAME + "ERROR_TWEEN_ANIMATION";
+
+    }
+
+    /**
+     * 
+     * @author bo
+     * 
+     */
+    public static final class EXTRA {
+
+        public static final String EXTRA_APPWIDGET_ID = PNAME + "EXTRA_APPWIDGET_ID";
+        public static final String EXTRA_IMAGEVIEW_ID = PNAME + "EXTRA_IMAGEVIEW_ID";
+        public static final String EXTRA_ANIMATION_ID = PNAME + "EXTRA_ANIMATION_ID";
+        public static final String EXTRA_VIEW_ID = PNAME + "EXTRA_VIEW_ID";
+        
+        public static final String EXTRA_ERROR_MESSAGE = PNAME + "EXTRA_ERROR_MESSAGE";
+
+    }
+}
+Hide details
+Change log
+r4 by wang.b.frank on Nov 21, 2009   Diff
+add landscape layout
+some intent fix
+Go to: 	
+Older revisions
+ r3 by wang.b.frank on Nov 20, 2009   Diff 
+All revisions of this file
+File info
+Size: 2681 bytes, 95 lines
+View raw file
