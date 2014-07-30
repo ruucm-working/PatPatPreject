@@ -8,6 +8,8 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.Setting;
+import com.exam.tab.coinBlockIntroActivity;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	

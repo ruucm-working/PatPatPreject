@@ -7,6 +7,7 @@ import android.os.*;
 import android.util.*;
 
 import com.exam.*;
+import com.exam.tab.coinBlockIntroActivity;
 
 public class OftenState implements ICoinBlockViewState {
 	private Sprite sp1 = null ;

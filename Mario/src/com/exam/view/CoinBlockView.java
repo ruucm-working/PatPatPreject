@@ -13,6 +13,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.coinBlockIntroActivity;
 
 public class CoinBlockView {
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
