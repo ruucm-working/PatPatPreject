@@ -22,4 +22,8 @@ interface ICoinBlockViewState {
 	public void OnPowerConnected(CoinBlockView viewContext);
 	
 	public void OnHeadsetConnected(CoinBlockView viewContext);
+	
+	public void OnPlaneMode(CoinBlockView viewContext);
+	
+	public void OnSMSReceived(CoinBlockView viewContext);
 }

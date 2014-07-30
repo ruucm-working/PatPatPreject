@@ -123,6 +123,18 @@ public class FlowerState implements ICoinBlockViewState {
 			
 		}
 
+		@Override
+		public void OnPlaneMode(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnSMSReceived(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
 
 
 	}
@@ -183,6 +195,18 @@ public class FlowerState implements ICoinBlockViewState {
 
 	@Override
 	public void OnHeadsetConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPlaneMode(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnSMSReceived(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

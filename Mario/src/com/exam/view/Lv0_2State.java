@@ -31,6 +31,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 	Lv0_2WifiAnim lv0_2wifi;
 	Lv0_2PowerConnectedAnim lv0_2power;
 	Lv0_2HeadsetAnim lv0_2headset;
+	Lv0_2PlaneAnim lv0_2plane;
+	Lv0_2SMSAnim lv0_2sms;
 
 	boolean fuck = false;   
 	CoinBlockView context;
@@ -115,6 +117,50 @@ public class Lv0_2State implements ICoinBlockViewState {
 	}
 	
 	private class Lv0_2HeadsetAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
+		}
+	}
+	
+	private class Lv0_2PlaneAnim implements IAnimatable {
+		private int blockVib = 0;	
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
+			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
+
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+
+			if (blockVib < 7) { 
+				blockVib++;
+			}
+		}
+	}
+	
+	private class Lv0_2SMSAnim implements IAnimatable {
 		private int blockVib = 0;	
 		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
 
@@ -483,6 +529,34 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 			Log.v("HEADSET", "Headset lv0-1");
 		}
+
+		@Override
+		public void OnPlaneMode(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			lv0_2plane = new Lv0_2PlaneAnim();
+			viewContext.addAnimatable(lv0_2plane);
+
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
+		}
+
+		@Override
+		public void OnSMSReceived(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			lv0_2plane = new Lv0_2PlaneAnim();
+			viewContext.addAnimatable(lv0_2plane);
+
+			snd1.seekTo(0);
+			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd1.start();
+				}
+			});
+		}
 	}
 
 	/*
@@ -657,6 +731,18 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 	@Override
 	public void OnHeadsetConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPlaneMode(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnSMSReceived(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

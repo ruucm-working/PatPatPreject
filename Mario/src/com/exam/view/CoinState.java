@@ -107,4 +107,16 @@ class CoinState implements ICoinBlockViewState {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void OnPlaneMode(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnSMSReceived(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
 }

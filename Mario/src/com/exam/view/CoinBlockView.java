@@ -442,6 +442,16 @@ public class CoinBlockView {
 		Log.d("WIFI", "Wifi On");
 	}
 	
+	public void OnPlaneMode() {
+		state.OnPlaneMode(this);
+		Log.d("Plane", "Set Plane Mode");
+	}
+	
+	public void OnSMS() {
+		state.OnSMSReceived(this);
+		Log.d("SMS", "Get SMS");
+	}
+	
 	public void OnPowerConnected() {
 		state.OnPowerConnected(this);
 		Log.d("POWER", "Power Connected");
