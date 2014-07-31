@@ -8,4 +8,7 @@
 <fullyQualifiedTypeName name="info.androidhive.imageslider.helper.HttpPostAsyncTask"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.exam.coinBlockIntroActivity"/>
+<fullyQualifiedTypeName name="com.exam.R.layout"/>
+<fullyQualifiedTypeName name="com.exam.R"/>
 </qualifiedTypeNameHistroy>
