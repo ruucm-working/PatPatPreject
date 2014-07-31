@@ -297,12 +297,6 @@ public class InitState implements ICoinBlockViewState {
 		}
 
 		@Override
-		public void OnWifi(CoinBlockView viewContext) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
 		public void OnPowerConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
 			
@@ -315,13 +309,55 @@ public class InitState implements ICoinBlockViewState {
 		}
 
 		@Override
-		public void OnPlaneMode(CoinBlockView viewContext) {
+		public void OnSMSReceived(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void OnSMSReceived(CoinBlockView viewContext) {
+		public void OnWifiConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnWifiDisconnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnPowerDisconnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnUSBConnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnUSBDisconnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnHeadsetDisconnected(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnPlaneModeOn(CoinBlockView viewContext) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void OnPlaneModeOff(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
 			
 		}
@@ -481,12 +517,6 @@ public class InitState implements ICoinBlockViewState {
 	}
 
 	@Override
-	public void OnWifi(CoinBlockView viewContext) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
@@ -499,13 +529,55 @@ public class InitState implements ICoinBlockViewState {
 	}
 
 	@Override
-	public void OnPlaneMode(CoinBlockView viewContext) {
+	public void OnSMSReceived(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void OnSMSReceived(CoinBlockView viewContext) {
+	public void OnWifiConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnWifiDisconnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPowerDisconnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnUSBConnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnUSBDisconnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnHeadsetDisconnected(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPlaneModeOn(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void OnPlaneModeOff(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub
 		
 	}

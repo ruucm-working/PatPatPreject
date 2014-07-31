@@ -67,7 +67,7 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 				int id = CoinBlockView.mWidgetId;
 				Log.d("SnowWiFiMonitor","id  "+id+"  "+ context); 
 				
-				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifi();
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnWifiConnected();
 				
 				Log.d("SnowWiFiMonitor","CoinBlockWidgetApp widgetid  "+id+"  "+ context);
 				break;

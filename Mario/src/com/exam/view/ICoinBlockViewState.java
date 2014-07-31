@@ -17,13 +17,20 @@ interface ICoinBlockViewState {
 
 	public void OnDblClick(CoinBlockView viewContext);
 	
-	public void OnWifi(CoinBlockView viewContext);
+	public void OnWifiConnected(CoinBlockView viewContext);
+	public void OnWifiDisconnected(CoinBlockView viewContext);
 	
 	public void OnPowerConnected(CoinBlockView viewContext);
+	public void OnPowerDisconnected(CoinBlockView viewContext);
+	
+	public void OnUSBConnected(CoinBlockView viewContext);
+	public void OnUSBDisconnected(CoinBlockView viewContext);
 	
 	public void OnHeadsetConnected(CoinBlockView viewContext);
+	public void OnHeadsetDisconnected(CoinBlockView viewContext);
 	
-	public void OnPlaneMode(CoinBlockView viewContext);
+	public void OnPlaneModeOn(CoinBlockView viewContext);
+	public void OnPlaneModeOff(CoinBlockView viewContext);	
 	
 	public void OnSMSReceived(CoinBlockView viewContext);
 }

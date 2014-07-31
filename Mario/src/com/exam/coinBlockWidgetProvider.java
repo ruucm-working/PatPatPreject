@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.usb.UsbManager;
-import android.net.wifi.WifiManager;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -203,10 +202,11 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			
 			if(Settings.System.getInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 0) == 1) {
 				isPlaneMode = true;
-				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPlaneMode();
-			}
-			else
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPlaneModeOn();
+			} else {
 				isPlaneMode = false;
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPlaneModeOff();
+			}
 
 			//Toast.makeText(context, "Plane mode status changed", Toast.LENGTH_SHORT).show();
 			Log.v("coinBlockWidgetProvider", "isPlaneMode: " + isPlaneMode);
