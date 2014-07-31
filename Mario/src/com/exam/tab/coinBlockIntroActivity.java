@@ -351,27 +351,37 @@ public class coinBlockIntroActivity extends FragmentActivity
 	                case 0:
 	                    // The first section of the app is the most interesting -- it offers
 	                    // a launchpad into the other demonstrations in this example application.
-	                    return new LaunchpadSectionFragment();
+	                	//Fragment fragment = new fTab1();
+	                    return new fTab1();
 
 	                default:
-	                    // The other sections of the app are dummy placeholders.
+	                    // The other sections of the app are dummy placeholders
+/*
 	                    Fragment fragment = new DummySectionFragment();
 	                    Bundle args = new Bundle();
 	                    args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
 	                    fragment.setArguments(args);
-	                    return fragment;
+	                    */
+	                	
+	                    return new fTab2();
 	            }
 	        }
 
 	        @Override
 	        public int getCount() {
 	            // For this contrived example, we have a 100-object collection.
-	            return 100;
+	            return 2;
 	        }
 
 	        @Override
 	        public CharSequence getPageTitle(int position) {
-	            return "OBJECT " + (position + 1);
+	            //return "OBJECT " + (position + 1);
+	            if (position == 0)
+	            	return "STATES";
+	            else
+	            	return "PROFILE";
+	            
+	            
 	        }
 	    }
 	
