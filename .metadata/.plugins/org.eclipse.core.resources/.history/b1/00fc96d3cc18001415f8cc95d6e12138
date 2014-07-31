@@ -1,10 +1,8 @@
-package com.exam;
-
-import com.actionbarsherlock.view.Window;
+package com.exam.tab;
 
 import android.os.Bundle;
 
-public class TabNavigationCollapsed extends TabNavigation {
+public class TabNavigationCollapsed extends coinBlockIntroActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +18,7 @@ public class TabNavigationCollapsed extends TabNavigation {
         
         */
         
-        getSupportActionBar().setDisplayShowHomeEnabled(false); 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setDisplayShowHomeEnabled(false); 
+        getActionBar().setDisplayShowTitleEnabled(false);
     }
 }

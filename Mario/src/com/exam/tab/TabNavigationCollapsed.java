@@ -1,9 +1,11 @@
 package com.exam.tab;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 public class TabNavigationCollapsed extends coinBlockIntroActivity {
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -20,5 +22,9 @@ public class TabNavigationCollapsed extends coinBlockIntroActivity {
         
         getActionBar().setDisplayShowHomeEnabled(false); 
         getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setDisplayUseLogoEnabled(false);
+        getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActionBar().setDisplayShowCustomEnabled(false);
+        getActionBar().setHomeButtonEnabled(false);
     }
 }

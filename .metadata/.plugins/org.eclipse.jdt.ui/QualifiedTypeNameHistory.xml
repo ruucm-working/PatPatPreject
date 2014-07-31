@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="com.exam.coinBlockIntroActivity"/>
 <fullyQualifiedTypeName name="com.exam.R.layout"/>
 <fullyQualifiedTypeName name="com.exam.R"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
 </qualifiedTypeNameHistroy>
