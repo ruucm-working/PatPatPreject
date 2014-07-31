@@ -151,4 +151,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		Log.d("TaskTimer", "onPostExecute"+Long.toString(time));
 	}
+	
+	public static long GetStartTime() {
+		return startTime;
+	}
+	
+	public static void SetStartTime(long time) {
+		startTime = time;
+	}
 }

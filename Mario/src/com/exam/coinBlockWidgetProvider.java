@@ -132,10 +132,13 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// SMS
 		else if (intent.getAction().startsWith("android.provider.Telephony.SMS_RECEIVED"))
 		{
+			int id = CoinBlockView.mWidgetId;
 			Log.v("coinBlockWidgetProvider", "SMS Received");
 
 			isSMSNotRead = true;
 			Toast.makeText(context, "Get SMS", Toast.LENGTH_SHORT).show();
+			
+			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnSMS();
 			
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
@@ -196,8 +199,12 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		// Plane mode
 		else if (intent.getAction().startsWith("android.intent.action.AIRPLANE_MODE"))
 		{
-			if(Settings.System.getInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 0) == 1)
+			int id = CoinBlockView.mWidgetId;
+			
+			if(Settings.System.getInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 0) == 1) {
 				isPlaneMode = true;
+				((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPlaneMode();
+			}
 			else
 				isPlaneMode = false;
 
@@ -268,7 +275,8 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}
-
+		
+		/*
 		// PC connected (not working)
 		else if (intent.getAction().startsWith("android.hardware.usb.action.USB_ACCESSORY_ATTACHED"))
 		{
@@ -294,5 +302,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}
+		*/
 	}
 }

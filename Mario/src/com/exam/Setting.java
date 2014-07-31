@@ -138,6 +138,11 @@ public class Setting extends Activity {
 		stNum1 = mPref.ReadString("stNum1","0");
 		Num1.setText(stNum1);
 
+		try {
+			long tmpTime = mPref.ReadLong("Tag1", 0);
+			TaskTimer.SetStartTime(tmpTime);
+		} catch (Exception e) {}
+		
 		spTag1 = mPref.ReadInt("Tag1", 0);
 		spTag2 = mPref.ReadInt("Tag2", 0);
 		spTag3 = mPref.ReadInt("Tag3", 0); 
@@ -429,6 +434,12 @@ public class Setting extends Activity {
 
 			TextView txtname1 = (TextView)findViewById(R.id.input01);
 			stNum1 = txtname1.getText().toString();
+			
+			try {
+				mPref.WriteString("time", Long.toString(TaskTimer.GetStartTime()));
+			} catch(Exception e) {
+				mPref.WriteString("time", "0");
+			}
 
 			mPref.WriteString("stNum1", stNum1);
 			mPref.WriteString("stNum2", stNum2);
