@@ -18,7 +18,7 @@ public class TabNavigationCollapsed extends coinBlockIntroActivity {
         
         */
         
-        getSupportActionBar().setDisplayShowHomeEnabled(false); 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+       // getSupportActionBar().setDisplayShowHomeEnabled(false); 
+      //  getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

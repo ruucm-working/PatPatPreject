@@ -269,7 +269,7 @@ public class coinBlockLoginActivity extends Activity
 	        
 	        private void toIntro() {
 
-	        	Intent intent = new Intent(this, TabNavigationCollapsed.class);
+	        	Intent intent = new Intent(this, coinBlockIntroActivity.class);
 	            //intent.putExtra("userId", userId);
 	            //intent.putExtra("userFirstName", userFirstName);
 	            //intent.putExtra("userLastName", userLastName);

@@ -18,6 +18,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +42,7 @@ import com.exam.R.layout;
 import com.facebook.widget.ProfilePictureView;
 
 
-public class coinBlockIntroActivity extends SherlockActivity
+public class coinBlockIntroActivity extends FragmentActivity
 {
 	/** Called when the activity is first created. */
 	
@@ -50,7 +55,10 @@ public class coinBlockIntroActivity extends SherlockActivity
 	static int bLevel;
     
   
-    
+	
+	//add tap x viewpager
+	DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
+	ViewPager mViewPager;
 
 	
 	
@@ -184,7 +192,7 @@ public class coinBlockIntroActivity extends SherlockActivity
 		lv2 = mPref.ReadBoolean("lv2state", false);
 		
 		//boolean lv0state = mPref.ReadBoolean("lv0state", false);
-		
+		/*
 		
 		final android.app.ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -213,10 +221,30 @@ public class coinBlockIntroActivity extends SherlockActivity
                     "selectedTab", 0));
         }
 		
-        
+        */
         
 	
 		
+        
+        setContentView(R.layout.activity_collection_demo);
+
+        // Create an adapter that when requested, will return a fragment representing an object in
+        // the collection.
+        // 
+        // ViewPager and its adapters use support library fragments, so we must use
+        // getSupportFragmentManager.
+        mDemoCollectionPagerAdapter = new DemoCollectionPagerAdapter(getSupportFragmentManager());
+
+        // Set up action bar.
+        final android.app.ActionBar actionBar = getActionBar();
+
+        // Specify that the Home button should show an "Up" caret, indicating that touching the
+        // button will take the user one step up in the application's hierarchy.
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // Set up the ViewPager, attaching the adapter.
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mDemoCollectionPagerAdapter);
         	
 		//setContentView(R.layout.states); 
 		
@@ -226,17 +254,7 @@ public class coinBlockIntroActivity extends SherlockActivity
         
         //styled
         
-      //This is a workaround for http://b.android.com/15340 from http://stackoverflow.com/a/5852198/132047
-       // if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            BitmapDrawable bg = (BitmapDrawable)getResources().getDrawable(R.drawable.bg_striped);
-            bg.setTileModeXY(TileMode.REPEAT, TileMode.REPEAT);
-            getSupportActionBar().setBackgroundDrawable(bg);
-            //getSupportActionBar().
 
-            BitmapDrawable bgSplit = (BitmapDrawable)getResources().getDrawable(R.drawable.bg_striped_split_img);
-            bgSplit.setTileModeXY(TileMode.REPEAT, TileMode.REPEAT);
-            getSupportActionBar().setSplitBackgroundDrawable(bgSplit);
-        //}
 		
 		
 	/*
@@ -299,7 +317,7 @@ public class coinBlockIntroActivity extends SherlockActivity
         
 	} 
 	
-	
+	/*
 	 @Override
 	    protected void onSaveInstanceState(Bundle outState) {
 	        super.onSaveInstanceState(outState);
@@ -307,7 +325,55 @@ public class coinBlockIntroActivity extends SherlockActivity
 	                .getSelectedNavigationIndex());
 	    }
 	
+	*/
 	
+	
+	 public static class DemoCollectionPagerAdapter extends FragmentStatePagerAdapter {
+
+	        public DemoCollectionPagerAdapter(FragmentManager fm) {
+	            super(fm);
+	        }
+	/*
+	        @Override
+	        public Fragment getItem(int i) {
+	            Fragment fragment = new DemoObjectFragment();
+	            Bundle args = new Bundle();
+	            args.putInt(DemoObjectFragment.ARG_OBJECT, i + 1); // Our object is just an integer :-P
+	            fragment.setArguments(args);
+	            return fragment;
+	        }
+	        
+	        */
+	        
+	        @Override
+	        public Fragment getItem(int i) {
+	            switch (i) {
+	                case 0:
+	                    // The first section of the app is the most interesting -- it offers
+	                    // a launchpad into the other demonstrations in this example application.
+	                    return new LaunchpadSectionFragment();
+
+	                default:
+	                    // The other sections of the app are dummy placeholders.
+	                    Fragment fragment = new DummySectionFragment();
+	                    Bundle args = new Bundle();
+	                    args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
+	                    fragment.setArguments(args);
+	                    return fragment;
+	            }
+	        }
+
+	        @Override
+	        public int getCount() {
+	            // For this contrived example, we have a 100-object collection.
+	            return 100;
+	        }
+
+	        @Override
+	        public CharSequence getPageTitle(int position) {
+	            return "OBJECT " + (position + 1);
+	        }
+	    }
 	
 	
 	
