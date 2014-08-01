@@ -24,7 +24,7 @@ public class SnowWiFiMonitor extends BroadcastReceiver
 	public final static int NETWORK_STATE_DISCONNECTING = NETWORK_STATE_DISCONNECTED + 1;
 	public final static int NETWORK_STATE_SUSPENDED 	= NETWORK_STATE_DISCONNECTING + 1;
 	public final static int NETWORK_STATE_UNKNOWN 		= NETWORK_STATE_SUSPENDED 	+ 1;
-	
+	 
 	public interface OnChangeNetworkStatusListener
 	{
 		public void OnChanged(Intent intent, Context context, int status);

@@ -155,8 +155,8 @@ public class coinBlockLoginActivity extends Activity
 	    @SuppressLint("NewApi")
 	    private void dataInit() {
 	        //ActionBar Init
-	        getActionBar().setDisplayShowHomeEnabled(false);
-	        getActionBar().setTitle(R.string.board_detail_activity_title);
+	        //getActionBar().setDisplayShowHomeEnabled(false);
+	        //getActionBar().setTitle(R.string.board_detail_activity_title);
 	    }
 	    
 	    private void facebookInit(Bundle savedInstanceState) {

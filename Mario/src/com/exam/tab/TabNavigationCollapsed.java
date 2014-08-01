@@ -20,11 +20,11 @@ public class TabNavigationCollapsed extends coinBlockIntroActivity {
         
         */
         
-        getActionBar().setDisplayShowHomeEnabled(false); 
-        getActionBar().setDisplayShowTitleEnabled(false);
-        getActionBar().setDisplayUseLogoEnabled(false);
-        getActionBar().setDisplayHomeAsUpEnabled(false);
-        getActionBar().setDisplayShowCustomEnabled(false);
-        getActionBar().setHomeButtonEnabled(false);
+       //getActionBar().setDisplayShowHomeEnabled(false); 
+        //getActionBar().setDisplayShowTitleEnabled(false);
+       // getActionBar().setDisplayUseLogoEnabled(false);
+        //getActionBar().setDisplayHomeAsUpEnabled(false);
+        //getActionBar().setDisplayShowCustomEnabled(false);
+        //getActionBar().setHomeButtonEnabled(false);
     }
 }

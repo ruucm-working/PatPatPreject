@@ -39,8 +39,9 @@
         <activity
             android:name="com.exam.tab.coinBlockLoginActivity"
             android:label="@string/app_name" 
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />  
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             
@@ -48,11 +49,11 @@
         
             
        <activity android:label="@string/app_name" android:name="com.exam.tab.TabNavigationCollapsed" 
-           android:theme="@android:style/Theme.NoTitleBar">
+           android:theme="@android:style/Theme.Holo.Light.NoActionBar">
             <intent-filter>
+               
                 
                 
-                 
             </intent-filter>
         </activity>
 
@@ -64,6 +65,7 @@
         <activity
             android:name="com.exam.tab.coinBlockIntroActivity"
             android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
           
            >
             <intent-filter>
