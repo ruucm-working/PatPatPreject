@@ -8,37 +8,29 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Shader.TileMode;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewTitlePagerAdapter;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Window;
 import com.exam.R;
 import com.exam.TextPref;
-import com.exam.R.drawable;
-import com.exam.R.id;
-import com.exam.R.layout;
 import com.facebook.widget.ProfilePictureView;
 
 
@@ -57,7 +49,7 @@ public class coinBlockIntroActivity extends FragmentActivity
   
 	
 	//add tap x viewpager
-	DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
+	//DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
 	ViewPager mViewPager;
 
 	
@@ -143,7 +135,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 		
 		//setContentView(R.layout.main);
 		
-		 setContentView(R.layout.activity_collection_demo);
+		 setContentView(R.layout.main);
 
 		
 		
@@ -233,7 +225,7 @@ public class coinBlockIntroActivity extends FragmentActivity
         // 
         // ViewPager and its adapters use support library fragments, so we must use
         // getSupportFragmentManager.
-        mDemoCollectionPagerAdapter = new DemoCollectionPagerAdapter(getSupportFragmentManager());
+        //mDemoCollectionPagerAdapter = new DemoCollectionPagerAdapter(getSupportFragmentManager());
 
         // Set up action bar.
        // final android.app.ActionBar actionBar = getActionBar();
@@ -243,8 +235,8 @@ public class coinBlockIntroActivity extends FragmentActivity
        // actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Set up the ViewPager, attaching the adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mDemoCollectionPagerAdapter);
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mViewPager.setAdapter(new TextPagerAdapter(this));
         	
 		//setContentView(R.layout.states); 
 		
@@ -327,13 +319,13 @@ public class coinBlockIntroActivity extends FragmentActivity
 	
 	*/
 	
-	
+	/*
 	 public static class DemoCollectionPagerAdapter extends FragmentStatePagerAdapter {
 
 	        public DemoCollectionPagerAdapter(FragmentManager fm) {
 	            super(fm);
 	        }
-	/*
+	
 	        @Override
 	        public Fragment getItem(int i) {
 	            Fragment fragment = new DemoObjectFragment();
@@ -343,7 +335,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	            return fragment;
 	        }
 	        
-	        */
+	        
 	        
 	        @Override
 	        public Fragment getItem(int i) {
@@ -361,7 +353,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	                    Bundle args = new Bundle();
 	                    args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
 	                    fragment.setArguments(args);
-	                    */
+	                    
 	                	
 	                    return new fTab2();
 	            }
@@ -378,13 +370,114 @@ public class coinBlockIntroActivity extends FragmentActivity
 	            //return "OBJECT " + (position + 1);
 	            if (position == 0)
 	            	return "STATES";
+	            
 	            else
 	            	return "PROFILE";
 	            
 	            
 	        }
+	        
+	        
+	        
+	      
 	    }
+	 
+	 */
 	
+	 
+	 private static class TextPagerAdapter extends ViewTitlePagerAdapter {
+
+	        int[] mImages = {
+	                R.drawable.banana,
+	                R.drawable.heart,
+	                
+	        };
+
+	        Context mContext;
+
+	        public TextPagerAdapter(Context context) {
+	            mContext = context;
+	        }
+
+	        @Override
+	        public int getCount() {
+	            return mImages.length;
+	        }
+
+	        @Override
+	        public boolean isViewFromObject(View view, Object object) {
+	            return view == ((View) object);
+	        }
+
+	        @Override
+	        public Object instantiateItem(ViewGroup container, int position) {
+	        	
+	        	
+	          
+	            switch (position) {
+                case 0:
+                	LinearLayout tv = (LinearLayout) View.inflate(mContext, R.layout.states, null);
+    	            //tv.setText(Integer.toString(position));
+    	            ((ViewPager) container).addView(tv);
+    	            return tv;
+
+                default:
+                	LinearLayout tv2 = (LinearLayout) View.inflate(mContext, R.layout.device_condition, null);
+    	            //tv.setText(Integer.toString(position));
+    	            ((ViewPager) container).addView(tv2);
+    	            return tv2;
+            }
+	        	
+	        	
+	        	 
+	        }
+	        
+	        /*
+	        public Fragment getItem(int i) {
+	            switch (i) {
+	                case 0:
+	                    // The first section of the app is the most interesting -- it offers
+	                    // a launchpad into the other demonstrations in this example application.
+	                	//Fragment fragment = new fTab1();
+	                    return new fTab1();
+
+	                default:
+	                	
+	                    return new fTab2();
+	            }
+	        }
+
+*/
+	        
+
+	        @Override
+	        public void destroyItem(ViewGroup container, int position, Object object) {
+	            ((ViewPager) container).removeView((View) object);
+	        }
+
+	        @Override
+	        public View getPageTitleView(int position) {
+	        	
+	        	switch (position) {
+                case 0:
+                	TextView tv = (TextView) View.inflate(mContext, R.layout.view_title, null);
+    	            tv.setText("YOUR DEVICE'S");
+    	            tv.setCompoundDrawablesWithIntrinsicBounds(
+    	                    null, mContext.getResources().getDrawable(mImages[position]), null, null);
+    	            return tv;
+
+                default:
+                	TextView tv2 = (TextView) View.inflate(mContext, R.layout.view_title, null);
+    	            tv2.setText("DEVICE CONDITION");
+    	            tv2.setCompoundDrawablesWithIntrinsicBounds(
+    	                    null, mContext.getResources().getDrawable(mImages[position]), null, null);
+    	            return tv2;
+            }
+	        	
+	        	
+	         
+	        }
+	    }
 	
 	
 	public void onClick(View v)
@@ -501,6 +594,9 @@ public class coinBlockIntroActivity extends FragmentActivity
 			break;
 			
 			
+
+			/*
+			
 		case R.id.btn_start: 
 			
 			
@@ -517,7 +613,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 				taskTimer1.isCanceled = false;
 
 			
-			/*
 				//taskTimer1.isCanceled = false;
 			
 				TaskTimer taskTimer2 = new TaskTimer();
@@ -525,15 +620,14 @@ public class coinBlockIntroActivity extends FragmentActivity
 		        taskTimer2.setTime(0);
 		        taskTimer2.execute("");
 			
-				*/
-		
-			/*
+				
+			
 				TaskTimer taskTimer1 = new TaskTimer();
 				taskTimer1.setTextView1(R.id.time0);
 		        //taskTimer1.setTime(0);
 		        taskTimer1.execute(""); 
 		
-			*/
+			
 			
 			break;
 			
@@ -577,7 +671,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 			break;
 
 		
-	        
+	        */
 			
 		}
 	}

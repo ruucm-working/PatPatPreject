@@ -15,8 +15,8 @@ public class fTab1 extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
         	View v = inflater.inflate(R.layout.states, container, false);
-            View tv = v.findViewById(R.id.text02);
-            ((TextView) tv).setText("coolkim.tistory.com");
-            return v;
+            //View tv = v.findViewById(R.id.text02);
+            //((TextView) tv).setText("coolkim.tistory.com");
+            return v; 
         }
     }
