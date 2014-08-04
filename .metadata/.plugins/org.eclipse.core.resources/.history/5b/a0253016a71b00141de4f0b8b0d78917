@@ -427,19 +427,11 @@ public class Setting extends Activity {
 
 		switch(v.getId()){    	
 
-		case R.id.ok:    
-			
-			/*
+		case R.id.ok:    		
 			Intent intent = new Intent();    		
 			setResult(RESULT_OK,intent)	;
 			Log.d(TAG,"setOK");
 
-
-*/
-			Intent intent = new Intent(this, TabNavigationCollapsed.class);        	
-			startActivity(intent);
-			
-			
 			mPref.Ready();
 
 			TextView txtname1 = (TextView)findViewById(R.id.input01);
@@ -503,15 +495,8 @@ public class Setting extends Activity {
 			break;
 
 		case R.id.cancled:
-			/*
 			setResult(RESULT_CANCELED);
-			
-			
-			
-			finish();*/
-			
-			Intent intent2 = new Intent(this, TabNavigationCollapsed.class);        	
-			startActivity(intent2);
+			finish();
 			break;
 
 		case R.id.reset3:

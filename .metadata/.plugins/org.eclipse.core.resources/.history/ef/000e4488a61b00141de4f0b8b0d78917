@@ -19,7 +19,6 @@ import com.exam.TextPref;
 import com.exam.R.id;
 import com.exam.R.layout;
 import com.exam.R.string;
-import com.exam.view.CoinBlockView;
 import com.facebook.LoggingBehavior;
 import com.facebook.Request;
 import com.facebook.Response;
@@ -27,7 +26,6 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.Settings;
 import com.facebook.model.GraphUser;
-
 
 
 
@@ -68,7 +66,7 @@ public class coinBlockLoginActivity extends Activity
     public static TextPref mPref;	
   	public static TextPref fbPref;	
   	
-  	boolean setDialogOn ;
+  	boolean DialogOn ;
   	
   
  
@@ -129,7 +127,7 @@ public class coinBlockLoginActivity extends Activity
         
 		
       		
-      		setDialogOn = mPref.ReadBoolean("setdialogon", true);
+      		DialogOn = mPref.ReadBoolean("dialogon", true);
       		
       		userId = fbPref.ReadString("userId", "");
       		userFirstName = fbPref.ReadString("userFirstName", "");
@@ -271,36 +269,12 @@ public class coinBlockLoginActivity extends Activity
 	        
 	        private void toIntro() {
 
-	        	        	
+	        	Intent intent = new Intent(this, TabNavigationCollapsed.class);
+	            //intent.putExtra("userId", userId);
+	            //intent.putExtra("userFirstName", userFirstName);
+	            //intent.putExtra("userLastName", userLastName);
+				startActivity(intent);
 	        	
-				
-				if(setDialogOn){					
-					
-					Intent intent = new Intent(this, Setting.class);	 
-		        	
-					startActivity(intent);
-
-					
-		        	//for one-time showing dialog										
-					setDialogOn = false;		        	
-					mPref.Ready();
-					mPref.WriteBoolean("setdialogon", setDialogOn);
-					mPref.CommitWrite();
-					
-					
-				}
-				else{
-					Intent intent = new Intent(this, TabNavigationCollapsed.class);
-					startActivity(intent);		        	
-				}
-				
-	        	
-	        	
-	        	
-	        
-				
-				
-				
 	        }
 	        
 	 

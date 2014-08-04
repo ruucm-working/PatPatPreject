@@ -510,8 +510,8 @@ public class Setting extends Activity {
 			
 			finish();*/
 			
-			Intent intent2 = new Intent(this, TabNavigationCollapsed.class);        	
-			startActivity(intent2);
+			Intent intent = new Intent(this, TabNavigationCollapsed.class);        	
+			startActivity(intent);
 			break;
 
 		case R.id.reset3:

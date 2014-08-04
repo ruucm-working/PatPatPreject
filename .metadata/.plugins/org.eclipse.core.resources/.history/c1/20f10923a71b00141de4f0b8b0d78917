@@ -503,15 +503,8 @@ public class Setting extends Activity {
 			break;
 
 		case R.id.cancled:
-			/*
 			setResult(RESULT_CANCELED);
-			
-			
-			
-			finish();*/
-			
-			Intent intent2 = new Intent(this, TabNavigationCollapsed.class);        	
-			startActivity(intent2);
+			finish();
 			break;
 
 		case R.id.reset3:

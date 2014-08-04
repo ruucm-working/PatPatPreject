@@ -271,33 +271,40 @@ public class coinBlockLoginActivity extends Activity
 	        
 	        private void toIntro() {
 
-	        	        	
+	        	
+	        	
 	        	
 				
-				if(setDialogOn){					
+				if(setDialogOn){
 					
-					Intent intent = new Intent(this, Setting.class);	 
+					
+					Intent intent = new Intent(this, Setting.class);	   
 		        	
 					startActivity(intent);
-
 					
-		        	//for one-time showing dialog										
-					setDialogOn = false;		        	
-					mPref.Ready();
-					mPref.WriteBoolean("setdialogon", setDialogOn);
-					mPref.CommitWrite();
-					
-					
-				}
-				else{
-					Intent intent = new Intent(this, TabNavigationCollapsed.class);
-					startActivity(intent);		        	
 				}
 				
 	        	
 	        	
 	        	
-	        
+	        	Intent intent = new Intent(this, TabNavigationCollapsed.class);
+	            //intent.putExtra("userId", userId);
+	            //intent.putExtra("userFirstName", userFirstName);
+	            //intent.putExtra("userLastName", userLastName);
+	        	
+	        	
+	        	
+	        	
+				startActivity(intent);
+	        	
+				
+				
+				setDialogOn = false;
+
+	        	
+				mPref.Ready();
+				mPref.WriteBoolean("setdialogon", setDialogOn);
+				mPref.CommitWrite();
 				
 				
 				

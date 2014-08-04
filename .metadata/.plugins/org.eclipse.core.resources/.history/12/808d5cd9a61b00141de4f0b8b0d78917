@@ -281,8 +281,10 @@ public class coinBlockLoginActivity extends Activity
 					startActivity(intent);
 
 					
-		        	//for one-time showing dialog										
-					setDialogOn = false;		        	
+		        											
+					setDialogOn = false;
+
+		        	
 					mPref.Ready();
 					mPref.WriteBoolean("setdialogon", setDialogOn);
 					mPref.CommitWrite();
@@ -291,7 +293,9 @@ public class coinBlockLoginActivity extends Activity
 				}
 				else{
 					Intent intent = new Intent(this, TabNavigationCollapsed.class);
-					startActivity(intent);		        	
+					startActivity(intent);
+		          
+		        	
 				}
 				
 	        	
