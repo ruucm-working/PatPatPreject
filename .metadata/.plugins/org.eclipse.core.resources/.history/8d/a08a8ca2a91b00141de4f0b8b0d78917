@@ -610,7 +610,12 @@ public class Setting extends Activity {
 						finish();
 					}
 					
-				
+					public void onClick(DialogInterface dialog, int which)
+				    {
+				      Intent intent = new Intent(Bus.this, Timetest.class);
+				      intent.putExtra("go", item);
+				      startActivity(intent);
+				    }
 					
 				}).setNegativeButton("No",
 						new DialogInterface.OnClickListener() {
