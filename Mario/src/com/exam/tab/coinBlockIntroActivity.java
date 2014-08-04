@@ -222,6 +222,8 @@ public class coinBlockIntroActivity extends FragmentActivity
         @Override
         public Fragment getItem(int position) {
             //return TestFragment.newInstance(CONTENT[position % CONTENT.length]);
+        	
+        	
         	switch (position) {
             case 0:              
                 return new fTab1();
@@ -229,11 +231,13 @@ public class coinBlockIntroActivity extends FragmentActivity
             default:              
                 return new fTab2();
         }
+        
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return CONTENT[position % CONTENT.length].toUpperCase();
+           // return CONTENT[position % CONTENT.length].toUpperCase();
+        	return null;
         }
 
         @Override public int getIconResId(int index) {
