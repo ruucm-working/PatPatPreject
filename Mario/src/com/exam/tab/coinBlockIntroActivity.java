@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,12 +17,10 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewTitlePagerAdapter;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,6 +29,8 @@ import android.widget.TextView;
 import com.exam.R;
 import com.exam.TextPref;
 import com.facebook.widget.ProfilePictureView;
+import com.viewpagerindicator.IconPagerAdapter;
+import com.viewpagerindicator.TabPageIndicator;
 
 
 public class coinBlockIntroActivity extends FragmentActivity
@@ -42,16 +41,27 @@ public class coinBlockIntroActivity extends FragmentActivity
 	
 	//add Actionbar
 	
-	private TextView mSelected;
-    
+	private TextView mSelected;    
 	static int bLevel;
+	
+	
     
   
 	
 	//add tap x viewpager
 	//DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
-	ViewPager mViewPager;
+	ViewPager pager;
 
+	
+	private static final String[] CONTENT = new String[] { "device condition", "device state"};
+    private static final int[] ICONS = new int[] {
+            R.drawable.perm_group_banana,
+            R.drawable.perm_group_heart,
+            
+    };
+	
+	
+	
 	
 	
 	//액티비티간 통신을 위한
@@ -135,7 +145,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 		
 		//setContentView(R.layout.main);
 		
-		 setContentView(R.layout.main);
+		 setContentView(R.layout.simple_tabs);
 
 		
 		
@@ -184,130 +194,59 @@ public class coinBlockIntroActivity extends FragmentActivity
 		lv1 = mPref.ReadBoolean("lv1state", false);
 		lv2 = mPref.ReadBoolean("lv2state", false);
 		
-		//boolean lv0state = mPref.ReadBoolean("lv0state", false);
-		/*
-		
-		final android.app.ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
- 
-        actionBar.addTab(actionBar
-                .newTab()
-                .setText("Tab1")
-                .setTabListener(
-                        new TabListener<FragmentTab1>(this, "tab1",
-                                FragmentTab1.class)));
-        actionBar.addTab(actionBar
-                .newTab()
-                .setText("Tab2")
-                .setTabListener(
-                        new TabListener<FragmentTab2>(this, "tab3",
-                                FragmentTab2.class)));
-        actionBar.addTab(actionBar
-                .newTab()
-                .setText("Tab3")
-                .setTabListener(
-                        new TabListener<FragmentTab3>(this, "tab3",
-                                FragmentTab3.class)));
- 
-        if (savedInstanceState != null) {
-            actionBar.setSelectedNavigationItem(savedInstanceState.getInt(
-                    "selectedTab", 0));
-        }
-		
-        */
-        
 	
-		
-        
-       
-        // Create an adapter that when requested, will return a fragment representing an object in
-        // the collection.
-        // 
-        // ViewPager and its adapters use support library fragments, so we must use
-        // getSupportFragmentManager.
-        //mDemoCollectionPagerAdapter = new DemoCollectionPagerAdapter(getSupportFragmentManager());
-
-        // Set up action bar.
-       // final android.app.ActionBar actionBar = getActionBar();
-
-        // Specify that the Home button should show an "Up" caret, indicating that touching the
-        // button will take the user one step up in the application's hierarchy.
-       // actionBar.setDisplayHomeAsUpEnabled(true);
-
-        // Set up the ViewPager, attaching the adapter.
-        mViewPager = (ViewPager) findViewById(R.id.view_pager);
-        mViewPager.setAdapter(new TextPagerAdapter(this));
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(new GoogleMusicAdapter(getSupportFragmentManager()));
         	
-		//setContentView(R.layout.states); 
-		
+        
+        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
+        indicator.setViewPager(pager);
 	
-        
-        
-        
-        //styled
-        
-
-		
-		
-	/*
-		
-  		
-		welcome = (TextView)findViewById(R.id.welcome);		
-		welcome.setText(userFirstName+" "+userLastName+" 님 환영합니다 위젯을 시작하려면 Set-up 버튼을 누르세요");
-		
-		
-		
-		//UpdateIntroView();
-			
-			
-		
-    	
-    	profilePic = (ProfilePictureView)findViewById(R.id.profilepic);
-    	
-    	
-    	
-    //	profilePic.setCropped(true);
-    	profilePic.setPresetSize(ProfilePictureView.LARGE);
-    	
-    	profilePic.setProfileId(userId);
-    	
-    	
-    	*/
-  
-    	
-    	
-    	/*
-    	mSelected = (TextView)findViewById(R.id.text02);
-
-        getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        for (int i = 1; i <= 2; i++) {
-            ActionBar.Tab tab = getSupportActionBar().newTab();
-            //tab.setText("Tab " + i);
-            tab.setTabListener(this);
-            if(i==1){
-            	tab.setText("STATATES");
-            }
-            if(i==2){
-            	tab.setText("PROFILE");
-            	tab.setContentDescription(R.layout.profile);
-            }
-            getSupportActionBar().addTab(tab);
-        } 
-         
-        */
-    	
 	
   		
   		
   		fbPref.EndReady();
-  		
-  		
-  		Log.d("coinBlockIntroActivity","EndReady");
-  		
-  		
+
         
         
 	} 
+	
+	
+	
+	
+	class GoogleMusicAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
+        public GoogleMusicAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            //return TestFragment.newInstance(CONTENT[position % CONTENT.length]);
+        	switch (position) {
+            case 0:              
+                return new fTab1();
+
+            default:              
+                return new fTab2();
+        }
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return CONTENT[position % CONTENT.length].toUpperCase();
+        }
+
+        @Override public int getIconResId(int index) {
+          return ICONS[index];
+        }
+
+      @Override
+        public int getCount() {
+          return CONTENT.length;
+        }
+    }
+	
+	
 	
 	/*
 	 @Override
@@ -384,7 +323,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	 
 	 */
 	
-	 
+	 /*
 	 private static class TextPagerAdapter extends ViewTitlePagerAdapter {
 
 	        int[] mImages = {
@@ -432,22 +371,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	        	 
 	        }
 	        
-	        /*
-	        public Fragment getItem(int i) {
-	            switch (i) {
-	                case 0:
-	                    // The first section of the app is the most interesting -- it offers
-	                    // a launchpad into the other demonstrations in this example application.
-	                	//Fragment fragment = new fTab1();
-	                    return new fTab1();
 
-	                default:
-	                	
-	                    return new fTab2();
-	            }
-	        }
-
-*/
 	        
 
 	        @Override
@@ -478,7 +402,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	         
 	        }
 	    }
-	
+	*/
 	
 	public void onClick(View v)
 	{

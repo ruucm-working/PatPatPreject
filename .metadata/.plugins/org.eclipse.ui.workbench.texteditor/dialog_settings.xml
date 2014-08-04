@@ -13,18 +13,19 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="get" key="selection"/>
+		<item value="Indicator" key="selection"/>
 		<list key="findhistory">
+			<item value="indicator"/>
+			<item value="set"/>
+			<item value="setlayout"/>
+			<item value="setlay"/>
+			<item value="ICONS"/>
+			<item value="adapt"/>
 			<item value="get"/>
-			<item value="android:theme=&quot;@android:style/Theme.NoTitleBar&quot;"/>
-			<item value="holo"/>
-			<item value="actionbar"/>
-			<item value="action"/>
-			<item value="setcontent"/>
-			<item value="them"/>
-			<item value="setconten"/>
+			<item value="background"/>
 		</list>
 		<list key="replacehistory">
+			<item value="pager"/>
 			<item value="android:theme=&quot;@android:style/Theme.Holo.Light.NoActionBar&quot;"/>
 			<item value="itnum"/>
 			<item value="i"/>
@@ -32,7 +33,6 @@
 			<item value="&quot;GalleryImageAdapter&quot;"/>
 			<item value="GalleryImageAdapter"/>
 			<item value="&quot;1&quot;"/>
-			<item value="3"/>
 		</list>
 	</section>
 </section>
