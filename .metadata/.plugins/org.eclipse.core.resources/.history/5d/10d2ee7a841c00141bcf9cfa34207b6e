@@ -1,0 +1,31 @@
+package com.example.com.kmshack.test.animation;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
+public class ContentsActivity extends Activity {
+
+    @Override
+	public void finish() {
+    	this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
+		super.finish();
+	}
+
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+        
+        setContentView(R.layout.contents_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+    
+    
+    
+}

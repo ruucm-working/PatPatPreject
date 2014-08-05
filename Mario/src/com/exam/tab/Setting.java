@@ -96,6 +96,13 @@ public class Setting extends Activity {
 
 
 
+	
+	
+	@Override
+	public void finish() {
+		super.finish();
+		this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
+	}
 
 
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
@@ -109,7 +116,12 @@ public class Setting extends Activity {
 			.penaltyLog()
 			.build());
 		}		
-		super.onCreate(savedInstanceState);        
+		super.onCreate(savedInstanceState);     
+		
+		
+		
+		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+		
 		setContentView(R.layout.settingpage);             
 		Log.d(TAG, "setting view"); 
 

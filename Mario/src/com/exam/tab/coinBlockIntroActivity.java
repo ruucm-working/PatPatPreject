@@ -138,12 +138,22 @@ public class coinBlockIntroActivity extends FragmentActivity
     }
 	
 	
+	
+	
+	@Override
+	public void finish() {
+		super.finish();
+		this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
+	}
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		
 		//setContentView(R.layout.main);
+		
+		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 		
 		 setContentView(R.layout.simple_tabs);
 
