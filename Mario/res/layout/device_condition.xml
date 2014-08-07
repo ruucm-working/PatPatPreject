@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
    
             xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -42,23 +42,16 @@
 	        android:text="초기화" />
 	</LinearLayout>
 
-	
-	<LinearLayout
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	     >
-
-	 
-	   <TextView
+	<TextView
 	    android:id="@+id/welcome"
-	    android:layout_width="fill_parent"
+	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginBottom="42dp"
 	    android:text="This is a home-screen widget."
 	    android:textColor="#000"
 	    android:textSize="18dip"
 	    android:typeface="monospace" />
-	   
-	</LinearLayout>
 	
-	
-</LinearLayout>
+</RelativeLayout>

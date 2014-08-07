@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.exam.R;
@@ -82,7 +83,7 @@ public class coinBlockIntroActivity extends FragmentActivity
   	public static TextPref fbPref;
 	 
   	
-  	static boolean init = true;
+  	static boolean init ;
 	public static boolean lv0_1 = true;
 	static boolean lv0_2 = true;
 	public static boolean lv1 = true;
@@ -216,6 +217,9 @@ public class coinBlockIntroActivity extends FragmentActivity
   		
   		
   		fbPref.EndReady();
+  		
+  		
+  		
 
         
         
@@ -868,6 +872,8 @@ public class coinBlockIntroActivity extends FragmentActivity
     	
     			mPref.EndReady();
     			
+    			
+    			Log.d("coinBlockIntroActivity","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2);
     	    			
     	    			if (init){
     	    				
@@ -910,9 +916,11 @@ public class coinBlockIntroActivity extends FragmentActivity
     		 Log.d("coinBlockIntroActivity","updateview"+drawbleid+txt);
     		 
     			//set newstate's background img
-    			LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);			
+    		 	RelativeLayout a = (RelativeLayout)instance.findViewById(R.id.mainlinear);	
+    		 	Log.d("coinBlockIntroActivity","RelativeLayout " +a);
     			a.setBackgroundResource(drawbleid);
     			
+    			Log.d("coinBlockIntroActivity","setBackgroundResource "+drawbleid);
     			 
     			//set new state's text
     			TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
