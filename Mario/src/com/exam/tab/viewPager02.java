@@ -14,7 +14,7 @@ public class viewPager02 extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-        	View v = inflater.inflate(R.layout.device_condition, container, false);
+        	View v = inflater.inflate(R.layout.device_state, container, false);
            // View tv = v.findViewById(R.id.text03);
            // ((TextView) tv).setText("Hope is a good thing.");
             return v;

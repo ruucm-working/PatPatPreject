@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.exam.R;
 
-public class fTab2 extends Fragment {
+public class viewPager02 extends Fragment {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,

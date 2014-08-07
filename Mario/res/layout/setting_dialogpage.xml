@@ -3,37 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mid_box"
-    android:orientation="vertical" >
-		<ImageView
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true"
-	    android:src="@drawable/dialog02" />
-     
+     >
+
+	<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   
+    android:src="@drawable/dialog02" />
+
 	<LinearLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_centerInParent="true"
-	    android:layout_gravity="center_vertical"
-	    android:layout_marginBottom="30dp"
-	    android:layout_marginLeft="30dp"
-	    android:layout_marginTop="30dip" >
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginBottom="34dp"
+	    android:layout_marginRight="20dp" >
 
-        <Button
-        android:id="@+id/ok02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="mOnClick"
-        android:text="예 알겠습니다" />
-        <Button
-        android:id="@+id/cancled02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="mOnClick"
-        android:text="취소" />
-   	</LinearLayout>
+	    <Button
+	        android:id="@+id/ok02"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mOnClick"
+	        android:text="예 알겠습니다" />
 
-
+	    <Button
+	        android:id="@+id/cancled02"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mOnClick"
+	        android:text="취소" />
+	</LinearLayout>
 
 </RelativeLayout>

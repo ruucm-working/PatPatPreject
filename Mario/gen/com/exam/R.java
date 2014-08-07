@@ -1578,7 +1578,7 @@ containing a value of this type.
         public static final int abs__up=0x7f070012;
         public static final int block=0x7f07003a;
         public static final int bottom=0x7f070003;
-        public static final int btnGetWallpaper=0x7f070057;
+        public static final int btnGetWallpaper=0x7f07005a;
         public static final int buttonLoginLogout1=0x7f07005b;
         public static final int cancled=0x7f07007d;
         public static final int cancled02=0x7f07005d;
@@ -1647,22 +1647,22 @@ containing a value of this type.
         public static final int ok02=0x7f07005c;
         public static final int pager=0x7f07007f;
         public static final int picker_subtitle=0x7f07004a;
-        public static final int reset1=0x7f07005a;
+        public static final int reset1=0x7f070058;
         public static final int reset3=0x7f07006d;
         public static final int reset4=0x7f07005f;
-        public static final int setbutton=0x7f070059;
+        public static final int setbutton=0x7f070057;
         public static final int showCustom=0x7f07000f;
         public static final int showHome=0x7f07000c;
         public static final int showTitle=0x7f07000e;
         public static final int small=0x7f070005;
         public static final int tabMode=0x7f07000a;
         public static final int textView1=0x7f07005e;
-        public static final int time0=0x7f070058;
+        public static final int time0=0x7f070056;
         public static final int top=0x7f070004;
         public static final int triangle=0x7f070001;
         public static final int underline=0x7f070002;
         public static final int useLogo=0x7f07000b;
-        public static final int welcome=0x7f070056;
+        public static final int welcome=0x7f070059;
         public static final int widget=0x7f070039;
         public static final int wrap_content=0x7f070008;
     }
@@ -1713,7 +1713,7 @@ containing a value of this type.
         public static final int com_facebook_tooltip_bubble=0x7f030023;
         public static final int com_facebook_usersettingsfragment=0x7f030024;
         public static final int device_condition=0x7f030025;
-        public static final int device_states=0x7f030026;
+        public static final int device_state=0x7f030026;
         public static final int global_config=0x7f030027;
         public static final int login=0x7f030028;
         public static final int setting_dialogpage=0x7f030029;

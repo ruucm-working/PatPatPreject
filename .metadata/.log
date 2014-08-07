@@ -13157,3 +13157,45 @@ java.util.ConcurrentModificationException
 	at com.android.ide.eclipse.adt.internal.sdk.Sdk.haveTargetsChanged(Sdk.java:410)
 	at com.android.ide.eclipse.adt.AdtPlugin$12.run(AdtPlugin.java:1846)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-08-07 16:19:45.227
+!MESSAGE An internal error occurred during: "Check Android SDK".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator.next(AbstractMapBasedMultimap.java:486)
+	at com.android.sdklib.repository.local.LocalSdk.hasChanged(LocalSdk.java:296)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:136)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:124)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk.haveTargetsChanged(Sdk.java:410)
+	at com.android.ide.eclipse.adt.AdtPlugin$12.run(AdtPlugin.java:1846)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-08-07 16:20:01.769
+!MESSAGE An internal error occurred during: "Check Android SDK".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator.next(AbstractMapBasedMultimap.java:486)
+	at com.android.sdklib.repository.local.LocalSdk.hasChanged(LocalSdk.java:296)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:136)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:124)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk.haveTargetsChanged(Sdk.java:410)
+	at com.android.ide.eclipse.adt.AdtPlugin$12.run(AdtPlugin.java:1846)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-08-07 16:21:24.807
+!MESSAGE An internal error occurred during: "Check Android SDK".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator.next(AbstractMapBasedMultimap.java:486)
+	at com.android.sdklib.repository.local.LocalSdk.hasChanged(LocalSdk.java:296)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:136)
+	at com.android.sdklib.SdkManager.hasChanged(SdkManager.java:124)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk.haveTargetsChanged(Sdk.java:410)
+	at com.android.ide.eclipse.adt.AdtPlugin$12.run(AdtPlugin.java:1846)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

@@ -14,7 +14,7 @@ public class viewPager01 extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-        	View v = inflater.inflate(R.layout.device_states, container, false);
+        	View v = inflater.inflate(R.layout.device_condition, container, false);
             //View tv = v.findViewById(R.id.text02);
             //((TextView) tv).setText("coolkim.tistory.com");
             return v; 
