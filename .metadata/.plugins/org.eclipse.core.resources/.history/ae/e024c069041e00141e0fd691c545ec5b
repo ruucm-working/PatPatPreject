@@ -44,17 +44,17 @@
 	        android:onClick="mOnClick"
 	        android:text="초기화" />
 	</LinearLayout>
-
+	
 	<TextView
-	    android:id="@+id/welcome"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginLeft="120dip"
-	    android:layout_marginTop="70dip"
-	    android:paddingRight="10dip"
-	    android:text="This is a home-screen widget."
-	    android:textColor="#000"
-	    android:textSize="18dip"
-	    android:typeface="monospace" />
+        android:id="@+id/welcome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dip"
+        android:layout_marginTop="70dip"
+        android:paddingRight="10dip"
+        android:text="This is a home-screen widget."
+        android:textColor="#000"
+        android:textSize="18dip"
+        android:typeface="monospace" />
 	
 </LinearLayout>
