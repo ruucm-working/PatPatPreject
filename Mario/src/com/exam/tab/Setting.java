@@ -500,7 +500,13 @@ public class Setting extends Activity {
 
 
 			if (preinit){
-				DialogSimple();
+				//DialogSimple();
+				
+				
+				
+				Intent intent = new Intent(this, Setting_dialog.class);
+				startActivity(intent); 
+				
 				preinit = false ;
 				init = true;
 				mPref.Ready();
@@ -640,4 +646,9 @@ public class Setting extends Activity {
 		alert.setIcon(R.drawable.icon);
 		alert.show();
 	}
+	
+	
+
+	
+	
 }

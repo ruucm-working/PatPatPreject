@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+     android:background="@drawable/mid_box">
+
+  
+    
+    
+    <LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	     >
+	  <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="top"
+	        android:src="@drawable/dialog02" />
+	    
+	    <ImageView
+	             android:id="@+id/reset4"
+	             android:layout_width="28dip"
+	             android:layout_height="28dip"
+	             android:layout_alignParentTop="true"
+	             android:layout_marginLeft="8dp"
+	             android:layout_toRightOf="@+id/textView1"
+	             android:adjustViewBounds="true"
+	             android:clickable="true" 
+	             android:onClick="mOnClick"
+	             android:src="@drawable/reset_large" />
+   	</LinearLayout>
+     
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_gravity="bottom"
+	    android:layout_marginBottom="30dp"
+	    android:layout_marginLeft="30dp"
+	    android:layout_marginTop="30dip" >
+
+        <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClick"
+        android:text="예 알겠습니다" />
+        <Button
+        android:id="@+id/cancled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClick"
+        android:text="취소" />
+   	</LinearLayout>
+    
+    
+
+</ScrollView>

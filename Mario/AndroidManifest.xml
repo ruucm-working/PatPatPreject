@@ -91,6 +91,21 @@
            
            
         </activity>
+        
+        
+        
+        <activity
+            android:name="com.exam.tab.Setting"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        <activity
+            android:name="com.exam.tab.Setting_dialog"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        
+        
+        
+        
 
         <receiver android:name="coinBlockWidgetProvider" >
             <intent-filter>
@@ -138,10 +153,6 @@
         </service>
            
 
-        <activity
-            android:name="com.exam.tab.Setting"
-            android:label="Setting"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
         
         
         
