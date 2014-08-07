@@ -236,10 +236,10 @@ public class coinBlockIntroActivity extends FragmentActivity
         	
         	switch (position) {
             case 0:              
-                return new fTab1();
+                return new viewPager01();
 
             default:              
-                return new fTab2();
+                return new viewPager02();
         }
         
         }
