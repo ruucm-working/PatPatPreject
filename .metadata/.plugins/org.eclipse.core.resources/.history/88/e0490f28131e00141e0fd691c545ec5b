@@ -226,16 +226,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 	} 
 	
 	
-	/*
-	
-	public void onResume(){
-		
-		UpdateIntroView();
-		
-		
-	}
-	
-	*/
 	
 	
 	class GoogleMusicAdapter extends FragmentPagerAdapter implements IconPagerAdapter {

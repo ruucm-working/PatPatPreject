@@ -226,7 +226,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	} 
 	
 	
-	/*
+	
 	
 	public void onResume(){
 		
@@ -234,8 +234,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 		
 		
 	}
-	
-	*/
 	
 	
 	class GoogleMusicAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
