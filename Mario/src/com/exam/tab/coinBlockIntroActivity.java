@@ -220,6 +220,8 @@ public class coinBlockIntroActivity extends FragmentActivity
   		
   		
   		
+  		
+  		//coinBlockIntroActivity.UpdateIntroView();
 
         
         
@@ -251,10 +253,14 @@ public class coinBlockIntroActivity extends FragmentActivity
         	switch (position) {
             case 0:              
                 return new viewPager01();
+                
 
             default:              
                 return new viewPager02();
         }
+        	
+        	
+        	
         
         }
 
@@ -854,7 +860,7 @@ public class coinBlockIntroActivity extends FragmentActivity
     	    }
     	 
     	 
-    	 
+    	 /*
     	 public static void UpdateIntroView() {
     	    		
     		 
@@ -886,7 +892,7 @@ public class coinBlockIntroActivity extends FragmentActivity
     			Log.d("coinBlockIntroActivity","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2);
     	    			
     	    			if (init){ 
-    	    				
+    	    				 
     	    				
     	    				updateview(R.drawable.background,"init 임 ㅇㅇ", false);
     	    				
@@ -946,6 +952,8 @@ public class coinBlockIntroActivity extends FragmentActivity
     			
     		 
     	 }
+    	 
+    	 */
     	 
     	 
     

@@ -238,11 +238,11 @@ public class CoinBlockView {
 		
 		instance = this;
 		
-		coinBlockIntroActivity.UpdateIntroView();
+		//coinBlockIntroActivity.UpdateIntroView();
 		
 		Log.d("CoinBlockView","coinBlockIntroActivity +   coinBlockIntroActivity.class ");
 
-
+ 
 
 
 	}
