@@ -152,7 +152,7 @@ public class InitState implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			
 			
-			viewContext.setState(new InitWaitState(viewContext));
+			//viewContext.setState(new InitWaitState(viewContext));
 			viewContext.removeAnimatable(initclAnim);
 			
 			initclAnim = new InitClickAnim();			

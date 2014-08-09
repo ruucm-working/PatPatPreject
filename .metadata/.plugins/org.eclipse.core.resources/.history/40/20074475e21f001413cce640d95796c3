@@ -370,7 +370,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 						 */
 					}
 				}
-			}, 5000);
+			}, 3000);
 		} 
 
 		public void OnClick(CoinBlockView viewContext) {
