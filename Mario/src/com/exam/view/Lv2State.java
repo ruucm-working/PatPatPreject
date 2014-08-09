@@ -297,7 +297,7 @@ public class Lv2State implements ICoinBlockViewState {
 
 		public Lv2WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
-
+/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
 					if (mViewContext.getState().getClass() == Lv2WaitState.class)
@@ -310,7 +310,7 @@ public class Lv2State implements ICoinBlockViewState {
 						//mViewContext.scheduleRedraw();
 					}
 				}
-			}, 3000);
+			}, 3000);*/
 		}
 
 		public void OnClick(CoinBlockView viewContext) {

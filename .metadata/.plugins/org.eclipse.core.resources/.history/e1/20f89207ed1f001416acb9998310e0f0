@@ -128,13 +128,13 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			int id = intent.getIntExtra("widgetId10", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
 
-			Log.i("coinBlockWidgetProvider","provider - onenvolve");
+			Log.d("tag2","provider - onenvolve");
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_INIT_FORMAT")){ 
 			int id = intent.getIntExtra("widgetId11", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnInit();
 
-			Log.i("coinBlockWidgetProvider","provider - init");
+			Log.d("tag2","provider - onenvolve");
 		}
 
 		// Custom Recevier
