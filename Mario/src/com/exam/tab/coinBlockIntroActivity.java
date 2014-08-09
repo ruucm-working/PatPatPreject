@@ -885,10 +885,10 @@ public class coinBlockIntroActivity extends FragmentActivity
     			
     			Log.d("coinBlockIntroActivity","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2);
     	    			
-    	    			if (init){
+    	    			if (init){ 
     	    				
     	    				
-    	    				updateview(R.drawable.background,"init 임 ㅇㅇ", true);
+    	    				updateview(R.drawable.background,"init 임 ㅇㅇ", false);
     	    				
     	    			}
     	    			else if (lv0_1){

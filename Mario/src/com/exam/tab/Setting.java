@@ -536,7 +536,7 @@ public class Setting extends Activity {
 			
 			finish();*/
 			
-			Intent intent2 = new Intent(this, TabNavigationCollapsed.class);        	
+			Intent intent2 = new Intent(this, coinBlockIntroActivity.class);        	
 			startActivity(intent2);
 			break;
 
@@ -622,7 +622,7 @@ public class Setting extends Activity {
 					public void onClick(DialogInterface dialog, int id) {
 						// Action for 'Yes' Button
 						
-						Intent intent = new Intent(Setting.this, TabNavigationCollapsed.class);        	
+						Intent intent = new Intent(Setting.this, coinBlockIntroActivity.class);        	
 						startActivity(intent);
 						
 						finish();

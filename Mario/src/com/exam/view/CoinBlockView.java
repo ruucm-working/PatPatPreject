@@ -234,11 +234,13 @@ public class CoinBlockView {
 		thread2.onStart();
 		
 		
-
+ 
 		
 		instance = this;
 		
 		coinBlockIntroActivity.UpdateIntroView();
+		
+		Log.d("CoinBlockView","coinBlockIntroActivity +   coinBlockIntroActivity.class ");
 
 
 

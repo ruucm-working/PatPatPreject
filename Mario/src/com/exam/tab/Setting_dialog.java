@@ -55,7 +55,7 @@ public class Setting_dialog extends Activity {
 
 		case R.id.ok02:    
 			
-			Intent intent = new Intent(this, TabNavigationCollapsed.class);
+			Intent intent = new Intent(this, coinBlockIntroActivity.class);
 			startActivity(intent); 
 
 		
@@ -90,7 +90,7 @@ public class Setting_dialog extends Activity {
 					public void onClick(DialogInterface dialog, int id) {
 						// Action for 'Yes' Button
 						
-						Intent intent = new Intent(Setting_dialog.this, TabNavigationCollapsed.class);        	
+						Intent intent = new Intent(Setting_dialog.this, coinBlockIntroActivity.class);        	
 						startActivity(intent);
 						
 						finish();

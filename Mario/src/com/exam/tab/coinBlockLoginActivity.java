@@ -290,7 +290,7 @@ public class coinBlockLoginActivity extends Activity
 					
 				}
 				else{
-					Intent intent = new Intent(this, TabNavigationCollapsed.class);
+					Intent intent = new Intent(this, coinBlockIntroActivity.class);
 					startActivity(intent);		        	
 				}
 				
