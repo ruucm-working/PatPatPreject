@@ -1,17 +1,17 @@
 package com.exam.tab;
 
-import android.app.*;
-import android.content.*;
-import android.os.*;
-import android.support.v4.app.*;
-import android.util.*;
-import android.widget.*;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import com.exam.R;
 import com.exam.TextPref;
-import com.exam.R.drawable;
-import com.exam.view.*;
-import com.facebook.widget.*;
 
 public class Service_Notify extends Service
 {

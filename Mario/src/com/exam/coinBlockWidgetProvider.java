@@ -14,14 +14,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.exam.helper.SnowWiFiMonitor;
-<<<<<<< HEAD
-import com.exam.view.CoinBlockView;
-=======
 import com.exam.tab.Service_BatteryGauge;
 import com.exam.tab.Service_Notify;
 import com.exam.tab.Service_SnowWiFiMonitor;
 import com.exam.tab.coinBlockIntroActivity;
->>>>>>> origin/addActionbar_2.0
+import com.exam.view.CoinBlockView;
+
 
 public class coinBlockWidgetProvider extends AppWidgetProvider {
 	
@@ -119,11 +117,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		if (intent.getAction().startsWith("com.gueei")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-<<<<<<< HEAD
-			Log.d("coinBlockWidgetProvider","click  "+id+" "+intent+" "+context);
-=======
 
->>>>>>> origin/addActionbar_2.0
 		}
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
 			int id = intent.getIntExtra("widgetId2", 0);

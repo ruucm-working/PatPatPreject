@@ -1,16 +1,21 @@
 package com.exam.tab;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
+import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.exam.R;
-import com.exam.R.drawable;
 
-import android.app.*;
-import android.appwidget.*;
-import android.content.*;
-import android.os.*;
-import android.support.v4.app.*;
-import android.util.*;
-import android.widget.*;
+
 
 public class Service_BatteryGauge extends Service {
 	

@@ -310,7 +310,7 @@ public class Lv2State implements ICoinBlockViewState {
 						//mViewContext.scheduleRedraw();
 					}
 				}
-			}, 5000);
+			}, 3000);
 		}
 
 		public void OnClick(CoinBlockView viewContext) {

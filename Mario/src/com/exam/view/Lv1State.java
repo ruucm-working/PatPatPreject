@@ -402,7 +402,7 @@ public class Lv1State implements ICoinBlockViewState {
 						//mViewContext.scheduleRedraw();
 					}
 				}
-			}, 5000);
+			}, 3000);
 		}
 
 		public void OnClick(CoinBlockView viewContext) {
@@ -447,9 +447,6 @@ public class Lv1State implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv2state", CoinBlockView.lv2);
 			CoinBlockView.mPref.CommitWrite();
 
-<<<<<<< HEAD
-			coinBlockIntroActivity.UpdateIntroView();
-=======
 
 			viewPager01.UpdateIntroView();
 
@@ -460,7 +457,6 @@ public class Lv1State implements ICoinBlockViewState {
 
 			//setContentView(R.drawable.background2, "레벨2s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ");
 
->>>>>>> origin/addActionbar_2.0
 		}
 
 		@Override

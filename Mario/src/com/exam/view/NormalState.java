@@ -16,7 +16,7 @@ class NormalState implements ICoinBlockViewState {
 
 	public void OnClick(CoinBlockView viewContext) {
 		long chance = System.currentTimeMillis() % 8;
-		if (chance < 3)
+		if (chance < 3) 
 			viewContext.setState(new MushroomState(viewContext));
 		else if (chance < 6)
 			viewContext.setState(new FlowerState(viewContext));

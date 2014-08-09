@@ -11,6 +11,7 @@ import com.exam.*;
 import com.exam.tab.coinBlockIntroActivity;
 import com.exam.tab.viewPager01;
 
+
 public class InitState implements ICoinBlockViewState {
 	
 	Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.brick_disabled);
@@ -151,11 +152,13 @@ public class InitState implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			
 			
-			
+			//viewContext.setState(new InitWaitState(viewContext));
 			viewContext.removeAnimatable(initclAnim);
 			
 			initclAnim = new InitClickAnim();			
 			viewContext.addAnimatable(initclAnim);
+			
+			
 			
 			
 			snd.seekTo(0);
