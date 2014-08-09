@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.exam"
-    android:versionCode="14"
-    android:versionName="1.65b" >
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="13"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -30,32 +30,36 @@
    
 
     <application
-        android:name="CoinBlockWidgetApp"
+        android:name="CoinBlockWidgetApp" 
         android:icon="@drawable/icon2"
         android:label="@string/app_name" >
         
         
         
         <activity
-            android:name=".coinBlockLoginActivity"
-            android:label="@string/app_name" >
+            android:name="com.exam.tab.coinBlockLoginActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />  
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             
-        
-
-                
-           
-           
         </activity>
         
+            
+    
+       
+        
         <activity
-            android:name=".coinBlockIntroActivity"
-            android:label="@string/app_name" >
+            android:name="com.exam.tab.coinBlockIntroActivity"
+            android:label="@string/app_name"             
+            android:theme="@style/StyledIndicators" 
+          
+           >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />               
+                <action android:name="android.intent.action.MAIN" />     
+                          
             </intent-filter>
             
             <intent-filter>
@@ -78,6 +82,21 @@
            
            
         </activity>
+        
+        
+        
+        <activity
+            android:name="com.exam.tab.Setting"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        <activity
+            android:name="com.exam.tab.Setting_dialog"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        
+        
+        
+        
 
         <receiver android:name="coinBlockWidgetProvider" >
             <intent-filter>
@@ -100,7 +119,7 @@
         
         
         <service
-            android:name="com.exam.Service_Notify"
+            android:name="com.exam.tab.Service_Notify"
             android:enabled="true">        
         </service>
         
@@ -111,13 +130,13 @@
         </service>
         
         
-        <service android:name=".Service_BatteryGauge" android:enabled="true">
+        <service android:name="com.exam.tab.Service_BatteryGauge" android:enabled="true">
         	<intent-filter>
         		<action android:name=".Service_BatteryGauge" />
         	</intent-filter>
         </service>
         
-        <service android:name=".Service_SnowWiFiMonitor" android:enabled="true">
+        <service android:name="com.exam.tab.Service_SnowWiFiMonitor" android:enabled="true">
             <intent-filter>
         		<action android:name=".Service_SnowWiFiMonitor" />
         	</intent-filter>
@@ -125,10 +144,6 @@
         </service>
            
 
-        <activity
-            android:name=".Setting"
-            android:label="Setting"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
         
         
         

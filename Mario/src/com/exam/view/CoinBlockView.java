@@ -12,6 +12,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.coinBlockIntroActivity;
 
 public class CoinBlockView {
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
@@ -106,7 +107,23 @@ public class CoinBlockView {
 		thread2 = new UpdateThread(mHandler2);
 		thread2.start();
 		thread2.onStart();
+<<<<<<< HEAD
 		instance = this;
+=======
+		
+		
+ 
+		
+		instance = this;
+		
+		//coinBlockIntroActivity.UpdateIntroView();
+		
+		Log.d("CoinBlockView","coinBlockIntroActivity +   coinBlockIntroActivity.class ");
+
+ 
+
+
+>>>>>>> origin/addActionbar_2.0
 	}
 
 	public static CoinBlockView getInstance() {

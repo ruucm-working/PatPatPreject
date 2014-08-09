@@ -8,6 +8,9 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.Setting;
+import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	// sprites
@@ -425,8 +428,17 @@ public class Lv0_1State implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);		
 			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);	
 			CoinBlockView.mPref.CommitWrite();
+<<<<<<< HEAD
 			coinBlockIntroActivity.UpdateIntroView();
 
+=======
+			
+			
+			viewPager01.UpdateIntroView();
+			
+			
+			
+>>>>>>> origin/addActionbar_2.0
 			Log.d("tag3","OnEvolve");
 		}
 

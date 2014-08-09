@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;info.androidhive.imageslider.helper&apos; to &apos;test_viewpagerxGallery03/src&apos;&#x0D;&#x0A;- Original project: &apos;GridViewxViewPager&apos;&#x0D;&#x0A;- Destination element: &apos;test_viewpagerxGallery03/src&apos;&#x0D;&#x0A;- Original element: &apos;GridViewxViewPager/src/info.androidhive.imageslider.helper&apos;" description="Copy package" destination="=test_viewpagerxGallery03/src" element1="/src&lt;info.androidhive.imageslider.helper" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1405636516163" version="1.0"/>
+</session>

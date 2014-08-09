@@ -8,6 +8,10 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.Setting;
+import com.exam.tab.TaskTimer;
+import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class Lv0_2State implements ICoinBlockViewState {
 	// sprites
@@ -421,7 +425,17 @@ public class Lv0_2State implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv1state", CoinBlockView.lv1);	
 			CoinBlockView.mPref.CommitWrite();
 
+<<<<<<< HEAD
 			coinBlockIntroActivity.UpdateIntroView();
+=======
+
+			viewPager01.UpdateIntroView();
+
+
+			//setContentView(R.drawable.background1, "레벨1임이제 ㅋㅋㅋㅋㅄ");
+
+
+>>>>>>> origin/addActionbar_2.0
 			Log.d("tag3","OnEvolve");
 		}
 

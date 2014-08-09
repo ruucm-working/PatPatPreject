@@ -8,6 +8,8 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class Lv1State implements ICoinBlockViewState {
 
@@ -445,7 +447,20 @@ public class Lv1State implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv2state", CoinBlockView.lv2);
 			CoinBlockView.mPref.CommitWrite();
 
+<<<<<<< HEAD
 			coinBlockIntroActivity.UpdateIntroView();
+=======
+
+			viewPager01.UpdateIntroView();
+
+
+			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
+
+
+
+			//setContentView(R.drawable.background2, "레벨2s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ");
+
+>>>>>>> origin/addActionbar_2.0
 		}
 
 		@Override

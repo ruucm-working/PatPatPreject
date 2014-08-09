@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="261" key="DIALOG_WIDTH"/>
-		<item value="181" key="DIALOG_Y_ORIGIN"/>
+		<item value="103" key="DIALOG_Y_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="1008" key="DIALOG_X_ORIGIN"/>
+		<item value="954" key="DIALOG_X_ORIGIN"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,22 +13,26 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Service_SnowWiFiMonitor" key="selection"/>
+		<item value="setContent" key="selection"/>
 		<list key="findhistory">
-			<item value="coinBlockWidgetProvider"/>
-			<item value="ActSnowWiFiMonitor"/>
-			<item value="Log.d("/>
-			<item value="log"/>
-			<item value="onBind"/>
-			<item value="IBinder"/>
-			<item value="registerReceiver"/>
-			<item value="SnowWiFiMonitor"/>
+			<item value="setcontent"/>
+			<item value="DialogSimple"/>
+			<item value="&#x09;&#x09;&#x09;&#x09;DialogSimple();"/>
+			<item value="diolog"/>
+			<item value="ok"/>
+			<item value="startActivity(intent);"/>
+			<item value="startActivity"/>
+			<item value="setdia"/>
 		</list>
 		<list key="replacehistory">
-			<item value="Service_SnowWiFiMonitor"/>
-			<item value="coinBlockWidgetProvider"/>
-			<item value="OnChanged(intent, context, "/>
-			<item value="i(&quot;ActSnowWiFiMonitor&quot;"/>
+			<item value=""/>
+			<item value="pager"/>
+			<item value="android:theme=&quot;@android:style/Theme.Holo.Light.NoActionBar&quot;"/>
+			<item value="itnum"/>
+			<item value="i"/>
+			<item value="&quot;PullToRefreshViewPagerActivity&quot;"/>
+			<item value="&quot;GalleryImageAdapter&quot;"/>
+			<item value="GalleryImageAdapter"/>
 		</list>
 	</section>
 </section>

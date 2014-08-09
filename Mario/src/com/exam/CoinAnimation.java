@@ -12,7 +12,7 @@ public class CoinAnimation implements IAnimatable {
                 step = 10;
                 currentSprite = 0;
                 density = Density;
-        }
+        } 
 
         public boolean AnimationFinished() {
                 return step == 0;

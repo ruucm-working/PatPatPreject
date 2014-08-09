@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">PatPatwidget</string>
+	<string name="click_intent">com.exam.click</string>
+	<string name="tab_navigation">PatPatwidget</string>
+
+	<string name="board_detail_activity_title">loginligi1238</string>
+	<string name="app_id">776277205745641</string>
+
+
+
+
+
+
+</resources>

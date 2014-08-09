@@ -1,5 +1,6 @@
 package com.exam;
 
+import com.exam.tab.coinBlockIntroActivity;
 import com.exam.view.*;
 
 import android.media.*;

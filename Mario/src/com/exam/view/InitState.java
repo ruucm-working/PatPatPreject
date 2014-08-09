@@ -8,6 +8,8 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class InitState implements ICoinBlockViewState {
 	
@@ -238,14 +240,18 @@ public class InitState implements ICoinBlockViewState {
 			
 			
 			coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
+			
+			
+			Log.d("InitState","setTextView1");
+			
 			//coinBlockIntroActivity.taskTimer1.setTime(0);
 			coinBlockIntroActivity.taskTimer1.execute("");
+			Log.d("InitState","execute");
 			
 			
+			viewPager01.UpdateIntroView();
 			
-			coinBlockIntroActivity.UpdateIntroView();
-			
-			
+			Log.d("InitState","UpdateIntroView");
 			//coinBlockIntroActivity.setContentView(R.layout.main);
 			
 			
@@ -262,7 +268,7 @@ public class InitState implements ICoinBlockViewState {
 			*/
 			
 			
-			setContentView(R.drawable.background0, "껒여껒여껒여껒여");
+//			/setContentView(R.drawable.background0, "껒여껒여껒여껒여");
 			
 			
 		
