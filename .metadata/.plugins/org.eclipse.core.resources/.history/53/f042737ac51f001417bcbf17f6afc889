@@ -9,7 +9,6 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
 public class Lv1State implements ICoinBlockViewState {
 
@@ -170,7 +169,7 @@ public class Lv1State implements ICoinBlockViewState {
 			CoinBlockView.mPref.CommitWrite();
 
 
-			viewPager01.UpdateIntroView();
+			coinBlockIntroActivity.UpdateIntroView();
 
 
 			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);

@@ -10,7 +10,6 @@ import android.widget.*;
 import com.exam.*;
 import com.exam.tab.Setting;
 import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
@@ -307,7 +306,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 			CoinBlockView.mPref.CommitWrite();
 			
 			
-			viewPager01.UpdateIntroView();
+			coinBlockIntroActivity.UpdateIntroView();
 			
 			
 			

@@ -9,7 +9,6 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
 public class InitState implements ICoinBlockViewState {
 	

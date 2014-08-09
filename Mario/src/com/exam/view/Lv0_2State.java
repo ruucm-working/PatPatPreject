@@ -11,6 +11,7 @@ import com.exam.*;
 import com.exam.tab.Setting;
 import com.exam.tab.TaskTimer;
 import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class Lv0_2State implements ICoinBlockViewState {
 
@@ -357,7 +358,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			CoinBlockView.mPref.CommitWrite();
 
 
-			coinBlockIntroActivity.UpdateIntroView();
+			viewPager01.UpdateIntroView();
 
 
 			//setContentView(R.drawable.background1, "레벨1임이제 ㅋㅋㅋㅋㅄ");
