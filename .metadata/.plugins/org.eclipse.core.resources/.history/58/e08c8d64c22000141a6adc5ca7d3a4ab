@@ -411,10 +411,10 @@ public class Lv1State implements ICoinBlockViewState {
 		public Lv1WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
 			
-//			mViewContext.removeAnimatable(lv1Anim);	
-//			lv1clAnim = new Lv1ClickAnim();
-//			viewContext.addAnimatable(lv1clAnim);
-//			
+			mViewContext.removeAnimatable(lv1Anim);	
+			lv1clAnim = new Lv1ClickAnim();
+			viewContext.addAnimatable(lv1clAnim);
+			
 			/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
@@ -451,7 +451,6 @@ public class Lv1State implements ICoinBlockViewState {
 			viewContext.removeAnimatable(lv1clAnim);
 			viewContext.removeAnimatable(lv0_2powerOn);
 			viewContext.removeAnimatable(lv0_2wifiOn);
-			mViewContext.removeAnimatable(lv1Anim);	
 			
 			viewContext.addAnimatable(lv1clAnim);
 

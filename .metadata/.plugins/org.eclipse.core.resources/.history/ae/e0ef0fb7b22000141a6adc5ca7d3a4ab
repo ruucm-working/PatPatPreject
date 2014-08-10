@@ -1,17 +1,14 @@
 package com.exam.view;
 
-import android.graphics.Bitmap;
-import android.media.MediaPlayer;
+import android.graphics.*;
+import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.os.*;
+import android.util.*;
+import android.widget.*;
 
-import com.exam.IAnimatable;
-import com.exam.MediaAssets;
-import com.exam.R;
-import com.exam.Sprite;
-import com.exam.SpriteHelper;
+import com.exam.*;
+import com.exam.tab.Setting;
 import com.exam.tab.TaskTimer;
 import com.exam.tab.coinBlockIntroActivity;
 import com.exam.tab.viewPager01;
@@ -58,15 +55,14 @@ public class Lv1State implements ICoinBlockViewState {
 	Lv0_2SMSAnim lv0_2sms;
 	
 	private int animStage = 0;
-	private int flowerRaise = 4;
 	
 	boolean fuck = false;   
 	CoinBlockView context;
 
 	public Lv1State(CoinBlockView viewContext) {
 		context = viewContext;
-//		lv1Anim = new Lv1Animation();
-//		viewContext.addAnimatable(lv1Anim);
+		lv1Anim = new Lv1Animation();
+		viewContext.addAnimatable(lv1Anim);
 
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -85,39 +81,16 @@ public class Lv1State implements ICoinBlockViewState {
 		
 		
 		//진동할때의 하단드로블
-//				SpriteHelper.DrawSprite(canvas, bottom, 0, SpriteHelper.DrawPosition.BottomCenter,0,
-//						-(int)(heightModifier[animStage] * viewContext.getDensity()));
-//
-//
-//				animStage++;
-//				if (animStage >= heightModifier.length){
-//					viewContext.OnInit();
-//					viewContext.setState(new Lv1WaitState(viewContext));
-//					Log.d("Lv1State","setState(new Lv1WaitState");
-//				}
-//				
-				
-				
-				SpriteHelper.DrawSprite(canvas, sp2, 0,
-						SpriteHelper.DrawPosition.BottomCenter, 0, -(int) (flowerRaise * 4 * context.getDensity()));
+				SpriteHelper.DrawSprite(canvas, bottom, 0, SpriteHelper.DrawPosition.BottomCenter,0,
+						-(int)(heightModifier[animStage] * viewContext.getDensity()));
 
-				Sprite bottom2 = MediaAssets.getInstance().getSprite(R.drawable.eggs_break);
-				SpriteHelper.DrawSprite(canvas, bottom2, 0, SpriteHelper.DrawPosition.BottomCenter);
 
-				// Draw the flower
-				if (flowerRaise < 8)
-					flowerRaise++; 
-				else{
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}	
+				animStage++;
+				if (animStage >= heightModifier.length){
+					viewContext.OnInit();
 					viewContext.setState(new Lv1WaitState(viewContext));
 					Log.d("Lv1State","setState(new Lv1WaitState");
 				}
-				
 		
 	}
 
@@ -406,15 +379,14 @@ public class Lv1State implements ICoinBlockViewState {
 	class Lv1WaitState implements ICoinBlockViewState {
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
-		private int spriteVib = 0;
 
 		public Lv1WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
 			
-//			mViewContext.removeAnimatable(lv1Anim);	
-//			lv1clAnim = new Lv1ClickAnim();
-//			viewContext.addAnimatable(lv1clAnim);
-//			
+			
+			lv1clAnim = new Lv1ClickAnim();
+			viewContext.addAnimatable(lv1clAnim);
+			
 			/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
@@ -423,7 +395,7 @@ public class Lv1State implements ICoinBlockViewState {
 						Log.v("tag2", "lv0-run");
 
 						
-						mViewContext.addAnimat	able(lv0Anim);
+						mViewContext.addAnimatable(lv0Anim);
 
 						if (CoinBlockView.second >= 10 && CoinBlockView.second <45)	{
 							mViewContext.removeAnimatable(lv0Anim);							
@@ -451,8 +423,6 @@ public class Lv1State implements ICoinBlockViewState {
 			viewContext.removeAnimatable(lv1clAnim);
 			viewContext.removeAnimatable(lv0_2powerOn);
 			viewContext.removeAnimatable(lv0_2wifiOn);
-			mViewContext.removeAnimatable(lv1Anim);	
-			
 			viewContext.addAnimatable(lv1clAnim);
 
 			snd.seekTo(0);
@@ -469,18 +439,7 @@ public class Lv1State implements ICoinBlockViewState {
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
- 
-
-		
-			
-
-			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[spriteVib] * context.getDensity()), 0 );
-
-
-			if (spriteVib < 7) 
-				spriteVib++;
+			//SpriteHelper.DrawSprite(canvas, sp2, sp2.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
 		}
 
 		public boolean NeedRedraw() { 

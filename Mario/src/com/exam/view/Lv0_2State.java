@@ -9,6 +9,7 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.Setting;
+import com.exam.tab.TaskTimer;
 import com.exam.tab.coinBlockIntroActivity;
 import com.exam.tab.viewPager01;
 
@@ -405,7 +406,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter);
+			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
 		}
 
 		public boolean NeedRedraw() {
@@ -425,14 +426,20 @@ public class Lv0_2State implements ICoinBlockViewState {
 			coinBlockView.setState(new Lv1State(coinBlockView));
 
 			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
-			coinBlockIntroActivity.taskTimer1.isCanceled = true;
 
-			CoinBlockView.lv0_1 = false;	
-			CoinBlockView.lv0_2 = true;	
+			coinBlockIntroActivity.taskTimer1.isCanceled = false;
+			TaskTimer taskTimer1 = new TaskTimer();
+			taskTimer1.setTextView1(R.id.time0);
+			taskTimer1.execute("");
+
+			
+			
+			CoinBlockView.lv0_2 = false;	
+			CoinBlockView.lv1 = true;	
 
 			CoinBlockView.mPref.Ready();			
-			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);		
-			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);	
+			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);		
+			CoinBlockView.mPref.WriteBoolean("lv1state", CoinBlockView.lv1);	
 			CoinBlockView.mPref.CommitWrite();
 
 			

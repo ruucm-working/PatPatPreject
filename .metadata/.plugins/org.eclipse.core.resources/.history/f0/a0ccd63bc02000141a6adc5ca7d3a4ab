@@ -1,17 +1,14 @@
 package com.exam.view;
 
-import android.graphics.Bitmap;
-import android.media.MediaPlayer;
+import android.graphics.*;
+import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.os.*;
+import android.util.*;
+import android.widget.*;
 
-import com.exam.IAnimatable;
-import com.exam.MediaAssets;
-import com.exam.R;
-import com.exam.Sprite;
-import com.exam.SpriteHelper;
+import com.exam.*;
+import com.exam.tab.Setting;
 import com.exam.tab.TaskTimer;
 import com.exam.tab.coinBlockIntroActivity;
 import com.exam.tab.viewPager01;
@@ -85,17 +82,17 @@ public class Lv1State implements ICoinBlockViewState {
 		
 		
 		//진동할때의 하단드로블
-//				SpriteHelper.DrawSprite(canvas, bottom, 0, SpriteHelper.DrawPosition.BottomCenter,0,
-//						-(int)(heightModifier[animStage] * viewContext.getDensity()));
-//
-//
-//				animStage++;
-//				if (animStage >= heightModifier.length){
-//					viewContext.OnInit();
-//					viewContext.setState(new Lv1WaitState(viewContext));
-//					Log.d("Lv1State","setState(new Lv1WaitState");
-//				}
-//				
+				SpriteHelper.DrawSprite(canvas, bottom, 0, SpriteHelper.DrawPosition.BottomCenter,0,
+						-(int)(heightModifier[animStage] * viewContext.getDensity()));
+
+
+				animStage++;
+				if (animStage >= heightModifier.length){
+					viewContext.OnInit();
+					viewContext.setState(new Lv1WaitState(viewContext));
+					Log.d("Lv1State","setState(new Lv1WaitState");
+				}
+				
 				
 				
 				SpriteHelper.DrawSprite(canvas, sp2, 0,
@@ -108,12 +105,6 @@ public class Lv1State implements ICoinBlockViewState {
 				if (flowerRaise < 8)
 					flowerRaise++; 
 				else{
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}	
 					viewContext.setState(new Lv1WaitState(viewContext));
 					Log.d("Lv1State","setState(new Lv1WaitState");
 				}
@@ -411,10 +402,10 @@ public class Lv1State implements ICoinBlockViewState {
 		public Lv1WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
 			
-//			mViewContext.removeAnimatable(lv1Anim);	
-//			lv1clAnim = new Lv1ClickAnim();
-//			viewContext.addAnimatable(lv1clAnim);
-//			
+			mViewContext.removeAnimatable(lv1Anim);	
+			lv1clAnim = new Lv1ClickAnim();
+			viewContext.addAnimatable(lv1clAnim);
+			
 			/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
@@ -423,7 +414,7 @@ public class Lv1State implements ICoinBlockViewState {
 						Log.v("tag2", "lv0-run");
 
 						
-						mViewContext.addAnimat	able(lv0Anim);
+						mViewContext.addAnimatable(lv0Anim);
 
 						if (CoinBlockView.second >= 10 && CoinBlockView.second <45)	{
 							mViewContext.removeAnimatable(lv0Anim);							
@@ -451,7 +442,6 @@ public class Lv1State implements ICoinBlockViewState {
 			viewContext.removeAnimatable(lv1clAnim);
 			viewContext.removeAnimatable(lv0_2powerOn);
 			viewContext.removeAnimatable(lv0_2wifiOn);
-			mViewContext.removeAnimatable(lv1Anim);	
 			
 			viewContext.addAnimatable(lv1clAnim);
 
@@ -469,7 +459,7 @@ public class Lv1State implements ICoinBlockViewState {
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
- 
+
 
 		
 			

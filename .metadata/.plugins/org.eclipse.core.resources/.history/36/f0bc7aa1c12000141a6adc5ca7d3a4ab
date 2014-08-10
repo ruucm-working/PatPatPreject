@@ -109,7 +109,7 @@ public class Lv1State implements ICoinBlockViewState {
 					flowerRaise++; 
 				else{
 					try {
-						Thread.sleep(2000);
+						Thread.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -411,10 +411,10 @@ public class Lv1State implements ICoinBlockViewState {
 		public Lv1WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
 			
-//			mViewContext.removeAnimatable(lv1Anim);	
-//			lv1clAnim = new Lv1ClickAnim();
-//			viewContext.addAnimatable(lv1clAnim);
-//			
+			mViewContext.removeAnimatable(lv1Anim);	
+			lv1clAnim = new Lv1ClickAnim();
+			viewContext.addAnimatable(lv1clAnim);
+			
 			/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
@@ -423,7 +423,7 @@ public class Lv1State implements ICoinBlockViewState {
 						Log.v("tag2", "lv0-run");
 
 						
-						mViewContext.addAnimat	able(lv0Anim);
+						mViewContext.addAnimatable(lv0Anim);
 
 						if (CoinBlockView.second >= 10 && CoinBlockView.second <45)	{
 							mViewContext.removeAnimatable(lv0Anim);							
@@ -451,7 +451,6 @@ public class Lv1State implements ICoinBlockViewState {
 			viewContext.removeAnimatable(lv1clAnim);
 			viewContext.removeAnimatable(lv0_2powerOn);
 			viewContext.removeAnimatable(lv0_2wifiOn);
-			mViewContext.removeAnimatable(lv1Anim);	
 			
 			viewContext.addAnimatable(lv1clAnim);
 
@@ -469,7 +468,7 @@ public class Lv1State implements ICoinBlockViewState {
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
- 
+
 
 		
 			
