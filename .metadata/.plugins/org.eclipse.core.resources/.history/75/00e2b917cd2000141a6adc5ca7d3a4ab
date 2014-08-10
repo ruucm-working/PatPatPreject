@@ -87,7 +87,7 @@ public class viewPager01 extends Fragment {
 				mPref.EndReady();
 				
 				
-				Log.d("viewPager01","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2 + lv3_1);
+				Log.d("viewPager01","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2 + lv3);
 		   			
 		   			if (init){ 
 		   				 

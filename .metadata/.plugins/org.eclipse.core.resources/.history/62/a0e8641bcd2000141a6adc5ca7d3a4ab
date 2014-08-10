@@ -172,14 +172,12 @@ public class CoinBlockView {
 			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
 			lv1 = mPref.ReadBoolean("lv1state", false);
 			lv2 = mPref.ReadBoolean("lv2state", false);
-			lv3_1 = mPref.ReadBoolean("lv3_1state", false);
 
 			CliCountInit = mPref.ReadInt("clicountinit", 0);
 			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
 			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
 			CliCount1 = mPref.ReadInt("clicount1", 0);
 			CliCount2 = mPref.ReadInt("clicount2", 0);
-//			CliCount3 = mPref.ReadInt("clicount2", 0);
 
 			
 			

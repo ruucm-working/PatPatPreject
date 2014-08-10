@@ -52,7 +52,6 @@ public class CoinBlockView {
 	public static boolean lv0_2;
 	public static  boolean lv1 ;
 	public static  boolean lv2 ;
-	public static  boolean lv3_1 ;
 
 	public static int CliCountInit = 0 ;
 	public static int CliCount0_1 = 0 ;
@@ -100,9 +99,9 @@ public class CoinBlockView {
 		else if (lv0_1)
 			setState(new Lv0_1State(this));
 		else if (lv0_2)
-			setState(new Lv0_2State(this));
+			setState(new Lv0_2_1State(this));
 		else if (lv1)
-			setState(new Lv1State(this));
+			setState(new Lv1_1State(this));
 		else if (lv2)
 			setState(new Lv2State(this));
 
@@ -172,14 +171,12 @@ public class CoinBlockView {
 			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
 			lv1 = mPref.ReadBoolean("lv1state", false);
 			lv2 = mPref.ReadBoolean("lv2state", false);
-			lv3_1 = mPref.ReadBoolean("lv3_1state", false);
 
 			CliCountInit = mPref.ReadInt("clicountinit", 0);
 			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
 			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
 			CliCount1 = mPref.ReadInt("clicount1", 0);
 			CliCount2 = mPref.ReadInt("clicount2", 0);
-//			CliCount3 = mPref.ReadInt("clicount2", 0);
 
 			
 			
@@ -187,45 +184,34 @@ public class CoinBlockView {
 			second = coinBlockIntroActivity.taskTimer1.GetTime();
 
 			if ( second == 0 && CliCountInit >=3 && init){
-				init = false;
-				lv0_1 = true;
-				mPref.WriteBoolean("initstate", init);	
-				mPref.WriteBoolean("lv0_1state", lv0_1);
-				mPref.CommitWrite();
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-
+				init = false;
+				mPref.WriteBoolean("initstate", init);			
+				mPref.CommitWrite();
 			}
 			else if (second >= 10 && second <= 12 && CliCount0_1 >= 3 && lv0_1){
-				lv0_1 = false;
-				lv0_2 = true;
-				mPref.WriteBoolean("lv0_1state", lv0_1);	
-				mPref.WriteBoolean("lv0_2state", lv0_2);
-				mPref.CommitWrite();
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+				lv0_1 = false;
+				mPref.WriteBoolean("lv0_1state", lv0_1);			
+				mPref.CommitWrite();
 			}
 			else if ( CliCount0_2 >= 3  && lv0_2){
-				lv0_2 = false;
-				lv1 = true;
-				mPref.WriteBoolean("lv0_2state", lv0_2);	
-				mPref.WriteBoolean("lv1state", lv1);
-				mPref.CommitWrite();
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+				lv0_2 = false;
+				mPref.WriteBoolean("lv0_2state", lv0_2);			
+				mPref.CommitWrite();
 			}
 			else if (second >= 20 && second <= 22 && CliCount1 >= 3 && lv1){
-				lv1 = false;
-				lv2 = true;
-				mPref.WriteBoolean("lv1state", lv1);	
-				mPref.WriteBoolean("lv2state", lv2);
-				mPref.CommitWrite();
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+				lv1 = false;
+				mPref.WriteBoolean("lv1state", lv1);			
+				mPref.CommitWrite();
 			}
 			else if (second >= 30 && second <= 32 && CliCount2 >=3 && lv2){
-				lv2 = false;
-				lv3_1 = true;
-				mPref.WriteBoolean("lv2state", lv2);	
-				mPref.WriteBoolean("lv3_1state", lv3_1);
-				mPref.CommitWrite();
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+				lv2 = false;
+				mPref.WriteBoolean("lv2state", lv2);			
+				mPref.CommitWrite();
 			}
 
 			if(second >= 5 && second <=10 )			

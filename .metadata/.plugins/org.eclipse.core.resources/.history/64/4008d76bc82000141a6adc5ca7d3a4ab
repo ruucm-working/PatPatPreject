@@ -503,12 +503,12 @@ public class Lv1State implements ICoinBlockViewState {
 			taskTimer1.setTextView1(R.id.time0);
 			taskTimer1.execute("");
 			
-//			CoinBlockView.lv1 = false;	
-//			CoinBlockView.lv2 = true;	
-//			CoinBlockView.mPref.Ready();			
-//			CoinBlockView.mPref.WriteBoolean("lv1state", CoinBlockView.lv1);		
-//			CoinBlockView.mPref.WriteBoolean("lv2state", CoinBlockView.lv2);	
-//			CoinBlockView.mPref.CommitWrite();
+			CoinBlockView.lv0_2 = false;	
+			CoinBlockView.lv1 = true;	
+			CoinBlockView.mPref.Ready();			
+			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);		
+			CoinBlockView.mPref.WriteBoolean("lv1state", CoinBlockView.lv1);	
+			CoinBlockView.mPref.CommitWrite();
 
 
 			viewPager01.UpdateIntroView();

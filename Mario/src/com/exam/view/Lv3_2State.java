@@ -9,12 +9,11 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
-public class Lv2State implements ICoinBlockViewState {
+public class Lv3_2State implements ICoinBlockViewState {
 
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
-	Sprite evolve = MediaAssets.getInstance().getSprite(R.drawable.samsungevolve_sprites_4);
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.gimchi);
+	Sprite evolve = MediaAssets.getInstance().getSprite(R.drawable.samsung_sample4);
 	MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
 	MediaPlayer snd2 = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_1_up);
@@ -48,7 +47,7 @@ public class Lv2State implements ICoinBlockViewState {
 
 	CoinBlockView context;
 
-	public Lv2State(CoinBlockView viewContext) {
+	public Lv3_2State(CoinBlockView viewContext) {
 		context = viewContext;
 
 		lv2Anim = new Lv2Animation(); 
@@ -396,8 +395,7 @@ public class Lv2State implements ICoinBlockViewState {
 
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
-			viewPager01.UpdateIntroView();
-			coinBlockView.setState(new Lv3_1State(coinBlockView));	
+			//coinBlockView.setState(new InitState(coinBlockView));	
 		}
 
 		@Override

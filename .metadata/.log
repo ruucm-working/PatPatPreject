@@ -6519,7 +6519,11 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/Mario/src/com/
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2014-08-11 04:16:10.494
 !MESSAGE Resource '/Mario/src/com/exam/view/Lv0_2_1State.java' does not exist.
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jdt.core 4 4 2014-08-11 04:30:35.378
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2014-08-11 04:35:04.671
+>>>>>>> origin/Stabilize_1.0
 !MESSAGE Background Indexer Crash Recovery
 !STACK 0
 java.lang.OutOfMemoryError: Requested array size exceeds VM limit

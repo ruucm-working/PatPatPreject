@@ -424,17 +424,17 @@ public class Lv0_1State implements ICoinBlockViewState {
 			
 			coinBlockIntroActivity.taskTimer1.isCanceled = true;
 
-			CoinBlockView.lv0_1 = false;	
-			CoinBlockView.lv0_2 = true;	
-			
-			Log.d("Lv0_1State","CoinBlockView");
-
-			CoinBlockView.mPref.Ready();			
-			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);		
-			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);	
-			CoinBlockView.mPref.CommitWrite();
-
-			Log.d("Lv0_1State","CommitWrite");
+//			CoinBlockView.lv0_1 = false;	
+//			CoinBlockView.lv0_2 = true;	
+//			
+//			Log.d("Lv0_1State","CoinBlockView");
+//
+//			CoinBlockView.mPref.Ready();			
+//			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);		
+//			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);	
+//			CoinBlockView.mPref.CommitWrite();
+//
+//			Log.d("Lv0_1State","CommitWrite");
 			
 			viewPager01.UpdateIntroView();
 			

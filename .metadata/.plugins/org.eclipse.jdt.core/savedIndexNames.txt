@@ -1,5 +1,6 @@
 INDEX VERSION 1.127+C:\GitHub\PatPatPreject\.metadata\.plugins\org.eclipse.jdt.core
 205348384.index
+<<<<<<< HEAD
 2906227785.index
 2292396653.index
 490286722.index
@@ -9,6 +10,17 @@ INDEX VERSION 1.127+C:\GitHub\PatPatPreject\.metadata\.plugins\org.eclipse.jdt.c
 681348753.index
 1872685687.index
 387413783.index
+=======
+2292396653.index
+2906227785.index
+1979240394.index
+490286722.index
+1935088990.index
+2783800808.index
+681348753.index
+387413783.index
+1872685687.index
+>>>>>>> origin/Stabilize_1.0
 2386372842.index
 3524584339.index
 1287949508.index
