@@ -12,6 +12,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.Setting;
 import com.exam.tab.coinBlockIntroActivity;
 
 public class CoinBlockView {
@@ -98,9 +99,9 @@ public class CoinBlockView {
 		else if (lv0_1)
 			setState(new Lv0_1State(this));
 		else if (lv0_2)
-			setState(new Lv0_2State(this));
+			setState(new Lv0_2_1State(this));
 		else if (lv1)
-			setState(new Lv1State(this));
+			setState(new Lv1_1State(this));
 		else if (lv2)
 			setState(new Lv2State(this));
 
@@ -177,21 +178,41 @@ public class CoinBlockView {
 			CliCount1 = mPref.ReadInt("clicount1", 0);
 			CliCount2 = mPref.ReadInt("clicount2", 0);
 
-			mPref.EndReady();
+			
 			
 			Log.d("tag8", Long.toString(second));
 			second = coinBlockIntroActivity.taskTimer1.GetTime();
 
-			if ( second == 0 && CliCountInit >=9 && init)
+			if ( second == 0 && CliCountInit >=3 && init){
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-			else if (second >= 10 && second <= 12 && CliCount0_1 >= 3 && lv0_1)
+				init = false;
+				mPref.WriteBoolean("initstate", init);			
+				mPref.CommitWrite();
+			}
+			else if (second >= 10 && second <= 12 && CliCount0_1 >= 3 && lv0_1){
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-			else if ( CliCount0_2 >= 3  && lv0_2)
+				lv0_1 = false;
+				mPref.WriteBoolean("lv0_1state", lv0_1);			
+				mPref.CommitWrite();
+			}
+			else if ( CliCount0_2 >= 3  && lv0_2){
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-			else if (second >= 20 && second <= 22 && CliCount1 >= 3 && lv1)
+				lv0_2 = false;
+				mPref.WriteBoolean("lv0_2state", lv0_2);			
+				mPref.CommitWrite();
+			}
+			else if (second >= 20 && second <= 22 && CliCount1 >= 3 && lv1){
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-			else if (second >= 30 && second <= 32 && CliCount2 >=3 && lv2)
+				lv1 = false;
+				mPref.WriteBoolean("lv1state", lv1);			
+				mPref.CommitWrite();
+			}
+			else if (second >= 30 && second <= 32 && CliCount2 >=3 && lv2){
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+				lv2 = false;
+				mPref.WriteBoolean("lv2state", lv2);			
+				mPref.CommitWrite();
+			}
 
 			if(second >= 5 && second <=10 )			
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());	
@@ -199,7 +220,16 @@ public class CoinBlockView {
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());
 			else if (second >= 22 )
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());
+			
+			
+			mPref.EndReady();
+			
 		}
+		
+		
+		
+		
+		
 	};
 	
 	public synchronized void addAnimatable(IAnimatable child)
@@ -373,7 +403,7 @@ public class CoinBlockView {
 
 	private static void updateEvolveIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub				
-		
+		 
 		
 		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
 		

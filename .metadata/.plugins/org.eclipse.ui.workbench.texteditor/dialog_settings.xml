@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="261" key="DIALOG_WIDTH"/>
-		<item value="103" key="DIALOG_Y_ORIGIN"/>
-		<item value="954" key="DIALOG_X_ORIGIN"/>
+		<item value="99" key="DIALOG_Y_ORIGIN"/>
+		<item value="1014" key="DIALOG_X_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,18 +13,19 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="OnWifi" key="selection"/>
+		<item value="Wait" key="selection"/>
 		<list key="findhistory">
-			<item value="onwifi"/>
-			<item value="evolve"/>
-			<item value="15"/>
-			<item value="Click"/>
-			<item value="click"/>
 			<item value="wait"/>
-			<item value="Lv2ClickAnim"/>
-			<item value="build"/>
+			<item value="sp"/>
+			<item value="next"/>
+			<item value="oninit"/>
+			<item value="lv1clAnim"/>
+			<item value="s"/>
+			<item value="click"/>
+			<item value="onclick"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sp2"/>
 			<item value=""/>
 			<item value="pager"/>
 			<item value="android:theme=&quot;@android:style/Theme.Holo.Light.NoActionBar&quot;"/>
@@ -32,7 +33,6 @@
 			<item value="i"/>
 			<item value="&quot;PullToRefreshViewPagerActivity&quot;"/>
 			<item value="&quot;GalleryImageAdapter&quot;"/>
-			<item value="GalleryImageAdapter"/>
 		</list>
 	</section>
 </section>
