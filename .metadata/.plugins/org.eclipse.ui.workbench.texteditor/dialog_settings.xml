@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="build" key="selection"/>
+		<item value="OnWifi" key="selection"/>
 		<list key="findhistory">
+			<item value="onwifi"/>
+			<item value="evolve"/>
+			<item value="15"/>
+			<item value="Click"/>
+			<item value="click"/>
+			<item value="wait"/>
+			<item value="Lv2ClickAnim"/>
 			<item value="build"/>
-			<item value="setcontent"/>
-			<item value="DialogSimple"/>
-			<item value="&#x09;&#x09;&#x09;&#x09;DialogSimple();"/>
-			<item value="diolog"/>
-			<item value="ok"/>
-			<item value="startActivity(intent);"/>
-			<item value="startActivity"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

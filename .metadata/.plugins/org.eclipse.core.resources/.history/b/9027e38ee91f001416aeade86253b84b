@@ -340,10 +340,10 @@ public class Lv0_2State implements ICoinBlockViewState {
 	class Lv0_2WaitState implements ICoinBlockViewState {
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
-
+		/*
 		public Lv0_2WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
-			/*
+
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
 					if (mViewContext.getState().getClass() == Lv0_2WaitState.class)

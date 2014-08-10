@@ -346,14 +346,14 @@ public class Lv0_1State implements ICoinBlockViewState {
 
 		public Lv0WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
-
+			/*
 			(new Handler()).postDelayed(new Runnable(){
 				public void run() {
 					if (mViewContext.getState().getClass() == Lv0WaitState.class)
 					{
 						Log.v("tag2", "lv0-run");
 
-						/*
+						
 						mViewContext.addAnimatable(lv0Anim);
 
 						if (CoinBlockView.second >= 10 && CoinBlockView.second <45)	{
@@ -369,10 +369,10 @@ public class Lv0_1State implements ICoinBlockViewState {
 
 						v0Anim.Draw2(Bitmap.createBitmap(mViewContext.cwidth, mViewContext.cheight, Bitmap.Config.ARGB_8888));
 						mViewContext.scheduleRedraw();
-						 */
+						 
 					}
 				}
-			}, 3000);
+			}, 3000);*/
 		}
 
 		public void OnClick(CoinBlockView viewContext) {
