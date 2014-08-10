@@ -26,10 +26,11 @@ public class viewPager01 extends Fragment {
 		 
 		
 		static boolean init ;
-		public static boolean lv0_1 = true;
-		static boolean lv0_2 = true;
-		public static boolean lv1 = true;
-		public static boolean lv2 = true;
+		public static boolean lv0_1 ;
+		static boolean lv0_2 ;
+		public static boolean lv1 ;
+		public static boolean lv2 ;
+		public static boolean lv3_1 ;
 		
 		
 		
@@ -81,11 +82,12 @@ public class viewPager01 extends Fragment {
 				lv0_2 = mPref.ReadBoolean("lv0_2state", false);
 				lv1 = mPref.ReadBoolean("lv1state", false);
 				lv2 = mPref.ReadBoolean("lv2state", false);
+				lv3_1 = mPref.ReadBoolean("lv3_1state", false);
 		
 				mPref.EndReady();
 				
 				
-				Log.d("viewPager01","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2);
+				Log.d("viewPager01","UpdateIntroView" + init + lv0_1 + lv0_2 + lv1 + lv2 + lv3_1);
 		   			
 		   			if (init){ 
 		   				 
@@ -111,6 +113,9 @@ public class viewPager01 extends Fragment {
 		   			}
 		   			else if (lv2){
 		   				updateview(R.drawable.background2, "레벨2s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ",true);    	    				
+		   			}
+		   			else if (lv3_1){
+		   				updateview(R.drawable.background3_1, "이런 인간도있군..",true);    	    				
 		   			}
 			 
 		   			Log.d("viewPager01","else if (lv2)  	 mP");

@@ -9,6 +9,7 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.coinBlockIntroActivity;
+import com.exam.tab.viewPager01;
 
 public class Lv2State implements ICoinBlockViewState {
 
@@ -395,7 +396,8 @@ public class Lv2State implements ICoinBlockViewState {
 
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
-			//coinBlockView.setState(new InitState(coinBlockView));	
+			viewPager01.UpdateIntroView();
+			coinBlockView.setState(new Lv3_1State(coinBlockView));	
 		}
 
 		@Override
