@@ -99,9 +99,9 @@ public class CoinBlockView {
 		else if (lv0_1)
 			setState(new Lv0_1State(this));
 		else if (lv0_2)
-			setState(new Lv0_2State(this));
+			setState(new Lv0_2_1State(this));
 		else if (lv1)
-			setState(new Lv1State(this));
+			setState(new Lv1_1State(this));
 		else if (lv2)
 			setState(new Lv2State(this));
 
