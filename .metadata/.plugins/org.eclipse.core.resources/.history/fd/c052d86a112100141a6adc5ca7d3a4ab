@@ -110,7 +110,7 @@ public class CoinBlockView {
 		else if (lv2)
 			setState(new Lv2State(this));
 		else if (lv3_1)
-			setState(new Lv3_1State(this));
+			setState(new Lv3State(this));
 
 		thread2 = new UpdateThread(mHandler2);
 		thread2.start();

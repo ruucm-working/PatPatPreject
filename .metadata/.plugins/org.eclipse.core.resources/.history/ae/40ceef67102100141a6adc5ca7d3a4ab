@@ -53,8 +53,6 @@ public class CoinBlockView {
 	public static  boolean lv1 ;
 	public static  boolean lv2 ;
 	public static  boolean lv3_1 ;
-	
-	public static  boolean stateNum ;
 
 	public static int CliCountInit = 0 ;
 	public static int CliCount0_1 = 0 ;
@@ -95,7 +93,7 @@ public class CoinBlockView {
 		lv3_1 = mPref.ReadBoolean("lv3_1state", false);
 
 
-		Log.d("CoinBlockView", "mPref.ReadBoolean"+init +lv1 +lv2 + lv3_1);
+		Log.d("CoinBlockView", "mPref.ReadBoolean"+init);
 
 		mPref.EndReady();
 
@@ -109,8 +107,8 @@ public class CoinBlockView {
 			setState(new Lv1State(this));
 		else if (lv2)
 			setState(new Lv2State(this));
-		else if (lv3_1)
-			setState(new Lv3_1State(this));
+		lse if (lv3_1)
+			setState(new Lv2State(this));
 
 		thread2 = new UpdateThread(mHandler2);
 		thread2.start();
