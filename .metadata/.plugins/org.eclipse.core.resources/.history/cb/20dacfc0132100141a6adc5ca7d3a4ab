@@ -109,8 +109,6 @@ public class InitState implements ICoinBlockViewState {
 		//진동후의, 하단 드로블
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
-		public static long second ;
-		
 
 		public InitWaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
@@ -152,11 +150,6 @@ public class InitState implements ICoinBlockViewState {
 		}
 
 		public void OnClick(CoinBlockView viewContext) {
-			
-			
-			
-			second = coinBlockIntroActivity.taskTimer1.GetTime();
-			
 			
 			
 			viewContext.setState(new InitWaitState(viewContext));
