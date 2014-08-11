@@ -37,6 +37,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	boolean init = false;
 	boolean lv0_1;
 	boolean lv0_2;
+	boolean lv1;
+	boolean lv2;
+	boolean lv3_1;
 	
 	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
@@ -45,9 +48,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	
 	int CliCountInit ;
 	int CliCount0_1 ;
-//	public static int CliCount0_2 ;
-//	public static int CliCount1 ;
-//	public static int CliCount2 ;
+	int CliCount0_2 ;
+	int CliCount1 ;
+	int CliCount2 ;
 	
 
 	public void setTextView1(int textViewId) {
@@ -130,41 +133,43 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 //				Log.d("TaskTimer", "CommitWrite"+Long.toString(time));
 
 
-				
+				//State Variable
 				init = mPref.ReadBoolean("initstate", false);	
 				lv0_1 = mPref.ReadBoolean("lv0_1state", false);
-//				lv0_2 = mPref.ReadBoolean("lv0_2state", false);
-//				lv1 = mPref.ReadBoolean("lv1state", false);
-//				lv2 = mPref.ReadBoolean("lv2state", false);
-//				lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+				lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+				lv1 = mPref.ReadBoolean("lv1state", false);
+				lv2 = mPref.ReadBoolean("lv2state", false);
+				lv3_1 = mPref.ReadBoolean("lv3_1state", false);
 				
 				
-				
+				//ClickCount Variable
 				CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
-//				CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
-//				CliCount1 = mPref.ReadInt("clicount1", 0);
-//				CliCount2 = mPref.ReadInt("clicount2", 0);
-////				CliCount3 = mPref.ReadInt("clicount2", 0);
+				CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
+				CliCount1 = mPref.ReadInt("clicount1", 0);
+				CliCount2 = mPref.ReadInt("clicount2", 0);
+//				CliCount3 = mPref.ReadInt("clicount2", 0);
 
 				
 				
 				
-				Log.d("TaskTimer","state "+init+" "+lv0_1);
+				Log.d("TaskTimer","CliCount0_2 "+CliCount0_2+" "+lv0_2);
 				
-				if(time == 0 && CliCountInit >=3 && init){
-					init = false;
-					lv0_1 = true;
-					mPref.WriteBoolean("initstate", init);	
-					mPref.WriteBoolean("lv0_1state", lv0_1);
-					mPref.CommitWrite();
+//				if(time == 0 && CliCountInit >=3 && init){
+//					init = false;
+//					lv0_1 = true;
+//					mPref.WriteBoolean("initstate", init);	
+//					mPref.WriteBoolean("lv0_1state", lv0_1);
+//					mPref.CommitWrite();
+//					
+//					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+//					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+//
+//					
+//					
+//				}
+//				else 
 					
-					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
-					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-
-					
-					
-				}
-				else if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1){
+				if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1){
 					lv0_1 = false;
 					lv0_2 = true;
 					mPref.WriteBoolean("lv0_1state", lv0_1);	
@@ -176,6 +181,39 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 					
 				}
+//				else if( CliCount0_2 >= 3  && lv0_2){
+//					lv0_2 = false;
+//					lv1 = true;
+//					mPref.WriteBoolean("lv0_2state", lv0_2);	
+//					mPref.WriteBoolean("lv1state", lv1);
+//					mPref.CommitWrite();
+//					
+//					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+//					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+//				}
+				else if (time >= 20 && time <= 22 && CliCount1 >= 3 && lv1){
+					lv1 = false;
+					lv2 = true;
+					mPref.WriteBoolean("lv1state", lv1);	
+					mPref.WriteBoolean("lv2state", lv2);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+					
+				}
+				else if (time >= 30 && time <= 32 && CliCount2 >=3 && lv2){
+					lv2 = false;
+					lv3_1 = true;
+					mPref.WriteBoolean("lv2state", lv2);	
+					mPref.WriteBoolean("lv3_1state", lv3_1);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+					
+				}
+				
 				else{
 				
 				mPref.WriteLong("time", time);			

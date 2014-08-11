@@ -431,7 +431,7 @@ public class Lv1State implements ICoinBlockViewState {
 		
 //		public static  boolean stateNum ;
 
-		 int CliCount0_1 ;
+		 int CliCount1 ;
 		
 
 		public Lv1WaitState(CoinBlockView viewContext) {
@@ -502,16 +502,16 @@ public class Lv1State implements ICoinBlockViewState {
 			mPref.Ready();			
 			
 			
-			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);			 
-			CliCount0_1++;		
+			CliCount1 = mPref.ReadInt("clicount1", 0);			 
+			CliCount1++;		
 
 						
 		
 			
 			
-	
-			init = mPref.ReadBoolean("initstate", false);	
-			lv0_1 = mPref.ReadBoolean("lv0_1state", false);
+//	
+//			init = mPref.ReadBoolean("initstate", false);	
+//			lv0_1 = mPref.ReadBoolean("lv0_1state", false);
 //			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
 //			lv1 = mPref.ReadBoolean("lv1state", false);
 //			lv2 = mPref.ReadBoolean("lv2state", false);
@@ -524,7 +524,7 @@ public class Lv1State implements ICoinBlockViewState {
 ////			CliCount3 = mPref.ReadInt("clicount2", 0);
 
 			
-			second = mPref.ReadInt("time", 0);
+//			second = mPref.ReadInt("time", 0);
 			
 			
 			Log.i("InitState","second "+second);
@@ -553,8 +553,8 @@ public class Lv1State implements ICoinBlockViewState {
 //			}		
 //			else{
 //
-//			mPref.WriteInt("clicountinit", CliCountInit);
-//			mPref.CommitWrite();
+			mPref.WriteInt("clicount1", CliCount1);
+			mPref.CommitWrite();
 //			}
 		
 		

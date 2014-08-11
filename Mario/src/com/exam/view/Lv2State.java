@@ -293,9 +293,20 @@ public class Lv2State implements ICoinBlockViewState {
 	}
 
 	private class Lv2WaitState implements ICoinBlockViewState {
+		
+		
+		//for count clicknum
+		TextPref mPref;	
+		int CliCount2 ;
+		
+		
 		MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
 
+		
+		
+		
+		
 		public Lv2WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
 /*
@@ -374,10 +385,29 @@ public class Lv2State implements ICoinBlockViewState {
 
 			Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
 
-			CoinBlockView.CliCount2++;			
-			CoinBlockView.mPref.Ready();			
-			CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
-			CoinBlockView.mPref.CommitWrite();
+			
+			try {
+				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}
+			
+			
+			mPref.Ready();			
+			
+			
+			CliCount2 = mPref.ReadInt("clicount2", 0);			 
+			CliCount2++;		
+
+			mPref.WriteInt("clicount2", CliCount2);
+			mPref.CommitWrite();
+
+			
+			
+//			CoinBlockView.CliCount2++;			
+//			CoinBlockView.mPref.Ready();			
+//			CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
+//			CoinBlockView.mPref.CommitWrite();
 		}
 
 		private int blockVib = 0;
