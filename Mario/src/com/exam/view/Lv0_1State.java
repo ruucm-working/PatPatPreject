@@ -1,5 +1,7 @@
 package com.exam.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.*;
 import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
@@ -343,6 +345,30 @@ public class Lv0_1State implements ICoinBlockViewState {
 
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
+		
+		
+		
+		
+
+		long second = 0 ;
+		
+		//프레퍼런스 
+		TextPref mPref;	
+
+		boolean lv0_1;
+		boolean lv0_2;
+		public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
+		public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+
+//		public  boolean lv0_2;
+//		public static  boolean lv1 ;
+//		public static  boolean lv2 ;
+//		public static  boolean lv3_1 ;
+		
+//		public static  boolean stateNum ;
+
+		 int CliCount0_1 ;
+		
 
 		public Lv0WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
@@ -376,26 +402,125 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 
 		public void OnClick(CoinBlockView viewContext) {
+			
+			
+			
 			viewContext.removeAnimatable(lv0clAnim);			
 
 			lv0clAnim = new Lv0ClickAnim();
 			viewContext.addAnimatable(lv0clAnim);
 
+
+			
+			
+			
+			
 			snd.seekTo(0);
 			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 				public void onSeekComplete(MediaPlayer mp) {
 					snd.start();
 				}
 			});
+			
+			
+	
+			
+			try {
+				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}
+			
+			
+			mPref.Ready();			
+			
+			
+			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);			 
+			CliCount0_1++;			
+			
+			
 
-			Log.v("Lv0_1State", "CoinBlockView.clicount  1"+CoinBlockView.CliCount0_1); 
-			CoinBlockView.CliCount0_1++;
+						
+		
+			
+			
+			
+		
 
-			CoinBlockView.mPref.Ready();
-			CoinBlockView.mPref.WriteInt("clicount0_1", CoinBlockView.CliCount0_1);
-			CoinBlockView.mPref.CommitWrite();
+//			mPref.Ready();
 
-			Log.v("Lv0_1State", "CoinBlockView.clicount0_1   2"+CoinBlockView.CliCount0_1);
+//			lv0_1 = mPref.ReadBoolean("lv0_1state", false);	
+//			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+//			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+//			lv1 = mPref.ReadBoolean("lv1state", false);
+//			lv2 = mPref.ReadBoolean("lv2state", false);
+//			lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+
+//			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
+//			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
+//			CliCount1 = mPref.ReadInt("clicount1", 0);
+//			CliCount2 = mPref.ReadInt("clicount2", 0);
+////			CliCount3 = mPref.ReadInt("clicount2", 0);
+
+//			
+//			second = mPref.ReadInt("time", 0);
+			
+			
+			Log.i("InitState","second "+second);
+			
+			
+//			mPref.EndReady();
+			
+			
+			
+			
+			
+
+			
+//			if (second >= 10 && second <= 12 && CliCount0_1 >= 3 && lv0_1){
+//				lv0_1 = false;
+//				lv0_2 = true;
+//				mPref.WriteBoolean("lv0_1state", lv0_1);	
+//				mPref.WriteBoolean("lv0_2state", lv0_2);
+//				mPref.CommitWrite();
+//				
+//				RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+//				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+//
+//				
+//				
+//			}		
+//			else{
+
+			mPref.WriteInt("clicount0_1", CliCount0_1);
+			mPref.CommitWrite();
+//			}
+			
+			
+			
+			
+		}
+		
+		
+		private  void updateEvolveIntent(RemoteViews rviews, Context context) {
+			// TODO Auto-generated method stub				
+			 
+			
+//			Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
+			
+			int mWidgetId = CoinBlockView.mWidgetId;
+//			
+			Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
+			intent.putExtra("widgetId11", mWidgetId);		
+
+			context.sendBroadcast(intent);
+
+			Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
+			intent2.putExtra("widgetId10", mWidgetId);				
+
+			context.sendBroadcast(intent2);
+
+			Log.d(coinBlockWidgetProvider.TAG," updateEvolveIntent(Remo(rviews);");
 		}
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {

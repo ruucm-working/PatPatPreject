@@ -5,13 +5,16 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.util.Log;
 import android.widget.LinearLayout;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 
+import com.exam.CoinBlockWidgetApp;
 import com.exam.IAnimatable;
 import com.exam.MediaAssets;
 import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
+import com.exam.TextPref;
 import com.exam.tab.TaskTimer;
 import com.exam.tab.coinBlockIntroActivity;
 import com.exam.tab.viewPager01;
@@ -407,6 +410,29 @@ public class Lv1State implements ICoinBlockViewState {
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
 		private int spriteVib = 0;
+		
+		
+		
+
+		long second = 0 ;
+		
+		//프레퍼런스 
+		TextPref mPref;	
+
+		boolean init = false;
+		boolean lv0_1;
+		public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
+		public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+
+//		public  boolean lv0_2;
+//		public static  boolean lv1 ;
+//		public static  boolean lv2 ;
+//		public static  boolean lv3_1 ;
+		
+//		public static  boolean stateNum ;
+
+		 int CliCount1 ;
+		
 
 		public Lv1WaitState(CoinBlockView viewContext) {
 			mViewContext = viewContext;
@@ -445,28 +471,95 @@ public class Lv1State implements ICoinBlockViewState {
 		} 
 
 		public void OnClick(CoinBlockView viewContext) {
-			lv1clAnim = new Lv1ClickAnim();
-			viewContext.removeAnimatable(lv0_2ofAnim);
-			viewContext.removeAnimatable(lv0_2ofAnim);
-			viewContext.removeAnimatable(lv1clAnim);
-			viewContext.removeAnimatable(lv0_2powerOn);
-			viewContext.removeAnimatable(lv0_2wifiOn);
-			mViewContext.removeAnimatable(lv1Anim);	
-			
-			viewContext.addAnimatable(lv1clAnim);
 
+			
+			
+			viewContext.removeAnimatable(lv1Anim);
+			
+			lv1clAnim = new Lv1ClickAnim();			
+			viewContext.addAnimatable(lv1clAnim);
+			
+			
+			
+			
 			snd.seekTo(0);
 			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 				public void onSeekComplete(MediaPlayer mp) {
 					snd.start();
 				}
 			});
+			
+			
+	
+			
+			try {
+				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}
+			
+			
+			mPref.Ready();			
+			
+			
+			CliCount1 = mPref.ReadInt("clicount1", 0);			 
+			CliCount1++;		
 
-			CoinBlockView.CliCount1++;
-			CoinBlockView.mPref.Ready();
-			CoinBlockView.mPref.WriteInt("clicount1", CoinBlockView.CliCount1);
-			CoinBlockView.mPref.CommitWrite();
+						
+		
+			
+			
+//	
+//			init = mPref.ReadBoolean("initstate", false);	
+//			lv0_1 = mPref.ReadBoolean("lv0_1state", false);
+//			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+//			lv1 = mPref.ReadBoolean("lv1state", false);
+//			lv2 = mPref.ReadBoolean("lv2state", false);
+//			lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+
+//			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
+//			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
+//			CliCount1 = mPref.ReadInt("clicount1", 0);
+//			CliCount2 = mPref.ReadInt("clicount2", 0);
+////			CliCount3 = mPref.ReadInt("clicount2", 0);
+
+			
+//			second = mPref.ReadInt("time", 0);
+			
+			
+			Log.i("InitState","second "+second);
+			
+			
+//			mPref.EndReady();
+			
+			
+			
+			
+			
+
+//			
+//			if ( second == 0 && CliCountInit >=3 && init){
+//				init = false;
+//				lv0_1 = true;
+//				mPref.WriteBoolean("initstate", init);	
+//				mPref.WriteBoolean("lv0_1state", lv0_1);
+//				mPref.CommitWrite();
+//				
+//				RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+//				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+//
+//				
+//				
+//			}		
+//			else{
+//
+			mPref.WriteInt("clicount1", CliCount1);
+			mPref.CommitWrite();
+//			}
+		
+		
 		}
+		
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
  
