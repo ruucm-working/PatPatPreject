@@ -1,8 +1,13 @@
 package com.exam.tab;
 
+import com.exam.CoinBlockWidgetApp;
+import com.exam.R;
 import com.exam.TextPref;
+import com.exam.coinBlockWidgetProvider;
 import com.exam.view.*;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.*;
 import android.util.*;
 import android.widget.*;
@@ -27,6 +32,23 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 	TextView timer = null;
 	private static long time = 0;
+	
+	
+	boolean init = false;
+	boolean lv0_1;
+	boolean lv0_2;
+	
+	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
+	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+	
+	
+	
+	int CliCountInit ;
+	int CliCount0_1 ;
+//	public static int CliCount0_2 ;
+//	public static int CliCount1 ;
+//	public static int CliCount2 ;
+	
 
 	public void setTextView1(int textViewId) {
 		timer = (TextView)coinBlockIntroActivity.getInstance()
@@ -61,10 +83,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	 *  on the main thread (UI thread) */
 	@Override
 	protected void onPreExecute() { 
-		Log.d("TaskTimer", "onPreExecute");
+//		Log.d("TaskTimer", "onPreExecute");
 		timer.setText("" + time);
 		timer.setTextColor(TEXT_COLOR_NORMAL);
-		Log.d("TaskTimer", "setTextColor");
+//		Log.d("TaskTimer", "setTextColor");
 
 		StartSetting();
 
@@ -79,7 +101,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		time = mPref.ReadInt("time", 0);	
 		mPref.EndReady();
 
-		Log.d("TaskTimer", "onPreExecute"+Long.toString(time));
+//		Log.d("TaskTimer", "onPreExecute"+Long.toString(time));
 
 
 	}
@@ -99,16 +121,69 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 				// time++;              // decrement time
 				time = (System.currentTimeMillis() - startTime) / 1000;
 
-				Log.d("TaskTimer", Long.toString(time));
+//				Log.d("TaskTimer", Long.toString(time));
 
 
 				mPref.Ready(); 
+				
+
+//				Log.d("TaskTimer", "CommitWrite"+Long.toString(time));
+
+
+				
+				init = mPref.ReadBoolean("initstate", false);	
+				lv0_1 = mPref.ReadBoolean("lv0_1state", false);
+//				lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+//				lv1 = mPref.ReadBoolean("lv1state", false);
+//				lv2 = mPref.ReadBoolean("lv2state", false);
+//				lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+				
+				
+				
+				CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
+//				CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
+//				CliCount1 = mPref.ReadInt("clicount1", 0);
+//				CliCount2 = mPref.ReadInt("clicount2", 0);
+////				CliCount3 = mPref.ReadInt("clicount2", 0);
+
+				
+				
+				
+				Log.d("TaskTimer","state "+init+" "+lv0_1);
+				
+				if(time == 0 && CliCountInit >=3 && init){
+					init = false;
+					lv0_1 = true;
+					mPref.WriteBoolean("initstate", init);	
+					mPref.WriteBoolean("lv0_1state", lv0_1);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+
+					
+					
+				}
+				else if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1){
+					lv0_1 = false;
+					lv0_2 = true;
+					mPref.WriteBoolean("lv0_1state", lv0_1);	
+					mPref.WriteBoolean("lv0_2state", lv0_2);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+
+					
+				}
+				else{
+				
 				mPref.WriteLong("time", time);			
 				mPref.CommitWrite();
-
-				Log.d("TaskTimer", "CommitWrite"+Long.toString(time));
-
-
+				
+				}
+				
+				
 				publishProgress();          // trigger onProgressUpdate()
 
 
@@ -120,6 +195,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
                 }
 
 				 */
+				
+				
+				
+				
 
 			} catch(InterruptedException e) {
 				Log.i("GUN", Log.getStackTraceString(e));
@@ -127,6 +206,27 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			}
 		}
 		return RESULT_SUCCESS;
+	}
+	
+	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
+		// TODO Auto-generated method stub				
+		 
+		
+//		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
+		
+		int mWidgetId = CoinBlockView.mWidgetId;
+//		
+		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
+		intent.putExtra("widgetId11", mWidgetId);		
+
+		context.sendBroadcast(intent);
+
+		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
+		intent2.putExtra("widgetId10", mWidgetId);				
+
+		context.sendBroadcast(intent2);
+
+		Log.d("TaskTimer","updateEvolveIntent");
 	}
 
 	/** this method is used by doInBackground
@@ -137,7 +237,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		// modify timer's text (remained time)
 		timer.setText("" + time);
 
-		Log.d("TaskTimer", "onProgressUpdate"+Long.toString(time));
+//		Log.d("TaskTimer", "onProgressUpdate"+Long.toString(time));
 
 		// play beep sound
 		//MediaPlayer.create(coinBlockIntroActivity.getInstance(), R.raw.beep).start();

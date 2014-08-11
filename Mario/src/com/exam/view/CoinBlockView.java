@@ -137,14 +137,14 @@ public class CoinBlockView {
 		Handler mHandler;
 		boolean sns = false; //Thread를 통제하기 위한 boolean 값
 		public void run() {
-			while(true) {
-				if(sns) {
-					mHandler.sendEmptyMessage(0);
-					try {
-						Thread.sleep(3000);
-					} catch(InterruptedException e) {}
-				}
-			}
+//			while(true) {
+//				if(sns) {
+//					mHandler.sendEmptyMessage(0);
+//					try {
+//						Thread.sleep(3000);
+//					} catch(InterruptedException e) {}
+//				}
+//			}
 		} 
 
 		//생성자
