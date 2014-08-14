@@ -74,9 +74,22 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 	public void StartSetting()
 	{
+		
+		mPref.Ready();
+		startTime = mPref.ReadLong("startTime", 0);	
+
 		// It should work only one time
-		if(startTime == 0)
-			startTime = System.currentTimeMillis();
+		if(startTime == 0){
+			startTime = System.currentTimeMillis();		
+			mPref.WriteLong("startTime", startTime);	
+			mPref.CommitWrite();
+		}
+		
+		Log.d("TaskTimer","startTime1 "+ Long.toString(startTime));
+		
+		
+		Log.d("TaskTimer","CommitWrite ");
+
 	}
 
 	// Preference
@@ -87,11 +100,8 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	@Override
 	protected void onPreExecute() { 
 //		Log.d("TaskTimer", "onPreExecute");
-		timer.setText("" + time);
-		timer.setTextColor(TEXT_COLOR_NORMAL);
-//		Log.d("TaskTimer", "setTextColor");
-
-		StartSetting();
+	
+		
 
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -100,12 +110,17 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			e.printStackTrace();
 		}      
 
-		mPref.Ready();
-		time = mPref.ReadInt("time", 0);	
-		mPref.EndReady();
+		
+		StartSetting();
+//		mPref.Ready();
+//		startTime = mPref.ReadInt("startTime", 0);	
+//		mPref.EndReady();
 
-//		Log.d("TaskTimer", "onPreExecute"+Long.toString(time));
+		
+		timer.setTextColor(TEXT_COLOR_NORMAL);
+	
 
+		
 
 	}
 
@@ -122,9 +137,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			try {
 				Thread.sleep(1000);		// one second sleep
 				// time++;              // decrement time
-				time = (System.currentTimeMillis() - startTime) / 1000;
-
-//				Log.d("TaskTimer", Long.toString(time));
+				
 
 
 				mPref.Ready(); 
@@ -133,6 +146,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 //				Log.d("TaskTimer", "CommitWrite"+Long.toString(time));
 
 
+				
+				
+				
 				//State Variable
 				init = mPref.ReadBoolean("initstate", false);	
 				lv0_1 = mPref.ReadBoolean("lv0_1state", false);
@@ -151,23 +167,17 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 				
 				
+
 				
-				Log.d("TaskTimer","CliCount0_2 "+CliCount0_2+" "+lv0_2);
+				time = (System.currentTimeMillis() - startTime) / 1000;
+
+				Log.d("TaskTimer","time "+ Long.toString(time));
+				Log.d("TaskTimer","startTime "+ Long.toString(startTime));
 				
-//				if(time == 0 && CliCountInit >=3 && init){
-//					init = false;
-//					lv0_1 = true;
-//					mPref.WriteBoolean("initstate", init);	
-//					mPref.WriteBoolean("lv0_1state", lv0_1);
-//					mPref.CommitWrite();
-//					
-//					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
-//					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-//
-//					
-//					
-//				}
-//				else 
+				
+//				timer.setText("" + time);
+//				timer.setTextColor(TEXT_COLOR_NORMAL);
+				
 					
 				if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1){
 					lv0_1 = false;

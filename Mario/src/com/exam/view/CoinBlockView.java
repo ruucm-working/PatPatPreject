@@ -378,6 +378,7 @@ public class CoinBlockView {
 
 		if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
+		Log.i("CoinBlockView","Redraw");
 	}
 
 	void scheduleRedraw() {

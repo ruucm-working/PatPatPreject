@@ -475,6 +475,7 @@ public class Lv1State implements ICoinBlockViewState {
 			
 			
 			viewContext.removeAnimatable(lv1Anim);
+			viewContext.removeAnimatable(lv1clAnim);
 			
 			lv1clAnim = new Lv1ClickAnim();			
 			viewContext.addAnimatable(lv1clAnim);
@@ -622,6 +623,8 @@ public class Lv1State implements ICoinBlockViewState {
 			coinBlockView.removeAnimatable(lv1clAnim);
 			coinBlockView.removeAnimatable(lv0_2powerOn);
 			coinBlockView.removeAnimatable(lv0_2wifiOn);
+			coinBlockView.removeAnimatable(lv1Anim);
+
 			
 			coinBlockView.removeAnimatable(lv0_2dblClick);
 			coinBlockView.removeAnimatable(lv0_2wifiOff);
