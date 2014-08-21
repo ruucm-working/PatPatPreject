@@ -17,6 +17,11 @@ public class viewPager02 extends Fragment {
         	View v = inflater.inflate(R.layout.device_state, container, false);
            // View tv = v.findViewById(R.id.text03);
            // ((TextView) tv).setText("Hope is a good thing.");
+        	
+        	
+        	
+        	
+        	
             return v;
         }
     }

@@ -86,6 +86,11 @@
         
         
         <activity
+            android:name="com.exam.tab.SampleList"
+            android:label="SampleList"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        
+        <activity
             android:name="com.exam.tab.Setting"
             android:label="Setting"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
