@@ -218,8 +218,8 @@ public class coinBlockIntroActivity extends FragmentActivity
 //        pager.setAdapter(new GoogleMusicAdapter(getSupportFragmentManager()));
 //        	
 //        
-//        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-//        indicator.setViewPager(mViewPager);
+        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
+        indicator.setViewPager(mViewPager);
 	
         
         
@@ -239,10 +239,6 @@ public class coinBlockIntroActivity extends FragmentActivity
         mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
                 LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
-        
-        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
-        
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
         }

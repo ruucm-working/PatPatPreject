@@ -32,6 +32,11 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.actionbarsherlock.sample.fragments.FragmentStackSupport;
+import com.actionbarsherlock.sample.fragments.LoaderCursorSupport;
+import com.actionbarsherlock.sample.fragments.LoaderCustomSupport;
+import com.actionbarsherlock.sample.fragments.LoaderThrottleSupport;
+import com.actionbarsherlock.sample.fragments.FragmentTabsPager.TabsAdapter;
 import com.exam.R;
 import com.exam.TextPref;
 import com.facebook.widget.ProfilePictureView;
@@ -218,8 +223,8 @@ public class coinBlockIntroActivity extends FragmentActivity
 //        pager.setAdapter(new GoogleMusicAdapter(getSupportFragmentManager()));
 //        	
 //        
-//        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-//        indicator.setViewPager(mViewPager);
+        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
+        indicator.setViewPager(pager);
 	
         
         
@@ -230,19 +235,15 @@ public class coinBlockIntroActivity extends FragmentActivity
 
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
 
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
-//                FragmentStackSupport.CountingFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
-//                LoaderCursorSupport.CursorLoaderListFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
-//                LoaderCustomSupport.AppListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
+                FragmentStackSupport.CountingFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
+                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
+                LoaderCustomSupport.AppListFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
                 LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
-        
-        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
-        
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
         }

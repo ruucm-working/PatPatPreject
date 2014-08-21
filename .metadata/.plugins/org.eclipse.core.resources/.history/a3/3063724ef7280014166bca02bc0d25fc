@@ -32,6 +32,8 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.actionbarsherlock.sample.fragments.FragmentTabsPager.TabsAdapter.DummyTabFactory;
+import com.actionbarsherlock.sample.fragments.FragmentTabsPager.TabsAdapter.TabInfo;
 import com.exam.R;
 import com.exam.TextPref;
 import com.facebook.widget.ProfilePictureView;
@@ -57,10 +59,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 	//add tap x viewpager
 	//DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
 	ViewPager pager;
-	
-	TabHost mTabHost;
-    ViewPager  mViewPager;
-    TabsAdapter mTabsAdapter;
 
 	
 	private static final String[] CONTENT = new String[] { "device condition", "device state"};
@@ -163,8 +161,9 @@ public class coinBlockIntroActivity extends FragmentActivity
 		
 		//setContentView(R.layout.main);
 		
-		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);		
-		setContentView(R.layout.simple_tabs);
+		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
+		
+		 setContentView(R.layout.simple_tabs);
 
 		
 		
@@ -214,38 +213,13 @@ public class coinBlockIntroActivity extends FragmentActivity
 		lv2 = mPref.ReadBoolean("lv2state", false);
 		
 	
-//        pager = (ViewPager) findViewById(R.id.pager);
-//        pager.setAdapter(new GoogleMusicAdapter(getSupportFragmentManager()));
-//        	
-//        
-//        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-//        indicator.setViewPager(mViewPager);
-	
-        
-        
-        mTabHost = (TabHost)findViewById(android.R.id.tabhost);
-        mTabHost.setup();
-
-        mViewPager = (ViewPager)findViewById(R.id.pager);
-
-        mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
-
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
-//                FragmentStackSupport.CountingFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
-//                LoaderCursorSupport.CursorLoaderListFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
-//                LoaderCustomSupport.AppListFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
-                LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
-
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(new GoogleMusicAdapter(getSupportFragmentManager()));
+        	
         
         TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
-        
-        if (savedInstanceState != null) {
-            mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
-        }
+        indicator.setViewPager(pager);
+	
 	
   		
   		
@@ -275,7 +249,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 	
 	public static class TabsAdapter extends FragmentPagerAdapter
     implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener {
-		
 		private final Context mContext;
 		private final TabHost mTabHost;
 		private final ViewPager mViewPager;
