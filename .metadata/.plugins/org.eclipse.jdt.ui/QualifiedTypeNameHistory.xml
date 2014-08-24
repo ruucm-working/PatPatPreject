@@ -19,4 +19,5 @@
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="com.exam.R"/>
+<fullyQualifiedTypeName name="com.actionbarsherlock.app.SherlockListFragment"/>
 </qualifiedTypeNameHistroy>
