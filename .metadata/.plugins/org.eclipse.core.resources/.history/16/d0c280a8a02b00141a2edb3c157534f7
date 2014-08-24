@@ -242,8 +242,8 @@ public class coinBlockIntroActivity extends SherlockFragmentActivity
                 LoaderCursorSupport.CursorLoaderListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
 //                LoaderCustomSupport.AppListFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
-//                LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
+                LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
         Log.d("coinBlockIntroActivity","mTabsAdapter.addTab");
         
