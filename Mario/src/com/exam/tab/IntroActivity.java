@@ -16,6 +16,7 @@ import android.widget.TabWidget;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
+import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
 /**
@@ -29,6 +30,13 @@ public class IntroActivity extends SherlockFragmentActivity {
     TabsAdapter mTabsAdapter; 
     
     public static int THEME = R.style.Theme_Sherlock;
+    
+    private static final int[] ICONS = new int[] {
+        R.drawable.perm_group_banana,
+        R.drawable.perm_group_heart,
+        
+    };
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +53,9 @@ public class IntroActivity extends SherlockFragmentActivity {
 
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
 //                FragmentStackSupport.CountingFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts",getResources().getDrawable(R.drawable.perm_group_banana)),
+                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts2").setIndicator("Contacts2",getResources().getDrawable(R.drawable.perm_group_banana)),
                 LoaderCursorSupport.CursorLoaderListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
 //                LoaderCustomSupport.AppListFragment.class, null);
@@ -81,7 +91,7 @@ public class IntroActivity extends SherlockFragmentActivity {
      * tab changes.
      */
     public static class TabsAdapter extends FragmentPagerAdapter
-            implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener {
+            implements /*TabHost.OnTabChangeListener, */ViewPager.OnPageChangeListener, IconPagerAdapter {
         private final Context mContext;
         private final TabHost mTabHost;
         private final ViewPager mViewPager;
@@ -99,28 +109,28 @@ public class IntroActivity extends SherlockFragmentActivity {
             }
         }
 
-        static class DummyTabFactory implements TabHost.TabContentFactory {
-            private final Context mContext;
+		static class DummyTabFactory implements TabHost.TabContentFactory {
+			private final Context mContext;
 
-            public DummyTabFactory(Context context) {
-                mContext = context;
-            }
+			public DummyTabFactory(Context context) {
+				mContext = context;
+			}
 
-            @Override
-            public View createTabContent(String tag) {
-                View v = new View(mContext);
-                v.setMinimumWidth(0);
-                v.setMinimumHeight(0);
+			@Override
+			public View createTabContent(String tag) {
+				View v = new View(mContext);
+				v.setMinimumWidth(0);
+				v.setMinimumHeight(0);
                 return v;
             }
         }
 
         public TabsAdapter(FragmentActivity activity, TabHost tabHost, ViewPager pager) {
-            super(activity.getSupportFragmentManager());
+        	super(activity.getSupportFragmentManager());
             mContext = activity;
             mTabHost = tabHost;
             mViewPager = pager;
-            mTabHost.setOnTabChangedListener(this);
+//            mTabHost.setOnTabChangedListener(this);
             mViewPager.setAdapter(this);
             mViewPager.setOnPageChangeListener(this);
         }
@@ -129,13 +139,13 @@ public class IntroActivity extends SherlockFragmentActivity {
             tabSpec.setContent(new DummyTabFactory(mContext));
             String tag = tabSpec.getTag();
 
-            TabInfo info = new TabInfo(tag, clss, args);
-            mTabs.add(info);
-            mTabHost.addTab(tabSpec);
-            notifyDataSetChanged();
-        }
+			TabInfo info = new TabInfo(tag, clss, args);
+			mTabs.add(info);
+			mTabHost.addTab(tabSpec);
+			notifyDataSetChanged();
+		}
 
-        @Override
+		@Override
         public int getCount() {
             return mTabs.size();
         }
@@ -144,13 +154,14 @@ public class IntroActivity extends SherlockFragmentActivity {
         public Fragment getItem(int position) {
             TabInfo info = mTabs.get(position);
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
+//        return null;
         }
 
-        @Override
+      /*  @Override
         public void onTabChanged(String tabId) {
             int position = mTabHost.getCurrentTab();
             mViewPager.setCurrentItem(position);
-        }
+        }*/
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -173,5 +184,11 @@ public class IntroActivity extends SherlockFragmentActivity {
         @Override
         public void onPageScrollStateChanged(int state) {
         }
+
+	
+		@Override
+		public int getIconResId(int index) {
+			return ICONS[index];
+		}
     }
 }
