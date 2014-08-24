@@ -586,7 +586,6 @@ int id for1 0x7f070078
 int id for2 0x7f070079
 int id for3 0x7f07007a
 int id homeAsUp 0x7f07000d
-int id indicator 0x7f070082
 int id input01 0x7f07006d
 int id kind1 0x7f070072
 int id kind2 0x7f070073
@@ -604,7 +603,7 @@ int id none 0x7f070000
 int id normal 0x7f070006
 int id ok 0x7f070080
 int id ok02 0x7f070060
-int id pager 0x7f070083
+int id pager 0x7f070082
 int id picker_subtitle 0x7f07004a
 int id reset1 0x7f070058
 int id reset3 0x7f070071

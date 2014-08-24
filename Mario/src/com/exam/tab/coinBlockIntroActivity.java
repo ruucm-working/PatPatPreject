@@ -32,6 +32,7 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
 import com.exam.TextPref;
 import com.facebook.widget.ProfilePictureView;
@@ -39,7 +40,7 @@ import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
 
-public class coinBlockIntroActivity extends FragmentActivity
+public class coinBlockIntroActivity extends SherlockFragmentActivity
 {
 	/** Called when the activity is first created. */
 	
@@ -132,7 +133,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 	private static coinBlockIntroActivity instance;
 	public static  TaskTimer taskTimer1 = new TaskTimer();
 	//private Get getAsyncTask;
-	back task;
+//	back task;
 	Bitmap bmImg;
 	ImageView Profile;
 	
@@ -166,7 +167,7 @@ public class coinBlockIntroActivity extends FragmentActivity
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);		
 		setContentView(R.layout.simple_tabs);
 
-		
+		Log.d("coinBlockIntroActivity","setContentView");
 		
 		instance = this;
 		Log.d("coinBlockIntroActivity", "instance"+instance);
@@ -221,11 +222,16 @@ public class coinBlockIntroActivity extends FragmentActivity
 //        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
 //        indicator.setViewPager(mViewPager);
 	
+		
+		
         
         
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
 
+        
+        Log.d("coinBlockIntroActivity","mTabHost.setup();");
+        
         mViewPager = (ViewPager)findViewById(R.id.pager);
 
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
@@ -239,9 +245,11 @@ public class coinBlockIntroActivity extends FragmentActivity
         mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
                 LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
+        Log.d("coinBlockIntroActivity","mTabsAdapter.addTab");
         
-        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
+        
+//        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
+//        indicator.setViewPager(mViewPager);
         
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
@@ -251,6 +259,7 @@ public class coinBlockIntroActivity extends FragmentActivity
   		
   		fbPref.EndReady();
   		
+  		Log.d("coinBlockIntroActivity","mEndReady");
   		
   		
   		
@@ -275,7 +284,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 	
 	public static class TabsAdapter extends FragmentPagerAdapter
     implements TabHost.OnTabChangeListener, ViewPager.OnPageChangeListener {
-		
 		private final Context mContext;
 		private final TabHost mTabHost;
 		private final ViewPager mViewPager;
@@ -339,10 +347,6 @@ public class coinBlockIntroActivity extends FragmentActivity
 		    TabInfo info = mTabs.get(position);
 		    return Fragment.instantiate(mContext, info.clss.getName(), info.args);
 		}
-		
-		public int getIconResId(int index) {
-	          return ICONS[index];
-	        }
 		
 		@Override
 		public void onTabChanged(String tabId) {
@@ -576,43 +580,43 @@ public class coinBlockIntroActivity extends FragmentActivity
 	    }
 	*/
 	
-	public void onClick(View v)
-	{
-		if(mButton.getText().equals("start"))
-		{
-			Log.v("tag7", "equals(start");
-			
-			mTask = new AsyncTask<Void, Integer, Void>()
-			{
-		    	private boolean isCanceled = false;
-		    	 
-		    	@Override
-		    	protected void onPreExecute()
-		    	{
-		    		//publishProgress(0);
-		    		isCanceled = false;
-		    	}
-		    	 
-				@Override 
-				protected Void doInBackground(Void... params)
-				{
-					
-					Log.v("tag7", "doInBackground");
-					
-					for(int i = 1 ; i <= 50 && !isCanceled ; i++)
-					{
-						Log.v("tag7", "for"+i);
-
-						try
-						{
-							publishProgress(i);
-							Thread.sleep(100);
-						}
-						catch(InterruptedException e)
-						{
-							e.printStackTrace();
-						}
-					}
+//	public void onClick(View v)
+//	{
+//		if(mButton.getText().equals("start"))
+//		{
+//			Log.v("tag7", "equals(start");
+//			
+//			mTask = new AsyncTask<Void, Integer, Void>()
+//			{
+//		    	private boolean isCanceled = false;
+//		    	 
+//		    	@Override
+//		    	protected void onPreExecute()
+//		    	{
+//		    		//publishProgress(0);
+//		    		isCanceled = false;
+//		    	}
+//		    	 
+//				@Override 
+//				protected Void doInBackground(Void... params)
+//				{
+//					
+//					Log.v("tag7", "doInBackground");
+//					
+//					for(int i = 1 ; i <= 50 && !isCanceled ; i++)
+//					{
+//						Log.v("tag7", "for"+i);
+//
+//						try
+//						{
+//							publishProgress(i);
+//							Thread.sleep(100);
+//						}
+//						catch(InterruptedException e)
+//						{
+//							e.printStackTrace();
+//						}
+//					}
 					/* 
 					
 					while(true)
@@ -633,62 +637,62 @@ public class coinBlockIntroActivity extends FragmentActivity
 					
 
 					}*/
-					return null;
-				}
+//					return null;
+//				}
+//
+//				@Override
+//				protected void onProgressUpdate(Integer... progress)
+//				{
+//					//mProgress.setProgress(progress[0]);
+//					
+//					count ++;
+//					second = getSecond(count);
+//					time.setText( second + "초 " + count%10 );
+//					
+//					
+//				}
+//				
+//				@Override
+//				protected void onPostExecute(Void result)
+//				{
+//					//Toast.makeText(coinBlockIntroActivity.this, "onPostExecute", Toast.LENGTH_SHORT).show();
+//					//mButton.setText("start");
+//				}
+//				 
+//				@Override
+//				protected void onCancelled()
+//				{
+//					Log.v("tag7", "onCancelled");
+//					isCanceled = true;
+//					//publishProgress(0);
+//					//Toast.makeText(coinBlockIntroActivity.this, "onCancelled", Toast.LENGTH_SHORT).show();
+//				}
+//			};
+//			
+//			mTask.execute();
+//			mButton.setText("cancel");
+//		}
+//		else if(mButton.getText().equals("cancel"))
+//		{
+//			
+//			Log.v("tag7", "equals(cancel");
+//			mTask.cancel(false);
+//			mButton.setText("start");
+//		}
+//	}
+//	
+	
+	
 
-				@Override
-				protected void onProgressUpdate(Integer... progress)
-				{
-					//mProgress.setProgress(progress[0]);
-					
-					count ++;
-					second = getSecond(count);
-					time.setText( second + "초 " + count%10 );
-					
-					
-				}
-				
-				@Override
-				protected void onPostExecute(Void result)
-				{
-					//Toast.makeText(coinBlockIntroActivity.this, "onPostExecute", Toast.LENGTH_SHORT).show();
-					//mButton.setText("start");
-				}
-				 
-				@Override
-				protected void onCancelled()
-				{
-					Log.v("tag7", "onCancelled");
-					isCanceled = true;
-					//publishProgress(0);
-					//Toast.makeText(coinBlockIntroActivity.this, "onCancelled", Toast.LENGTH_SHORT).show();
-				}
-			};
-			
-			mTask.execute();
-			mButton.setText("cancel");
-		}
-		else if(mButton.getText().equals("cancel"))
-		{
-			
-			Log.v("tag7", "equals(cancel");
-			mTask.cancel(false);
-			mButton.setText("start");
-		}
-	}
-	
-	
-	
-
-	public void mOnClick(View v)
-	{
-		switch(v.getId())
-		{
-		case R.id.setbutton:    		
-			Intent intent = new Intent(this, Setting.class);
-			startActivityForResult(intent, SETTING ); 		
-			break;
-			
+//	public void mOnClick(View v)
+//	{
+//		switch(v.getId())
+//		{
+//		case R.id.setbutton:    		
+//			Intent intent = new Intent(this, Setting.class);
+//			startActivityForResult(intent, SETTING ); 		
+//			break;
+//			
 			
 
 			/*
@@ -768,20 +772,20 @@ public class coinBlockIntroActivity extends FragmentActivity
 
 		
 	        */
-			
-		}
-	}
+//			
+//		}
+//	}
 	
 	
 	
 	
 	
-		
-		public static long getSecond(long milli){
-			long secondValue = 0;
-			secondValue = milli / 10;
-			return secondValue;
-		}
+//		
+//		public static long getSecond(long milli){
+//			long secondValue = 0;
+//			secondValue = milli / 10;
+//			return secondValue;
+//		}
 		
 		/*
 		
@@ -923,13 +927,13 @@ public class coinBlockIntroActivity extends FragmentActivity
 			*/
 		
 		
-		@SuppressLint("NewApi")
-		protected void onActivityResult (int requestCode, int resultCode, Intent data) {
-			switch (requestCode){
-			case SETTING:
-				Log.d("tag02","onActivityResult");
-				
-				
+//		@SuppressLint("NewApi")
+//		protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+//			switch (requestCode){
+//			case SETTING:
+//				Log.d("tag02","onActivityResult");
+//				
+//				
 				/*
 				//if(!initstate)
 				setContentView(R.layout.main);
@@ -953,49 +957,49 @@ public class coinBlockIntroActivity extends FragmentActivity
 				InitStateText.setText("상자를 열어라");
 				*/
 				
-			}
-			
-			
-		}
+//			}
+//			
+//			
+//		}
 		
 
     	//AsyncTask for Http request
     	
     	
-    	
-    	 private class back extends AsyncTask<String, Integer,Bitmap>{
-    	        
-    		 
-    		 
-    	        @Override
-    	        protected Bitmap doInBackground(String... urls) {
-    	            // TODO Auto-generated method stub
-    	            try{
-    	                URL myFileUrl = new URL(urls[0]);
-    	                HttpURLConnection conn = (HttpURLConnection)myFileUrl.openConnection();
-    	                conn.setDoInput(true);
-    	                conn.connect();
-    	                Log.d("tag1-1","connect"+urls[0]);
-    	                /*
-    	                InputStream is = conn.getInputStream();
-    	                
-    	                bmImg = BitmapFactory.decodeStream(is);
-    	                */
-    	                bmImg = BitmapFactory.decodeStream(myFileUrl.openConnection().getInputStream());
-    	                Log.d("tag1-1","BitmapFactory"+bmImg);
-    	                
-    	            }catch(IOException e){
-    	                e.printStackTrace();
-    	            }
-    	            return bmImg;
-    	        }
-    	        
-    	        protected void onPostExecute(Bitmap img){
-    	        	Profile.setImageBitmap(bmImg);
-    	        	Log.d("tag1-1","setImageBitmap"+bmImg);
-    	        }
-    	        
-    	    }
+//    	
+//    	 private class back extends AsyncTask<String, Integer,Bitmap>{
+//    	        
+//    		 
+//    		 
+//    	        @Override
+//    	        protected Bitmap doInBackground(String... urls) {
+//    	            // TODO Auto-generated method stub
+//    	            try{
+//    	                URL myFileUrl = new URL(urls[0]);
+//    	                HttpURLConnection conn = (HttpURLConnection)myFileUrl.openConnection();
+//    	                conn.setDoInput(true);
+//    	                conn.connect();
+//    	                Log.d("tag1-1","connect"+urls[0]);
+//    	                /*
+//    	                InputStream is = conn.getInputStream();
+//    	                
+//    	                bmImg = BitmapFactory.decodeStream(is);
+//    	                */
+//    	                bmImg = BitmapFactory.decodeStream(myFileUrl.openConnection().getInputStream());
+//    	                Log.d("tag1-1","BitmapFactory"+bmImg);
+//    	                
+//    	            }catch(IOException e){
+//    	                e.printStackTrace();
+//    	            }
+//    	            return bmImg;
+//    	        }
+//    	        
+//    	        protected void onPostExecute(Bitmap img){
+//    	        	Profile.setImageBitmap(bmImg);
+//    	        	Log.d("tag1-1","setImageBitmap"+bmImg);
+//    	        }
+//    	        
+//    	    }
     	 
     	 
     	 /*
