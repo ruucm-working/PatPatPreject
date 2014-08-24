@@ -1632,6 +1632,7 @@ containing a value of this type.
         public static final int for2=0x7f070079;
         public static final int for3=0x7f07007a;
         public static final int homeAsUp=0x7f07000d;
+        public static final int indicator=0x7f070082;
         public static final int input01=0x7f07006d;
         public static final int kind1=0x7f070072;
         public static final int kind2=0x7f070073;
@@ -1649,7 +1650,7 @@ containing a value of this type.
         public static final int normal=0x7f070006;
         public static final int ok=0x7f070080;
         public static final int ok02=0x7f070060;
-        public static final int pager=0x7f070082;
+        public static final int pager=0x7f070083;
         public static final int picker_subtitle=0x7f07004a;
         public static final int reset1=0x7f070058;
         public static final int reset3=0x7f070071;

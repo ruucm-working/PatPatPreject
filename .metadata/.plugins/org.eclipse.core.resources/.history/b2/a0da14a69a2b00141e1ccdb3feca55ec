@@ -36,7 +36,7 @@ public class IntroActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.simple_tabs);
-        mTabHost = (TabHost)findViewById(android.R.id.tabhost); 
+        mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
 
         mViewPager = (ViewPager)findViewById(R.id.pager);

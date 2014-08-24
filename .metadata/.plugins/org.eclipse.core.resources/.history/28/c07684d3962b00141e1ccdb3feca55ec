@@ -16,7 +16,6 @@ import android.widget.TabWidget;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
-import com.viewpagerindicator.TabPageIndicator;
 
 /**
  * Demonstrates combining a TabHost with a ViewPager to implement a tab UI
@@ -36,7 +35,7 @@ public class IntroActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.simple_tabs);
-        mTabHost = (TabHost)findViewById(android.R.id.tabhost); 
+        mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
 
         mViewPager = (ViewPager)findViewById(R.id.pager);
@@ -55,12 +54,6 @@ public class IntroActivity extends SherlockFragmentActivity {
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
         }
-        
-        
-        
-        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-        indicator.setViewPager(mViewPager);
-        
     }
 
     @Override
