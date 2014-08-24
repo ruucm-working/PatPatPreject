@@ -11061,3 +11061,15 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-08-24 23:40:42.304
 !MESSAGE Failed to load properties file for project 'FragTabpager'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-24 23:43:47.800
+!MESSAGE Can't find file C:\GitHub\PatPatPreject\JakeWharton-ActionBarSherlock-5a15d92\actionbarsherlock\.classpath in workspace
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-24 23:43:47.830
+!MESSAGE Can't find file C:\GitHub\PatPatPreject\JakeWharton-Android-ViewPagerIndicator-8cd549f\library\.classpath in workspace
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-24 23:44:40.132
+!MESSAGE Can't find file C:\GitHub\PatPatPreject\JakeWharton-ActionBarSherlock-5a15d92\actionbarsherlock\.classpath in workspace
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-08-24 23:44:40.142
+!MESSAGE Can't find file C:\GitHub\PatPatPreject\JakeWharton-Android-ViewPagerIndicator-8cd549f\library\.classpath in workspace
