@@ -24,6 +24,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
@@ -57,18 +58,20 @@ public class FragmentTabsPager extends SherlockFragmentActivity {
 
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
 
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
-//                FragmentStackSupport.CountingFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
-//                LoaderCursorSupport.CursorLoaderListFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
-//                LoaderCustomSupport.AppListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
+                FragmentStackSupport.CountingFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
+                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
+                LoaderCustomSupport.AppListFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
                 LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
         }
+        
+        Log.d("FragmentTabsPager","end");
     }
 
     @Override
@@ -145,12 +148,21 @@ public class FragmentTabsPager extends SherlockFragmentActivity {
 
         @Override
         public int getCount() {
+        	Log.d("FragmentTabsPager","getCount "+mTabs.size());
             return mTabs.size();
         }
 
         @Override
         public Fragment getItem(int position) {
             TabInfo info = mTabs.get(position);
+            
+            
+            Log.d("FragmentTabsPager","getItem " +info);
+            
+            Log.d("FragmentTabsPager","getItem2 " +Fragment.instantiate(mContext, info.clss.getName(), info.args));
+            
+            Log.d("FragmentTabsPager","getItemend " );
+            
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
         }
 

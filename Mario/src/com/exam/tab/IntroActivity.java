@@ -44,12 +44,12 @@ public class IntroActivity extends SherlockFragmentActivity {
 
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
 //                FragmentStackSupport.CountingFragment.class, null);
-//        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
-//                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts"),
+                LoaderCursorSupport.CursorLoaderListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
 //                LoaderCustomSupport.AppListFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
-                LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
+//        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
+//                LoaderThrottleSupport.ThrottledLoaderListFragment.class, null);
 
         if (savedInstanceState != null) {
             mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
