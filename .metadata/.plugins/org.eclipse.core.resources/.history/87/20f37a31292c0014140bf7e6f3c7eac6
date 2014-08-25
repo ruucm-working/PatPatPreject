@@ -40,14 +40,6 @@ public class IntroActivity extends SherlockFragmentActivity {
         
     };
     
-    
-    //for Activity anim
-    @Override
-	public void finish() {
-		super.finish();
-		this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
-	}
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +79,7 @@ public class IntroActivity extends SherlockFragmentActivity {
         indicator.setViewPager(mViewPager);
         
         
-//        
+        
 //        
 //        //Read Preference (presetting for )  
 //  		File saveDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "SsdamSsdam"); // dir : 생성하고자 하는 경로
@@ -131,7 +123,7 @@ public class IntroActivity extends SherlockFragmentActivity {
 //		lv1 = mPref.ReadBoolean("lv1state", false);
 //		lv2 = mPref.ReadBoolean("lv2state", false);
 //        
-        
+//        
         
         
         
