@@ -20,4 +20,5 @@
 <fullyQualifiedTypeName name="com.actionbarsherlock.app.SherlockFragmentActivity"/>
 <fullyQualifiedTypeName name="com.exam.R"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.viewpagerindicator.IconPagerAdapter"/>
 </qualifiedTypeNameHistroy>

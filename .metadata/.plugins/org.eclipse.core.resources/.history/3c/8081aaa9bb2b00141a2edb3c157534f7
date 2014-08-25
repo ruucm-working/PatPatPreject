@@ -29,6 +29,7 @@ public class IntroActivity extends SherlockFragmentActivity {
     ViewPager  mViewPager;
     TabsAdapter mTabsAdapter; 
     
+    public static int THEME = R.style.Theme_Sherlock;
     
     private static final int[] ICONS = new int[] {
         R.drawable.perm_group_banana,
@@ -39,6 +40,7 @@ public class IntroActivity extends SherlockFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(THEME); //Used for theme switching in samples
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.simple_tabs);
@@ -51,9 +53,9 @@ public class IntroActivity extends SherlockFragmentActivity {
 
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
 //                FragmentStackSupport.CountingFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("deice condition").setIndicator("Device Condition",getResources().getDrawable(R.drawable.perm_group_banana)),
-        		viewPager01.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("deice state").setIndicator("Device State",getResources().getDrawable(R.drawable.perm_group_banana)),
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts").setIndicator("Contacts",getResources().getDrawable(R.drawable.perm_group_banana)),
+                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("contacts2").setIndicator("Contacts2",getResources().getDrawable(R.drawable.perm_group_banana)),
                 LoaderCursorSupport.CursorLoaderListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
 //                LoaderCustomSupport.AppListFragment.class, null);
@@ -134,12 +136,12 @@ public class IntroActivity extends SherlockFragmentActivity {
         }
 
         public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
-//            tabSpec.setContent(new DummyTabFactory(mContext));
-//            String tag = tabSpec.getTag();
+            tabSpec.setContent(new DummyTabFactory(mContext));
+            String tag = tabSpec.getTag();
 
-			TabInfo info = new TabInfo("tag", clss, args);
+			TabInfo info = new TabInfo(tag, clss, args);
 			mTabs.add(info);
-//			mTabHost.addTab(tabSpec);
+			mTabHost.addTab(tabSpec);
 			notifyDataSetChanged();
 		}
 

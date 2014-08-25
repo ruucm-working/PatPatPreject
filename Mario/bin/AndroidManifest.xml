@@ -87,7 +87,8 @@
         </activity>
         
         
-        <activity android:label="IntroActivity" android:name="com.exam.tab.IntroActivity">
+        <activity android:label="IntroActivity" android:name="com.exam.tab.IntroActivity"
+            android:theme="@style/StyledIndicators" >
             
         </activity>
         
