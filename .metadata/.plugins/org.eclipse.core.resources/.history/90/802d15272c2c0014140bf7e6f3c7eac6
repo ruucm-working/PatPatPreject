@@ -41,13 +41,6 @@ public class IntroActivity extends SherlockFragmentActivity {
     };
     
     
-    
-    //for method in Tasktimer 
-    private static IntroActivity instance;
-    public static 	IntroActivity getInstance() {
-        return instance;
-    }
-    
     //for Activity anim
     @Override
 	public void finish() {
@@ -59,10 +52,6 @@ public class IntroActivity extends SherlockFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        
-        
-        instance = this;
 
         //for Activity anim
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);	

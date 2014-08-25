@@ -622,7 +622,7 @@ public class Setting extends Activity {
 					public void onClick(DialogInterface dialog, int id) {
 						// Action for 'Yes' Button
 						
-						Intent intent = new Intent(Setting.this, IntroActivity.class);        	
+						Intent intent = new Intent(Setting.this, coinBlockIntroActivity.class);        	
 						startActivity(intent);
 						
 						finish();

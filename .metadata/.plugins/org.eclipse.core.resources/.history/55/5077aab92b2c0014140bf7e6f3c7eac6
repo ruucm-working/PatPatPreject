@@ -94,7 +94,7 @@ public class Service_BatteryGauge extends Service {
 			
 			
 			Setting.nowBattery = bLevel;
-//			coinBlockIntroActivity.bLevel = bLevel;
+			coinBlockIntroActivity.bLevel = bLevel;
 
 			if(bLevel < 15)
 				isBatteryLow = true;
@@ -139,7 +139,7 @@ public class Service_BatteryGauge extends Service {
 
 
 			// 알람 클릭시 MainActivity를 화면에 띄운다
-			Intent nintent = new Intent(getApplicationContext(),IntroActivity.class);
+			Intent nintent = new Intent(getApplicationContext(),coinBlockIntroActivity.class);
 			PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext()
 					, 0
 					, nintent 

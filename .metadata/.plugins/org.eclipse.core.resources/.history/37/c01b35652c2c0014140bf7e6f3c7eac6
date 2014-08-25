@@ -1,6 +1,5 @@
 package com.exam;
 
-import com.exam.tab.IntroActivity;
 import com.exam.view.*;
 
 import android.media.*;

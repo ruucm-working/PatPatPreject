@@ -1,6 +1,6 @@
 package com.exam;
 
-import com.exam.tab.IntroActivity;
+import com.exam.tab.coinBlockIntroActivity;
 import com.exam.view.*;
 
 import android.media.*;
@@ -24,7 +24,7 @@ public class ViewAsyncTask extends AsyncTask<String, String, String> {
     private int time       = -1;
     
     public void setTextView1(int textViewId) {
-        timer = (TextView)IntroActivity.getInstance()
+        timer = (TextView)coinBlockIntroActivity.getInstance()
                 .findViewById(textViewId);
     }
     

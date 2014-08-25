@@ -90,7 +90,7 @@ public class Setting_dialog extends Activity {
 					public void onClick(DialogInterface dialog, int id) {
 						// Action for 'Yes' Button
 						
-						Intent intent = new Intent(Setting_dialog.this, IntroActivity.class);        	
+						Intent intent = new Intent(Setting_dialog.this, coinBlockIntroActivity.class);        	
 						startActivity(intent);
 						
 						finish();
