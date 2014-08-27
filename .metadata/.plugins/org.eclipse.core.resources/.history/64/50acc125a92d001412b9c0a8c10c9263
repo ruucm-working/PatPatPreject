@@ -2,24 +2,14 @@ package com.exam.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.MediaPlayer;
+import android.graphics.*;
+import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.RemoteViews;
-import android.widget.TextView;
+import android.os.*;
+import android.util.*;
+import android.widget.*;
 
-import com.exam.CoinBlockWidgetApp;
-import com.exam.IAnimatable;
-import com.exam.MediaAssets;
-import com.exam.R;
-import com.exam.Sprite;
-import com.exam.SpriteHelper;
-import com.exam.TextPref;
-import com.exam.coinBlockWidgetProvider;
-import com.exam.tab.IntroActivity;
+import com.exam.*;
 import com.exam.tab.viewPager01;
 
 
@@ -345,13 +335,13 @@ public class InitState implements ICoinBlockViewState {
 			
 			
 			
-//			coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
+			coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
 			
 			
 			Log.d("InitState","setTextView1");
 			
 			//coinBlockIntroActivity.taskTimer1.setTime(0);
-//			coinBlockIntroActivity.taskTimer1.execute("");
+			coinBlockIntroActivity.taskTimer1.execute("");
 			Log.d("InitState","execute");
 			
 			
@@ -617,9 +607,9 @@ public class InitState implements ICoinBlockViewState {
 
 		Log.d("InitState","setContentView");
 		
-		IntroActivity instance = IntroActivity.getInstance();	
+		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();	
 
-		Log.d("InitState","IntroActivity"+instance);
+		Log.d("InitState","coinBlockIntroActivity"+instance);
 		//instance.setContentView(R.layout.main);		
 		
 		

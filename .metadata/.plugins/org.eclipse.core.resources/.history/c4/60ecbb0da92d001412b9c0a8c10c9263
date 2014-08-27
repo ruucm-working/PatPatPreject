@@ -189,7 +189,7 @@ public class CoinBlockView {
 			
 			
 			Log.d("tag8", Long.toString(second));
-			second = /*IntroActivity.taskTimer1.GetTime();*/ 0;
+			second = IntroActivity.taskTimer1.GetTime();
 
 			if ( second == 0 && CliCountInit >=3 && init){
 				init = false;
