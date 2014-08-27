@@ -544,11 +544,22 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
 
-			IntroActivity.taskTimer1.isCanceled = false;
+			
 			TaskTimer taskTimer1 = new TaskTimer();
+			taskTimer1.onRestartset();
+			
+			IntroActivity.taskTimer1.isCanceled = false;
 			taskTimer1.setTextView1(R.id.time0);
+			
+			
+			
 			taskTimer1.execute("");
+			
 
+			
+			
+			
+			
 			
 //			
 //			CoinBlockView.lv0_2 = false;	

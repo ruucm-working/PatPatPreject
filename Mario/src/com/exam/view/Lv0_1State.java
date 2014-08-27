@@ -549,6 +549,9 @@ public class Lv0_1State implements ICoinBlockViewState {
 			 
 			IntroActivity.taskTimer1.isCanceled = true;
 
+			
+//			IntroActivity.taskTimer1.onCancelled();
+			
 //			CoinBlockView.lv0_1 = false;	
 //			CoinBlockView.lv0_2 = true;	
 //			
