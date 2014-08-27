@@ -5,19 +5,17 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.util.Log;
 import android.widget.LinearLayout;
-import android.widget.RemoteViews;
 import android.widget.TextView;
 
-import com.exam.CoinBlockWidgetApp;
 import com.exam.IAnimatable;
 import com.exam.MediaAssets;
 import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
 import com.exam.TextPref;
+import com.exam.tab.DeviceConditionPage;
+import com.exam.tab.IntroActivity;
 import com.exam.tab.TaskTimer;
-import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
 
 public class Lv1State implements ICoinBlockViewState {
@@ -592,7 +590,7 @@ public class Lv1State implements ICoinBlockViewState {
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
 			
-			coinBlockIntroActivity.taskTimer1.isCanceled = false;
+			IntroActivity.taskTimer1.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.setTextView1(R.id.time0);
 			taskTimer1.execute("");
@@ -605,7 +603,7 @@ public class Lv1State implements ICoinBlockViewState {
 //			CoinBlockView.mPref.CommitWrite();
 
 
-			viewPager01.UpdateIntroView();
+			DeviceConditionPage.UpdateIntroView();
 			
 			coinBlockView.setState(new Lv2State(coinBlockView));
 
@@ -972,17 +970,7 @@ public class Lv1State implements ICoinBlockViewState {
 		
 	}
 
-	public void setContentView(int drawbleid, String txt) {
-		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();
 
-		//set newstate's background img
-		LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);			
-		a.setBackgroundResource(drawbleid);
-
-		//set newstate's text
-		TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
-		statetxt.setText(txt);
-	}
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {

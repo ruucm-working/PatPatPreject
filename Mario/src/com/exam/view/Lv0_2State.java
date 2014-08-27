@@ -2,18 +2,27 @@ package com.exam.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.*;
-import android.media.*;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.*;
-import android.util.*;
-import android.widget.*;
+import android.os.Handler;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.RemoteViews;
+import android.widget.TextView;
 
-import com.exam.*;
+import com.exam.CoinBlockWidgetApp;
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.TextPref;
+import com.exam.coinBlockWidgetProvider;
+import com.exam.tab.DeviceConditionPage;
+import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
 import com.exam.tab.TaskTimer;
-import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
 
 public class Lv0_2State implements ICoinBlockViewState {
 	
@@ -535,7 +544,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
 
-			coinBlockIntroActivity.taskTimer1.isCanceled = false;
+			IntroActivity.taskTimer1.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.setTextView1(R.id.time0);
 			taskTimer1.execute("");
@@ -552,7 +561,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 			
 			
-			viewPager01.UpdateIntroView();
+			DeviceConditionPage.UpdateIntroView();
 			
 			
 			
@@ -814,20 +823,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		}
 	}
 
-	public void setContentView(int drawbleid, String txt) {
-		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();	
-		Log.d("Lv0_1State","instance"+instance);
 
-		//set newstate's background img
-		LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);			
-		a.setBackgroundResource(drawbleid);
-
-		Log.d("Lv0_1State","setBackgroundResource");
-
-		//set new state's text
-		TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
-		statetxt.setText(txt);
-	}
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {

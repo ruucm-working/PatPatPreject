@@ -41,6 +41,8 @@ public class IntroActivity extends SherlockFragmentActivity {
     };
     
     
+    //penetrating timer value
+    public static  TaskTimer taskTimer1 = new TaskTimer();
     
     //for method in Tasktimer 
     private static IntroActivity instance;
@@ -80,7 +82,7 @@ public class IntroActivity extends SherlockFragmentActivity {
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
 //                FragmentStackSupport.CountingFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("deice condition").setIndicator("Device Condition"),
-        		viewPager01.class, null);
+        		DeviceConditionPage.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("deice state").setIndicator("Device State"),
                 LoaderCursorSupport.CursorLoaderListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),

@@ -1,14 +1,16 @@
 package com.exam.view;
 
-import android.graphics.*;
-import android.media.*;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.*;
-import android.util.*;
-import android.widget.*;
+import android.util.Log;
+import android.widget.Toast;
 
-import com.exam.*;
-import com.exam.tab.coinBlockIntroActivity;
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
 
 public class Lv3_1State implements ICoinBlockViewState {
 
@@ -688,17 +690,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}
 	}
 
-	public void setContentView(int drawbleid, String txt) {
-		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();	
 
-		//set newstate's background img
-		LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);			
-		a.setBackgroundResource(drawbleid);
-
-		//set newstate's text
-		TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
-		statetxt.setText(txt);
-	}
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {
