@@ -52,7 +52,7 @@ public class Setting extends Activity {
 
 	//프레퍼런스 값들
 	public static TextPref mPref;		
-	public static TextPref fbPref;	
+	public static TextPref bPref;	
 	String stNum1;
 	String stNum2;
 
@@ -143,9 +143,9 @@ public class Setting extends Activity {
 
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			fbPref = new TextPref("mnt/sdcard/SsdamSsdam/facebookprofile.txt");
+			bPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
 
-			Log.d("Setting", "fbPref");
+			Log.d("Setting", "bPref");
 
 		} catch (Exception e) { 
 			e.printStackTrace();
@@ -153,7 +153,7 @@ public class Setting extends Activity {
 
 
 		mPref.Ready();
-		fbPref.Ready();
+		bPref.Ready();
 
 
 
@@ -225,14 +225,14 @@ public class Setting extends Activity {
 		checked[13] = mPref.ReadBoolean("checked13", false);
 
 
-		userFirstName = fbPref.ReadString("userFirstName", "");
-		Log.d("Setting", "fbPref.ReadString();");
-		userLastName = fbPref.ReadString("userLastName", "");
-		Log.d("Setting", "fbPref.userLastName();");
+		userFirstName = bPref.ReadString("userFirstName", "");
+		Log.d("Setting", "bPref.ReadString();");
+		userLastName = bPref.ReadString("userLastName", "");
+		Log.d("Setting", "bPref.userLastName();");
 
 
 		mPref.EndReady();
-		fbPref.EndReady();
+		bPref.EndReady();
 
 
 		Log.d("Setting", "init"+init);

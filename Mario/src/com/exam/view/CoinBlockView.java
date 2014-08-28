@@ -41,7 +41,6 @@ public class CoinBlockView {
 
 	//프레퍼런스 
 	public static TextPref mPref;	
-	public static TextPref fbPref;	
 
 	//static variables
 	public static ICoinBlockViewState state;
