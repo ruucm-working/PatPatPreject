@@ -1,5 +1,9 @@
 package com.exam.tab;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,13 +16,13 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.exam.R;
 
-public class DeviceStatePage extends SherlockListFragment implements
-		LoaderManager.LoaderCallbacks<Cursor> {
+public class DeviceStatePage extends SherlockListFragment {
 
 	/*@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,68 +34,54 @@ public class DeviceStatePage extends SherlockListFragment implements
 		return v;
 	}*/
 	
+	/** An array of items to display */
+    String android_versions[] = new String[]{
+            "Jelly Bean",
+            "IceCream Sandwich",
+            "HoneyComb",
+            "GingerBread",
+            "Froyo"
+    };
+    
+    int android_images[] = new int[]{
+            R.drawable.jb,
+            R.drawable.ics,
+            R.drawable.honeycomb,
+            R.drawable.gingerbread,
+            R.drawable.froyo
+    };
 	
 	
-	SimpleCursorAdapter mAdapter;
-	
-	
-	
-	String [] aDB = new String[] { "a","b","c","a","b","c","a","b","c" } ;
-	
-	@Override public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        // Give some text to display if there is no data.  In a real
-        // application this would come from a resource.
-//        setEmptyText("No phone numbers");
-
-        // We have a menu item to show in action bar.
-        setHasOptionsMenu(true);
-
-        // Create an empty adapter we will use to display the loaded data.
-        mAdapter = new SimpleCursorAdapter(getActivity(),
-                android.R.layout.simple_list_item_1, null,
-                aDB,
-                new int[] { android.R.id.text1}, 0);
-        setListAdapter(mAdapter);
-
-        // Start out with a progress indicator.
-        setListShown(true);
-
-        // Prepare the loader.  Either re-connect with an existing one,
-        // or start a new one.
-//        getLoaderManager().initLoader(0, null, this);
-        
-        
-        
-        
-        
-        
-        
-    }
-
 	@Override
-	public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
-		// TODO Auto-generated method stub
-		return new CursorLoader(getActivity());
-	}
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    		Bundle savedInstanceState) {
+    	     	
+    	// Each row in the list stores country name, currency and flag
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-	public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        // Swap the new cursor in.  (The framework will take care of closing the
-        // old cursor once we return.)
-        mAdapter.swapCursor(data);
-
-        // The list should now be shown.
-        if (isResumed()) {
-            setListShown(true);
-        } else {
-            setListShownNoAnimation(true);
+        for(int i=0;i<5;i++){
+                HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", android_versions[i]);
+            hm.put("img", Integer.toString(android_images[i]  ) );
+            aList.add(hm);
         }
+
+        // Keys used in Hashmap
+        String[] from = { "img","txt" };
+
+        // Ids of views in listview_layout
+        int[] to = { R.id.img,R.id.txt};
+
+        // Instantiating an adapter to store each items
+        // R.layout.listview_layout defines the layout of each item
+        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.device_state, from, to);        
+        
+        // Setting the adapter to the listView
+        setListAdapter(adapter);        
+        
+        return super.onCreateView(inflater, container, savedInstanceState);
+
     }
-
-	@Override
-	public void onLoaderReset(Loader<Cursor> arg0) {
-		// TODO Auto-generated method stub
-
-	}
+	
+	
 }
