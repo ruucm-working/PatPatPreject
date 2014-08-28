@@ -21,5 +21,6 @@
 <fullyQualifiedTypeName name="com.exam.R"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="com.viewpagerindicator.IconPagerAdapter"/>
+<fullyQualifiedTypeName name="com.exam.tab.coinBlockLoginActivity"/>
 <fullyQualifiedTypeName name="com.exam.tab.IntroActivity"/>
 </qualifiedTypeNameHistroy>

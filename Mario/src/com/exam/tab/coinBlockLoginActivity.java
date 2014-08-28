@@ -87,18 +87,14 @@ public class coinBlockLoginActivity extends Activity
 		 
 		setContentView(R.layout.login);
 		
-		Log.d("coinBlockLoginActivity","setContentView.");
 			 
 		 
 		init();
-		Log.d("coinBlockLoginActivity","init.");
         dataInit();
          
-        Log.d("coinBlockLoginActivity","dataInit.");
         
         facebookInit(savedInstanceState);
 		
-        Log.d("coinBlockLoginActivity","facebookInit.");
         
         
         //Ready next activity intent

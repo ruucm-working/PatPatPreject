@@ -84,7 +84,7 @@ public class IntroActivity extends SherlockFragmentActivity {
         mTabsAdapter.addTab(mTabHost.newTabSpec("deice condition").setIndicator("Device Condition"),
         		DeviceConditionPage.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("deice state").setIndicator("Device State"),
-                LoaderCursorSupport.CursorLoaderListFragment.class, null);
+        		DeviceStatePage.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("custom").setIndicator("Custom"),
 //                LoaderCustomSupport.AppListFragment.class, null);
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("throttle").setIndicator("Throttle"),
