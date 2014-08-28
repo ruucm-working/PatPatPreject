@@ -4,20 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import android.content.Intent;
-import android.database.Cursor;
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.Contacts.People;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v4.widget.SimpleCursorAdapter;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.exam.R;
@@ -56,7 +53,11 @@ public class DeviceStatePage extends SherlockListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
     		Bundle savedInstanceState) {
     	     	
-    	// Each row in the list stores country name, currency and flag
+		
+		
+		
+		
+		
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
         for(int i=0;i<5;i++){

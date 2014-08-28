@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="isResumed" key="selection"/>
+		<item value="coinBlockLoginActivity" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="DeviceStatePage"/>
+			<item value="tag"/>
+			<item value="aList"/>
+			<item value="onClickLogin"/>
 			<item value="isResumed"/>
 			<item value="time"/>
 			<item value="settext"/>
 			<item value="current"/>
-			<item value="cancelle"/>
-			<item value="canceled"/>
-			<item value="Evolve"/>
-			<item value="evolve"/>
 		</list>
 		<list key="replacehistory">
+			<item value="coinBlockLoginActivity"/>
+			<item value="&quot;DeviceStatePage&quot;"/>
 			<item value="IntroActivity"/>
 			<item value="2"/>
 			<item value=""/>
 			<item value="time"/>
 			<item value="sp2"/>
 			<item value="pager"/>
-			<item value="android:theme=&quot;@android:style/Theme.Holo.Light.NoActionBar&quot;"/>
-			<item value="itnum"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
