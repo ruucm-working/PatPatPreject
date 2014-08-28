@@ -17,7 +17,6 @@ import com.exam.helper.SnowWiFiMonitor;
 import com.exam.tab.Service_BatteryGauge;
 import com.exam.tab.Service_Notify;
 import com.exam.tab.Service_SnowWiFiMonitor;
-import com.exam.tab.coinBlockIntroActivity;
 import com.exam.view.CoinBlockView;
 
 

@@ -6,9 +6,15 @@ import java.io.File;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.wifi.WifiManager;
+import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,10 +22,6 @@ import android.widget.Button;
 
 import com.exam.R;
 import com.exam.TextPref;
-import com.exam.R.id;
-import com.exam.R.layout;
-import com.exam.R.string;
-import com.exam.view.CoinBlockView;
 import com.facebook.LoggingBehavior;
 import com.facebook.Request;
 import com.facebook.Response;
@@ -27,13 +29,6 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.Settings;
 import com.facebook.model.GraphUser;
-
-
-
-
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 
 
 
@@ -66,7 +61,7 @@ public class coinBlockLoginActivity extends Activity
     
     //프레퍼런스 
     public static TextPref mPref;	
-  	public static TextPref fbPref;	
+  	public static TextPref bPref;	
   	
   	boolean setDialogOn ;
   	
@@ -87,22 +82,16 @@ public class coinBlockLoginActivity extends Activity
 		 
 		setContentView(R.layout.login);
 		
-		Log.d("coinBlockLoginActivity","setContentView.");
 			 
 		 
 		init();
-		Log.d("coinBlockLoginActivity","init.");
         dataInit();
          
-        Log.d("coinBlockLoginActivity","dataInit.");
         
         facebookInit(savedInstanceState);
 		
-        Log.d("coinBlockLoginActivity","facebookInit.");
         
-        
-        //Ready next activity intent
-        
+
         
          
         //프레퍼런스 읽어오기   
@@ -115,7 +104,7 @@ public class coinBlockLoginActivity extends Activity
 
       		try {
       			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-      			fbPref = new TextPref("mnt/sdcard/SsdamSsdam/facebookprofile.txt");
+      			bPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
 
       		} catch (Exception e) { 
       			e.printStackTrace();
@@ -123,24 +112,117 @@ public class coinBlockLoginActivity extends Activity
 
 
       		mPref.Ready();
-      		fbPref.Ready();
+      		bPref.Ready();
         
-      		Log.d("coinBlockLoginActivity","fbPref.Ready();.");
+      		Log.d("coinBlockLoginActivity","bPref.Ready();.");
         
 		
       		
       		setDialogOn = mPref.ReadBoolean("setdialogon", true);
       		
-      		userId = fbPref.ReadString("userId", "");
-      		userFirstName = fbPref.ReadString("userFirstName", "");
-      		userLastName = fbPref.ReadString("userLastName", "");
+      		userId = bPref.ReadString("userId", "");
+      		userFirstName = bPref.ReadString("userFirstName", "");
+      		userLastName = bPref.ReadString("userLastName", "");
+      		
+      		
+      		
+      		
+      		
+      		
+      		//Write device Profile(bprofile)
+      		
+      		bPref.WriteString("MANUFACTURER", Build.MANUFACTURER);
+      		bPref.WriteString("MODEL", Build.MODEL);
+      		bPref.WriteString("PRODUCT", Build.PRODUCT);
+      		
+		    TelephonyManager telephony=(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+      		bPref.WriteString("NetworkCountryIso", telephony.getNetworkCountryIso());
+      		bPref.WriteString("SimCountryIso", telephony.getSimCountryIso());
+      		
+                   
+			
+			bPref.CommitWrite();
+      		
+      		
+      		
       		 
       		
       		mPref.EndReady();
-      		fbPref.EndReady();
-      		Log.d("coinBlockLoginActivity","fbPref.");
+      		bPref.EndReady();
+
       		
       		
+      		
+      		
+      		
+      		
+			/*
+
+			
+			// device 고유 정보값 가져오기
+		    Log.d("coinBlockLoginActivity", "BOARD: " + Build.BOARD);
+		    Log.d("coinBlockLoginActivity", "BRAND: " + Build.BRAND);
+		    Log.d("coinBlockLoginActivity", "CPU_ABI: " + Build.CPU_ABI);
+		    Log.d("coinBlockLoginActivity", "DEVICE: " + Build.DEVICE);
+		    Log.d("coinBlockLoginActivity", "DISPLAY: " + Build.DISPLAY);
+		    Log.d("coinBlockLoginActivity", "FINGERPRINT: " + Build.FINGERPRINT);
+		    Log.d("coinBlockLoginActivity", "HOST: " + Build.HOST);
+		    Log.d("coinBlockLoginActivity", "ID: " + Build.ID);
+		    Log.d("coinBlockLoginActivity", "MANUFACTURER: " + Build.MANUFACTURER);
+		    Log.d("coinBlockLoginActivity", "MODEL: " + Build.MODEL);
+		    Log.d("coinBlockLoginActivity", "PRODUCT: " + Build.PRODUCT);
+		    Log.d("coinBlockLoginActivity", "TAGS: " + Build.TAGS);
+		    Log.d("coinBlockLoginActivity", "TIME: " + Build.TIME);
+		    Log.d("coinBlockLoginActivity", "TYPE: " + Build.TYPE);
+		    Log.d("coinBlockLoginActivity", "USER: " + Build.USER);
+		       
+		       
+		 // device 정보 가져오기
+		    TelephonyManager telephony=(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+		       
+		    Log.d("coinBlockLoginActivity", "getCallState : "+telephony.getCallState());
+		    Log.d("coinBlockLoginActivity", "getDataActivity : "+telephony.getDataActivity());
+		    Log.d("coinBlockLoginActivity", "getDataState : "+telephony.getDataState());
+		    Log.d("coinBlockLoginActivity", "getDeviceId : "+telephony.getDeviceId());
+		    Log.d("coinBlockLoginActivity", "getDeviceSoftwareVersion : "+telephony.getDeviceSoftwareVersion());
+		    Log.d("coinBlockLoginActivity", "getLine1Number : "+telephony.getLine1Number());
+		    Log.d("coinBlockLoginActivity", "getNetworkCountryIso : "+telephony.getNetworkCountryIso());
+		    Log.d("coinBlockLoginActivity", "getNetworkOperator : "+telephony.getNetworkOperator());
+		    Log.d("coinBlockLoginActivity", "getNetworkOperatorName : "+telephony.getNetworkOperatorName());
+		    Log.d("coinBlockLoginActivity", "getNetworkType : "+telephony.getNetworkType());
+		    Log.d("coinBlockLoginActivity", "getPhoneType : "+telephony.getPhoneType());
+		    Log.d("coinBlockLoginActivity", "getSimCountryIso : "+telephony.getSimCountryIso());
+		    Log.d("coinBlockLoginActivity", "getSubscriberId : "+telephony.getSubscriberId());
+		    Log.d("coinBlockLoginActivity", "getVoiceMailAlphaTag : "+telephony.getVoiceMailAlphaTag());
+		    Log.d("coinBlockLoginActivity", "getVoiceMailNumber : "+telephony.getVoiceMailNumber());
+		    Log.d("coinBlockLoginActivity", "isNetworkRoaming : "+telephony.isNetworkRoaming());
+		    Log.d("coinBlockLoginActivity", "hasIccCard : "+telephony.hasIccCard());
+		    Log.d("coinBlockLoginActivity", "hashCode : "+telephony.hashCode());
+		    Log.d("coinBlockLoginActivity", "toString : "+telephony.toString());
+		       
+		    
+		    //wifi 정보
+		    
+		    
+		    WifiManager wifi = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
+		    Log.d("coinBlockLoginActivity", "wificonnectioninfo : "+wifi.getConnectionInfo());
+		    Log.d("coinBlockLoginActivity", "wifistate : "+wifi.getWifiState());
+		    Log.d("coinBlockLoginActivity", "wifiDhcpInfo : "+wifi.getDhcpInfo());
+		    
+	        
+		    
+		    //배터리 정보
+		    IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+		    Intent batteryStatus = this.registerReceiver(null, ifilter);
+		    
+		    Log.d("coinBlockLoginActivity", "battery Level : "+batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1));
+		    Log.d("coinBlockLoginActivity", "battery status  : "+batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1));
+		    Log.d("coinBlockLoginActivity", "battery chargePlug : "+batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1));
+		    Log.d("coinBlockLoginActivity", "battery scale : "+batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1));
+
+	        */
+	        
+	        
         
 	} 
 	
@@ -290,7 +372,7 @@ public class coinBlockLoginActivity extends Activity
 					
 				}
 				else{
-					Intent intent = new Intent(this, coinBlockIntroActivity.class);
+					Intent intent = new Intent(this, IntroActivity.class);
 					startActivity(intent);		        	
 				}
 				
@@ -351,17 +433,17 @@ public class coinBlockLoginActivity extends Activity
 	                        Log.d("coinBlockLoginActivity","userFirstName2"+userFirstName);
 	                        
 	                        
-	                        fbPref.Ready();
+	                        bPref.Ready();
 	                        
-	                        fbPref.WriteString("userId", userId);
-	            			fbPref.WriteString("userFirstName", userFirstName);
-	            			fbPref.WriteString("userLastName", userLastName);
+	                        bPref.WriteString("userId", userId);
+	            			bPref.WriteString("userFirstName", userFirstName);
+	            			bPref.WriteString("userLastName", userLastName);
 	                  		
 	                    
 	            			Log.d("coinBlockLoginActivity", "WriteString;");
 	                    
 	            			
-	            			fbPref.CommitWrite();
+	            			bPref.CommitWrite();
 	            			
 	            			toIntro();
 	            			finish();

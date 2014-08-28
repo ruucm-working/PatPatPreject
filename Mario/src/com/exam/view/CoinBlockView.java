@@ -13,7 +13,6 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.Setting;
-import com.exam.tab.coinBlockIntroActivity;
 
 public class CoinBlockView {
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
@@ -42,7 +41,6 @@ public class CoinBlockView {
 
 	//프레퍼런스 
 	public static TextPref mPref;	
-	public static TextPref fbPref;	
 
 	//static variables
 	public static ICoinBlockViewState state;
@@ -190,7 +188,7 @@ public class CoinBlockView {
 			
 			
 			Log.d("tag8", Long.toString(second));
-			second = coinBlockIntroActivity.taskTimer1.GetTime();
+			second = /*IntroActivity.taskTimer1.GetTime();*/ 0;
 
 			if ( second == 0 && CliCountInit >=3 && init){
 				init = false;

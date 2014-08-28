@@ -10,9 +10,9 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
-import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
+import com.exam.tab.DeviceConditionPage;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	// sprites
@@ -546,9 +546,12 @@ public class Lv0_1State implements ICoinBlockViewState {
 			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
 			
 			
-			
-			coinBlockIntroActivity.taskTimer1.isCanceled = true;
+			 
+			IntroActivity.taskTimer1.isCanceled = true;
 
+			
+//			IntroActivity.taskTimer1.onCancelled();
+			
 //			CoinBlockView.lv0_1 = false;	
 //			CoinBlockView.lv0_2 = true;	
 //			
@@ -561,7 +564,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 //
 //			Log.d("Lv0_1State","CommitWrite");
 			
-			viewPager01.UpdateIntroView();
+			DeviceConditionPage.UpdateIntroView();
 			
 			
 			
@@ -823,20 +826,6 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 	}
 
-	public void setContentView(int drawbleid, String txt) {
-		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();	
-		Log.d("Lv0_1State","instance"+instance);
-
-		//set newstate's background img
-		LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);			
-		a.setBackgroundResource(drawbleid);
-
-		Log.d("Lv0_1State","setBackgroundResource");
-
-		//set new state's text
-		TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
-		statetxt.setText(txt);
-	}
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {

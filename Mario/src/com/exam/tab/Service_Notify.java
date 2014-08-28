@@ -87,7 +87,7 @@ public class Service_Notify extends Service
 
 
 			// 알람 클릭시 MainActivity를 화면에 띄운다
-			Intent intent = new Intent(getApplicationContext(),coinBlockIntroActivity.class);
+			Intent intent = new Intent(getApplicationContext(),IntroActivity.class);
 			PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext()
 					, 0
 					, intent 

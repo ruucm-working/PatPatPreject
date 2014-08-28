@@ -2,16 +2,25 @@ package com.exam.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.*;
-import android.media.*;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.*;
-import android.util.*;
-import android.widget.*;
+import android.os.Handler;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.RemoteViews;
+import android.widget.TextView;
 
-import com.exam.*;
-import com.exam.tab.coinBlockIntroActivity;
-import com.exam.tab.viewPager01;
+import com.exam.CoinBlockWidgetApp;
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.TextPref;
+import com.exam.coinBlockWidgetProvider;
+import com.exam.tab.IntroActivity;
+import com.exam.tab.DeviceConditionPage;
 
 
 public class InitState implements ICoinBlockViewState {
@@ -336,17 +345,17 @@ public class InitState implements ICoinBlockViewState {
 			
 			
 			
-			coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
+			IntroActivity.taskTimer1.setTextView1(R.id.time0);
 			
 			
 			Log.d("InitState","setTextView1");
 			
-			//coinBlockIntroActivity.taskTimer1.setTime(0);
-			coinBlockIntroActivity.taskTimer1.execute("");
+			//IntroActivity.taskTimer1.setTime(0);
+			IntroActivity.taskTimer1.execute("");
 			Log.d("InitState","execute");
 			
 			
-			viewPager01.UpdateIntroView();
+			DeviceConditionPage.UpdateIntroView();
 			
 			Log.d("InitState","UpdateIntroView");
 			//coinBlockIntroActivity.setContentView(R.layout.main);
@@ -602,41 +611,6 @@ public class InitState implements ICoinBlockViewState {
 		
 	}
 	
-	
-	public void setContentView(int drawbleid, String txt) {
-		
-
-		Log.d("InitState","setContentView");
-		
-		coinBlockIntroActivity instance = coinBlockIntroActivity.getInstance();	
-
-		Log.d("InitState","coinBlockIntroActivity"+instance);
-		//instance.setContentView(R.layout.main);		
-		
-		
-		/*
-		
-		//set time
-		TextView time = (TextView)instance.findViewById(R.id.time0);
-		time.setText(Long.toString(instance.second));
-		
-		*/
-		
-		//set newstate's background img
-		LinearLayout a = (LinearLayout)instance.findViewById(R.id.mainlinear);
-		
-		Log.d("InitState","LinearLayout");
-		
-		a.setBackgroundResource(drawbleid);
-		
-
-		Log.d("InitState","setBackgroundResource");
-		 
-		//set newstate's text
-		TextView statetxt = (TextView)instance.findViewById(R.id.welcome);		
-		statetxt.setText(txt);
-		
-    }
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {
