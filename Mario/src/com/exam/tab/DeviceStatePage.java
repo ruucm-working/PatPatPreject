@@ -59,7 +59,6 @@ public class DeviceStatePage extends SherlockListFragment {
 
 		bPref.Ready();
 		
-		Log.d("DeviceStatePage",".Ready();");
 		
 		
 		device_states = new String[] { bPref.ReadString("MANUFACTURER", ""),
@@ -71,7 +70,6 @@ public class DeviceStatePage extends SherlockListFragment {
 
 		bPref.EndReady();
 		
-		Log.d("DeviceStatePage","EndReady();();");
 		
 		
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
@@ -101,12 +99,10 @@ public class DeviceStatePage extends SherlockListFragment {
         // R.layout.listview_layout defines the layout of each item
         SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.device_state, from, to);        
         
-        Log.d("DeviceStatePage","SimpleAdapter adapt");
         
         // Setting the adapter to the listView
         setListAdapter(adapter);      
         
-        Log.d("DeviceStatePage","setListAdapter");
         
         return super.onCreateView(inflater, container, savedInstanceState);
 
