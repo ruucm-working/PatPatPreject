@@ -424,7 +424,7 @@ int drawable custom_tab_indicator_unselected 0x7f0200af
 int drawable custom_tab_indicator_unselected_focused 0x7f0200b0
 int drawable custom_tab_indicator_unselected_pressed 0x7f0200b1
 int drawable dialog02 0x7f0200b2
-int drawable ds_background01 0x7f0200b3
+int drawable ds_back_jellybean 0x7f0200b3
 int drawable egg 0x7f0200b4
 int drawable egg_break 0x7f0200b5
 int drawable eggs_break 0x7f0200b6
@@ -579,6 +579,7 @@ int id com_facebook_tooltip_bubble_view_top_pointer 0x7f07004e
 int id com_facebook_usersettingsfragment_login_button 0x7f070054
 int id com_facebook_usersettingsfragment_logo_image 0x7f070052
 int id com_facebook_usersettingsfragment_profile_name 0x7f070053
+int id dc_mainlinear 0x7f070055
 int id disableHome 0x7f070010
 int id dry1 0x7f07007a
 int id dry2 0x7f07007b
@@ -591,7 +592,7 @@ int id for2 0x7f070078
 int id for3 0x7f070079
 int id homeAsUp 0x7f07000d
 int id img 0x7f07005a
-int id indicator 0x7f070081
+int id indicator 0x7f070082
 int id input01 0x7f07006c
 int id kind1 0x7f070071
 int id kind2 0x7f070072
@@ -601,7 +602,6 @@ int id kind5 0x7f070075
 int id kind6 0x7f070076
 int id large 0x7f070007
 int id listMode 0x7f070009
-int id mainlinear 0x7f070055
 int id myspinner1 0x7f07006d
 int id myspinner2 0x7f07006e
 int id myspinner3 0x7f07006f
@@ -609,7 +609,7 @@ int id none 0x7f070000
 int id normal 0x7f070006
 int id ok 0x7f07007f
 int id ok02 0x7f07005f
-int id pager 0x7f070082
+int id pager 0x7f070083
 int id picker_subtitle 0x7f07004a
 int id reset1 0x7f070058
 int id reset3 0x7f070070
@@ -620,6 +620,7 @@ int id showHome 0x7f07000c
 int id showTitle 0x7f07000e
 int id small 0x7f070005
 int id tabMode 0x7f07000a
+int id tab_linear 0x7f070081
 int id textView1 0x7f070061
 int id time0 0x7f070056
 int id top 0x7f070004

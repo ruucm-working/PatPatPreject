@@ -7,7 +7,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/states_egg01"
     android:paddingTop = "30dp"
-    android:id="@+id/mainlinear"
+    android:id="@+id/dc_mainlinear"
     >
 
 

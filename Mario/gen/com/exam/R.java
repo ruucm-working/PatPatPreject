@@ -1468,7 +1468,7 @@ containing a value of this type.
         public static final int custom_tab_indicator_unselected_focused=0x7f0200b0;
         public static final int custom_tab_indicator_unselected_pressed=0x7f0200b1;
         public static final int dialog02=0x7f0200b2;
-        public static final int ds_background01=0x7f0200b3;
+        public static final int ds_back_jellybean=0x7f0200b3;
         public static final int egg=0x7f0200b4;
         public static final int egg_break=0x7f0200b5;
         public static final int eggs_break=0x7f0200b6;
@@ -1625,6 +1625,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f070054;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f070052;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f070053;
+        public static final int dc_mainlinear=0x7f070055;
         public static final int disableHome=0x7f070010;
         public static final int dry1=0x7f07007a;
         public static final int dry2=0x7f07007b;
@@ -1637,7 +1638,7 @@ containing a value of this type.
         public static final int for3=0x7f070079;
         public static final int homeAsUp=0x7f07000d;
         public static final int img=0x7f07005a;
-        public static final int indicator=0x7f070081;
+        public static final int indicator=0x7f070082;
         public static final int input01=0x7f07006c;
         public static final int kind1=0x7f070071;
         public static final int kind2=0x7f070072;
@@ -1647,7 +1648,6 @@ containing a value of this type.
         public static final int kind6=0x7f070076;
         public static final int large=0x7f070007;
         public static final int listMode=0x7f070009;
-        public static final int mainlinear=0x7f070055;
         public static final int myspinner1=0x7f07006d;
         public static final int myspinner2=0x7f07006e;
         public static final int myspinner3=0x7f07006f;
@@ -1655,7 +1655,7 @@ containing a value of this type.
         public static final int normal=0x7f070006;
         public static final int ok=0x7f07007f;
         public static final int ok02=0x7f07005f;
-        public static final int pager=0x7f070082;
+        public static final int pager=0x7f070083;
         public static final int picker_subtitle=0x7f07004a;
         public static final int reset1=0x7f070058;
         public static final int reset3=0x7f070070;
@@ -1666,6 +1666,7 @@ containing a value of this type.
         public static final int showTitle=0x7f07000e;
         public static final int small=0x7f070005;
         public static final int tabMode=0x7f07000a;
+        public static final int tab_linear=0x7f070081;
         public static final int textView1=0x7f070061;
         public static final int time0=0x7f070056;
         public static final int top=0x7f070004;

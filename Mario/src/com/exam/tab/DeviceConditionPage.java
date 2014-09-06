@@ -20,21 +20,19 @@ public class DeviceConditionPage extends Fragment {
 	
 	
 	
-	//프레퍼런스 
-		public static TextPref mPref;
-		//public static TextPref fbPref;
+	// 프레퍼런스
+	public static TextPref mPref;
+	// public static TextPref fbPref;
 		 
 		
-		static boolean init ;
-		public static boolean lv0_1 ;
-		static boolean lv0_2 ;
-		public static boolean lv1 ;
-		public static boolean lv2 ;
-		public static boolean lv3_1 ;
-		
-		
-		
-		static View v;
+	static boolean init;
+	public static boolean lv0_1;
+	static boolean lv0_2;
+	public static boolean lv1;
+	public static boolean lv2;
+	public static boolean lv3_1;
+
+	static View v;
 	
 
         @Override
@@ -130,19 +128,15 @@ public class DeviceConditionPage extends Fragment {
 			 
 			 
 			 
-			 Log.d("viewPager01","updateview"+drawbleid+txt);
 			 
 				//set newstate's background img
-			 	RelativeLayout a = (RelativeLayout)v.findViewById(R.id.mainlinear);	
-			 	Log.d("viewPager01","RelativeLayout " +a);
+			 	RelativeLayout a = (RelativeLayout)v.findViewById(R.id.dc_mainlinear);	
 				a.setBackgroundResource(drawbleid);
 				
-				Log.d("viewPager01","setBackgroundResource "+drawbleid);
 				 
 				//set new state's text
 				TextView statetxt = (TextView)v.findViewById(R.id.welcome);		
 				statetxt.setText(txt);
-				Log.d("viewPager01","setText ");
 				
 				if(notstopped){
 				TaskTimer taskTimer1 = new TaskTimer();
@@ -150,7 +144,6 @@ public class DeviceConditionPage extends Fragment {
 				taskTimer1.execute("");
 				}
 				
-				Log.d("viewPager01","notstopped ");
 				
 				
 			 

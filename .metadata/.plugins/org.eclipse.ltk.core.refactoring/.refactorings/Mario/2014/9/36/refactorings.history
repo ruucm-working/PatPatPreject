@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Mario/res/drawable-mdpi/ds_background01.png&apos; to &apos;ds_back_jellybean.png&apos;" description="Rename resource &apos;ds_background01.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="res/drawable-mdpi/ds_background01.png" name="ds_back_jellybean.png" stamp="1409980390774" updateReferences="true"/>
+</session>

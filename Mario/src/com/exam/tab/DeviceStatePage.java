@@ -14,7 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.exam.R;
@@ -23,8 +26,11 @@ import com.exam.TextPref;
 public class DeviceStatePage extends SherlockListFragment {
 
 
-	
+	// 프레퍼런스
 	public static TextPref bPref;
+	
+	
+	static String device_version;
 	
 	
 	/** An array of items to display */
@@ -60,7 +66,6 @@ public class DeviceStatePage extends SherlockListFragment {
 		bPref.Ready();
 		
 		
-		
 		device_states = new String[] { bPref.ReadString("MANUFACTURER", ""),
 				bPref.ReadString("MODEL", ""), bPref.ReadString("PRODUCT", ""),
 				bPref.ReadString("NetworkCountryIso", ""),
@@ -69,8 +74,6 @@ public class DeviceStatePage extends SherlockListFragment {
 		};
 
 		bPref.EndReady();
-		
-		
 		
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
@@ -99,14 +102,112 @@ public class DeviceStatePage extends SherlockListFragment {
         // R.layout.listview_layout defines the layout of each item
         SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.device_state, from, to);        
         
-        
+         
         // Setting the adapter to the listView
         setListAdapter(adapter);      
         
         
+        updateDeviceVersionView() ;
+        
         return super.onCreateView(inflater, container, savedInstanceState);
 
     }
+	
+	
+	public static void updateDeviceVersionView() {
+		
+		 
+		 
+		 
+	 		bPref.Ready();	 		
+	 		device_version = bPref.ReadString("DeviceVersion", "");	 	
+			bPref.EndReady();
+			
+			
+			
+			String sub = device_version.substring(device_version.indexOf(":"), device_version.lastIndexOf('.'));
+			
+			
+			
+			
+			if (sub == "2.3"){
+				updateview(R.drawable.background, device_version );				
+			}
+			else if (sub == "3.1" || sub =="3.2"){
+				
+			}
+			else if (sub == "4.0"){
+				
+			}
+			else if (sub == "4.1" || sub == "4.2" || sub == "4.3"){
+				
+			}
+			else if (sub == "4.4"){
+				
+			}
+			else {
+				
+			}
+			
+			
+			
+			
+	   			if (init){ 
+	   				 
+	   				
+	   				updateview(R.drawable.background,"init 임 ㅇㅇ", false);
+	   				
+	   			}
+	   			else if (lv0_1){
+	   				
+	   				updateview(R.drawable.background0,"lv0-1 임 ㅇㅇ", true);
+	   				
+	   				
+	   				
+	   			}
+	   			else if (lv0_2){
+	   				
+	   				updateview(R.drawable.background0,"lv0-2 임 ㅇㅇ", false);
+	   				
+	   				
+	   			}else if (lv1){
+	   				updateview(R.drawable.background1, "레벨1s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ",true);
+	   				
+	   			}
+	   			else if (lv2){
+	   				updateview(R.drawable.background2, "레벨2s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ",true);    	    				
+	   			}
+	   			else if (lv3_1){
+	   				updateview(R.drawable.background3_1, "이런 인간도있군..",true);    	    				
+	   			}
+		 
+	   			Log.d("viewPager01","else if (lv2)  	 mP");
+		 
+	   			
+	   			
+	   			
+		 
+	}
+	
+	public static void updateview (int drawbleid, String txt){
+		 
+		 
+		 
+		 
+			//set newstate's background img
+			LinearLayout a = (LinearLayout) IntroActivity.getInstance().findViewById(R.id.tab_linear);	
+			a.setBackgroundResource(drawbleid);
+			
+			 
+			//set new state's text
+			TextView statetxt = (TextView)v.findViewById(R.id.welcome);		
+			statetxt.setText(txt);
+			
+			
+			
+			
+		 
+	}
 	
 	
 }

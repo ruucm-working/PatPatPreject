@@ -139,6 +139,9 @@ public class coinBlockLoginActivity extends Activity
       		bPref.WriteString("NetworkCountryIso", telephony.getNetworkCountryIso());
       		bPref.WriteString("SimCountryIso", telephony.getSimCountryIso());
       		
+      		String[] array = Build.FINGERPRINT.split("/");
+      		bPref.WriteString("DeviceVersion", array[2]);
+      		
                    
 			
 			bPref.CommitWrite();
@@ -156,32 +159,35 @@ public class coinBlockLoginActivity extends Activity
       		
       		
       		
-			/*
+			
 
 			
-			// device 고유 정보값 가져오기
-		    Log.d("coinBlockLoginActivity", "BOARD: " + Build.BOARD);
-		    Log.d("coinBlockLoginActivity", "BRAND: " + Build.BRAND);
-		    Log.d("coinBlockLoginActivity", "CPU_ABI: " + Build.CPU_ABI);
-		    Log.d("coinBlockLoginActivity", "DEVICE: " + Build.DEVICE);
-		    Log.d("coinBlockLoginActivity", "DISPLAY: " + Build.DISPLAY);
-		    Log.d("coinBlockLoginActivity", "FINGERPRINT: " + Build.FINGERPRINT);
-		    Log.d("coinBlockLoginActivity", "HOST: " + Build.HOST);
-		    Log.d("coinBlockLoginActivity", "ID: " + Build.ID);
-		    Log.d("coinBlockLoginActivity", "MANUFACTURER: " + Build.MANUFACTURER);
-		    Log.d("coinBlockLoginActivity", "MODEL: " + Build.MODEL);
-		    Log.d("coinBlockLoginActivity", "PRODUCT: " + Build.PRODUCT);
-		    Log.d("coinBlockLoginActivity", "TAGS: " + Build.TAGS);
-		    Log.d("coinBlockLoginActivity", "TIME: " + Build.TIME);
-		    Log.d("coinBlockLoginActivity", "TYPE: " + Build.TYPE);
-		    Log.d("coinBlockLoginActivity", "USER: " + Build.USER);
-		       
-		       
-		 // device 정보 가져오기
-		    TelephonyManager telephony=(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		       
-		    Log.d("coinBlockLoginActivity", "getCallState : "+telephony.getCallState());
-		    Log.d("coinBlockLoginActivity", "getDataActivity : "+telephony.getDataActivity());
+		/*// device 고유 정보값 가져오기
+		Log.d("coinBlockLoginActivity", "BOARD: " + Build.BOARD);
+		Log.d("coinBlockLoginActivity", "BRAND: " + Build.BRAND);
+		Log.d("coinBlockLoginActivity", "CPU_ABI: " + Build.CPU_ABI);
+		Log.d("coinBlockLoginActivity", "DEVICE: " + Build.DEVICE);
+		Log.d("coinBlockLoginActivity", "DISPLAY: " + Build.DISPLAY);
+		Log.d("coinBlockLoginActivity", "FINGERPRINT: " + Build.FINGERPRINT);
+		String[] array = Build.FINGERPRINT.split("/");
+		Log.d("coinBlockLoginActivity", "FINGERPRINT22: " + array[2]);
+		Log.d("coinBlockLoginActivity", "HOST: " + Build.HOST);
+		Log.d("coinBlockLoginActivity", "ID: " + Build.ID);
+		Log.d("coinBlockLoginActivity", "MANUFACTURER: " + Build.MANUFACTURER);
+		Log.d("coinBlockLoginActivity", "MODEL: " + Build.MODEL);
+		Log.d("coinBlockLoginActivity", "PRODUCT: " + Build.PRODUCT);
+		Log.d("coinBlockLoginActivity", "TAGS: " + Build.TAGS);
+		Log.d("coinBlockLoginActivity", "TIME: " + Build.TIME);
+		Log.d("coinBlockLoginActivity", "TYPE: " + Build.TYPE);
+		Log.d("coinBlockLoginActivity", "USER: " + Build.USER);
+
+		// device 정보 가져오기
+		TelephonyManager telephony2 = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+		Log.d("coinBlockLoginActivity",
+				"getCallState : " + telephony.getCallState());
+		Log.d("coinBlockLoginActivity",
+				"getDataActivity : " + telephony.getDataActivity());
 		    Log.d("coinBlockLoginActivity", "getDataState : "+telephony.getDataState());
 		    Log.d("coinBlockLoginActivity", "getDeviceId : "+telephony.getDeviceId());
 		    Log.d("coinBlockLoginActivity", "getDeviceSoftwareVersion : "+telephony.getDeviceSoftwareVersion());
