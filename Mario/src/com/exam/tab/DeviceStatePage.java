@@ -38,8 +38,9 @@ public class DeviceStatePage extends SherlockListFragment {
             "MANUFACTURER",
             "MODEL",
             "PRODUCT",
-            "NetworkCountryIso",
-            "SimCountryIso"
+            "Network CountryIso",
+            "Sim CountryIso", 
+            "Device Version"
     };
     
     String device_states[] ;
@@ -49,7 +50,8 @@ public class DeviceStatePage extends SherlockListFragment {
             R.drawable.ics,
             R.drawable.honeycomb,
             R.drawable.gingerbread,
-            R.drawable.froyo
+            R.drawable.froyo,
+            0
     };
 	
 	
@@ -66,10 +68,12 @@ public class DeviceStatePage extends SherlockListFragment {
 		bPref.Ready();
 		
 		
-		device_states = new String[] { bPref.ReadString("MANUFACTURER", ""),
+		device_states = new String[] { 
+				bPref.ReadString("MANUFACTURER", ""),
 				bPref.ReadString("MODEL", ""), bPref.ReadString("PRODUCT", ""),
 				bPref.ReadString("NetworkCountryIso", ""),
-				bPref.ReadString("SimCountryIso", "")
+				bPref.ReadString("SimCountryIso", ""),
+				bPref.ReadString("DeviceVersion", "")
 
 		};
 
@@ -77,7 +81,7 @@ public class DeviceStatePage extends SherlockListFragment {
 		
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-        for(int i=0;i<5;i++){
+        for(int i=0;i<device_state_list.length;i++){
                 HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("txt01", device_state_list[i]);
             hm.put("txt02", device_states[i]);

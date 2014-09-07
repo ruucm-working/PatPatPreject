@@ -158,7 +158,6 @@ public class coinBlockLoginActivity extends Activity
       		
       		
       		
-      		
 			
 
 			
