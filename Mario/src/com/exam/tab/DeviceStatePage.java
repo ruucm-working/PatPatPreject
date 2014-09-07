@@ -130,66 +130,32 @@ public class DeviceStatePage extends SherlockListFragment {
 			
 			
 			
-			if (sub == "2.3"){
-				updateview(R.drawable.background, device_version );				
+			if (sub.equals(":2.3")){
+				updateview(R.drawable.ds_back_gingerbread);				
 			}
-			else if (sub == "3.1" || sub =="3.2"){
-				
+			else if (sub.equals(":3.1") || sub.equals(":3.2")){
+				updateview(R.drawable.ds_back_honeycomb);	
 			}
-			else if (sub == "4.0"){
-				
+			else if (sub.equals(":4.0")){
+				updateview(R.drawable.ds_back_icecreamsw);	
 			}
-			else if (sub == "4.1" || sub == "4.2" || sub == "4.3"){
-				
+			else if (sub.equals(":4.1") || sub.equals(":4.2") || sub.equals(":4.3")){
+				updateview(R.drawable.ds_back_jellybean);	
 			}
-			else if (sub == "4.4"){
-				
+			else if (sub.equals(":4.4")){
+				updateview(R.drawable.ds_back_kitkat);	
 			}
 			else {
-				
+				updateview(R.drawable.ds_back_gingerbread);	
 			}
 			
 			
-			
-			
-	   			if (init){ 
-	   				 
-	   				
-	   				updateview(R.drawable.background,"init 임 ㅇㅇ", false);
-	   				
-	   			}
-	   			else if (lv0_1){
-	   				
-	   				updateview(R.drawable.background0,"lv0-1 임 ㅇㅇ", true);
-	   				
-	   				
-	   				
-	   			}
-	   			else if (lv0_2){
-	   				
-	   				updateview(R.drawable.background0,"lv0-2 임 ㅇㅇ", false);
-	   				
-	   				
-	   			}else if (lv1){
-	   				updateview(R.drawable.background1, "레벨1s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ",true);
-	   				
-	   			}
-	   			else if (lv2){
-	   				updateview(R.drawable.background2, "레벨2s냐 아직도 ㅋㅋㅋㅋㅋㅋㅋㅄ",true);    	    				
-	   			}
-	   			else if (lv3_1){
-	   				updateview(R.drawable.background3_1, "이런 인간도있군..",true);    	    				
-	   			}
-		 
-	   			Log.d("viewPager01","else if (lv2)  	 mP");
-		 
-	   			
 	   			
 	   			
 		 
 	}
 	
-	public static void updateview (int drawbleid, String txt){
+	public static void updateview (int drawbleid/*, String txt*/){
 		 
 		 
 		 
@@ -199,9 +165,9 @@ public class DeviceStatePage extends SherlockListFragment {
 			a.setBackgroundResource(drawbleid);
 			
 			 
-			//set new state's text
+		/*	//set new state's text
 			TextView statetxt = (TextView)v.findViewById(R.id.welcome);		
-			statetxt.setText(txt);
+			statetxt.setText(txt);*/
 			
 			
 			
