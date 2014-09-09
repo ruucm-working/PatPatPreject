@@ -87,11 +87,11 @@ public class DeviceStatePage extends SherlockListFragment {
             hm.put("txt02", device_states[i]);
             hm.put("img", Integer.toString(android_images[i]  ) );
             aList.add(hm);
-        }
+        } 
 
         
         Log.d("DeviceStatePage","EndReady();();");
-        
+         
         
         // Keys used in Hashmap
         String[] from = { "img", "txt01", "txt02"};
