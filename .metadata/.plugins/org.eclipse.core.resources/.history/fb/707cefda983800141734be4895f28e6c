@@ -37,7 +37,6 @@
 	  
 	    
 	    <com.viewpagerindicator.TabPageIndicator
-        android:paddingTop="10dp"
         android:id="@+id/indicator"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
