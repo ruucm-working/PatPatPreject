@@ -111,25 +111,6 @@ public class IntroActivity extends SherlockFragmentActivity {
         
         
         
-        //setListener
-		Button button = (Button) findViewById(R.id.reset1);
-		
-		Log.d("IntroActivity","button "+button);
-		
-		
-		
-	    button.setOnLongClickListener(new View.OnLongClickListener() {
-	        public boolean onLongClick(View v) {
-	            Button clickedButton = (Button) v;
-	            String buttonText = clickedButton.getText().toString();
-	            Toast.makeText(getApplicationContext(), "Initializing...", Toast.LENGTH_SHORT).show();
-	            return true;
-	        }
-	    });
-        
-         
-	    Log.d("IntroActivity","setOnLongClickListener");
-        
         
         
         

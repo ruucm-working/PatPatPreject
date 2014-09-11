@@ -35,23 +35,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 	Lv0OftenAnim lv0ofAnim; 
 	Lv0ClickAnim lv0clAnim;
 	Lv0_1DblClickAnim lv0_1dblClick;
-
-	Lv0_1WifiOnAnim lv0_1wifiOn;
-	Lv0_1WifiOffAnim lv0_1wifiOff;
-
-	Lv0_1PowerConnectedAnim lv0_1powerOn;
-	Lv0_1PowerDisconnectedAnim lv0_1powerOff;
-
 	Lv0_1USBConnectedAnim lv0_1usbOn;
 	Lv0_1USBDisconnectedAnim lv0_1usbOff;
-
-	Lv0_1HeadsetConnectedAnim lv0_1headsetOn;
-	Lv0_1HeadsetDisconnectedAnim lv0_1headsetOff;
-
-	Lv0_1PlaneOnAnim lv0_1planeOn;
-	Lv0_1PlaneOffAnim lv0_1planeOff;
-	
-	Lv0_1SMSAnim lv0_1sms;
 
 	public Lv0_1State(CoinBlockView viewContext) {
 		context = viewContext;
@@ -576,8 +561,6 @@ public class Lv0_1State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			coinBlockView.removeAnimatable(lv0ofAnim);
 			coinBlockView.removeAnimatable(lv0clAnim);
-			coinBlockView.removeAnimatable(lv0_1powerOn);
-			coinBlockView.removeAnimatable(lv0_1wifiOn);
 
 			Log.d("tag3","OnInit");
 		}
@@ -585,116 +568,32 @@ public class Lv0_1State implements ICoinBlockViewState {
 		@Override
 		public void OnDblClick(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			viewContext.removeAnimatable(lv0_1dblClick);
-
-			lv0_1dblClick = new Lv0_1DblClickAnim();			
-			viewContext.addAnimatable(lv0_1dblClick);
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
-
-			Log.v("DOUBLECLICK", "Entering Doubleclick");
-
-			Setting.DblClickCount++;
-			Setting.mPref.Ready();
-			Setting.mPref.WriteInt("dblclick", Setting.DblClickCount);			
-			Setting.mPref.CommitWrite();
 		}
 
 		@Override
 		public void OnSMSReceived(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_1planeOn);
 
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 
 		@Override
 		public void OnWifiConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("WIFI", "OnWifiConnected");
-
-			viewContext.removeAnimatable(lv0clAnim);
-			viewContext.removeAnimatable(lv0_1wifiOn);
-
-			lv0_1wifiOn = new Lv0_1WifiOnAnim();	
-			viewContext.addAnimatable(lv0_1wifiOn);
-
-			Log.v("WIFI", "addAnimatable");			
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 
 		@Override
 		public void OnWifiDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("WIFI", "OnWifiDisconnected");
-
-			viewContext.removeAnimatable(lv0clAnim);
-			viewContext.removeAnimatable(lv0_1wifiOff);
-
-			lv0_1wifiOff = new Lv0_1WifiOffAnim();	
-			viewContext.addAnimatable(lv0_1wifiOff);
-
-			Log.v("WIFI", "addAnimatable");			
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 		
 		@Override
 		public void OnPowerConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("POWER", "OnPower");
-
-			viewContext.removeAnimatable(lv0_1powerOn);
-
-			lv0_1powerOn = new Lv0_1PowerConnectedAnim();	
-			viewContext.addAnimatable(lv0_1powerOn);			
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 
 		@Override
 		public void OnPowerDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("POWER", "OffPower");
-
-			viewContext.removeAnimatable(lv0_1powerOff);
-
-			lv0_1powerOff = new Lv0_1PowerDisconnectedAnim();	
-			viewContext.addAnimatable(lv0_1powerOff);			
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 
 		@Override
@@ -732,47 +631,16 @@ public class Lv0_1State implements ICoinBlockViewState {
 		@Override
 		public void OnHeadsetConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1headsetOn = new Lv0_1HeadsetConnectedAnim();
-			viewContext.addAnimatable(lv0_1headsetOn);
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
-
-			Log.v("HEADSET", "Headset lv0-1");
 		}
 
 		@Override
 		public void OnHeadsetDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1headsetOff = new Lv0_1HeadsetDisconnectedAnim();
-			viewContext.addAnimatable(lv0_1headsetOff);
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
-
-			Log.v("HEADSET", "HeadsetOff lv0-1");
 		}
 
 		@Override
 		public void OnPlaneModeOn(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_1planeOn);
-
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
-				}
-			});
 		}
 
 		@Override

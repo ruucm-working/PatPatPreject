@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.exam.R;
 import com.exam.TextPref;
@@ -34,7 +35,31 @@ public class DeviceConditionPage extends Fragment  {
 			Bundle savedInstanceState) {
 		v = inflater.inflate(R.layout.device_condition, container, false);
 		
+		  
+        //setListener
+		Button button = (Button) v.findViewById(R.id.reset1);
 		
+		Log.d("IntroActivity","button "+button);
+		
+		
+		
+	    button.setOnLongClickListener(new View.OnLongClickListener() {
+	        public boolean onLongClick(View v) {
+	            Toast.makeText(getActivity(), "Initializing...", Toast.LENGTH_SHORT).show();
+	            return true;
+	        }
+	    });
+	    
+	    button.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	            Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
+	        }
+	    });
+        
+         
+	    Log.d("IntroActivity","setOnLongClickListener");
+        
 		
 
 		
