@@ -74,6 +74,52 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 	}
 
+	private class Lv0_1WifiOnAnim implements IAnimatable {
+		private int blockVib = 0;
+
+		// private int[] widthModifier = { 12, -12, 8, -8, 4, -4, 0, 0 }; //
+		// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			Log.v("WIFI", "Drawanim");
+
+			SpriteHelper.DrawSprite(canvas, sp, 0,
+					SpriteHelper.DrawPosition.BottomCenter,
+					-(int) (widthModifier[blockVib] * context.getDensity()), 0);
+
+			if (blockVib < 7)
+				blockVib++;
+		}
+	}
+
+	private class Lv0_1WifiOffAnim implements IAnimatable {
+		private int blockVib = 0;
+
+		// private int[] widthModifier = { 12, -12, 8, -8, 4, -4, 0, 0 }; //
+		// here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			Log.v("WIFI", "Drawanim");
+
+			SpriteHelper.DrawSprite(canvas, sp, 0,
+					SpriteHelper.DrawPosition.BottomCenter,
+					-(int) (widthModifier[blockVib] * context.getDensity()), 0);
+
+			if (blockVib < 7)
+				blockVib++;
+		}
+	}
+
 	private class Lv0_1USBConnectedAnim implements IAnimatable {
 		private int blockVib = 0;
 
@@ -213,6 +259,26 @@ public class Lv0_1State implements ICoinBlockViewState {
 			if (blockVib < 7) {
 				blockVib++;
 			}
+		}
+	}
+	private class Lv0_1PowerDisconnectedAnim implements IAnimatable {
+		private int blockVib = 0;
+		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 }; // here
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			Log.v("WIFI", "Drawanim");
+
+			SpriteHelper.DrawSprite(canvas, sp, 0,
+					SpriteHelper.DrawPosition.BottomCenter,
+					-(int) (widthModifier[blockVib] * context.getDensity()), 0);
+
+			if (blockVib < 7)
+				blockVib++;
 		}
 	}
 
