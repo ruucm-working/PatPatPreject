@@ -26,14 +26,14 @@
 	        android:layout_weight="0.88"
 	        android:textSize="30dp" />
 	    
-	    <Button android:text="Set-up" 
+	   <!--  <Button android:text="Set-up" 
 		
 			android:id="@+id/setbutton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:onClick="mOnClick">
 		</Button>
-
+ -->
 	    <Button
 	        android:id="@+id/reset1"
 	        android:layout_width="wrap_content"

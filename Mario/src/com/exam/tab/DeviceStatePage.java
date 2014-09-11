@@ -180,4 +180,8 @@ public class DeviceStatePage extends SherlockListFragment {
 	}
 	
 	
+	
+	
+	
+	
 }
