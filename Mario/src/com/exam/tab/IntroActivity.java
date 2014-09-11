@@ -14,8 +14,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
@@ -66,6 +68,11 @@ public class IntroActivity extends SherlockFragmentActivity {
         
         instance = this;
 
+        
+        
+        Log.d("IntroActivity","button ");
+      
+        
         //for Activity anim
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);	
         setContentView(R.layout.simple_tabs);
@@ -77,7 +84,7 @@ public class IntroActivity extends SherlockFragmentActivity {
 
         mViewPager = (ViewPager)findViewById(R.id.pager);
 
-        mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
+        mTabsAdapter = new TabsAdapter(this, /*mTabHost,*/ mViewPager);
 
 //        mTabsAdapter.addTab(mTabHost.newTabSpec("simple").setIndicator("Simple"),
 //                FragmentStackSupport.CountingFragment.class, null);
@@ -100,7 +107,13 @@ public class IntroActivity extends SherlockFragmentActivity {
         indicator.setViewPager(mViewPager);
         
         
-//        
+        
+        
+        
+        
+        
+        
+        
 //        
 //        //Read Preference (presetting for )  
 //  		File saveDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "SsdamSsdam"); // dir : 생성하고자 하는 경로
@@ -203,14 +216,14 @@ public class IntroActivity extends SherlockFragmentActivity {
             }
         }
 
-        public TabsAdapter(FragmentActivity activity, TabHost tabHost, ViewPager pager) {
+        public TabsAdapter(FragmentActivity activity, /*TabHost tabHost,*/ ViewPager pager) {
         	super(activity.getSupportFragmentManager());
             mContext = activity;
-            mTabHost = tabHost;
+            mTabHost = null;
             mViewPager = pager;
 //            mTabHost.setOnTabChangedListener(this);
             mViewPager.setAdapter(this);
-            mViewPager.setOnPageChangeListener(this);
+//            mViewPager.setOnPageChangeListener(this);
         }
 
         public void addTab(TabHost.TabSpec tabSpec, Class<?> clss, Bundle args) {
@@ -269,4 +282,15 @@ public class IntroActivity extends SherlockFragmentActivity {
 			return ICONS[index];
 		}
     }
+    
+    
+    
+  
+    
+    
+    
 }
+
+
+
+
