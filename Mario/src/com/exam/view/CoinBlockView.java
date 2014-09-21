@@ -259,11 +259,7 @@ public class CoinBlockView {
 	{
 		Children.remove(child);
 	}
-
-	public void createCoin() {
-		Children.add(new CoinAnimation(density));
-	}
-
+	
 	public static Context getContext() {
 		return (CoinBlockWidgetApp.getApplication());
 	}

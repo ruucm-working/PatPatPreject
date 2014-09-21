@@ -2,23 +2,14 @@ package com.exam.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.media.MediaPlayer;
+import android.graphics.*;
+import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.RemoteViews;
-import android.widget.TextView;
+import android.os.*;
+import android.util.*;
+import android.widget.*;
 
-import com.exam.CoinBlockWidgetApp;
-import com.exam.IAnimatable;
-import com.exam.MediaAssets;
-import com.exam.R;
-import com.exam.Sprite;
-import com.exam.SpriteHelper;
-import com.exam.TextPref;
-import com.exam.coinBlockWidgetProvider;
+import com.exam.*;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
@@ -26,15 +17,11 @@ import com.exam.tab.TaskTimer;
 
 public class Lv0_2State implements ICoinBlockViewState {
 	
-	
-	
-	
-	
-	
 	// sprites
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
+	Sprite samsungSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.eggsbreak_sprites_4);
-
+	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
+	
 	// sound
 	MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.notify_sound);
@@ -44,35 +31,34 @@ public class Lv0_2State implements ICoinBlockViewState {
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };	
 	private int[] widthModifier = { 3, -3, 2, -2, 1, -1, 0, -0 };
 	
+	boolean animeSwitch = false;
+	
 	boolean fuck = false;   
-	CoinBlockView context;
+	CoinBlockView mViewContext;
   
 	// Animations instances
-	Lv0OftenAnim lv0ofAnim; 
-	Lv0ClickAnim lv0clAnim;
-	Lv0_1DblClickAnim lv0_1dblClick;
+	Lv0OftenAnim lv0_2ofAnim; 
+	Lv0_1DblClickAnim lv0_2dblClick;
 
-	Lv0_1WifiOnAnim lv0_1wifiOn;
-	Lv0_1WifiOffAnim lv0_1wifiOff;
+	Lv0_1WifiOnAnim lv0_2wifiOn;
+	Lv0_1WifiOffAnim lv0_2wifiOff;
 
-	Lv0_1PowerConnectedAnim lv0_1powerOn;
-	Lv0_1PowerDisconnectedAnim lv0_1powerOff;
+	Lv0_1PowerConnectedAnim lv0_2powerOn;
+	Lv0_1PowerDisconnectedAnim lv0_2powerOff;
 
 	Lv0_1USBConnectedAnim lv0_1usbOn;
-	Lv0_1USBDisconnectedAnim lv0_1usbOff;
+	Lv0_1USBDisconnectedAnim lv0_2usbOff;
 
-	Lv0_1HeadsetConnectedAnim lv0_1headsetOn;
-	Lv0_1HeadsetDisconnectedAnim lv0_1headsetOff;
+	Lv0_1HeadsetConnectedAnim lv0_2headsetOn;
+	Lv0_1HeadsetDisconnectedAnim lv0_2headsetOff;
 
-	Lv0_1PlaneOnAnim lv0_1planeOn;
-	Lv0_1PlaneOffAnim lv0_1planeOff;
+	Lv0_1PlaneOnAnim lv0_2planeOn;
+	Lv0_1PlaneOffAnim lv0_2planeOff;
 	
-	Lv0_1SMSAnim lv0_1sms;
+	Lv0_1SMSAnim lv0_2sms;
 
 	public Lv0_2State(CoinBlockView viewContext) {
-		context = viewContext;
-		lv0clAnim = new Lv0ClickAnim();
-		viewContext.addAnimatable(lv0clAnim);
+		mViewContext = viewContext;
 
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -94,7 +80,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			// Draw the brick at bottom
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -114,7 +100,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("WIFI", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -134,7 +120,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("WIFI", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -153,7 +139,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("USB", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -172,7 +158,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("USB", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -189,8 +175,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -207,8 +193,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -226,8 +212,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
 
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -245,8 +231,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
 
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -266,8 +252,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.mushroom);
 			//吏꾨룞�븷�븣�쓽 �븯�떒�뱶濡쒕툝
 
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7) { 
 				blockVib++;
@@ -288,7 +274,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("WIFI", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -308,7 +294,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			Log.v("WIFI", "Drawanim");
 
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++;
@@ -316,23 +302,16 @@ public class Lv0_2State implements ICoinBlockViewState {
 	}
 
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		// Draw the brick at bottom
-		//Sprite sp1 = MediaAssets.getInstance().getSprite(R.drawable.brick_disabled);
-		//진동할때의 하단드로블
-//		SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter, 0,
-//				-(int)(heightModifier[animStage] * viewContext.getDensity()));
-
-
 		animStage++;  
 
 		Log.v("tag3", "animstage");
 
 		if (animStage >= heightModifier.length)
-			viewContext.setState(new Lv0_2WaitState(viewContext));
+			viewContext.setState(new Lv0_2WaitState());
 	}
 
 	public boolean NeedRedraw() {
-		return true;
+		return false;
 	}
 
 	public void OnClick(CoinBlockView viewContext) {
@@ -358,7 +337,6 @@ public class Lv0_2State implements ICoinBlockViewState {
 	}
 
 	class Lv0_2WaitState implements ICoinBlockViewState {
-
 		
 		//for count clicknum	
 		TextPref mPref;			
@@ -373,43 +351,29 @@ public class Lv0_2State implements ICoinBlockViewState {
 		
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
-
-		public Lv0_2WaitState(CoinBlockView viewContext) {
-			mViewContext = viewContext;
-			
-			(new Handler()).postDelayed(new Runnable(){
-				public void run() {
-					/*if (mViewContext.getState().getClass() == Lv0WaitState.class)
-					{
-						Log.v("tag2", "lv0-run");
-
-						
-						mViewContext.addAnimatable(lv0Anim);
-
-						if (CoinBlockView.second >= 10 && CoinBlockView.second <45)	{
-							mViewContext.removeAnimatable(lv0Anim);							
-							mViewContext.setState(new DisabledState(mViewContext));
-							mViewContext.setState(new Lv1State(mViewContext));
-
-							Log.v("tag3", "Lv0WaitState-setState"); 
-						}
-
-						mViewContext.setState(new OftenState(mViewContext, flowerSprite)); 
-						Log.v("tag3", "mViewContext.setState(new OftenState");
-
-						v0Anim.Draw2(Bitmap.createBitmap(mViewContext.cwidth, mViewContext.cheight, Bitmap.Config.ARGB_8888));
-						mViewContext.scheduleRedraw();
-						 
-					}*/
-				}
-			}, 3000);
-		}
-
+		
 		public void OnClick(CoinBlockView viewContext) {
-			viewContext.removeAnimatable(lv0clAnim);			
-
-			lv0clAnim = new Lv0ClickAnim();
-			viewContext.addAnimatable(lv0clAnim);
+			
+			viewContext.setState(new Lv0_2WaitState());
+			
+			viewContext.removeAnimatable(lv0_2dblClick);
+			viewContext.removeAnimatable(lv0_2wifiOff);
+			viewContext.removeAnimatable(lv0_2powerOff);
+			viewContext.removeAnimatable(lv0_2usbOff);
+			viewContext.removeAnimatable(lv0_2headsetOn);
+			viewContext.removeAnimatable(lv0_2headsetOff);
+			viewContext.removeAnimatable(lv0_2planeOn);
+			viewContext.removeAnimatable(lv0_2planeOff);
+			viewContext.removeAnimatable(lv0_2sms);
+			
+			viewContext.removeAnimatable(lv0_2ofAnim);
+			viewContext.removeAnimatable(lv0_2powerOn);
+			viewContext.removeAnimatable(lv0_2wifiOn);
+			
+			
+			animeSwitch = true;
+			
+			mViewContext.addAnimatable(new Lv0ClickAnim());
 
 			snd.seekTo(0);
 			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -430,48 +394,11 @@ public class Lv0_2State implements ICoinBlockViewState {
 			
 			mPref.Ready();			
 			
-			
 			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);			 
 			CliCount0_2++;			
 			
-			
-
-						
-		
-			
-			
-			
-		
-
-//			mPref.Ready();
-
 			lv0_2 = mPref.ReadBoolean("lv0_2state", false);	
 			lv1 = mPref.ReadBoolean("lv1state", false);
-//			lv0_2 = mPref.ReadBoolean("lv0_2state", false);
-//			lv1 = mPref.ReadBoolean("lv1state", false);
-//			lv2 = mPref.ReadBoolean("lv2state", false);
-//			lv3_1 = mPref.ReadBoolean("lv3_1state", false);
-
-//			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
-//			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
-//			CliCount1 = mPref.ReadInt("clicount1", 0);
-//			CliCount2 = mPref.ReadInt("clicount2", 0);
-////			CliCount3 = mPref.ReadInt("clicount2", 0);
-
-			
-//			second = mPref.ReadInt("time", 0);
-			
-			
-//			Log.i("InitState","second "+second);
-			
-			
-//			mPref.EndReady();
-			
-			
-			
-			
-			
-
 			
 			if ( CliCount0_2 >= 3  && lv0_2){
 				lv0_2 = false;
@@ -482,8 +409,6 @@ public class Lv0_2State implements ICoinBlockViewState {
 				
 				RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
 				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-
-				
 				
 			}		
 			else{
@@ -491,14 +416,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			mPref.WriteInt("clicount0_2", CliCount0_2);
 			mPref.CommitWrite();
 			}
-			
-			
-			
-			
-
 		}
-		
-		
 		
 		private  void updateEvolveIntent(RemoteViews rviews, Context context) {
 			// TODO Auto-generated method stub				
@@ -523,7 +441,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
+			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
+			else 			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
 		}
 
 		public boolean NeedRedraw() {
@@ -542,39 +461,15 @@ public class Lv0_2State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			coinBlockView.setState(new Lv1State(coinBlockView));
 
-			//coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
-
-			
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.onRestartset();
 			
 			IntroActivity.taskTimer1.isCanceled = false;
 			taskTimer1.setTextView1(R.id.time0);
 			
-			
-			
 			taskTimer1.execute("");
-			
 
-			
-			
-			
-			
-			
-//			
-//			CoinBlockView.lv0_2 = false;	
-//			CoinBlockView.lv1 = true;	
-//
-//			CoinBlockView.mPref.Ready();			
-//			CoinBlockView.mPref.WriteBoolean("lv0_2state", CoinBlockView.lv0_2);		
-//			CoinBlockView.mPref.WriteBoolean("lv1state", CoinBlockView.lv1);	
-//			CoinBlockView.mPref.CommitWrite();
-
-			
-			
 			DeviceConditionPage.UpdateIntroView();
-			
-			
 			
 			Log.d("tag3","OnEvolve");
 		}
@@ -582,10 +477,9 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnInit(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			coinBlockView.removeAnimatable(lv0ofAnim);
-			coinBlockView.removeAnimatable(lv0clAnim);
-			coinBlockView.removeAnimatable(lv0_1powerOn);
-			coinBlockView.removeAnimatable(lv0_1wifiOn);
+			coinBlockView.removeAnimatable(lv0_2ofAnim);
+			coinBlockView.removeAnimatable(lv0_2powerOn);
+			coinBlockView.removeAnimatable(lv0_2wifiOn);
 
 			Log.d("tag3","OnInit");
 		}
@@ -593,10 +487,10 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnDblClick(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			viewContext.removeAnimatable(lv0_1dblClick);
+			viewContext.removeAnimatable(lv0_2dblClick);
 
-			lv0_1dblClick = new Lv0_1DblClickAnim();			
-			viewContext.addAnimatable(lv0_1dblClick);
+			lv0_2dblClick = new Lv0_1DblClickAnim();			
+			viewContext.addAnimatable(lv0_2dblClick);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -616,8 +510,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnSMSReceived(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_1planeOn);
+			lv0_2planeOn = new Lv0_1PlaneOnAnim();
+			viewContext.addAnimatable(lv0_2planeOn);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -632,11 +526,10 @@ public class Lv0_2State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			Log.v("WIFI", "OnWifiConnected");
 
-			viewContext.removeAnimatable(lv0clAnim);
-			viewContext.removeAnimatable(lv0_1wifiOn);
+			viewContext.removeAnimatable(lv0_2wifiOn);
 
-			lv0_1wifiOn = new Lv0_1WifiOnAnim();	
-			viewContext.addAnimatable(lv0_1wifiOn);
+			lv0_2wifiOn = new Lv0_1WifiOnAnim();	
+			viewContext.addAnimatable(lv0_2wifiOn);
 
 			Log.v("WIFI", "addAnimatable");			
 
@@ -652,12 +545,11 @@ public class Lv0_2State implements ICoinBlockViewState {
 		public void OnWifiDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
 			Log.v("WIFI", "OnWifiDisconnected");
+			
+			viewContext.removeAnimatable(lv0_2wifiOff);
 
-			viewContext.removeAnimatable(lv0clAnim);
-			viewContext.removeAnimatable(lv0_1wifiOff);
-
-			lv0_1wifiOff = new Lv0_1WifiOffAnim();	
-			viewContext.addAnimatable(lv0_1wifiOff);
+			lv0_2wifiOff = new Lv0_1WifiOffAnim();	
+			viewContext.addAnimatable(lv0_2wifiOff);
 
 			Log.v("WIFI", "addAnimatable");			
 
@@ -674,10 +566,10 @@ public class Lv0_2State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			Log.v("POWER", "OnPower");
 
-			viewContext.removeAnimatable(lv0_1powerOn);
+			viewContext.removeAnimatable(lv0_2powerOn);
 
-			lv0_1powerOn = new Lv0_1PowerConnectedAnim();	
-			viewContext.addAnimatable(lv0_1powerOn);			
+			lv0_2powerOn = new Lv0_1PowerConnectedAnim();	
+			viewContext.addAnimatable(lv0_2powerOn);			
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -692,10 +584,10 @@ public class Lv0_2State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			Log.v("POWER", "OffPower");
 
-			viewContext.removeAnimatable(lv0_1powerOff);
+			viewContext.removeAnimatable(lv0_2powerOff);
 
-			lv0_1powerOff = new Lv0_1PowerDisconnectedAnim();	
-			viewContext.addAnimatable(lv0_1powerOff);			
+			lv0_2powerOff = new Lv0_1PowerDisconnectedAnim();	
+			viewContext.addAnimatable(lv0_2powerOff);			
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -724,8 +616,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnUSBDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1usbOff = new Lv0_1USBDisconnectedAnim();
-			viewContext.addAnimatable(lv0_1usbOff);
+			lv0_2usbOff = new Lv0_1USBDisconnectedAnim();
+			viewContext.addAnimatable(lv0_2usbOff);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -740,8 +632,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnHeadsetConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1headsetOn = new Lv0_1HeadsetConnectedAnim();
-			viewContext.addAnimatable(lv0_1headsetOn);
+			lv0_2headsetOn = new Lv0_1HeadsetConnectedAnim();
+			viewContext.addAnimatable(lv0_2headsetOn);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -756,8 +648,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnHeadsetDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1headsetOff = new Lv0_1HeadsetDisconnectedAnim();
-			viewContext.addAnimatable(lv0_1headsetOff);
+			lv0_2headsetOff = new Lv0_1HeadsetDisconnectedAnim();
+			viewContext.addAnimatable(lv0_2headsetOff);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -772,8 +664,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnPlaneModeOn(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_1planeOn);
+			lv0_2planeOn = new Lv0_1PlaneOnAnim();
+			viewContext.addAnimatable(lv0_2planeOn);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -786,8 +678,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnPlaneModeOff(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1planeOff = new Lv0_1PlaneOffAnim();
-			viewContext.addAnimatable(lv0_1planeOff);
+			lv0_2planeOff = new Lv0_1PlaneOffAnim();
+			viewContext.addAnimatable(lv0_2planeOff);
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -809,7 +701,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 			// Draw the brick at bottom
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
 			if (blockVib < 7)
 				blockVib++; 
@@ -827,14 +719,17 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[spriteVib] * context.getDensity()), 0);
+					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0);
 
-			if (spriteVib < 7)
+			if (spriteVib < 7){
 				spriteVib++;
+			}else{
+				animeSwitch = false;
+				mViewContext.removeAnimatable(this);
+				mViewContext.setState(new Lv0_2WaitState());
+			}
 		}
 	}
-
-
 
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {
