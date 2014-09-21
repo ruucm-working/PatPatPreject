@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
    
             xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -41,6 +42,27 @@
 	        android:onClick="mOnClick"
 	        android:text="초기화" />
 	</LinearLayout>
+	
+	<LinearLayout android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal">
+    
+		    
+		    <com.todddavies.components.progressbar.ProgressWheel
+		        android:id="@+id/progressBar_battr"
+		        android:layout_width="150dp"
+		        android:layout_height="150dp"
+		        ProgressWheel:text="0%"
+		        ProgressWheel:textColor="#222222"
+		        ProgressWheel:textSize="14sp"
+		        ProgressWheel:rimColor="#44000000"
+		        ProgressWheel:barLength="60dp" 
+		        ProgressWheel:barColor="#339BB9"
+		        ProgressWheel:barWidth="25dp"
+		        ProgressWheel:rimWidth="25dp" 
+		        ProgressWheel:spinSpeed="3dp" />
+	    </LinearLayout>
+	
 
 	<TextView
 	    android:id="@+id/welcome"

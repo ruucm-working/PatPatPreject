@@ -28,6 +28,12 @@ public class Setting extends Activity {
 	private static final String TAG = "Setting_TAG";
 	private static final boolean DEVELOPER_MODE = true;
 
+	
+	
+	File saveDir ;
+	 static String parentPath = Environment.getExternalStorageDirectory().getAbsolutePath()+ "SsdamSsdam" ;
+	
+	
 	//facebook profile
 	String userFirstName ;
 	String userLastName ;
@@ -134,7 +140,7 @@ public class Setting extends Activity {
 		Log.d("tag3", "time01");
 
 		//프레퍼런스 읽어오기   
-		File saveDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), "SsdamSsdam"); // dir : 생성하고자 하는 경로
+		saveDir = new File(parentPath); // dir : 생성하고자 하는 경로
 		if(!saveDir.exists()) 
 		{
 			saveDir.mkdirs();
@@ -391,6 +397,10 @@ public class Setting extends Activity {
 
 	} 
 
+	
+
+	
+	
 
 	public static long getSecond(long milli){
 		long secondValue = 0;
@@ -647,6 +657,12 @@ public class Setting extends Activity {
 		alert.show();
 	}
 	
+	
+	
+
+	
+	
+
 	
 
 	

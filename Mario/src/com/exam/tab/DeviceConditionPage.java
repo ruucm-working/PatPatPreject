@@ -1,5 +1,7 @@
 package com.exam.tab;
 
+import java.io.File;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -7,16 +9,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exam.R;
 import com.exam.TextPref;
+import com.todddavies.components.progressbar.ProgressWheel;
 
 public class DeviceConditionPage extends Fragment  {
 
+	
+	
+	//Progress Wheel
+	ProgressWheel pw_battr;
+	int progress = 0;
+	
+	
 	// 프레퍼런스
 	public static TextPref mPref;
 	// public static TextPref fbPref;
@@ -33,7 +42,20 @@ public class DeviceConditionPage extends Fragment  {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		
+		
+		
 		v = inflater.inflate(R.layout.device_condition, container, false);
+		
+		
+		
+		
+		//set battr percentage to progressbar
+		pw_battr = (ProgressWheel) v.findViewById(R.id.progressBar_battr);
+		
+		progress = 30;
+		pw_battr.invalidate();
 		
 		  
         //setListener
@@ -41,22 +63,35 @@ public class DeviceConditionPage extends Fragment  {
 		
 		Log.d("IntroActivity","button "+button);
 		
-		
-		
-	    button.setOnLongClickListener(new View.OnLongClickListener() {
-	        public boolean onLongClick(View v) {
-	            Toast.makeText(getActivity(), "Initializing...", Toast.LENGTH_SHORT).show();
-	            return true;
-	        }
-	    });
-	    
-	    button.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	            Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
-	        }
-	    });
-        
+		button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT)
+						.show();
+			}
+		});
+
+		button.setOnLongClickListener(new View.OnLongClickListener() {
+			public boolean onLongClick(View v) {
+				
+				
+				//preffile delete
+				deletePackageFolder();
+				
+				//make new coinblockview
+				
+				
+				//set lv0 state
+				
+				
+				
+				
+				Toast.makeText(getActivity(), "Initializing...",
+						Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
+	   
          
 	    Log.d("IntroActivity","setOnLongClickListener");
         
@@ -137,6 +172,54 @@ public class DeviceConditionPage extends Fragment  {
 
 
 	}
+	
+	
+	protected static void deletePackageFolder(/*String path*/) {
+		File file = new File("mnt/sdcard/SsdamSsdam/textpref.pref");
+		File file2 = new File("mnt/sdcard/SsdamSsdam/bprofile.txt");
+
+		if (file.exists() && file2.exists()) {
+
+			file.delete();
+			file2.delete();
+		}
+	    
+	    /*if(file.exists()){
+	    	
+	    	Log.d("DeviceConditionPage","exists");
+	    	
+	    	
+	    String[] fnameList = file.list();
+	    if(fnameList != null && fnameList.length > 0){
+	    int fCnt = fnameList.length;
+	    String childPath = "";
+	   
+	    for(int i = 0; i < fCnt; i++) {
+	      childPath = Setting.parentPath+"/"+fnameList[i];
+	      File f = new File(childPath);
+	      
+	      Log.d("DeviceConditionPage","for(int");
+	      
+	      if( ! f.isDirectory()) {
+	        f.delete();  
+	        Log.d("DeviceConditionPage","isDirectory");
+	        
+	        
+	      }
+	      else {
+	      deletePackageFolder();
+	      
+	      Log.d("DeviceConditionPage","deletePackageFolder");
+	      
+	      }
+	    }
+	    }
+	    File f = new File(Setting.parentPath);
+	    f.delete();   
+	    Log.d("DeviceConditionPage","File f = new File(Setting.parentPatht");
+	    
+	    }*/
+	  }
 	
 	
 	
