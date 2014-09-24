@@ -76,7 +76,7 @@ public class DeviceConditionPage extends Fragment  {
 		final Runnable r = new Runnable() {
 			public void run() {
 				running = true;
-				while(progress<(((float) bLevel / 100) * 360 )) {
+				while(progress<(((float) 30 / 100) * 360 )) {
 					pw_battr.incrementProgress();
 					progress++;
 					try {
@@ -128,7 +128,6 @@ public class DeviceConditionPage extends Fragment  {
 //				coinBlockWidgetProvider a = new coinBlockWidgetProvider();
 				
 				CoinBlockWidgetApp a = new CoinBlockWidgetApp();
-				a.UpdateAllWidgets();
 				
 				//set lv0 state
 				

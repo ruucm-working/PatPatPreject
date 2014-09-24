@@ -128,7 +128,7 @@ public class DeviceConditionPage extends Fragment  {
 //				coinBlockWidgetProvider a = new coinBlockWidgetProvider();
 				
 				CoinBlockWidgetApp a = new CoinBlockWidgetApp();
-				a.UpdateAllWidgets();
+				a.onCreate();
 				
 				//set lv0 state
 				
