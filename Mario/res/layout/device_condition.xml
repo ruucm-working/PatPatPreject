@@ -9,6 +9,7 @@
     android:paddingTop="30dp" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
@@ -23,9 +24,18 @@
             android:id="@+id/reset1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="mOnClick"
             android:text="초기화" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_battle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="14dp"
+        android:text="SCAN BATTLE DEVICE" />
+    
     
     <com.todddavies.components.progressbar.ProgressWheel
         android:id="@+id/progressBar_battr"

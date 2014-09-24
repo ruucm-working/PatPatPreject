@@ -2,6 +2,7 @@ package com.exam.tab;
 
 import java.io.File;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.exam.CoinBlockWidgetApp;
 import com.exam.R;
 import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
+import com.exam.view.bluetooth.BluetoothChat;
 import com.todddavies.components.progressbar.ProgressWheel;
 
 public class DeviceConditionPage extends Fragment  {
@@ -104,8 +106,8 @@ public class DeviceConditionPage extends Fragment  {
 		
         //setListener
 		Button button = (Button) v.findViewById(R.id.reset1);
+		Button button2 = (Button) v.findViewById(R.id.btn_battle);
 		
-		Log.d("IntroActivity","button "+button);
 		
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -142,8 +144,21 @@ public class DeviceConditionPage extends Fragment  {
 		});
 	   
          
-	    Log.d("IntroActivity","setOnLongClickListener");
-        
+		
+		
+		button2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(), "start scanning", Toast.LENGTH_LONG)
+						.show();
+				
+				Intent aintent = new Intent(getActivity(), BluetoothChat.class);
+				startActivity(aintent);
+				
+				
+			}
+		});
+
 		
 
 		
