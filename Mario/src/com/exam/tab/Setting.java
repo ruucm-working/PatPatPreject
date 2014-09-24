@@ -22,12 +22,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exam.R;
-import com.exam.TextPref;
+import com.exam.helper.TextPref;
 
 public class Setting extends Activity { 
 	private static final String TAG = "Setting_TAG";
 	private static final boolean DEVELOPER_MODE = true;
 
+	
+	
+	
 	
 	
 	File saveDir ;
@@ -96,7 +99,6 @@ public class Setting extends Activity {
 	public static int CliCount1;
 	public static int CliCount2;
 	public static int DblClickCount;
-	public static int nowBattery = -1;
 
 	float CliSp0;
 

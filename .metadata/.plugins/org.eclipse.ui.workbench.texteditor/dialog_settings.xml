@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="TabsAdapter" key="selection"/>
+		<item value="try" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="TabsAdapter"/>
-			<item value="new TextPref"/>
-			<item value="new TextPref`"/>
-			<item value="pref"/>
-			<item value="fbPref"/>
-			<item value="bPref"/>
+			<item value="try"/>
+			<item value="commit"/>
+			<item value="increment"/>
+			<item value="level"/>
+			<item value="nowBattery"/>
 			<item value="mPref"/>
-			<item value="face"/>
+			<item value="mPref.Ready();"/>
+			<item value="textpref"/>
 		</list>
 		<list key="replacehistory">
 			<item value="bPref"/>
@@ -36,7 +36,7 @@
 		<item value="261" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="421" key="DIALOG_HEIGHT"/>
-		<item value="119" key="DIALOG_Y_ORIGIN"/>
-		<item value="1005" key="DIALOG_X_ORIGIN"/>
+		<item value="141" key="DIALOG_Y_ORIGIN"/>
+		<item value="449" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

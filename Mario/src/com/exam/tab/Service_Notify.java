@@ -11,7 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.exam.R;
-import com.exam.TextPref;
+import com.exam.helper.TextPref;
 
 public class Service_Notify extends Service
 {

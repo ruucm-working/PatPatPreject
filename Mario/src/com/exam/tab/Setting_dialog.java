@@ -22,7 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exam.R;
-import com.exam.TextPref;
+import com.exam.helper.TextPref;
 
 public class Setting_dialog extends Activity { 
 	
