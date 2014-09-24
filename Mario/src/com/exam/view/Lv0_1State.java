@@ -10,6 +10,7 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.helper.TextPref;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
 import com.exam.tab.DeviceConditionPage;

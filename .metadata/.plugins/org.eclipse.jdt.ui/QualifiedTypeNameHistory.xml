@@ -21,9 +21,11 @@
 <fullyQualifiedTypeName name="com.viewpagerindicator.IconPagerAdapter"/>
 <fullyQualifiedTypeName name="com.exam.tab.coinBlockLoginActivity"/>
 <fullyQualifiedTypeName name="com.exam.tab.IntroActivity"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="com.exam.coinBlockWidgetProvider"/>
 <fullyQualifiedTypeName name="com.exam.R.id"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.exam.tab.Service_BatteryGauge"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.f2prateek.progressbutton.ProgressButton"/>
 </qualifiedTypeNameHistroy>

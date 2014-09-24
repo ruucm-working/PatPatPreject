@@ -14,16 +14,21 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.exam.R;
+import com.exam.helper.TextPref;
 
 
 
 public class Service_BatteryGauge extends Service {
 	
+	
+	TextPref mPref ; 
+	
+	
 	NotificationCompat.Builder const_builder;	
 	private static boolean isBatteryLow = false;
 	
 	
-	int bLevel ;
+	int level;
 	
 	
 	
@@ -68,19 +73,12 @@ public class Service_BatteryGauge extends Service {
 			if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
 			
 			int plugType = intent.getIntExtra("plugged", 0);
-			Log.d("Service_BatteryGauge","plugType  "+plugType);
-			int level = intent.getIntExtra("level", 0);
-			Log.d("Service_BatteryGauge","level  "+level);
+			level = intent.getIntExtra("level", 0);
 			int scale = intent.getIntExtra("scale", 100);
-			Log.d("Service_BatteryGauge","scale  "+scale);
 			int voltage = intent.getIntExtra("voltage", 0);
-			Log.d("Service_BatteryGauge","voltage  "+voltage);
 			String temper = Integer.toString(intent.getIntExtra("temperature", 0));
-			Log.d("Service_BatteryGauge","temper  "+temper);
 			String tech = intent.getStringExtra("technology");
-			Log.d("Service_BatteryGauge","tech  "+tech);
 			int health = intent.getIntExtra("health", BatteryManager.BATTERY_HEALTH_UNKNOWN);
-			Log.d("Service_BatteryGauge","health  "+health);
 			String strPlug = null;
 			 
 			
@@ -91,15 +89,11 @@ public class Service_BatteryGauge extends Service {
 			}
 			
 			
-			bLevel = intent.getIntExtra("level", 0);
-			//Log.v(TAG, "Battery level changed: " + bLevel);			
 			
 			
 			
-			Setting.nowBattery = bLevel;
-//			coinBlockIntroActivity.bLevel = bLevel;
 
-			if(bLevel < 15)
+			if(level < 15)
 				isBatteryLow = true;
 			else
 				isBatteryLow = false;
@@ -130,15 +124,14 @@ public class Service_BatteryGauge extends Service {
 			//알림창 진행중 으로 띄우기
 			const_builder.setOngoing(true);
 			//set progress
-			const_builder.setProgress (100, bLevel, false);
+			const_builder.setProgress (100, level, false);
 			
-			if(Setting.nowBattery == -1)
+			if(level == -1)
 				const_builder.setContentText("배터리 잔량을 확인 중입니다.");
 			else	
-				const_builder.setContentText("배터리 잔량: " + Setting.nowBattery + "%");
+				const_builder.setContentText("배터리 잔량: " + level + "%");
 
 			const_builder.setAutoCancel(false); // 알림바에서 자동 삭제
-			Log.d("battersv","const configuration complete");
 
 
 			// 알람 클릭시 MainActivity를 화면에 띄운다
@@ -152,37 +145,23 @@ public class Service_BatteryGauge extends Service {
 			
 			
 			
-			/*
+			//write battery level to pref
+			try {
+				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			} catch (Exception e) { 
+				e.printStackTrace();
+			}    
 			
-			if (action.equals(Intent.ACTION_BATTERY_CHANGED)) {
-				
-				
-				
-				int scale, level, ratio;
-				scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
-				level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-				ratio = level * 100 / scale;
-				
-				
-				Log.d("battersv","ratio ");
-
-				RemoteViews remote = new RemoteViews(context.getPackageName(), 
-						R.layout.batterygauge);
-				remote.setTextViewText(R.id.gauge, "" + ratio + "%");
-				
-				Log.d("battersv","setTextViewText ");
-
-				
-				AppWidgetManager wm = AppWidgetManager.getInstance(
-						Service_BatteryGauge.this);
-				ComponentName widget = new ComponentName(context, BatteryGauge.class);
-				wm.updateAppWidget(widget, remote);
-				
-				
-				
-				
-			}
-			*/
+			
+			
+			mPref.Ready();
+			mPref.WriteInt("battery_level", level);
+			mPref.CommitWrite();
+			
+			
+			
+		
+		
 		}
 	};
 };

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;main.java.com.f2prateek.progressbutton.samples&apos; to &apos;com.f2prateek.progressbutton.samples&apos;&#x0D;&#x0A;- Original project: &apos;MainActivity&apos;&#x0D;&#x0A;- Original element: &apos;MainActivity/src/main.java.com.f2prateek.progressbutton.samples&apos;&#x0D;&#x0A;- Renamed element: &apos;MainActivity/src/com.f2prateek.progressbutton.samples&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;main.java.com.f2prateek.progressbutton.samples&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;main.java.com.f2prateek.progressbutton.samples" name="com.f2prateek.progressbutton.samples" qualified="false" references="true" stamp="1411315631873" textual="false" version="1.0"/>
+</session>

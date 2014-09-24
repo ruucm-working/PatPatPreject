@@ -12,6 +12,7 @@ import android.view.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.helper.TextPref;
 import com.exam.tab.Setting;
 
 public class CoinBlockView {

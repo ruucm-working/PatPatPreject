@@ -17,12 +17,12 @@ import com.exam.MediaAssets;
 import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
-import com.exam.TextPref;
 import com.exam.coinBlockWidgetProvider;
+import com.exam.helper.TaskTimer;
+import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
-import com.exam.tab.TaskTimer;
 
 public class Lv0_2State implements ICoinBlockViewState {
 	
