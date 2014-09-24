@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exam"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.ADD_SYSTEM_SERVICE"/>
+    
+    
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />    
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/> 
+	    
+    
+
+   
+
+    <application
+        android:name="CoinBlockWidgetApp" 
+        android:icon="@drawable/icon2"
+        android:label="@string/app_name" >
+        
+        
+        
+        <activity
+            android:name="com.exam.tab.coinBlockLoginActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />  
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            
+        </activity>
+        
+            
+    
+       
+        
+        <activity
+            android:name="com.exam.tab.coinBlockIntroActivity"
+            android:label="@string/app_name"             
+            android:theme="@style/StyledIndicators" 
+          
+           >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />     
+                          
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.sdamsdam.widget.ACTION_EVENT" />
+                <action android:name="com.sdamsdam.widget.ACTION_SILENT" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+                <action android:name="android.intent.action.HEADSET_PLUG" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_DETACHED" />
+            </intent-filter>
+
+                
+           
+           
+        </activity>
+        
+        
+        
+        <activity
+            android:name="com.exam.tab.SampleList"
+            android:label="SampleList"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        
+        <activity
+            android:name="com.exam.tab.Setting"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        <activity
+            android:name="com.exam.tab.Setting_dialog"
+            android:label="Setting"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        
+        
+        
+        
+
+        <receiver android:name="coinBlockWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.exam.view.INTENT_OFTEN_FORMAT" />
+                <action android:name="com.exam.view.INTENT_EVOLVE_FORMAT" />
+                <action android:name="com.exam.view.INTENT_INIT_FORMAT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/coin_block_widgetprovider" />
+        </receiver>
+
+        <service android:name=".UpdateService" >
+            <intent-filter>
+                <action android:name="com.exam.updateservice" />
+            </intent-filter>
+        </service>
+        
+        
+        <service
+            android:name="com.exam.tab.Service_Notify"
+            android:enabled="true">        
+        </service>
+        
+        
+        <service
+            android:name="com.exam.Service_Variable"
+            android:enabled="true">        
+        </service>
+        
+        
+        <service android:name="com.exam.tab.Service_BatteryGauge" android:enabled="true">
+        	<intent-filter>
+        		<action android:name=".Service_BatteryGauge" />
+        	</intent-filter>
+        </service>
+        
+        <service android:name="com.exam.tab.Service_SnowWiFiMonitor" android:enabled="true">
+            <intent-filter>
+        		<action android:name=".Service_SnowWiFiMonitor" />
+        	</intent-filter>
+        	
+        </service>
+           
+
+        
+        
+        
+        <!-- facebook -->
+
+		<meta-data
+		
+		android:name="com.facebook.sdk.ApplicationId"
+		
+		android:value="@string/app_id" />,
+		
+		<activity android:name="com.facebook.LoginActivity" />
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,85 @@
+package ji.ruucm.android.vertical_view.fragment;
+
+import java.util.ArrayList;
+
+import ji.ruucm.android.vertical_view.R;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+public class Frag02 extends Fragment {
+
+	
+	
+	
+	//for changing callender
+	RelativeLayout r ;
+	ArrayList a;
+	int currentcal ;
+	
+	
+	
+	
+	// public static TextPref fbPref;
+
+	static boolean init;
+	public static boolean lv0_1;
+	static boolean lv0_2;
+	public static boolean lv1;
+	public static boolean lv2;
+	public static boolean lv3_1;
+
+	static View v;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		v = inflater.inflate(R.layout.frag02, container, false);
+
+
+		a = new ArrayList();
+		
+		a.add(R.drawable.callender_april);
+		a.add(R.drawable.callender_may);
+		a.add(R.drawable.callender_june);
+		
+		
+		r = (RelativeLayout) v.findViewById(R.id.frag_callender);
+		
+		currentcal = 1;
+		r.setBackgroundResource((int) a.get(currentcal));
+		
+		
+		
+		// setListener
+				ImageView arrow02 = (ImageView) v.findViewById(R.id.arrow02);
+
+				arrow02.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+
+						r.setBackgroundResource((int) a.get(currentcal));
+						
+						
+						
+					}
+				});
+
+				arrow02.setOnLongClickListener(new View.OnLongClickListener() {
+					public boolean onLongClick(View v) {
+						Toast.makeText(getActivity(), "arrow02...", Toast.LENGTH_SHORT)
+								.show();
+						return true;
+					}
+				});
+		
+		
+		return v;
+
+	}
+}

@@ -1,12 +1,21 @@
-1410092996647	Delete resource 'actionbarsherlock'
-1410093071435	Delete resource 'library'
-1410321244406	Rename Java project 'library'
-1410321259653	Rename Java project 'library2'
-1410321338592	Rename Java project 'library'
-1410321459516	Delete resource 'android-support-v7-appcompat'
-1410411062842	Delete resource 'Demos'
-1410411077349	Delete resource 'FragTabpager'
-1410411083209	Delete 4 resources
-1410411116671	Delete 2 resources
-1410411128666	Delete 3 resources
-1410411134492	Delete resource 'nineoldlibrary'
+1410090714617	Rename Java project 'library'
+1410090976553	Delete resource 'viewpager_library'
+1410091007743	Delete resource 'viewpager_library'
+1410091483701	Delete 2 resources
+1410091702900	Delete 2 resources
+1410092051230	Delete resource 'actionbarsherlock'
+1410092109989	Delete resource 'actionbarsherlock'
+1410094298527	Delete 2 resources
+1410237814653	Delete resource 'MasterActivity'
+1410237841325	Delete resource 'MasterActivity'
+1410238014829	Rename Java project 'MasterActivity'
+1410238028075	Delete resource 'master_detail'
+1410238442075	Delete resource 'MasterActivity'
+1410238490431	Delete resource 'MasterActivity'
+1410239467104	Delete resource 'MasterActivity'
+1410239534405	Delete resource 'appcompat_v7'
+1410239560570	Delete 2 resources
+1410240250490	Delete resource 'MasterActivity'
+1410242396222	Delete 3 resources
+1410244771515	Rename Java project 'MainActivity'
+1410599038251	Copy compilation units

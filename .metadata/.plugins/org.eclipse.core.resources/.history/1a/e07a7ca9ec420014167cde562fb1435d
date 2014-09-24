@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    
+    <RelativeLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" >
+    
+    <TextView 
+        android:id="@+id/user_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aa" 
+        android:textStyle="bold"
+        />
+    
+    
+    
+
+
+    <RelativeLayout
+        android:id="@+id/messagebox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_view2"
+        android:layout_toRightOf="@+id/date_view2">
+
+        <ScrollView
+            android:id="@+id/scroller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dip"
+            android:layout_toRightOf="@+id/arrow_left"
+            android:background="@drawable/popup"
+            android:fadingEdgeLength="5dip"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/tracks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/message_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_left" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/date_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/messagebox2"
+        android:text="ddf"
+        android:textColor="#FFFFFF" />
+    
+    </RelativeLayout>
+
+</RelativeLayout>

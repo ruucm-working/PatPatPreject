@@ -1,0 +1,72 @@
+import java.util.Date;
+
+import ji.ruucm.android.vertical_view.fragment.Chat_ExamData;
+import android.os.AsyncTask;
+import android.util.Log;
+
+  public class AsyncTask02 extends AsyncTask<String, String, String> {
+
+
+    	private static final String RESULT_SUCCESS = "1";
+    	private static final String RESULT_FAIL = "0";
+
+
+    	@Override
+    	public void onCancelled() {
+
+    	}
+
+    	@Override
+    	protected void onPreExecute() {
+
+
+    		Log.d("AsyncTask02", "onPreExecute");
+
+    	}
+
+    	@Override
+    	protected String doInBackground(String... params) {
+
+    		while (true) {
+    			try {
+    				Thread.sleep(6000); // one second sleep
+    				// time++; // decrement time
+
+    				Log.d("AsyncTask02", "doInBackground");
+    				publishProgress(); // trigger onProgressUpdate()
+
+    			} catch (InterruptedException e) {
+    				return RESULT_FAIL;
+    			}
+    		}
+
+    	}
+
+    	/**
+    	 * this method is used by doInBackground because it's called on the main
+    	 * thread (UI thread), you can directly modify UI
+    	 */
+    	@Override
+    	protected void onProgressUpdate(String... value) {
+
+
+    		Log.d("AsyncTask02", "onProgressUpdate");
+    		Chat_ExamData data = null;
+			// 첫번째 버튼이 눌리면 상대방이 이야기하는 듯한 데이터를 구성한다.
+			data = new Chat_ExamData((byte) 0, msg.getText().toString(),
+					m_time_format.format(new Date()));
+			
+			// 어댑터에 데이터를 추가한다.
+	        m_adapter.add(data);
+	        // 추가된 영역으로 스크롤을 이동시킨다.
+	        m_list.smoothScrollToPosition(m_adapter.getCount() - 1); 
+    	}
+
+    	/**
+    	 * this method is executed right AFTER doInBackground() on the main thread
+    	 * (UI thread)
+    	 */
+    	@Override
+    	protected void onPostExecute(String result) {
+    	}
+    }

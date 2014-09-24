@@ -1,0 +1,20 @@
+package ji.ruucm.android.vertical_view.fragment;
+
+public class Chat_ExamData {
+
+	public int type;
+	public CharSequence data1;
+	public CharSequence data2;
+
+	public Chat_ExamData(byte b, String string, String format) {
+
+	
+		type = b;
+	data1 = string;
+	data2 = format;
+		
+		
+	
+	}
+
+}

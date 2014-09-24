@@ -1,0 +1,18 @@
+package ji.ruucm.android.chatview;
+
+public class ExamData {
+
+	public int type;
+	public CharSequence data1;
+	public CharSequence data2;
+
+	public ExamData(byte b, String string, String format) {
+
+	
+	
+		
+		
+	
+	}
+
+}

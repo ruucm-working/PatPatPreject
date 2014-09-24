@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
-		<item value="452" key="DIALOG_X_ORIGIN"/>
-		<item value="247" key="DIALOG_Y_ORIGIN"/>
-	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="try" key="selection"/>
+		<item value="quickAction" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="try"/>
-			<item value="commit"/>
-			<item value="increment"/>
-			<item value="level"/>
-			<item value="nowBattery"/>
-			<item value="mPref"/>
-			<item value="mPref.Ready();"/>
-			<item value="textpref"/>
+			<item value="quickAction"/>
+			<item value="Service_BackImage"/>
+			<item value="nintent"/>
+			<item value="AsyncTask01"/>
+			<item value="msg"/>
+			<item value="sendAutomessage"/>
+			<item value="&#x09;"/>
+			<item value="track"/>
 		</list>
 		<list key="replacehistory">
-			<item value="bPref"/>
-			<item value=""/>
-			<item value="coinBlockLoginActivity"/>
-			<item value="&quot;DeviceStatePage&quot;"/>
+			<item value="AsyncTask03"/>
+			<item value="Chat_ExamData"/>
+			<item value="C"/>
+			<item value="85"/>
+			<item value="75"/>
 			<item value="IntroActivity"/>
 			<item value="2"/>
-			<item value="time"/>
-			<item value="sp2"/>
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="261" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="421" key="DIALOG_HEIGHT"/>
-		<item value="141" key="DIALOG_Y_ORIGIN"/>
-		<item value="449" key="DIALOG_X_ORIGIN"/>
+		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_Y_ORIGIN"/>
+		<item value="1065" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
