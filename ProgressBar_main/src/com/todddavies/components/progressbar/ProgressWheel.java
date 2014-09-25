@@ -368,7 +368,7 @@ public class ProgressWheel extends View {
         progress++;
         if (progress > 360)
             progress = 0;
-        setText(Math.round(((float) progress / 360) * 100) + "%");
+//        setText(Math.round(((float) progress / 360) * 100) + "%");
         spinHandler.sendEmptyMessage(0);
     }
 

@@ -762,7 +762,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int radius02=0x7f010009;
+        public static final int radius2=0x7f010009;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -2485,7 +2485,7 @@ containing a value of this type.
            <tr><td><code>{@link #ProgressWheel_contourColor com.exam:contourColor}</code></td><td></td></tr>
            <tr><td><code>{@link #ProgressWheel_contourSize com.exam:contourSize}</code></td><td></td></tr>
            <tr><td><code>{@link #ProgressWheel_delayMillis com.exam:delayMillis}</code></td><td></td></tr>
-           <tr><td><code>{@link #ProgressWheel_radius02 com.exam:radius02}</code></td><td></td></tr>
+           <tr><td><code>{@link #ProgressWheel_radius2 com.exam:radius2}</code></td><td></td></tr>
            <tr><td><code>{@link #ProgressWheel_rimColor com.exam:rimColor}</code></td><td></td></tr>
            <tr><td><code>{@link #ProgressWheel_rimWidth com.exam:rimWidth}</code></td><td></td></tr>
            <tr><td><code>{@link #ProgressWheel_spinSpeed com.exam:spinSpeed}</code></td><td></td></tr>
@@ -2500,7 +2500,7 @@ containing a value of this type.
            @see #ProgressWheel_contourColor
            @see #ProgressWheel_contourSize
            @see #ProgressWheel_delayMillis
-           @see #ProgressWheel_radius02
+           @see #ProgressWheel_radius2
            @see #ProgressWheel_rimColor
            @see #ProgressWheel_rimWidth
            @see #ProgressWheel_spinSpeed
@@ -2622,7 +2622,7 @@ containing a value of this type.
         */
         public static final int ProgressWheel_delayMillis = 7;
         /**
-          <p>This symbol is the offset where the {@link com.exam.R.attr#radius02}
+          <p>This symbol is the offset where the {@link com.exam.R.attr#radius2}
           attribute's value can be found in the {@link #ProgressWheel} array.
 
 
@@ -2634,9 +2634,9 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.exam:radius02
+          @attr name com.exam:radius2
         */
-        public static final int ProgressWheel_radius02 = 9;
+        public static final int ProgressWheel_radius2 = 9;
         /**
           <p>This symbol is the offset where the {@link com.exam.R.attr#rimColor}
           attribute's value can be found in the {@link #ProgressWheel} array.

@@ -102,7 +102,7 @@ int attr progressBarPadding 0x7f010081
 int attr progressBarStyle 0x7f01007f
 int attr queryHint 0x7f01008e
 int attr radius 0x7f01001a
-int attr radius02 0x7f010009
+int attr radius2 0x7f010009
 int attr radius_in_meters 0x7f010097
 int attr results_limit 0x7f010098
 int attr rimColor 0x7f010004
@@ -946,7 +946,7 @@ int styleable ProgressWheel_circleColor 8
 int styleable ProgressWheel_contourColor 12
 int styleable ProgressWheel_contourSize 13
 int styleable ProgressWheel_delayMillis 7
-int styleable ProgressWheel_radius02 9
+int styleable ProgressWheel_radius2 9
 int styleable ProgressWheel_rimColor 4
 int styleable ProgressWheel_rimWidth 5
 int styleable ProgressWheel_spinSpeed 6
