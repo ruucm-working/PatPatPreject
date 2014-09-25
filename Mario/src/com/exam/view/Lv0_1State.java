@@ -353,48 +353,48 @@ public class Lv0_1State implements ICoinBlockViewState {
 		int CliCount0_1 ;
 
 		public void OnClick(CoinBlockView viewContext) {
-			
-			viewContext.setState(new Lv0WaitState());
-			
-			viewContext.removeAnimatable(lv0_1dblClick);
-			viewContext.removeAnimatable(lv0_1wifiOff);
-			viewContext.removeAnimatable(lv0_1powerOff);
-			viewContext.removeAnimatable(lv0_1usbOff);
-			viewContext.removeAnimatable(lv0_1headsetOn);
-			viewContext.removeAnimatable(lv0_1headsetOff);
-			viewContext.removeAnimatable(lv0_1planeOn);
-			viewContext.removeAnimatable(lv0_1planeOff);
-			viewContext.removeAnimatable(lv0_1sms);
-			
-			viewContext.removeAnimatable(lv0_1ofAnim);
-			viewContext.removeAnimatable(lv0_1powerOn);
-			viewContext.removeAnimatable(lv0_1wifiOn);
-			
-			animeSwitch = true;
-			
-			mViewContext.addAnimatable(new Lv0ClickAnim());
-			
-			snd.seekTo(0);
-			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd.start();
+			if(!animeSwitch){
+				viewContext.setState(new Lv0WaitState());
+				
+				viewContext.removeAnimatable(lv0_1dblClick);
+				viewContext.removeAnimatable(lv0_1wifiOff);
+				viewContext.removeAnimatable(lv0_1powerOff);
+				viewContext.removeAnimatable(lv0_1usbOff);
+				viewContext.removeAnimatable(lv0_1headsetOn);
+				viewContext.removeAnimatable(lv0_1headsetOff);
+				viewContext.removeAnimatable(lv0_1planeOn);
+				viewContext.removeAnimatable(lv0_1planeOff);
+				viewContext.removeAnimatable(lv0_1sms);
+				
+				viewContext.removeAnimatable(lv0_1ofAnim);
+				viewContext.removeAnimatable(lv0_1powerOn);
+				viewContext.removeAnimatable(lv0_1wifiOn);
+				
+				animeSwitch = true;
+				
+				mViewContext.addAnimatable(new Lv0ClickAnim());
+				
+				snd.seekTo(0);
+				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+					public void onSeekComplete(MediaPlayer mp) {
+						snd.start();
+					}
+				});
+				
+				try {
+					mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+				} catch (Exception e) { 
+					e.printStackTrace();
 				}
-			});
-			
-			try {
-				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			} catch (Exception e) { 
-				e.printStackTrace();
+				
+				mPref.Ready();
+				
+				CliCount0_1 = mPref.ReadInt("clicount0_1", 0);			 
+				CliCount0_1++;
+				
+				mPref.WriteInt("clicount0_1", CliCount0_1);
+				mPref.CommitWrite();
 			}
-			
-			mPref.Ready();
-			
-			CliCount0_1 = mPref.ReadInt("clicount0_1", 0);			 
-			CliCount0_1++;
-			
-			mPref.WriteInt("clicount0_1", CliCount0_1);
-			mPref.CommitWrite();
-			
 		}
 		
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
@@ -433,29 +433,10 @@ public class Lv0_1State implements ICoinBlockViewState {
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			coinBlockView.setState(new Lv0_2State(coinBlockView));
+			Log.d("EvolveBugfix", " lv0_1진화");
 			animeSwitch = false;
-			
-			// coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
-
+			coinBlockView.setState(new Lv0_2State(coinBlockView));
 			IntroActivity.taskTimer1.isCanceled = true;
-
-			// IntroActivity.taskTimer1.onCancelled();
-
-			// CoinBlockView.lv0_1 = false;
-			// CoinBlockView.lv0_2 = true;
-			//
-			// Log.d("Lv0_1State","CoinBlockView");
-			//
-			// CoinBlockView.mPref.Ready();
-			// CoinBlockView.mPref.WriteBoolean("lv0_1state",
-			// CoinBlockView.lv0_1);
-			// CoinBlockView.mPref.WriteBoolean("lv0_2state",
-			// CoinBlockView.lv0_2);
-			// CoinBlockView.mPref.CommitWrite();
-			//
-			// Log.d("Lv0_1State","CommitWrite");
-
 			DeviceConditionPage.UpdateIntroView();
 
 			Log.d("Lv0_1State", "UpdateIntroView");

@@ -8,6 +8,7 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv3_1State implements ICoinBlockViewState {
 
@@ -661,10 +662,19 @@ public class Lv3_1State implements ICoinBlockViewState {
 			if (spriteVib < 13){
 				spriteVib++;
 			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new Lv2WaitState());
+				animeRemove(this);
 			}
+		}
+	}
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new Lv2WaitState());
+		}else{
+			mViewContext.removeAnimatable(animeObject);
 		}
 	}
 

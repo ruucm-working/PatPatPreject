@@ -14,6 +14,7 @@ import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
 import com.exam.tab.TaskTimer;
+import com.exam.view.Lv0_1State.Lv0WaitState;
 
 public class Lv0_2State implements ICoinBlockViewState {
 	
@@ -459,6 +460,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
+			Log.d("EvolveBugfix", " lv0_2진화");
+			animeSwitch = false;
 			coinBlockView.setState(new Lv1State(coinBlockView));
 
 			TaskTimer taskTimer1 = new TaskTimer();
@@ -724,13 +727,22 @@ public class Lv0_2State implements ICoinBlockViewState {
 			if (spriteVib < 7){
 				spriteVib++;
 			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new Lv0_2WaitState());
+				animeRemove(this);
 			}
 		}
 	}
-
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new Lv0_2WaitState());
+		}else{
+			mViewContext.removeAnimatable(animeObject);
+		}
+	}
+	
 	@Override
 	public void OnDblClick(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub

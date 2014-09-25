@@ -9,6 +9,7 @@ import android.widget.*;
 
 import com.exam.*;
 import com.exam.tab.DeviceConditionPage;
+import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv2State implements ICoinBlockViewState {
 
@@ -380,6 +381,8 @@ public class Lv2State implements ICoinBlockViewState {
 
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
+			Log.d("EvolveBugfix", " lv2진화");
+			animeSwitch = false;
 			DeviceConditionPage.UpdateIntroView();
 			coinBlockView.setState(new Lv3_1State(coinBlockView));	
 		}
@@ -657,10 +660,19 @@ public class Lv2State implements ICoinBlockViewState {
 			if (spriteVib < 13){
 				spriteVib++;
 			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new Lv2WaitState());
+				animeRemove(this);
 			}
+		}
+	}
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new Lv2WaitState());
+		}else{
+			mViewContext.removeAnimatable(animeObject);
 		}
 	}
 

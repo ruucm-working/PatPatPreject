@@ -18,6 +18,7 @@ import com.exam.TextPref;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.TaskTimer;
+import com.exam.view.Lv0_2State.Lv0_2WaitState;
 
 
 public class Lv1State implements ICoinBlockViewState {
@@ -450,7 +451,7 @@ public class Lv1State implements ICoinBlockViewState {
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 			// Draw the brick at bottom
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-			else 			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter);
+			else 			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0);
 			
 			/*
 			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter,
@@ -472,7 +473,7 @@ public class Lv1State implements ICoinBlockViewState {
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			
+			Log.d("EvolveBugfix", " lv1진화");
 			IntroActivity.taskTimer1.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.setTextView1(R.id.time0);
@@ -480,6 +481,7 @@ public class Lv1State implements ICoinBlockViewState {
 
 			DeviceConditionPage.UpdateIntroView();
 			
+			animeSwitch = false;
 			coinBlockView.setState(new Lv2State(coinBlockView));
 
 			Log.d("Lv0_2State","OnEvolve");
@@ -825,13 +827,22 @@ public class Lv1State implements ICoinBlockViewState {
 			if (spriteVib < 13){
 				spriteVib++;
 			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new Lv1WaitState());
+				animeRemove(this);
 			}
 		}
 		
 		
+	}
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new Lv1WaitState());
+		}else{
+			mViewContext.removeAnimatable(animeObject);
+		}
 	}
 
 	@Override
