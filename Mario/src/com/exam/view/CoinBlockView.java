@@ -417,9 +417,7 @@ public class CoinBlockView {
 	}
 
 	private static void updateEvolveIntent(RemoteViews rviews, Context context) {
-		// TODO Auto-generated method stub				
-		 
-		
+		// TODO Auto-generated method stub
 		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
 		
 		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));

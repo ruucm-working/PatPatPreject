@@ -13,6 +13,7 @@ import com.exam.*;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
+import com.exam.view.InitState.InitWaitState;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
@@ -82,7 +83,18 @@ public class Lv0_1State implements ICoinBlockViewState {
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 		}
 	}
-
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new Lv0WaitState());
+		}else{
+			mViewContext.removeAnimatable(animeObject);
+		}
+	}
+	
 	private class Lv0_1WifiOnAnim implements IAnimatable {
 		private int blockVib = 0;	
 
@@ -291,6 +303,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 	}
 
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+		Log.d("bugfix", "lv0_1 draw");
 		SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter, 0,
 				-(int)(heightModifier[animStage] * viewContext.getDensity()));
 		
@@ -421,7 +434,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
 			coinBlockView.setState(new Lv0_2State(coinBlockView));
-
+			animeSwitch = false;
+			
 			// coinBlockIntroActivity.taskTimer1.setTextView1(R.id.time0);
 
 			IntroActivity.taskTimer1.isCanceled = true;
@@ -592,13 +606,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0);
 
-			if (spriteVib < 7){
-				spriteVib++;
-			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new Lv0WaitState());
-			}
+			if (spriteVib < 7) spriteVib++;
+			else 			   animeRemove(this);
 		}
 	}
 	

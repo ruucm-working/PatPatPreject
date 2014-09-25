@@ -106,52 +106,53 @@ public class InitState implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			
 			Log.d("bugfix", "클릭 : " + viewContext);
-			
-			viewContext.setState(new InitWaitState());
-			
-			animeSwitch = true;
-			viewContext.addAnimatable(new InitClickAnim());
-			
-			snd.seekTo(0);
-			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd.start();
+			if(!animeSwitch) {
+				viewContext.setState(new InitWaitState());
+				
+				animeSwitch = true;
+				viewContext.addAnimatable(new InitClickAnim());
+				
+				snd.seekTo(0);
+				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+					public void onSeekComplete(MediaPlayer mp) {
+						snd.start();
+					}
+				}); //사운드 재생
+							
+				try {
+					mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+				} catch (Exception e) { 
+					e.printStackTrace();
 				}
-			}); //사운드 재생
-						
-			try {
-				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			} catch (Exception e) { 
-				e.printStackTrace();
-			}
-			
-			mPref.Ready();			
-			
-			CliCountInit = mPref.ReadInt("clicountinit", 0);			 
-			CliCountInit++;			
-
-			init = mPref.ReadBoolean("initstate", false);	
-			lv0_1 = mPref.ReadBoolean("lv0_1state", false);
-			
-			second = mPref.ReadInt("time", 0);
-			
-			Log.i("InitState","second "+second);
-			
-			if ( second == 0 && CliCountInit >=3 && init){
-				init = false;
-				lv0_1 = true;
-				mPref.WriteBoolean("initstate", init);	
-				mPref.WriteBoolean("lv0_1state", lv0_1);
+				
+				mPref.Ready();			
+				
+				CliCountInit = mPref.ReadInt("clicountinit", 0);			 
+				CliCountInit++;			
+	
+				init = mPref.ReadBoolean("initstate", false);	
+				lv0_1 = mPref.ReadBoolean("lv0_1state", false);
+				
+				second = mPref.ReadInt("time", 0);
+				
+				Log.i("InitState","second "+second);
+				
+				if ( second == 0 && CliCountInit >=3 && init){
+					init = false;
+					lv0_1 = true;
+					mPref.WriteBoolean("initstate", init);	
+					mPref.WriteBoolean("lv0_1state", lv0_1);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+		
+				}else{
+	
+				mPref.WriteInt("clicountinit", CliCountInit);
 				mPref.CommitWrite();
 				
-				RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
-				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-	
-			}else{
-
-			mPref.WriteInt("clicountinit", CliCountInit);
-			mPref.CommitWrite();
-			
+				}
 			}
 		}
 
@@ -173,8 +174,11 @@ public class InitState implements ICoinBlockViewState {
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
+			Log.d("EvolveBugfix", " lv0_진화");
+			
+			animeSwitch = false;
 			coinBlockView.setState(new Lv0_1State(coinBlockView));
-			 
+			
 			CoinBlockView.init = false;	
 			CoinBlockView.lv0_1 = true;	
 			
@@ -352,14 +356,22 @@ public class InitState implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp1, 0, SpriteHelper.DrawPosition.BottomCenter,
 				-(int)(widthModifier[spriteVib] * mViewContext.getDensity()),0);
 			
-			if (spriteVib < 7){
-				spriteVib++;
-			}else{
-				animeSwitch = false;
-				mViewContext.removeAnimatable(this);
-				mViewContext.setState(new InitWaitState());
-			}
+			if (spriteVib < 7) spriteVib++;
+			else			   animeRemove(this);
 		}
+	}
+	
+	private void animeRemove(IAnimatable animeObject)
+	{
+		if(animeSwitch){
+			animeSwitch = false;
+			mViewContext.removeAnimatable(animeObject);
+			mViewContext.setState(new InitWaitState());
+			Log.d("bugfix","wait다시호출 ");
+		}else{
+			mViewContext.removeAnimatable(animeObject);
+		}
+		Log.d("bugfix","애니메이터블 삭제");
 	}
 
 	@Override

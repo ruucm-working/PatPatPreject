@@ -381,13 +381,6 @@ public class coinBlockLoginActivity extends Activity
 					startActivity(intent);		        	
 				}
 				
-	        	
-	        	
-	        	
-	        
-				
-				
-				
 	        }
 	        
 	 
