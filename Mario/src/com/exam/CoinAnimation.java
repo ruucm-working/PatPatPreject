@@ -14,7 +14,7 @@ public class CoinAnimation implements IAnimatable {
                 density = Density;
         } 
 
-        public boolean AnimationFinished() {
+        public boolean AnimationFinished() { 
                 return step == 0;
         }
 

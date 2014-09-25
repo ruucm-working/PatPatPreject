@@ -149,7 +149,7 @@ public class DeviceConditionPage extends Fragment  {
 		button2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(), "start scanning", Toast.LENGTH_LONG)
+				Toast.makeText(getActivity(), "Entering Battle zone..", Toast.LENGTH_LONG)
 						.show();
 				
 				Intent aintent = new Intent(getActivity(), BluetoothChat.class);

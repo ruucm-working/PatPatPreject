@@ -37,4 +37,5 @@
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.AsyncTask01"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.todddavies.components.progressbar.ProgressWheel"/>
 </qualifiedTypeNameHistroy>
