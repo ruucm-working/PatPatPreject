@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="quickAction" key="selection"/>
+		<item value="evolve" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="evolve"/>
+			<item value="Lv2ClickAnim"/>
+			<item value="animStage"/>
+			<item value="animstage"/>
+			<item value="onclick"/>
 			<item value="quickAction"/>
 			<item value="Service_BackImage"/>
 			<item value="nintent"/>
-			<item value="AsyncTask01"/>
-			<item value="msg"/>
-			<item value="sendAutomessage"/>
-			<item value="&#x09;"/>
-			<item value="track"/>
 		</list>
 		<list key="replacehistory">
 			<item value="AsyncTask03"/>
