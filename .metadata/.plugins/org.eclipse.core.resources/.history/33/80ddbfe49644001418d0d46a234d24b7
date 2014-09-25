@@ -698,7 +698,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			if (spriteVib < 13)
 				spriteVib++;
 			
-			Log.d("Lv3_1State","Draw(inClickAnim) spriteVib is "+spriteVib);
+			Log.d("Lv3_1State","Draw(inState) spriteVib is "+spriteVib);
 			
 			
 		}

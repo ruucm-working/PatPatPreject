@@ -283,11 +283,6 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		if(animStage > 60)	
 			viewContext.setState(new Lv2WaitState(viewContext));
-		
-		
-		Log.d("Lv3_1State","Draw(inState) animStage is "+animStage);
-		
-		
 	}
 
 	public boolean NeedRedraw() {
@@ -394,11 +389,6 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 			if (blockVib < 13)
 				blockVib++;
-			
-			
-			Log.d("Lv3_1State","Draw(in WaitState) blockVib is "+blockVib);
-			
-			
 		}
 
 		public boolean NeedRedraw() {
@@ -697,10 +687,6 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 			if (spriteVib < 13)
 				spriteVib++;
-			
-			Log.d("Lv3_1State","Draw(inClickAnim) spriteVib is "+spriteVib);
-			
-			
 		}
 	}
 
