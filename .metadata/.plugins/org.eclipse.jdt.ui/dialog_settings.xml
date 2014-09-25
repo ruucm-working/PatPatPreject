@@ -4,6 +4,7 @@
 	<item value="0" key="CallHierarchyViewPart.call_mode"/>
 	<item value="C:\android sdk\extras\android\support\v7\appcompat\libs" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="3" key="CallHierarchyViewPart.orientation"/>
+	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="500" key="CallHierarchyViewPart.ratio1"/>
 	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
 	<item value="500" key="CallHierarchyViewPart.ratio3"/>
@@ -86,7 +87,7 @@
 	</section>
 	<section name="completion_proposal_size">
 		<item value="252" key="size.y"/>
-		<item value="358" key="size.x"/>
+		<item value="357" key="size.x"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
