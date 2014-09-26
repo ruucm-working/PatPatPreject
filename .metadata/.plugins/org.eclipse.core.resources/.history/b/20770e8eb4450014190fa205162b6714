@@ -451,12 +451,12 @@ public class BluetoothChat extends Activity {
             squashAnim1.setRepeatCount(1);
             squashAnim1.setRepeatMode(ValueAnimator.REVERSE);
             squashAnim1.setInterpolator(new DecelerateInterpolator());
-            ValueAnimator squashAnim2 = ObjectAnimator.ofFloat(newBall, "height", newBall.getHeight(),
+            /*ValueAnimator squashAnim2 = ObjectAnimator.ofFloat(newBall, "height", newBall.getHeight(),
                     newBall.getHeight() + 50);
             squashAnim2.setDuration(duration/4);
             squashAnim2.setRepeatCount(1);
             squashAnim2.setRepeatMode(ValueAnimator.REVERSE);
-            squashAnim2.setInterpolator(new DecelerateInterpolator());
+            squashAnim2.setInterpolator(new DecelerateInterpolator());*/
             ValueAnimator stretchAnim1 = ObjectAnimator.ofFloat(newBall, "x", endX,
                     endX + 25f);
             stretchAnim1.setDuration(duration/4);
@@ -476,10 +476,10 @@ public class BluetoothChat extends Activity {
             // Sequence the down/squash&stretch/up animations
             AnimatorSet bouncer = new AnimatorSet();
             bouncer.play(bounceAnim).before(squashAnim1);
-            bouncer.play(squashAnim1).with(squashAnim2);
+//            bouncer.play(squashAnim1).with(squashAnim2);
             bouncer.play(squashAnim1).with(stretchAnim1);
             bouncer.play(squashAnim1).with(stretchAnim2);
-//            bouncer.play(bounceBackAnim).after(stretchAnim2);
+            bouncer.play(bounceBackAnim).after(stretchAnim2);
 
             // Fading animation - remove the ball when the animation is done
             ValueAnimator fadeAnim = ObjectAnimator.ofFloat(newBall, "alpha", 1f, 0f);
