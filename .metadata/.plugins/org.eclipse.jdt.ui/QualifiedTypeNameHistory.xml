@@ -33,9 +33,8 @@
 <fullyQualifiedTypeName name="com.actionbarsherlock.widget.ActivityChooserModel.ActivitySorter"/>
 <fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.id"/>
-<fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.AsyncTask01"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="com.todddavies.components.progressbar.ProgressWheel"/>
+<fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
 </qualifiedTypeNameHistroy>
