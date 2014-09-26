@@ -49,7 +49,9 @@ public class MyAnimationView extends View {
     }
     
     public MyAnimationView(Context context, AttributeSet attrs) {
-        super(context);
+    	super(context, attrs);
+
+
 
         // Animate background color 
         // Note that setting the background color will automatically invalidate the
@@ -65,18 +67,18 @@ public class MyAnimationView extends View {
     
     
     public MyAnimationView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context);
+        super(context, attrs, defStyleAttr);
 
         // Animate background color
         // Note that setting the background color will automatically invalidate the
         // view, so that the animated color, and the bouncing balls, get redisplayed on
         // every frame of the animation.
-        ValueAnimator colorAnim = ObjectAnimator.ofInt(this, "backgroundColor", RED, BLUE);
+        /*ValueAnimator colorAnim = ObjectAnimator.ofInt(this, "backgroundColor", RED, BLUE);
         colorAnim.setDuration(3000);
         colorAnim.setEvaluator(new ArgbEvaluator());
         colorAnim.setRepeatCount(ValueAnimator.INFINITE);
         colorAnim.setRepeatMode(ValueAnimator.REVERSE);
-        colorAnim.start();
+        colorAnim.start();*/
     }
 
     @Override

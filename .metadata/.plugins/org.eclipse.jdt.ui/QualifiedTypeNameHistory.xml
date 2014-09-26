@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.app.SherlockFragmentActivity"/>
-<fullyQualifiedTypeName name="com.exam.R"/>
 <fullyQualifiedTypeName name="com.viewpagerindicator.IconPagerAdapter"/>
 <fullyQualifiedTypeName name="com.exam.tab.coinBlockLoginActivity"/>
 <fullyQualifiedTypeName name="com.exam.tab.IntroActivity"/>
@@ -37,4 +36,6 @@
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
+<fullyQualifiedTypeName name="com.exam.helper.ShapeHolder"/>
+<fullyQualifiedTypeName name="com.exam.R"/>
 </qualifiedTypeNameHistroy>
