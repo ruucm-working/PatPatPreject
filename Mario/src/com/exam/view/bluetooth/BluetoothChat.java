@@ -29,22 +29,26 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.exam.R;
+import com.exam.helper.MyAnimationView;
 
 /**
  * This is the main Activity that displays the current chat session.
  */
-public class BluetoothChat extends Activity {
+public class BluetoothChat extends Activity implements OnTouchListener {
     // Debugging
     private static final String TAG = "BluetoothChat";
     private static final boolean D = true;
@@ -88,7 +92,10 @@ public class BluetoothChat extends Activity {
         if(D) Log.e(TAG, "+++ ON CREATE +++");
 
         // Set up the window layout
-        setContentView(R.layout.main);
+        setContentView(R.layout.battlezone_main);
+        
+        
+        
 
         // Get local Bluetooth adapter
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -99,7 +106,34 @@ public class BluetoothChat extends Activity {
             finish();
             return;
         }
+        
+        
+        
+        //onHandTouchEvent
+        
+        ImageView ryu_hands = (ImageView) findViewById(R.id.ryu_hands);
+
+        
+        ryu_hands.setOnTouchListener(this);
+        
+        
+        
+        
     }
+    
+    
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+
+		
+//		float endY = getApplicationContext().getResources()./*getWindow().getAttributes().height - 200f; 421 ;*/
+		float endX = /*getWindow().getAttributes().width - 50f;*/ 800 ;
+		MyAnimationView.onHandTouchEvent(event, 421, 1166);
+		
+		return false;
+	}
+    
+    
 
     @Override
     public void onStart() {
@@ -355,5 +389,12 @@ public class BluetoothChat extends Activity {
         }
         return false;
     }
+
+
+    
+    
+    
+   
+    
 
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 19 resources" deleteContents="false" description="Delete 19 resources" element1="/actionbarsherlock" element10="/Library" element11="/MainActivity" element12="/MainActivity2" element13="/Mario" element14="/MasterActivity" element15="/NewQuickAction3D" element16="/Vertical_View" element17="/viewpager_library" element18="/wheel" element19="/wheel-demo" element2="/ActivatedStateDemo" element3="/AndExam4_1" element4="/AndroidParallelAsyncTask" element5="/AndroidServiceExample" element6="/chatview" element7="/gameandroiddemo-android" element8="/HorizontalView" element9="/InitSelectionActivity" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="19" stamp="1412226538785"/>
+</session>

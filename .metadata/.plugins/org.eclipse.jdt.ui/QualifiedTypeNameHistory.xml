@@ -24,12 +24,10 @@
 <fullyQualifiedTypeName name="com.example.mdidemo.R.id"/>
 <fullyQualifiedTypeName name="de.dbruhn.android.activatedstatedemo.R.drawable"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.R"/>
-<fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.widget.ActivityChooserModel.ActivitySorter"/>
 <fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.id"/>
@@ -37,4 +35,12 @@
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
+<fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.fragment.Frag02"/>
+<fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R"/>
+<fullyQualifiedTypeName name="android.app.DialogFragment"/>
+<fullyQualifiedTypeName name="android.app.Fragment"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="android.app.FragmentTransaction"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentTransaction"/>
+<fullyQualifiedTypeName name="android.support.v4.app.DialogFragment"/>
 </qualifiedTypeNameHistroy>

@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="setImageResource" key="selection"/>
+		<item value=" " key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="setBackgroundResource"/>
-			<item value="fadeInAnimation"/>
-			<item value="quickAction"/>
-			<item value="Service_BackImage"/>
-			<item value="nintent"/>
-			<item value="AsyncTask01"/>
-			<item value="msg"/>
-			<item value="sendAutomessage"/>
+			<item value="_arrow02"/>
+			<item value="callender"/>
+			<item value="confirm"/>
+			<item value="positiveButtonText"/>
+			<item value="positiveButton"/>
+			<item value="negativeButton"/>
+			<item value="show"/>
+			<item value="뇆"/>
 		</list>
 		<list key="replacehistory">
+			<item value=" "/>
+			<item value="add_button"/>
+			<item value="callender_arrow02"/>
+			<item value="callender_arrow01"/>
+			<item value="cancle"/>
+			<item value="getActivity()"/>
+			<item value="Frag02"/>
 			<item value="setImageResource"/>
-			<item value="fadeOutAnimation"/>
-			<item value="AsyncTask03"/>
-			<item value="Chat_ExamData"/>
-			<item value="C"/>
-			<item value="85"/>
-			<item value="75"/>
-			<item value="IntroActivity"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
