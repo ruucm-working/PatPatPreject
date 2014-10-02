@@ -402,6 +402,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			Log.d("EvolveBugfix", " lv0_1진화");
 			animeSwitch = false;
+			//coinBlockView.setState(new Lv0_2State(coinBlockView));
 			coinBlockView.setState(new Lv0_2State(coinBlockView));
 			IntroActivity.taskTimer1.isCanceled = true;
 			DeviceConditionPage.UpdateIntroView();

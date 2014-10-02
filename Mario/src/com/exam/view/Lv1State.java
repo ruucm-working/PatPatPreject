@@ -40,37 +40,19 @@ public class Lv1State implements ICoinBlockViewState {
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };	
 	private int[] widthModifier = { 6, -6, 4, -4, 2, -2, 0, 0 };	// here
 	
-	
-	Lv1Animation lv1Anim;
-	Lv0_2OftenAnim lv1ofAnim;
-	Lv0_2DblClickAnim lv1dblClick;
-	
-	Lv0_2WifiOnAnim lv1wifiOn;
-	Lv0_2WifiOffAnim lv1wifiOff;
-
-	Lv0_2PowerConnectedAnim lv1powerOn;
-	Lv0_2PowerDisconnectedAnim lv1powerOff;
-
-	Lv0_2USBConnectedAnim lv0_2usbOn;
-	Lv0_2USBDisconnectedAnim lv1usbOff;
-
-	Lv0_2HeadsetConnectedAnim lv1headsetOn;
-	Lv0_2HeadsetDisconnectedAnim lv1headsetOff;
-
-	Lv0_2PlaneOnAnim lv1planeOn;
-	Lv0_2PlaneOffAnim lv1planeOff;
-
-	Lv0_2SMSAnim lv1sms;
-	
 	private int animStage = 0;
 	private int flowerRaise = 4;
 	
 	boolean fuck = false;   
 	CoinBlockView mViewContext;
-
+	
 	public Lv1State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
-
+		
+		animeSwitch = true;
+		mViewContext.addAnimatable(new Lv1Animation());
+		viewContext.setState(new Lv1WaitState());
+		
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 			public void onSeekComplete(MediaPlayer mp) {
@@ -80,31 +62,8 @@ public class Lv1State implements ICoinBlockViewState {
 	}
 	
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		// Draw the brick at bottom				
-		SpriteHelper.DrawSprite(canvas, sp2, 0,
-				SpriteHelper.DrawPosition.BottomCenter, 0, -(int) (flowerRaise * 4 * mViewContext.getDensity()));
-
-		Sprite bottom2 = MediaAssets.getInstance().getSprite(R.drawable.eggs_break);
-		SpriteHelper.DrawSprite(canvas, bottom2, 0, SpriteHelper.DrawPosition.BottomCenter);
-
-		// Draw the flower
-		if (flowerRaise < 8)
-			flowerRaise++; 
-		else{
-			
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			viewContext.setState(new Lv1WaitState());
-			Log.d("Lv1State","setState(new Lv1WaitState");
-		}
+		// Draw the brick at bottom
 	}
-
-
 	
 	private class Lv1Animation implements IAnimatable {
 		//진동할때 올라오고, 상단에 남는 드로블
@@ -122,6 +81,7 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, bottom2, 0, SpriteHelper.DrawPosition.BottomCenter);
 
 			if (flowerRaise < 8) flowerRaise++; 
+			else 				 animeRemove(this);
 		}
 	}
 	
@@ -139,8 +99,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -158,8 +118,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -177,8 +137,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -196,8 +156,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -215,8 +175,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -233,8 +193,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -251,8 +211,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -269,8 +229,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -288,8 +248,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -309,9 +269,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7) { 
-				blockVib++;
-			}
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -330,8 +289,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -350,8 +309,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -379,71 +338,51 @@ public class Lv1State implements ICoinBlockViewState {
 
 	@Override
 	public void OnInit(CoinBlockView coinBlockView) {
-		//coinBlockView.removeAnimatable(lv0Anim);
-		coinBlockView.removeAnimatable(lv1ofAnim);
 		Log.d("Lv0_2State","OnInit2");
 	}
 
 	class Lv1WaitState implements ICoinBlockViewState {
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
-		CoinBlockView mViewContext;
-		private int spriteVib = 0;
+		
 		long second = 0 ;
 		
 		//프레퍼런스 
 		TextPref mPref;	
-
-		boolean init = false;
-		boolean lv0_1;
+		
 		public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 		public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
 
 		int CliCount1 ;
 			
 		public void OnClick(CoinBlockView viewContext) {
-			viewContext.setState(new Lv1WaitState());
-			
-			viewContext.removeAnimatable(lv1dblClick);
-			viewContext.removeAnimatable(lv1wifiOff);
-			viewContext.removeAnimatable(lv1powerOff);
-			viewContext.removeAnimatable(lv1usbOff);
-			viewContext.removeAnimatable(lv1headsetOn);
-			viewContext.removeAnimatable(lv1headsetOff);
-			viewContext.removeAnimatable(lv1planeOn);
-			viewContext.removeAnimatable(lv1planeOff);
-			viewContext.removeAnimatable(lv1sms);
-			
-			viewContext.removeAnimatable(lv1ofAnim);
-			viewContext.removeAnimatable(lv1powerOn);
-			viewContext.removeAnimatable(lv1wifiOn);
-			
-			animeSwitch = true;
-			
-			mViewContext.addAnimatable(new Lv1ClickAnim());
-			
-			snd.seekTo(0);
-			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd.start();
+			if(!animeSwitch){
+				viewContext.setState(new Lv1WaitState());
+				animeSwitch = true;
+				mViewContext.addAnimatable(new Lv1ClickAnim());
+				
+				snd.seekTo(0);
+				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+					public void onSeekComplete(MediaPlayer mp) {
+						snd.start();
+					}
+				});
+				
+				try {
+					mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+				} catch (Exception e) { 
+					e.printStackTrace();
 				}
-			});
-			
-			try {
-				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			} catch (Exception e) { 
-				e.printStackTrace();
+				
+				mPref.Ready();			
+				
+				CliCount1 = mPref.ReadInt("clicount1", 0);			 
+				CliCount1++;		
+				
+				Log.i("InitState","second "+second);
+				
+				mPref.WriteInt("clicount1", CliCount1);
+				mPref.CommitWrite();
 			}
-			
-			mPref.Ready();			
-			
-			CliCount1 = mPref.ReadInt("clicount1", 0);			 
-			CliCount1++;		
-			
-			Log.i("InitState","second "+second);
-			
-			mPref.WriteInt("clicount1", CliCount1);
-			mPref.CommitWrite();
-			
 		}
 		
 
@@ -464,9 +403,7 @@ public class Lv1State implements ICoinBlockViewState {
 
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {
-			coinBlockView.removeAnimatable(lv1ofAnim);
-			lv1ofAnim = new Lv0_2OftenAnim();			
-			coinBlockView.addAnimatable(lv1ofAnim);
+			coinBlockView.addAnimatable(new Lv0_2OftenAnim());
 		}
 		
 		@Override
@@ -489,20 +426,6 @@ public class Lv1State implements ICoinBlockViewState {
 		@Override
 		public void OnInit(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			coinBlockView.removeAnimatable(lv1ofAnim);
-			coinBlockView.removeAnimatable(lv1powerOn);
-			coinBlockView.removeAnimatable(lv1wifiOn);
-			
-			coinBlockView.removeAnimatable(lv1dblClick);
-			coinBlockView.removeAnimatable(lv1wifiOff);
-			coinBlockView.removeAnimatable(lv1powerOff);
-			coinBlockView.removeAnimatable(lv1usbOff);
-			coinBlockView.removeAnimatable(lv1headsetOn);
-			coinBlockView.removeAnimatable(lv1headsetOff);
-			coinBlockView.removeAnimatable(lv1planeOn);
-			coinBlockView.removeAnimatable(lv1planeOff);
-			coinBlockView.removeAnimatable(lv1sms);
-			
 			Log.d("Lv0_2State","OnInit");
 			
 			Log.d("tag3","OnInit");
@@ -823,8 +746,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0 );
 			
-			if (spriteVib < 13) spriteVib++;
-			else 				animeRemove(this);
+			if (spriteVib < 7) spriteVib++;
+			else 			   animeRemove(this);
 		}
 		
 		

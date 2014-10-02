@@ -320,65 +320,63 @@ public class Lv0_2State implements ICoinBlockViewState {
 		//for count clicknum	
 		TextPref mPref;			
 		
-		int CliCount0_2 ;		
-		boolean lv0_2 ;
+		int CliCount0_2 ;
+		boolean lv0_2;
 		boolean lv1;
 		
 		public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 		public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
 
-		
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
 		
 		public void OnClick(CoinBlockView viewContext) {
-			
-			viewContext.setState(new Lv0_2WaitState());
-			
-			animeSwitch = true;
-			
-			mViewContext.addAnimatable(new Lv0ClickAnim());
-
-			snd.seekTo(0);
-			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd.start();
+			if(!animeSwitch){
+				/*
+				viewContext.setState(new Lv0_2WaitState());
+				
+				animeSwitch = true;
+				
+				mViewContext.addAnimatable(new Lv0ClickAnim());
+				*/
+				snd.seekTo(0);
+				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+					public void onSeekComplete(MediaPlayer mp) {
+						snd.start();
+					}
+				});
+				
+				try {
+					mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+				} catch (Exception e) { 
+					e.printStackTrace();
 				}
-			});
-			
-			
-
-			
-			try {
-				mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			} catch (Exception e) { 
-				e.printStackTrace();
-			}
-			
-			
-			mPref.Ready();			
-			
-			CliCount0_2 = mPref.ReadInt("clicount0_2", 0);			 
-			CliCount0_2++;			
-			
-			lv0_2 = mPref.ReadBoolean("lv0_2state", false);	
-			lv1 = mPref.ReadBoolean("lv1state", false);
-			
-			if ( CliCount0_2 >= 3  && lv0_2){
-				lv0_2 = false;
-				lv1 = true;
-				mPref.WriteBoolean("lv0_2state", lv0_2);	
-				mPref.WriteBoolean("lv1state", lv1);
+				
+				
+				mPref.Ready();			
+				
+				CliCount0_2 = mPref.ReadInt("clicount0_2", 0);			 
+				CliCount0_2++;			
+				
+				lv0_2 = mPref.ReadBoolean("lv0_2state", false);	
+				lv1 = mPref.ReadBoolean("lv1state", false);
+				
+				if ( CliCount0_2 >= 3  && lv0_2){
+					lv0_2 = false;
+					lv1 = true;
+					mPref.WriteBoolean("lv0_2state", lv0_2);	
+					mPref.WriteBoolean("lv1state", lv1);
+					mPref.CommitWrite();
+					
+					RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
+					updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
+					
+				}		
+				else{
+	
+				mPref.WriteInt("clicount0_2", CliCount0_2);
 				mPref.CommitWrite();
-				
-				RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp.getApplication().getPackageName(), R.layout.coin_block_widget);
-				updateEvolveIntent(rviews, CoinBlockWidgetApp.getApplication());
-				
-			}		
-			else{
-
-			mPref.WriteInt("clicount0_2", CliCount0_2);
-			mPref.CommitWrite();
+				}
 			}
 		}
 		
@@ -410,7 +408,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		}
 
 		public boolean NeedRedraw() {
-			return false;
+			return true;
 		}
 
 		@Override
@@ -657,11 +655,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0);
 
-			if (spriteVib < 7){
-				spriteVib++;
-			}else{
-				animeRemove(this);
-			}
+			if (spriteVib < 7) spriteVib++;
+			else			   animeRemove(this);
 		}
 	}
 	
