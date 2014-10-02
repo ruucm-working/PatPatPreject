@@ -30,7 +30,6 @@
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.widget.ActivityChooserModel.ActivitySorter"/>
-<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.id"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.AsyncTask01"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
@@ -38,4 +37,7 @@
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
 <fullyQualifiedTypeName name="com.exam.helper.ShapeHolder"/>
 <fullyQualifiedTypeName name="com.exam.R"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
+<fullyQualifiedTypeName name="com.exam.helper.MyAnimationView"/>
 </qualifiedTypeNameHistroy>

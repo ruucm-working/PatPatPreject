@@ -3,8 +3,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#34BC79" >
+    android:background="#34BC79"
+    android:orientation="vertical" >
 
     <ListView
         android:id="@+id/in"
@@ -32,23 +32,32 @@
             android:layout_height="wrap_content"
             android:text="@string/send" />
     </LinearLayout>
-<com.exam.helper.MyAnimationView
-    android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <!-- <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ryu_body" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ryu_hands" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ryu_belt" /> -->
-    
+
+    <com.exam.helper.MyAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:paddingTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ryu_body" />
+
+            <ImageView
+                android:id="@+id/ryu_hands"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ryu_hands" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ryu_belt" />
+        </RelativeLayout>
     </com.exam.helper.MyAnimationView>
-    
 
 </LinearLayout>
