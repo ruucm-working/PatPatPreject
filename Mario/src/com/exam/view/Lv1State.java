@@ -39,7 +39,8 @@ public class Lv1State implements ICoinBlockViewState {
 	// vibration power controller
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };	
 	private int[] widthModifier = { 6, -6, 4, -4, 2, -2, 0, 0 };	// here
-
+	
+	
 	Lv1Animation lv1Anim;
 	Lv0_2OftenAnim lv1ofAnim;
 	Lv0_2DblClickAnim lv1dblClick;
@@ -120,9 +121,7 @@ public class Lv1State implements ICoinBlockViewState {
 			Sprite bottom2 = MediaAssets.getInstance().getSprite(R.drawable.eggs_break);
 			SpriteHelper.DrawSprite(canvas, bottom2, 0, SpriteHelper.DrawPosition.BottomCenter);
 
-			// Draw the flower
-			if (flowerRaise < 8)
-				flowerRaise++; 
+			if (flowerRaise < 8) flowerRaise++; 
 		}
 	}
 	
@@ -824,11 +823,8 @@ public class Lv1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0 );
 			
-			if (spriteVib < 13){
-				spriteVib++;
-			}else{
-				animeRemove(this);
-			}
+			if (spriteVib < 13) spriteVib++;
+			else 				animeRemove(this);
 		}
 		
 		

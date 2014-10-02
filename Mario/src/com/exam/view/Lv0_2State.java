@@ -36,27 +36,6 @@ public class Lv0_2State implements ICoinBlockViewState {
 	
 	boolean fuck = false;   
 	CoinBlockView mViewContext;
-  
-	// Animations instances
-	Lv0OftenAnim lv0_2ofAnim; 
-	Lv0_1DblClickAnim lv0_2dblClick;
-
-	Lv0_1WifiOnAnim lv0_2wifiOn;
-	Lv0_1WifiOffAnim lv0_2wifiOff;
-
-	Lv0_1PowerConnectedAnim lv0_2powerOn;
-	Lv0_1PowerDisconnectedAnim lv0_2powerOff;
-
-	Lv0_1USBConnectedAnim lv0_1usbOn;
-	Lv0_1USBDisconnectedAnim lv0_2usbOff;
-
-	Lv0_1HeadsetConnectedAnim lv0_2headsetOn;
-	Lv0_1HeadsetDisconnectedAnim lv0_2headsetOff;
-
-	Lv0_1PlaneOnAnim lv0_2planeOn;
-	Lv0_1PlaneOffAnim lv0_2planeOff;
-	
-	Lv0_1SMSAnim lv0_2sms;
 
 	public Lv0_2State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
@@ -83,8 +62,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -103,8 +82,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -123,8 +102,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -142,8 +121,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -161,8 +140,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -179,8 +158,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -197,8 +176,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -216,8 +195,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -235,8 +214,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -256,9 +235,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7) { 
-				blockVib++;
-			}
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -277,8 +255,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -297,8 +275,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 7)
-				blockVib++;
+			if (blockVib < 7) blockVib++;
+			else 			  animeRemove(this);
 		}
 	}
 
@@ -356,21 +334,6 @@ public class Lv0_2State implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			
 			viewContext.setState(new Lv0_2WaitState());
-			
-			viewContext.removeAnimatable(lv0_2dblClick);
-			viewContext.removeAnimatable(lv0_2wifiOff);
-			viewContext.removeAnimatable(lv0_2powerOff);
-			viewContext.removeAnimatable(lv0_2usbOff);
-			viewContext.removeAnimatable(lv0_2headsetOn);
-			viewContext.removeAnimatable(lv0_2headsetOff);
-			viewContext.removeAnimatable(lv0_2planeOn);
-			viewContext.removeAnimatable(lv0_2planeOff);
-			viewContext.removeAnimatable(lv0_2sms);
-			
-			viewContext.removeAnimatable(lv0_2ofAnim);
-			viewContext.removeAnimatable(lv0_2powerOn);
-			viewContext.removeAnimatable(lv0_2wifiOn);
-			
 			
 			animeSwitch = true;
 			
@@ -480,20 +443,13 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnInit(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			coinBlockView.removeAnimatable(lv0_2ofAnim);
-			coinBlockView.removeAnimatable(lv0_2powerOn);
-			coinBlockView.removeAnimatable(lv0_2wifiOn);
-
 			Log.d("tag3","OnInit");
 		}
 
 		@Override
 		public void OnDblClick(CoinBlockView viewContext) {
-			// TODO Auto-generated method stub
-			viewContext.removeAnimatable(lv0_2dblClick);
-
-			lv0_2dblClick = new Lv0_1DblClickAnim();			
-			viewContext.addAnimatable(lv0_2dblClick);
+			// TODO Auto-generated method stub			
+			viewContext.addAnimatable(new Lv0_1DblClickAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -513,8 +469,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnSMSReceived(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_2planeOn);
+			viewContext.addAnimatable(new Lv0_1PlaneOnAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -527,12 +482,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnWifiConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("WIFI", "OnWifiConnected");
-
-			viewContext.removeAnimatable(lv0_2wifiOn);
-
-			lv0_2wifiOn = new Lv0_1WifiOnAnim();	
-			viewContext.addAnimatable(lv0_2wifiOn);
+			Log.v("WIFI", "OnWifiConnected");	
+			viewContext.addAnimatable(new Lv0_1WifiOnAnim());
 
 			Log.v("WIFI", "addAnimatable");			
 
@@ -547,12 +498,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnWifiDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("WIFI", "OnWifiDisconnected");
-			
-			viewContext.removeAnimatable(lv0_2wifiOff);
-
-			lv0_2wifiOff = new Lv0_1WifiOffAnim();	
-			viewContext.addAnimatable(lv0_2wifiOff);
+			Log.v("WIFI", "OnWifiDisconnected");	
+			viewContext.addAnimatable(new Lv0_1WifiOffAnim());
 
 			Log.v("WIFI", "addAnimatable");			
 
@@ -567,12 +514,8 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnPowerConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			Log.v("POWER", "OnPower");
-
-			viewContext.removeAnimatable(lv0_2powerOn);
-
-			lv0_2powerOn = new Lv0_1PowerConnectedAnim();	
-			viewContext.addAnimatable(lv0_2powerOn);			
+			Log.v("POWER", "OnPower");	
+			viewContext.addAnimatable(new Lv0_1PowerConnectedAnim());			
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -586,11 +529,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		public void OnPowerDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
 			Log.v("POWER", "OffPower");
-
-			viewContext.removeAnimatable(lv0_2powerOff);
-
-			lv0_2powerOff = new Lv0_1PowerDisconnectedAnim();	
-			viewContext.addAnimatable(lv0_2powerOff);			
+			viewContext.addAnimatable(new Lv0_1PowerDisconnectedAnim());			
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -603,8 +542,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnUSBConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_1usbOn = new Lv0_1USBConnectedAnim();
-			viewContext.addAnimatable(lv0_1usbOn);
+			viewContext.addAnimatable(new Lv0_1USBConnectedAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -619,8 +557,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnUSBDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2usbOff = new Lv0_1USBDisconnectedAnim();
-			viewContext.addAnimatable(lv0_2usbOff);
+			viewContext.addAnimatable(new Lv0_1USBDisconnectedAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -635,8 +572,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnHeadsetConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2headsetOn = new Lv0_1HeadsetConnectedAnim();
-			viewContext.addAnimatable(lv0_2headsetOn);
+			viewContext.addAnimatable(new Lv0_1HeadsetConnectedAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -651,8 +587,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnHeadsetDisconnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2headsetOff = new Lv0_1HeadsetDisconnectedAnim();
-			viewContext.addAnimatable(lv0_2headsetOff);
+			viewContext.addAnimatable(new Lv0_1HeadsetDisconnectedAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -667,8 +602,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnPlaneModeOn(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2planeOn = new Lv0_1PlaneOnAnim();
-			viewContext.addAnimatable(lv0_2planeOn);
+			viewContext.addAnimatable(new Lv0_1PlaneOnAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -681,8 +615,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		@Override
 		public void OnPlaneModeOff(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
-			lv0_2planeOff = new Lv0_1PlaneOffAnim();
-			viewContext.addAnimatable(lv0_2planeOff);
+			viewContext.addAnimatable(new Lv0_1PlaneOffAnim());
 
 			snd1.seekTo(0);
 			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
