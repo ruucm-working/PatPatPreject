@@ -290,7 +290,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 	}
 
 	public boolean NeedRedraw() {
-		return false;
+		return true;
 	}
 
 	public void OnClick(CoinBlockView viewContext) {
@@ -403,12 +403,13 @@ public class Lv0_2State implements ICoinBlockViewState {
 		
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+			Log.d("bugfix", "드로우 작동중");
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 			else 			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
 		}
 
 		public boolean NeedRedraw() {
-			return true;
+			return false;
 		}
 
 		@Override
