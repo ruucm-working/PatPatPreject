@@ -740,16 +740,17 @@ int layout device_list 0x7f030028
 int layout device_name 0x7f030029
 int layout device_state 0x7f03002a
 int layout global_config 0x7f03002b
-int layout login 0x7f03002c
-int layout main 0x7f03002d
-int layout message 0x7f03002e
-int layout progress_spinner 0x7f03002f
-int layout progress_wheel_activity 0x7f030030
-int layout setting_dialogpage 0x7f030031
-int layout settingpage 0x7f030032
-int layout sherlock_spinner_dropdown_item 0x7f030033
-int layout sherlock_spinner_item 0x7f030034
-int layout simple_tabs 0x7f030035
+int layout invisiblelayout 0x7f03002c
+int layout login 0x7f03002d
+int layout main 0x7f03002e
+int layout message 0x7f03002f
+int layout progress_spinner 0x7f030030
+int layout progress_wheel_activity 0x7f030031
+int layout setting_dialogpage 0x7f030032
+int layout settingpage 0x7f030033
+int layout sherlock_spinner_dropdown_item 0x7f030034
+int layout sherlock_spinner_item 0x7f030035
+int layout simple_tabs 0x7f030036
 int menu option_menu 0x7f0f0000
 int raw beep 0x7f060000
 int raw dingding 0x7f060001
@@ -1036,7 +1037,7 @@ int styleable SherlockSearchView_android_inputType 1
 int styleable SherlockSearchView_android_maxWidth 0
 int styleable SherlockSearchView_iconifiedByDefault 3
 int styleable SherlockSearchView_queryHint 4
-int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101043a }
+int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101043d }
 int styleable SherlockSpinner_android_dropDownHorizontalOffset 5
 int styleable SherlockSpinner_android_dropDownSelector 1
 int styleable SherlockSpinner_android_dropDownVerticalOffset 6

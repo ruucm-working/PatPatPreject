@@ -1907,16 +1907,17 @@ containing a value of this type.
         public static final int device_name=0x7f030029;
         public static final int device_state=0x7f03002a;
         public static final int global_config=0x7f03002b;
-        public static final int login=0x7f03002c;
-        public static final int main=0x7f03002d;
-        public static final int message=0x7f03002e;
-        public static final int progress_spinner=0x7f03002f;
-        public static final int progress_wheel_activity=0x7f030030;
-        public static final int setting_dialogpage=0x7f030031;
-        public static final int settingpage=0x7f030032;
-        public static final int sherlock_spinner_dropdown_item=0x7f030033;
-        public static final int sherlock_spinner_item=0x7f030034;
-        public static final int simple_tabs=0x7f030035;
+        public static final int invisiblelayout=0x7f03002c;
+        public static final int login=0x7f03002d;
+        public static final int main=0x7f03002e;
+        public static final int message=0x7f03002f;
+        public static final int progress_spinner=0x7f030030;
+        public static final int progress_wheel_activity=0x7f030031;
+        public static final int setting_dialogpage=0x7f030032;
+        public static final int settingpage=0x7f030033;
+        public static final int sherlock_spinner_dropdown_item=0x7f030034;
+        public static final int sherlock_spinner_item=0x7f030035;
+        public static final int simple_tabs=0x7f030036;
     }
     public static final class menu {
         public static final int option_menu=0x7f0f0000;
@@ -3788,7 +3789,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x0101043a
+            0x01010262, 0x010102ac, 0x010102ad, 0x0101043d
         };
         /**
           <p>
