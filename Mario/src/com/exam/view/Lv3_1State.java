@@ -13,7 +13,7 @@ import com.exam.view.Lv1State.Lv1WaitState;
 public class Lv3_1State implements ICoinBlockViewState {
 
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
-	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.samsung_sample4);
+	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
@@ -275,9 +275,18 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 		// Draw the brick at bottom
-		SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
-				-(int)(heightModifier2[animStage%8] * viewContext.getDensity()));
+		SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,0,
+				0);
+		
+		
 		viewContext.setState(new Lv3_1WaitState());
+		
+		/*animStage++;
+
+		if(animStage > 60 )	
+			viewContext.setState(new Lv3_1WaitState());
+		*/
+		
 
 	}
 
@@ -295,10 +304,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			Log.v("Lv2State", "OnClick3");
 			
-			viewContext.setState(new Lv3_1WaitState());
 			
 			animeSwitch = true;
-			viewContext.addAnimatable(new Lv2ClickAnim());
+			viewContext.addAnimatable(new Lv3ClickAnim());
 
 			snd.seekTo(0);
 			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -313,31 +321,31 @@ public class Lv3_1State implements ICoinBlockViewState {
 			switch(textcode)
 			{
 			case 0:
-				text = "?";
+				text = "뀨? 죽었냐";
 				break;
 
 			case 1:
-				text = "....";
+				text = "디져랑";
 				break;
 
 			case 2:
-				text = "..";
+				text = "디져";
 				break;
 
 			case 3:
-				text = "뀨잉?";
+				text = "죽어랏!!";
 				break;
 
 			case 4:
-				text = "낑낑!";
+				text = "소ㅑㅅ소ㅑㄱ!!";
 				break;
 
 			case 5:
-				text = "뀨으";
+				text = "얍얍";
 				break;
 
 			case 6:
-				text = "뀨웅!!";
+				text = "하하하하하하핳";
 				break;
 
 			case 7:
@@ -345,7 +353,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				break;
 
 			case 8:
-				text = "뀨우...";
+				text = "뀨우!! 죽어랏!!";
 				break;
 			}
 
@@ -631,7 +639,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}
 	}
 
-	private class Lv2ClickAnim implements IAnimatable {
+	private class Lv3ClickAnim implements IAnimatable {
 		private int spriteVib = 0; 
 
 		public boolean AnimationFinished() {
@@ -640,12 +648,25 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+			/*SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0 );
 
-//<<<<<<< HEAD
 			if (spriteVib < 13) spriteVib++;
 			else				animeRemove(this);
+			*/
+			
+			
+			
+			SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
+					0);
+			
+			
+			
+			if (spriteVib < 8) spriteVib++;
+			else				animeRemove(this);
+			
+			
+			
 		}
 	}
 	
@@ -657,14 +678,6 @@ public class Lv3_1State implements ICoinBlockViewState {
 			mViewContext.setState(new Lv3_1WaitState());
 		}else{
 			mViewContext.removeAnimatable(animeObject);
-/*=======
-			if (spriteVib < 13)
-				spriteVib++;
-			
-			Log.d("Lv3_1State","Draw(inClickAnim) spriteVib is "+spriteVib);
-			
-			
->>>>>>> master*/
 		}
 	}
 

@@ -67,7 +67,7 @@ public class CoinBlockView {
 		wm.getDefaultDisplay().getMetrics(metrics);
 
 		density = metrics.density;
-		cwidth = (int) (200 * metrics.density);
+		cwidth = (int) (260 * metrics.density);
 		cheight = cwidth;
 
 		Children = new HashSet<IAnimatable>();
@@ -254,6 +254,7 @@ public class CoinBlockView {
 	public synchronized void addAnimatable(IAnimatable child)
 	{
 		Children.add(child);
+		scheduleRedraw();
 	}
 
 	public synchronized void removeAnimatable(IAnimatable child)

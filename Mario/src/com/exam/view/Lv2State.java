@@ -362,6 +362,9 @@ public class Lv2State implements ICoinBlockViewState {
 			Log.d("EvolveBugfix", " lv2진화");
 			animeSwitch = false;
 			DeviceConditionPage.UpdateIntroView();
+			
+			
+//			coinBlockView.addAnimatable(new Lv2EvolveAnim());
 			coinBlockView.setState(new Lv3_1State(coinBlockView));	
 		}
 
@@ -573,6 +576,31 @@ public class Lv2State implements ICoinBlockViewState {
 		// TODO Auto-generated method stub
 
 	}
+	
+	
+	
+	
+	
+	private class Lv2EvolveAnim implements IAnimatable {
+		private int blockVib = 0;
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw(Bitmap canvas) {
+			// Draw the brick at bottom
+			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
+					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
+
+			if (blockVib < 13) blockVib++;
+			else			   mViewContext.removeAnimatable(this);
+
+			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
+		}
+	}
+	
+	
 
 	private class Lv2OftenAnim implements IAnimatable {
 		private int blockVib = 0;
