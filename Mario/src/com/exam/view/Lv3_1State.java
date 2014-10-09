@@ -12,7 +12,7 @@ import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv3_1State implements ICoinBlockViewState {
 
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.gravityman);
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
 	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.samsung_sample4);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
@@ -277,20 +277,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 		// Draw the brick at bottom
 		SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
 				-(int)(heightModifier2[animStage%8] * viewContext.getDensity()));
-<<<<<<< HEAD
 		viewContext.setState(new Lv3_1WaitState());
-=======
 
-		animStage++;
-
-		if(animStage > 60)	
-			viewContext.setState(new Lv2WaitState(viewContext));
-		
-		
-		Log.d("Lv3_1State","Draw(inState) animStage is "+animStage);
-		
-		
->>>>>>> master
 	}
 
 	public boolean NeedRedraw() {
@@ -372,12 +360,12 @@ public class Lv3_1State implements ICoinBlockViewState {
 		private int blockVib = 0;
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 			else 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 			
 			if (blockVib < 13) blockVib++;
-=======
+/*=======
 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * context.getDensity()),0);
 
@@ -386,9 +374,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 			
 			
 			Log.d("Lv3_1State","Draw(in WaitState) blockVib is "+blockVib);
+			*/
 			
-			
->>>>>>> master
 		}
 
 		public boolean NeedRedraw() {
@@ -656,7 +643,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0 );
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 			if (spriteVib < 13) spriteVib++;
 			else				animeRemove(this);
 		}
@@ -670,14 +657,14 @@ public class Lv3_1State implements ICoinBlockViewState {
 			mViewContext.setState(new Lv3_1WaitState());
 		}else{
 			mViewContext.removeAnimatable(animeObject);
-=======
+/*=======
 			if (spriteVib < 13)
 				spriteVib++;
 			
 			Log.d("Lv3_1State","Draw(inClickAnim) spriteVib is "+spriteVib);
 			
 			
->>>>>>> master
+>>>>>>> master*/
 		}
 	}
 

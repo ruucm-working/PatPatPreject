@@ -2,22 +2,21 @@ package com.exam.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.*;
-import android.media.*;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.*;
-import android.util.*;
-import android.widget.*;
+import android.util.Log;
+import android.widget.RemoteViews;
 
-import com.exam.*;
-<<<<<<< HEAD
-import com.exam.tab.DeviceConditionPage;
-=======
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TextPref;
->>>>>>> master
+import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
-import com.exam.tab.Setting;
-import com.exam.view.InitState.InitWaitState;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	

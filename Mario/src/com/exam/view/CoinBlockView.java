@@ -67,7 +67,7 @@ public class CoinBlockView {
 		wm.getDefaultDisplay().getMetrics(metrics);
 
 		density = metrics.density;
-		cwidth = (int) (72 * metrics.density);
+		cwidth = (int) (200 * metrics.density);
 		cheight = cwidth;
 
 		Children = new HashSet<IAnimatable>();
@@ -354,6 +354,11 @@ public class CoinBlockView {
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
 		Bitmap canvas = Bitmap.createBitmap(cwidth, cheight, Bitmap.Config.ARGB_8888);
 
+		
+		
+		
+		//animatable drawing
+		
 		IAnimatable[] child = new IAnimatable[Children.size()];
 		Children.toArray(child);
 
@@ -362,7 +367,9 @@ public class CoinBlockView {
 			if (child[i].AnimationFinished())
 				Children.remove(child[i]);
 		}
-
+ 
+		
+		//state drawing
 		state.Draw(this,canvas);
 		rviews.setImageViewBitmap(R.id.block, canvas);
 		updateClickIntent(rviews);
