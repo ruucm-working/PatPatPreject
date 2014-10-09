@@ -3,7 +3,7 @@
 	<section name="CleanDialogSettings">
 		<item value="581" key="DIALOG_WIDTH"/>
 		<item value="true" key="BUILD_ALL"/>
-		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
 		<item value="498" key="DIALOG_HEIGHT"/>
 		<item value="112" key="DIALOG_Y_ORIGIN"/>
 		<item value="433" key="DIALOG_X_ORIGIN"/>
@@ -16,9 +16,9 @@
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="C:\GitHub\PatPatPreject\animlibrary"/>
 			<item value="C:\GitHub\PatPatPreject"/>
+			<item value="C:\GitHub\PatPatPreject\Mario"/>
 			<item value="C:\GitHub\Horizontal_view"/>
 			<item value="C:\Github\PatPatPreject"/>
-			<item value="C:\Downloads\0sources\Codes\SnowWiFiMonitor"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

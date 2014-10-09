@@ -237,10 +237,10 @@ public class coinBlockLoginActivity extends Activity
 					toIntro();
 					finish();
 				}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 			}).executeAsync();
 		}
-	}
+	}/*
 =======
 				
 	        }
@@ -264,7 +264,7 @@ public class coinBlockLoginActivity extends Activity
 	                    public void onCompleted(GraphUser user, Response response) {
 	                        response.getError();
 	                        
-	                        /*
+	                        
 	                        System.err.println(" getId  :  " + user.getId());
 	                        System.err.println(" getFirstName  :  " + user.getFirstName());
 	                        System.err.println(" getLastName  :  " + user.getLastName());
@@ -275,15 +275,15 @@ public class coinBlockLoginActivity extends Activity
 	                        //System.err.println(" getUsername :  " + user.getUsername());
 	                        //System.err.println(" getLocation :  " + user.getLocation());
 	                        //System.err.println("getRawResponse  :  " + response.getRawResponse());
-	                        */
+	                        
 	                         
-	                        /* 
+	                         
 	                        Log.d("tag01"," getId  :  " + user.getId() );
 	                        Log.d("tag01"," getFirstName  :  " + user.getFirstName() );
 	                        Log.d("tag01"," getLastName  :  " + user.getLastName() );
 	                        Log.d("tag01"," getMiddleName  :  " + user.getMiddleName() );
 	                        Log.d("tag01"," getBirthday  :  " + user.getBirthday() );
-	                        */
+	                        
 	                         
 	                        
 	                        userId = user.getId() ;
@@ -326,5 +326,5 @@ public class coinBlockLoginActivity extends Activity
 	
 	
 	
->>>>>>> master
+>>>>>>> master*/
 }
