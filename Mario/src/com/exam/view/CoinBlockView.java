@@ -67,7 +67,7 @@ public class CoinBlockView {
 		wm.getDefaultDisplay().getMetrics(metrics);
 
 		density = metrics.density;
-		cwidth = (int) (72 * metrics.density);
+		cwidth = (int) (260 * metrics.density);
 		cheight = cwidth;
 
 		Children = new HashSet<IAnimatable>();
@@ -254,17 +254,14 @@ public class CoinBlockView {
 	public synchronized void addAnimatable(IAnimatable child)
 	{
 		Children.add(child);
+		scheduleRedraw();
 	}
 
 	public synchronized void removeAnimatable(IAnimatable child)
 	{
 		Children.remove(child);
 	}
-
-	public void createCoin() {
-		Children.add(new CoinAnimation(density));
-	}
-
+	
 	public static Context getContext() {
 		return (CoinBlockWidgetApp.getApplication());
 	}
@@ -358,6 +355,11 @@ public class CoinBlockView {
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
 		Bitmap canvas = Bitmap.createBitmap(cwidth, cheight, Bitmap.Config.ARGB_8888);
 
+		
+		
+		
+		//animatable drawing
+		
 		IAnimatable[] child = new IAnimatable[Children.size()];
 		Children.toArray(child);
 
@@ -366,7 +368,9 @@ public class CoinBlockView {
 			if (child[i].AnimationFinished())
 				Children.remove(child[i]);
 		}
-
+ 
+		
+		//state drawing
 		state.Draw(this,canvas);
 		rviews.setImageViewBitmap(R.id.block, canvas);
 		updateClickIntent(rviews);
@@ -422,9 +426,7 @@ public class CoinBlockView {
 	}
 
 	private static void updateEvolveIntent(RemoteViews rviews, Context context) {
-		// TODO Auto-generated method stub				
-		 
-		
+		// TODO Auto-generated method stub
 		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
 		
 		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));

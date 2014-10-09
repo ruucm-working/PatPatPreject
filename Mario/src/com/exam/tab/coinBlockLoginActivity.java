@@ -237,7 +237,94 @@ public class coinBlockLoginActivity extends Activity
 					toIntro();
 					finish();
 				}
+<<<<<<< HEAD
 			}).executeAsync();
 		}
 	}
+=======
+				
+	        }
+	        
+	 
+	        private class SessionStatusCallback implements Session.StatusCallback {
+	            @Override
+	            public void call(Session session, SessionState state, Exception exception) {
+	                updateView();    
+	                getFaceBookMe(session);
+	            }
+	        }
+	        
+	        
+	        private void getFaceBookMe(Session session){
+	        	 
+	            if(session.isOpened()){
+	                Request.newMeRequest(session, new Request.GraphUserCallback() {
+	     
+	                    @Override
+	                    public void onCompleted(GraphUser user, Response response) {
+	                        response.getError();
+	                        
+	                        /*
+	                        System.err.println(" getId  :  " + user.getId());
+	                        System.err.println(" getFirstName  :  " + user.getFirstName());
+	                        System.err.println(" getLastName  :  " + user.getLastName());
+	                        System.err.println(" getMiddleName  :  " + user.getMiddleName());
+	                        System.err.println(" getBirthday  :  " + user.getBirthday());
+	                        //System.err.println(" getLink  :  " + user.getLink());
+	                        //System.err.println(" getName  :  " + user.getName());
+	                        //System.err.println(" getUsername :  " + user.getUsername());
+	                        //System.err.println(" getLocation :  " + user.getLocation());
+	                        //System.err.println("getRawResponse  :  " + response.getRawResponse());
+	                        */
+	                         
+	                        /* 
+	                        Log.d("tag01"," getId  :  " + user.getId() );
+	                        Log.d("tag01"," getFirstName  :  " + user.getFirstName() );
+	                        Log.d("tag01"," getLastName  :  " + user.getLastName() );
+	                        Log.d("tag01"," getMiddleName  :  " + user.getMiddleName() );
+	                        Log.d("tag01"," getBirthday  :  " + user.getBirthday() );
+	                        */
+	                         
+	                        
+	                        userId = user.getId() ;
+	                        userFirstName = user.getFirstName() ;
+	                        userLastName = user.getLastName() ;
+	                        
+	                        Log.d("coinBlockLoginActivity","userFirstName2"+userFirstName);
+	                        
+	                        
+	                        bPref.Ready();
+	                        
+	                        bPref.WriteString("userId", userId);
+	            			bPref.WriteString("userFirstName", userFirstName);
+	            			bPref.WriteString("userLastName", userLastName);
+	                  		
+	                    
+	            			Log.d("coinBlockLoginActivity", "WriteString;");
+	                    
+	            			
+	            			bPref.CommitWrite();
+	            			
+	            			toIntro();
+	            			finish();
+	            			
+	            			
+
+	            			
+	            			
+	                        
+	                        
+	                    }
+	                }).executeAsync();
+	            }
+	        }
+
+			
+		
+		
+	
+	
+	
+	
+>>>>>>> master
 }
