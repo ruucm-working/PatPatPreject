@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyService.java&apos; to &apos;Vertical_View/src/ji.ruucm.android.vertical_view&apos;&#x0D;&#x0A;- Original project: &apos;AndroidServiceExample&apos;&#x0D;&#x0A;- Destination element: &apos;Vertical_View/src/ji.ruucm.android.vertical_view&apos;&#x0D;&#x0A;- Original element: &apos;com.javacodegeeks.android.androidserviceexample.MyService.java&apos;" description="Copy compilation unit" destination="=Vertical_View/src&lt;ji.ruucm.android.vertical_view" element1="/src&lt;com.javacodegeeks.android.androidserviceexample{MyService.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1411373977198" units="1" version="1.0"/>
+</session>

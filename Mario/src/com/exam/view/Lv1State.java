@@ -14,11 +14,15 @@ import com.exam.MediaAssets;
 import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
-import com.exam.TextPref;
+import com.exam.helper.TaskTimer;
+import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
+<<<<<<< HEAD
 import com.exam.tab.TaskTimer;
 import com.exam.view.Lv0_2State.Lv0_2WaitState;
+=======
+>>>>>>> master
 
 
 public class Lv1State implements ICoinBlockViewState {

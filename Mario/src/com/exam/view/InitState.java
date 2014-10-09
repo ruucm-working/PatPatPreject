@@ -5,9 +5,28 @@ import android.content.Intent;
 import android.graphics.*;
 import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
+<<<<<<< HEAD
 import android.os.*;
 import android.util.*;
 import android.widget.*;
+=======
+import android.os.Handler;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.RemoteViews;
+import android.widget.TextView;
+
+import com.exam.CoinBlockWidgetApp;
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.coinBlockWidgetProvider;
+import com.exam.helper.TextPref;
+import com.exam.tab.IntroActivity;
+import com.exam.tab.DeviceConditionPage;
+>>>>>>> master
 
 import com.exam.*;
 import com.exam.tab.DeviceConditionPage;

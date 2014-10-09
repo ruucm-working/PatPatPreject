@@ -1,0 +1,38 @@
+
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ItemDetailFragment"
+    >
+
+
+<TextView 
+    
+    style="?android:attr/textAppearanceLarge"
+    android:id="@+id/item_detail_txt01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+     />
+
+
+<ImageView 
+    
+    tools:context=".ItemDetailFragment" 
+    android:id="@+id/item_detail_img01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   
+    
+    
+    
+    />
+
+    
+
+
+
+
+</RelativeLayout>

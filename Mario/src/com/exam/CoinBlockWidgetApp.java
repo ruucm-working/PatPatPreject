@@ -27,7 +27,7 @@ public class CoinBlockWidgetApp extends Application {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		self = this;
-		Log.d("coinBlock", "Application create");
+		Log.d("CoinBlockWidgetApp", "Application create");
 		WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
 		metrics = new DisplayMetrics();
 		wm.getDefaultDisplay().getMetrics(metrics);
@@ -35,6 +35,7 @@ public class CoinBlockWidgetApp extends Application {
 	}
 
 	public void UpdateAllWidgets() {
+		Log.d("CoinBlockWidgetApp", "UpdateAllWidgets");
 		AppWidgetManager man = AppWidgetManager.getInstance(getApplication());
 		views.clear();
 		int[] ids = man.getAppWidgetIds(new ComponentName(getApplication(), coinBlockWidgetProvider.class));
@@ -58,6 +59,10 @@ public class CoinBlockWidgetApp extends Application {
 	}
 
 	public CoinBlockView GetView(int widgetId) {
+		
+		Log.d("CoinBlockWidgetApp", "GetView, widgetId is = "+widgetId);
+		
+		
 		if (!views.containsKey(widgetId)) {
 			CoinBlockView view = new CoinBlockView(this, widgetId);
 			views.put(widgetId, view);

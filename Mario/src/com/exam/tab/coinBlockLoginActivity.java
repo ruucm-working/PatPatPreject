@@ -21,7 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.exam.R;
-import com.exam.TextPref;
+import com.exam.helper.TextPref;
 import com.facebook.LoggingBehavior;
 import com.facebook.Request;
 import com.facebook.Response;

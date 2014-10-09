@@ -10,7 +10,11 @@ import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+<<<<<<< HEAD
 import com.exam.tab.DeviceConditionPage;
+=======
+import com.exam.helper.TextPref;
+>>>>>>> master
 import com.exam.tab.IntroActivity;
 import com.exam.tab.Setting;
 import com.exam.view.InitState.InitWaitState;

@@ -21,7 +21,8 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
-import com.exam.TextPref;
+import com.exam.helper.TaskTimer;
+import com.exam.helper.TextPref;
 import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 

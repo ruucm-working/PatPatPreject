@@ -80,7 +80,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		for (int i=0; i<appWidgetIds.length; i++)
 		{
 			((CoinBlockWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
-			Log.d("coinBlockWidgetProvider","onUpdate"+appWidgetIds);
+			Log.d("coinBlockWidgetProvider","onUpdate"+appWidgetIds[i]);
 		}
 		Log.d("coinBlockWidgetProvider","onUpdate;");
 		

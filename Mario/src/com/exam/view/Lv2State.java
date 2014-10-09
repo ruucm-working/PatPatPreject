@@ -3,11 +3,25 @@ package com.exam.view;
 import android.graphics.*;
 import android.media.*;
 import android.media.MediaPlayer.OnSeekCompleteListener;
+<<<<<<< HEAD
 import android.os.*;
 import android.util.*;
 import android.widget.*;
 
 import com.exam.*;
+=======
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.helper.TextPref;
+>>>>>>> master
 import com.exam.tab.DeviceConditionPage;
 import com.exam.view.Lv1State.Lv1WaitState;
 
