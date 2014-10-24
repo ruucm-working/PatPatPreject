@@ -1,28 +1,28 @@
 
 package com.exam.tab;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.exam.R;
+import com.exam.Intro.UnityIntro;
 import com.exam.helper.TaskTimer;
-import com.exam.helper.TextPref;
 import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -32,7 +32,18 @@ import com.viewpagerindicator.TabPageIndicator;
  * flicks to move between the tabs.
  */
 public class IntroActivity extends SherlockFragmentActivity {
-    TabHost mTabHost;
+    
+	
+	
+	
+	
+	// back key event for exit
+	private Handler mHandler;
+	private boolean mFlag = false;
+	
+	
+	
+	TabHost mTabHost;
     ViewPager  mViewPager;
     TabsAdapter mTabsAdapter; 
     
@@ -60,6 +71,24 @@ public class IntroActivity extends SherlockFragmentActivity {
 		this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
 	}
     
+    
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if(!mFlag) {
+                Toast.makeText(this, "'뒤로'버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show();
+                mFlag = true;
+                mHandler.sendEmptyMessageDelayed(0, 2000);
+                return false;
+            } else {
+            	finish();
+            	UnityIntro.GetInstance().finish();
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+    
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +106,20 @@ public class IntroActivity extends SherlockFragmentActivity {
         //for Activity anim
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);	
         setContentView(R.layout.simple_tabs);
+        
+        
+        
+        
+        mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                if(msg.what == 0) {
+                    mFlag = false;
+                }
+            }
+        };
+
+        
         
         
         //for adding listviewpager
