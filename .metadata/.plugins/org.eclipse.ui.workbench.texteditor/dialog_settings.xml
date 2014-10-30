@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="onCreate" key="selection"/>
+		<item value="currentUrl" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="oncreate"/>
-			<item value="onclick"/>
-			<item value="onevolve"/>
-			<item value="evolve"/>
-			<item value="OnClick"/>
-			<item value="Lv2EvolveAnim"/>
-			<item value="evolveanim"/>
-			<item value="addAnimatable"/>
+			<item value="currentUrl"/>
+			<item value="onTimeChanged"/>
+			<item value="ontimech"/>
+			<item value="thread"/>
+			<item value="redraw"/>
+			<item value="cwidth"/>
+			<item value="canvas"/>
+			<item value="adapter"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Lv3ClickAnim"/>
@@ -32,7 +32,7 @@
 		<item value="311" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="127" key="DIALOG_Y_ORIGIN"/>
-		<item value="653" key="DIALOG_X_ORIGIN"/>
+		<item value="216" key="DIALOG_Y_ORIGIN"/>
+		<item value="400" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

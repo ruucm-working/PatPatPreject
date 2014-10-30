@@ -20,7 +20,7 @@ public class CoinBlockView {
 	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
 	public static String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public static String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
-	private static final int REFRESH_RATE = 40;
+	private static final int REFRESH_RATE = 0;
 	public static Context Context = null;
 	
 	private volatile Set<IAnimatable> Children;
@@ -67,9 +67,10 @@ public class CoinBlockView {
 		wm.getDefaultDisplay().getMetrics(metrics);
 
 		density = metrics.density;
-		cwidth = (int) (260 * metrics.density);
+		cwidth = (int) (260* metrics.density);
 		cheight = cwidth;
-
+		Log.d("CoinBlockView","density : "+density);
+ 
 		Children = new HashSet<IAnimatable>();
 		mWidgetId = widgetId;
 
@@ -79,7 +80,7 @@ public class CoinBlockView {
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
 		} catch (Exception e) { 
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}      
 
 		mPref.Ready();

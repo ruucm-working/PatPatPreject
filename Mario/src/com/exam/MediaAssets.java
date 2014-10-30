@@ -104,7 +104,7 @@ public class MediaAssets {
                                 numOfFrame = Integer.parseInt(strFrame);
                                 Log.v("MediaAssets", "numOfFrame "+numOfFrame);
                         } 
-                } catch (Exception e) {
+                } catch (Exception e) { 
                         numOfFrame = 1;
                 }
                 return Math.max(1, numOfFrame);

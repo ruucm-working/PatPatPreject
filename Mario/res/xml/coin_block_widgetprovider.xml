@@ -1,6 +1,6 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="36dip"
-    android:minHeight="36dip"
+    android:minWidth="146dip"
+    android:minHeight="146dip"
     android:updatePeriodMillis="1000"
     android:initialLayout="@layout/coin_block_widget">
 </appwidget-provider>

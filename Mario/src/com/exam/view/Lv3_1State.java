@@ -11,6 +11,10 @@ import com.exam.*;
 import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv3_1State implements ICoinBlockViewState {
+	
+	
+	private static boolean isLv3Clicked = false;
+	
 
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
 	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
@@ -300,69 +304,77 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	private class Lv3_1WaitState implements ICoinBlockViewState {
 		MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
+		
+		
 
 		public void OnClick(CoinBlockView viewContext) {
 			Log.v("Lv2State", "OnClick3");
 			
+			Log.v("Lv2State","isBoolean: " + isLv3Clicked);
+			if(!isLv3Clicked) {
 			
-			animeSwitch = true;
-			viewContext.addAnimatable(new Lv3ClickAnim());
-
-			snd.seekTo(0);
-			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-				public void onSeekComplete(MediaPlayer mp) {
-					snd.start();
+				isLv3Clicked = true;
+				animeSwitch = true;
+				viewContext.addAnimatable(new Lv3ClickAnim());
+	
+				snd.seekTo(0);
+				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+					public void onSeekComplete(MediaPlayer mp) {
+						snd.start();
+					}
+				});
+	
+				int textcode = (int)(Math.random()*9);
+				String text = null;
+	
+				switch(textcode)
+				{
+				case 0:
+					text = "뀨? 죽었냐";
+					break;
+	
+				case 1:
+					text = "디져랑";
+					break;
+	
+				case 2:
+					text = "디져";
+					break;
+	
+				case 3:
+					text = "죽어랏!!";
+					break;
+	
+				case 4:
+					text = "소ㅑㅅ소ㅑㄱ!!";
+					break;
+	
+				case 5:
+					text = "얍얍";
+					break;
+	
+				case 6:
+					text = "하하하하하하핳";
+					break;
+	
+				case 7:
+					text = "뀨!";
+					break;
+	
+				case 8:
+					text = "뀨우!! 죽어랏!!";
+					break;
 				}
-			});
-
-			int textcode = (int)(Math.random()*9);
-			String text = null;
-
-			switch(textcode)
-			{
-			case 0:
-				text = "뀨? 죽었냐";
-				break;
-
-			case 1:
-				text = "디져랑";
-				break;
-
-			case 2:
-				text = "디져";
-				break;
-
-			case 3:
-				text = "죽어랏!!";
-				break;
-
-			case 4:
-				text = "소ㅑㅅ소ㅑㄱ!!";
-				break;
-
-			case 5:
-				text = "얍얍";
-				break;
-
-			case 6:
-				text = "하하하하하하핳";
-				break;
-
-			case 7:
-				text = "뀨!";
-				break;
-
-			case 8:
-				text = "뀨우!! 죽어랏!!";
-				break;
+	
+				Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
+	
+				CoinBlockView.CliCount2++;			
+				CoinBlockView.mPref.Ready();			
+				CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
+				CoinBlockView.mPref.CommitWrite();
+				
+				isLv3Clicked = false;
 			}
-
-			Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
-
-			CoinBlockView.CliCount2++;			
-			CoinBlockView.mPref.Ready();			
-			CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
-			CoinBlockView.mPref.CommitWrite();
 		}
 
 		private int blockVib = 0;
@@ -641,6 +653,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	private class Lv3ClickAnim implements IAnimatable {
 		private int spriteVib = 0; 
+		private boolean isAnimRunning = false;
 
 		public boolean AnimationFinished() {
 			return false;
@@ -655,18 +668,12 @@ public class Lv3_1State implements ICoinBlockViewState {
 			else				animeRemove(this);
 			*/
 			
-			
-			
-			SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
-					0);
-			
-			
-			
-			if (spriteVib < 8) spriteVib++;
-			else				animeRemove(this);
-			
-			
-			
+			if (spriteVib < 8) {
+				SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
+				spriteVib++;
+			}
+			else 
+				animeRemove(this);
 		}
 	}
 	
