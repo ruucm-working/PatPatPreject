@@ -63,7 +63,12 @@
             android:name="com.exam.tab.coinBlockIntroActivity"
             android:label="@string/app_name"
             android:theme="@style/StyledIndicators" >
-            <intent-filter>
+        </activity>
+        <activity
+            android:name="com.exam.tab.IntroActivity"
+            android:label="IntroActivity"
+            android:theme="@style/StyledIndicators" >
+        <!--     <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.sdamsdam.widget.ACTION_EVENT" />
                 <action android:name="com.sdamsdam.widget.ACTION_SILENT" />
@@ -77,12 +82,7 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_DETACHED" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.exam.tab.IntroActivity"
-            android:label="IntroActivity"
-            android:theme="@style/StyledIndicators" >
+            </intent-filter> -->
         </activity>
         <activity
             android:name="com.exam.tab.SampleList"
@@ -150,7 +150,7 @@
             android:enabled="true" >
         </service>
         <service
-            android:name="com.exam.tab.Service_BatteryGauge"
+            android:name="com.exam.tab.Service_DeviceEvents"
             android:enabled="true" >
             <intent-filter>
                 <action android:name=".Service_BatteryGauge" />
