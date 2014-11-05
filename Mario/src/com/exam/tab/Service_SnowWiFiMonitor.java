@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import com.exam.helper.SnowWiFiMonitor;
+import com.exam.helper.SnowWiFiMonitor.OnChangeNetworkStatusListener;
 import com.exam.view.CoinBlockView;
 
 public class Service_SnowWiFiMonitor extends Service {

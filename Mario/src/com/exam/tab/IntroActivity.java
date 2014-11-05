@@ -4,6 +4,7 @@ package com.exam.tab;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -56,7 +57,7 @@ public class IntroActivity extends SherlockFragmentActivity {
     
     
     //penetrating timer value
-    public static  TaskTimer taskTimer1 = new TaskTimer();
+//    public static  TaskTimer taskTimer1 = new TaskTimer();
     
     //for method in Tasktimer 
     private static IntroActivity instance;
@@ -107,7 +108,7 @@ public class IntroActivity extends SherlockFragmentActivity {
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);	
         setContentView(R.layout.simple_tabs);
         
-        
+
         
         
         mHandler = new Handler() {

@@ -16,8 +16,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 	private static boolean isLv3Clicked = false;
 	
 
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
-	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.ggobuck);
+	Sprite oftenSprite 		= MediaAssets.getInstance().getSprite(R.drawable.ggobuck4);
+	Sprite shootingSprite 		= MediaAssets.getInstance().getSprite(R.drawable.ggobuck_shoot4);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
@@ -409,6 +410,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {		
+			
+			animeSwitch = true;
+			
 			coinBlockView.addAnimatable(new Lv3OftenAnim());
 		}
 
@@ -633,7 +637,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 	}
 
 	private class Lv3OftenAnim implements IAnimatable {
-		private int blockVib = 0;
+		private int spriteVib = 0; 
+		private boolean isAnimRunning = false;
 
 		public boolean AnimationFinished() {
 			return false;
@@ -641,13 +646,12 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
-
-			if (blockVib < 13) blockVib++;
-			else			   animeRemove(this); 
-
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
+			if (spriteVib < 8) {
+				SpriteHelper.DrawSprite(canvas, oftenSprite, oftenSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
+				spriteVib++;
+			}
+			else 
+				animeRemove(this);
 		}
 	}
 
@@ -661,15 +665,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			/*SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0 );
-
-			if (spriteVib < 13) spriteVib++;
-			else				animeRemove(this);
-			*/
-			
 			if (spriteVib < 8) {
-				SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
+				SpriteHelper.DrawSprite(canvas, shootingSprite, shootingSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
 				spriteVib++;
 			}
 			else 

@@ -17,10 +17,14 @@ import android.widget.Toast;
 
 import com.exam.CoinBlockWidgetApp;
 import com.exam.R;
+import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.view.CoinBlockView;
 
 public class Service_DeviceEvents extends Service {
+	
+	public static  TaskTimer  taskTimer1;
+	
 
 	TextPref mPref;
 
@@ -33,6 +37,13 @@ public class Service_DeviceEvents extends Service {
 		super.onStartCommand(intent, flags, startId);
 
 		Log.d("Service_BatteryGauge", "onStartCommand");
+		
+		
+		//penetrating timer value
+		taskTimer1 = new TaskTimer();
+	    Log.d("keeping_taskTimer", " new TaskTimer");
+		
+		
 
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_BATTERY_CHANGED);

@@ -52,10 +52,10 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             
-            <intent-filter >
+            <!-- <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> -->
             
             
         </activity>
@@ -104,9 +104,8 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
-                <!-- <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" /> -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -136,7 +135,7 @@
                 android:resource="@xml/coin_block_widgetprovider" />
         </receiver>
 
-        <service android:name=".UpdateService" >
+         <service android:name=".UpdateService" >
             <intent-filter>
                 <action android:name="com.exam.updateservice" />
             </intent-filter>

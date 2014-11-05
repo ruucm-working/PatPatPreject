@@ -18,7 +18,7 @@ import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.IntroActivity;
+import com.exam.tab.Service_DeviceEvents;
 import com.exam.tab.Setting;
 
 public class Lv0_2State implements ICoinBlockViewState {
@@ -434,7 +434,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.onRestartset();
 			
-			IntroActivity.taskTimer1.isCanceled = false;
+			Service_DeviceEvents.taskTimer1.isCanceled = false;
 			taskTimer1.setTextView1(R.id.time0);
 			
 			taskTimer1.execute("");

@@ -163,7 +163,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			
 			
 			Setting.nowBattery = bLevel;
-
 			if(bLevel < 20)
 				isBatteryLow = true;
 			else
@@ -173,7 +172,6 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			
 			
 			//Toast.makeText(context, "Battery Changed", Toast.LENGTH_SHORT).show();
-
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}
@@ -262,7 +260,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}
 
-		/*// Headset
+		// Headset
 		else if (intent.getAction().startsWith("android.intent.action.HEADSET_PLUG"))
 		{
 			int id = CoinBlockView.mWidgetId;
@@ -283,7 +281,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
-		}*/
+		}
 		
 		/*
 		// PC connected (not working)
@@ -294,20 +292,17 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			Log.v("coinBlockWidgetProvider", "USB Attached");
 			isUsbAttached = true;
 			Toast.makeText(context, "USB attached", Toast.LENGTH_SHORT).show();
-
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 			
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnPowerConnected();
 		}
-
 		// PC disconnected (I don't sure it working or not)
 		else if (intent.getAction().startsWith("android.hardware.usb.action.USB_ACCESSORY_DETACHED"))
 		{
 			Log.v("coinBlockWidgetProvider", "USB Detached");
 			isUsbAttached = false;
 			Toast.makeText(context, "USB detached", Toast.LENGTH_SHORT).show();
-
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}

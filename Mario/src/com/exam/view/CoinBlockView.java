@@ -17,9 +17,7 @@ import com.exam.tab.Setting;
 
 public class CoinBlockView {
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
-	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
-	public static String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
-	public static String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+	
 	private static final int REFRESH_RATE = 0;
 	public static Context Context = null;
 	
@@ -189,8 +187,8 @@ public class CoinBlockView {
 
 			
 			
-			Log.d("tag8", Long.toString(second));
-			second = /*IntroActivity.taskTimer1.GetTime();*/ 0;
+		/*	Log.d("tag8", Long.toString(second));
+			second = IntroActivity.taskTimer1.GetTime(); 0;
 
 			if ( second == 0 && CliCountInit >=3 && init){
 				init = false;
@@ -241,7 +239,7 @@ public class CoinBlockView {
 			else if (second >= 22 )
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());
 			
-			
+			*/
 			mPref.EndReady();
 			
 		}
@@ -419,7 +417,7 @@ public class CoinBlockView {
 		rviews.setOnClickPendingIntent(R.id.widget, pi);
 	}
 
-	private static void updateOftenIntent(RemoteViews rviews, Context context) {
+	/*private static void updateOftenIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
 		intent.putExtra("widgetId2", mWidgetId);
@@ -441,5 +439,5 @@ public class CoinBlockView {
 		context.sendBroadcast(intent2);
 
 		Log.d(coinBlockWidgetProvider.TAG," updateEvolveIntent(Remo(rviews);");
-	}
+	}*/
 }

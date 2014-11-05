@@ -16,7 +16,7 @@ import com.exam.SpriteHelper;
 import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.IntroActivity;
+import com.exam.tab.Service_DeviceEvents;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
@@ -407,7 +407,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 			animeSwitch = false;
 			//coinBlockView.setState(new Lv0_2State(coinBlockView));
 			coinBlockView.setState(new Lv0_2State(coinBlockView));
-			IntroActivity.taskTimer1.isCanceled = true;
+			Service_DeviceEvents.taskTimer1.isCanceled = true;
 			DeviceConditionPage.UpdateIntroView();
 
 			Log.d("Lv0_1State", "UpdateIntroView");
