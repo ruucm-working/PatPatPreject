@@ -28,29 +28,29 @@ public final class R {
 		public static final int title_text = 0x7f010011;
 	}
 	public static final class color {
-		public static final int com_facebook_blue = 0x7f0a0002;
-		public static final int com_facebook_loginview_text_color = 0x7f0a0006;
-		public static final int com_facebook_picker_search_bar_background = 0x7f0a0000;
-		public static final int com_facebook_picker_search_bar_text = 0x7f0a0001;
-		public static final int com_facebook_usersettingsfragment_connected_shadow_color = 0x7f0a0004;
-		public static final int com_facebook_usersettingsfragment_connected_text_color = 0x7f0a0003;
-		public static final int com_facebook_usersettingsfragment_not_connected_text_color = 0x7f0a0005;
+		public static final int com_facebook_blue = 0x7f090002;
+		public static final int com_facebook_loginview_text_color = 0x7f090006;
+		public static final int com_facebook_picker_search_bar_background = 0x7f090000;
+		public static final int com_facebook_picker_search_bar_text = 0x7f090001;
+		public static final int com_facebook_usersettingsfragment_connected_shadow_color = 0x7f090004;
+		public static final int com_facebook_usersettingsfragment_connected_text_color = 0x7f090003;
+		public static final int com_facebook_usersettingsfragment_not_connected_text_color = 0x7f090005;
 	}
 	public static final class dimen {
-		public static final int com_facebook_loginview_compound_drawable_padding = 0x7f090008;
-		public static final int com_facebook_loginview_padding_bottom = 0x7f090007;
-		public static final int com_facebook_loginview_padding_left = 0x7f090004;
-		public static final int com_facebook_loginview_padding_right = 0x7f090005;
-		public static final int com_facebook_loginview_padding_top = 0x7f090006;
-		public static final int com_facebook_loginview_text_size = 0x7f090009;
-		public static final int com_facebook_picker_divider_width = 0x7f090001;
-		public static final int com_facebook_picker_place_image_size = 0x7f090000;
-		public static final int com_facebook_profilepictureview_preset_size_large = 0x7f09000c;
-		public static final int com_facebook_profilepictureview_preset_size_normal = 0x7f09000b;
-		public static final int com_facebook_profilepictureview_preset_size_small = 0x7f09000a;
-		public static final int com_facebook_tooltip_horizontal_padding = 0x7f09000d;
-		public static final int com_facebook_usersettingsfragment_profile_picture_height = 0x7f090003;
-		public static final int com_facebook_usersettingsfragment_profile_picture_width = 0x7f090002;
+		public static final int com_facebook_loginview_compound_drawable_padding = 0x7f080008;
+		public static final int com_facebook_loginview_padding_bottom = 0x7f080007;
+		public static final int com_facebook_loginview_padding_left = 0x7f080004;
+		public static final int com_facebook_loginview_padding_right = 0x7f080005;
+		public static final int com_facebook_loginview_padding_top = 0x7f080006;
+		public static final int com_facebook_loginview_text_size = 0x7f080009;
+		public static final int com_facebook_picker_divider_width = 0x7f080001;
+		public static final int com_facebook_picker_place_image_size = 0x7f080000;
+		public static final int com_facebook_profilepictureview_preset_size_large = 0x7f08000c;
+		public static final int com_facebook_profilepictureview_preset_size_normal = 0x7f08000b;
+		public static final int com_facebook_profilepictureview_preset_size_small = 0x7f08000a;
+		public static final int com_facebook_tooltip_horizontal_padding = 0x7f08000d;
+		public static final int com_facebook_usersettingsfragment_profile_picture_height = 0x7f080003;
+		public static final int com_facebook_usersettingsfragment_profile_picture_width = 0x7f080002;
 	}
 	public static final class drawable {
 		public static final int com_facebook_button_blue = 0x7f020083;
@@ -96,35 +96,35 @@ public final class R {
 		public static final int com_facebook_usersettingsfragment_background_gradient = 0x7f0200aa;
 	}
 	public static final class id {
-		public static final int com_facebook_body_frame = 0x7f080052;
-		public static final int com_facebook_button_xout = 0x7f080054;
-		public static final int com_facebook_login_activity_progress_bar = 0x7f080042;
-		public static final int com_facebook_picker_activity_circle = 0x7f080041;
-		public static final int com_facebook_picker_checkbox = 0x7f080044;
-		public static final int com_facebook_picker_checkbox_stub = 0x7f080048;
-		public static final int com_facebook_picker_divider = 0x7f08004c;
-		public static final int com_facebook_picker_done_button = 0x7f08004b;
-		public static final int com_facebook_picker_image = 0x7f080045;
-		public static final int com_facebook_picker_list_section_header = 0x7f080049;
-		public static final int com_facebook_picker_list_view = 0x7f080040;
-		public static final int com_facebook_picker_profile_pic_stub = 0x7f080046;
-		public static final int com_facebook_picker_row_activity_circle = 0x7f080043;
-		public static final int com_facebook_picker_search_text = 0x7f080051;
-		public static final int com_facebook_picker_title = 0x7f080047;
-		public static final int com_facebook_picker_title_bar = 0x7f08004e;
-		public static final int com_facebook_picker_title_bar_stub = 0x7f08004d;
-		public static final int com_facebook_picker_top_bar = 0x7f08004a;
-		public static final int com_facebook_search_bar_view = 0x7f080050;
-		public static final int com_facebook_tooltip_bubble_view_bottom_pointer = 0x7f080056;
-		public static final int com_facebook_tooltip_bubble_view_text_body = 0x7f080055;
-		public static final int com_facebook_tooltip_bubble_view_top_pointer = 0x7f080053;
-		public static final int com_facebook_usersettingsfragment_login_button = 0x7f080059;
-		public static final int com_facebook_usersettingsfragment_logo_image = 0x7f080057;
-		public static final int com_facebook_usersettingsfragment_profile_name = 0x7f080058;
-		public static final int large = 0x7f080002;
-		public static final int normal = 0x7f080001;
-		public static final int picker_subtitle = 0x7f08004f;
-		public static final int small = 0x7f080000;
+		public static final int com_facebook_body_frame = 0x7f0d0052;
+		public static final int com_facebook_button_xout = 0x7f0d0054;
+		public static final int com_facebook_login_activity_progress_bar = 0x7f0d0042;
+		public static final int com_facebook_picker_activity_circle = 0x7f0d0041;
+		public static final int com_facebook_picker_checkbox = 0x7f0d0044;
+		public static final int com_facebook_picker_checkbox_stub = 0x7f0d0048;
+		public static final int com_facebook_picker_divider = 0x7f0d004c;
+		public static final int com_facebook_picker_done_button = 0x7f0d004b;
+		public static final int com_facebook_picker_image = 0x7f0d0045;
+		public static final int com_facebook_picker_list_section_header = 0x7f0d0049;
+		public static final int com_facebook_picker_list_view = 0x7f0d0040;
+		public static final int com_facebook_picker_profile_pic_stub = 0x7f0d0046;
+		public static final int com_facebook_picker_row_activity_circle = 0x7f0d0043;
+		public static final int com_facebook_picker_search_text = 0x7f0d0051;
+		public static final int com_facebook_picker_title = 0x7f0d0047;
+		public static final int com_facebook_picker_title_bar = 0x7f0d004e;
+		public static final int com_facebook_picker_title_bar_stub = 0x7f0d004d;
+		public static final int com_facebook_picker_top_bar = 0x7f0d004a;
+		public static final int com_facebook_search_bar_view = 0x7f0d0050;
+		public static final int com_facebook_tooltip_bubble_view_bottom_pointer = 0x7f0d0056;
+		public static final int com_facebook_tooltip_bubble_view_text_body = 0x7f0d0055;
+		public static final int com_facebook_tooltip_bubble_view_top_pointer = 0x7f0d0053;
+		public static final int com_facebook_usersettingsfragment_login_button = 0x7f0d0059;
+		public static final int com_facebook_usersettingsfragment_logo_image = 0x7f0d0057;
+		public static final int com_facebook_usersettingsfragment_profile_name = 0x7f0d0058;
+		public static final int large = 0x7f0d0006;
+		public static final int normal = 0x7f0d0007;
+		public static final int picker_subtitle = 0x7f0d004f;
+		public static final int small = 0x7f0d0008;
 	}
 	public static final class layout {
 		public static final int com_facebook_friendpickerfragment = 0x7f030017;
@@ -172,9 +172,9 @@ public final class R {
 		public static final int com_facebook_usersettingsfragment_not_logged_in = 0x7f07000c;
 	}
 	public static final class style {
-		public static final int com_facebook_loginview_default_style = 0x7f0b0000;
-		public static final int com_facebook_loginview_silver_style = 0x7f0b0001;
-		public static final int tooltip_bubble_text = 0x7f0b0002;
+		public static final int com_facebook_loginview_default_style = 0x7f0a0000;
+		public static final int com_facebook_loginview_silver_style = 0x7f0a0001;
+		public static final int tooltip_bubble_text = 0x7f0a0002;
 	}
 	public static final class styleable {
 		public static final int[] com_facebook_friend_picker_fragment = { 0x7f010015 };

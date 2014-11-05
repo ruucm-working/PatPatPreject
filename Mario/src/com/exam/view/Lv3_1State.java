@@ -11,11 +11,6 @@ import com.exam.*;
 import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv3_1State implements ICoinBlockViewState {
-	
-	
-	private static boolean isLv3Clicked = false;
-	
-
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
 	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
@@ -27,6 +22,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };		// here
 	private int[] heightModifier2 = { 0, 0, 0, 0, 0, 0, 0, 0 };
 	private int[] widthModifier = {4, -4, 4, -4, 3, -3, 2, -2, 1, -1, 0, -0, 0, 0 };	// here
+	
+	private Lv3AnimStatus aniStatus;
 
 	boolean animeSwitch = false;
 	
@@ -53,6 +50,27 @@ public class Lv3_1State implements ICoinBlockViewState {
 	 */
 	
 	CoinBlockView mViewContext;
+	
+	private static class Lv3AnimStatus {
+		private Lv3AnimStatus instance = null;
+		private static boolean isLv3Clicked;
+		
+		private Lv3AnimStatus() {}
+		
+		public Lv3AnimStatus GetInstance() {
+			if(instance == null)
+				instance = this;
+			return instance;
+		}
+		
+		public boolean GetAnimStatus() {
+			return isLv3Clicked;
+		}
+		
+		public void SetAnimStatus(boolean s) {
+			isLv3Clicked = s;
+		}
+	}
 
 	public Lv3_1State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
@@ -63,6 +81,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 				snd2.start(); 
 			} 
 		}); 
+		
+		aniStatus.GetInstance();
 	}
 	
 	private class Lv3DblClickAnim implements IAnimatable {
@@ -310,10 +330,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 		public void OnClick(CoinBlockView viewContext) {
 			Log.v("Lv2State", "OnClick3");
 			
-			Log.v("Lv2State","isBoolean: " + isLv3Clicked);
-			if(!isLv3Clicked) {
-			
-				isLv3Clicked = true;
+			if(aniStatus.GetAnimStatus() == false) {
+				aniStatus.SetAnimStatus(true);
 				animeSwitch = true;
 				viewContext.addAnimatable(new Lv3ClickAnim());
 	
@@ -373,7 +391,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
 				CoinBlockView.mPref.CommitWrite();
 				
-				isLv3Clicked = false;
+				aniStatus.SetAnimStatus(false);
 			}
 		}
 
