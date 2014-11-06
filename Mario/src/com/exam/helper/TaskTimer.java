@@ -285,9 +285,14 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	
 	private static void updateOftenIntent(Context context) {
 		// TODO Auto-generated method stub
-		int mWidgetId = CoinBlockView.mWidgetId;
-		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
-		intent.putExtra("widgetId2", mWidgetId);
+//		int mWidgetId = CoinBlockView.mWidgetId;
+		
+//		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
+		
+		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, 264));
+		
+		
+		intent.putExtra("widgetId2", 264);
 		context.sendBroadcast(intent);
 	}
 	
