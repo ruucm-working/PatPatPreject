@@ -11,6 +11,10 @@ import com.exam.*;
 import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv3_1State implements ICoinBlockViewState {
+
+
+	public static boolean switchA  = true;
+
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
 	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
@@ -22,11 +26,11 @@ public class Lv3_1State implements ICoinBlockViewState {
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };		// here
 	private int[] heightModifier2 = { 0, 0, 0, 0, 0, 0, 0, 0 };
 	private int[] widthModifier = {4, -4, 4, -4, 3, -3, 2, -2, 1, -1, 0, -0, 0, 0 };	// here
-	
+
 	private static Lv3AnimStatus aniStatus;
 
 	boolean animeSwitch = false;
-	
+
 	/*
 	Lv3OftenAnim lv3ofAnim;
 	Lv3DblClickAnim lv3dblClick;
@@ -48,28 +52,28 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	Lv3SMSAnim lv3sms;
 	 */
-	
+
 	CoinBlockView mViewContext;
-	
+
 	private static class Lv3AnimStatus {
 		private static Lv3AnimStatus instance = null;
 		private static boolean isLv3Clicked;
-		
+
 		private Lv3AnimStatus() {}
-		
+
 		public static Lv3AnimStatus GetInstance() {
-			
+
 			Log.d("aniStatus.GetInstance","GetInstance instance : "+instance);
-			
+
 			if(instance == null)
 				instance = new Lv3AnimStatus();
 			return instance;
 		}
-		
+
 		public boolean GetAnimStatus() {
 			return isLv3Clicked;
 		}
-		
+
 		public void SetAnimStatus(boolean s) {
 			isLv3Clicked = s;
 		}
@@ -77,23 +81,23 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	public Lv3_1State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
-		
- 
+
+
 		snd2.seekTo(0);
 		snd2.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 			public void onSeekComplete(MediaPlayer mp) {
 				snd2.start(); 
 			} 
 		}); 
-		
-		
-		
-	//	aniStatus = new Lv3AnimStatus();
-		
+
+
+
+		//	aniStatus = new Lv3AnimStatus();
+
 		aniStatus = Lv3AnimStatus.GetInstance();
-		
+
 	}
-	
+
 	private class Lv3DblClickAnim implements IAnimatable {
 		private int blockVib = 0;	
 		private int[] widthModifier = { 16, -16, 8, -8, 4, -4, 0, 0 };	// here
@@ -184,7 +188,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				blockVib++;
 		}
 	}
-	
+
 	private class Lv3USBConnectedAnim implements IAnimatable {
 		private int blockVib = 0;	
 		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
@@ -202,7 +206,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				blockVib++;
 		}
 	}
-	
+
 	private class Lv3USBDisconnectedAnim implements IAnimatable {
 		private int blockVib = 0;	
 		private int[] widthModifier = { 24, -24, 16, -16, 8, -8, 4, 0 };	// here
@@ -310,16 +314,16 @@ public class Lv3_1State implements ICoinBlockViewState {
 		// Draw the brick at bottom
 		SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,0,
 				0);
-		
-		
+
+
 		viewContext.setState(new Lv3_1WaitState());
-		
+
 		/*animStage++;
 
 		if(animStage > 60 )	
 			viewContext.setState(new Lv3_1WaitState());
-		*/
-		
+		 */
+
 
 	}
 
@@ -331,117 +335,125 @@ public class Lv3_1State implements ICoinBlockViewState {
 		// TODO Auto-generated method stub 
 	}
 
-	
-	private final Handler handler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			
-			if (msg.what == 1) {
-				
-				animeSwitch = true;
-				viewContext.addAnimatable(new Lv3ClickAnim());
-			}
-		}
-		
-	};
-	
-	
+
+
+
+
 	private class Lv3_1WaitState implements ICoinBlockViewState {
 		MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
-		
-		
+
+
+		public CoinBlockView  context;
+
+
+
 
 		public void OnClick(CoinBlockView viewContext) {
-			Log.v("Lv2State", "OnClick3");
-			
-			if(aniStatus.GetAnimStatus() == false) {
-				aniStatus.SetAnimStatus(true);
-				
-				
-				Message msg = new Message();
-				msg.what = 1;
-				handler.sendMessage(msg);
-		
-	
-				snd.seekTo(0);
-				snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
-					public void onSeekComplete(MediaPlayer mp) {
-						snd.start();
-					}
-				});
-	
-				int textcode = (int)(Math.random()*9);
-				String text = null;
-	
-				switch(textcode)
-				{
-				case 0:
-					text = "뀨? 죽었냐";
-					break;
-	
-				case 1:
-					text = "디져랑";
-					break;
-	
-				case 2:
-					text = "디져";
-					break;
-	
-				case 3:
-					text = "죽어랏!!";
-					break;
-	
-				case 4:
-					text = "소ㅑㅅ소ㅑㄱ!!";
-					break;
-	
-				case 5:
-					text = "얍얍";
-					break;
-	
-				case 6:
-					text = "하하하하하하핳";
-					break;
-	
-				case 7:
-					text = "뀨!";
-					break;
-	
-				case 8:
-					text = "뀨우!! 죽어랏!!";
-					break;
-				}
-	
-				Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
-	
-				CoinBlockView.CliCount2++;			
-				CoinBlockView.mPref.Ready();			
-				CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
-				CoinBlockView.mPref.CommitWrite();
-				
-				aniStatus.SetAnimStatus(false);
+			Log.v("switchA", "OnClick, switchA : "+switchA);
+
+
+			if (switchA ){
+				context = viewContext;
+
+				animeSwitch = true;
+				context.addAnimatable(new Lv3ClickAnim());
+				Log.v("switchA","addAnimatable");
+				switchA = false;
+				Log.v("switchA","switchA = false;");
+
 			}
+
+			//			if(aniStatus.GetAnimStatus() == false) {
+			//				aniStatus.SetAnimStatus(true);
+
+
+			
+
+
+
+
+			Log.v("handler","sendMessage");
+
+
+			snd.seekTo(0);
+			snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+				public void onSeekComplete(MediaPlayer mp) {
+					snd.start();
+				}
+			});
+
+			int textcode = (int)(Math.random()*9);
+			String text = null;
+
+			switch(textcode)
+			{
+			case 0:
+				text = "뀨? 죽었냐";
+				break;
+
+			case 1:
+				text = "디져랑";
+				break;
+
+			case 2:
+				text = "디져";
+				break;
+
+			case 3:
+				text = "죽어랏!!";
+				break;
+
+			case 4:
+				text = "소ㅑㅅ소ㅑㄱ!!";
+				break;
+
+			case 5:
+				text = "얍얍";
+				break;
+
+			case 6:
+				text = "하하하하하하핳";
+				break;
+
+			case 7:
+				text = "뀨!";
+				break;
+
+			case 8:
+				text = "뀨우!! 죽어랏!!";
+				break;
+			}
+
+			Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
+
+			CoinBlockView.CliCount2++;			
+			CoinBlockView.mPref.Ready();			
+			CoinBlockView.mPref.WriteInt("clicount2", CoinBlockView.CliCount2);			
+			CoinBlockView.mPref.CommitWrite();
+
+			aniStatus.SetAnimStatus(false);
+			//			}
 		}
 
 		private int blockVib = 0;
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-//<<<<<<< HEAD
+			//<<<<<<< HEAD
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 			else 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-			
+
 			if (blockVib < 13) blockVib++;
-/*=======
+			/*=======
 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[blockVib] * context.getDensity()),0);
 
 			if (blockVib < 13)
 				blockVib++;
-			
-			
+
+
 			Log.d("Lv3_1State","Draw(in WaitState) blockVib is "+blockVib);
-			*/
-			
+			 */
+
 		}
 
 		public boolean NeedRedraw() {
@@ -513,7 +525,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				}
 			});
 		}
-		
+
 		@Override
 		public void OnPowerConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
@@ -575,7 +587,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				}
 			});
 		}
-		
+
 		@Override
 		public void OnHeadsetConnected(CoinBlockView viewContext) {
 			// TODO Auto-generated method stub
@@ -701,9 +713,27 @@ public class Lv3_1State implements ICoinBlockViewState {
 		private int spriteVib = 0; 
 		private boolean isAnimRunning = false;
 
+
+
 		public boolean AnimationFinished() {
 			return false;
 		}
+
+		private final Handler handler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+
+
+				//				Log.v("handler","handleMessage context : "+context);
+				if (msg.what == 1) {
+
+
+					switchA = true;
+				}
+			}
+
+		};
+
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
@@ -712,17 +742,25 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 			if (spriteVib < 13) spriteVib++;
 			else				animeRemove(this);
-			*/
-			
+			 */
+
+
 			if (spriteVib < 8) {
 				SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
 				spriteVib++;
 			}
-			else 
+			else
+			{
 				animeRemove(this);
+				Message msg = new Message();
+				msg.what = 1;
+				handler.sendMessage(msg);
+			}
+
+
 		}
 	}
-	
+
 	private void animeRemove(IAnimatable animeObject)
 	{
 		if(animeSwitch){
@@ -739,7 +777,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	@Override
 	public void OnPowerConnected(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub

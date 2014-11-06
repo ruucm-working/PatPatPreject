@@ -15,8 +15,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	public static boolean switchA  = true;
 
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
-	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.ggobuck);
+	Sprite shootingSprite 		= MediaAssets.getInstance().getSprite(R.drawable.ggobuck_shoot4);
+	Sprite oftenSprite 		= MediaAssets.getInstance().getSprite(R.drawable.ggobuck4);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
@@ -746,7 +747,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 
 			if (spriteVib < 8) {
-				SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
+				SpriteHelper.DrawSprite(canvas, shootingSprite, shootingSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
 				spriteVib++;
 			}
 			else
