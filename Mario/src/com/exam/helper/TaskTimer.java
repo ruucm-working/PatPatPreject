@@ -41,6 +41,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	boolean lv2;
 	boolean lv3_1;
 	
+	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
 	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
 	
@@ -226,6 +227,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 						updateEvolveIntent(rviews,
 								CoinBlockWidgetApp.getApplication());
 
+					} else if (time % 10 ==9){
+						Log.d("keep_oftenintent","time : "+time);
+						Log.d("keep_oftenintent","CoinBlockWidgetApp.getApplication() : "+CoinBlockWidgetApp.getApplication()); 
+						updateOftenIntent(CoinBlockWidgetApp.getApplication());
+						
+						
 					}
 
 					else {
@@ -275,6 +282,16 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		return RESULT_SUCCESS;
 	}
+	
+	private static void updateOftenIntent(Context context) {
+		// TODO Auto-generated method stub
+		int mWidgetId = CoinBlockView.mWidgetId;
+		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
+		intent.putExtra("widgetId2", mWidgetId);
+		context.sendBroadcast(intent);
+	}
+	
+	
 	
 	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub				

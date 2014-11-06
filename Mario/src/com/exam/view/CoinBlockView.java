@@ -188,9 +188,9 @@ public class CoinBlockView {
 //			CliCount3 = mPref.ReadInt("clicount2", 0);
 
 			
-			
+			/*
 			Log.d("tag8", Long.toString(second));
-			second = /*IntroActivity.taskTimer1.GetTime();*/ 0;
+			second = IntroActivity.taskTimer1.GetTime(); 0;
 
 			if ( second == 0 && CliCountInit >=3 && init){
 				init = false;
@@ -240,7 +240,7 @@ public class CoinBlockView {
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());
 			else if (second >= 22 )
 				updateOftenIntent(rviews, CoinBlockWidgetApp.getApplication());
-			
+			*/
 			
 			mPref.EndReady();
 			
@@ -419,7 +419,7 @@ public class CoinBlockView {
 		rviews.setOnClickPendingIntent(R.id.widget, pi);
 	}
 
-	private static void updateOftenIntent(RemoteViews rviews, Context context) {
+/*	private static void updateOftenIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
 		intent.putExtra("widgetId2", mWidgetId);
@@ -441,5 +441,5 @@ public class CoinBlockView {
 		context.sendBroadcast(intent2);
 
 		Log.d(coinBlockWidgetProvider.TAG," updateEvolveIntent(Remo(rviews);");
-	}
+	}*/
 }
