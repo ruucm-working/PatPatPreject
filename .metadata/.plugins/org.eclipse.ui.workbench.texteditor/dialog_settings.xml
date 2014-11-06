@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="currentUrl" key="selection"/>
+		<item value="switchA" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="currentUrl"/>
-			<item value="onTimeChanged"/>
-			<item value="ontimech"/>
-			<item value="thread"/>
-			<item value="redraw"/>
-			<item value="cwidth"/>
-			<item value="canvas"/>
-			<item value="adapter"/>
+			<item value="switchA"/>
+			<item value="swtichA"/>
+			<item value="Lv3_1State"/>
+			<item value="onclick"/>
+			<item value="clickanim"/>
+			<item value="waitstate"/>
+			<item value="handler"/>
+			<item value="`"/>
 		</list>
 		<list key="replacehistory">
+			<item value="switchA"/>
 			<item value="Lv3ClickAnim"/>
 			<item value="MediaAssets"/>
 			<item value=" "/>
@@ -25,7 +26,6 @@
 			<item value="callender_arrow02"/>
 			<item value="callender_arrow01"/>
 			<item value="cancle"/>
-			<item value="getActivity()"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
