@@ -58,8 +58,11 @@ public class Lv3_1State implements ICoinBlockViewState {
 		private Lv3AnimStatus() {}
 		
 		public Lv3AnimStatus GetInstance() {
+			
+			Log.d("aniStatus.GetInstance","GetInstance instance : "+instance);
+			
 			if(instance == null)
-				instance = this;
+				instance = new Lv3AnimStatus();
 			return instance;
 		}
 		
@@ -74,6 +77,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	public Lv3_1State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
+		
  
 		snd2.seekTo(0);
 		snd2.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -82,7 +86,12 @@ public class Lv3_1State implements ICoinBlockViewState {
 			} 
 		}); 
 		
+		
+		
+		aniStatus = new Lv3AnimStatus();
+		
 		aniStatus.GetInstance();
+		
 	}
 	
 	private class Lv3DblClickAnim implements IAnimatable {
