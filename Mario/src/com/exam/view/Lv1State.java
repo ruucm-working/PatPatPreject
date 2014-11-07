@@ -408,7 +408,7 @@ public class Lv1State implements ICoinBlockViewState {
 			Log.d("EvolveBugfix", " lv1진화");
 			Service_TaskTimer.taskTimer2.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
-			taskTimer1.setTextView1(R.id.time0);
+//			taskTimer1.setTextView1(R.id.time0);
 			taskTimer1.execute("");
 
 			DeviceConditionPage.UpdateIntroView();

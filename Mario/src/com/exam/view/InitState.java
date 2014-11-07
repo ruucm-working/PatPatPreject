@@ -200,7 +200,7 @@ public class InitState implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);	
 			CoinBlockView.mPref.CommitWrite();
 			
-			Service_TaskTimer.taskTimer2.setTextView1(R.id.time0);
+//			Service_TaskTimer.taskTimer2.setTextView1(R.id.time0);
 			
 			Log.d("InitState","setTextView1");
 			

@@ -442,7 +442,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			taskTimer1.onRestartset();
 			
 			Service_TaskTimer.taskTimer2.isCanceled = false;
-			taskTimer1.setTextView1(R.id.time0);
+//			taskTimer1.setTextView1(R.id.time0);
 			
 			taskTimer1.execute("");
 
