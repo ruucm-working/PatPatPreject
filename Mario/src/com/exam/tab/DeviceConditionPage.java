@@ -227,9 +227,9 @@ public class DeviceConditionPage extends Fragment  {
 		statetxt.setText(txt);
 
 		if (notstopped) {
-			TaskTimer taskTimer1 = new TaskTimer();
-			taskTimer1.timer = (TextView) v.findViewById(R.id.time0);
-			taskTimer1.execute("");
+//			TaskTimer taskTimer1 = new TaskTimer();
+//			taskTimer1.timer = (TextView) v.findViewById(R.id.time0);
+//			taskTimer1.execute("");
 		}
 		
 		

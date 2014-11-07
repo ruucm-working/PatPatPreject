@@ -88,6 +88,8 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		
 		// Run service
 		
+		
+		
 		Intent nintent = new Intent(context, Service_Notify.class);
 		context.startService(nintent);
 		
@@ -100,8 +102,11 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		Intent intent2 = new Intent(context, Service_SnowWiFiMonitor.class);
 		context.startService(intent2);
 		 
+		Intent intent3 = new Intent("com.exam.tab.TaskTimer");
+		context.startService(intent3);
 		
-		Log.d("coinBlockWidgetProvider","startService intent2  "+intent2);
+		Log.d("keep_oftenintent","startService");
+		
 		
 		const_builder = new NotificationCompat.Builder(context);
 		

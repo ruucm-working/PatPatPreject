@@ -15,9 +15,11 @@ import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
 import com.exam.coinBlockWidgetProvider;
+import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.IntroActivity;
+import com.exam.tab.Service_TaskTimer;
 
 public class InitState implements ICoinBlockViewState {
 	
@@ -38,6 +40,11 @@ public class InitState implements ICoinBlockViewState {
 	
 	public InitState(CoinBlockView viewContext) {
 		mViewContext = viewContext;
+		
+		Service_TaskTimer.taskTimer2.isCanceled = true;
+		
+		Log.d("InitEvolve_in_new_timer","taskTimer2.isCanceled = true;");
+		
 		
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -193,18 +200,28 @@ public class InitState implements ICoinBlockViewState {
 			CoinBlockView.mPref.WriteBoolean("lv0_1state", CoinBlockView.lv0_1);	
 			CoinBlockView.mPref.CommitWrite();
 			
-			IntroActivity.taskTimer1.setTextView1(R.id.time0);
+			Service_TaskTimer.taskTimer2.setTextView1(R.id.time0);
 			
 			Log.d("InitState","setTextView1");
 			
 			//IntroActivity.taskTimer1.setTime(0);
-			IntroActivity.taskTimer1.execute("");
-			Log.d("InitState","execute");
+			
+			Service_TaskTimer.taskTimer2.isCanceled = false;
+			Log.d("InitEvolve_in_new_timer","taskTimer2.isCanceled = false");
+			
+			
+			Service_TaskTimer.taskTimer2 = new TaskTimer();
+			
+			Service_TaskTimer.taskTimer2.onRestartset();
+			Service_TaskTimer.taskTimer2.execute();
+			
+			Log.d("InitEvolve_in_new_timer","taskTimer2.execute");
+			
+			
+			
 			
 			DeviceConditionPage.UpdateIntroView();
 			
-			Log.d("InitState","UpdateIntroView");
-			Log.d("InitState","OnEvolve");
 			 
 		}
 

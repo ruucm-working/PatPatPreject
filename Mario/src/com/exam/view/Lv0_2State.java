@@ -18,7 +18,7 @@ import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.IntroActivity;
+import com.exam.tab.Service_TaskTimer;
 import com.exam.tab.Setting;
 
 public class Lv0_2State implements ICoinBlockViewState {
@@ -51,6 +51,21 @@ public class Lv0_2State implements ICoinBlockViewState {
 				snd.start(); 
 			}
 		});
+	}
+	
+	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+		animStage++;  
+
+		SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter, 0,
+				-(int)(heightModifier[animStage] * viewContext.getDensity()));
+		Log.v("tag3", "animstage");
+
+//		if (animStage >= heightModifier.length)
+			viewContext.setState(new Lv0_2WaitState());
+	}
+
+	public boolean NeedRedraw() {
+		return true;
 	}
 
 	private class Lv0_1DblClickAnim implements IAnimatable {
@@ -285,18 +300,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		}
 	}
 
-	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		animStage++;  
 
-		Log.v("tag3", "animstage");
-
-		if (animStage >= heightModifier.length)
-			viewContext.setState(new Lv0_2WaitState());
-	}
-
-	public boolean NeedRedraw() {
-		return true;
-	}
 
 	public void OnClick(CoinBlockView viewContext) {
 		// TODO Auto-generated method stub 
@@ -334,6 +338,13 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 		final MediaPlayer snd = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup);
 		CoinBlockView mViewContext;
+		
+		
+		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+			Log.d("bugfix", "드로우 작동중");
+			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
+			else 			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
+		}
 		
 		public void OnClick(CoinBlockView viewContext) {
 			if(!animeSwitch){
@@ -407,11 +418,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 		}
 		
 
-		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-			Log.d("bugfix", "드로우 작동중");
-			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-			else 			SpriteHelper.DrawSprite(canvas, sp, sp.NextFrame(), SpriteHelper.DrawPosition.BottomCenter);
-		}
+	
 
 		public boolean NeedRedraw() {
 			return false;
@@ -434,7 +441,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.onRestartset();
 			
-			IntroActivity.taskTimer1.isCanceled = false;
+			Service_TaskTimer.taskTimer2.isCanceled = false;
 			taskTimer1.setTextView1(R.id.time0);
 			
 			taskTimer1.execute("");

@@ -389,23 +389,23 @@ public class Lv3_1State implements ICoinBlockViewState {
 			switch(textcode)
 			{
 			case 0:
-				text = "뀨? 죽었냐";
+				text = "꼬북꼬북";
 				break;
 
 			case 1:
-				text = "디져랑";
+				text = "꼬북꼬북꼬북꼬북";
 				break;
 
 			case 2:
-				text = "디져";
+				text = "꼬부우우욱";
 				break;
 
 			case 3:
-				text = "죽어랏!!";
+				text = "꼬부우우욱";
 				break;
 
 			case 4:
-				text = "소ㅑㅅ소ㅑㄱ!!";
+				text = "꼬부우우욱꼬부우우욱";
 				break;
 
 			case 5:
@@ -413,7 +413,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				break;
 
 			case 6:
-				text = "하하하하하하핳";
+				text = "꼬부우우욱";
 				break;
 
 			case 7:
@@ -421,7 +421,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 				break;
 
 			case 8:
-				text = "뀨우!! 죽어랏!!";
+				text = "뀨우!! 꼬부우우욱!!";
 				break;
 			}
 

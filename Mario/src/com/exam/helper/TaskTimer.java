@@ -54,10 +54,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	int CliCount2 ;
 	
 
-	public void setTextView1(int textViewId) {
+/*	public void setTextView1(int textViewId) {
 		timer = (TextView)IntroActivity.getInstance()
 				.findViewById(textViewId);
-	}
+	}*/
 
 	public void setTime(int time) {
 		this.time = time; 
@@ -97,12 +97,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		mPref.Ready();
 		time = mPref.ReadLong("time", 0);
 		
-		Log.d("TaskTimer","time "+time);
 		
 		startTime = System.currentTimeMillis() - time*1000;
 		mPref.WriteLong("startTime", startTime);	
 		mPref.CommitWrite();
-		Log.d("TaskTimer","newstartTime "+startTime);
 
 		
 	}
@@ -120,7 +118,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			mPref.CommitWrite();
 		}
 		
-		
+		Log.d("keep_oftenintent","StartSetting");
 		
 		
 
@@ -133,6 +131,8 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	protected void onPreExecute() { 
 
 		
+		Log.d("keep_oftenintent","onPreExecute");
+		
 
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -142,7 +142,11 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		StartSetting();		
-		timer.setTextColor(TEXT_COLOR_NORMAL);
+		
+		
+//		timer.setTextColor(TEXT_COLOR_NORMAL);
+		
+		Log.d("keep_oftenintent","End - onPreExecute");
 	
 
 		
@@ -156,7 +160,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		
-		Log.d("TaskTimer","Start doInBackground");
+		Log.d("keep_oftenintent","doInBackground");
 		
 	
 
@@ -184,7 +188,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 					time = (System.currentTimeMillis() - startTime) / 1000;
 
-				
+					Log.d("InitEvolve_in_new_timer","time : "+time);
+					
+					
 					if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
 						lv0_1 = false;
 						lv0_2 = true;
@@ -228,7 +234,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 								CoinBlockWidgetApp.getApplication());
 
 					} else if (time % 10 ==9){
-						Log.d("keep_oftenintent","time : "+time);
+						Log.d("keep_oftenintent","time : "+time); 
 						Log.d("keep_oftenintent","CoinBlockWidgetApp.getApplication() : "+CoinBlockWidgetApp.getApplication()); 
 						updateOftenIntent(CoinBlockWidgetApp.getApplication());
 						
@@ -285,14 +291,15 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	
 	private static void updateOftenIntent(Context context) {
 		// TODO Auto-generated method stub
-//		int mWidgetId = CoinBlockView.mWidgetId;
+		int mWidgetId = CoinBlockView.mWidgetId;
 		
-//		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
-		
-		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, 264));
+		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
 		
 		
-		intent.putExtra("widgetId2", 264);
+		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
+		
+		
+		intent.putExtra("widgetId2", mWidgetId);
 		context.sendBroadcast(intent);
 	}
 	
@@ -325,9 +332,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	@Override
 	protected void onProgressUpdate(String... value) {
 		// modify timer's text (remained time)
-		timer.setText("" + time);
+//		timer.setText("" + time);
 		
 		Log.d("TaskTimer","onProgressUpdate");
+		
 		
 	}
 
@@ -336,7 +344,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	@Override
 	protected void onPostExecute(String result) {
 		if(RESULT_SUCCESS.equals(result))
-			timer.setTextColor(TEXT_COLOR_FINISHED);
+//			timer.setTextColor(TEXT_COLOR_FINISHED);
 
 		Log.d("TaskTimer", "onPostExecute"+Long.toString(time));
 	}

@@ -4,11 +4,7 @@ import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.RemoteViews;
-import android.widget.TextView;
 
-import com.exam.CoinBlockWidgetApp;
 import com.exam.IAnimatable;
 import com.exam.MediaAssets;
 import com.exam.R;
@@ -17,7 +13,7 @@ import com.exam.SpriteHelper;
 import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.IntroActivity;
+import com.exam.tab.Service_TaskTimer;
 
 
 
@@ -410,7 +406,7 @@ public class Lv1State implements ICoinBlockViewState {
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
 			Log.d("EvolveBugfix", " lv1진화");
-			IntroActivity.taskTimer1.isCanceled = false;
+			Service_TaskTimer.taskTimer2.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
 			taskTimer1.setTextView1(R.id.time0);
 			taskTimer1.execute("");

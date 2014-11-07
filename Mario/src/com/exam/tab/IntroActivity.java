@@ -56,7 +56,7 @@ public class IntroActivity extends SherlockFragmentActivity {
     
     
     //penetrating timer value
-    public static  TaskTimer taskTimer1 = new TaskTimer();
+//    public static  TaskTimer taskTimer1 = new TaskTimer();
     
     //for method in Tasktimer 
     private static IntroActivity instance;
