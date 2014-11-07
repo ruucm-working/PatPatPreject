@@ -14,7 +14,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.exam.helper.SnowWiFiMonitor;
-import com.exam.tab.Service_BatteryGauge;
+import com.exam.tab.Service_DeviceEvents;
 import com.exam.tab.Service_Notify;
 import com.exam.tab.Service_SnowWiFiMonitor;
 import com.exam.view.CoinBlockView;
@@ -93,7 +93,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		Intent nintent = new Intent(context, Service_Notify.class);
 		context.startService(nintent);
 		
-		Intent intent = new Intent(context, Service_BatteryGauge.class);
+		Intent intent = new Intent(context, Service_DeviceEvents.class);
 		context.startService(intent);
 		
 		
@@ -267,7 +267,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
 		}
 
-		// Headset
+	/*	// Headset
 		else if (intent.getAction().startsWith("android.intent.action.HEADSET_PLUG"))
 		{
 			int id = CoinBlockView.mWidgetId;
@@ -288,7 +288,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 
 			AppWidgetManager manager = AppWidgetManager.getInstance(context);
 			this.onUpdate(context, manager, manager.getAppWidgetIds(new ComponentName(context, getClass())));
-		}
+		}*/
 		
 		/*
 		// PC connected (not working)

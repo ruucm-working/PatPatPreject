@@ -1,19 +1,27 @@
 package com.exam.view;
 
-import android.graphics.*;
-import android.media.*;
+import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.*;
-import android.util.*;
-import android.widget.*;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.widget.Toast;
 
-import com.exam.*;
-import com.exam.view.Lv1State.Lv1WaitState;
+import com.exam.IAnimatable;
+import com.exam.MediaAssets;
+import com.exam.R;
+import com.exam.Sprite;
+import com.exam.SpriteHelper;
+import com.exam.helper.TaskTimer;
 
 public class Lv3_1State implements ICoinBlockViewState {
 
 
 	public static boolean switchA  = true;
+	public static boolean overlapAnimSwitch  = true;
+
+	
 
 	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.ggobuck);
 	Sprite shootingSprite 		= MediaAssets.getInstance().getSprite(R.drawable.ggobuck_shoot4);
@@ -92,12 +100,45 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}); 
 
 
-
+		
 		//	aniStatus = new Lv3AnimStatus();
 
 		aniStatus = Lv3AnimStatus.GetInstance();
 
 	}
+	
+	
+	
+	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+		// Draw the brick at bottom
+		
+		if (overlapAnimSwitch)
+			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,0,
+					0);
+
+
+		viewContext.setState(new Lv3_1WaitState());
+
+		/*animStage++;
+
+		if(animStage > 60 )	
+			viewContext.setState(new Lv3_1WaitState());
+		 */
+		
+
+
+	}
+
+	public boolean NeedRedraw() {
+		return false; 
+	}
+
+	public void OnClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub 
+	}
+
+	
+	
 
 	private class Lv3DblClickAnim implements IAnimatable {
 		private int blockVib = 0;	
@@ -311,30 +352,6 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}
 	}
 
-	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		// Draw the brick at bottom
-		SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,0,
-				0);
-
-
-		viewContext.setState(new Lv3_1WaitState());
-
-		/*animStage++;
-
-		if(animStage > 60 )	
-			viewContext.setState(new Lv3_1WaitState());
-		 */
-
-
-	}
-
-	public boolean NeedRedraw() {
-		return false; 
-	}
-
-	public void OnClick(CoinBlockView viewContext) {
-		// TODO Auto-generated method stub 
-	}
 
 
 
@@ -350,18 +367,19 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 
 		public void OnClick(CoinBlockView viewContext) {
-			Log.v("switchA", "OnClick, switchA : "+switchA);
+			Log.v("preventOverlapping", "overlapAnimSwitch : "+overlapAnimSwitch);
 
 
-			if (switchA ){
+			if (switchA && overlapAnimSwitch ){
 				context = viewContext;
 
 				animeSwitch = true;
 				context.addAnimatable(new Lv3ClickAnim());
-				Log.v("switchA","addAnimatable");
 				switchA = false;
-				Log.v("switchA","switchA = false;");
 
+				overlapAnimSwitch = false;
+				
+				
 			}
 
 			//			if(aniStatus.GetAnimStatus() == false) {
@@ -469,7 +487,10 @@ public class Lv3_1State implements ICoinBlockViewState {
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {		
 			animeSwitch = true;
-			coinBlockView.addAnimatable(new Lv3OftenAnim());
+			if(overlapAnimSwitch){
+				coinBlockView.addAnimatable(new Lv3OftenAnim());
+				overlapAnimSwitch = false;
+			}
 		}
 
 		@Override
@@ -710,7 +731,11 @@ public class Lv3_1State implements ICoinBlockViewState {
 			else
 			{
 				animeRemove(this);
+				overlapAnimSwitch = true;
 			}
+			
+			
+			
 		}
 	}
 
@@ -753,7 +778,10 @@ public class Lv3_1State implements ICoinBlockViewState {
 				Message msg = new Message();
 				msg.what = 1;
 				handler.sendMessage(msg);
+				overlapAnimSwitch = true;
 			}
+			
+			
 
 
 		}

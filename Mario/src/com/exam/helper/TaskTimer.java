@@ -21,7 +21,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 	public static boolean isCanceled = false;
 
-
 	private static final String RESULT_SUCCESS   = "1";
 	private static final String RESULT_FAIL      = "0";
 
@@ -301,6 +300,10 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		
 		intent.putExtra("widgetId2", mWidgetId);
 		context.sendBroadcast(intent);
+
+
+		
+		
 	}
 	
 	

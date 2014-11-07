@@ -159,7 +159,7 @@
             android:enabled="true" >
         </service>
         <service
-            android:name="com.exam.tab.Service_BatteryGauge"
+            android:name="com.exam.tab.Service_DeviceEvents"
             android:enabled="true" >
             <intent-filter>
                 <action android:name=".Service_BatteryGauge" />
