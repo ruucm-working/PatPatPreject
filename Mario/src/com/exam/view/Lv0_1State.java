@@ -17,6 +17,7 @@ import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
 import com.exam.tab.Service_TaskTimer;
+import com.exam.view.Lv1State.Lv1WaitState;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
@@ -26,7 +27,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 	
 	// sprites
 	Sprite samsungSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
-	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.egg);
+	Sprite eggsp = MediaAssets.getInstance().getSprite(R.drawable.egg);
+	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.brick_disabled);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	
 	// sound
@@ -35,17 +37,19 @@ public class Lv0_1State implements ICoinBlockViewState {
 
 	// sprite vibration controller 
 	private int animStage = 0;
-	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };	
+	private int[] heightModifier = { 12, 8, 4, 2};
 	private int[] widthModifier = { 3, -3, 2, -2, 1, -1, 0, -0 };
 	
 	boolean animeSwitch = false;
 	
 	boolean fuck = false;   
-	CoinBlockView mViewContext;
+	static CoinBlockView mViewContext;
 
 	public Lv0_1State(CoinBlockView viewContext) {
 		mViewContext = viewContext;
 
+		mViewContext.addAnimatable(new Lv0_1Animation(viewContext.getDensity()));
+		
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 			public void onSeekComplete(MediaPlayer mp) {
@@ -56,18 +60,102 @@ public class Lv0_1State implements ICoinBlockViewState {
 	
 
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		Log.d("bugfix", "lv0_1 draw");
+		/*Log.d("bugfix", "lv0_1 draw");
 		SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter, 0,
 				-(int)(heightModifier[animStage] * viewContext.getDensity()));
 		
 		viewContext.setState(new Lv0WaitState());
+		
+		*/
+		
+		/*// Draw the brick at bottom
+        SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter, 0,
+                                        - (int)(heightModifier[animStage] * viewContext.getDensity()));
+        animStage++;
+        if (animStage >= heightModifier.length) {
+                viewContext.setState(new Lv0WaitState());
+        }
+		*/
 	}
 	
 	public boolean NeedRedraw() {
 		return false;
 	}
 	
+	public class Lv0_1Animation implements IAnimatable {
+		
+		
+		//진동할때 올라오고, 상단에 남는 드로블
+		private int flowerRaise = 4;
+		
+        private int upstep/*, movestep*/;
+        private float density;
+        private boolean touchtop = false;
+        
+        public Lv0_1Animation(float Density)
+        {
+                upstep = 10;
+//                movestep = 10;
+                density = Density;
+        }
 
+        public boolean AnimationFinished()
+        {
+        	 Log.d("lv0_1anim","AnimationFinished : "+(upstep>10));
+                return upstep>10;
+        }
+        
+		public void Draw(Bitmap canvas) {
+
+			SpriteHelper.DrawSprite(canvas, eggsp, 0,
+					SpriteHelper.DrawPosition.BottomCenter, 0,
+					-(int) (flowerRaise * 4 * mViewContext.getDensity()));
+
+			Sprite bottom2 = MediaAssets.getInstance().getSprite(
+					R.drawable.brick_disabled);
+			SpriteHelper.DrawSprite(canvas, bottom2, 0,
+					SpriteHelper.DrawPosition.BottomCenter);
+
+			if (flowerRaise < 8)
+				flowerRaise++;
+			else {
+				animeRemove(this);
+
+				mViewContext.setState(new Lv0WaitState());
+			}
+			
+			
+			Log.d("lv0_1anim","flowerRaise : "+flowerRaise);
+			
+			
+			/*
+			int top = -(int) ((16 - upstep) * 2 * density);
+			// int right = (int)((10-movestep) * 2 * density);
+
+			if (!touchtop) {
+				
+
+				// Two stage
+				if (upstep > 0) {
+					// Draw sprite
+
+					upstep--;
+				} else touchtop = true;
+				Log.d("lv0_1anim", " !touchtop upstep : " + upstep);
+				
+			} else {
+				SpriteHelper.DrawSprite(canvas, eggsp, 0,
+						SpriteHelper.DrawPosition.BottomCenter, 0, top);
+				if (upstep <= 10) {
+					upstep++;
+				} else mViewContext.setState(new Lv0WaitState());
+				Log.d("lv0_1anim", " touchtop upstep : " + upstep);
+				
+			}*/
+			
+
+		}
+}
 	private class Lv0_1DblClickAnim implements IAnimatable {
 		private int blockVib = 0;	
 		private int[] widthModifier = { 16, -16, 8, -8, 4, -4, 0, 0 };	// here
@@ -350,6 +438,9 @@ public class Lv0_1State implements ICoinBlockViewState {
 		int CliCount0_1 ;
 
 		public void OnClick(CoinBlockView viewContext) {
+			
+			Log.d("lv0_1anim","OnClick, animeSwitch : "+animeSwitch);
+			
 			if(!animeSwitch){
 				viewContext.setState(new Lv0WaitState());
 				animeSwitch = true;
@@ -379,8 +470,11 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 		
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+			
+			Log.d("lv0_1anim","Draw, animeSwitch : "+animeSwitch);
+			
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-			else 			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
+			else 			SpriteHelper.DrawSprite(canvas, eggsp, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 		}
 
 		public boolean NeedRedraw() {
@@ -408,6 +502,8 @@ public class Lv0_1State implements ICoinBlockViewState {
 		public void OnOften(CoinBlockView coinBlockView) {		
 			
 			Log.d("prevent_Overlapping","OnOften - overlapAnimSwitch : "+overlapAnimSwitch);
+			
+			Log.d("lv0_1anim","OnOften");
 			
 			if(overlapAnimSwitch){
 				overlapAnimSwitch = false;
@@ -559,7 +655,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 				Log.v("prevent_Overlapping","blockVib :"+blockVib);
 				Log.v("prevent_Overlapping","overlapAnimSwitch :"+overlapAnimSwitch);
 				
-				SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
+				SpriteHelper.DrawSprite(canvas, eggsp, 0, SpriteHelper.DrawPosition.BottomCenter,
 						-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 				blockVib++; 
 				
@@ -585,7 +681,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 
 		public void Draw(Bitmap canvas) {
-			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
+			SpriteHelper.DrawSprite(canvas, eggsp, 0, SpriteHelper.DrawPosition.BottomCenter,
 					-(int)(widthModifier[spriteVib] * mViewContext.getDensity()), 0);
 
 			if (spriteVib < 7) spriteVib++;

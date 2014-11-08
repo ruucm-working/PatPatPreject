@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="i" key="selection"/>
+		<item value="sp" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="overlapAnimSwitch"/>
+			<item value="sp"/>
+			<item value="anim"/>
+			<item value="onclick"/>
+			<item value="anim]"/>
+			<item value="stop_unknownOverlapping"/>
+			<item value="Lv0OftenAnim"/>
+			<item value="Lv0_1OftenAnim"/>
 			<item value="oftenanim"/>
-			<item value="tag4"/>
-			<item value="removeAnimatable"/>
-			<item value="snd"/>
-			<item value="onevolve"/>
-			<item value="onoften"/>
-			<item value="Lv0_2OftenAnim"/>
 		</list>
 		<list key="replacehistory">
 			<item value="stop_unknownOverlapping"/>
@@ -32,7 +32,7 @@
 		<item value="311" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="169" key="DIALOG_Y_ORIGIN"/>
-		<item value="513" key="DIALOG_X_ORIGIN"/>
+		<item value="202" key="DIALOG_Y_ORIGIN"/>
+		<item value="1353" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
