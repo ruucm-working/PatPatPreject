@@ -65,7 +65,7 @@ public class Lv0_2State implements ICoinBlockViewState {
 	}
 
 	public boolean NeedRedraw() {
-		return true;
+		return false;
 	}
 
 	private class Lv0_1DblClickAnim implements IAnimatable {
@@ -646,14 +646,21 @@ public class Lv0_2State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 
-			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
+			
 
-			if (blockVib < 7)
+			if (blockVib < 7){
+				// Draw the brick at bottom
+				SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
+						-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 				blockVib++; 
+			}
+			else {
+				mViewContext.removeAnimatable(this);
+			}
+			
+			Log.v("stop_unknownOverlapping", "Lv0_2OftenAnim");
+			
 
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
 		}
 	}
 

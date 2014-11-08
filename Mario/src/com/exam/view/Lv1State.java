@@ -19,6 +19,12 @@ import com.exam.tab.Service_TaskTimer;
 
 public class Lv1State implements ICoinBlockViewState {
 	
+	
+	
+	
+	public static boolean overlapAnimSwitch  = true;
+
+	
 	// sprites
 	Sprite sp2 = MediaAssets.getInstance().getSprite(R.drawable.samsung);
 	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.brick_disabled);
@@ -399,22 +405,34 @@ public class Lv1State implements ICoinBlockViewState {
 
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {
-			coinBlockView.addAnimatable(new Lv0_2OftenAnim());
+			
+			Log.v("prevent_Overlapping","3 OnOften overlapAnimSwitch : " +overlapAnimSwitch);
+			if(overlapAnimSwitch){
+				overlapAnimSwitch = false;
+				coinBlockView.addAnimatable(new Lv0_2OftenAnim());
+			}
 		}
 		
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
 			Log.d("EvolveBugfix", " lv1진화");
-			Service_TaskTimer.taskTimer2.isCanceled = false;
+			
+			Log.v("prevent_Overlapping","3OnEvolveoverlapAnimSwitch :"+overlapAnimSwitch);
+			
+			if(overlapAnimSwitch){
+				overlapAnimSwitch = false;
+			
+			
+			/*Service_TaskTimer.taskTimer2.isCanceled = false;
 			TaskTimer taskTimer1 = new TaskTimer();
-//			taskTimer1.setTextView1(R.id.time0);
-			taskTimer1.execute("");
+			taskTimer1.execute("");*/
 
 			DeviceConditionPage.UpdateIntroView();
 			
 			animeSwitch = false;
 			coinBlockView.setState(new Lv2State(coinBlockView));
+			}
 
 			Log.d("Lv0_2State","OnEvolve");
 		}
@@ -718,16 +736,33 @@ public class Lv1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			/*
-			SpriteHelper.DrawSprite(canvas, sp2, sp2.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
 
-			if (blockVib < 7)
+			if (blockVib < 7){
+				// Draw the brick at bottom
+				
+				Log.v("prevent_Overlapping","blockVib :"+blockVib);
+				Log.v("prevent_Overlapping","overlapAnimSwitch :"+overlapAnimSwitch);
+				
+				SpriteHelper.DrawSprite(canvas, sp2, 0, SpriteHelper.DrawPosition.BottomCenter,
+						-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 				blockVib++; 
-
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
-			*/
+				
+				
+				
+			}
+			else{
+				mViewContext.removeAnimatable(this);
+				overlapAnimSwitch = true;
+			}
+			
+			
+			Log.v("stop_unknownOverlapping", "Lv1OftenAnim");
+			
 		}
+		
+		
+		
+		
 	}
 
 	private class Lv1ClickAnim implements IAnimatable {

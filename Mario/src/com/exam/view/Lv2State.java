@@ -15,6 +15,10 @@ import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
 
 public class Lv2State implements ICoinBlockViewState {
+	
+	
+	
+	public static boolean overlapAnimSwitch  = true;
 
 	Sprite samsungSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite evolve 		= MediaAssets.getInstance().getSprite(R.drawable.samsungevolve_sprites_4);
@@ -42,6 +46,24 @@ public class Lv2State implements ICoinBlockViewState {
 			} 
 		}); 
 	}
+	
+
+	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+		// Draw the brick at bottom
+		SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
+				-(int)(heightModifier2[animStage%8] * viewContext.getDensity()));
+		viewContext.setState(new Lv2WaitState());
+	}
+
+	public boolean NeedRedraw() {
+		return false;
+	}
+
+	public void OnClick(CoinBlockView viewContext) {
+		// TODO Auto-generated method stub 
+	}
+
+	
 	
 	private class Lv2DblClickAnim implements IAnimatable {
 		private int blockVib = 0;	
@@ -252,21 +274,6 @@ public class Lv2State implements ICoinBlockViewState {
 		}
 	}
 
-	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
-		// Draw the brick at bottom
-		SpriteHelper.DrawSprite(canvas, evolve, evolve.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,
-				-(int)(heightModifier2[animStage%8] * viewContext.getDensity()));
-		viewContext.setState(new Lv2WaitState());
-	}
-
-	public boolean NeedRedraw() {
-		return false;
-	}
-
-	public void OnClick(CoinBlockView viewContext) {
-		// TODO Auto-generated method stub 
-	}
-
 	private class Lv2WaitState implements ICoinBlockViewState {
 		
 		TextPref mPref;
@@ -360,17 +367,24 @@ public class Lv2State implements ICoinBlockViewState {
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			Log.d("EvolveBugfix", " lv2진화");
-			animeSwitch = false;
-			DeviceConditionPage.UpdateIntroView();
-			
-			
-//			coinBlockView.addAnimatable(new Lv2EvolveAnim());
-			coinBlockView.setState(new Lv3_1State(coinBlockView));	
+			if (overlapAnimSwitch) {
+				overlapAnimSwitch = false;
+
+				animeSwitch = false;
+				DeviceConditionPage.UpdateIntroView();
+
+				// coinBlockView.addAnimatable(new Lv2EvolveAnim());
+				coinBlockView.setState(new Lv3_1State(coinBlockView));
+
+			}
 		}
 
 		@Override
 		public void OnOften(CoinBlockView coinBlockView) {			
-			coinBlockView.addAnimatable(new Lv2OftenAnim());
+			if(overlapAnimSwitch){
+				overlapAnimSwitch = false;
+				coinBlockView.addAnimatable(new Lv2OftenAnim());
+			}
 		}
 
 		@Override
@@ -596,7 +610,7 @@ public class Lv2State implements ICoinBlockViewState {
 			if (blockVib < 13) blockVib++;
 			else			   mViewContext.removeAnimatable(this);
 
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
+			Log.v("stop_unknownOverlapping", "blockVib"+Integer.toString(blockVib));
 		}
 	}
 	
@@ -610,14 +624,24 @@ public class Lv2State implements ICoinBlockViewState {
 		}
 
 		public void Draw(Bitmap canvas) {
-			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, samsungSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 
-			if (blockVib < 13) blockVib++;
-			else			   mViewContext.removeAnimatable(this);
+			if (blockVib < 13) {
 
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
+				// Draw the brick at bottom
+				SpriteHelper.DrawSprite(canvas, samsungSprite, 0,
+						SpriteHelper.DrawPosition.BottomCenter,
+						-(int) (widthModifier[blockVib] * mViewContext
+								.getDensity()), 0);
+				blockVib++;
+			} else {
+
+				mViewContext.removeAnimatable(this);
+
+				overlapAnimSwitch = true;
+
+			}
+
+//			Log.v("stop_unknownOverlapping", "blockVib" + Integer.toString(blockVib));
 		}
 	}
 

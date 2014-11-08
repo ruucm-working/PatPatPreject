@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="start" key="selection"/>
+		<item value="i" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="start"/>
-			<item value="startin"/>
-			<item value="onclick"/>
-			<item value="onoften"/>
-			<item value="onof"/>
 			<item value="overlapAnimSwitch"/>
-			<item value="TaskTimer.overlapAnimSwitch"/>
-			<item value="headset"/>
+			<item value="oftenanim"/>
+			<item value="tag4"/>
+			<item value="removeAnimatable"/>
+			<item value="snd"/>
+			<item value="onevolve"/>
+			<item value="onoften"/>
+			<item value="Lv0_2OftenAnim"/>
 		</list>
 		<list key="replacehistory">
+			<item value="stop_unknownOverlapping"/>
 			<item value="overlapAnimSwitch"/>
 			<item value="switchA"/>
 			<item value="Lv3ClickAnim"/>
@@ -25,7 +26,6 @@
 			<item value=" "/>
 			<item value="add_button"/>
 			<item value="callender_arrow02"/>
-			<item value="callender_arrow01"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

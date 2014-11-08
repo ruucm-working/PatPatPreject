@@ -1,0 +1,356 @@
+package com.exam.helper;
+
+import com.exam.CoinBlockWidgetApp;
+import com.exam.R;
+import com.exam.coinBlockWidgetProvider;
+import com.exam.tab.IntroActivity;
+import com.exam.view.*;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.*;
+import android.util.*;
+import android.widget.*;
+
+/** AsyncTask<A, B, C> 
+ *    - A : parameters' type of doInBackground
+ *    - B : parameters' type of onProgressUpdate
+ *    - C : parameters' type of onPostExecute */
+public class TaskTimer extends AsyncTask<String, String, String> {
+
+
+	public static boolean isCanceled = false;
+
+	private static final String RESULT_SUCCESS   = "1";
+	private static final String RESULT_FAIL      = "0";
+
+	private static final int TEXT_COLOR_NORMAL   = 0xFF000000;
+	private static final int TEXT_COLOR_FINISHED = 0xFFFF0000;
+
+	private static long startTime = 0;
+
+	public TextView timer = null;
+	private static long time = 0;
+	
+	
+	boolean init = false;
+	boolean lv0_1;
+	boolean lv0_2;
+	boolean lv1;
+	boolean lv2;
+	boolean lv3_1;
+	
+	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
+	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
+	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+	
+	
+	
+	int CliCountInit ;
+	int CliCount0_1 ;
+	int CliCount0_2 ;
+	int CliCount1 ;
+	int CliCount2 ;
+	
+
+/*	public void setTextView1(int textViewId) {
+		timer = (TextView)IntroActivity.getInstance()
+				.findViewById(textViewId);
+	}*/
+
+	public void setTime(int time) {
+		this.time = time; 
+	}
+
+	public void SetTimer(int n)
+	{
+		time += n;
+	}
+
+	public long GetTime()
+	{
+		return time;
+	}
+	
+	@Override
+	public void onCancelled()
+	{
+		
+		
+		mPref.Ready();
+//		startTime = mPref.ReadLong("startTime", 0);	
+		Log.d("TaskTimer","startTime "+startTime);
+		
+		//make new starttime while task timer is stopped
+		startTime += time*1000;			
+		mPref.WriteLong("startTime", startTime);	
+		mPref.CommitWrite();
+		
+		Log.d("TaskTimer","newstartTime "+startTime);
+		
+	}
+	
+	public void onRestartset()
+	{
+		
+		mPref.Ready();
+		time = mPref.ReadLong("time", 0);
+		
+		
+		startTime = System.currentTimeMillis() - time*1000;
+		mPref.WriteLong("startTime", startTime);	
+		mPref.CommitWrite();
+
+		
+	}
+
+	public void StartSetting()
+	{
+		
+		mPref.Ready();
+		startTime = mPref.ReadLong("startTime", 0);	
+
+		// It should work only one time
+		if(startTime == 0){
+			startTime = System.currentTimeMillis();		
+			mPref.WriteLong("startTime", startTime);	
+			mPref.CommitWrite();
+		}
+		
+		Log.d("keep_oftenintent","StartSetting");
+		
+		
+
+	}
+
+	// Preference
+	public static TextPref mPref;	
+
+	@Override
+	protected void onPreExecute() { 
+
+		
+		Log.d("keep_oftenintent","onPreExecute");
+		
+
+		try {
+			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+		} catch (Exception e) { 
+			e.printStackTrace();
+		}      
+
+		
+		StartSetting();		
+		
+		
+//		timer.setTextColor(TEXT_COLOR_NORMAL);
+		
+		Log.d("keep_oftenintent","End - onPreExecute");
+	
+
+		
+
+	}
+
+
+	@Override
+	protected String doInBackground(String... params) {
+ 
+
+		
+		
+		Log.d("keep_oftenintent","doInBackground");
+		
+	
+
+			while (time >= 0 && !isCanceled) {
+				try {
+					Thread.sleep(1000); // one second sleep
+					// time++; // decrement time
+
+					mPref.Ready();
+
+					// State Variable
+					init = mPref.ReadBoolean("initstate", false);
+					lv0_1 = mPref.ReadBoolean("lv0_1state", false);
+					lv0_2 = mPref.ReadBoolean("lv0_2state", false);
+					lv1 = mPref.ReadBoolean("lv1state", false);
+					lv2 = mPref.ReadBoolean("lv2state", false);
+					lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+
+					// ClickCount Variable
+					CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
+					CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
+					CliCount1 = mPref.ReadInt("clicount1", 0);
+					CliCount2 = mPref.ReadInt("clicount2", 0);
+					// CliCount3 = mPref.ReadInt("clicount2", 0);
+
+					time = (System.currentTimeMillis() - startTime) / 1000;
+
+					Log.d("prevent_Overlapping","time : "+time);
+					
+					
+					
+					
+					if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
+						lv0_1 = false;
+						lv0_2 = true;
+						mPref.WriteBoolean("lv0_1state", lv0_1);
+						mPref.WriteBoolean("lv0_2state", lv0_2);
+						mPref.CommitWrite();
+
+						RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp
+								.getApplication().getPackageName(),
+								R.layout.coin_block_widget);
+						updateEvolveIntent(rviews,
+								CoinBlockWidgetApp.getApplication());
+
+					}
+
+					else if (time >= 20 && time <= 22 && CliCount1 >= 3 && lv1) {
+						lv1 = false;
+						lv2 = true;
+						mPref.WriteBoolean("lv1state", lv1);
+						mPref.WriteBoolean("lv2state", lv2);
+						mPref.CommitWrite();
+
+						RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp
+								.getApplication().getPackageName(),
+								R.layout.coin_block_widget);
+						updateEvolveIntent(rviews,
+								CoinBlockWidgetApp.getApplication());
+
+					} else if (time >= 30 && time <= 32 && CliCount2 >= 3
+							&& lv2) {
+						lv2 = false;
+						lv3_1 = true;
+						mPref.WriteBoolean("lv2state", lv2);
+						mPref.WriteBoolean("lv3_1state", lv3_1);
+						mPref.CommitWrite();
+
+						RemoteViews rviews = new RemoteViews(CoinBlockWidgetApp
+								.getApplication().getPackageName(),
+								R.layout.coin_block_widget);
+						updateEvolveIntent(rviews,
+								CoinBlockWidgetApp.getApplication());
+
+					} else if (time % 10 ==9){
+						Log.d("keep_oftenintent","time : "+time); 
+						Log.d("keep_oftenintent","CoinBlockWidgetApp.getApplication() : "+CoinBlockWidgetApp.getApplication()); 
+						updateOftenIntent(CoinBlockWidgetApp.getApplication());
+						
+						
+					}
+
+					else {
+
+						mPref.WriteLong("time", time);
+						mPref.CommitWrite();
+
+					}
+
+					publishProgress(); // trigger onProgressUpdate()
+
+					/*
+					 * //for CoinBlockView updateEvolveIntent
+					 * if(((CoinBlockWidgetApp) context.getApplicationContext())
+					 * != null) { Log.v("tag8","for CoinBlock"+time);
+					 * CoinBlockView.second = (long)time; }
+					 */
+
+				} catch (InterruptedException e) {
+					Log.i("GUN", Log.getStackTraceString(e));
+					return RESULT_FAIL;
+				}
+			}
+
+		
+/*
+		else {
+			
+			mPref.Ready();
+			startTime = mPref.ReadLong("startTime", 0);	
+			Log.d("TaskTimer","startTime "+startTime);
+			
+			//make new starttime while task timer is stopped
+			startTime += time;			
+			mPref.WriteLong("startTime", startTime);	
+			mPref.CommitWrite();
+			
+			Log.d("TaskTimer","newstartTime "+startTime);
+
+			
+
+		}*/
+		
+		
+		
+		
+
+		return RESULT_SUCCESS;
+	}
+	
+	private static void updateOftenIntent(Context context) {
+		// TODO Auto-generated method stub
+		int mWidgetId = CoinBlockView.mWidgetId;
+		
+		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
+		
+		
+		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
+		
+		
+		intent.putExtra("widgetId2", mWidgetId);
+		context.sendBroadcast(intent);
+
+
+		
+		
+	}
+	
+	
+	
+	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
+		// TODO Auto-generated method stub				
+		 
+		
+//		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
+		
+		int mWidgetId = CoinBlockView.mWidgetId;
+//		
+		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
+		intent.putExtra("widgetId11", mWidgetId);		
+
+		context.sendBroadcast(intent);
+
+		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
+		intent2.putExtra("widgetId10", mWidgetId);				
+
+		context.sendBroadcast(intent2);
+
+		Log.d("TaskTimer","updateEvolveIntent");
+	}
+
+	/** this method is used by doInBackground
+	 *  because it's called on the main thread (UI thread),
+	 *  you can directly modify UI */
+	@Override
+	protected void onProgressUpdate(String... value) {
+		// modify timer's text (remained time)
+//		timer.setText("" + time);
+		
+		Log.d("TaskTimer","onProgressUpdate");
+		
+		
+	}
+
+	/** this method is executed right AFTER doInBackground()
+	 *  on the main thread (UI thread) */
+	@Override
+	protected void onPostExecute(String result) {
+		if(RESULT_SUCCESS.equals(result))
+//			timer.setTextColor(TEXT_COLOR_FINISHED);
+
+		Log.d("TaskTimer", "onPostExecute"+Long.toString(time));
+	}
+}

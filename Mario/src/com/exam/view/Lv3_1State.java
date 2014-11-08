@@ -488,8 +488,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 		public void OnOften(CoinBlockView coinBlockView) {		
 			animeSwitch = true;
 			if(overlapAnimSwitch){
-				coinBlockView.addAnimatable(new Lv3OftenAnim());
 				overlapAnimSwitch = false;
+				coinBlockView.addAnimatable(new Lv3OftenAnim());
+				
 			}
 		}
 

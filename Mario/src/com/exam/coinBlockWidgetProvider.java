@@ -116,9 +116,12 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 	public void onReceive(Context context, Intent intent) {
 		super.onReceive(context, intent);
 
-		Log.d("coinBlockWidgetProvider","onReceive");
+		Log.d("stop_unknownOverlapping","onReceive");
+		
+		Log.d("stop_unknownOverlapping","intent : "+intent.getAction());
 
 		if (intent.getAction().startsWith("com.gueei")) {
+			
 			int id = intent.getIntExtra("widgetId", 0);
 			((CoinBlockWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
 

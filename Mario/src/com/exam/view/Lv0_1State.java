@@ -20,6 +20,10 @@ import com.exam.tab.Service_TaskTimer;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
+	
+	
+	public static boolean overlapAnimSwitch  = true;
+	
 	// sprites
 	Sprite samsungSprite = MediaAssets.getInstance().getSprite(R.drawable.samsung_test);
 	Sprite sp = MediaAssets.getInstance().getSprite(R.drawable.egg);
@@ -401,20 +405,33 @@ public class Lv0_1State implements ICoinBlockViewState {
 		}
 
 		@Override
-		public void OnOften(CoinBlockView coinBlockView) {			
-			coinBlockView.addAnimatable(new Lv0_1OftenAnim());
+		public void OnOften(CoinBlockView coinBlockView) {		
+			
+			Log.d("prevent_Overlapping","OnOften - overlapAnimSwitch : "+overlapAnimSwitch);
+			
+			if(overlapAnimSwitch){
+				overlapAnimSwitch = false;
+				coinBlockView.addAnimatable(new Lv0_1OftenAnim());
+			}
 		}
 
 		@Override
 		public void OnEvolve(CoinBlockView coinBlockView) {
 			// TODO Auto-generated method stub
-			Log.d("EvolveBugfix", " lv0_1진화");
-			animeSwitch = false;
-			//coinBlockView.setState(new Lv0_2State(coinBlockView));
-			coinBlockView.setState(new Lv0_2State(coinBlockView));
-			Service_TaskTimer.taskTimer2.isCanceled = true;
-			DeviceConditionPage.UpdateIntroView();
-
+			
+			Log.d("prevent_Overlapping","OnEvolve - overlapAnimSwitch : "+overlapAnimSwitch);
+			
+			if(overlapAnimSwitch){
+				overlapAnimSwitch = false;
+				
+				animeSwitch = false;
+				//coinBlockView.setState(new Lv0_2State(coinBlockView));
+				coinBlockView.setState(new Lv0_2State(coinBlockView));
+				Service_TaskTimer.taskTimer2.isCanceled = true;
+				DeviceConditionPage.UpdateIntroView();
+				
+			
+			}
 			Log.d("Lv0_1State", "UpdateIntroView");
 		}
 
@@ -534,14 +551,29 @@ public class Lv0_1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 
-			// Draw the brick at bottom
-			SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
+			
 
-			if (blockVib < 7)
+			if (blockVib < 7){
+				// Draw the brick at bottom
+				
+				Log.v("prevent_Overlapping","blockVib :"+blockVib);
+				Log.v("prevent_Overlapping","overlapAnimSwitch :"+overlapAnimSwitch);
+				
+				SpriteHelper.DrawSprite(canvas, sp, 0, SpriteHelper.DrawPosition.BottomCenter,
+						-(int)(widthModifier[blockVib] * mViewContext.getDensity()),0);
 				blockVib++; 
+				
+				
+				
+			}
+			else{
 
-			Log.v("tag4", "blockVib"+Integer.toString(blockVib));
+				mViewContext.removeAnimatable(this);
+
+				overlapAnimSwitch = true;
+
+			}
+			Log.v("stop_unknownOverlapping", "Lv0_1OftenAnim"+Integer.toString(blockVib));
 		}
 	}
 
