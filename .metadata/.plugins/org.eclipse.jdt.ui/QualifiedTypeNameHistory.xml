@@ -46,4 +46,5 @@
 <fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="com.exam.Intro.UnityIntro"/>
 <fullyQualifiedTypeName name="com.exam.view.Lv3_1State.Lv3AnimStatus"/>
+<fullyQualifiedTypeName name="com.exam.helper.TaskTimer"/>
 </qualifiedTypeNameHistroy>

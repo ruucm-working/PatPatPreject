@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="updateOftenIntent" key="selection"/>
+		<item value="start" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="updateOftenIntent"/>
-			<item value="timer"/>
-			<item value="startser"/>
-			<item value="isAnimRunning"/>
-			<item value="onoften"/>
+			<item value="start"/>
+			<item value="startin"/>
 			<item value="onclick"/>
-			<item value="INTENT_OFTEN_FORMAT"/>
-			<item value="mWidgetId"/>
+			<item value="onoften"/>
+			<item value="onof"/>
+			<item value="overlapAnimSwitch"/>
+			<item value="TaskTimer.overlapAnimSwitch"/>
+			<item value="headset"/>
 		</list>
 		<list key="replacehistory">
+			<item value="overlapAnimSwitch"/>
 			<item value="switchA"/>
 			<item value="Lv3ClickAnim"/>
 			<item value="MediaAssets"/>
@@ -25,14 +26,13 @@
 			<item value="add_button"/>
 			<item value="callender_arrow02"/>
 			<item value="callender_arrow01"/>
-			<item value="cancle"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="311" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="216" key="DIALOG_Y_ORIGIN"/>
-		<item value="400" key="DIALOG_X_ORIGIN"/>
+		<item value="169" key="DIALOG_Y_ORIGIN"/>
+		<item value="513" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
