@@ -30,6 +30,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);
 	MediaPlayer snd2 = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_1_up);
+	MediaPlayer snd3 = MediaAssets.getInstance().getSoundPlayer(R.raw.headsetplug);
 
 	private int animStage = 0;
 	private int[] heightModifier = { 8, -8, 6, -6, 4, -4, 2, -2 };		// here
@@ -617,8 +618,8 @@ public class Lv3_1State implements ICoinBlockViewState {
 			// TODO Auto-generated method stub
 			viewContext.addAnimatable(new Lv3HeadsetConnectedAnim());
 
-			snd1.seekTo(0);
-			snd1.setOnSeekCompleteListener(new OnSeekCompleteListener() {
+			snd3.seekTo(0);
+			snd3.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 				public void onSeekComplete(MediaPlayer mp) {
 					snd1.start();
 				}

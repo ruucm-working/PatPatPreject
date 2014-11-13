@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.exam.view.CoinBlockView"/>
-<fullyQualifiedTypeName name="android.app.Service"/>
 <fullyQualifiedTypeName name="android.support.v4.app.NotificationCompat"/>
 <fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
 <fullyQualifiedTypeName name="android.app.NotificationManager"/>
@@ -47,4 +46,5 @@
 <fullyQualifiedTypeName name="com.exam.Intro.UnityIntro"/>
 <fullyQualifiedTypeName name="com.exam.view.Lv3_1State.Lv3AnimStatus"/>
 <fullyQualifiedTypeName name="com.exam.helper.TaskTimer"/>
+<fullyQualifiedTypeName name="android.app.Service"/>
 </qualifiedTypeNameHistroy>

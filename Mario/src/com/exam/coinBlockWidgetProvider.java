@@ -14,7 +14,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.exam.helper.SnowWiFiMonitor;
-import com.exam.tab.Service_DeviceEvents;
+import com.exam.tab.IntentService_DeviceEvents;
 import com.exam.tab.Service_Notify;
 import com.exam.tab.Service_SnowWiFiMonitor;
 import com.exam.view.CoinBlockView;
@@ -93,7 +93,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		Intent nintent = new Intent(context, Service_Notify.class);
 		context.startService(nintent);
 		
-		Intent intent = new Intent(context, Service_DeviceEvents.class);
+		Intent intent = new Intent(context, IntentService_DeviceEvents.class);
 		context.startService(intent);
 		
 		
@@ -102,10 +102,11 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 		Intent intent2 = new Intent(context, Service_SnowWiFiMonitor.class);
 		context.startService(intent2);
 		 
-		Intent intent3 = new Intent("com.exam.tab.TaskTimer");
+		Intent intent3 = new Intent("com.exam.tab.IntentService");
 		context.startService(intent3);
 		
-		Log.d("keep_oftenintent","startService");
+		
+		Log.d("Stop_Overlapping","startService");
 		
 		
 		const_builder = new NotificationCompat.Builder(context);

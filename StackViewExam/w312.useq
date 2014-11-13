@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.7" icons="true">  
+  <object id="1" language="java" name="com.exam.CoinAnimation" project="Mario" 
+    file="/Mario/src/com/exam/CoinAnimation.java" binary="false" label="coinAnimation" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="495" y="0"/>    
+    <execution id="2">      
+      <position height="72" width="125" x="5" y="239"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="com.exam.Intro.UnityIntro.UpdateCheckThread" project="Mario" 
+    file="/Mario/src/com/exam/Intro/UnityIntro.java" binary="false" label="updateCheckThread" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="431" y="0"/>    
+    <execution id="4">      
+      <position height="24" width="170" x="134" y="263"/>    
+    </execution>  
+  </object>  
+  <object id="6" language="java" name="com.exam.Intro.UnityIntro" project="Mario" 
+    file="/Mario/src/com/exam/Intro/UnityIntro.java" binary="false" label="unityIntro" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="431" y="0"/>  
+  </object>  
+  <message id="3" operation="run():void">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>
+</sequence-diagram>

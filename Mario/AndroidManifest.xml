@@ -137,6 +137,15 @@
         </receiver>
 
         
+        <service
+            android:name="com.exam.tab.IntentService_TaskTimer"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.exam.tab.IntentService" />
+            </intent-filter>
+        </service>
+        
+        
         
         <service
             android:name="com.exam.tab.Service_TaskTimer"

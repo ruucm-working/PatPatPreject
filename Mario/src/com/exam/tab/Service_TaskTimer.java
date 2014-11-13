@@ -23,14 +23,14 @@ public class Service_TaskTimer extends Service {
 		super.onCreate();
 		
 
-		Log.d("keep_oftenintent","onCreate");
+		Log.d("Stop_Overlapping","Service_TaskTimer_onCreate");
 		
 		taskTimer2 = new TaskTimer();
 		
 		
-		Log.d("keep_oftenintent","taskTimer2 :"+taskTimer2);
+		Log.d("Stop_Overlapping","taskTimer2 :"+taskTimer2);
 		taskTimer2.execute();
-		Log.d("keep_oftenintent","execute");
+		Log.d("Stop_Overlapping","execute");
 		
 	}
 

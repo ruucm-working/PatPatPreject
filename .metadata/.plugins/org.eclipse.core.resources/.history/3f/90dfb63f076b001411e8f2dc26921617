@@ -1,0 +1,43 @@
+package com.exam.tab;
+
+import com.exam.helper.TaskTimer;
+
+import android.app.IntentService;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.SystemClock;
+import android.text.format.DateFormat;
+import android.util.Log;
+
+public class IntentService_DeviceEvents extends IntentService {
+	
+	public static TaskTimer taskTimer2;
+	private static final String TAG =IntentService_DeviceEvents.class.getSimpleName();
+
+	public static final String INPUT_TEXT="INPUT_TEXT";
+	public static final String OUTPUT_TEXT="OUTPUT_TEXT";
+	
+	/**
+	 *  initiate service in background thread with service name
+	 */
+	public IntentService_DeviceEvents() {
+		super(IntentService_DeviceEvents.class.getSimpleName());
+	}
+
+	@Override
+	protected void onHandleIntent(Intent intent) {
+		
+Log.d("Stop_Overlapping","Service_TaskTimer_onCreate");
+		Log.d("Stop_Overlapping","execute");
+		
+		
+		
+		
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+		filter.addAction(Intent.ACTION_HEADSET_PLUG);
+		registerReceiver(mBRBattery, filter);
+		
+	}
+
+}

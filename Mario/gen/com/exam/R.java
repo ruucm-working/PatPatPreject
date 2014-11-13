@@ -1940,13 +1940,14 @@ containing a value of this type.
     public static final class raw {
         public static final int beep=0x7f060000;
         public static final int dingding=0x7f060001;
-        public static final int notify_sound=0x7f060002;
-        public static final int smb_1_up=0x7f060003;
-        public static final int smb_breakblock=0x7f060004;
-        public static final int smb_bump=0x7f060005;
-        public static final int smb_coin=0x7f060006;
-        public static final int smb_powerup=0x7f060007;
-        public static final int smb_powerup_appears=0x7f060008;
+        public static final int headsetplug=0x7f060002;
+        public static final int notify_sound=0x7f060003;
+        public static final int smb_1_up=0x7f060004;
+        public static final int smb_breakblock=0x7f060005;
+        public static final int smb_bump=0x7f060006;
+        public static final int smb_coin=0x7f060007;
+        public static final int smb_powerup=0x7f060008;
+        public static final int smb_powerup_appears=0x7f060009;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
