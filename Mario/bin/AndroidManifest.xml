@@ -145,6 +145,14 @@
             </intent-filter>
         </service>
         
+        <service
+            android:name="com.exam.tab.IntentService_DeviceEvents"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.exam.tab.IntentService_DeviceEvents" />
+            </intent-filter>
+        </service>
+        
         
         
         <service
@@ -171,7 +179,7 @@
             android:name="com.exam.tab.Service_DeviceEvents"
             android:enabled="true" >
             <intent-filter>
-                <action android:name=".Service_BatteryGauge" />
+                <action android:name=".Service_DeviceEvents" />
             </intent-filter>
         </service>
         <service

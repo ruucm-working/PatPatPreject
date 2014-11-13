@@ -113,18 +113,15 @@ public class Lv3_1State implements ICoinBlockViewState {
 	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 		// Draw the brick at bottom
 		
-		if (overlapAnimSwitch)
+/*		if (overlapAnimSwitch) {
+			overlapAnimSwitch = false;
 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,0,
 					0);
+			overlapAnimSwitch = true;
+		}*/
 
 
 		viewContext.setState(new Lv3_1WaitState());
-
-		/*animStage++;
-
-		if(animStage > 60 )	
-			viewContext.setState(new Lv3_1WaitState());
-		 */
 		
 
 
@@ -459,20 +456,13 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 			//<<<<<<< HEAD
+			
+			Log.d("Stop_OverDraw","waitstate_Draw");
+			
 			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 			else 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
 
 			if (blockVib < 13) blockVib++;
-			/*=======
-			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter,
-					-(int)(widthModifier[blockVib] * context.getDensity()),0);
-
-			if (blockVib < 13)
-				blockVib++;
-
-
-			Log.d("Lv3_1State","Draw(in WaitState) blockVib is "+blockVib);
-			 */
 
 		}
 
@@ -486,7 +476,10 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}
 
 		@Override
-		public void OnOften(CoinBlockView coinBlockView) {		
+		public void OnOften(CoinBlockView coinBlockView) {	
+			
+			Log.d("Stop_OverDraw","OnOften");
+			
 			animeSwitch = true;
 			if(overlapAnimSwitch){
 				overlapAnimSwitch = false;
@@ -621,7 +614,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			snd3.seekTo(0);
 			snd3.setOnSeekCompleteListener(new OnSeekCompleteListener() {
 				public void onSeekComplete(MediaPlayer mp) {
-					snd1.start();
+					snd3.start();
 				}
 			});
 		}
@@ -726,7 +719,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 		public void Draw(Bitmap canvas) {
 			// Draw the brick at bottom
-			if (spriteVib < 8) {
+			if (spriteVib < 8 && overlapAnimSwitch == false) {
 				SpriteHelper.DrawSprite(canvas, oftenSprite, oftenSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
 				spriteVib++;
 			}
@@ -770,7 +763,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			// Draw the brick at bottom
 
 
-			if (spriteVib < 8) {
+			if (spriteVib < 8 && overlapAnimSwitch == false) {
 				SpriteHelper.DrawSprite(canvas, shootingSprite, shootingSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,0,0);
 				spriteVib++;
 			}
