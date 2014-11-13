@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" >
+
+        <TextView
+            android:id="@+id/username03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username03"
+            android:src="@drawable/emo_dontlike" />
+
+        <RelativeLayout
+            android:id="@+id/messagebox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_view3"
+            android:layout_toRightOf="@+id/date_view2" >
+
+            <ScrollView
+                android:id="@+id/scroller2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/popup"
+                android:fadingEdgeLength="5dip"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/tracks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dip" >
+
+                    <TextView
+                        android:id="@+id/message_view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+
+            <ImageView
+                android:id="@+id/arrow_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4dip"
+                android:layout_toRightOf="@+id/scroller2"
+                android:src="@drawable/arrow_right" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/date_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/messagebox3"
+            android:text="time"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

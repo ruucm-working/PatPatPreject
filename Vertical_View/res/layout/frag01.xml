@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background_home01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_home01" >
+
+    <ImageView
+        android:id="@+id/object_apple"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="27dp"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/object_orange"
+        android:src="@drawable/object_apple" />
+
+    <ImageView
+        android:id="@+id/object_watermelon"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_above="@+id/object_banana"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/object_watermelon" />
+
+    <ImageView
+        android:id="@+id/object_orange"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_alignBottom="@+id/object_apple"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/object_banana"
+        android:src="@drawable/object_orange" />
+
+    <ImageView
+        android:id="@+id/object_pineapple" 
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_above="@+id/object_apple"
+        android:layout_alignRight="@+id/object_apple"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/object_pineapple" />
+
+    <ImageView
+        android:id="@+id/object_banana"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/object_banana" />
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/object_time"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_above="@+id/object_pineapple"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/object_time" />
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LargeTitleTheme">
+        <item name="android:windowTitleSize">50dip</item>
+        <item name="android:windowTitleStyle">@style/titleTextStyle</item>
+    </style>
+
+    <style name="titleTextStyle">
+        <item name="android:textSize">30dip</item>
+        <item name="android:textColor">@color/titletextcolor</item>
+    </style>
+    
+    
+    
+    
+     <style name="mywindowTitleBackground">
+       
+         <item name="android:background">@color/titleBgColor</item>	
+    </style>
+    
+    <style name="themeTitle" parent="android:Theme.Light">
+		<item name="android:windowTitleSize">46dip</item>
+		<item name="android:windowTitleBackgroundStyle">@+style/mywindowTitleBackground</item>
+		<item name="android:windowBackground">@color/windowbackgroud</item>
+		<item name="android:textColor">@color/black</item>
+	</style>
+
+</resources>

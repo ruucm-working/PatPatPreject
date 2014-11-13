@@ -457,11 +457,17 @@ public class Lv3_1State implements ICoinBlockViewState {
 		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
 			//<<<<<<< HEAD
 			
-			Log.d("Stop_OverDraw","waitstate_Draw");
 			
-			if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-			else 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
-
+			
+			if(overlapAnimSwitch) {
+				Log.d("Stop_OverDraw","waitstate_Draw");
+				Log.d("Stop_OverDraw","animeSwitch : "+animeSwitch);
+				
+				
+				
+				if(animeSwitch) SpriteHelper.DrawSprite(canvas, blankSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );
+				else 			SpriteHelper.DrawSprite(canvas, flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, 0 );				
+			}
 			if (blockVib < 13) blockVib++;
 
 		}
