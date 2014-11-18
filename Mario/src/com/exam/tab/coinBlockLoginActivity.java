@@ -4,8 +4,11 @@ import java.io.File;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -14,9 +17,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.exam.CoinBlockWidgetApp;
 import com.exam.R;
 import com.exam.helper.TextPref;
+import com.exam.view.CoinBlockView;
 import com.facebook.LoggingBehavior;
 import com.facebook.Request;
 import com.facebook.Response;
@@ -95,8 +101,63 @@ public class coinBlockLoginActivity extends Activity
 		bPref.CommitWrite();
 		mPref.EndReady();
 		bPref.EndReady();
+		
+		
+	/*	//register Receiver
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+		filter.addAction(Intent.ACTION_HEADSET_PLUG);
+		registerReceiver(mBRdeviceEvents, filter);
+		*/
+		
 	} 
 
+	
+	//Brodcast Receiver
+	
+	
+	
+	BroadcastReceiver mBRdeviceEvents = new BroadcastReceiver() {
+		public void onReceive(Context context, Intent intent) {
+
+			String action = intent.getAction();
+			/*if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
+
+				int plugType = intent.getIntExtra("plugged", 0);
+				level = intent.getIntExtra("level", 0);
+				int scale = intent.getIntExtra("scale", 100);
+				int voltage = intent.getIntExtra("voltage", 0);
+				String temper = Integer.toString(intent.getIntExtra(
+						"temperature", 0));
+				String tech = intent.getStringExtra("technology");
+				int health = intent.getIntExtra("health",
+						BatteryManager.BATTERY_HEALTH_UNKNOWN);
+				String strPlug = null;
+
+				Toast.makeText(context, "plugType  " + plugType,
+						Toast.LENGTH_SHORT).show();
+
+			} else */if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
+				int id = CoinBlockView.mWidgetId;
+				Log.v("Service_BatteryGauge", "Entering headset");
+
+				if (intent.getIntExtra("state", -1) == 1) {
+					Toast.makeText(context, "Headset connected",
+							Toast.LENGTH_SHORT).show();
+					((CoinBlockWidgetApp) context.getApplicationContext())
+							.GetView(id).OnHeadsetConnected();
+				}
+
+				else {
+					Toast.makeText(context, "Headset disconnected",
+							Toast.LENGTH_SHORT).show();
+				}
+				
+			}}
+			
+		};
+	
+	
 	//Facebook Login
 
 	private void init() {
