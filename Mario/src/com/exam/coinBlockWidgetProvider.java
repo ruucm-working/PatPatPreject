@@ -15,9 +15,6 @@ import android.widget.Toast;
 
 import com.exam.helper.SnowWiFiMonitor;
 import com.exam.helper.TextPref;
-import com.exam.tab.IntentService_DeviceEvents;
-import com.exam.tab.Service_Notify;
-import com.exam.tab.Service_SnowWiFiMonitor;
 import com.exam.view.CoinBlockView;
 
 
@@ -84,9 +81,9 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				
 				if(oneServiceSwitch){
 				
-				Intent nintent = new Intent(context, Service_Notify.class);
+			/*	Intent nintent = new Intent(context, Service_Notify.class);
 				context.startService(nintent);
-				
+				*/
 				Intent intent = new Intent("com.exam.tab.IntentService_DeviceEvents");
 				context.startService(intent);
 				
@@ -96,7 +93,7 @@ public class coinBlockWidgetProvider extends AppWidgetProvider {
 				Intent intent2 = new Intent(context, Service_SnowWiFiMonitor.class);
 				context.startService(intent2);*/
 				 
-				Intent intent3 = new Intent("com.exam.tab.TaskTimer");
+				Intent intent3 = new Intent("com.exam.tab.IntentService_TaskTimer");
 				context.startService(intent3);
 				
 				

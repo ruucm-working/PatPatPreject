@@ -51,14 +51,14 @@ public class IntentService_TaskTimer extends IntentService {
 		sendBroadcast(resultBroadCastIntent);*/
 		
 		
-Log.d("Stop_Overlapping","Service_TaskTimer_onCreate");
+Log.d("IntentService_TaskTimer"," new TaskTimer");
 		
 		taskTimer2 = new TaskTimer();
 		
 		
-		Log.d("Stop_Overlapping","taskTimer2 :"+taskTimer2);
-		taskTimer2.execute();
-		Log.d("Stop_Overlapping","execute");
+		Log.d("IntentService_TaskTimer","taskTimer2 :"+taskTimer2);
+//		taskTimer2.execute();
+		Log.d("IntentService_TaskTimer","execute");
 		
 	}
 

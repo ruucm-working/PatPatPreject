@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="com.exam.tab.IntentService" key="selection"/>
+		<item value="OnClick" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="OnClick"/>
+			<item value="onclick"/>
+			<item value="Service_TaskTimer"/>
 			<item value="com.exam.tab.IntentService"/>
 			<item value="service"/>
 			<item value="const_builder"/>
 			<item value="mPref"/>
 			<item value="start"/>
-			<item value="mBRdeviceEvents"/>
-			<item value="AppWidgetManager"/>
-			<item value="startservice"/>
 		</list>
 		<list key="replacehistory">
+			<item value="IntentService_TaskTimer"/>
 			<item value="stop_unknownOverlapping"/>
 			<item value="overlapAnimSwitch"/>
 			<item value="switchA"/>
@@ -25,7 +26,6 @@
 			<item value="MediaAssets"/>
 			<item value=" "/>
 			<item value="add_button"/>
-			<item value="callender_arrow02"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

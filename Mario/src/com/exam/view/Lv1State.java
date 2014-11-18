@@ -10,10 +10,8 @@ import com.exam.MediaAssets;
 import com.exam.R;
 import com.exam.Sprite;
 import com.exam.SpriteHelper;
-import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.Service_TaskTimer;
 
 
 

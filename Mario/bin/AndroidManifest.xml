@@ -155,13 +155,13 @@
         
         
         
-        <service
+      <!--   <service
             android:name="com.exam.tab.Service_TaskTimer"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="com.exam.tab.TaskTimer" />
             </intent-filter>
-        </service>
+        </service> -->
         <service android:name=".UpdateService" >
             <intent-filter>
                 <action android:name="com.exam.updateservice" />

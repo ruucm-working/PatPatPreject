@@ -79,7 +79,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		
 		mPref.Ready();
 //		startTime = mPref.ReadLong("startTime", 0);	
-		Log.d("TaskTimer","startTime "+startTime);
+		Log.d("IntentService_TaskTimer","startTime "+startTime);
 		
 		//make new starttime while task timer is stopped
 		startTime += time*1000;			
@@ -187,7 +187,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 					time = (System.currentTimeMillis() - startTime) / 1000;
 
-					Log.d("prevent_Overlapping","time : "+time);
+					Log.d("IntentService_TaskTimer","time : "+time);
 					
 					
 					

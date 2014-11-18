@@ -16,8 +16,7 @@ import com.exam.SpriteHelper;
 import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.Service_TaskTimer;
-import com.exam.view.Lv1State.Lv1WaitState;
+import com.exam.tab.IntentService_TaskTimer;
 
 public class Lv0_1State implements ICoinBlockViewState {
 	
@@ -523,7 +522,7 @@ public class Lv0_1State implements ICoinBlockViewState {
 				animeSwitch = false;
 				//coinBlockView.setState(new Lv0_2State(coinBlockView));
 				coinBlockView.setState(new Lv0_2State(coinBlockView));
-				Service_TaskTimer.taskTimer2.isCanceled = true;
+				IntentService_TaskTimer.taskTimer2.isCanceled = true;
 				DeviceConditionPage.UpdateIntroView();
 				
 			

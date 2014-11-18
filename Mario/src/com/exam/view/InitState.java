@@ -18,8 +18,7 @@ import com.exam.coinBlockWidgetProvider;
 import com.exam.helper.TaskTimer;
 import com.exam.helper.TextPref;
 import com.exam.tab.DeviceConditionPage;
-import com.exam.tab.IntroActivity;
-import com.exam.tab.Service_TaskTimer;
+import com.exam.tab.IntentService_TaskTimer;
 
 public class InitState implements ICoinBlockViewState {
 	
@@ -41,10 +40,9 @@ public class InitState implements ICoinBlockViewState {
 	public InitState(CoinBlockView viewContext) {
 		mViewContext = viewContext;
 		
-		Service_TaskTimer.taskTimer2.isCanceled = true;
+		IntentService_TaskTimer.taskTimer2.isCanceled = true;
 		
-		Log.d("InitEvolve_in_new_timer","taskTimer2.isCanceled = true;");
-		
+		Log.d("IntentService_TaskTimer","public InitState");
 		
 		snd.seekTo(0);
 		snd.setOnSeekCompleteListener(new OnSeekCompleteListener() {
@@ -146,9 +144,11 @@ public class InitState implements ICoinBlockViewState {
 				init = mPref.ReadBoolean("initstate", false);	
 				lv0_1 = mPref.ReadBoolean("lv0_1state", false);
 				
+				Log.i("IntentService_TaskTimer","ReadBoolean");
 				second = mPref.ReadInt("time", 0);
+				Log.i("IntentService_TaskTimer","time : "+second);
 				
-				Log.i("InitState","second "+second);
+				Log.i("IntentService_TaskTimer","CliCountInit "+CliCountInit);
 				
 				if ( second == 0 && CliCountInit >=3 && init){
 					init = false;
@@ -202,20 +202,19 @@ public class InitState implements ICoinBlockViewState {
 			
 //			Service_TaskTimer.taskTimer2.setTextView1(R.id.time0);
 			
-			Log.d("InitState","setTextView1");
 			
 			//IntroActivity.taskTimer1.setTime(0);
 			
-			Service_TaskTimer.taskTimer2.isCanceled = false;
-			Log.d("InitEvolve_in_new_timer","taskTimer2.isCanceled = false");
+			IntentService_TaskTimer.taskTimer2.isCanceled = false;
+			Log.d("IntentService_TaskTimer","taskTimer2.isCanceled = false");
 			
 			
-			Service_TaskTimer.taskTimer2 = new TaskTimer();
+//			IntentService_TaskTimer.taskTimer2 = new TaskTimer();
 			
-			Service_TaskTimer.taskTimer2.onRestartset();
-			Service_TaskTimer.taskTimer2.execute();
+//			IntentService_TaskTimer.taskTimer2.onRestartset();
+			IntentService_TaskTimer.taskTimer2.execute();
 			
-			Log.d("InitEvolve_in_new_timer","taskTimer2.execute");
+			Log.d("IntentService_TaskTimer","taskTimer2.execute");
 			
 			
 			
