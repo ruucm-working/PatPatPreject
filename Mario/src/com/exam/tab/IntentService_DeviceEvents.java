@@ -1,5 +1,6 @@
 package com.exam.tab;
 
+import android.app.AlarmManager;
 import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -8,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
+import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -70,7 +72,10 @@ public class IntentService_DeviceEvents extends IntentService {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		unregisterReceiver(mBRdeviceEvents);
+		
+		Log.d("persist wake","onDestroy");
+		registerRestartAlarm();
+		
 	}
 
 	@Override
@@ -185,4 +190,23 @@ public class IntentService_DeviceEvents extends IntentService {
 		}
 	};
 
+	
+	
+	  void registerRestartAlarm() {
+		  Log.d("persist wake","registerRestartAlarm");
+		    Intent intent = new Intent( IntentService_DeviceEvents.this, IntentService_DeviceEvents.class );
+		    PendingIntent sender = PendingIntent.getService( IntentService_DeviceEvents.this, 0, intent, 0 );
+		    long firstTime = SystemClock.elapsedRealtime();
+		    firstTime += 10*1000; // 10초 후에 알람이벤트 발생
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, 10*1000, sender);
+		  }
+
+		  void unregisterRestartAlarm() {
+		    Intent intent = new Intent(IntentService_DeviceEvents.this, IntentService_DeviceEvents.class);
+		    PendingIntent sender = PendingIntent.getService( IntentService_DeviceEvents.this, 0, intent, 0 );
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.cancel(sender);
+		  }
+	
 }

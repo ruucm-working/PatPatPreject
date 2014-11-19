@@ -5,7 +5,75 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-17T10:27:00Z</updated>
+  <updated>2014-11-18T18:27:47Z</updated>
+  <entry>
+    <title>This Week in Spring - November 18th, 2014</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/18/this-week-in-spring-november-18th-2014" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2014-11-18:1846</id>
+    <updated>2014-11-18T18:27:47Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm in sunny Sofia, Bulgaria for the &lt;a href="http://2014.java2days.com/"&gt;Java2Days software conference&lt;/a&gt;. As usual, this show is &lt;em&gt;way&lt;/em&gt; too much fun and the crowd's bigger and better than ever!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/12/spring-boot-1-2-0-rc1-available-now"&gt;Spring Boot 1.2.0 RC1 is now available&lt;/a&gt;! This release moves embedded &lt;code&gt;Servlet&lt;/code&gt; containers to Tomcat 8 or Jetty 9, adds a new &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation, adds &lt;code&gt;JavaMail&lt;/code&gt; support, and registers additional Spring Boot actuator support&lt;/li&gt;
+&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/18/spring-session-1-0-0-rc1-released"&gt;Spring Session 1.0.0.RC1 is here&lt;/a&gt; with &lt;em&gt;loads&lt;/em&gt; of features!&lt;/li&gt;
+&lt;li&gt; Our pal Simon Maple over at ZeroTurnaround just published a nice post, &lt;a href="http://zeroturnaround.com/rebellabs/what-you-can-build-for-free-in-2-hours-with-spring-boot-twitter-and-facebook/"&gt;&lt;em&gt;What You Can Build for Free in 2 Hours with Spring Boot, Twitter, and Facebook&lt;/em&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt; Simon &lt;em&gt;also&lt;/em&gt; did a nice post that has him basically following the &lt;a href="http://zeroturnaround.com/blog/no-time-to-sit-back-and-rest-develop-your-restful-web-services-with-spring-boot-and-jrebel/"&gt;Spring IO guide on building REST services&lt;/a&gt;&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt; Speaking of using Spring with ZeroTurnaround, join ZeroTurnaround's Adam Koblentz and I as we look &lt;a href="Adam%20Koblentz"&gt;at using JRebel and Spring Boot to deliver a one-two developer productivity punch without equal&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt; You listen to the SE Radio podcast, I trust? You should. It's legit. &lt;a href="http://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/"&gt;Check out this nice interview with James Lewis, microservice luminary, on what a microservice is&lt;/a&gt;. I think it's a pretty darned interesting discussion.&lt;/li&gt;
+&lt;li&gt; Looking for a more non-trivial Spring and WebSocket sample backed by ActiveMQ? &lt;a href="https://github.com/BijanVan/Spring-Boot-Websocket-Sample"&gt;Check out this example&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt; Check out the replay of our pal Venkat's talk from SpringOne2GX 2014, &lt;a href="http://spring.io/blog/2014/11/17/springone2gx-2014-replay-java-8-language-capabilities-what-s-in-it-for-you?utm_content=buffer73c9e&amp;amp;utm_medium=social&amp;amp;utm_source=twitter.com&amp;amp;utm_campaign=buffer"&gt;&lt;em&gt;Java 8 Language Capabilities, What's in it for you&lt;/em&gt;&lt;/a&gt;?&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt; Another great SpringOne2GX 2014 replay is up: Spring Data ninjas Thomas Darimont, Oliver Gierke, and Christoph Strobl's talk &lt;a href="http://bit.ly/1u28Vw9"&gt;&lt;em&gt;What's new in Spring Data&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Also up from SpringOne2Gx 2014: &lt;a href="http://j.mp/1tEvyd6"&gt;&lt;em&gt;Becoming a Dat-Driven Organization with Machne Learning&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="http://bit.ly/1BplAD9"&gt;Spring for Apache #Hadoop 2.1.0M2&lt;/a&gt; is now available!&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Spring Data ninja Thomas Risberg has just announced that Spring IO Platform 1.0.3&lt;/a&gt; is now available&lt;/li&gt;
+&lt;li&gt;Splunk's Damien Dallimore SpringOne2GX 2014 talk, &lt;a href="http://spring.io/blog/2014/11/10/springone2gx-2014-replay-gaining-application-lifecycle-intelligence"&gt;&lt;em&gt;Gaining Application Lifecycle Intelligence&lt;/em&gt;&lt;/a&gt;, is now available online!&lt;/li&gt;
+&lt;li&gt;I've been loving &lt;a href="https://www.youtube.com/watch?v=GqrYNdwlA8s"&gt;the &lt;em&gt;Cloud Foundry After Dark&lt;/em&gt; recorded Google Hangout sessions&lt;/a&gt;. If you're not following them, this is definitely fun.&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;I do a techtip for our e-mail newsletter, and we're going to start publishing those techtips on the blog. First up: &lt;a href="http://spring.io/blog/2014/11/15/building-a-spring-integration-4-1-websocket-endpoint"&gt;building a Spring Integration 4.1 websocket integration&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring IO platform lead &lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Andy Wilkinson has just announced Spring IO platform 1.0.3&lt;/a&gt; which revs numerous versions across the Spring technologies.&lt;/li&gt;
+&lt;li&gt;Want to learn more about the Reactor project? Check out &lt;a href="http://spring.io/blog/2014/11/13/webinar-using-reactor-for-asych-non-blocking-microservices"&gt;the upcoming Reactor webinar&lt;/a&gt;!&lt;/li&gt;
+&lt;/ol&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session 1.0.0.RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/18/spring-session-1-0-0-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2014-11-18:1845</id>
+    <updated>2014-11-18T14:35:00Z</updated>
+    <content type="html">&lt;p&gt;I'm pleased to announce the release of &lt;a href="https://github.com/spring-projects/spring-session/"&gt;Spring Session&lt;/a&gt; 1.0.0.RC1.&lt;/p&gt;
+
+&lt;p&gt;For full details on the changes made in the release, please refer to the &lt;a href="https://github.com/spring-projects/spring-session/issues?q=milestone%3A%221.0.0+RC1%22+is%3Aclosed"&gt;changelog&lt;/a&gt;. The highlights of this release include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WebSocket support. See the &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/websocket"&gt;websocket sample&lt;/a&gt; for details.&lt;/li&gt;
+&lt;li&gt;Support for multiple simultaneous sessions in a single browser. Refer to the &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/users"&gt;users sample&lt;/a&gt; for an example.&lt;/li&gt;
+&lt;li&gt;Simplified configuration with &lt;a href="https://github.com/spring-projects/spring-session/blob/1.0.0.RC1/samples/web/src/main/java/sample/Config.java#L29"&gt;@EnableRedisHttpSession&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-session/blob/1.0.0.RC1/samples/web/src/main/java/sample/Initializer.java#L24"&gt;AbstractHttpSessionApplicationInitializer&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Support for background task to cleanup expired Redis sessions. See &lt;a href="https://github.com/spring-projects/spring-session/issues/59"&gt;spring-session/gh-59&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Added spring-session-data-redis pom to make declaring dependencies more concise.&lt;/li&gt;
+&lt;li&gt; &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/hazelcast"&gt;Hazelcast Sample&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please try out the updates and provide feedback. Our current plan is to go GA in early December.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>SpringOne2GX 2014 Replay:  Developer Tooling - What¡¯s New and What¡¯s Next</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/17/springone2gx-2014-replay-developer-tooling-what-s-new-and-what-s-next" />
@@ -76,7 +144,7 @@
 
 &lt;p&gt;&lt;a href="https://spring.io/blog/2014/11/11/spring-integration-and-amqp-releases-available"&gt;Spring Integration 4.1&lt;/a&gt; was just released and it includes a &lt;strong&gt;lot&lt;/strong&gt; of great new features! One of my favorites? Smart integration with the Spring 4 WebSocket support. Now you can compose a integration flow whose final destination is a WebSocket client. There is also support for acting as the client to a WebSocket service.&lt;/p&gt;
 
-&lt;p&gt;In order to compile it, you will need Java 8 (we make heavy use of lambas here) and the following Maven dependencies:&lt;/p&gt;
+&lt;p&gt;In order to compile it, you will need Java 8 (we make heavy use of lambdas here) and the following Maven dependencies:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -91,73 +159,73 @@
 
 &lt;p&gt;All clients listening on &lt;code&gt;/names&lt;/code&gt; will receive whatever message is sent into the &lt;code&gt;requestChannel&lt;/code&gt; channel. A Spring 4 &lt;code&gt;MessageChannel&lt;/code&gt; is a named conduit - more or less analogous to a &lt;code&gt;java.util.Queue&amp;lt;T&amp;gt;&lt;/code&gt;. This example uses &lt;a href="https://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released"&gt;the Spring Integration Java configuration DSL&lt;/a&gt; on top of the new  &lt;a href="https://spring.io/blog/2014/11/11/spring-integration-and-amqp-releases-available"&gt;Spring Integration 4.1 web socket support&lt;/a&gt;. Here¡¯s the example:&lt;/p&gt;
 
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;package&lt;/span&gt; &lt;span class="pl-s"&gt;demo&lt;/span&gt; ;
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;package&lt;/span&gt; &lt;span class="pl-smp"&gt;demo&lt;/span&gt; ;
 
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.boot.SpringApplication&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.boot.autoconfigure.EnableAutoConfiguration&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.context.annotation.*&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.integration.channel.DirectChannel&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.integration.dsl.IntegrationFlow&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.integration.dsl.support.Function&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.integration.websocket.ServerWebSocketContainer&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.integration.websocket.outbound.WebSocketOutboundMessageHandler&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.messaging.*&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.messaging.simp.SimpMessageHeaderAccessor&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.messaging.support.MessageBuilder&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;org.springframework.web.bind.annotation.*&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.boot.SpringApplication&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.boot.autoconfigure.EnableAutoConfiguration&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.context.annotation.*&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.channel.DirectChannel&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.dsl.IntegrationFlow&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.dsl.support.Function&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.websocket.ServerWebSocketContainer&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.websocket.outbound.WebSocketOutboundMessageHandler&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.*&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.simp.SimpMessageHeaderAccessor&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.support.MessageBuilder&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.web.bind.annotation.*&lt;/span&gt;;
 
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;java.util.concurrent.Executors&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-s"&gt;java.util.stream.Collectors&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;java.util.concurrent.Executors&lt;/span&gt;;
+&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;java.util.stream.Collectors&lt;/span&gt;;
 
-&lt;span class="pl-c"&gt;&lt;span class="pl-pdc"&gt;/**&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-c"&gt;/**&lt;/span&gt;
 &lt;span class="pl-c"&gt; * &lt;span class="pl-k"&gt;@author&lt;/span&gt; Artem Bilan&lt;/span&gt;
 &lt;span class="pl-c"&gt; * &lt;span class="pl-k"&gt;@author&lt;/span&gt; Josh Long&lt;/span&gt;
-&lt;span class="pl-c"&gt; &lt;span class="pl-pdc"&gt;*/&lt;/span&gt;&lt;/span&gt;
-@&lt;span class="pl-s"&gt;Configuration&lt;/span&gt;
-@&lt;span class="pl-s"&gt;ComponentScan&lt;/span&gt;
-@&lt;span class="pl-s"&gt;EnableAutoConfiguration&lt;/span&gt;
-@&lt;span class="pl-s"&gt;RestController&lt;/span&gt;
-&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-entc"&gt;Application&lt;/span&gt; {
+&lt;span class="pl-c"&gt; */&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;Configuration&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;ComponentScan&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;EnableAutoConfiguration&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;RestController&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;Application&lt;/span&gt; {
 
-    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-s"&gt;void&lt;/span&gt; &lt;span class="pl-enf"&gt;main&lt;/span&gt;(&lt;span class="pl-s"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;args&lt;/span&gt;[]) &lt;span class="pl-s"&gt;throws&lt;/span&gt; &lt;span class="pl-s"&gt;Throwable&lt;/span&gt; {
-        &lt;span class="pl-s"&gt;SpringApplication&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;run(&lt;span class="pl-s"&gt;Application&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;class, args);
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;main&lt;/span&gt;(&lt;span class="pl-stj"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;args&lt;/span&gt;[]) &lt;span class="pl-s"&gt;throws&lt;/span&gt; &lt;span class="pl-stj"&gt;Throwable&lt;/span&gt; {
+        &lt;span class="pl-stj"&gt;SpringApplication&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;run(&lt;span class="pl-stj"&gt;Application&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, args);
     }
 
-    &lt;span class="pl-s"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-s"&gt;ServerWebSocketContainer&lt;/span&gt; &lt;span class="pl-enf"&gt;serverWebSocketContainer&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-s"&gt;ServerWebSocketContainer&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/names&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;span class="pl-ko"&gt;.&lt;/span&gt;withSockJs();
+    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+    &lt;span class="pl-stj"&gt;ServerWebSocketContainer&lt;/span&gt; &lt;span class="pl-en"&gt;serverWebSocketContainer&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;ServerWebSocketContainer&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/names&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;withSockJs();
     }
 
-    &lt;span class="pl-s"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-s"&gt;MessageHandler&lt;/span&gt; &lt;span class="pl-enf"&gt;webSocketOutboundAdapter&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-s"&gt;WebSocketOutboundMessageHandler&lt;/span&gt;(serverWebSocketContainer());
+    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+    &lt;span class="pl-stj"&gt;MessageHandler&lt;/span&gt; &lt;span class="pl-en"&gt;webSocketOutboundAdapter&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;WebSocketOutboundMessageHandler&lt;/span&gt;(serverWebSocketContainer());
     }
 
-    &lt;span class="pl-s"&gt;@Bean&lt;/span&gt;(&lt;span class="pl-c1"&gt;name&lt;/span&gt; &lt;span class="pl-ko"&gt;=&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;webSocketFlow.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
-    &lt;span class="pl-s"&gt;MessageChannel&lt;/span&gt; &lt;span class="pl-enf"&gt;requestChannel&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-s"&gt;DirectChannel&lt;/span&gt;();
+    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;(&lt;span class="pl-c1"&gt;name&lt;/span&gt; &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;webSocketFlow.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    &lt;span class="pl-stj"&gt;MessageChannel&lt;/span&gt; &lt;span class="pl-en"&gt;requestChannel&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;DirectChannel&lt;/span&gt;();
     }
 
-    &lt;span class="pl-s"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-s"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-enf"&gt;webSocketFlow&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; f &lt;span class="pl-ko"&gt;-&lt;/span&gt;&lt;span class="pl-ko"&gt;&amp;gt;&lt;/span&gt; {
-            &lt;span class="pl-s"&gt;Function&amp;lt;&lt;span class="pl-s"&gt;Message&lt;/span&gt; , &lt;span class="pl-s"&gt;Object&lt;/span&gt;&amp;gt;&lt;/span&gt; splitter &lt;span class="pl-ko"&gt;=&lt;/span&gt; m &lt;span class="pl-ko"&gt;-&lt;/span&gt;&lt;span class="pl-ko"&gt;&amp;gt;&lt;/span&gt; serverWebSocketContainer()
+    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+    &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;webSocketFlow&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; f &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; {
+            &lt;span class="pl-st"&gt;Function&amp;lt;&lt;span class="pl-stj"&gt;Message&lt;/span&gt; , &lt;span class="pl-stj"&gt;Object&lt;/span&gt;&amp;gt;&lt;/span&gt; splitter &lt;span class="pl-k"&gt;=&lt;/span&gt; m &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; serverWebSocketContainer()
                     .getSessions()
                     .keySet()
                     .stream()
-                    .map(s &lt;span class="pl-ko"&gt;-&lt;/span&gt;&lt;span class="pl-ko"&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-s"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;fromMessage(m)
-                            .setHeader(&lt;span class="pl-s"&gt;SimpMessageHeaderAccessor&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;SESSION_ID_HEADER&lt;/span&gt;, s)
+                    .map(s &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-stj"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;fromMessage(m)
+                            .setHeader(&lt;span class="pl-stj"&gt;SimpMessageHeaderAccessor&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SESSION_ID_HEADER&lt;/span&gt;, s)
                             .build())
-                    .collect(&lt;span class="pl-s"&gt;Collectors&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;toList());
-            f&lt;span class="pl-ko"&gt;.&lt;/span&gt;split( &lt;span class="pl-s"&gt;Message&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;class, splitter)
-                    .channel(c &lt;span class="pl-ko"&gt;-&lt;/span&gt;&lt;span class="pl-ko"&gt;&amp;gt;&lt;/span&gt; c&lt;span class="pl-ko"&gt;.&lt;/span&gt;executor(&lt;span class="pl-s"&gt;Executors&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;newCachedThreadPool()))
+                    .collect(&lt;span class="pl-stj"&gt;Collectors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;toList());
+            f&lt;span class="pl-k"&gt;.&lt;/span&gt;split( &lt;span class="pl-stj"&gt;Message&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, splitter)
+                    .channel(c &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; c&lt;span class="pl-k"&gt;.&lt;/span&gt;executor(&lt;span class="pl-stj"&gt;Executors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;newCachedThreadPool()))
                     .handle(webSocketOutboundAdapter());
         };
     }
 
-    &lt;span class="pl-s"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/hi/{name}&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
-    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;void&lt;/span&gt; &lt;span class="pl-enf"&gt;send&lt;/span&gt;(&lt;span class="pl-s"&gt;@PathVariable&lt;/span&gt; &lt;span class="pl-s"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;name&lt;/span&gt;) {
-        requestChannel()&lt;span class="pl-ko"&gt;.&lt;/span&gt;send(&lt;span class="pl-s"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-ko"&gt;.&lt;/span&gt;withPayload(name)&lt;span class="pl-ko"&gt;.&lt;/span&gt;build());
+    &lt;span class="pl-st"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/hi/{name}&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;send&lt;/span&gt;(&lt;span class="pl-st"&gt;@PathVariable&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;name&lt;/span&gt;) {
+        requestChannel()&lt;span class="pl-k"&gt;.&lt;/span&gt;send(&lt;span class="pl-stj"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;withPayload(name)&lt;span class="pl-k"&gt;.&lt;/span&gt;build());
     }
 }&lt;/pre&gt;&lt;/div&gt;
 
@@ -533,48 +601,6 @@ setter).&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Link to Slides:
 &lt;a href="http://www.slideshare.net/SpringCentral/bytecode-spring2gx2014"&gt;http://www.slideshare.net/SpringCentral/bytecode-spring2gx2014&lt;/a&gt;
 &lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/39kdr1mNZ_s" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay:  Tuning Large Scale Java Platforms</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/09/springone2gx-2014-replay-tuning-large-scale-java-platforms" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-13:1824</id>
-    <updated>2014-11-09T23:26:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speakers: Emad Benjamin, Jamie O'Meara &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/tuning-large-scale-java-platforms"&gt;http://www.slideshare.net/SpringCentral/tuning-large-scale-java-platforms&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;The session will cover various GC tuning techniques, in particular focus on tuning large scale JVM deployments. Come to this session to learn about GC tuning recipe that can give you the best configuration for latency sensitive applications. While predominantly most enterprise class Java workloads can fit into a scaled-out set of JVM instances of less than 4GB JVM heap, there are workloads in the in memory database space that require fairly large JVMs. In this session we take a deep dive into the issues and the optimal tuning configurations for tuning large JVMs in the range of 4GB to 128GB. In this session the GC tuning recipe shared is a refinement from 15 years of GC engagements and an adaptation in recent years for tuning some of the largest JVMs in the industry using plain HotSpot and CMS GC policy. You should be able to walk away with the ability to commence a decent GC tuning exercise on your own. The session does summarize the techniques and the necessary JVM options needed to accomplish this task. Naturally when tuning large scale JVM platforms, the underlying hardware tuning cannot be ignored, hence the session will take detour from the traditional GC tuning talks out there and dive into how you optimally size a platform for enhanced memory consumption. Lastly, the session will also cover Pivotal Application Fabric reference architecture where a comprehensive performance study was done.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CJujGwjUQDo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Webinar Replay: Security for Microservices with Spring and OAuth2</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/07/webinar-replay-security-for-microservices-with-spring-and-oauth2" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-07:1812</id>
-    <updated>2014-11-07T09:55:00Z</updated>
-    <content type="html">&lt;p&gt; Speaker: Dave Syer &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/syer-microservicesecurity"&gt;http://www.slideshare.net/SpringCentral/syer-microservicesecurity&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;OAuth2 is a lightweight security protocol that is well-suited for use with HTTP, the protocol at the heart of many modern architectures. Spring Security OAuth2 has a load of new features, not the least of which being the `@Configuration` support in version 2.0. Combine these with Spring Boot and you have a platform which can get you a secure HTTP service application in about 20 lines of code. This presentation shows how the combination of rapid development and production-ready features in the modern Spring stack are a perfect mixture for developing secure components in a system composed of microservices. We explore the new features in Spring OAuth2, guide you through the choice of which to use and when, and show how easy they are to enable quickly.&lt;/p&gt;
-
-&lt;p&gt; Learn more about Spring Security OAUTH: &lt;a href="http://projects.spring.io/spring-security-oauth"&gt;http://projects.spring.io/spring-security-oauth&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; Learn more about Spring Cloud: &lt;a href="http://projects.spring.io/spring-cloud"&gt;http://projects.spring.io/spring-cloud&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="420" height="315" src="//www.youtube.com/embed/yePeJ6NDZQk" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 

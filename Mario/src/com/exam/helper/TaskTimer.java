@@ -30,7 +30,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	private static long startTime = 0;
 
 	public TextView timer = null;
-	private static long time = 0;
+	public static long time = 0;
 	
 	
 	boolean init = false;
@@ -187,7 +187,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 					time = (System.currentTimeMillis() - startTime) / 1000;
 
-					Log.d("IntentService_TaskTimer","time : "+time);
+					Log.d("persist wake","time : "+time);
 					
 					
 					

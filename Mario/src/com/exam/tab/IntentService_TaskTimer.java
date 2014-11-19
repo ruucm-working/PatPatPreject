@@ -2,7 +2,9 @@ package com.exam.tab;
 
 import com.exam.helper.TaskTimer;
 
+import android.app.AlarmManager;
 import android.app.IntentService;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.text.format.DateFormat;
@@ -22,6 +24,51 @@ public class IntentService_TaskTimer extends IntentService {
 	public IntentService_TaskTimer() {
 		super(IntentService_TaskTimer.class.getSimpleName());
 	}
+	
+	
+	
+	/* (non-Javadoc)
+	 * @see android.app.IntentService#onCreate()
+	 */
+	@Override
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		super.onCreate();
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see android.app.IntentService#onStartCommand(android.content.Intent, int, int)
+	 */
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		// TODO Auto-generated method stub
+		
+		taskTimer2 = new TaskTimer();
+		
+		
+		Log.d("IntentService_TaskTimer","taskTimer2 :"+taskTimer2);
+//		taskTimer2.execute();
+		Log.d("IntentService_TaskTimer","execute");
+		
+		return START_STICKY;
+	}
+
+
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		
+		Log.d("persist wake","IntentService_TaskTimer _ onDestroy");
+		
+		
+		Log.d("persist wake","onDestroy _ taskTimer2.time : "+taskTimer2.time);
+		registerRestartAlarm();
+		
+	}
+	
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
@@ -53,13 +100,27 @@ public class IntentService_TaskTimer extends IntentService {
 		
 Log.d("IntentService_TaskTimer"," new TaskTimer");
 		
-		taskTimer2 = new TaskTimer();
 		
-		
-		Log.d("IntentService_TaskTimer","taskTimer2 :"+taskTimer2);
-//		taskTimer2.execute();
-		Log.d("IntentService_TaskTimer","execute");
 		
 	}
+	
+	 void registerRestartAlarm() {
+		  Log.d("persist wake","IntentService_TaskTimer _ registerRestartAlarm");
+		    Intent intent = new Intent( IntentService_TaskTimer.this, IntentService_TaskTimer.class );
+		    PendingIntent sender = PendingIntent.getService( IntentService_TaskTimer.this, 0, intent, 0 );
+		    long firstTime = SystemClock.elapsedRealtime();
+		    firstTime += 10*1000; // 10초 후에 알람이벤트 발생
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, 10*1000, sender);
+		    
+		    
+		  }
+
+		  void unregisterRestartAlarm() {
+		    Intent intent = new Intent(IntentService_TaskTimer.this, IntentService_TaskTimer.class);
+		    PendingIntent sender = PendingIntent.getService( IntentService_TaskTimer.this, 0, intent, 0 );
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.cancel(sender);
+		  }
 
 }
