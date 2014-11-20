@@ -1566,7 +1566,7 @@ containing a value of this type.
         public static final int com_facebook_list_section_header_background=0x7f020090;
         public static final int com_facebook_loginbutton_silver=0x7f020091;
         public static final int com_facebook_logo=0x7f020092;
-        public static final int com_facebook_picker_default_separator_color=0x7f02011c;
+        public static final int com_facebook_picker_default_separator_color=0x7f02011e;
         public static final int com_facebook_picker_item_background=0x7f020093;
         public static final int com_facebook_picker_list_focused=0x7f020094;
         public static final int com_facebook_picker_list_longpressed=0x7f020095;
@@ -1697,13 +1697,15 @@ containing a value of this type.
         public static final int test6=0x7f020112;
         public static final int test7=0x7f020113;
         public static final int test8=0x7f020114;
-        public static final int vpi__tab_indicator=0x7f020115;
-        public static final int vpi__tab_selected_focused_holo=0x7f020116;
-        public static final int vpi__tab_selected_holo=0x7f020117;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020118;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020119;
-        public static final int vpi__tab_unselected_holo=0x7f02011a;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f02011b;
+        public static final int test_sprite32=0x7f020115;
+        public static final int test_sprite4=0x7f020116;
+        public static final int vpi__tab_indicator=0x7f020117;
+        public static final int vpi__tab_selected_focused_holo=0x7f020118;
+        public static final int vpi__tab_selected_holo=0x7f020119;
+        public static final int vpi__tab_selected_pressed_holo=0x7f02011a;
+        public static final int vpi__tab_unselected_focused_holo=0x7f02011b;
+        public static final int vpi__tab_unselected_holo=0x7f02011c;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f02011d;
     }
     public static final class id {
         public static final int RelativeLayout01=0x7f080072;

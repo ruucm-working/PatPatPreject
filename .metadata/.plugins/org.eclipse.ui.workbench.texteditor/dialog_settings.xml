@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="IntentService_TaskTimer" key="selection"/>
+		<item value="time" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="time"/>
+			<item value="IntentService_DeviceEvents"/>
+			<item value="PersistentService"/>
 			<item value="IntentService_TaskTimer"/>
 			<item value="second"/>
 			<item value="OnClick"/>
 			<item value="onclick"/>
 			<item value="Service_TaskTimer"/>
-			<item value="com.exam.tab.IntentService"/>
-			<item value="service"/>
-			<item value="const_builder"/>
 		</list>
 		<list key="replacehistory">
 			<item value="IntentService_TaskTimer"/>
+			<item value="IntentService_DeviceEvents"/>
 			<item value="stop_unknownOverlapping"/>
 			<item value="overlapAnimSwitch"/>
 			<item value="switchA"/>
 			<item value="Lv3ClickAnim"/>
 			<item value="MediaAssets"/>
 			<item value=" "/>
-			<item value="add_button"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

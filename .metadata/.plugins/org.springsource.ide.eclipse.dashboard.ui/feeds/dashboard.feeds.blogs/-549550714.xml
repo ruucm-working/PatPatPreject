@@ -5,7 +5,68 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-18T18:27:47Z</updated>
+  <updated>2014-11-19T18:05:29Z</updated>
+  <entry>
+    <title>Spring XD 1.1 M1 and 1.0.2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/19/spring-xd-1-1-m1-and-1-0-2-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2014-11-19:1847</id>
+    <updated>2014-11-19T18:05:29Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring XD team, I am very pleased to announce the first milestone release of Spring XD 1.1 and the 1.0.2 maintenance release.&lt;/p&gt;
+
+&lt;p&gt;Download Links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt; 1.0.2.RELEASE: &lt;a href="http://repo.spring.io/release/org/springframework/xd/spring-xd/1.0.2.RELEASE/spring-xd-1.0.2.RELEASE-dist.zip"&gt;zip&lt;/a&gt;, 1.1.0.M1 RELEASE:  &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/xd/spring-xd/1.1.0.M1/spring-xd-1.1.0.M1-dist.zip"&gt;zip&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=11401&amp;amp;version=14808"&gt;bug fixes&lt;/a&gt;, Spring XD 1.0.2 now supports Apache Hadoop 2.5.1. Pivotal PHD 2.1 and Cloudera CDH 5.1.3.  &lt;/p&gt;
+
+&lt;p&gt;The 1.1 M1 release includes &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=11401&amp;amp;version=14644"&gt;bug fixes and enhancements&lt;/a&gt; as well as several new features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Batch-Jobs#running-spark-application-as-a-batch-job"&gt;Run a Spark Application as a batch job&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Creating-a-Python-Module"&gt;Python based processors and sinks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sources#kafka"&gt;Kafka source&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sinks#kafka-sink"&gt;sink&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;HDFS sink supports &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Hadoop-Kerberos"&gt;writing to a Kerberized Hadoop Cluster&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Application-Configuration#ldap-authentication"&gt;LDAP Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Creating-a-Processor-Module#create-the-module-application-context-file"&gt;Modules can be created using Java @Configuration classes&lt;/a&gt; as an alternative to XML&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sinks#redis"&gt;Redis sink&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sources#jdbc-source"&gt;JDBC Source&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Running-Distributed-Mode#using-hadoop"&gt;Hadoop distribution updates.&lt;/a&gt; Support for Apache Hadoop 2,4.1/2.5.1 (default), Pivotal PHD 2.0/2.1, Cloudera CDH 5.2, and Hortonworks HDP 2.1. Apache Hadoop 2.2  support was removed&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Running-Distributed-Mode#setting-up-zookeeper"&gt;Configurable location of Spring XD¡¯s top level node in Zookeeper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Of note for the next release of Spring XD 1.1 RC1 we will be including support for&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Kafka based message bus in addition to revamped Kafka support based on the low level consumer API&lt;/li&gt;
+&lt;li&gt;Modules that use &lt;a href="https://reactor.github.io/docs/api/2.0.0.M1/reactor/rx/Stream.html"&gt;Reactor¡¯s Stream API&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Processor and Sink modules that use Spark Streaming&lt;/li&gt;
+&lt;li&gt;Simplified module contribution based on Spring Boot&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Feedback is very important, so please get in touch with questions and comments via&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="http://stackoverflow.com/questions/tagged/spring-xd"&gt;StackOverflow&lt;/a&gt; &lt;code&gt;spring-xd&lt;/code&gt; tag&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://jira.spring.io/browse/XD/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel"&gt;Spring JIRA&lt;/a&gt; or &lt;a href="https://github.com/spring-projects/spring-xd/issues"&gt;GitHub Issues&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - November 18th, 2014</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/18/this-week-in-spring-november-18th-2014" />
@@ -14,37 +75,34 @@
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2014-11-18:1846</id>
-    <updated>2014-11-18T18:27:47Z</updated>
+    <updated>2014-11-18T18:27:00Z</updated>
     <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm in sunny Sofia, Bulgaria for the &lt;a href="http://2014.java2days.com/"&gt;Java2Days software conference&lt;/a&gt;. As usual, this show is &lt;em&gt;way&lt;/em&gt; too much fun and the crowd's bigger and better than ever!&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/12/spring-boot-1-2-0-rc1-available-now"&gt;Spring Boot 1.2.0 RC1 is now available&lt;/a&gt;! This release moves embedded &lt;code&gt;Servlet&lt;/code&gt; containers to Tomcat 8 or Jetty 9, adds a new &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation, adds &lt;code&gt;JavaMail&lt;/code&gt; support, and registers additional Spring Boot actuator support&lt;/li&gt;
 &lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/18/spring-session-1-0-0-rc1-released"&gt;Spring Session 1.0.0.RC1 is here&lt;/a&gt; with &lt;em&gt;loads&lt;/em&gt; of features!&lt;/li&gt;
-&lt;li&gt; Our pal Simon Maple over at ZeroTurnaround just published a nice post, &lt;a href="http://zeroturnaround.com/rebellabs/what-you-can-build-for-free-in-2-hours-with-spring-boot-twitter-and-facebook/"&gt;&lt;em&gt;What You Can Build for Free in 2 Hours with Spring Boot, Twitter, and Facebook&lt;/em&gt;&lt;/a&gt;
+&lt;li&gt; Speaking of using Spring with ZeroTurnaround, join ZeroTurnaround's Adam Koblentz and I on Nov 20th as we look &lt;a href="http://spring.io/blog/2014/10/28/webinar-spring-boot-and-jrebel-6-0"&gt;at using JRebel and Spring Boot to deliver a one-two developer productivity punch without equal&lt;/a&gt;
 &lt;/li&gt;
-&lt;li&gt; Simon &lt;em&gt;also&lt;/em&gt; did a nice post that has him basically following the &lt;a href="http://zeroturnaround.com/blog/no-time-to-sit-back-and-rest-develop-your-restful-web-services-with-spring-boot-and-jrebel/"&gt;Spring IO guide on building REST services&lt;/a&gt;&lt;br&gt;
+&lt;li&gt; Want to learn more about the Reactor project and the role of asych I/O in microservices? Check out &lt;a href="http://spring.io/blog/2014/11/13/webinar-using-reactor-for-asych-non-blocking-microservices"&gt;the upcoming Reactor webinar&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt; &lt;a href="http://bit.ly/1BplAD9"&gt;Spring for Apache #Hadoop 2.1.0M2&lt;/a&gt; is now available!&lt;br&gt;
 &lt;/li&gt;
-&lt;li&gt; Speaking of using Spring with ZeroTurnaround, join ZeroTurnaround's Adam Koblentz and I as we look &lt;a href="Adam%20Koblentz"&gt;at using JRebel and Spring Boot to deliver a one-two developer productivity punch without equal&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt; You listen to the SE Radio podcast, I trust? You should. It's legit. &lt;a href="http://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/"&gt;Check out this nice interview with James Lewis, microservice luminary, on what a microservice is&lt;/a&gt;. I think it's a pretty darned interesting discussion.&lt;/li&gt;
-&lt;li&gt; Looking for a more non-trivial Spring and WebSocket sample backed by ActiveMQ? &lt;a href="https://github.com/BijanVan/Spring-Boot-Websocket-Sample"&gt;Check out this example&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt; Check out the replay of our pal Venkat's talk from SpringOne2GX 2014, &lt;a href="http://spring.io/blog/2014/11/17/springone2gx-2014-replay-java-8-language-capabilities-what-s-in-it-for-you?utm_content=buffer73c9e&amp;amp;utm_medium=social&amp;amp;utm_source=twitter.com&amp;amp;utm_campaign=buffer"&gt;&lt;em&gt;Java 8 Language Capabilities, What's in it for you&lt;/em&gt;&lt;/a&gt;?&lt;br&gt;
-&lt;/li&gt;
+&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Andy Wilskinson has just announced that Spring IO Platform 1.0.3&lt;/a&gt; is now available&lt;/li&gt;
 &lt;li&gt; Another great SpringOne2GX 2014 replay is up: Spring Data ninjas Thomas Darimont, Oliver Gierke, and Christoph Strobl's talk &lt;a href="http://bit.ly/1u28Vw9"&gt;&lt;em&gt;What's new in Spring Data&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Also up from SpringOne2Gx 2014: &lt;a href="http://j.mp/1tEvyd6"&gt;&lt;em&gt;Becoming a Dat-Driven Organization with Machne Learning&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="http://bit.ly/1BplAD9"&gt;Spring for Apache #Hadoop 2.1.0M2&lt;/a&gt; is now available!&lt;br&gt;
+&lt;li&gt; Check out the replay of our pal Venkat's talk from SpringOne2GX 2014, &lt;a href="http://spring.io/blog/2014/11/17/springone2gx-2014-replay-java-8-language-capabilities-what-s-in-it-for-you"&gt;&lt;em&gt;Java 8 Language Capabilities, What's in it for you&lt;/em&gt;&lt;/a&gt;?&lt;br&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Spring Data ninja Thomas Risberg has just announced that Spring IO Platform 1.0.3&lt;/a&gt; is now available&lt;/li&gt;
-&lt;li&gt;Splunk's Damien Dallimore SpringOne2GX 2014 talk, &lt;a href="http://spring.io/blog/2014/11/10/springone2gx-2014-replay-gaining-application-lifecycle-intelligence"&gt;&lt;em&gt;Gaining Application Lifecycle Intelligence&lt;/em&gt;&lt;/a&gt;, is now available online!&lt;/li&gt;
+&lt;li&gt; Splunk's Damien Dallimore SpringOne2GX 2014 talk, &lt;a href="http://spring.io/blog/2014/11/10/springone2gx-2014-replay-gaining-application-lifecycle-intelligence"&gt;&lt;em&gt;Gaining Application Lifecycle Intelligence&lt;/em&gt;&lt;/a&gt;, is now available online!&lt;/li&gt;
+&lt;li&gt;Slideware from SpringOne2GX 2014 is also up!  They are linked to from the session details on the &lt;a href="http://springone2gx.com"&gt;http://springone2gx.com&lt;/a&gt; website.&lt;/li&gt;
+&lt;li&gt;Our pal Simon Maple over at ZeroTurnaround just published a nice post, &lt;a href="http://zeroturnaround.com/rebellabs/what-you-can-build-for-free-in-2-hours-with-spring-boot-twitter-and-facebook/"&gt;&lt;em&gt;What You Can Build for Free in 2 Hours with Spring Boot, Twitter, and Facebook&lt;/em&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Simon &lt;em&gt;also&lt;/em&gt; did a nice post that has him basically following the &lt;a href="http://zeroturnaround.com/blog/no-time-to-sit-back-and-rest-develop-your-restful-web-services-with-spring-boot-and-jrebel/"&gt;Spring IO guide on building REST services&lt;/a&gt;&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;You listen to the SE Radio podcast, I trust? You should. It's legit. &lt;a href="http://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/"&gt;Check out this nice interview with James Lewis, microservice luminary, on what a microservice is&lt;/a&gt;. I think it's a pretty darned interesting discussion.&lt;/li&gt;
+&lt;li&gt;Looking for a more non-trivial Spring and WebSocket sample backed by ActiveMQ? &lt;a href="https://github.com/BijanVan/Spring-Boot-Websocket-Sample"&gt;Check out this example&lt;/a&gt;
+&lt;/li&gt;
 &lt;li&gt;I've been loving &lt;a href="https://www.youtube.com/watch?v=GqrYNdwlA8s"&gt;the &lt;em&gt;Cloud Foundry After Dark&lt;/em&gt; recorded Google Hangout sessions&lt;/a&gt;. If you're not following them, this is definitely fun.&lt;br&gt;
 &lt;/li&gt;
 &lt;li&gt;I do a techtip for our e-mail newsletter, and we're going to start publishing those techtips on the blog. First up: &lt;a href="http://spring.io/blog/2014/11/15/building-a-spring-integration-4-1-websocket-endpoint"&gt;building a Spring Integration 4.1 websocket integration&lt;/a&gt;
 &lt;/li&gt;
-&lt;li&gt;Spring IO platform lead &lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Andy Wilkinson has just announced Spring IO platform 1.0.3&lt;/a&gt; which revs numerous versions across the Spring technologies.&lt;/li&gt;
-&lt;li&gt;Want to learn more about the Reactor project? Check out &lt;a href="http://spring.io/blog/2014/11/13/webinar-using-reactor-for-asych-non-blocking-microservices"&gt;the upcoming Reactor webinar&lt;/a&gt;!&lt;/li&gt;
 &lt;/ol&gt;</content>
   </entry>
   <entry>
@@ -108,9 +166,8 @@
 
 &lt;p&gt;No Slides at speaker request &lt;/p&gt;
 
-&lt;p&gt;There is a good amount of excitement about the new version of Java. The big evolution of course is the lambda expressions. In this presentation we will dive into the language features in Java 8, take a look at some of their nuances, and look at ways to put them to good use. In addition to looking at lambdas we will also dive into the Streams capabilities and also some of the features in Java 8 that make all these possible. TIMES September 11, 2014 10:30 AM - 12:00 PM Dallas Ballroom E-F SCHEDULE&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/j9nj5dTo54Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+&lt;p&gt;There is a good amount of excitement about the new version of Java. The big evolution of course is the lambda expressions. In this presentation we will dive into the language features in Java 8, take a look at some of their nuances, and look at ways to put them to good use. In addition to looking at lambdas we will also dive into the Streams capabilities and also some of the features in Java 8 that make all these possible. 
+&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/j9nj5dTo54Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
   <entry>
     <title>SpringOne2GX 2014 Replay:  What's new in Spring Data?</title>
@@ -582,25 +639,6 @@ setter).&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Link to Slides:&lt;a href="http://www.slideshare.net/SpringCentral/gaining-application-lifecycle-intelligence"&gt;http://www.slideshare.net/SpringCentral/gaining-application-lifecycle-intelligence&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/v2xNJGefxx4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay:  Living in the Matrix with Bytecode Manipulation</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/09/springone2gx-2014-replay-living-in-the-matrix-with-bytecode-manipulation" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-10:1815</id>
-    <updated>2014-11-09T23:28:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014&lt;/p&gt;
-
-&lt;p&gt; Speaker: Ashley Puls, New Relic&lt;/p&gt;
-
-&lt;p&gt; With Spring and Hibernate on your stack, your application's bytecode is likely enhanced or manipulated at runtime. This session examines three common byte code manipulation frameworks: ASM, CGLib, and Javassist (Java Programming Assistant). We will discuss how these tools work and why frameworks like Spring use them. You will learn enough to begin integrating these frameworks directly into your own code.&lt;/p&gt;
-
-&lt;p&gt;Link to Slides:
-&lt;a href="http://www.slideshare.net/SpringCentral/bytecode-spring2gx2014"&gt;http://www.slideshare.net/SpringCentral/bytecode-spring2gx2014&lt;/a&gt;
-&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/39kdr1mNZ_s" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 

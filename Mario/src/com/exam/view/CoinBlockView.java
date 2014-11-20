@@ -20,7 +20,7 @@ public class CoinBlockView {
 	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
 	public static String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public static String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
-	private static final int REFRESH_RATE = 0;
+	private static final int REFRESH_RATE = 30;
 	public static Context Context = null;
 	
 	private volatile Set<IAnimatable> Children;
@@ -379,6 +379,8 @@ public class CoinBlockView {
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 
 		lastRedrawMillis = SystemClock.uptimeMillis();
+		
+		Log.d("imageFrametime","lastRedrawMillis : "+lastRedrawMillis);
 
 		if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
@@ -386,9 +388,16 @@ public class CoinBlockView {
 	}
 
 	void scheduleRedraw() {
+		
 		long nextRedraw = lastRedrawMillis + REFRESH_RATE;
+		
+		Log.d("imageFrametime","nextRedraw : "+nextRedraw);
+		
 		nextRedraw = nextRedraw > SystemClock.uptimeMillis() ? nextRedraw :
 			SystemClock.uptimeMillis() + REFRESH_RATE;
+		
+		Log.d("imageFrametime","second SystemClock.uptimeMillis() "+SystemClock.uptimeMillis());
+		Log.d("imageFrametime","final nextRedraw"+nextRedraw);
 		scheduleRedrawAt(nextRedraw);
 	}
 
