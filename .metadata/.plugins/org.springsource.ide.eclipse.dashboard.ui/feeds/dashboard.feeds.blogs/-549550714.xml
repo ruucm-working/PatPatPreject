@@ -5,7 +5,30 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-19T18:05:29Z</updated>
+  <updated>2014-11-20T06:30:00Z</updated>
+  <entry>
+    <title>Screencast: How to create a RESTful app in five minutes or less</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/20/screencast-how-to-create-a-restful-app-in-five-minutes-or-less" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Greg Turnquist</name>
+    </author>
+    <id>tag:spring.io,2014-11-20:1850</id>
+    <updated>2014-11-20T06:30:00Z</updated>
+    <content type="html">&lt;p&gt;Recently, a friend of mine tweeted out a challenge:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;"Name a framework in which you can create a new app expose a REST service with a database and deploy it to the cloud in five minutes. #grails"&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The moment I spotted that tweet, I responded, "Spring Boot + Spring Data REST"! I realized he was kindly pointing out how easy it is to build RESTful services with Grails (a great framework). But I couldn't resist showing the ease and power of Spring Data REST.&lt;/p&gt;
+
+&lt;p&gt;To prove my point, I couldn't resisting crafting a screencast. In the linked screencast, I show how ?ber easy Spring has made it to pick the parts for your app from &lt;a href="http://start.spring.io"&gt;http://start.spring.io&lt;/a&gt;, define your domain, and then export them as a hypermedia-driven RESTful service. &lt;/p&gt;
+
+&lt;p&gt;Please enjoy!&lt;/p&gt;
+
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/NmfYCJ-pZwM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Spring XD 1.1 M1 and 1.0.2 released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/19/spring-xd-1-1-m1-and-1-0-2-released" />
@@ -620,25 +643,6 @@ setter).&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;?&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/WVSnKHOlyrE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Gaining Application Lifecycle Intelligence</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/10/springone2gx-2014-replay-gaining-application-lifecycle-intelligence" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-10:1816</id>
-    <updated>2014-11-10T09:13:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014 in Dallas, TX. &lt;/p&gt;
-
-&lt;p&gt;Speaker: Damien Dallimore, Splunk&lt;/p&gt;
-
-&lt;p&gt;Today we are facing an ever-increasing speed of product delivery. DevOps practices like continuous integration and deployment increase the dependence of systems like task tracking and source code repositories with build servers and test suites. With data moving rapidly through these different tools, it becomes challenging to maintain a grasp of the process, especially as the data is distributed and in a variety of formats. But it is still critical to maintain full visibility of the product development journey ? from user stories to production data. By starting at the beginning of the Product Development Lifecycle, you can track a problem in production all the way back to the code that was checked into the build and the developer responsible for the code. In this session I'll demonstrate some of the ways in which Splunk software can be used to collect and correlate data throughout the various stages of the lifecycle of your code, to ultimately make you more efficient and make your code better.&lt;/p&gt;
-
-&lt;p&gt;Link to Slides:&lt;a href="http://www.slideshare.net/SpringCentral/gaining-application-lifecycle-intelligence"&gt;http://www.slideshare.net/SpringCentral/gaining-application-lifecycle-intelligence&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/v2xNJGefxx4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 

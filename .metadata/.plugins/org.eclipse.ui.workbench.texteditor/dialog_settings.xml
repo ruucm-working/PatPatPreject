@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="time" key="selection"/>
+		<item value="onetimeSwtich" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="time"/>
-			<item value="IntentService_DeviceEvents"/>
-			<item value="PersistentService"/>
-			<item value="IntentService_TaskTimer"/>
-			<item value="second"/>
-			<item value="OnClick"/>
+			<item value="onetimeSwtich"/>
+			<item value="onoften"/>
+			<item value="onetime"/>
+			<item value="overlapAnimSwitch"/>
 			<item value="onclick"/>
-			<item value="Service_TaskTimer"/>
+			<item value="draw"/>
+			<item value="click"/>
+			<item value="click]"/>
 		</list>
 		<list key="replacehistory">
 			<item value="IntentService_TaskTimer"/>
@@ -32,7 +32,7 @@
 		<item value="311" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="491" key="DIALOG_HEIGHT"/>
-		<item value="274" key="DIALOG_Y_ORIGIN"/>
-		<item value="981" key="DIALOG_X_ORIGIN"/>
+		<item value="265" key="DIALOG_Y_ORIGIN"/>
+		<item value="554" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
