@@ -23,9 +23,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	
 
-	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.test);
-	Sprite shootingSprite 		= MediaAssets.getInstance().getSprite(R.drawable.test_sprite32);
-	Sprite oftenSprite 		= MediaAssets.getInstance().getSprite(R.drawable.test_sprite4);
+	Sprite flowerSprite = MediaAssets.getInstance().getSprite(R.drawable.knifing);
+	Sprite shootingSprite 		= MediaAssets.getInstance().getSprite(R.drawable.knifing8);
+	Sprite oftenSprite 		= MediaAssets.getInstance().getSprite(R.drawable.knifing4);
 	Sprite blankSprite 	= MediaAssets.getInstance().getSprite(R.drawable.blankimage);
 	MediaPlayer snd  = MediaAssets.getInstance().getSoundPlayer(R.raw.smb_powerup_appears);
 	MediaPlayer snd1 = MediaAssets.getInstance().getSoundPlayer(R.raw.dingding);

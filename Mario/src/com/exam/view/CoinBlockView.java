@@ -20,7 +20,7 @@ public class CoinBlockView {
 	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
 	public static String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public static String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
-	private static final int REFRESH_RATE = 30;
+	private static final int REFRESH_RATE = 60;
 	public static Context Context = null;
 	
 	private volatile Set<IAnimatable> Children;
@@ -67,8 +67,8 @@ public class CoinBlockView {
 		wm.getDefaultDisplay().getMetrics(metrics);
 
 		density = metrics.density;
-		cwidth = (int) (260* metrics.density);
-		cheight = cwidth;
+		cwidth = (int) (233* metrics.density);
+		cheight = (int) (197* metrics.density);
 		Log.d("CoinBlockView","density : "+density);
  
 		Children = new HashSet<IAnimatable>();
@@ -355,10 +355,14 @@ public class CoinBlockView {
 	public void Redraw(Context context) {
 		RemoteViews rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
 		Bitmap canvas = Bitmap.createBitmap(cwidth, cheight, Bitmap.Config.ARGB_8888);
-
 		
 		
-		
+		/*
+		BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+		Bitmap canvas = BitmapFactory.decodeResource(null, R.drawable.blank,  options);
+		*/
 		//animatable drawing
 		
 		IAnimatable[] child = new IAnimatable[Children.size()];

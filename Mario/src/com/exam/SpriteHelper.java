@@ -43,7 +43,7 @@ public class SpriteHelper {
                 }
 
                 setPixels(canvas, pixels, offset, stride, rx, ry, rw, rh);
-        }
+        }	
 
         private static void setPixels(Bitmap canvas, int[] pixels, int offset, int stride, int x, int y, int w, int h) {
                 for (int i = 0; i < h; i++) {
