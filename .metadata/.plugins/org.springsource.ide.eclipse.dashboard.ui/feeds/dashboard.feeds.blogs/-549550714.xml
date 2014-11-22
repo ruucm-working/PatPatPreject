@@ -5,7 +5,59 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-20T06:30:00Z</updated>
+  <updated>2014-11-21T18:43:37Z</updated>
+  <entry>
+    <title>Spring Boot 1.2.0.RC2 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/21/spring-boot-1-2-0-rc2-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2014-11-21:1851</id>
+    <updated>2014-11-21T18:43:37Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that the second release candidate for Spring Boot 1.2.0 is available now in the &lt;a href="http://repo.springsource.org/milestone"&gt;Spring milestone repository&lt;/a&gt;. This is mainly a &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.2.0.RC2"&gt;bug fix&lt;/a&gt; release, although we did manage to sneak in a fantastic community contribution which adds support for &lt;a href="http://undertow.io"&gt;Undertow&lt;/a&gt; as an embedded Servlet container.&lt;/p&gt;
+
+&lt;p&gt;For a complete list of changes, and for upgrade instructions, see the &lt;a href="http://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.2-Release-Notes"&gt;Spring Boot 1.2 Release Notes&lt;/a&gt; on the WIKI. The &lt;a href="http://docs.spring.io/spring-boot/docs/1.2.0.RC2/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt; has also been updated to cover new features.&lt;/p&gt;
+
+&lt;p&gt;As usual, please report any problems using &lt;a href="http://github.com/spring-projects/spring-boot/issues"&gt;the project Issue tracker&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Roo 1.3.0 introduces JDK 8 support</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/21/spring-roo-1-3-0-introduces-jdk-8-support" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-11-21:1852</id>
+    <updated>2014-11-21T11:59:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Roo team, I am pleased to announce the release of Spring Roo 1.3.0, the first version released by &lt;a href="http://www.disid.com/"&gt;DISID Corporation&lt;/a&gt; as project lead. &lt;/p&gt;
+
+&lt;p&gt;Spring Roo is a rapid application development tool for Java, allowing you to create full web enterprise applications in just minutes. &lt;/p&gt;
+
+&lt;p&gt;This is the first time that Spring Roo jar files have been published to Maven Central! As always, the release is available in the Spring IO repository. &lt;/p&gt;
+
+&lt;p&gt;The 1.3.0 release includes bug fixes and enhancements as well as several new features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt; Now Roo has complete support for JDK 8:
+    &lt;ul&gt;
+      &lt;li&gt;run Spring Roo with JDK 8
+        
+      &lt;/li&gt;
+      &lt;li&gt;run generated applications with JDK 8&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update Felix to 4.4.1 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For full details on the changes made in the release, please refer to the &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10340&amp;amp;version=14315"&gt;Release Notes in Jira&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; For more project specific information please see the &lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Please try out the updates and provide feedback. &lt;/p&gt;
+
+&lt;p&gt;As always, you¡¯ll also find Roo on Twitter - either follow &lt;a href="https://www.twitter.com/springroo"&gt;@SpringRoo&lt;/a&gt; or just include #SpringRoo in your tweets. The next version 2.0 will be amazing, the best is  coming up. Stay tuned!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Screencast: How to create a RESTful app in five minutes or less</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/20/screencast-how-to-create-a-restful-app-in-five-minutes-or-less" />
@@ -599,50 +651,6 @@ setter).&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Cheers,&lt;/p&gt;
 
 &lt;p&gt;Juergen&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Keynote Day 1 - Platform Reinvented</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/10/springone2gx-2014-keynote-day-1-platform-reinvented" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-10:1813</id>
-    <updated>2014-11-10T09:20:00Z</updated>
-    <content type="html">&lt;p&gt;Platform Reinvented &lt;/p&gt;
-
-&lt;p&gt;Recorded at SpringOne2GX 2014&lt;/p&gt;
-
-&lt;p&gt; Speakers:  Hugh Williams, Juergen Hoeller, Dave Syer, Andy Glover (NetFlix), Graeme Rocher&lt;/p&gt;
-
-&lt;p&gt;?&lt;/p&gt;
-
-&lt;p&gt;Link to Slides:
-&lt;a href="http://www.slideshare.net/SpringCentral/spring-one2gx-2014keynotev8"&gt;http://www.slideshare.net/SpringCentral/spring-one2gx-2014keynotev8&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/xU267-YHN5c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Keynote Day 2 - Platform Reinvented</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/10/springone2gx-2014-keynote-day-2-platform-reinvented" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-10:1814</id>
-    <updated>2014-11-10T09:19:00Z</updated>
-    <content type="html">&lt;p&gt;Platform Reinvented &lt;/p&gt;
-
-&lt;p&gt;Recorded at SpringOne2GX 2014&lt;/p&gt;
-
-&lt;p&gt; Speakers:  Juergen Hoeller, Mark Fisher, Dave Syer, Jon Brisbin&lt;/p&gt;
-
-&lt;p&gt;Link to Slides:
-&lt;a href="http://www.slideshare.net/SpringCentral/springone2gx-2014"&gt;http://www.slideshare.net/SpringCentral/springone2gx-2014&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/WVSnKHOlyrE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 
