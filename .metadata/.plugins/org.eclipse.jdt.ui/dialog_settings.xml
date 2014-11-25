@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="2" key="CallHierarchyViewPart.field_mode"/>
-	<item value="0" key="CallHierarchyViewPart.call_mode"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
+	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
+	<item value="596" key="CallHierarchyViewPart.ratio1"/>
+	<item value="false" key="delegateUpdating"/>
+	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
+	<item value="500" key="CallHierarchyViewPart.ratio3"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
+	<item value="0" key="CallHierarchyViewPart.call_mode"/>
 	<item value="C:\android sdk\extras\android\support\v7\appcompat\libs" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="3" key="CallHierarchyViewPart.orientation"/>
 	<item value="filter_imports;" key="filters_last_used"/>
-	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="596" key="CallHierarchyViewPart.ratio1"/>
-	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
-	<item value="500" key="CallHierarchyViewPart.ratio3"/>
 	<list key="SearchScopeActionGroup.working_set">
 	</list>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
@@ -73,8 +74,8 @@
 		<item value="682" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="605" key="DIALOG_HEIGHT"/>
-		<item value="131" key="DIALOG_X_ORIGIN"/>
-		<item value="263" key="DIALOG_Y_ORIGIN"/>
+		<item value="655" key="DIALOG_X_ORIGIN"/>
+		<item value="339" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
 		<item value="true" key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
@@ -116,8 +117,8 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="252" key="size.y"/>
-		<item value="357" key="size.x"/>
+		<item value="348" key="size.y"/>
+		<item value="680" key="size.x"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>

@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="com.exam.coinBlockIntroActivity"/>
 <fullyQualifiedTypeName name="com.exam.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.exam.view.CoinBlockView"/>
 <fullyQualifiedTypeName name="android.support.v4.app.NotificationCompat"/>
 <fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
@@ -25,14 +24,12 @@
 <fullyQualifiedTypeName name="com.actionbarsherlock.R"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.widget.ActivityChooserModel.ActivitySorter"/>
 <fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.id"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.AsyncTask01"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R.drawable"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.fragment.Frag02"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R"/>
@@ -47,4 +44,9 @@
 <fullyQualifiedTypeName name="com.exam.view.Lv3_1State.Lv3AnimStatus"/>
 <fullyQualifiedTypeName name="com.exam.helper.TaskTimer"/>
 <fullyQualifiedTypeName name="android.app.Service"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.view.View.OnLongClickListener"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="com.exam.R.drawable"/>
 </qualifiedTypeNameHistroy>

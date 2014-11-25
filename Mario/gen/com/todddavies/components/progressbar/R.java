@@ -27,9 +27,9 @@ public final class R {
 		public static final int header = 0x7f0200cb;
 		public static final int ic_launcher = 0x7f0200d0;
 		public static final int icon = 0x7f0200d1;
-		public static final int login_gradient = 0x7f0200db;
-		public static final int login_gradient_flip = 0x7f0200dc;
-		public static final int logo = 0x7f0200dd;
+		public static final int login_gradient = 0x7f0200e3;
+		public static final int login_gradient_flip = 0x7f0200e4;
+		public static final int logo = 0x7f0200e5;
 	}
 	public static final class id {
 		public static final int RelativeLayout01 = 0x7f080072;
