@@ -1,11 +1,8 @@
 package com.ruucm.patpat;
 
 import android.graphics.Bitmap;
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 public class Lv3_1State implements ICoinBlockViewState {
@@ -40,7 +37,23 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	public void OnClick(CoinBlockView viewContext) {
 		
+		
+		
+		
 		Log.d("addClickIntent","3OnClick");
+		
+	/*	RemoteViews rviews = new RemoteViews(viewContext.getPackageName(), R.layout.coin_block_widget);
+		
+		
+		rviews.setImageViewResource(R.id.block, R.drawable.spin_animation);*/
+		
+		
+//		drawable.stop();
+		
+		viewContext.addAnimatable(new Lv3ClickAnim());
+		
+		
+		
 	}
 
 	
@@ -151,7 +164,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 	}
 
-	private class Lv2Animation implements IAnimatable {
+	private class Lv3Animation implements IAnimatable {
 		//진동할때 올라오고, 상단에 남는 드로블
 		private int flowerRaise = 4;
 		private int animstage = 0;
@@ -160,7 +173,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			return false;
 		}
 
-		public void Draw(Bitmap canvas) {
+		public void Draw() {
 			/*
 			SpriteHelper.DrawSprite(canvas, flowerSprite, flowerSprite.NextFrame(),
 							SpriteHelper.DrawPosition.BottomCenter, 0, -(int) (flowerRaise * 4 * context.getDensity()));
@@ -204,7 +217,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 			return false;
 		}
 
-		public void Draw(Bitmap canvas) {
+		public void Draw() {
 			
 			
 		}
@@ -221,10 +234,16 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 
 
-		public void Draw(Bitmap canvas) {
+		public void Draw() {
 			// Draw the brick at bottom
-
 			
+			Log.d("addClickIntent","Draw_Lv3ClickAnim"); 
+			
+//			RemoteViews  rviews = new RemoteViews(mViewContext.getPackageName(), R.layout.coin_block_widget);
+
+//			Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
+			
+			CoinBlockView.rviews.setImageViewResource(R.id.block, R.drawable.spin_animation);
 			
 
 

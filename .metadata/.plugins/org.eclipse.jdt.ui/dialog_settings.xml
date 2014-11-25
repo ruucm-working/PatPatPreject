@@ -117,8 +117,8 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="348" key="size.y"/>
-		<item value="680" key="size.x"/>
+		<item value="328" key="size.y"/>
+		<item value="726" key="size.x"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>

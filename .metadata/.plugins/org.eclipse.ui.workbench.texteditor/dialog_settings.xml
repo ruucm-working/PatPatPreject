@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="widget" key="selection"/>
+		<item value="PatpatWidgetApp" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="PatpatWidgetApp"/>
+			<item value="context"/>
+			<item value="findview"/>
 			<item value="widget"/>
 			<item value="on"/>
 			<item value="50"/>
 			<item value="rviews"/>
 			<item value="cwidth"/>
-			<item value="onclick"/>
-			<item value="updateClickIntent"/>
-			<item value="target"/>
 		</list>
 		<list key="replacehistory">
 			<item value="100"/>
