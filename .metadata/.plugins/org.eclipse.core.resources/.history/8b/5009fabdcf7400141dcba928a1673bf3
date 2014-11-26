@@ -28,7 +28,7 @@ public class CoinBlockView extends Activity{
 	
 	
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
-	private static final int REFRESH_RATE = 400;
+	private static final int REFRESH_RATE = 60;
 	public static Context Context = null;
 	
 	private volatile Set<IAnimatable> Children;

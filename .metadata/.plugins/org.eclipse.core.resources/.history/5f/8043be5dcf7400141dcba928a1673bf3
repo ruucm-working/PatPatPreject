@@ -247,10 +247,9 @@ public class Lv3_1State implements ICoinBlockViewState {
 			if(spriteVib == 0){
 			CoinBlockView.rviews.setImageViewResource(R.id.block, R.drawable.spin_animation);
 			spriteVib++;
-			} else {mViewContext.removeAnimatable(this);
-			Log.d("addClickIntent","removeAnimatable: "+this);
+			} else animeRemove(this);
 			
-			}
+
 
 		}
 	}

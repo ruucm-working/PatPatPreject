@@ -611,16 +611,16 @@ see the evolution of Spring Integration including the Java DSL, as shown at the 
 &lt;ol&gt;
 &lt;li&gt; Spring Integration ninja Artem Bilan &lt;a href="https://spring.io/blog/2014/11/24/spring-integration-java-dsl-1-0-ga-released"&gt;just announced the Spring Integration Java Configuration DSL, 1.0.RELEASE&lt;/a&gt;! Hurrah! This release has been a &lt;em&gt;long&lt;/em&gt; time in coming, and I hope you'll check it out! Artem Bilan Gary Russell have done an &lt;em&gt;amazing&lt;/em&gt; job bringing this API to fruition. Check the blog for a list of resources you can consult.&lt;/li&gt;
 &lt;li&gt; Spring XD co-lead Dr. Mark Pollack just announced &lt;a href="https://spring.io/blog/2014/11/19/spring-xd-1-1-m1-and-1-0-2-released"&gt;Spring XD 1.1.M1 and 1.0.2&lt;/a&gt;. 1.1 is marching towards GA and offers support for Apache Spark, Python, Apache Kafka, improved HDFS sink functionality, LDAP authentication, Java configuraton, Redis and JDBC sources, and Zookeeper. And that's just for starters! The good doctor briefly hints at what'll be coming in the next pre-1.1 release! Read the blog for more and for details on what's available in 1.0.2!&lt;/li&gt;
-&lt;li&gt; ZeroTurnaround's Adam Koblentz and I did a wbinar introducing &lt;a href="https://spring.io/blog/2014/11/24/webinar-replay-spring-boot-and-jrebel-6-0"&gt;how to use Spring Boot and JRebel to reduce iteration time&lt;/a&gt; with reloadable classes.&lt;br&gt;
+&lt;li&gt; Spring Boot &lt;a href="https://spring.io/blog/2014/11/23/bootiful-java-ee-support-in-spring-boot-1-2"&gt;co-lead Phil Webb just announced Spring Boot 1.2.0.RC2&lt;/a&gt;, packed with &lt;em&gt;lots&lt;/em&gt; of new features! &lt;a href="http://start.spring.io"&gt;Try it out and kick the tires&lt;/a&gt; now!&lt;/li&gt;
+&lt;li&gt; I wrote about &lt;a href="https://spring.io/blog/2014/11/23/bootiful-java-ee-support-in-spring-boot-1-2"&gt;some of the new features in Spring Boot 1.2 designed to support common Java EE APIs&lt;/a&gt; like JAX-RS and JTA and the new support for &lt;a href="http://undertow.io"&gt;Undertow&lt;/a&gt; HTTP engine which powers RedHat's WildFly application server.&lt;/li&gt;
+&lt;li&gt; The DISID corporation has just released the &lt;a href="https://spring.io/blog/2014/11/21/spring-roo-1-3-0-introduces-jdk-8-support"&gt;first release of Spring Roo under their leadership, 1.3, which brings complete JDK 8 support&lt;/a&gt; for both Spring Roo and Spring Roo-generated applications.&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt; ZeroTurnaround's Adam Koblentz and I did a webinar introducing &lt;a href="https://spring.io/blog/2014/11/24/webinar-replay-spring-boot-and-jrebel-6-0"&gt;how to use Spring Boot and JRebel to reduce iteration time&lt;/a&gt; with reloadable classes.&lt;br&gt;
 &lt;/li&gt;
 &lt;li&gt; Check out this replay of Ben Hale's SpringOne2gx 2014 talk, &lt;a href="https://spring.io/blog/2014/11/24/springone2gx-2014-replay-creating-rest-ful-hypermedia-based-micro-services-with-spring-boot"&gt;&lt;em&gt;Creating REST-ful, Hypermedia-based Microservices with Spring Boot&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;
 &lt;/li&gt;
 &lt;li&gt; Matt Stine's 2014 talk on developing &lt;a href="https://spring.io/blog/2014/11/24/springone2gx-2014-replay-developing-microservices-for-paas-with-spring-and-cloud-foundry"&gt;PaaS-ready microservces with Spring and Cloud Foundry&lt;/a&gt; is also online.&lt;/li&gt;
 &lt;li&gt; Cornelia Davis' SpringOne2GX 2014 talk on &lt;a href="https://spring.io/blog/2014/11/24/springone2gx-2014-replay-running-your-spring-apps-in-the-cloud"&gt;running Spring applications in the cloud (like Cloud Foundry)&lt;/a&gt; is also online.&lt;/li&gt;
-&lt;li&gt; Spring Boot &lt;a href="https://spring.io/blog/2014/11/23/bootiful-java-ee-support-in-spring-boot-1-2"&gt;co-lead Phil Webb just announced Spring Boot 1.2.0.RC2&lt;/a&gt;, packed with &lt;em&gt;lots&lt;/em&gt; of new features! &lt;a href="http://start.spring.io"&gt;Try it out and kick the tires&lt;/a&gt; now!&lt;/li&gt;
-&lt;li&gt; I wrote about &lt;a href="https://spring.io/blog/2014/11/23/bootiful-java-ee-support-in-spring-boot-1-2"&gt;some of the new features in Spring Boot 1.2 designed to support common Java EE APIs&lt;/a&gt; like JAX-RS and JTA and the new support for &lt;a href="http://undertow.io"&gt;Undertow&lt;/a&gt; HTTP engine which powers RedHat's WildFly application server.&lt;/li&gt;
-&lt;li&gt; The DISID corporation has just released the &lt;a href="https://spring.io/blog/2014/11/21/spring-roo-1-3-0-introduces-jdk-8-support"&gt;first release of Spring Roo under their leadership, 1.3, which brings complete JDK 8 support&lt;/a&gt; for both Spring Roo and Spring Roo-generated applications.&lt;br&gt;
-&lt;/li&gt;
 &lt;li&gt;Watch Spring ninja Greg Turnquist build &lt;a href="https://spring.io/blog/2014/11/20/screencast-how-to-create-a-restful-app-in-five-minutes-or-less"&gt;and run a REST service based on Spring Boot in 5 minutes&lt;/a&gt;. Why? 'Cuz he &lt;em&gt;can&lt;/em&gt;!&lt;/li&gt;
 &lt;li&gt;I gave a quick interview just after speaking at &lt;a href="https://www.voxxed.com/blog/interview/josh-long-booting-productivity-with-spring-and-cloudy-news/"&gt;Geekout UK&lt;/a&gt; on all things Spring, Cloud Foundry, microservice and more. Check it out!&lt;/li&gt;
 &lt;li&gt;Check out this &lt;a href="http://www.activestate.com/blog/2014/08/microservices-and-paas-part-i"&gt;interesting series on building microservices for PaaS&lt;/a&gt; by the Cloud Foundry ecosystem partner ActiveState. The first article is there, scroll down for the next installments in the series.&lt;/li&gt;
@@ -742,7 +742,7 @@ see the evolution of Spring Integration including the Java DSL, as shown at the 
       <name>Artem Bilan</name>
     </author>
     <id>tag:spring.io,2014-11-24:1854</id>
-    <updated>2014-11-24T10:17:28Z</updated>
+    <updated>2014-11-24T10:17:00Z</updated>
     <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
 
 &lt;p&gt;As we promised in the Release Candidate &lt;a href="https://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released"&gt;blog post&lt;/a&gt;,
@@ -791,8 +791,7 @@ see the evolution of Spring Integration including the Java DSL, as shown at the 
 &lt;p&gt;And of course, with the latest &lt;a href="https://spring.io/blog/2014/11/19/spring-xd-1-1-m1-and-1-0-2-released"&gt;Spring XD&lt;/a&gt;, we
 can build Modules based on &lt;code&gt;@Configuration&lt;/code&gt; including Spring Integration Java DSL &lt;code&gt;IntegrationFlow&lt;/code&gt; definitions.&lt;/p&gt;
 
-&lt;p&gt;Just after this announcement I'm going to publish a &lt;code&gt;DSL Tutorial&lt;/code&gt; to explain concepts and features using the
-&lt;a href="https://github.com/spring-projects/spring-integration-samples/tree/master/dsl/cafe-dsl"&gt;Java DSL version of the Cafe Demo&lt;/a&gt; sample as material.&lt;/p&gt;
+&lt;p&gt;Also see the comprehensive &lt;a href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial"&gt;Cafe Demo: Line by line tutorial&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;As always, we look forward to your comments and feedback (&lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt; 
 (&lt;code&gt;spring-integration&lt;/code&gt; tag), &lt;a href="https://jira.spring.io/browse/INTEXT"&gt;Spring JIRA&lt;/a&gt;, 

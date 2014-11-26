@@ -11,6 +11,5 @@
     	android:layout_height="260dp"
     	android:scaleType="centerInside"
     	android:layout_gravity="center_horizontal"
-    	android:adjustViewBounds="true"
     />
 </LinearLayout>
