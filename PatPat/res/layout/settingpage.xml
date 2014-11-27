@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    
+     android:background="#FFffffff">
+     
+
+    
+
+
+<LinearLayout     
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dip"
+    android:orientation="vertical"    
+      >
+    
+    
+    
+    
+    
+    
+    <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal" >
+
+         <TextView
+ 	          android:layout_width="wrap_content"
+ 	          android:layout_height="wrap_content"
+ 	          android:gravity="center"
+ 	          android:text="당신의 휴대폰 기종을 입력해주세요"
+ 	          android:textColor="#ff282CB6"
+ 	          android:textSize="10dp" />
+     
+ 	    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text = "model name"
+        android:textSize="10dp"
+        
+        />    
+
+     </RelativeLayout>
+     
+    
+    
+    
+    
+    <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical" >
+
+         <TextView
+ 	          android:layout_width="wrap_content"
+ 	          android:layout_height="wrap_content"
+ 	          
+ 	          android:layout_marginTop="18dp"
+ 	          android:text="당신의 휴대폰 주민등록번호인 IMEI를 입력해주세요
+(IMEI 번호는 설정 - 디바이스정보 - IMEI 에있습니다)"
+android:textColor="#ff282CB6"
+ 	          android:textSize="10dp" />
+     
+ 	    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text = "IMEI Number"
+        android:textSize="10dp" />    
+
+     </LinearLayout>
+    
+    
+
+ 	  
+     <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:id="@+id/textView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="Click-Count"
+             android:textColor="#ff282CB6"
+             android:textSize="11dip"
+             android:textStyle="bold" />
+
+         <ImageView
+             android:id="@+id/reset4"
+             android:layout_width="28dip"
+             android:layout_height="28dip"
+             android:layout_alignParentTop="true"
+             android:layout_marginLeft="8dp"
+             android:layout_toRightOf="@+id/textView1"
+             android:adjustViewBounds="true"
+             android:clickable="true" 
+             android:onClick="mOnClick"
+             android:src="@drawable/reset_large" />
+
+     </RelativeLayout>
+     
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"  >
+        
+ 	    <TextView
+ 	          android:layout_width="60dp"
+ 	          android:layout_height="50dp"
+ 	          android:gravity="center"
+ 	          android:text="InitCount"
+ 	          android:textSize="10dp" />
+     
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text = "Click-Count"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clicountinit" />    
+        
+     
+   
+ 	  </LinearLayout>    
+ 	   
+ 
+     
+     
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"  >
+        
+ 	    <TextView
+ 	          android:layout_width="60dp"
+ 	          android:layout_height="50dp"
+ 	          android:gravity="center"
+ 	          android:text="Lv0Count"
+ 	          android:textSize="10dp" />
+     
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text = "Click-Count"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clicount0" />    
+        
+        <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clisp0" />  
+         
+   
+ 	  </LinearLayout>    
+ 	  
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"  >
+        
+ 	    <TextView
+ 	          android:layout_width="60dp"
+ 	          android:layout_height="50dp"
+ 	          android:gravity="center"
+ 	          android:text="Lv0_2Count"
+ 	          android:textSize="10dp" />
+     
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text = "Click-Count"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clicount0_2" />    
+        
+        <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clisp0_2" />  
+         
+   
+ 	  </LinearLayout>    
+ 	  
+ 	  <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"  >
+        
+ 	    <TextView
+ 	          android:layout_width="60dp"
+ 	          android:layout_height="50dp"
+ 	          android:gravity="center"
+ 	          android:text="Lv1Count"
+ 	          android:textSize="10dp" />
+     
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text = "Click-Count"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clicount1" />    
+        
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clisp1" /> 
+         
+   
+ 	  </LinearLayout>    
+ 	  <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"  >
+        
+ 	    <TextView
+ 	          android:layout_width="60dp"
+ 	          android:layout_height="50dp"
+ 	          android:gravity="center"
+ 	          android:text="Lv2Count"
+ 	          android:textSize="10dp" />
+     
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text = "Click-Count"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clicount2" />    
+        
+ 	    
+ 	    <TextView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:id="@+id/clisp2" /> 
+         
+   
+ 	  </LinearLayout>    
+     
+     
+     
+  
+   		 <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "고유번호"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="20dip"
+		 />
+  
+        <EditText
+            android:id="@+id/input01"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" >
+
+		</EditText>
+
+
+	
+    
+    
+ 
+    <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "제조사"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="10dip"
+		 />
+   
+  
+
+    <Spinner
+        android:id="@+id/myspinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    
+
+    
+     <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "구입년도"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="10dip"
+		 />
+   
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+         >
+    <Spinner
+        android:id="@+id/myspinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "~"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff000000"
+		 />
+    <Spinner
+        android:id="@+id/myspinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="28dip"
+        android:layout_height="28dip"
+        android:adjustViewBounds="true"        
+        android:src="@drawable/reset_large"
+        android:id="@+id/reset3"               
+        android:onClick="mOnClick"
+        android:clickable="true"
+         />
+    </LinearLayout>    
+    
+  
+    
+    
+		
+        
+        
+        <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "귀여움성"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="20dip"
+		 />
+        
+    
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation = "vertical"            
+        >    
+        
+      	    <LinearLayout 
+                android:layout_width="wrap_content"
+      		    android:layout_height="wrap_content"> 
+            <CheckBox 
+                android:id="@+id/kind1"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Sparkling"
+        		android:onClick="mOnClick"/>
+
+            <CheckBox
+                android:id="@+id/kind2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="White    "
+                android:onClick="mOnClick" />
+
+            <CheckBox 
+                android:id="@+id/kind3"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Rose"
+        		android:onClick="mOnClick"/>
+       	    </LinearLayout>
+            
+            <LinearLayout 
+                android:layout_width="wrap_content"
+      		    android:layout_height="wrap_content">      
+            <CheckBox 
+                android:id="@+id/kind4"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Red          "
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/kind5"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Fortified"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/kind6"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Others"
+        		android:onClick="mOnClick"/> 
+        	</LinearLayout>
+        		           
+        		
+        </LinearLayout>
+        
+        
+        
+        <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "용도"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="10dip"
+		 />
+        
+    
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"             
+        >    
+            <CheckBox 
+                android:id="@+id/for1"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Aperitif"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/for2"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Table"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/for3"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Dessert"
+        		android:onClick="mOnClick"/>            
+        		
+        </LinearLayout>
+        
+        <TextView    
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text = "떨군횟수"
+	    android:textSize = "11dip"
+	    android:textStyle = "bold"
+		android:textColor = "#ff282CB6"
+		android:layout_marginTop="10dip"
+		 />
+        
+    
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"             
+        >    
+            <CheckBox 
+                android:id="@+id/dry1"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Dry"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/dry2"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Less dry"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/dry3"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Medium"
+        		android:onClick="mOnClick"/>   
+        		</LinearLayout>
+        		
+        		<LinearLayout
+       	 		android:layout_width="fill_parent"
+       		    android:layout_height="wrap_content"             
+       		    >   
+       		    
+        		<CheckBox 
+                android:id="@+id/dry4"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Less sweet"
+        		android:onClick="mOnClick"/>
+            <CheckBox 
+                android:id="@+id/dry5"
+                android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="Sweet"
+        		android:onClick="mOnClick"/>
+                   
+        		
+        </LinearLayout>
+        
+		
+        
+        
+        
+        
+
+        
+    
+    
+    
+			
+	<LinearLayout
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_marginTop="30dip">
+        <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClick"
+        android:text="완료" />
+        <Button
+        android:id="@+id/cancled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClick"
+        android:text="취소" />
+   	</LinearLayout>
+    
+    
+    
+    
+
+</LinearLayout>
+
+</ScrollView>

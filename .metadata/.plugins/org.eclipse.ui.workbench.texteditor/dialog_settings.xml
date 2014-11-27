@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="PatpatWidgetApp" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="PatpatWidgetApp"/>
-			<item value="context"/>
-			<item value="findview"/>
-			<item value="widget"/>
-			<item value="on"/>
-			<item value="50"/>
-			<item value="rviews"/>
-			<item value="cwidth"/>
+			<item value="knifing"/>
+			<item value="100"/>
+			<item value="mViewContext"/>
+			<item value="OnClick"/>
+			<item value="onclick"/>
+			<item value="RemoteViews"/>
+			<item value="addani"/>
+			<item value="addan"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="50"/>
+			<item value="res"/>
 			<item value="100"/>
 			<item value="IntentService_TaskTimer"/>
 			<item value="IntentService_DeviceEvents"/>
 			<item value="stop_unknownOverlapping"/>
 			<item value="overlapAnimSwitch"/>
-			<item value="switchA"/>
-			<item value="Lv3ClickAnim"/>
-			<item value="MediaAssets"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -5,7 +5,35 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-25T13:10:00Z</updated>
+  <updated>2014-11-26T10:21:00Z</updated>
+  <entry>
+    <title>Spring Roo 1.3.1 RC1 available with important bug fixes</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/11/26/spring-roo-1-3-1-rc1-available-with-important-bug-fixes" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-11-26:1863</id>
+    <updated>2014-11-26T10:21:00Z</updated>
+    <content type="html">&lt;p&gt;Spring Roo 1.3.1 RC1 Release Candidate is available.&lt;/p&gt;
+
+&lt;p&gt;Spring Roo jar files have been published to Maven Central. As always, the release is available in the Spring IO repository. &lt;/p&gt;
+
+&lt;p&gt;The candidate release fixes serious issues: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt; running reverse engineering. &lt;/li&gt;
+  &lt;li&gt; installing third-party addons. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is highly recommended that all Spring Roo users upgrade to this version. &lt;/p&gt;
+
+&lt;p&gt;For full details on the changes made in the release, please refer to the &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10340&amp;amp;version=14836"&gt;Release Note in Jira&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For more project specific information please see the &lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; Thanks to the awesome users who came up with useful bug reports and suggestions. This is a candidate release, please try out the updates and provide feedback. As always, you'll also find Roo on Twitter - either follow @SpringRoo or just include #SpringRoo in your tweets. Stay tuned!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Integration Java DSL: Line by line tutorial</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial" />
@@ -658,7 +686,7 @@ see the evolution of Spring Integration including the Java DSL, as shown at the 
 
 &lt;p&gt; Learn more about JRebel: &lt;a href="http://zeroturnaround.com/software/jrebel/display/"&gt;http://zeroturnaround.com/software/jrebel/display/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt; 30 day free JRebel trial download: &lt;a href="https://zeroturnaround.com/software/jrebel/trial/"&gt;https://zeroturnaround.com/software/jrebel/trial/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 14 day free JRebel trial download: &lt;a href="https://zeroturnaround.com/software/jrebel/trial/"&gt;https://zeroturnaround.com/software/jrebel/trial/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;?&lt;/p&gt;
 
@@ -1227,7 +1255,7 @@ can build Modules based on &lt;code&gt;@Configuration&lt;/code&gt; including Spr
 
 &lt;p&gt;In this talk we take a look at the latest changes and new features of the Spring Tool Suite, the Eclipse-based IDE that comes packed with support for Spring, Groovy, Grails, Gradle, AspectJ, and Cloud Foundry. We dive into the new ways the tooling makes it easy and convenient to develop enterprise applications that are based on Spring Boot and how the Spring Tool Suite integrates will all the different parts of Spring IO. In addition to that we will show the Java8 language tooling that comes as part of the Spring Tool Suite and demonstrate how to get the most out of Java8 in your projects. In the second part of this presentation we take a look at our vision for how we are going to move developer tooling itself into the cloud era. We provide a sneak peek under the hood of what we are working on for the next generation of developer tooling. We will demonstrate what future cloud-based developer might look like, how real Java language tooling can look and feel when running in a browser-based code editor, and show how every developer can smoothly migrate into this new world of cloud-based developer tooling. All this is based on Flux, a new project at eclipse.org, that aims at providing new and innovative ways to move towards cloud-based tooling in a smooth, seamless way.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/jbdK1i1LnKk" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/eLkVPqxFJKM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
   <entry>
     <title>SpringOne2GX 2014 Replay: Java 8 Language Capabilities, What's in it for you?</title>
@@ -1367,37 +1395,6 @@ can build Modules based on &lt;code&gt;@Configuration&lt;/code&gt; including Spr
 &lt;p&gt;The &lt;code&gt;IntegrationFlow&lt;/code&gt; is simple. For each message that comes in, copy it and address it to each listening &lt;code&gt;WebSocket&lt;/code&gt; session by adding a header having the &lt;code&gt;SimpMessageHeaderAccessor.SESSION_ID_HEADER&lt;/code&gt;, then send it the outbound &lt;code&gt;webSocketOutboundAdapter&lt;/code&gt; which will deliver it to each listening client. To see it work, open &lt;code&gt;&lt;a href="http://localhost:8080/"&gt;http://localhost:8080/&lt;/a&gt;&lt;/code&gt; in one browser window, and then &lt;code&gt;&lt;a href="http://localhost:8080/hi/Spring"&gt;http://localhost:8080/hi/Spring&lt;/a&gt;&lt;/code&gt; in another. There is a simple client  &lt;a href="https://github.com/joshlong/techtips/tree/master/examples/spring-integration-4.1-websockets-example"&gt;demonstrated in this techtip's code repository&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;There is great documentation on how to use the web socket &lt;a href="http://docs.spring.io/spring-integration/docs/latest-ga/reference/html/web-sockets.html"&gt;components in Spring Integration 4.1 documentation&lt;/a&gt;. There's a more inspiring example in &lt;a href="https://github.com/spring-projects/spring-integration-samples/tree/master/basic/web-sockets"&gt;the Spring Integration samples directory&lt;/a&gt;, too.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring for Apache Hadoop 2.1.0.M2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/14/spring-for-apache-hadoop-2-1-0-m2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Thomas Risberg</name>
-    </author>
-    <id>tag:spring.io,2014-11-14:1829</id>
-    <updated>2014-11-14T08:37:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the second milestone release of Spring for Apache Hadoop 2.1. The release is now available in the &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-hadoop/2.1.0.M2/"&gt;Spring IO repository&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There are lots of version upgrades for the 2.1.0.M2 release: Spring Framework 4.1.2, Spring Boot 1.2.0.RC1 and more. See the &lt;a href="http://docs.spring.io/spring-hadoop/docs/2.1.0.M2/changelog.txt"&gt;full changelog&lt;/a&gt; for more details.&lt;/p&gt;
-
-&lt;p&gt;We updated the Kite SDK dataset support to 0.17.0 and this means there are some changes to the API. The use of a namespace in addition to the basePath is now mandatory. The &lt;code&gt;DatasetTemplate&lt;/code&gt; now also uses &lt;code&gt;ViewCallback&lt;/code&gt;s instead of a partition expression for querying the data.&lt;/p&gt;
-
-&lt;p&gt;Beginning with the Spring for Apache Hadoop 2.1 version, we now only support Hadoop 2.0 APIs and no longer provide backwards compatibility with older Hadoop v1 distributions. If you need support for older Hadoop versions please use the 2.0.3 or 1.1.0 versions of Spring for Apache Hadoop.&lt;/p&gt;
-
-&lt;p&gt;We provide support and "flavored" versions for the following distributions:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Apache Hadoop 2.4.1 (2.1.0.M2-hadoop24)&lt;/li&gt;
-&lt;li&gt;Apache Hadoop 2.5.1 (2.1.0.M2)&lt;/li&gt;
-&lt;li&gt;Pivotal HD 2.1 (2.1.0.M2-phd21)&lt;/li&gt;
-&lt;li&gt;Cloudera CDH5 (2.1.0.M2-cdh5)&lt;/li&gt;
-&lt;li&gt;Hortonworks HDP 2.1 (2.1.0.M2-hdp21)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The default distribution version is changed to be Apache Hadoop 2.5.1. We have added support for Pivotal HD 2.1 and updated the Cloudera CDH version to CDH 5.2. We will continue to update the supported versions and expect to support Apache Hadoop 2.6.0 and Hortonworks HDP 2.2 in the next  release.&lt;/p&gt;
-
-&lt;p&gt;For more project specific information please see the &lt;a href="http://projects.spring.io/spring-hadoop/"&gt;project page&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
 </feed>
 

@@ -3,3 +3,14 @@
 1416761357875	Rename resource 'animIcon.png'
 1416761377988	Rename resource 'Icon.png'
 1416816934149	Rename type 'CoinBlockWidgetApp'
+1417002839958	Copy file
+1417066394711	Move compilation unit
+1417066489696	Rename type 'coinBlockIntroActivity'
+1417066508940	Rename package 'com.ruucm.patpat.Intro'
+1417066523695	Rename type 'coinBlockLoginActivity'
+1417066895699	Delete element
+1417068203062	Delete elements
+1417069707934	Rename package 'com.ruucm.helper'
+1417069716124	Rename package 'com.ruucm.patpat'
+1417069723886	Rename package 'com.ruucm.patpat.Activity'
+1417070222658	Rename resource 'spin_animation.xml'
