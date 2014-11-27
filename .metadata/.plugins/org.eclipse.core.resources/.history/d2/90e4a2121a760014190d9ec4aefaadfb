@@ -53,26 +53,12 @@ public class Lv3_1State implements IPatpatViewState {
 
 	private class Lv3_1WaitState implements IPatpatViewState {
 
-//		int spriteVib = 0;
 
 		public PatpatView  context;
 
 
 		public void Draw(PatpatView viewContext) {
-			
-			
-			Log.d("draw_Lv3_1WaitState","Draw");
-			
 //			viewContext.addAnimatable(new Lv3ClickAnim());
-			
-//			if(spriteVib == 0){
-				PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.knifing_animation);
-				/*spriteVib++;
-				} else {mViewContext.removeAnimatable(this);
-				Log.d("addClickIntent","removeAnimatable: "+this);
-				
-				}*/
-			
 		}
 
 		public void OnClick(PatpatView viewContext) {
