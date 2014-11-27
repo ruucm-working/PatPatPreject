@@ -14,3 +14,6 @@
 1417069716124	Rename package 'com.ruucm.patpat'
 1417069723886	Rename package 'com.ruucm.patpat.Activity'
 1417070222658	Rename resource 'spin_animation.xml'
+1417079133298	Rename type 'CoinBlockView'
+1417079143728	Rename type 'coinBlockWidgetProvider'
+1417079151785	Rename type 'ICoinBlockViewState'

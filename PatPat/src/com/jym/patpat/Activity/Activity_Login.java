@@ -25,7 +25,7 @@ import com.facebook.SessionState;
 import com.facebook.Settings;
 import com.facebook.model.GraphUser;
 import com.jym.helper.TextPref;
-import com.jym.patpat.CoinBlockView;
+import com.jym.patpat.PatpatView;
 import com.jym.patpat.PatpatWidgetApp;
 import com.jym.patpat.R;
 
@@ -136,7 +136,7 @@ public class Activity_Login extends Activity
 						Toast.LENGTH_SHORT).show();
 
 			} else */if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
-				int id = CoinBlockView.mWidgetId;
+				int id = PatpatView.mWidgetId;
 				Log.v("Service_BatteryGauge", "Entering headset");
 
 				if (intent.getIntExtra("state", -1) == 1) {

@@ -4,16 +4,16 @@ import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.Toast;
 
-public class Lv3_1State implements ICoinBlockViewState {
+public class Lv3_1State implements IPatpatViewState {
 
 
 	public static boolean overlapAnimSwitch  = true;
 
 
-	CoinBlockView mViewContext;
+	PatpatView mViewContext;
 
 
-	public Lv3_1State(CoinBlockView viewContext) {
+	public Lv3_1State(PatpatView viewContext) {
 		mViewContext = viewContext;
 
 
@@ -21,7 +21,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 	
 	
 	
-	public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+	public void Draw(PatpatView viewContext) {
 
 
 		viewContext.setState(new Lv3_1WaitState());
@@ -34,22 +34,10 @@ public class Lv3_1State implements ICoinBlockViewState {
 		return false; 
 	}
 
-	public void OnClick(CoinBlockView viewContext) {
+	public void OnClick(PatpatView viewContext) {
 		
 		
 		
-		
-		Log.d("addClickIntent","3OnClick");
-		
-	/*	RemoteViews rviews = new RemoteViews(viewContext.getPackageName(), R.layout.coin_block_widget);
-		
-		
-		rviews.setImageViewResource(R.id.block, R.drawable.spin_animation);*/
-		
-		
-//		drawable.stop();
-		
-		viewContext.addAnimatable(new Lv3ClickAnim());
 		
 		
 		
@@ -63,18 +51,36 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 
 
-	private class Lv3_1WaitState implements ICoinBlockViewState {
+	private class Lv3_1WaitState implements IPatpatViewState {
 
 
-		public CoinBlockView  context;
+		public PatpatView  context;
 
 
 
 
-		public void OnClick(CoinBlockView viewContext) {
+		public void OnClick(PatpatView viewContext) {
 
 			Log.d("addClickIntent","3wait OnClick");
 
+			
+			
+			
+
+			Log.d("addClickIntent","3OnClick");
+			
+		/*	RemoteViews rviews = new RemoteViews(viewContext.getPackageName(), R.layout.coin_block_widget);
+			
+			
+			rviews.setImageViewResource(R.id.block, R.drawable.spin_animation);*/
+			
+			
+//			drawable.stop();
+			
+			viewContext.addAnimatable(new Lv3ClickAnim());
+			
+			
+			
 			int textcode = (int)(Math.random()*9);
 			String text = null;
 
@@ -117,12 +123,12 @@ public class Lv3_1State implements ICoinBlockViewState {
 				break;
 			}
 
-			Toast.makeText(CoinBlockView.Context, text, Toast.LENGTH_SHORT).show();
+			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 
 		}
 
 
-		public void Draw(CoinBlockView viewContext, Bitmap canvas) {
+		public void Draw(PatpatView viewContext) {
 			//<<<<<<< HEAD
 			
 			
@@ -135,26 +141,26 @@ public class Lv3_1State implements ICoinBlockViewState {
 		}
 
 		@Override
-		public void OnEvolve(CoinBlockView coinBlockView) {
+		public void OnEvolve(PatpatView coinBlockView) {
 			//coinBlockView.setState(new InitState(coinBlockView));	
 		}
 
 		@Override
-		public void OnOften(CoinBlockView coinBlockView) {	
+		public void OnOften(PatpatView coinBlockView) {	
 			
 		}
 
 
 
 		@Override
-		public void OnHeadsetConnected(CoinBlockView viewContext) {
+		public void OnHeadsetConnected(PatpatView viewContext) {
 			// TODO Auto-generated method stub
 			
 		}
 
 
 		@Override
-		public void OnHeadsetDisconnected(CoinBlockView viewContext) {
+		public void OnHeadsetDisconnected(PatpatView viewContext) {
 			// TODO Auto-generated method stub
 			
 		}
@@ -195,13 +201,13 @@ public class Lv3_1State implements ICoinBlockViewState {
 	}
 
 	@Override
-	public void OnEvolve(CoinBlockView coinBlockView) {
+	public void OnEvolve(PatpatView coinBlockView) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void OnOften(CoinBlockView coinBlockView) {
+	public void OnOften(PatpatView coinBlockView) {
 		// TODO Auto-generated method stub
 
 	}
@@ -244,7 +250,7 @@ public class Lv3_1State implements ICoinBlockViewState {
 //			Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 			
 			if(spriteVib == 0){
-			CoinBlockView.rviews.setImageViewResource(R.id.block, R.drawable.knifing_animation);
+			PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.knifing_animation);
 			spriteVib++;
 			} else {mViewContext.removeAnimatable(this);
 			Log.d("addClickIntent","removeAnimatable: "+this);
@@ -267,13 +273,13 @@ public class Lv3_1State implements ICoinBlockViewState {
 
 
 	@Override
-	public void OnHeadsetConnected(CoinBlockView viewContext) {
+	public void OnHeadsetConnected(PatpatView viewContext) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void OnHeadsetDisconnected(CoinBlockView viewContext) {
+	public void OnHeadsetDisconnected(PatpatView viewContext) {
 		// TODO Auto-generated method stub
 
 	}

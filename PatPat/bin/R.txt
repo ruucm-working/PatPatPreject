@@ -200,6 +200,7 @@ int layout com_facebook_usersettingsfragment 0x7f03000f
 int layout login 0x7f030010
 int layout setting_dialogpage 0x7f030011
 int layout settingpage 0x7f030012
+int string app_id 0x7f09001b
 int string app_name 0x7f09001a
 int string com_facebook_choose_friends 0x7f09000f
 int string com_facebook_dialogloginactivity_ok_button 0x7f090000

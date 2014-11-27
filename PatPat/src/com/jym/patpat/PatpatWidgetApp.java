@@ -13,7 +13,7 @@ import android.view.WindowManager;
 
 public class PatpatWidgetApp extends Application {
 	private static PatpatWidgetApp self;
-	private static Hashtable<Integer, CoinBlockView> views = new Hashtable<Integer, CoinBlockView>();
+	private static Hashtable<Integer, PatpatView> views = new Hashtable<Integer, PatpatView>();
 	private static DisplayMetrics metrics;
 
 	@Override
@@ -38,7 +38,7 @@ public class PatpatWidgetApp extends Application {
 		Log.d("addClickIntent", "UpdateAllWidgets");
 		AppWidgetManager man = AppWidgetManager.getInstance(getApplication());
 		views.clear();
-		int[] ids = man.getAppWidgetIds(new ComponentName(getApplication(), coinBlockWidgetProvider.class));
+		int[] ids = man.getAppWidgetIds(new ComponentName(getApplication(), PatpatWidgetProvider.class));
 		for (int x : ids) {
 			UpdateWidget(x);
 		}
@@ -46,7 +46,7 @@ public class PatpatWidgetApp extends Application {
 
 	public void UpdateWidget(int widgetId) {
 		if (!views.containsKey(widgetId)) {
-			CoinBlockView view = new CoinBlockView(this, widgetId);
+			PatpatView view = new PatpatView(this, widgetId);
 			views.put(widgetId, view);
 		}
 	}
@@ -58,13 +58,13 @@ public class PatpatWidgetApp extends Application {
 		}
 	}
 
-	public CoinBlockView GetView(int widgetId) {
+	public PatpatView GetView(int widgetId) {
 		
 		Log.d("CoinBlockWidgetApp", "GetView, widgetId is = "+widgetId);
 		
 		
 		if (!views.containsKey(widgetId)) {
-			CoinBlockView view = new CoinBlockView(this, widgetId);
+			PatpatView view = new PatpatView(this, widgetId);
 			views.put(widgetId, view);
 		}
 		return views.get(widgetId);
