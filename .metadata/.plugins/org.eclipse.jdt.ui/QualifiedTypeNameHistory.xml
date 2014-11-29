@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
 <fullyQualifiedTypeName name="android.app.NotificationManager"/>
 <fullyQualifiedTypeName name="android.app.PendingIntent"/>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.app.SherlockFragmentActivity"/>
 <fullyQualifiedTypeName name="com.exam.R"/>
 <fullyQualifiedTypeName name="com.viewpagerindicator.IconPagerAdapter"/>
@@ -55,4 +54,9 @@
 <fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap.Config"/>
 <fullyQualifiedTypeName name="com.ruucm.patpat.CoinBlockView"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.facebook.android.R"/>
+<fullyQualifiedTypeName name="com.ruucm.patpat.Activity.Activity_Intro"/>
+<fullyQualifiedTypeName name="com.ruucm.patpat.R"/>
+<fullyQualifiedTypeName name="com.jym.patpat.R"/>
 </qualifiedTypeNameHistroy>

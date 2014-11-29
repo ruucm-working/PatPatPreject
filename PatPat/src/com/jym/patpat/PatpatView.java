@@ -223,7 +223,7 @@ public class PatpatView extends Activity{
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
-		Log.d("addClickIntent","updateAppWidget");
+		Log.d("draw_Speeding","updateAppWidget");
 
 		lastRedrawMillis = SystemClock.uptimeMillis();
 		

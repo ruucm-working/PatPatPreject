@@ -66,7 +66,7 @@ public class Lv3_1State implements IPatpatViewState {
 //			viewContext.addAnimatable(new Lv3ClickAnim());
 			
 //			if(spriteVib == 0){
-				PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.knifing_animation);
+				PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.fish_animation);
 				/*spriteVib++;
 				} else {mViewContext.removeAnimatable(this);
 				Log.d("addClickIntent","removeAnimatable: "+this);
@@ -260,7 +260,7 @@ public class Lv3_1State implements IPatpatViewState {
 //			Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 			
 			if(spriteVib == 0){
-			PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.knifing_animation);
+			PatpatView.rviews.setImageViewResource(R.id.block, R.drawable.fish_animation);
 			spriteVib++;
 			} else {mViewContext.removeAnimatable(this);
 			Log.d("addClickIntent","removeAnimatable: "+this);
