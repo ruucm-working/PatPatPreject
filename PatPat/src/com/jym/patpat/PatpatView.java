@@ -28,7 +28,7 @@ public class PatpatView extends Activity{
 	
 	
 	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
-	private static final int REFRESH_RATE = 400;
+	private static final int REFRESH_RATE = 0;
 	public static Context Context = null;
 	
 	private volatile Set<IAnimatable> Children;
@@ -36,7 +36,7 @@ public class PatpatView extends Activity{
 	
 	private float density;
 	private int cheight, cwidth;
-	private long lastRedrawMillis = 0;
+	private long RedrawMillis = 0;
 	public static int mWidgetId;
 	
 	//for evolve
@@ -77,8 +77,14 @@ public class PatpatView extends Activity{
 		//context for toast
 		Context = context;
 		
+		
+		Log.e("stop_double_Draw","Draw_setState_PatpatView");
+		
 		setState(new Lv3_1State(this));
 		
+		
+		
+		rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
  
 		
 
@@ -124,85 +130,13 @@ public class PatpatView extends Activity{
 	}
 
 	public void Redraw(Context context) {
-		rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
 		
 		
-		//animatable drawing
-		/*
-		IAnimatable[] child = new IAnimatable[Children.size()];
-		Children.toArray(child);
-
-		for (int i = 0; i < child.length; i++) {
-			child[i].Draw(canvas);
-			if (child[i].AnimationFinished())
-				Children.remove(child[i]);
-		}
- 
-		
-	
-		
-*/		
+		Log.d("draw_Speeding","Redraw");
 		
 		
-		
-		
-//		assertTrue( drawable != null ); 
-//		
-//		
-//		AnimationDrawable frameAnimation = new AnimationDrawable();
-//		
-//		frameAnimation.inflate(res.getDrawable(R.drawable.spin_animation), null, R.id.block);
 		
 		rviews.setImageViewResource(R.id.block, R.drawable.knifing01);
-		
-//		AnimationDrawable frameAnimation = (AnimationDrawable)rviews.apply(context, parent)
-		
-		
-		/*ImageView view = new= ImageView(context); 
-		view.setBackgroundResource(R.drawable.spin_animation); 
-		
-		
-		rviews.setImageViewBitmap(R.id.block, BitmapFactory.decodeResource(view.getResources(), R.drawable.spin_animation));
-		
-		Log.d("addClickIntent","res");
-
-		AnimationDrawable frameAnimation = (AnimationDrawable) view.getDrawable();
-		
-		Log.d("addClickIntent"," res.getDrawable(R.id.block)");
-		*/
-		
-	/*	BitmapDrawable frame0 = (BitmapDrawable)res.getDrawable(R.drawable.knifing01);
-        BitmapDrawable frame1 = (BitmapDrawable)res.getDrawable(R.drawable.knifing02);
-        BitmapDrawable frame2 = (BitmapDrawable)res.getDrawable(R.drawable.knifing03);
-        BitmapDrawable frame3 = (BitmapDrawable)res.getDrawable(R.drawable.knifing04);
-        BitmapDrawable frame4 = (BitmapDrawable)res.getDrawable(R.drawable.knifing05);
-        BitmapDrawable frame5 = (BitmapDrawable)res.getDrawable(R.drawable.knifing06);
-        BitmapDrawable frame6 = (BitmapDrawable)res.getDrawable(R.drawable.knifing07);
-        BitmapDrawable frame7 = (BitmapDrawable)res.getDrawable(R.drawable.knifing08);
-        
-		 int reasonableDuration = 100;
-		frameAnimation = new AnimationDrawable();
-		frameAnimation.addFrame(frame0, reasonableDuration);
-		frameAnimation.addFrame(frame1, reasonableDuration);
-		frameAnimation.addFrame(frame2, reasonableDuration);
-		frameAnimation.addFrame(frame3, reasonableDuration);
-		frameAnimation.addFrame(frame4, reasonableDuration);
-		frameAnimation.addFrame(frame5, reasonableDuration);
-		frameAnimation.addFrame(frame6, reasonableDuration);
-		frameAnimation.addFrame(frame7, reasonableDuration);
-		
-		rviews.setImageViewBitmap(R.id.block,drawableToBitmap(frameAnimation));
-		frameAnimation.start();
-		frameAnimation.setOneShot(true);
-
-		
-		Log.d("addClickIntent","frameAnimation.isRunning() : "+frameAnimation.isRunning());*/
-		
-//		rviews.set
-//		
-//		ImageView img = (ImageView)findViewById(R.id.block);
-//		frameAnimation = (AnimationDrawable) img.getDrawable();
-		
 		
 		
 		//state drawing
@@ -225,16 +159,25 @@ public class PatpatView extends Activity{
 		
 		Log.d("draw_Speeding","updateAppWidget");
 
-		lastRedrawMillis = SystemClock.uptimeMillis();
+		RedrawMillis = SystemClock.uptimeMillis();
 		
-
-		if (state.NeedRedraw() || Children.size() > 0)
+		
+		/*if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
+		*/
+		Log.i("draw_Speeding","Redraw, RedrawMillis : "+RedrawMillis);
+
+		
 	}
 
 	void scheduleRedraw() {
 		
-		long nextRedraw = lastRedrawMillis + REFRESH_RATE;
+		
+		Log.e("draw_Speeding","scheduleRedraw, RedrawMillis : "+RedrawMillis);
+		
+		Log.i("draw_Speeding","scheduleRedraw, SystemClock.uptimeMillis() : "+SystemClock.uptimeMillis());
+		
+		long nextRedraw = RedrawMillis + REFRESH_RATE;
 		
 		
 		nextRedraw = nextRedraw > SystemClock.uptimeMillis() ? nextRedraw :
@@ -244,11 +187,18 @@ public class PatpatView extends Activity{
 	}
 
 	private  void scheduleRedrawAt(long timeMillis) {
+		
+		Log.i("draw_Speeding","scheduleRedrawAt, nextRedraw : "+timeMillis);
 		(new Handler()).postAtTime(new Runnable() {
 			public void run() {
 				Redraw(PatpatWidgetApp.getApplication());
 			}
 		}, timeMillis);
+		
+		
+		/*if (state.NeedRedraw() || Children.size() > 0)
+			Redraw(Context);
+		*/
 	}
 
 	

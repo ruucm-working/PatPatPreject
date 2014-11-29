@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="fish_animation" key="selection"/>
+		<item value="stop_double_Draw" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="stop_double_Draw"/>
+			<item value="setState"/>
+			<item value="addAnimatable"/>
+			<item value="Lv3ClickAnim"/>
 			<item value="knifing_animation"/>
 			<item value="anim`"/>
 			<item value="anim"/>
 			<item value="setstae"/>
-			<item value="overlapAnimSwitch"/>
-			<item value="service"/>
-			<item value="CoinBlockWidgetApp"/>
-			<item value="PatWidgetApp"/>
 		</list>
 		<list key="replacehistory">
 			<item value="fish_animation"/>
@@ -32,7 +32,7 @@
 		<item value="311" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="491" key="DIALOG_HEIGHT"/>
-		<item value="171" key="DIALOG_Y_ORIGIN"/>
-		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="125" key="DIALOG_Y_ORIGIN"/>
+		<item value="1066" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
