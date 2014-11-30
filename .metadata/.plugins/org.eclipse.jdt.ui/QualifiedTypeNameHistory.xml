@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.example.test_viewpager02.helper.Utils"/>
-<fullyQualifiedTypeName name="android.graphics.drawable.BitmapDrawable"/>
 <fullyQualifiedTypeName name="android.app.ActionBar.LayoutParams"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="info.androidhive.imageslider.helper.HttpPostAsyncTask"/>
@@ -33,7 +31,6 @@
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.fragment.Frag02"/>
 <fullyQualifiedTypeName name="ji.ruucm.android.vertical_view.R"/>
 <fullyQualifiedTypeName name="android.app.DialogFragment"/>
-<fullyQualifiedTypeName name="android.app.Fragment"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="android.app.FragmentTransaction"/>
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentTransaction"/>
@@ -58,5 +55,9 @@
 <fullyQualifiedTypeName name="com.facebook.android.R"/>
 <fullyQualifiedTypeName name="com.ruucm.patpat.Activity.Activity_Intro"/>
 <fullyQualifiedTypeName name="com.ruucm.patpat.R"/>
+<fullyQualifiedTypeName name="com.jym.patpat.PatpatWidgetApp"/>
 <fullyQualifiedTypeName name="com.jym.patpat.R"/>
+<fullyQualifiedTypeName name="android.app.Fragment"/>
+<fullyQualifiedTypeName name="com.jym.patpat.Activity.Activity_Intro"/>
+<fullyQualifiedTypeName name="android.support.v4.app.ListFragment"/>
 </qualifiedTypeNameHistroy>

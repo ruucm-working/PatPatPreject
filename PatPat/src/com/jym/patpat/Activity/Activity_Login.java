@@ -299,7 +299,9 @@ public class Activity_Login extends Activity
 //<<<<<<< HEAD
 			}).executeAsync();
 		}
-	}/*
+	}
+	
+	/*
 =======
 				
 	        }

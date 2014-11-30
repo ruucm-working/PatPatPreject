@@ -2,24 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="stop_double_Draw" key="selection"/>
+		<item value="Instance" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="instance"/>
+			<item value="getInstance"/>
+			<item value="CoinBlockWidgetApp"/>
+			<item value="PatpatWidgetApp"/>
+			<item value="mViewPager"/>
 			<item value="stop_double_Draw"/>
 			<item value="setState"/>
 			<item value="addAnimatable"/>
-			<item value="Lv3ClickAnim"/>
-			<item value="knifing_animation"/>
-			<item value="anim`"/>
-			<item value="anim"/>
-			<item value="setstae"/>
 		</list>
 		<list key="replacehistory">
-			<item value="fish_animation"/>
 			<item value="PatpatWidgetApp"/>
+			<item value="fish_animation"/>
 			<item value="Activity_Intro"/>
 			<item value=""/>
 			<item value="50"/>
