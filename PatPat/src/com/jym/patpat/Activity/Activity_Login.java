@@ -14,7 +14,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.facebook.LoggingBehavior;
@@ -33,7 +33,7 @@ public class Activity_Login extends Activity
 {
 	//facebook	
 	private Session.StatusCallback statusCallback = new SessionStatusCallback();
-	private Button buttonLoginLogout;
+	private ImageView buttonLoginLogout;
 
 	//facebook login profile
 	String userId ;
@@ -159,7 +159,7 @@ public class Activity_Login extends Activity
 	//Facebook Login
 
 	private void init() {
-		buttonLoginLogout = (Button)findViewById(R.id.buttonLoginLogout1);
+		buttonLoginLogout = (ImageView)findViewById(R.id.buttonLoginLogout1);
 	}
 
 	@SuppressLint("NewApi")
@@ -217,13 +217,13 @@ public class Activity_Login extends Activity
 	private void updateView() {
 		Session session = Session.getActiveSession();
 		if (session.isOpened()) {
-			buttonLoginLogout.setText("로그아웃");
+			buttonLoginLogout.setImageResource(R.drawable.button_logout);
 			buttonLoginLogout.setOnClickListener(new OnClickListener() {
 				public void onClick(View view) { onClickLogout(); }
 			});
 			Log.d("tag02","userFirstName"+ userFirstName );
 		} else {
-			buttonLoginLogout.setText("로그인");
+			buttonLoginLogout.setImageResource(R.drawable.button_login);
 			buttonLoginLogout.setOnClickListener(new OnClickListener() {
 				public void onClick(View view) { onClickLogin(); }
 			});

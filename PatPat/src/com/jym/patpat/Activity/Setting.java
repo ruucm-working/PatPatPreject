@@ -31,8 +31,7 @@ public class Setting extends Activity {
 	
 	
 	
-	File saveDir ;
-	 static String parentPath = Environment.getExternalStorageDirectory().getAbsolutePath()+ "SsdamSsdam" ;
+	
 	
 	
 	//facebook profile
@@ -140,11 +139,7 @@ public class Setting extends Activity {
 		Log.d("tag3", "time01");
 
 		//프레퍼런스 읽어오기   
-		saveDir = new File(parentPath); // dir : 생성하고자 하는 경로
-		if(!saveDir.exists()) 
-		{
-			saveDir.mkdirs();
-		}
+		
 
 
 		try {

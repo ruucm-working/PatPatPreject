@@ -5,7 +5,638 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-11-26T10:21:00Z</updated>
+  <updated>2014-12-01T14:26:35Z</updated>
+  <entry>
+    <title>First Milestone of Spring Data Release Train Fowler Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/01/first-milestone-of-spring-data-release-train-fowler-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Oliver Gierke</name>
+    </author>
+    <id>tag:spring.io,2014-12-01:1866</id>
+    <updated>2014-12-01T14:26:35Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team, I am happy to announce the first milestone of the Spring Data Release train &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Fowler"&gt;Fowler&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The release ships &lt;a href="https://jira.spring.io/issues/?filter=14842"&gt;170 tickets fixed&lt;/a&gt;, 119 of them unique to the Fowler release train. Find a curated changelog &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Fowler"&gt;here&lt;/a&gt;. The highlights of the release include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Upgrades to Spring 4.0.8 and Querydsl 3.6.0.&lt;/li&gt;
+&lt;li&gt;Performance improvements in converter subsystem by using byte-code generation.&lt;/li&gt;
+&lt;li&gt;Out-of-the-box support for JSR-310 date/time types (MongoDB).&lt;/li&gt;
+&lt;li&gt;Various (performance) improvements in the usage of SpEL (JPA).&lt;/li&gt;
+&lt;li&gt;Support for &lt;code&gt;$bit&lt;/code&gt;, &lt;code&gt;$mul&lt;/code&gt; and &lt;code&gt;$position&lt;/code&gt; operators (MongoDB).&lt;/li&gt;
+&lt;li&gt;Improved proxy-id detection for JPA and REST.&lt;/li&gt;
+&lt;li&gt;Introdcution of &lt;code&gt;QueryDslPredicateExceutor.findAll(OrderSpecifier&amp;lt;?&amp;gt;... orders)&lt;/code&gt; (Querydsl).&lt;/li&gt;
+&lt;li&gt;CDI repository extension for Cassandra module.&lt;/li&gt;
+&lt;li&gt;Upgrade to Gemfire 8 (Gemfire).&lt;/li&gt;
+&lt;li&gt;Version property based ETag generation (REST).&lt;/li&gt;
+&lt;li&gt;Upgrades to Solr 4.10.1, Elasticsearch 1.2, Neo4J 2.1.5, compatibility with upcoming MongoDB server and driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are the participating modules:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring Data Commons 1.10 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/1.10.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.10.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.10.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/1.10.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data JPA 1.8 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/1.8.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.8.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.8.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/1.8.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data MongoDB 1.7 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/1.7.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.7.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.7.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/1.7.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Neo4j 3.3 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/3.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.3.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/3.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Solr 1.4 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/1.4.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.4.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.4.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/1.4.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Couchbase 1.3 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/1.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.3.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/1.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Cassandra 1.2 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/1.2.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.2.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.2.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/1.2.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Elasticsearch 1.2 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/1.2.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.2.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.2.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/1.2.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Gemfire 1.6 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/1.6.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.6.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.6.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/1.6.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data Redis 1.5 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/1.5.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.5.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.5.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/1.5.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Data REST 2.3 M1 - &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/2.3.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.3.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.3.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/2.3.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Be sure to check out the already &lt;a href="https://github.com/spring-projects/spring-data-examples"&gt;updated examples&lt;/a&gt;. Get in touch via &lt;a href="https://twitter.com/SpringData"&gt;Twitter&lt;/a&gt;, &lt;a href="http://stackoverflow.com/questions/tagged/spring-data"&gt;StackOverflow&lt;/a&gt; or &lt;a href="http://jira.spring.io"&gt;JIRA&lt;/a&gt;. We're looking forward to your feedback!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Integration Java DSL (pre Java 8): Line by line tutorial</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/01/spring-integration-java-dsl-pre-java-8-line-by-line-tutorial" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2014-11-28:1865</id>
+    <updated>2014-12-01T08:20:47Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community!&lt;/p&gt;
+
+&lt;p&gt;Recently we published the
+&lt;a href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial"&gt;Spring Integration Java DSL: Line by line tutorial&lt;/a&gt;,
+ which uses Java 8 Lambdas extensively. We received some feedback that this is good introduction
+ to the DSL, but a similar tutorial is needed for those users, who can't move to the Java 8 or aren't yet familiar
+ with &lt;code&gt;Lambdas&lt;/code&gt;, but wish to take advantage&lt;/p&gt;
+
+&lt;p&gt;So, to help those Spring Integration users who want to moved from XML configuration to Java &amp;amp; Annotation
+configuration, we provide this &lt;code&gt;line-by-line tutorial&lt;/code&gt; to demonstrate that, even without &lt;code&gt;Lambdas&lt;/code&gt;, we gain
+a lot from Spring Integration Java DSL usage. Although, most will agree that the lambda syntax provides for a
+more succinct definition.&lt;/p&gt;
+
+&lt;p&gt;We analyse here the same &lt;a href="https://github.com/spring-projects/spring-integration-samples/tree/master/dsl/cafe-dsl"&gt;Cafe Demo&lt;/a&gt; sample,
+ but using the pre Java 8 variant for configuration. Many options are the same, so we just copy/paste their description here to
+ achieve a complete picture. Since this Spring Integration Java DSL configuration is quite different to the
+ Java 8 lambda style, it will be useful for all users to get a knowlage how we can achieve the same result with a rich variety
+ of options provided by the Spring Integration Java DSL.&lt;/p&gt;
+
+&lt;p&gt;The source code for our application is placed in a single class, which is a &lt;code&gt;Boot&lt;/code&gt; application;
+significant lines are annotated with a number corresponding to the comments, which follow:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;SpringBootApplication&lt;/span&gt;                                                   &lt;span class="pl-c"&gt;// 1&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;IntegrationComponentScan&lt;/span&gt;                                                &lt;span class="pl-c"&gt;// 2&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;Application&lt;/span&gt; {
+
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;main&lt;/span&gt;(&lt;span class="pl-st"&gt;String&lt;/span&gt;[] &lt;span class="pl-v"&gt;args&lt;/span&gt;) &lt;span class="pl-s"&gt;throws&lt;/span&gt; &lt;span class="pl-stj"&gt;Exception&lt;/span&gt; {
+    &lt;span class="pl-stj"&gt;ConfigurableApplicationContext&lt;/span&gt; ctx &lt;span class="pl-k"&gt;=&lt;/span&gt;
+            &lt;span class="pl-stj"&gt;SpringApplication&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;run(&lt;span class="pl-stj"&gt;Application&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, args);              &lt;span class="pl-c"&gt;// 3&lt;/span&gt;
+
+    &lt;span class="pl-stj"&gt;Cafe&lt;/span&gt; cafe &lt;span class="pl-k"&gt;=&lt;/span&gt; ctx&lt;span class="pl-k"&gt;.&lt;/span&gt;getBean(&lt;span class="pl-stj"&gt;Cafe&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class);                                 &lt;span class="pl-c"&gt;// 4&lt;/span&gt;
+    &lt;span class="pl-k"&gt;for&lt;/span&gt; (&lt;span class="pl-st"&gt;int&lt;/span&gt; i &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;; i &lt;span class="pl-k"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="pl-c1"&gt;100&lt;/span&gt;; i&lt;span class="pl-k"&gt;++&lt;/span&gt;) {                                     &lt;span class="pl-c"&gt;// 5&lt;/span&gt;
+      &lt;span class="pl-stj"&gt;Order&lt;/span&gt; order &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Order&lt;/span&gt;(i);
+      order&lt;span class="pl-k"&gt;.&lt;/span&gt;addItem(&lt;span class="pl-stj"&gt;DrinkType&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;LATTE&lt;/span&gt;, &lt;span class="pl-c1"&gt;2&lt;/span&gt;, &lt;span class="pl-c1"&gt;false&lt;/span&gt;);
+      order&lt;span class="pl-k"&gt;.&lt;/span&gt;addItem(&lt;span class="pl-stj"&gt;DrinkType&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;MOCHA&lt;/span&gt;, &lt;span class="pl-c1"&gt;3&lt;/span&gt;, &lt;span class="pl-c1"&gt;true&lt;/span&gt;);
+      cafe&lt;span class="pl-k"&gt;.&lt;/span&gt;placeOrder(order);
+    }
+
+    &lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;out&lt;span class="pl-k"&gt;.&lt;/span&gt;println(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Hit 'Enter' to terminate&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;);                      &lt;span class="pl-c"&gt;// 6&lt;/span&gt;
+    &lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;in&lt;span class="pl-k"&gt;.&lt;/span&gt;read();
+    ctx&lt;span class="pl-k"&gt;.&lt;/span&gt;close();
+  }
+
+  &lt;span class="pl-st"&gt;@MessagingGateway&lt;/span&gt;                                                      &lt;span class="pl-c"&gt;// 7&lt;/span&gt;
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;interface&lt;/span&gt; &lt;span class="pl-en"&gt;Cafe&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@Gateway&lt;/span&gt;(&lt;span class="pl-c1"&gt;requestChannel&lt;/span&gt; &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;orders.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)                            &lt;span class="pl-c"&gt;// 8&lt;/span&gt;
+    &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;placeOrder&lt;/span&gt;(&lt;span class="pl-stj"&gt;Order&lt;/span&gt; &lt;span class="pl-v"&gt;order&lt;/span&gt;);                                        &lt;span class="pl-c"&gt;// 9&lt;/span&gt;
+
+  }
+
+  &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-s"&gt;final&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt; hotDrinkCounter &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt;();
+
+  &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-s"&gt;final&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt; coldDrinkCounter &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt;();    &lt;span class="pl-c"&gt;// 10&lt;/span&gt;
+
+  &lt;span class="pl-st"&gt;@Autowired&lt;/span&gt;
+  &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;CafeAggregator&lt;/span&gt; cafeAggregator;                                 &lt;span class="pl-c"&gt;// 11&lt;/span&gt;
+
+  &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;(&lt;span class="pl-c1"&gt;name&lt;/span&gt; &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-stj"&gt;PollerMetadata&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;DEFAULT_POLLER&lt;/span&gt;)
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;PollerMetadata&lt;/span&gt; &lt;span class="pl-en"&gt;poller&lt;/span&gt;() {                                       &lt;span class="pl-c"&gt;// 12&lt;/span&gt;
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;Pollers&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;fixedDelay(&lt;span class="pl-c1"&gt;1000&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;get();
+  }
+
+  &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+  &lt;span class="pl-st"&gt;@SuppressWarnings&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;unchecked&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;orders&lt;/span&gt;() {                                      &lt;span class="pl-c"&gt;// 13&lt;/span&gt;
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;orders.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)                         &lt;span class="pl-c"&gt;// 14&lt;/span&gt;
+      .split(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;payload.items&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, (&lt;span class="pl-stj"&gt;Consumer&lt;/span&gt;) &lt;span class="pl-c1"&gt;null&lt;/span&gt;)                           &lt;span class="pl-c"&gt;// 15&lt;/span&gt;
+      .channel(&lt;span class="pl-stj"&gt;MessageChannels&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;executor(&lt;span class="pl-stj"&gt;Executors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;newCachedThreadPool()))&lt;span class="pl-c"&gt;// 16&lt;/span&gt;
+      .route(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;payload.iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,                                             &lt;span class="pl-c"&gt;// 17&lt;/span&gt;
+        &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;Consumer&amp;lt;&lt;span class="pl-st"&gt;RouterSpec&amp;lt;&lt;span class="pl-stj"&gt;ExpressionEvaluatingRouter&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;gt;&lt;/span&gt;() {         &lt;span class="pl-c"&gt;// 18&lt;/span&gt;
+
+          &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+          &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;accept&lt;/span&gt;(&lt;span class="pl-st"&gt;RouterSpec&amp;lt;&lt;span class="pl-stj"&gt;ExpressionEvaluatingRouter&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-v"&gt;spec&lt;/span&gt;) {
+            spec&lt;span class="pl-k"&gt;.&lt;/span&gt;channelMapping(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;true&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+                .channelMapping(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;false&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;hot&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;);                         &lt;span class="pl-c"&gt;// 19&lt;/span&gt;
+          }
+
+        })
+      .get();                                                            &lt;span class="pl-c"&gt;// 20&lt;/span&gt;
+  }
+
+  &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;icedFlow&lt;/span&gt;() {                                    &lt;span class="pl-c"&gt;// 21&lt;/span&gt;
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-stj"&gt;MessageChannels&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;queue(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-c1"&gt;10&lt;/span&gt;))      &lt;span class="pl-c"&gt;// 22&lt;/span&gt;
+      .handle(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;GenericHandler&amp;lt;&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt;&amp;gt;&lt;/span&gt;() {                          &lt;span class="pl-c"&gt;// 23&lt;/span&gt;
+
+        &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+        &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Object&lt;/span&gt; &lt;span class="pl-en"&gt;handle&lt;/span&gt;(&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt; &lt;span class="pl-v"&gt;payload&lt;/span&gt;, &lt;span class="pl-st"&gt;Map&amp;lt;&lt;span class="pl-stj"&gt;String&lt;/span&gt;, &lt;span class="pl-stj"&gt;Object&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-v"&gt;headers&lt;/span&gt;) {
+          &lt;span class="pl-stj"&gt;Uninterruptibles&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;sleepUninterruptibly(&lt;span class="pl-c1"&gt;1&lt;/span&gt;, &lt;span class="pl-stj"&gt;TimeUnit&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SECONDS&lt;/span&gt;);
+          &lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;out&lt;span class="pl-k"&gt;.&lt;/span&gt;println(&lt;span class="pl-stj"&gt;Thread&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;currentThread()&lt;span class="pl-k"&gt;.&lt;/span&gt;getName()
+            &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; prepared cold drink #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; coldDrinkCounter&lt;span class="pl-k"&gt;.&lt;/span&gt;incrementAndGet()
+            &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; for order #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber() &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;: &lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload);
+          &lt;span class="pl-k"&gt;return&lt;/span&gt; payload;                                                &lt;span class="pl-c"&gt;// 24&lt;/span&gt;
+        }
+
+      })
+      .channel(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;output&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)                                                 &lt;span class="pl-c"&gt;// 25&lt;/span&gt;
+      .get();
+  }
+
+  &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;hotFlow&lt;/span&gt;() {                                     &lt;span class="pl-c"&gt;// 26&lt;/span&gt;
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-stj"&gt;MessageChannels&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;queue(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;hot&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-c1"&gt;10&lt;/span&gt;))
+      .handle(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;GenericHandler&amp;lt;&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt;&amp;gt;&lt;/span&gt;() {
+
+        &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+        &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Object&lt;/span&gt; &lt;span class="pl-en"&gt;handle&lt;/span&gt;(&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt; &lt;span class="pl-v"&gt;payload&lt;/span&gt;, &lt;span class="pl-st"&gt;Map&amp;lt;&lt;span class="pl-stj"&gt;String&lt;/span&gt;, &lt;span class="pl-stj"&gt;Object&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-v"&gt;headers&lt;/span&gt;) {
+          &lt;span class="pl-stj"&gt;Uninterruptibles&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;sleepUninterruptibly(&lt;span class="pl-c1"&gt;5&lt;/span&gt;, &lt;span class="pl-stj"&gt;TimeUnit&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SECONDS&lt;/span&gt;);    &lt;span class="pl-c"&gt;// 27&lt;/span&gt;
+          &lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;out&lt;span class="pl-k"&gt;.&lt;/span&gt;println(&lt;span class="pl-stj"&gt;Thread&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;currentThread()&lt;span class="pl-k"&gt;.&lt;/span&gt;getName()
+            &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; prepared hot drink #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; hotDrinkCounter&lt;span class="pl-k"&gt;.&lt;/span&gt;incrementAndGet()
+            &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; for order #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber() &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;: &lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload);
+          &lt;span class="pl-k"&gt;return&lt;/span&gt; payload;
+        }
+
+      })
+      .channel(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;output&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+      .get();
+  }
+
+  &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;resultFlow&lt;/span&gt;() {                                  &lt;span class="pl-c"&gt;// 28&lt;/span&gt;
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;output&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)                               &lt;span class="pl-c"&gt;// 29&lt;/span&gt;
+      .transform(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;GenericTransformer&amp;lt;&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt;, &lt;span class="pl-stj"&gt;Drink&lt;/span&gt;&amp;gt;&lt;/span&gt;() {            &lt;span class="pl-c"&gt;// 30&lt;/span&gt;
+
+        &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+        &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Drink&lt;/span&gt; &lt;span class="pl-en"&gt;transform&lt;/span&gt;(&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt; &lt;span class="pl-v"&gt;orderItem&lt;/span&gt;) {
+          &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Drink&lt;/span&gt;(orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber(),
+            orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getDrinkType(),
+            orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;isIced(),
+            orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getShots());                                       &lt;span class="pl-c"&gt;// 31&lt;/span&gt;
+        }
+
+      })
+      .aggregate(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;Consumer&amp;lt;&lt;span class="pl-stj"&gt;AggregatorSpec&lt;/span&gt;&amp;gt;&lt;/span&gt;() {                        &lt;span class="pl-c"&gt;// 32&lt;/span&gt;
+
+        &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+        &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;accept&lt;/span&gt;(&lt;span class="pl-stj"&gt;AggregatorSpec&lt;/span&gt; &lt;span class="pl-v"&gt;aggregatorSpec&lt;/span&gt;) {
+          aggregatorSpec&lt;span class="pl-k"&gt;.&lt;/span&gt;processor(cafeAggregator, &lt;span class="pl-c1"&gt;null&lt;/span&gt;);                &lt;span class="pl-c"&gt;// 33&lt;/span&gt;
+        }
+
+      }, &lt;span class="pl-c1"&gt;null&lt;/span&gt;)
+      .handle(&lt;span class="pl-stj"&gt;CharacterStreamWritingMessageHandler&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;stdout())             &lt;span class="pl-c"&gt;// 34&lt;/span&gt;
+    .get();
+  }
+
+
+  &lt;span class="pl-st"&gt;@Component&lt;/span&gt;
+  &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;CafeAggregator&lt;/span&gt; {                                   &lt;span class="pl-c"&gt;// 35&lt;/span&gt;
+
+    &lt;span class="pl-st"&gt;@Aggregator&lt;/span&gt;                                                          &lt;span class="pl-c"&gt;// 36&lt;/span&gt;
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Delivery&lt;/span&gt; &lt;span class="pl-en"&gt;output&lt;/span&gt;(&lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;Drink&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-v"&gt;drinks&lt;/span&gt;) {
+      &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Delivery&lt;/span&gt;(drinks);
+    }
+
+    &lt;span class="pl-st"&gt;@CorrelationStrategy&lt;/span&gt;                                                 &lt;span class="pl-c"&gt;// 37&lt;/span&gt;
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Integer&lt;/span&gt; &lt;span class="pl-en"&gt;correlation&lt;/span&gt;(&lt;span class="pl-stj"&gt;Drink&lt;/span&gt; &lt;span class="pl-v"&gt;drink&lt;/span&gt;) {
+      &lt;span class="pl-k"&gt;return&lt;/span&gt; drink&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber();
+    }
+
+  }
+
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Examining the code line by line...&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line1"&gt;&lt;/a&gt;
+1.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;SpringBootApplication&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This new meta-annotation from Spring Boot 1.2. Includes &lt;code&gt;@Configuration&lt;/code&gt; and
+&lt;code&gt;@EnableAutoConfiguration&lt;/code&gt;. Since we are in a Spring Integration application and Spring Boot has auto-configuration
+for it, the &lt;code&gt;@EnableIntegration&lt;/code&gt; is automatically applied, to initialize the Spring Integration infrastructure including an
+environment for the Java DSL - &lt;code&gt;DslIntegrationConfigurationInitializer&lt;/code&gt;, which is picked up by the
+&lt;code&gt;IntegrationConfigurationBeanFactoryPostProcessor&lt;/code&gt; from &lt;code&gt;/META-INF/spring.factories&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line2"&gt;&lt;/a&gt;
+2.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;IntegrationComponentScan&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The Spring Integration analogue of &lt;code&gt;@ComponentScan&lt;/code&gt; to scan components based on
+interfaces, (the Spring Framework's &lt;code&gt;@ComponentScan&lt;/code&gt; only looks at classes). Spring Integration supports the discovery of interfaces
+annotated with &lt;code&gt;@MessagingGateway&lt;/code&gt; (see #7 below).&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line3"&gt;&lt;/a&gt;
+3.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-stj"&gt;ConfigurableApplicationContext&lt;/span&gt; ctx &lt;span class="pl-k"&gt;=&lt;/span&gt;
+             &lt;span class="pl-stj"&gt;SpringApplication&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;run(&lt;span class="pl-stj"&gt;Application&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, args);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;main&lt;/code&gt; method of our class is designed to start the Spring Boot application using the
+configuration from this class and starts an &lt;code&gt;ApplicationContext&lt;/code&gt; via Spring Boot. In addition, it delegates command
+line arguments to the Spring Boot. For example you can specify &lt;code&gt;--debug&lt;/code&gt; to see logs for the boot auto-configuration report.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line4"&gt;&lt;/a&gt;
+4.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-stj"&gt;Cafe&lt;/span&gt; cafe &lt;span class="pl-k"&gt;=&lt;/span&gt; ctx&lt;span class="pl-k"&gt;.&lt;/span&gt;getBean(&lt;span class="pl-stj"&gt;Cafe&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since we already have an &lt;code&gt;ApplicationContext&lt;/code&gt; we can start to interact with application. And &lt;code&gt;Cafe&lt;/code&gt;
+is that entry point - in EIP terms a &lt;code&gt;gateway&lt;/code&gt;. Gateways are simply interfaces and the application does not interact
+with the Messaging API; it simply deals with the domain (see #7 below).&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line5"&gt;&lt;/a&gt;
+5.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;for&lt;/span&gt; (&lt;span class="pl-st"&gt;int&lt;/span&gt; i &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;; i &lt;span class="pl-k"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="pl-c1"&gt;100&lt;/span&gt;; i&lt;span class="pl-k"&gt;++&lt;/span&gt;) {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To demonstrate the cafe "work" we intiate 100 orders with two drinks - one hot and one iced. And send the &lt;code&gt;Order&lt;/code&gt; to the &lt;code&gt;Cafe&lt;/code&gt; gateway.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line6"&gt;&lt;/a&gt;
+6.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;out&lt;span class="pl-k"&gt;.&lt;/span&gt;println(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Hit 'Enter' to terminate&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Typically Spring Integration application are asynchronous, hence to avoid early exit from the &lt;code&gt;main&lt;/code&gt; Thread we block the
+&lt;code&gt;main&lt;/code&gt; method until some end-user interaction through the command line. Non daemon threads will keep the application
+open but &lt;code&gt;System.read()&lt;/code&gt; provides us with a mechanism to close the application cleanly.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line7"&gt;&lt;/a&gt;
+7.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;MessagingGateway&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The annotation to mark a business interface to indicate it is a &lt;code&gt;gateway&lt;/code&gt; between the
+end-application and integration layer. It is an analogue of &lt;code&gt;&amp;lt;gateway /&amp;gt;&lt;/code&gt; component from Spring Integration XML
+configuration. Spring Integration creates a &lt;code&gt;Proxy&lt;/code&gt; for this interface and populates it as a bean in the
+application context. The purpose of this &lt;code&gt;Proxy&lt;/code&gt; is to wrap parameters in a &lt;code&gt;Message&amp;lt;?&amp;gt;&lt;/code&gt; object and send it to the
+&lt;code&gt;MessageChannel&lt;/code&gt; according to the provided options.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line8"&gt;&lt;/a&gt;
+8.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@Gateway(requestChannel &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;orders.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The method level annotation to distinct business logic by methods as well as by the target
+integration flows. In this sample we use a &lt;code&gt;requestChannel&lt;/code&gt; reference of &lt;code&gt;orders.input&lt;/code&gt;, which is a &lt;code&gt;MessageChannel&lt;/code&gt;
+bean name of our &lt;code&gt;IntegrationFlow&lt;/code&gt; input channel (see below #14).&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line9"&gt;&lt;/a&gt;
+9.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-st"&gt;void&lt;/span&gt; placeOrder(&lt;span class="pl-stj"&gt;Order&lt;/span&gt; order);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The interface method is a central point to interact from end-application with the integration layer. This method has a
+&lt;code&gt;void&lt;/code&gt; return type. It means that our integration flow is &lt;code&gt;one-way&lt;/code&gt; and we just send messages to the integration flow, but don't wait for a reply.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line10"&gt;&lt;/a&gt;
+10.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt; hotDrinkCounter &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt;();
+&lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt; coldDrinkCounter &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;AtomicInteger&lt;/span&gt;();&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Two counters to gather the information how our cafe works with drinks.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line11"&gt;&lt;/a&gt;
+11.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Autowired&lt;/span&gt;
+&lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;CafeAggregator&lt;/span&gt; cafeAggregator;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The POJO for the &lt;code&gt;Aggregator&lt;/code&gt; logic (see #33 and #35 below). Since it is a Spring bean, we can simply inject it even to the current &lt;code&gt;@Configuration&lt;/code&gt; and use in any place below, e.g. from the &lt;code&gt;.aggregate()&lt;/code&gt; EIP-method.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line12"&gt;&lt;/a&gt;
+12.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@Bean(name &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-stj"&gt;PollerMetadata&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;DEFAULT_POLLER&lt;/span&gt;)
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;PollerMetadata&lt;/span&gt; poller() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;default&lt;/code&gt; &lt;code&gt;poller&lt;/code&gt; bean. It is a analogue of &lt;code&gt;&amp;lt;poller default="true"&amp;gt;&lt;/code&gt; component from Spring Integration XML configuration. Required for endpoints where the &lt;code&gt;inputChannel&lt;/code&gt; is a &lt;code&gt;PollableChannel&lt;/code&gt;. In this case, it is necessary for the
+two Cafe &lt;code&gt;queues&lt;/code&gt; - hot and iced (see below #18). Here we use the &lt;code&gt;Pollers&lt;/code&gt; factory from the DSL project and use its
+method-chain fluent API to build the poller metadata. Note that &lt;code&gt;Pollers&lt;/code&gt; can be used directly from an &lt;code&gt;IntegrationFlow&lt;/code&gt; definition,
+if a specific &lt;code&gt;poller&lt;/code&gt; (rather than the default poller) is needed for an endpoint.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line13"&gt;&lt;/a&gt;
+13.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Bean&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; orders() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;IntegrationFlow&lt;/code&gt; bean definition. It is the central component of the Spring Integration Java DSL, although it does not play any role at runtime, just during the bean registration phase. All other code below registers Spring Integration components (&lt;code&gt;MessageChannel&lt;/code&gt;, &lt;code&gt;MessageHandler&lt;/code&gt;, &lt;code&gt;EventDrivenConsumer&lt;/code&gt;, &lt;code&gt;MessageProducer&lt;/code&gt;, &lt;code&gt;MessageSource&lt;/code&gt; etc.) in the &lt;code&gt;IntegrationFlow&lt;/code&gt; object, which is parsed by the &lt;code&gt;IntegrationFlowBeanPostProcessor&lt;/code&gt; to process those components and register them as beans in the application context as necessary (some elements, such as channels may already exist).&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line14"&gt;&lt;/a&gt;
+14.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;orders.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;IntegrationFlows&lt;/code&gt; is the main &lt;code&gt;factory&lt;/code&gt; class to start the &lt;code&gt;IntegrationFlow&lt;/code&gt;. It provides a number of overloaded &lt;code&gt;.from()&lt;/code&gt; methods to allow starting a flow from a &lt;code&gt;SourcePollingChannelAdapter&lt;/code&gt; for a &lt;code&gt;MessageSource&amp;lt;?&amp;gt;&lt;/code&gt; implementations, e.g. &lt;code&gt;JdbcPollingChannelAdapter&lt;/code&gt;; from a &lt;code&gt;MessageProducer&lt;/code&gt;, e.g. &lt;code&gt;WebSocketInboundChannelAdapter&lt;/code&gt;; or simply a &lt;code&gt;MessageChannel&lt;/code&gt;. All ".from()" options have several convenient variants to configure the appropriate component for the start of the &lt;code&gt;IntegrationFlow&lt;/code&gt;. Here we use just a channel name, which is converted to a &lt;code&gt;DirectChannel&lt;/code&gt; bean definition during the bean definition phase while parsing the &lt;code&gt;IntegrationFlow&lt;/code&gt;. In the Java 8 variant, we used here a &lt;code&gt;Lambda definition&lt;/code&gt; - and this &lt;code&gt;MessageChannel&lt;/code&gt; has been implicitly created with the bean name based on the &lt;code&gt;IntegrationFlow&lt;/code&gt; bean name.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line15"&gt;&lt;/a&gt;
+15.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.split(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;payload.items&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, (&lt;span class="pl-stj"&gt;Consumer&lt;/span&gt;) &lt;span class="pl-c1"&gt;null&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since our integration flow accepts messages through the &lt;code&gt;orders.input&lt;/code&gt; channel, we are ready to consume and process them. The first EIP-method in our scenario is &lt;code&gt;.split()&lt;/code&gt;. We know that the message &lt;code&gt;payload&lt;/code&gt; from &lt;code&gt;orders.input&lt;/code&gt; channel is an &lt;code&gt;Order&lt;/code&gt; domain object, so we can simply use here a Spring (SpEL) Expression to return &lt;code&gt;Collection&amp;lt;OrderItem&amp;gt;&lt;/code&gt;. So, this performs the &lt;code&gt;split&lt;/code&gt; EI pattern, and we send each collection entry as a separate message to the next channel. In the background, the &lt;code&gt;.split()&lt;/code&gt; method registers a &lt;code&gt;ExpressionEvaluatingSplitter&lt;/code&gt; &lt;code&gt;MessageHandler&lt;/code&gt; implementation and an &lt;code&gt;EventDrivenConsumer&lt;/code&gt; for that &lt;code&gt;MessageHandler&lt;/code&gt;, wiring in the &lt;code&gt;orders.input&lt;/code&gt; channel as the &lt;code&gt;inputChannel&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second argument for the &lt;code&gt;.split()&lt;/code&gt; EIP-method is for an &lt;code&gt;endpointConfigurer&lt;/code&gt; to
+customize options like &lt;code&gt;autoStartup&lt;/code&gt;, &lt;code&gt;requiresReply&lt;/code&gt;, &lt;code&gt;adviceChain&lt;/code&gt; etc. We use here &lt;code&gt;null&lt;/code&gt; to show that we rely
+on the default options for the endpoint. Many of EIP-methods provide overloaded versions with and without
+&lt;code&gt;endpointConfigurer&lt;/code&gt;. Currently &lt;code&gt;.split(String expression)&lt;/code&gt; EIP-method without the &lt;code&gt;endpointConfigurer&lt;/code&gt; argument is not available; this will be addressed in a future release.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line16"&gt;&lt;/a&gt;
+16.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.channel(&lt;span class="pl-stj"&gt;MessageChannels&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;executor(&lt;span class="pl-stj"&gt;Executors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;newCachedThreadPool()))&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.channel()&lt;/code&gt; EIP-method allows the specification of concrete &lt;code&gt;MessageChannel&lt;/code&gt;s between endpoints, as it is done via
+&lt;code&gt;output-channel&lt;/code&gt;/&lt;code&gt;input-channel&lt;/code&gt; attributes pair with Spring Integration XML configuration. By default, endpoints in the
+DSL integration flow definition are wired with &lt;code&gt;DirectChannel&lt;/code&gt;s, which get bean names based on the &lt;code&gt;IntegrationFlow&lt;/code&gt;
+bean name and &lt;code&gt;index&lt;/code&gt; in the flow chain. In this case we select a
+specific &lt;code&gt;MessageChannel&lt;/code&gt; implementation from the &lt;code&gt;Channels&lt;/code&gt; factory class; the selected
+channel here is an &lt;code&gt;ExecutorChannel&lt;/code&gt;, to allow distribution of messages from the &lt;code&gt;splitter&lt;/code&gt; to separate &lt;code&gt;Thread&lt;/code&gt;s, to process
+them in parallel in the downstream flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line17"&gt;&lt;/a&gt;
+17.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.route(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;payload.iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The next EIP-method in our scenario is &lt;code&gt;.route()&lt;/code&gt;, to send &lt;code&gt;hot/iced&lt;/code&gt; order items to different Cafe kitchens. We again use here a SpEL expression to get the &lt;code&gt;routingKey&lt;/code&gt; from the incoming message. In the Java 8 variant, we used a &lt;code&gt;method-reference&lt;/code&gt; Lambda expression, but for pre Java 8 style we must use SpEL or an inline interface implementation. Many anonymous classes in a flow can make the flow difficult to read so we prefer SpEL in most cases.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line18"&gt;&lt;/a&gt;
+18.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;Consumer&amp;lt;&lt;span class="pl-st"&gt;RouterSpec&amp;lt;&lt;span class="pl-stj"&gt;ExpressionEvaluatingRouter&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;gt;&lt;/span&gt;() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The second argument of &lt;code&gt;.route()&lt;/code&gt; EIP-method is a functional interface &lt;code&gt;Consumer&lt;/code&gt; to specify &lt;code&gt;ExpressionEvaluatingRouter&lt;/code&gt; options using a &lt;code&gt;RouterSpec&lt;/code&gt; Builder. Since we don't have any choice with pre Java 8, we just provide here an inline implementation for this interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line19"&gt;&lt;/a&gt;
+19.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;spec&lt;span class="pl-k"&gt;.&lt;/span&gt;channelMapping(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;true&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    .channelMapping(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;false&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;hot&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With the &lt;code&gt;Consumer&amp;lt;RouterSpec&amp;lt;ExpressionEvaluatingRouter&amp;gt;&amp;gt;#accept()&lt;/code&gt; implementation we can provide desired &lt;code&gt;AbstractMappingMessageRouter&lt;/code&gt; options. One of them is &lt;code&gt;channelMappings&lt;/code&gt;, when we specify the routing logic by the result of router expresion and the target &lt;code&gt;MessageChannel&lt;/code&gt; for the apropriate result. In this case &lt;code&gt;iced&lt;/code&gt; and &lt;code&gt;hot&lt;/code&gt; are &lt;code&gt;MessageChannel&lt;/code&gt; names for &lt;code&gt;IntegrationFlow&lt;/code&gt;s below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line20"&gt;&lt;/a&gt;
+20.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.get();&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This finalizes the flow.
+Any &lt;code&gt;IntegrationFlows.from()&lt;/code&gt; method returns an &lt;code&gt;IntegrationFlowBuilder&lt;/code&gt; instance and this &lt;code&gt;get()&lt;/code&gt; method extracts an &lt;code&gt;IntegrationFlow&lt;/code&gt; object from the &lt;code&gt;IntegrationFlowBuilder&lt;/code&gt; configuration. Everything starting from the  &lt;code&gt;.from()&lt;/code&gt; and up to the method before the &lt;code&gt;.get()&lt;/code&gt; is an &lt;code&gt;IntegrationFlow&lt;/code&gt; definition. All defined components are stored in the &lt;code&gt;IntegrationFlow&lt;/code&gt; and processed by the &lt;code&gt;IntegrationFlowBeanPostProcessor&lt;/code&gt; during the bean creation phase.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line21"&gt;&lt;/a&gt;
+21.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Bean&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; icedFlow() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is the second &lt;code&gt;IntegrationFlow&lt;/code&gt; bean definition - for &lt;code&gt;iced&lt;/code&gt; drinks. Here we demonstrate that several &lt;code&gt;IntegrationFlow&lt;/code&gt;s
+can be wired together to create a single complex application. Note: it isn't recommended to inject one &lt;code&gt;IntegrationFlow&lt;/code&gt; to
+another; it might cause unexpected behaviour. Since they provide Integration components for the bean registration and
+&lt;code&gt;MessageChannel&lt;/code&gt;s one of them, the best way to wire and inject is via &lt;code&gt;MessageChannel&lt;/code&gt; or &lt;code&gt;@MessagingGateway&lt;/code&gt;
+interfaces.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line22"&gt;&lt;/a&gt;
+22.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-stj"&gt;MessageChannels&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;queue(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;iced&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;, &lt;span class="pl-c1"&gt;10&lt;/span&gt;))&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;iced&lt;/code&gt; &lt;code&gt;IntegrationFlow&lt;/code&gt; starts from a &lt;code&gt;QueueChannel&lt;/code&gt; that has a capacity of &lt;code&gt;10&lt;/code&gt; messages; it is registered as a bean with the name &lt;code&gt;iced&lt;/code&gt;.
+As you remember we use this name as one of the route mappings (see above #19).&lt;/p&gt;
+
+&lt;p&gt;In our sample, we use here a restricted
+&lt;code&gt;QueueChannel&lt;/code&gt; to reflect the Cafe kitchen busy state from real life. And here is a place where we need that
+&lt;code&gt;global poller&lt;/code&gt; for the next endpoint which is listening on this channel.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line23"&gt;&lt;/a&gt;
+23.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.handle(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;GenericHandler&amp;lt;&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt;&amp;gt;&lt;/span&gt;() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.handle()&lt;/code&gt; EIP-method of the &lt;code&gt;iced&lt;/code&gt; flow demonstrates the concrete Cafe kitchen work. Since we can't minimize
+the code with something like Java 8 Lambda expression, we provide here an inline implementation for the &lt;code&gt;GenericHandler&lt;/code&gt;
+functional interface with the expected &lt;code&gt;payload&lt;/code&gt; type as the generic argument. With the Java 8 example, we distribute this &lt;code&gt;.handle()&lt;/code&gt;
+between several subscriber subflows for a &lt;code&gt;PublishSubscribeChannel&lt;/code&gt;. However in this case, the logic is all
+implemented in the one method.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line24"&gt;&lt;/a&gt;
+24.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-stj"&gt;Uninterruptibles&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;sleepUninterruptibly(&lt;span class="pl-c1"&gt;1&lt;/span&gt;, &lt;span class="pl-stj"&gt;TimeUnit&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SECONDS&lt;/span&gt;);
+&lt;span class="pl-stj"&gt;System&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;out&lt;span class="pl-k"&gt;.&lt;/span&gt;println(&lt;span class="pl-stj"&gt;Thread&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;currentThread()&lt;span class="pl-k"&gt;.&lt;/span&gt;getName()
+      &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; prepared cold drink #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; coldDrinkCounter&lt;span class="pl-k"&gt;.&lt;/span&gt;incrementAndGet()
+      &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt; for order #&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber() &lt;span class="pl-k"&gt;+&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;: &lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;+&lt;/span&gt; payload);
+&lt;span class="pl-k"&gt;return&lt;/span&gt; payload;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The business logic implementation for the current &lt;code&gt;.handle()&lt;/code&gt; EIP-component. With
+&lt;code&gt;Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);&lt;/code&gt; we just block the current &lt;code&gt;Thread&lt;/code&gt; for some timeout to demonstrate how
+quickly the Cafe kitchen prepares a drink. After that we just report to &lt;code&gt;STDOUT&lt;/code&gt; that the drink is ready and
+return the current &lt;code&gt;OrderItem&lt;/code&gt; from the &lt;code&gt;GenericHandler&lt;/code&gt; for the next endpoint in our &lt;code&gt;IntegrationFlow&lt;/code&gt;. In the
+background, the DSL framework registers a &lt;code&gt;ServiceActivatingHandler&lt;/code&gt; for the &lt;code&gt;MethodInvokingMessageProcessor&lt;/code&gt; to invoke the
+&lt;code&gt;GenericHandler#handle&lt;/code&gt; at runtime. In addition, the framework registers a &lt;code&gt;PollingConsumer&lt;/code&gt; endpoint for the
+&lt;code&gt;QueueChannel&lt;/code&gt; above. This endpoint relies on the &lt;code&gt;default poller&lt;/code&gt; to poll messages from the queue. Of course, we
+always can use a specific &lt;code&gt;poller&lt;/code&gt; for any concrete endpoint. In that case, we would have to provide a second
+&lt;code&gt;endpointConfigurer&lt;/code&gt; argument to the &lt;code&gt;.handle()&lt;/code&gt; EIP-method.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line25"&gt;&lt;/a&gt;
+25.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.channel(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;output&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Since it is not the end of our Cafe scenario, we send the result of the current flow to the &lt;code&gt;output&lt;/code&gt; channel
+using the convenient EIP-method &lt;code&gt;.channel()&lt;/code&gt; and the name of the &lt;code&gt;MessageChannel&lt;/code&gt; bean (see below #29). This is the logical
+ end of the current iced drink subflow, so we use the &lt;code&gt;.get()&lt;/code&gt; method to return the &lt;code&gt;IntegrationFlow&lt;/code&gt;. Flows that end
+ with a reply-producing handler that don't have a final &lt;code&gt;.channel()&lt;/code&gt; will return the reply to the message &lt;code&gt;replyChannel&lt;/code&gt; header.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line26"&gt;&lt;/a&gt;
+26.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Bean&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; hotFlow() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;IntegrationFlow&lt;/code&gt; definition for &lt;code&gt;hot&lt;/code&gt; drinks. It is similar to the previous &lt;code&gt;iced&lt;/code&gt; drinks flow, but
+with specific &lt;code&gt;hot&lt;/code&gt; business logic. It starts from the &lt;code&gt;hot&lt;/code&gt; &lt;code&gt;QueueChannel&lt;/code&gt; which is mapped from the router above.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line27"&gt;&lt;/a&gt;
+27.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-stj"&gt;Uninterruptibles&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;sleepUninterruptibly(&lt;span class="pl-c1"&gt;5&lt;/span&gt;, &lt;span class="pl-stj"&gt;TimeUnit&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SECONDS&lt;/span&gt;);&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;sleepUninterruptibly&lt;/code&gt; for &lt;code&gt;hot&lt;/code&gt; drinks. Right, we need more time to boil the water!&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line28"&gt;&lt;/a&gt;
+28.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Bean&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; resultFlow() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;One more &lt;code&gt;IntegrationFlow&lt;/code&gt; bean definition to prepare the &lt;code&gt;Delivery&lt;/code&gt; for the Cafe client based on the &lt;code&gt;Drink&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line29"&gt;&lt;/a&gt;
+29.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-stj"&gt;IntegrationFlows&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;from(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;output&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;resultFlow&lt;/code&gt; starts from the &lt;code&gt;DirectChannel&lt;/code&gt;, which is created during the bean definition phase with this
+provided name. You should remember that we use the &lt;code&gt;output&lt;/code&gt; channel name from the Cafe kitchens flows in the last &lt;code&gt;.channel()&lt;/code&gt; in
+those definitions.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line30"&gt;&lt;/a&gt;
+30.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.transform(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;GenericTransformer&amp;lt;&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt;, &lt;span class="pl-stj"&gt;Drink&lt;/span&gt;&amp;gt;&lt;/span&gt;() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.transform()&lt;/code&gt; EIP-method is for the appropriate pattern implementation and expects some object to convert one
+payload to another. In our sample we use an inline implementation of the &lt;code&gt;GenericTransformer&lt;/code&gt; functional interface to
+ convert &lt;code&gt;OrderItem&lt;/code&gt; to &lt;code&gt;Drink&lt;/code&gt; and we specify that using generic arguments. In the background, the DSL framework
+ registers a &lt;code&gt;MessageTransformingHandler&lt;/code&gt; and an &lt;code&gt;EventDrivenConsumer&lt;/code&gt; endpoint with default options to consume messages
+ from the &lt;code&gt;output&lt;/code&gt; &lt;code&gt;MessageChannel&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line31"&gt;&lt;/a&gt;
+31.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Drink&lt;/span&gt; transform(&lt;span class="pl-stj"&gt;OrderItem&lt;/span&gt; orderItem) {
+  &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Drink&lt;/span&gt;(orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber(),
+    orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getDrinkType(),
+    orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;isIced(),
+    orderItem&lt;span class="pl-k"&gt;.&lt;/span&gt;getShots());
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The business-specific &lt;code&gt;GenericTransformer#transform()&lt;/code&gt; implementation to demonstrate how we benefit from Java
+Generics to transform one &lt;code&gt;payload&lt;/code&gt; to another. Note: Spring Integration uses &lt;code&gt;ConversionService&lt;/code&gt; before
+any method invocation and if you provide some specific &lt;code&gt;Converter&lt;/code&gt; implementation, some domain &lt;code&gt;payload&lt;/code&gt; can be
+converted to another automatically, when the framework has an appropriate registered &lt;code&gt;Converter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line32"&gt;&lt;/a&gt;
+32.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.aggregate(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-st"&gt;Consumer&amp;lt;&lt;span class="pl-stj"&gt;AggregatorSpec&lt;/span&gt;&amp;gt;&lt;/span&gt;() {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;.aggregate()&lt;/code&gt; EIP-method provides options to configure an &lt;code&gt;AggregatingMessageHandler&lt;/code&gt; and its endpoint,
+similar to what we can do with the &lt;code&gt;&amp;lt;aggregator&amp;gt;&lt;/code&gt; component when using Spring Integration XML configuration. Of course, with the Java DSL
+we have more power to configure the aggregator in place, without any other extra beans. However we demonstrate
+here an aggregator configuration with annotations (see below #35).
+From the Cafe business logic perspective we compose the &lt;code&gt;Delivery&lt;/code&gt; for the initial &lt;code&gt;Order&lt;/code&gt;, since we &lt;code&gt;.split()&lt;/code&gt; the original order
+to the &lt;code&gt;OrderItem&lt;/code&gt;s near the beginning.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line33"&gt;&lt;/a&gt;
+33.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; accept(&lt;span class="pl-stj"&gt;AggregatorSpec&lt;/span&gt; aggregatorSpec) {
+     aggregatorSpec&lt;span class="pl-k"&gt;.&lt;/span&gt;processor(cafeAggregator, &lt;span class="pl-c1"&gt;null&lt;/span&gt;);
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;An inline implementation of the &lt;code&gt;Consumer&lt;/code&gt; for the &lt;code&gt;AggregatorSpec&lt;/code&gt;. Using the &lt;code&gt;aggregatorSpec&lt;/code&gt; Builder we can provide
+desired options for the &lt;code&gt;aggregator&lt;/code&gt; component, which will be registered as an &lt;code&gt;AggregatingMessageHandler&lt;/code&gt; bean. Here we
+just provide the &lt;code&gt;processor&lt;/code&gt; as a reference to the autowired (see #11 above) &lt;code&gt;CafeAggregator&lt;/code&gt; component (see #35 below).
+The second argument of the &lt;code&gt;.processor()&lt;/code&gt; option is &lt;code&gt;methodName&lt;/code&gt;. Since we are relying on the aggregator
+annotation configuration for the POJO, we don't need to provide the method here and the framework will determine the correct POJO methods
+in the background.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line34"&gt;&lt;/a&gt;
+34.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;.handle(&lt;span class="pl-stj"&gt;CharacterStreamWritingMessageHandler&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;stdout())&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It is the end of our flow - the &lt;code&gt;Delivery&lt;/code&gt; is delivered to the client! We just print here the message &lt;code&gt;payload&lt;/code&gt;
+to STDOUT using out-of-the-box &lt;code&gt;CharacterStreamWritingMessageHandler&lt;/code&gt; from Spring Integration Core. This is a
+case to show how existing components from Spring Integration Core (and its modules) can be used from the Java DSL.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line35"&gt;&lt;/a&gt;
+35.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Component&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;CafeAggregator&lt;/span&gt; {&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The bean to specify the business logic for the &lt;code&gt;aggregator&lt;/code&gt; above. This bean is picked up by the &lt;code&gt;@ComponentScan&lt;/code&gt;,
+which is a part of the &lt;code&gt;@SpringBootApplication&lt;/code&gt; meta-annotation (see above #1). So, this component becomes a bean
+and we can automatically wire (&lt;code&gt;@Autowired&lt;/code&gt;) it to other components in the application context (see #11 above).&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line36"&gt;&lt;/a&gt;
+36.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Aggregator&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Delivery&lt;/span&gt; output(&lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;Drink&lt;/span&gt;&amp;gt;&lt;/span&gt; drinks) {
+   &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Delivery&lt;/span&gt;(drinks);
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The POJO-specific &lt;code&gt;MessageGroupProcessor&lt;/code&gt; to build the output &lt;code&gt;payload&lt;/code&gt; based on the payloads from aggregated
+messages. Since we mark this method with the &lt;code&gt;@Aggregator&lt;/code&gt; annotation, the target &lt;code&gt;AggregatingMessageHandler&lt;/code&gt; can extract
+this method for the &lt;code&gt;MethodInvokingMessageGroupProcessor&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name="user-content-line37"&gt;&lt;/a&gt;
+37.&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;CorrelationStrategy&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Integer&lt;/span&gt; correlation(&lt;span class="pl-stj"&gt;Drink&lt;/span&gt; drink) {
+   &lt;span class="pl-k"&gt;return&lt;/span&gt; drink&lt;span class="pl-k"&gt;.&lt;/span&gt;getOrderNumber();
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The POJO-specific &lt;code&gt;CorrelationStrategy&lt;/code&gt; to extract the custom &lt;code&gt;correlationKey&lt;/code&gt; from each inbound aggregator message.
+Since we mark this method with &lt;code&gt;@CorrelationStrategy&lt;/code&gt; annotation the target &lt;code&gt;AggregatingMessageHandler&lt;/code&gt; can extract
+this method for the &lt;code&gt;MethodInvokingCorrelationStrategy&lt;/code&gt;.
+There is a similar self-explained &lt;code&gt;@ReleaseStrategy&lt;/code&gt; annotation, but we rely in our Cafe sample just on the default
+&lt;code&gt;SequenceSizeReleaseStrategy&lt;/code&gt;, which is based on the &lt;code&gt;sequenceDetails&lt;/code&gt; message header populated by the &lt;code&gt;splitter&lt;/code&gt;
+from the beginning of our integration flow.&lt;/p&gt;
+
+&lt;p&gt;Well, we have finished describing the Cafe Demo sample based on the Spring Integration Java DSL when Java Lambda
+support is not available.
+Compare it with &lt;a href="https://github.com/spring-projects/spring-integration-samples/tree/master/applications/cafe/cafe-si"&gt;XML sample&lt;/a&gt;
+and also see &lt;a href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial"&gt;Lambda support tutorial&lt;/a&gt;
+to get more information regarding Spring Integration.&lt;/p&gt;
+
+&lt;p&gt;As you can see, using the DSL without lambdas is a little more verbose because you need to provide boilerplate code
+for inline anonymous implementations of functional interfaces. However, we believe it is important to support the use
+of the DSL for users who can't yet move to Java 8. Many of the DSL benefits (fluent API, compile-time validation etc)
+are available for all users.&lt;/p&gt;
+
+&lt;p&gt;The use of lambdas continues the Spring Framework tradition of reducing or eliminating boilerplate code, so we encourage
+users to try Java 8 and lambdas and to encourage their organizations to consider allowing the use of Java 8 for
+Spring Integration applications.&lt;/p&gt;
+
+&lt;p&gt;In addition see the &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/wiki/Spring-Integration-Java-DSL-Reference"&gt;Reference Manual&lt;/a&gt;
+for more information.&lt;/p&gt;
+
+&lt;p&gt;As always, we look forward to your comments and feedback (&lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt;
+(&lt;code&gt;spring-integration&lt;/code&gt; tag), &lt;a href="https://jira.spring.io/browse/INTEXT"&gt;Spring JIRA&lt;/a&gt;,
+&lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/issues"&gt;GitHub&lt;/a&gt;) and we very much welcome
+&lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;contributions&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Thank you for your time and patience to read this!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Roo 1.3.1 RC1 available with important bug fixes</title>
     <link rel="alternate" href="https://spring.io/blog/2014/11/26/spring-roo-1-3-1-rc1-available-with-important-bug-fixes" />
@@ -55,6 +686,8 @@ the &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/b
 feature and pay tribute to Java 8 &lt;a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html"&gt;Lambda&lt;/a&gt;
 support which was an inspiration for the DSL style. Of course, it is all backed by the
 &lt;a href="http://projects.spring.io/spring-integration/"&gt;Spring Integration Core&lt;/a&gt; project.&lt;/p&gt;
+
+&lt;p&gt;For those, who are not interested in Java 8 yet, we provide similar tutorial without Lambdas: &lt;a href="http://spring.io/blog/2014/12/01/spring-integration-java-dsl-pre-java-8-line-by-line-tutorial"&gt;Spring Integration Java DSL (pre Java 8): Line by line tutorial&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;But, before we launch into the description of the Cafe demonstration app here's a shorter example just to get started...&lt;/p&gt;
 
@@ -1274,127 +1907,6 @@ can build Modules based on &lt;code&gt;@Configuration&lt;/code&gt; including Spr
 
 &lt;p&gt;There is a good amount of excitement about the new version of Java. The big evolution of course is the lambda expressions. In this presentation we will dive into the language features in Java 8, take a look at some of their nuances, and look at ways to put them to good use. In addition to looking at lambdas we will also dive into the Streams capabilities and also some of the features in Java 8 that make all these possible. 
 &lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/j9nj5dTo54Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay:  What's new in Spring Data?</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/17/springone2gx-2014-replay-what-s-new-in-spring-data" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-16:1842</id>
-    <updated>2014-11-17T10:22:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speakers: Thomas Darimont, Oliver Gierke, Christoph Strobl &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/whats-new-in-spring-data"&gt;http://www.slideshare.net/SpringCentral/whats-new-in-spring-data&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;This talk will give a broad overview of the new features introduced in the latest Spring Data release trains. We will cover recent additions and improvements in Spring Data Commons - the module that's shared amongst the store specific ones. We'll then delve into the latest and greatest features of individual store modules, like JPA, MongoDB, Neo4j, Solr and the community ones as well.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/1kTMcZKaY3Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Building a Spring Integration 4.1 WebSocket Endpoint</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/15/building-a-spring-integration-4-1-websocket-endpoint" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-15:1841</id>
-    <updated>2014-11-15T11:55:00Z</updated>
-    <content type="html">&lt;p&gt;By &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://spring.io/blog/2014/11/11/spring-integration-and-amqp-releases-available"&gt;Spring Integration 4.1&lt;/a&gt; was just released and it includes a &lt;strong&gt;lot&lt;/strong&gt; of great new features! One of my favorites? Smart integration with the Spring 4 WebSocket support. Now you can compose a integration flow whose final destination is a WebSocket client. There is also support for acting as the client to a WebSocket service.&lt;/p&gt;
-
-&lt;p&gt;In order to compile it, you will need Java 8 (we make heavy use of lambdas here) and the following Maven dependencies:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;strong&gt;groupId&lt;/strong&gt;:&lt;code&gt;org.springframework.integration&lt;/code&gt;, &lt;strong&gt;artifactId&lt;/strong&gt;:&lt;code&gt;spring-integration-java-dsl&lt;/code&gt;, &lt;strong&gt;version&lt;/strong&gt;: &lt;code&gt;1.0.0.RC1&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;
-&lt;strong&gt;groupId&lt;/strong&gt;:&lt;code&gt;org.springframework.integration&lt;/code&gt;, &lt;strong&gt;artifactId&lt;/strong&gt;:&lt;code&gt;spring-integration-websocket&lt;/code&gt;, &lt;strong&gt;version&lt;/strong&gt;: &lt;code&gt;4.1.0.RELEASE&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;
-&lt;strong&gt;groupId&lt;/strong&gt;:&lt;code&gt;org.springframework.boot&lt;/code&gt;, &lt;strong&gt;artifactId&lt;/strong&gt;:&lt;code&gt;spring-boot-starter-websocket&lt;/code&gt;, &lt;strong&gt;version&lt;/strong&gt;: &lt;code&gt;1.2.0.RC1&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In order to resolve those dependencies you will need the &lt;a href="http://repo.spring.io/snapshot"&gt;&lt;code&gt;snapshot&lt;/code&gt;&lt;/a&gt; and &lt;a href="http://repo.spring.io/milestone"&gt;&lt;code&gt;milestone&lt;/code&gt;&lt;/a&gt; Maven repositories.&lt;/p&gt;
-
-&lt;p&gt;All clients listening on &lt;code&gt;/names&lt;/code&gt; will receive whatever message is sent into the &lt;code&gt;requestChannel&lt;/code&gt; channel. A Spring 4 &lt;code&gt;MessageChannel&lt;/code&gt; is a named conduit - more or less analogous to a &lt;code&gt;java.util.Queue&amp;lt;T&amp;gt;&lt;/code&gt;. This example uses &lt;a href="https://spring.io/blog/2014/10/31/spring-integration-java-dsl-1-0-rc1-released"&gt;the Spring Integration Java configuration DSL&lt;/a&gt; on top of the new  &lt;a href="https://spring.io/blog/2014/11/11/spring-integration-and-amqp-releases-available"&gt;Spring Integration 4.1 web socket support&lt;/a&gt;. Here¡¯s the example:&lt;/p&gt;
-
-&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-k"&gt;package&lt;/span&gt; &lt;span class="pl-smp"&gt;demo&lt;/span&gt; ;
-
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.boot.SpringApplication&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.boot.autoconfigure.EnableAutoConfiguration&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.context.annotation.*&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.channel.DirectChannel&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.dsl.IntegrationFlow&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.dsl.support.Function&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.websocket.ServerWebSocketContainer&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.integration.websocket.outbound.WebSocketOutboundMessageHandler&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.*&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.simp.SimpMessageHeaderAccessor&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.messaging.support.MessageBuilder&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;org.springframework.web.bind.annotation.*&lt;/span&gt;;
-
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;java.util.concurrent.Executors&lt;/span&gt;;
-&lt;span class="pl-k"&gt;import&lt;/span&gt; &lt;span class="pl-smi"&gt;java.util.stream.Collectors&lt;/span&gt;;
-
-&lt;span class="pl-c"&gt;/**&lt;/span&gt;
-&lt;span class="pl-c"&gt; * &lt;span class="pl-k"&gt;@author&lt;/span&gt; Artem Bilan&lt;/span&gt;
-&lt;span class="pl-c"&gt; * &lt;span class="pl-k"&gt;@author&lt;/span&gt; Josh Long&lt;/span&gt;
-&lt;span class="pl-c"&gt; */&lt;/span&gt;
-@&lt;span class="pl-stj"&gt;Configuration&lt;/span&gt;
-@&lt;span class="pl-stj"&gt;ComponentScan&lt;/span&gt;
-@&lt;span class="pl-stj"&gt;EnableAutoConfiguration&lt;/span&gt;
-@&lt;span class="pl-stj"&gt;RestController&lt;/span&gt;
-&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;Application&lt;/span&gt; {
-
-    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;static&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;main&lt;/span&gt;(&lt;span class="pl-stj"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;args&lt;/span&gt;[]) &lt;span class="pl-s"&gt;throws&lt;/span&gt; &lt;span class="pl-stj"&gt;Throwable&lt;/span&gt; {
-        &lt;span class="pl-stj"&gt;SpringApplication&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;run(&lt;span class="pl-stj"&gt;Application&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, args);
-    }
-
-    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-stj"&gt;ServerWebSocketContainer&lt;/span&gt; &lt;span class="pl-en"&gt;serverWebSocketContainer&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;ServerWebSocketContainer&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/names&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;withSockJs();
-    }
-
-    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-stj"&gt;MessageHandler&lt;/span&gt; &lt;span class="pl-en"&gt;webSocketOutboundAdapter&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;WebSocketOutboundMessageHandler&lt;/span&gt;(serverWebSocketContainer());
-    }
-
-    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;(&lt;span class="pl-c1"&gt;name&lt;/span&gt; &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;webSocketFlow.input&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
-    &lt;span class="pl-stj"&gt;MessageChannel&lt;/span&gt; &lt;span class="pl-en"&gt;requestChannel&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;DirectChannel&lt;/span&gt;();
-    }
-
-    &lt;span class="pl-st"&gt;@Bean&lt;/span&gt;
-    &lt;span class="pl-stj"&gt;IntegrationFlow&lt;/span&gt; &lt;span class="pl-en"&gt;webSocketFlow&lt;/span&gt;() {
-        &lt;span class="pl-k"&gt;return&lt;/span&gt; f &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; {
-            &lt;span class="pl-st"&gt;Function&amp;lt;&lt;span class="pl-stj"&gt;Message&lt;/span&gt; , &lt;span class="pl-stj"&gt;Object&lt;/span&gt;&amp;gt;&lt;/span&gt; splitter &lt;span class="pl-k"&gt;=&lt;/span&gt; m &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; serverWebSocketContainer()
-                    .getSessions()
-                    .keySet()
-                    .stream()
-                    .map(s &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-stj"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;fromMessage(m)
-                            .setHeader(&lt;span class="pl-stj"&gt;SimpMessageHeaderAccessor&lt;/span&gt;&lt;span class="pl-c1"&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;SESSION_ID_HEADER&lt;/span&gt;, s)
-                            .build())
-                    .collect(&lt;span class="pl-stj"&gt;Collectors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;toList());
-            f&lt;span class="pl-k"&gt;.&lt;/span&gt;split( &lt;span class="pl-stj"&gt;Message&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class, splitter)
-                    .channel(c &lt;span class="pl-k"&gt;-&lt;/span&gt;&lt;span class="pl-k"&gt;&amp;gt;&lt;/span&gt; c&lt;span class="pl-k"&gt;.&lt;/span&gt;executor(&lt;span class="pl-stj"&gt;Executors&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;newCachedThreadPool()))
-                    .handle(webSocketOutboundAdapter());
-        };
-    }
-
-    &lt;span class="pl-st"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/hi/{name}&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
-    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;send&lt;/span&gt;(&lt;span class="pl-st"&gt;@PathVariable&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; &lt;span class="pl-v"&gt;name&lt;/span&gt;) {
-        requestChannel()&lt;span class="pl-k"&gt;.&lt;/span&gt;send(&lt;span class="pl-stj"&gt;MessageBuilder&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;withPayload(name)&lt;span class="pl-k"&gt;.&lt;/span&gt;build());
-    }
-}&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code&gt;IntegrationFlow&lt;/code&gt; is simple. For each message that comes in, copy it and address it to each listening &lt;code&gt;WebSocket&lt;/code&gt; session by adding a header having the &lt;code&gt;SimpMessageHeaderAccessor.SESSION_ID_HEADER&lt;/code&gt;, then send it the outbound &lt;code&gt;webSocketOutboundAdapter&lt;/code&gt; which will deliver it to each listening client. To see it work, open &lt;code&gt;&lt;a href="http://localhost:8080/"&gt;http://localhost:8080/&lt;/a&gt;&lt;/code&gt; in one browser window, and then &lt;code&gt;&lt;a href="http://localhost:8080/hi/Spring"&gt;http://localhost:8080/hi/Spring&lt;/a&gt;&lt;/code&gt; in another. There is a simple client  &lt;a href="https://github.com/joshlong/techtips/tree/master/examples/spring-integration-4.1-websockets-example"&gt;demonstrated in this techtip's code repository&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;There is great documentation on how to use the web socket &lt;a href="http://docs.spring.io/spring-integration/docs/latest-ga/reference/html/web-sockets.html"&gt;components in Spring Integration 4.1 documentation&lt;/a&gt;. There's a more inspiring example in &lt;a href="https://github.com/spring-projects/spring-integration-samples/tree/master/basic/web-sockets"&gt;the Spring Integration samples directory&lt;/a&gt;, too.&lt;/p&gt;</content>
   </entry>
 </feed>
 
