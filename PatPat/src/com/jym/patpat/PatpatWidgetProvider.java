@@ -87,6 +87,9 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		if(serviceSwitch){
 		Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
 		context.startService(intent);
+		
+		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
+		
 		Log.d("atActivityRemoved","startService");
 		
 		mPref.Ready();

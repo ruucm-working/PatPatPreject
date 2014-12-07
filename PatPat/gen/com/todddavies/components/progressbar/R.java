@@ -32,19 +32,19 @@ public final class R {
 		public static final int logo = 0x7f020067;
 	}
 	public static final class id {
-		public static final int RelativeLayout01 = 0x7f070037;
-		public static final int btn_increment = 0x7f07003b;
-		public static final int btn_spin = 0x7f07003a;
-		public static final int iv_login_header_image = 0x7f070030;
-		public static final int progressBar = 0x7f070033;
-		public static final int progressBarFour = 0x7f07003e;
-		public static final int progressBarThree = 0x7f07003d;
-		public static final int progressBarTwo = 0x7f07003c;
-		public static final int progressImage = 0x7f070038;
-		public static final int rl_login_header = 0x7f07002f;
-		public static final int tv_progressText = 0x7f070039;
-		public static final int v_login_gradient = 0x7f070031;
-		public static final int vf_login_flipper = 0x7f070032;
+		public static final int RelativeLayout01 = 0x7f080037;
+		public static final int btn_increment = 0x7f08003b;
+		public static final int btn_spin = 0x7f08003a;
+		public static final int iv_login_header_image = 0x7f080030;
+		public static final int progressBar = 0x7f080033;
+		public static final int progressBarFour = 0x7f08003e;
+		public static final int progressBarThree = 0x7f08003d;
+		public static final int progressBarTwo = 0x7f08003c;
+		public static final int progressImage = 0x7f080038;
+		public static final int rl_login_header = 0x7f08002f;
+		public static final int tv_progressText = 0x7f080039;
+		public static final int v_login_gradient = 0x7f080031;
+		public static final int vf_login_flipper = 0x7f080032;
 	}
 	public static final class layout {
 		public static final int main = 0x7f030013;
@@ -52,8 +52,8 @@ public final class R {
 		public static final int progress_wheel_activity = 0x7f030016;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f060001;
-		public static final int hello = 0x7f060000;
+		public static final int app_name = 0x7f070001;
+		public static final int hello = 0x7f070000;
 	}
 	public static final class styleable {
 		public static final int[] ProgressWheel = { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d };

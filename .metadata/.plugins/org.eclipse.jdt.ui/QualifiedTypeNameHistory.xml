@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.app.ActionBar.LayoutParams"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="info.androidhive.imageslider.helper.HttpPostAsyncTask"/>
 <fullyQualifiedTypeName name="com.exam.coinBlockIntroActivity"/>
@@ -42,7 +41,6 @@
 <fullyQualifiedTypeName name="android.app.Service"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.view.View.OnLongClickListener"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.exam.R.drawable"/>
 <fullyQualifiedTypeName name="com.ruucm.patpat.R.drawable"/>
@@ -56,8 +54,10 @@
 <fullyQualifiedTypeName name="com.ruucm.patpat.Activity.Activity_Intro"/>
 <fullyQualifiedTypeName name="com.ruucm.patpat.R"/>
 <fullyQualifiedTypeName name="com.jym.patpat.PatpatWidgetApp"/>
-<fullyQualifiedTypeName name="com.jym.patpat.R"/>
 <fullyQualifiedTypeName name="android.app.Fragment"/>
-<fullyQualifiedTypeName name="com.jym.patpat.Activity.Activity_Intro"/>
 <fullyQualifiedTypeName name="android.support.v4.app.ListFragment"/>
+<fullyQualifiedTypeName name="com.jym.patpat.R"/>
+<fullyQualifiedTypeName name="com.jym.patpat.Activity.Activity_Intro"/>
+<fullyQualifiedTypeName name="com.jym.patpat.R.drawable"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 </qualifiedTypeNameHistroy>

@@ -42,7 +42,7 @@ public class PatpatWidgetApp extends Application {
 		WindowManager wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
 		metrics = new DisplayMetrics();
 		wm.getDefaultDisplay().getMetrics(metrics);
-//		UpdateAllWidgets();
+		UpdateAllWidgets();
 		
 		
 		

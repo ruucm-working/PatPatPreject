@@ -48,14 +48,14 @@ public class IntentService_DeviceEvents extends IntentService {
 
 	@Override
 	public void onCreate() {
-		Log.d("battersv","onCreate");
+		Log.d("Stop_renotify","onCreate");
 		 
 		const_builder = new NotificationCompat.Builder(IntentService_DeviceEvents.this);
 	}
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.d("Stop_Overlapping", "onStartCommand()");
+		Log.d("Stop_renotify", "onStartCommand()");
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
 		filter.addAction(Intent.ACTION_HEADSET_PLUG);
@@ -73,7 +73,7 @@ public class IntentService_DeviceEvents extends IntentService {
 	public void onDestroy() {
 		super.onDestroy();
 		
-		Log.d("persist wake","onDestroy");
+		Log.d("Stop_renotify","onDestroy");
 		registerRestartAlarm();
 		
 	}
@@ -81,7 +81,7 @@ public class IntentService_DeviceEvents extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 
-		Log.d("Stop_Overlapping", "onHandleIntent");
+		Log.d("Stop_renotify", "onHandleIntent");
 		
 
 		
@@ -104,13 +104,18 @@ public class IntentService_DeviceEvents extends IntentService {
 				int health = intent.getIntExtra("health",
 						BatteryManager.BATTERY_HEALTH_UNKNOWN);
 				String strPlug = null;
-
+				
+				if(plugType ==0){
+					Toast.makeText(context, "하아 에너지가 빠져나가고 있어.. ",
+							Toast.LENGTH_SHORT).show();
+				}else{
 				Toast.makeText(context, "plugType  " + plugType,
 						Toast.LENGTH_SHORT).show();
+				}
 
 			} else if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
 				int id = PatpatView.mWidgetId;
-				Log.v("Service_BatteryGauge", "Entering headset");
+				Log.v("Stop_renotify", "Entering headset");
 
 				if (intent.getIntExtra("state", -1) == 1) {
 					Toast.makeText(context, "Headset connected",

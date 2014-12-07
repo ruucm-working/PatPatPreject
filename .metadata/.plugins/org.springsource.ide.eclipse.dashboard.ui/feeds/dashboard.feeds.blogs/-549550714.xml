@@ -5,7 +5,505 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-12-01T14:26:35Z</updated>
+  <updated>2014-12-02T23:02:00Z</updated>
+  <entry>
+    <title>This Week in Spring - December 2, 2014</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/this-week-in-spring-december-2-2014" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1875</id>
+    <updated>2014-12-02T23:02:00Z</updated>
+    <content type="html">&lt;p&gt;
+Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm at the  &lt;a href="http://www.therichwebexperience.com/conference/fort_lauderdale/2014/12/home"&gt;Rich Web Experience&lt;/a&gt; in Ft. Lauderdale, FL, joining my pal &lt;a href="http://twitter.com/mstine"&gt;Matt Stine&lt;/a&gt; for a workshop on building microservices with &lt;a href="http://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt;, &lt;a href="http://spring.io/projects/spring-cloud/"&gt;Spring Cloud&lt;/a&gt; and &lt;a href="http://cloudfoundry.org"&gt;Cloud Foundry&lt;/a&gt;.
+
+ &lt;/p&gt;&lt;p&gt;
+  So, without further ado, let's get to it:
+&lt;/p&gt;
+ 
+
+&lt;p&gt;&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;
+      Dr. Dave Syer &lt;a href="https://spring.io/blog/2014/11/25/spring-cloud-1-0-0-m3-available-now"&gt;just announced the M3 release of Spring Cloud&lt;/a&gt;, complete with &lt;em&gt;loads&lt;/em&gt; of cool stuff, including a smarter Ribbon-enabled load-balancing &lt;code&gt;RestTemplate&lt;/code&gt;, a RabbitMQ-based aggregator for Hystrix Metrics based on Turbine 2, Spring Cloud for AWS support, and &lt;em&gt;much&lt;/em&gt; more
+    &lt;/li&gt;
+    &lt;li&gt;
+      Spring ninja Sebastien Deleuze just announced &lt;a href="https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring"&gt;some of the amazing new features in Spring's Jackson support&lt;/a&gt;. My favorite? JSON + XML marshalling &lt;em&gt;with&lt;/em&gt; dynamic &lt;em&gt;views&lt;/em&gt;. Views are a  logical subset of attributes from a JSON structure that may be rendered  dynamically.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Check out &lt;a href="https://spring.io/blog/2014/11/26/spring-roo-1-3-1-rc1-available-with-important-bug-fixes"&gt;Spring Roo 1.3.1&lt;/a&gt; and includes bug-fixes for reverse engineering and third party addon installations. Thanks, community and  &lt;a href="http://www.disid.com/"&gt;Disid&lt;/a&gt; in particular for the updates!
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="https://spring.io/blog/2014/12/02/spring-tool-suite-and-groovy-grails-tool-suite-3-6-3-released"&gt;Spring and Groovy &amp;amp; Grails Tool Suite lead Martin Lippert  just announced versions 3.6.3&lt;/a&gt;. The new release includes updated Spring Integration visualizations, a installed-by-default Cloud Foundry plugin and more. Check it out!
+    &lt;/li&gt;
+    &lt;li&gt;
+      Want to learn about the Spring Integration Java configuration DSL in terms of a working, line-by-line example? Check out &lt;a href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial"&gt;this post by Java configuration DSL lead Artem Bilan&lt;/a&gt;  and if you want to see how it works on JDK 7 or earlier,  &lt;a href="https://spring.io/blog/2014/12/01/spring-integration-java-dsl-pre-java-8-line-by-line-tutorial"&gt;check out this post&lt;/a&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Spring Data lead Oliver Gierke just announced the &lt;a href="https://spring.io/blog/2014/12/01/first-milestone-of-spring-data-release-train-fowler-available"&gt;first milestone of the next Spring Data release train, Spring Data Fowler&lt;/a&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;
+      The replay from the &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-security-for-microservices-with-spring-and-oauth2"&gt;good Dr. David Syer's SpringOne2GX 2014 talk on security for microservices&lt;/a&gt; is now available online.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Additionally, check out &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-spring-boot-and-netflix-oss"&gt;Dr. Syer and Spencer Gibb's talk introducing Spring Cloud&lt;/a&gt; to the world at SpringOne2GX 2014!
+    &lt;/li&gt;
+    &lt;li&gt;Check out the SpringOne2GX 2014 replay of Reactor project ninjas Jon Brisbin  and Stephane Maldini's talk: &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-building-reactive-applications-with-reactor-and-the-reactive-streams-standa4d"&gt;Building Reactive applications with Reactor and the Reactive Streams standard&lt;/a&gt;
+&lt;/li&gt;
+    &lt;li&gt;
+      Join Spring Integration project-lead Gary Russell for a not-to-be-missed webinar &lt;a href="https://spring.io/blog/2014/12/02/webinar-introducing-the-java-dsl-for-spring-integration"&gt;on January 27th that introduces the just-released Spring Integration Java configuration DSL&lt;/a&gt;!
+    &lt;/li&gt;
+    &lt;li&gt;
+      You know what they say: go grid or go home! Or something like that¡¦? &lt;em&gt;anyway&lt;/em&gt;, definitely check out my pal Luke Shannon's upcoming webinar &lt;a href="https://spring.io/blog/2014/12/02/webinar-building-scalable-data-applications-with-spring-and-gemfire"&gt;on building scalable data applications with Spring Data Gemfire&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      Adao Feliz put together a nice &lt;a href="http://blog.adaofeliz.com/2014/11/21/first-look-spring-boot-and-docker/"&gt;post on using Spring Boot and Docker&lt;/a&gt;.
+      It's pretty straightforward, so check it out!
+    &lt;/li&gt;
+    &lt;li&gt; The &lt;em&gt;All and Sundry &lt;/em&gt; blog has a nice post
+      &lt;a href="http://www.java-allandsundry.com/2014/11/spring-resttemplate-with-linked-resource.html"&gt;on how to consume linked resources using Spring's &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/a&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;
+      Check out the early bits for the &lt;a href="https://docs.google.com/document/d/1WWoQ_d5nR4-P6VfLbAAbzOZIvRj-Xdff2hsjM_ZWRUQ/mobilebasic?pli=1"&gt;next-gen Cloud Foundry built from the ground up on the Go language and supports Docker as a first-class citizen&lt;/a&gt;. If you know how to use Vagrant, it's dead simple to get a full &lt;em&gt;working&lt;/em&gt; Cloud Foundry cloud running on your laptop if you follow these instructions. Do try it out and let us know!  &lt;/li&gt;
+  &lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>Latest Jackson integration improvements in Spring</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>S?bastien Deleuze</name>
+    </author>
+    <id>tag:spring.io,2014-11-14:1840</id>
+    <updated>2014-12-02T13:30:00Z</updated>
+    <content type="html">&lt;p&gt;Spring &lt;a href="https://github.com/FasterXML/jackson"&gt;Jackson&lt;/a&gt; support has been improved lately to be more flexible and powerful. This blog post gives you an update about the most useful Jackson related features available in Spring Framework 4.x and Spring Boot. All the code samples are coming from this &lt;a href="https://github.com/sdeleuze/spring-jackson-demo"&gt;spring-jackson-demo&lt;/a&gt; sample application, feel free to have a look at the code.&lt;/p&gt;
+
+&lt;h2&gt;
+&lt;a id="user-content-json-views" class="anchor" href="#json-views" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;JSON Views&lt;/h2&gt;
+
+&lt;p&gt;It can sometimes be useful to filter contextually objects serialized to the HTTP response body. In order to provide such capabilities, Spring MVC now has builtin support for &lt;a href="http://wiki.fasterxml.com/JacksonJsonViews"&gt;Jackson¡¯s Serialization Views&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following example illustrates how to use &lt;code&gt;@JsonView&lt;/code&gt; to filter fields depending on the context of serialization - e.g. getting a "summary" view when dealing with collections, and getting a full representation when dealing with a single resource:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;View&lt;/span&gt; {
+    &lt;span class="pl-s"&gt;interface&lt;/span&gt; &lt;span class="pl-en"&gt;Summary&lt;/span&gt; {}
+}
+
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;User&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;Long&lt;/span&gt; id;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; firstname;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; lastname;
+
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; email;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; address;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; postalCode;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; city;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; country;
+}
+
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;Message&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;Long&lt;/span&gt; id;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;LocalDate&lt;/span&gt; created;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; title;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;User&lt;/span&gt; author;
+
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;User&lt;/span&gt;&amp;gt;&lt;/span&gt; recipients;
+
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; body;
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Thanks to Spring MVC &lt;code&gt;@JsonView&lt;/code&gt; support, it is possible to choose, on a per handler method basis, which field should be serialized:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;RestController&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;MessageController&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@Autowired&lt;/span&gt;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;MessageService&lt;/span&gt; messageService;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-st"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;Message&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-en"&gt;getAllMessages&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; messageService&lt;span class="pl-k"&gt;.&lt;/span&gt;getAll();
+    }
+
+    &lt;span class="pl-st"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/{id}&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Message&lt;/span&gt; &lt;span class="pl-en"&gt;getMessage&lt;/span&gt;(&lt;span class="pl-st"&gt;@PathVariable&lt;/span&gt; &lt;span class="pl-stj"&gt;Long&lt;/span&gt; &lt;span class="pl-v"&gt;id&lt;/span&gt;) {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; messageService&lt;span class="pl-k"&gt;.&lt;/span&gt;get(id);
+    }
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example, if all messages are retrieved, only the most important fields are serialized thanks to the &lt;code&gt;getAllMessages()&lt;/code&gt; method annotated with &lt;code&gt;@JsonView(View.Summary.class)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-javascript"&gt;&lt;pre&gt;[ {
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;created&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;2014-11-14&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;title&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Info&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;author&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Brian&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Clozel&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  }
+}, {
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;2&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;created&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;2014-11-14&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;title&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Warning&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;author&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;2&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;St?phane&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Nicoll&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  }
+}, {
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;3&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;created&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;2014-11-14&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;title&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Alert&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;author&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;3&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Rossen&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Stoyanchev&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  }
+} ]&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In Spring MVC default configuration, &lt;code&gt;MapperFeature.DEFAULT_VIEW_INCLUSION&lt;/code&gt; is set to &lt;code&gt;false&lt;/code&gt;. That means that when enabling a JSON View, non annotated fields or properties like &lt;code&gt;body&lt;/code&gt; or &lt;code&gt;recipients&lt;/code&gt; are not serialized.&lt;/p&gt;
+
+&lt;p&gt;When a specific &lt;code&gt;Message&lt;/code&gt; is retrieved using the &lt;code&gt;getMessage()&lt;/code&gt; handler method (no JSON View specified), all fields are serialized as expected:&lt;/p&gt;
+
+&lt;div class="highlight highlight-javascript"&gt;&lt;pre&gt;{
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;created&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;2014-11-14&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;title&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Info&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;body&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;This is an information message&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;author&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Brian&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Clozel&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;email&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;bclozel@pivotal.io&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;address&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;1 Jaures street&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;postalCode&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;69003&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;city&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Lyon&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;country&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;France&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  },
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;recipients&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; [ {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;2&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;St?phane&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Nicoll&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;email&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;snicoll@pivotal.io&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;address&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;42 Obama street&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;postalCode&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;1000&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;city&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Brussel&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;country&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Belgium&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  }, {
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;3&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;firstname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Rossen&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;lastname&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Stoyanchev&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;email&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;rstoyanchev@pivotal.io&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;address&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;3 Warren street&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;postalCode&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;10011&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;city&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;New York&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;country&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;USA&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+  } ]
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Only &lt;strong&gt;one&lt;/strong&gt; class or interface can be specified with the &lt;code&gt;@JsonView&lt;/code&gt; annotation, but you can use inheritance to represent JSON View hierarchies (if a field is part of a JSON View, it will be also part of parent view). For example, this handler method will serialize fields annotated with &lt;code&gt;@JsonView(View.Summary.class)&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; &lt;code&gt;@JsonView(View.SummaryWithRecipients.class)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;View&lt;/span&gt; {
+    &lt;span class="pl-s"&gt;interface&lt;/span&gt; &lt;span class="pl-en"&gt;Summary&lt;/span&gt; {}
+    &lt;span class="pl-s"&gt;interface&lt;/span&gt; &lt;span class="pl-en"&gt;SummaryWithRecipients&lt;/span&gt; &lt;span class="pl-s"&gt;extends&lt;/span&gt; &lt;span class="pl-e"&gt;Summary&lt;/span&gt; {}
+}
+
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;Message&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;Long&lt;/span&gt; id;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;LocalDate&lt;/span&gt; created;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; title;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;Summary&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;User&lt;/span&gt; author;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;SummaryWithRecipients&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;User&lt;/span&gt;&amp;gt;&lt;/span&gt; recipients;
+
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;String&lt;/span&gt; body;
+}
+
+@&lt;span class="pl-stj"&gt;RestController&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;MessageController&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@Autowired&lt;/span&gt;
+    &lt;span class="pl-s"&gt;private&lt;/span&gt; &lt;span class="pl-stj"&gt;MessageService&lt;/span&gt; messageService;
+
+    &lt;span class="pl-st"&gt;@JsonView&lt;/span&gt;(&lt;span class="pl-stj"&gt;View&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;&lt;span class="pl-stj"&gt;SummaryWithRecipients&lt;/span&gt;&lt;span class="pl-k"&gt;.&lt;/span&gt;class)
+    &lt;span class="pl-st"&gt;@RequestMapping&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;/with-recipients&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;)
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-stj"&gt;Message&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-en"&gt;getAllMessagesWithRecipients&lt;/span&gt;() {
+        &lt;span class="pl-k"&gt;return&lt;/span&gt; messageService&lt;span class="pl-k"&gt;.&lt;/span&gt;getAll();
+    }
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;JSON Views could also be specified when using &lt;code&gt;RestTemplate&lt;/code&gt; HTTP client or &lt;code&gt;MappingJackson2JsonView&lt;/code&gt; by wrapping the value to serialize in a &lt;code&gt;MappingJacksonValue&lt;/code&gt; as shown in this &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web/src/test/java/org/springframework/web/client/RestTemplateIntegrationTests.java#L224"&gt;code sample&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;
+&lt;a id="user-content-jsonp" class="anchor" href="#jsonp" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;JSONP&lt;/h2&gt;
+
+&lt;p&gt;As described in the &lt;a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-jsonp"&gt;reference documentation&lt;/a&gt;, you can enable &lt;a href="http://en.wikipedia.org/wiki/JSONP"&gt;JSONP&lt;/a&gt; for &lt;code&gt;@ResponseBody&lt;/code&gt; and &lt;code&gt;ResponseEntity&lt;/code&gt; methods by declaring an &lt;code&gt;@ControllerAdvice&lt;/code&gt; bean that extends &lt;code&gt;AbstractJsonpResponseBodyAdvice&lt;/code&gt; as shown below:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;ControllerAdvice&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;JsonpAdvice&lt;/span&gt; &lt;span class="pl-s"&gt;extends&lt;/span&gt; &lt;span class="pl-e"&gt;AbstractJsonpResponseBodyAdvice&lt;/span&gt; {
+
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-en"&gt;JsonpAdvice&lt;/span&gt;() {
+        &lt;span class="pl-v"&gt;super&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;callback&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;);
+    }
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With such &lt;code&gt;@ControllerAdvice&lt;/code&gt; bean registered, it will be possible to request the JSON webservice from another domain using a &lt;code&gt;&amp;lt;script /&amp;gt;&lt;/code&gt; tag:&lt;/p&gt;
+
+&lt;div class="highlight highlight-html"&gt;&lt;pre&gt;&lt;span class="pl-s2"&gt;&amp;lt;&lt;span class="pl-ent"&gt;script&lt;/span&gt; &lt;span class="pl-e"&gt;type&lt;/span&gt;=&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;application/javascript&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-s2"&gt;            &lt;span class="pl-e"&gt;src&lt;/span&gt;=&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;http://mydomain.com/1.json?jsonp=parseResponse&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s2"&gt;&amp;lt;/&lt;span class="pl-ent"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example, the received payload would be:&lt;/p&gt;
+
+&lt;div class="highlight highlight-javascript"&gt;&lt;pre&gt;parseResponse({
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;id&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-c1"&gt;1&lt;/span&gt;,
+  &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;created&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;:&lt;/span&gt; &lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;2014-11-14&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+  ...
+});&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;JSONP is also supported and automatically enabled when using &lt;code&gt;MappingJackson2JsonView&lt;/code&gt; with a request that has a query parameter named jsonp or callback. The JSONP query parameter name(s) could be customized through the &lt;code&gt;jsonpParameterNames&lt;/code&gt; property.&lt;/p&gt;
+
+&lt;h2&gt;
+&lt;a id="user-content-xml-support" class="anchor" href="#xml-support" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;XML support&lt;/h2&gt;
+
+&lt;p&gt;Since 2.0 release, Jackson provides first class support for some other data formats than JSON. Spring Framework and Spring Boot provide builtin support for Jackson based XML serialization/deserialization.&lt;/p&gt;
+
+&lt;p&gt;As soon as you include the &lt;a href="https://github.com/FasterXML/jackson-dataformat-xml"&gt;&lt;code&gt;jackson-dataformat-xml&lt;/code&gt;&lt;/a&gt; dependency to your project, it is automatically used instead of JAXB2.&lt;/p&gt;
+
+&lt;p&gt;Using Jackson XML extension has several advantages over JAXB2:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Both Jackson and JAXB annotations are recognized&lt;/li&gt;
+&lt;li&gt;JSON View are supported, allowing you to build easily REST Webservices with the same filtered output for both XML and JSON data formats&lt;/li&gt;
+&lt;li&gt;No need to annotate your class with &lt;code&gt;@XmlRootElement&lt;/code&gt;, each class serializable in JSON will serializable in XML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You usually also want to make sure that the XML library in use is Woodstox since:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is faster than Stax implementation provided with the JDK&lt;/li&gt;
+&lt;li&gt;It avoids some known issues like adding unnecessary namespace prefixes&lt;/li&gt;
+&lt;li&gt;Some features like pretty print don't work without it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In order to use it, simply add the latest &lt;a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.codehaus.woodstox%22%20AND%20a%3A%22woodstox-core-asl%22"&gt;&lt;code&gt;woodstox-core-asl&lt;/code&gt;&lt;/a&gt; dependency available to your project.&lt;/p&gt;
+
+&lt;h2&gt;
+&lt;a id="user-content-customizing-the-jackson-objectmapper" class="anchor" href="#customizing-the-jackson-objectmapper" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Customizing the Jackson ObjectMapper&lt;/h2&gt;
+
+&lt;p&gt;Prior to Spring Framework 4.1.1, Jackson &lt;code&gt;HttpMessageConverter&lt;/code&gt;s were using &lt;code&gt;ObjectMapper&lt;/code&gt; default configuration. In order to provide a better and easily customizable default configuration, a new &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperBuilder.html"&gt;&lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt;&lt;/a&gt; has been introduced. It is the JavaConfig equivalent of the well known &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperFactoryBean.html"&gt;&lt;code&gt;Jackson2ObjectMapperFactoryBean&lt;/code&gt;&lt;/a&gt; used in XML configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperBuilder.html"&gt;&lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt;&lt;/a&gt; provides a nice API to customize various Jackson settings while  retaining Spring Framework provided default ones. It also allows to create &lt;code&gt;ObjectMapper&lt;/code&gt; and &lt;code&gt;XmlMapper&lt;/code&gt; instances based on the same configuration.&lt;/p&gt;
+
+&lt;p&gt;Both &lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt; and &lt;code&gt;Jackson2ObjectMapperFactoryBean&lt;/code&gt; define a better Jackson default configuration. For example, the &lt;a href="http://fasterxml.github.io/jackson-databind/javadoc/2.0.0/com/fasterxml/jackson/databind/DeserializationFeature.html#FAIL_ON_UNKNOWN_PROPERTIES"&gt;&lt;code&gt;DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES&lt;/code&gt;&lt;/a&gt; property set to false, in order to allow deserialization of JSON objects with unmapped properties.&lt;/p&gt;
+
+&lt;p&gt;Jackson support for Java 8 Date &amp;amp; Time API data types is automatically registered when Java 8 is used and &lt;a href="https://github.com/FasterXML/jackson-datatype-jsr310"&gt;&lt;code&gt;jackson-datatype-jsr310&lt;/code&gt;&lt;/a&gt; is on the classpath. Joda-Time support is registered as well when &lt;a href="https://github.com/FasterXML/jackson-datatype-joda"&gt;&lt;code&gt;jackson-datatype-joda&lt;/code&gt;&lt;/a&gt; is part of your project dependencies.&lt;/p&gt;
+
+&lt;p&gt;These classes also allow you to register easily Jackson &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperBuilder.html#mixIn-java.lang.Class-java.lang.Class-"&gt;mixins&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperBuilder.html#modules-java.util.List-"&gt;modules&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/converter/json/Jackson2ObjectMapperBuilder.html#serializers-com.fasterxml.jackson.databind.JsonSerializer...-"&gt;serializers&lt;/a&gt; or even property naming strategy like &lt;code&gt;PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES&lt;/code&gt; if you want to have your &lt;code&gt;userName&lt;/code&gt; java property translated to &lt;code&gt;user_name&lt;/code&gt; in JSON.&lt;/p&gt;
+
+&lt;h3&gt;
+&lt;a id="user-content-with-spring-boot" class="anchor" href="#with-spring-boot" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;With Spring Boot&lt;/h3&gt;
+
+&lt;p&gt;As described in the Spring Boot reference documentation, there are various ways to &lt;a href="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto-customize-the-jackson-objectmapper"&gt;customize the Jackson &lt;code&gt;ObjectMapper&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can for example enable/disable Jackson features easily by adding properties like &lt;code&gt;spring.jackson.serialization.indent_output=true&lt;/code&gt; to &lt;a href="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#boot-features-external-config-application-property-files"&gt;&lt;code&gt;application.properties&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As an alternative, in the upcoming 1.2 release Spring Boot also allows to customize the Jackson configuration (JSON and XML) used by Spring MVC &lt;code&gt;HttpMessageConverter&lt;/code&gt;s by declaring a &lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt; &lt;code&gt;@Bean&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Bean&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-stj"&gt;Jackson2ObjectMapperBuilder&lt;/span&gt; jacksonBuilder() {
+    &lt;span class="pl-stj"&gt;Jackson2ObjectMapperBuilder&lt;/span&gt; builder &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Jackson2ObjectMapperBuilder&lt;/span&gt;();
+    builder&lt;span class="pl-k"&gt;.&lt;/span&gt;indentOutput(&lt;span class="pl-c1"&gt;true&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;dateFormat(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;SimpleDateFormat&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;yyyy-MM-dd&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;));
+    &lt;span class="pl-k"&gt;return&lt;/span&gt; builder;
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is useful if you want to use advanced Jackson configuration not exposed through regular configuration keys.&lt;/p&gt;
+
+&lt;h3&gt;
+&lt;a id="user-content-without-spring-boot" class="anchor" href="#without-spring-boot" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;Without Spring Boot&lt;/h3&gt;
+
+&lt;p&gt;In a plain Spring Framework application, you can also use &lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt; to customize the XML and JSON &lt;code&gt;HttpMessageConverter&lt;/code&gt;s as shown bellow:&lt;/p&gt;
+
+&lt;div class="highlight highlight-java"&gt;&lt;pre&gt;@&lt;span class="pl-stj"&gt;Configuration&lt;/span&gt;
+@&lt;span class="pl-stj"&gt;EnableWebMvc&lt;/span&gt;
+&lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-s"&gt;class&lt;/span&gt; &lt;span class="pl-en"&gt;WebConfiguration&lt;/span&gt; &lt;span class="pl-s"&gt;extends&lt;/span&gt; &lt;span class="pl-e"&gt;WebMvcConfigurerAdapter&lt;/span&gt; {
+
+    &lt;span class="pl-st"&gt;@Override&lt;/span&gt;
+    &lt;span class="pl-s"&gt;public&lt;/span&gt; &lt;span class="pl-st"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;configureMessageConverters&lt;/span&gt;(&lt;span class="pl-st"&gt;List&amp;lt;&lt;span class="pl-st"&gt;HttpMessageConverter&amp;lt;?&amp;gt;&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;span class="pl-v"&gt;converters&lt;/span&gt;) {
+        &lt;span class="pl-stj"&gt;Jackson2ObjectMapperBuilder&lt;/span&gt; builder &lt;span class="pl-k"&gt;=&lt;/span&gt; &lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;Jackson2ObjectMapperBuilder&lt;/span&gt;();
+        builder&lt;span class="pl-k"&gt;.&lt;/span&gt;indentOutput(&lt;span class="pl-c1"&gt;true&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;dateFormat(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;SimpleDateFormat&lt;/span&gt;(&lt;span class="pl-s1"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;yyyy-MM-dd&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;));
+        converters&lt;span class="pl-k"&gt;.&lt;/span&gt;add(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;MappingJackson2HttpMessageConverter&lt;/span&gt;(builder&lt;span class="pl-k"&gt;.&lt;/span&gt;build()));
+        converters&lt;span class="pl-k"&gt;.&lt;/span&gt;add(&lt;span class="pl-k"&gt;new&lt;/span&gt; &lt;span class="pl-stj"&gt;MappingJackson2XmlHttpMessageConverter&lt;/span&gt;(builder&lt;span class="pl-k"&gt;.&lt;/span&gt;createXmlMapper(&lt;span class="pl-c1"&gt;true&lt;/span&gt;)&lt;span class="pl-k"&gt;.&lt;/span&gt;build()));
+    }
+}&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;
+&lt;a id="user-content-more-to-come" class="anchor" href="#more-to-come" aria-hidden="true"&gt;&lt;span class="octicon octicon-link"&gt;&lt;/span&gt;&lt;/a&gt;More to come&lt;/h2&gt;
+
+&lt;p&gt;With the upcoming Spring Framework 4.1.3 release, thanks to the addition of a Spring context aware &lt;a href="http://wiki.fasterxml.com/HandlerInstantiator"&gt;&lt;code&gt;HandlerInstantiator&lt;/code&gt;&lt;/a&gt; (see &lt;a href="https://jira.spring.io/browse/SPR-10768"&gt;SPR-10768&lt;/a&gt; for more details), you will be able to autowire Jackson handlers (serializers, deserializers, type and type id resolvers).&lt;/p&gt;
+
+&lt;p&gt;This will allow you to build, for example, a custom deserializer that will replace a field containing only a reference in the JSON payload by the full &lt;code&gt;Entity&lt;/code&gt; retrieved from the database.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tool Suite and Groovy/Grails Tool Suite 3.6.3 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/spring-tool-suite-and-groovy-grails-tool-suite-3-6-3-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1867</id>
+    <updated>2014-12-02T11:50:07Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+
+&lt;p&gt;I am happy to announce the new release of our Eclipse-based tooling today:
+The Spring Tool Suite (STS) 3.6.3 and the Groovy/Grails Tool Suite (GGTS) 3.6.3.&lt;/p&gt;
+
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pivotal tc Server updated to 3.0.2 (incl. Spring Insight on Java8)&lt;/li&gt;
+&lt;li&gt;Cloud Foundry for Eclipse now pre-installed&lt;/li&gt;
+&lt;li&gt;Many new Spring Integration extensions supported in the graphical Spring Integration editor&lt;/li&gt;
+&lt;li&gt;Gradle tooling has better handling for auto mapping of jar dependencies to project dependencies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To download the distributions, please go visit:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Groovy/Grails Tool Suite: &lt;a href="https://spring.io/tools/ggts/all"&gt;https://spring.io/tools/ggts/all&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v363/NewAndNoteworthy.html"&gt;STS/GGTS 3.6.3 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;STS/GGTS 3.6.4 is scheduled to ship in March 2015, shortly after the Eclipse Luna SR2 release.&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay: Security for Microservices with Spring and OAuth2</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-security-for-microservices-with-spring-and-oauth2" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1872</id>
+    <updated>2014-12-02T10:50:00Z</updated>
+    <content type="html">&lt;p&gt; Security for Microservices with Spring and OAuth2 &lt;/p&gt;
+
+&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
+
+&lt;p&gt;Speaker: Dr. David Syer &lt;/p&gt;
+
+&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/syer-microservicesecurity"&gt;http://www.slideshare.net/SpringCentral/syer-microservicesecurity&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;OAuth2 is a lightweight security protocol that is well-suited for use with HTTP, the protocol at the heart of many modern architectures. Spring Security OAuth2 has a load of new features, not the least of which being the `@Configuration` support in version 2.0. Combine these with Spring Boot and you have a platform which can get you a secure HTTP service application in about 20 lines of code. This presentation shows how the combination of rapid development and production-ready features in the modern Spring stack are a perfect mixture for developing secure components in a system composed of microservices. We explore the new features in Spring OAuth2, guide you through the choice of which to use and when, and show how easy they are to enable quickly.  This is the 90 minute version of the same talk that was on the Spring webinar program recently.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/MLfL1NpwUC4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay: Spring Boot and Netflix OSS</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-spring-boot-and-netflix-oss" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1871</id>
+    <updated>2014-12-02T10:31:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
+
+&lt;p&gt;Speaker: Spencer Gibb, Dr. David Syer &lt;/p&gt;
+
+&lt;p&gt; Slides: &lt;a href="http://www.slideshare.net/SpringCentral/syer-gibbcloud"&gt;http://www.slideshare.net/SpringCentral/syer-gibbcloud&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Learn basic concepts about Spring Boot and Netflix OSS software and how to integrate Netflix OSS technologies into Spring Boot including: distributed configuration using Spring and Archaius Eureka (service registration and discovery) Feign (easy rest clients) Ribbon (client side load balancing) Hystrix (circuit breaker/fault tolerance library) RxJava (Reactive Programming library) Zuul (routing) Turbine and Hystrix Dashboard (service health dashboard)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/X5DRXCKJH_M" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2014 Replay:  Building Reactive applications with Reactor and the Reactive Streams standa4d</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-building-reactive-applications-with-reactor-and-the-reactive-streams-standa4d" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1870</id>
+    <updated>2014-12-02T10:21:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
+
+&lt;p&gt;Speakers: Jon Brisbin, Stephane Maldini &lt;/p&gt;
+
+&lt;p&gt;Slides:&lt;a href="http://www.slideshare.net/SpringCentral/spring-one2gx-2014reactivestreams-41130280"&gt;http://www.slideshare.net/SpringCentral/spring-one2gx-2014reactivestreams-41130280&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt; This session will introduce attendees to the Reactive Streams project, a new initiative between reactive software's heavy-hitters like Pivotal, Typesafe, Netflix, Twitter, and others. Since Pivotal's own Reactor framework implements this informal standard, we'll demonstrate how to build applications that can connect to other Reactive Streams implementations in a completely non-blocking way.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/AvwZEWu5PPc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar: Introducing the Java DSL for Spring Integration</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/webinar-introducing-the-java-dsl-for-spring-integration" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1869</id>
+    <updated>2014-12-02T10:02:00Z</updated>
+    <content type="html">&lt;p&gt;Speaker: Gary Russell, Pivotal &lt;/p&gt;
+
+&lt;p&gt;The Spring Integration JavaConfig and DSL extension provides a set of convenient Builders and a fluent API to configure Spring Integration message flows from Spring @Configuration classes. The Java DSL for Spring Integration is essentially a facade for Spring Integration. The DSL provides a simple way to embed Spring Integration Message Flows into your application using the fluent Builder pattern together with existing Java and Annotation configurations from Spring Framework and Spring Integration as well. Another useful tool to simplify configuration is Java 8 Lambdas.&lt;/p&gt;
+
+&lt;p&gt;Tuesday, Jan 27th, 2015 3:00PM GMT (London GMT) &lt;a href="http://connect.pivotal.io/OSS_Webinar_7AMIntroducingtheJavaDSLforSpringIntegration_Register.html"&gt;Register&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tuesday, Jan 27th, 2015 10:00AM PST (San Francisco GMT-08:00) &lt;a href="http://connect.pivotal.io/OSS_Webinar_10AMIntroducingtheJavaDSLforSpringIntegration_Register.html"&gt;Register&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;?&lt;/p&gt;
+
+&lt;p&gt;?&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar: Building Scalable Data Applications with Spring and GemFire</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/02/webinar-building-scalable-data-applications-with-spring-and-gemfire" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2014-12-02:1868</id>
+    <updated>2014-12-02T09:57:00Z</updated>
+    <content type="html">&lt;p&gt;Speaker: Luke Shannon &lt;/p&gt;
+
+&lt;p&gt;GemFire is Pivotal's distributed In Memory Data grid. In this session we will cover simplifying configuring a GemFire grid using Spring Data GemFire, and explore how data is dynamically distributed and made highly available as the grid resources are increased or decreased to meet increased client demand. GemFire access and testing patterns using Spring will be reviewed in detail.  We will walk through creating a domain object and using Spring Data GemFire Repositories to perform CRUD operations on a GemFire grid, creating a Spring MVC/Spring Boot application that uses GemFire as its persistence layer, review how Spring Boot and Spring Data GemFire can be used to help with GemFire test cases and how Spring Data GemFire can make creation and execution of GemFire functions easier. We will also explore how Spring XD can be used to load and monitor data changes in the grid. This will be a hands on, code oriented session. &lt;/p&gt;
+
+&lt;p&gt;Tuesday, Jan 13th, 2015 3:00PM GMT (London GMT) &lt;a href="http://connect.pivotal.io/OSS_Webinar_7AMBuildingScalableDataApplicationswithSpringandGemFire_Register.html"&gt;Register&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tuesday, Jan 13th, 2014 10:00AM PST (San Francisco GMT-08:00) &lt;a href="http://connect.pivotal.io/OSS_Webinar_10AMBuildingScalableDataApplicationswithSpringandGemFire_Register.html"&gt;Register&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>First Milestone of Spring Data Release Train Fowler Available</title>
     <link rel="alternate" href="https://spring.io/blog/2014/12/01/first-milestone-of-spring-data-release-train-fowler-available" />
@@ -1669,244 +2167,6 @@ can build Modules based on &lt;code&gt;@Configuration&lt;/code&gt; including Spr
 &lt;p&gt;A &lt;em&gt;lot&lt;/em&gt;, actually. There are a &lt;em&gt;slew&lt;/em&gt; of new features. I couldn't even begin to cover them all here. So I won't try. Check out the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.2-Release-Notes"&gt;release notes&lt;/a&gt; for the full scoop! &lt;/p&gt;
 
 &lt;p&gt;Spring Boot 1.2 is fast approaching GA, and now's a very good time to &lt;a href="http://start.spring.io"&gt;try the bits, kick the tires&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;file issues&lt;/a&gt; and &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;ask questions&lt;/a&gt;!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 1.2.0.RC2 Available Now</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/21/spring-boot-1-2-0-rc2-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2014-11-21:1851</id>
-    <updated>2014-11-21T18:43:37Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce that the second release candidate for Spring Boot 1.2.0 is available now in the &lt;a href="http://repo.springsource.org/milestone"&gt;Spring milestone repository&lt;/a&gt;. This is mainly a &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.2.0.RC2"&gt;bug fix&lt;/a&gt; release, although we did manage to sneak in a fantastic community contribution which adds support for &lt;a href="http://undertow.io"&gt;Undertow&lt;/a&gt; as an embedded Servlet container.&lt;/p&gt;
-
-&lt;p&gt;For a complete list of changes, and for upgrade instructions, see the &lt;a href="http://github.com/spring-projects/spring-boot/wiki/Spring-Boot-1.2-Release-Notes"&gt;Spring Boot 1.2 Release Notes&lt;/a&gt; on the WIKI. The &lt;a href="http://docs.spring.io/spring-boot/docs/1.2.0.RC2/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt; has also been updated to cover new features.&lt;/p&gt;
-
-&lt;p&gt;As usual, please report any problems using &lt;a href="http://github.com/spring-projects/spring-boot/issues"&gt;the project Issue tracker&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Roo 1.3.0 introduces JDK 8 support</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/21/spring-roo-1-3-0-introduces-jdk-8-support" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-21:1852</id>
-    <updated>2014-11-21T11:59:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the Spring Roo team, I am pleased to announce the release of Spring Roo 1.3.0, the first version released by &lt;a href="http://www.disid.com/"&gt;DISID Corporation&lt;/a&gt; as project lead. &lt;/p&gt;
-
-&lt;p&gt;Spring Roo is a rapid application development tool for Java, allowing you to create full web enterprise applications in just minutes. &lt;/p&gt;
-
-&lt;p&gt;This is the first time that Spring Roo jar files have been published to Maven Central! As always, the release is available in the Spring IO repository. &lt;/p&gt;
-
-&lt;p&gt;The 1.3.0 release includes bug fixes and enhancements as well as several new features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt; Now Roo has complete support for JDK 8:
-    &lt;ul&gt;
-      &lt;li&gt;run Spring Roo with JDK 8
-        
-      &lt;/li&gt;
-      &lt;li&gt;run generated applications with JDK 8&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Update Felix to 4.4.1 &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For full details on the changes made in the release, please refer to the &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10340&amp;amp;version=14315"&gt;Release Notes in Jira&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; For more project specific information please see the &lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Please try out the updates and provide feedback. &lt;/p&gt;
-
-&lt;p&gt;As always, you¡¯ll also find Roo on Twitter - either follow &lt;a href="https://www.twitter.com/springroo"&gt;@SpringRoo&lt;/a&gt; or just include #SpringRoo in your tweets. The next version 2.0 will be amazing, the best is  coming up. Stay tuned!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Screencast: How to create a RESTful app in five minutes or less</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/20/screencast-how-to-create-a-restful-app-in-five-minutes-or-less" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Greg Turnquist</name>
-    </author>
-    <id>tag:spring.io,2014-11-20:1850</id>
-    <updated>2014-11-20T06:30:00Z</updated>
-    <content type="html">&lt;p&gt;Recently, a friend of mine tweeted out a challenge:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;"Name a framework in which you can create a new app expose a REST service with a database and deploy it to the cloud in five minutes. #grails"&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The moment I spotted that tweet, I responded, "Spring Boot + Spring Data REST"! I realized he was kindly pointing out how easy it is to build RESTful services with Grails (a great framework). But I couldn't resist showing the ease and power of Spring Data REST.&lt;/p&gt;
-
-&lt;p&gt;To prove my point, I couldn't resisting crafting a screencast. In the linked screencast, I show how ?ber easy Spring has made it to pick the parts for your app from &lt;a href="http://start.spring.io"&gt;http://start.spring.io&lt;/a&gt;, define your domain, and then export them as a hypermedia-driven RESTful service. &lt;/p&gt;
-
-&lt;p&gt;Please enjoy!&lt;/p&gt;
-
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/NmfYCJ-pZwM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring XD 1.1 M1 and 1.0.2 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/19/spring-xd-1-1-m1-and-1-0-2-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Mark Pollack</name>
-    </author>
-    <id>tag:spring.io,2014-11-19:1847</id>
-    <updated>2014-11-19T18:05:29Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the Spring XD team, I am very pleased to announce the first milestone release of Spring XD 1.1 and the 1.0.2 maintenance release.&lt;/p&gt;
-
-&lt;p&gt;Download Links:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt; 1.0.2.RELEASE: &lt;a href="http://repo.spring.io/release/org/springframework/xd/spring-xd/1.0.2.RELEASE/spring-xd-1.0.2.RELEASE-dist.zip"&gt;zip&lt;/a&gt;, 1.1.0.M1 RELEASE:  &lt;a href="http://repo.spring.io/libs-milestone/org/springframework/xd/spring-xd/1.1.0.M1/spring-xd-1.1.0.M1-dist.zip"&gt;zip&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In addition to &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=11401&amp;amp;version=14808"&gt;bug fixes&lt;/a&gt;, Spring XD 1.0.2 now supports Apache Hadoop 2.5.1. Pivotal PHD 2.1 and Cloudera CDH 5.1.3.  &lt;/p&gt;
-
-&lt;p&gt;The 1.1 M1 release includes &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=11401&amp;amp;version=14644"&gt;bug fixes and enhancements&lt;/a&gt; as well as several new features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Batch-Jobs#running-spark-application-as-a-batch-job"&gt;Run a Spark Application as a batch job&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Creating-a-Python-Module"&gt;Python based processors and sinks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sources#kafka"&gt;Kafka source&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sinks#kafka-sink"&gt;sink&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;HDFS sink supports &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Hadoop-Kerberos"&gt;writing to a Kerberized Hadoop Cluster&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Application-Configuration#ldap-authentication"&gt;LDAP Authentication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Creating-a-Processor-Module#create-the-module-application-context-file"&gt;Modules can be created using Java @Configuration classes&lt;/a&gt; as an alternative to XML&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sinks#redis"&gt;Redis sink&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-xd/wiki/Sources#jdbc-source"&gt;JDBC Source&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Running-Distributed-Mode#using-hadoop"&gt;Hadoop distribution updates.&lt;/a&gt; Support for Apache Hadoop 2,4.1/2.5.1 (default), Pivotal PHD 2.0/2.1, Cloudera CDH 5.2, and Hortonworks HDP 2.1. Apache Hadoop 2.2  support was removed&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-xd/wiki/Running-Distributed-Mode#setting-up-zookeeper"&gt;Configurable location of Spring XD¡¯s top level node in Zookeeper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Of note for the next release of Spring XD 1.1 RC1 we will be including support for&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A Kafka based message bus in addition to revamped Kafka support based on the low level consumer API&lt;/li&gt;
-&lt;li&gt;Modules that use &lt;a href="https://reactor.github.io/docs/api/2.0.0.M1/reactor/rx/Stream.html"&gt;Reactor¡¯s Stream API&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Processor and Sink modules that use Spark Streaming&lt;/li&gt;
-&lt;li&gt;Simplified module contribution based on Spring Boot&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Feedback is very important, so please get in touch with questions and comments via&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href="http://stackoverflow.com/questions/tagged/spring-xd"&gt;StackOverflow&lt;/a&gt; &lt;code&gt;spring-xd&lt;/code&gt; tag&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="https://jira.spring.io/browse/XD/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel"&gt;Spring JIRA&lt;/a&gt; or &lt;a href="https://github.com/spring-projects/spring-xd/issues"&gt;GitHub Issues&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 18th, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/18/this-week-in-spring-november-18th-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-11-18:1846</id>
-    <updated>2014-11-18T18:27:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm in sunny Sofia, Bulgaria for the &lt;a href="http://2014.java2days.com/"&gt;Java2Days software conference&lt;/a&gt;. As usual, this show is &lt;em&gt;way&lt;/em&gt; too much fun and the crowd's bigger and better than ever!&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/12/spring-boot-1-2-0-rc1-available-now"&gt;Spring Boot 1.2.0 RC1 is now available&lt;/a&gt;! This release moves embedded &lt;code&gt;Servlet&lt;/code&gt; containers to Tomcat 8 or Jetty 9, adds a new &lt;code&gt;@SpringBootApplication&lt;/code&gt; annotation, adds &lt;code&gt;JavaMail&lt;/code&gt; support, and registers additional Spring Boot actuator support&lt;/li&gt;
-&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/18/spring-session-1-0-0-rc1-released"&gt;Spring Session 1.0.0.RC1 is here&lt;/a&gt; with &lt;em&gt;loads&lt;/em&gt; of features!&lt;/li&gt;
-&lt;li&gt; Speaking of using Spring with ZeroTurnaround, join ZeroTurnaround's Adam Koblentz and I on Nov 20th as we look &lt;a href="http://spring.io/blog/2014/10/28/webinar-spring-boot-and-jrebel-6-0"&gt;at using JRebel and Spring Boot to deliver a one-two developer productivity punch without equal&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt; Want to learn more about the Reactor project and the role of asych I/O in microservices? Check out &lt;a href="http://spring.io/blog/2014/11/13/webinar-using-reactor-for-asych-non-blocking-microservices"&gt;the upcoming Reactor webinar&lt;/a&gt;!&lt;/li&gt;
-&lt;li&gt; &lt;a href="http://bit.ly/1BplAD9"&gt;Spring for Apache #Hadoop 2.1.0M2&lt;/a&gt; is now available!&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt; &lt;a href="http://spring.io/blog/2014/11/13/spring-io-platform-1-0-3-released"&gt;Andy Wilskinson has just announced that Spring IO Platform 1.0.3&lt;/a&gt; is now available&lt;/li&gt;
-&lt;li&gt; Another great SpringOne2GX 2014 replay is up: Spring Data ninjas Thomas Darimont, Oliver Gierke, and Christoph Strobl's talk &lt;a href="http://bit.ly/1u28Vw9"&gt;&lt;em&gt;What's new in Spring Data&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt; Check out the replay of our pal Venkat's talk from SpringOne2GX 2014, &lt;a href="http://spring.io/blog/2014/11/17/springone2gx-2014-replay-java-8-language-capabilities-what-s-in-it-for-you"&gt;&lt;em&gt;Java 8 Language Capabilities, What's in it for you&lt;/em&gt;&lt;/a&gt;?&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt; Splunk's Damien Dallimore SpringOne2GX 2014 talk, &lt;a href="http://spring.io/blog/2014/11/10/springone2gx-2014-replay-gaining-application-lifecycle-intelligence"&gt;&lt;em&gt;Gaining Application Lifecycle Intelligence&lt;/em&gt;&lt;/a&gt;, is now available online!&lt;/li&gt;
-&lt;li&gt;Slideware from SpringOne2GX 2014 is also up!  They are linked to from the session details on the &lt;a href="http://springone2gx.com"&gt;http://springone2gx.com&lt;/a&gt; website.&lt;/li&gt;
-&lt;li&gt;Our pal Simon Maple over at ZeroTurnaround just published a nice post, &lt;a href="http://zeroturnaround.com/rebellabs/what-you-can-build-for-free-in-2-hours-with-spring-boot-twitter-and-facebook/"&gt;&lt;em&gt;What You Can Build for Free in 2 Hours with Spring Boot, Twitter, and Facebook&lt;/em&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Simon &lt;em&gt;also&lt;/em&gt; did a nice post that has him basically following the &lt;a href="http://zeroturnaround.com/blog/no-time-to-sit-back-and-rest-develop-your-restful-web-services-with-spring-boot-and-jrebel/"&gt;Spring IO guide on building REST services&lt;/a&gt;&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;You listen to the SE Radio podcast, I trust? You should. It's legit. &lt;a href="http://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/"&gt;Check out this nice interview with James Lewis, microservice luminary, on what a microservice is&lt;/a&gt;. I think it's a pretty darned interesting discussion.&lt;/li&gt;
-&lt;li&gt;Looking for a more non-trivial Spring and WebSocket sample backed by ActiveMQ? &lt;a href="https://github.com/BijanVan/Spring-Boot-Websocket-Sample"&gt;Check out this example&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;I've been loving &lt;a href="https://www.youtube.com/watch?v=GqrYNdwlA8s"&gt;the &lt;em&gt;Cloud Foundry After Dark&lt;/em&gt; recorded Google Hangout sessions&lt;/a&gt;. If you're not following them, this is definitely fun.&lt;br&gt;
-&lt;/li&gt;
-&lt;li&gt;I do a techtip for our e-mail newsletter, and we're going to start publishing those techtips on the blog. First up: &lt;a href="http://spring.io/blog/2014/11/15/building-a-spring-integration-4-1-websocket-endpoint"&gt;building a Spring Integration 4.1 websocket integration&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session 1.0.0.RC1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/18/spring-session-1-0-0-rc1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2014-11-18:1845</id>
-    <updated>2014-11-18T14:35:00Z</updated>
-    <content type="html">&lt;p&gt;I'm pleased to announce the release of &lt;a href="https://github.com/spring-projects/spring-session/"&gt;Spring Session&lt;/a&gt; 1.0.0.RC1.&lt;/p&gt;
-
-&lt;p&gt;For full details on the changes made in the release, please refer to the &lt;a href="https://github.com/spring-projects/spring-session/issues?q=milestone%3A%221.0.0+RC1%22+is%3Aclosed"&gt;changelog&lt;/a&gt;. The highlights of this release include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;WebSocket support. See the &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/websocket"&gt;websocket sample&lt;/a&gt; for details.&lt;/li&gt;
-&lt;li&gt;Support for multiple simultaneous sessions in a single browser. Refer to the &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/users"&gt;users sample&lt;/a&gt; for an example.&lt;/li&gt;
-&lt;li&gt;Simplified configuration with &lt;a href="https://github.com/spring-projects/spring-session/blob/1.0.0.RC1/samples/web/src/main/java/sample/Config.java#L29"&gt;@EnableRedisHttpSession&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-session/blob/1.0.0.RC1/samples/web/src/main/java/sample/Initializer.java#L24"&gt;AbstractHttpSessionApplicationInitializer&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Support for background task to cleanup expired Redis sessions. See &lt;a href="https://github.com/spring-projects/spring-session/issues/59"&gt;spring-session/gh-59&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;Added spring-session-data-redis pom to make declaring dependencies more concise.&lt;/li&gt;
-&lt;li&gt; &lt;a href="https://github.com/spring-projects/spring-session/tree/1.0.0.RC1/samples/hazelcast"&gt;Hazelcast Sample&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Please try out the updates and provide feedback. Our current plan is to go GA in early December.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay:  Developer Tooling - What¡¯s New and What¡¯s Next</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/17/springone2gx-2014-replay-developer-tooling-what-s-new-and-what-s-next" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-16:1843</id>
-    <updated>2014-11-17T10:27:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speakers: Andy Clement, Martin Lippert &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/developer-tooling-whats-new-and-whats-next"&gt;http://www.slideshare.net/SpringCentral/developer-tooling-whats-new-and-whats-next&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;In this talk we take a look at the latest changes and new features of the Spring Tool Suite, the Eclipse-based IDE that comes packed with support for Spring, Groovy, Grails, Gradle, AspectJ, and Cloud Foundry. We dive into the new ways the tooling makes it easy and convenient to develop enterprise applications that are based on Spring Boot and how the Spring Tool Suite integrates will all the different parts of Spring IO. In addition to that we will show the Java8 language tooling that comes as part of the Spring Tool Suite and demonstrate how to get the most out of Java8 in your projects. In the second part of this presentation we take a look at our vision for how we are going to move developer tooling itself into the cloud era. We provide a sneak peek under the hood of what we are working on for the next generation of developer tooling. We will demonstrate what future cloud-based developer might look like, how real Java language tooling can look and feel when running in a browser-based code editor, and show how every developer can smoothly migrate into this new world of cloud-based developer tooling. All this is based on Flux, a new project at eclipse.org, that aims at providing new and innovative ways to move towards cloud-based tooling in a smooth, seamless way.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/eLkVPqxFJKM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Java 8 Language Capabilities, What's in it for you?</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/11/17/springone2gx-2014-replay-java-8-language-capabilities-what-s-in-it-for-you" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-11-16:1844</id>
-    <updated>2014-11-17T10:25:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speaker: Venkat Subramaniam &lt;/p&gt;
-
-&lt;p&gt;No Slides at speaker request &lt;/p&gt;
-
-&lt;p&gt;There is a good amount of excitement about the new version of Java. The big evolution of course is the lambda expressions. In this presentation we will dive into the language features in Java 8, take a look at some of their nuances, and look at ways to put them to good use. In addition to looking at lambdas we will also dive into the Streams capabilities and also some of the features in Java 8 that make all these possible. 
-&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/j9nj5dTo54Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 

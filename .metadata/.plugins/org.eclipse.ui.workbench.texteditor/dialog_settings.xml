@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Instance" key="selection"/>
+		<item value="atActivityRemoved" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="instance"/>
-			<item value="getInstance"/>
-			<item value="CoinBlockWidgetApp"/>
-			<item value="PatpatWidgetApp"/>
-			<item value="mViewPager"/>
-			<item value="stop_double_Draw"/>
-			<item value="setState"/>
-			<item value="addAnimatable"/>
+			<item value="atActivityRemoved"/>
+			<item value="ImageButton"/>
+			<item value="button"/>
+			<item value="DEVELOPER_MODE"/>
+			<item value="readboole"/>
+			<item value="mPref.Ready();"/>
+			<item value="write"/>
+			<item value="mPref"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ImageView"/>
+			<item value="PatpatView"/>
 			<item value="PatpatWidgetApp"/>
 			<item value="fish_animation"/>
 			<item value="Activity_Intro"/>
 			<item value=""/>
 			<item value="50"/>
 			<item value="res"/>
-			<item value="100"/>
-			<item value="IntentService_TaskTimer"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="311" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="491" key="DIALOG_HEIGHT"/>
-		<item value="125" key="DIALOG_Y_ORIGIN"/>
-		<item value="1066" key="DIALOG_X_ORIGIN"/>
+		<item value="309" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="444" key="DIALOG_HEIGHT"/>
+		<item value="166" key="DIALOG_Y_ORIGIN"/>
+		<item value="284" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>
