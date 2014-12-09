@@ -1,10 +1,9 @@
 package com.jym.patpat;
 
-import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.Toast;
 
-public class Lv3_1State implements IPatpatViewState {
+public class Lv3_1State implements IPatpatViewState  {
 
 	public static boolean overlapAnimSwitch = true;
 
@@ -39,13 +38,15 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw(PatpatView viewContext) {
 
-			Log.d("draw_Lv3_1WaitState", "Draw");
+			Log.d("updateClickIntent_right", "Draw");
 
 			// viewContext.addAnimatable(new Lv3ClickAnim());
 
 			// if(spriteVib == 0){
-			PatpatView.rviews.setImageViewResource(R.id.block,
-					R.drawable.fish_animation);
+			PatpatView.rviews.setImageViewResource(R.id.patview01,
+					R.drawable.fish_animation_left);
+			PatpatView.rviews.setImageViewResource(R.id.patview02,
+					R.drawable.fish_animation_right);
 			/*
 			 * spriteVib++; } else {mViewContext.removeAnimatable(this);
 			 * Log.d("addClickIntent","removeAnimatable: "+this);
@@ -119,6 +120,57 @@ public class Lv3_1State implements IPatpatViewState {
 			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 
 		}
+		
+		
+		public void OnClick_right(PatpatView viewContext) {
+
+			Log.d("updateClickIntent_right", "OnClick_right");
+
+
+			/*
+			 * RemoteViews rviews = new
+			 * RemoteViews(viewContext.getPackageName(),
+			 * R.layout.coin_block_widget);
+			 * 
+			 * 
+			 * rviews.setImageViewResource(R.id.block,
+			 * R.drawable.spin_animation);
+			 */
+
+			// drawable.stop();
+
+			viewContext.addAnimatable(new Lv3ClickAnim_right());
+
+			int textcode = (int) (Math.random() * 5);
+			String text = null;
+
+			switch (textcode) {
+			case 0:
+				text = "거거긴..";
+				break;
+
+			case 1:
+				text = "아 ㅅㅂ;;";
+				break;
+
+			case 2:
+				text = "아ㅏㅇ";
+				break;
+
+			case 3:
+				text = "왜 ..";
+				break;
+
+			case 4:
+				text = "아퍼색갸";
+				break;
+
+			}
+
+			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
+
+		}
+
 
 		public boolean NeedRedraw() {
 			return false;
@@ -221,8 +273,47 @@ public class Lv3_1State implements IPatpatViewState {
 			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.block,
-						R.drawable.fish_animation);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,
+						R.drawable.fish_animation_left);
+				PatpatView.rviews.setImageViewResource(R.id.patview02,
+						R.drawable.fish_animation_right);
+				
+				spriteVib++;
+			} else {
+				mViewContext.removeAnimatable(this);
+				Log.d("addClickIntent", "removeAnimatable: " + this);
+
+			}
+
+		}
+	}
+	
+	
+	private class Lv3ClickAnim_right implements IAnimatable {
+		private int spriteVib = 0;
+
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw() {
+			// Draw the brick at bottom
+
+			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
+			Log.d("addClickIntent", "spriteVib : " + spriteVib);
+
+			// RemoteViews rviews = new
+			// RemoteViews(mViewContext.getPackageName(),
+			// R.layout.coin_block_widget);
+
+			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
+
+			if (spriteVib == 0) {
+				PatpatView.rviews.setImageViewResource(R.id.patview01,
+						R.drawable.fish_animation_left);
+				PatpatView.rviews.setImageViewResource(R.id.patview02,
+						R.drawable.fish_right08);
+				
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
@@ -250,6 +341,12 @@ public class Lv3_1State implements IPatpatViewState {
 	public void OnHeadsetDisconnected(PatpatView viewContext) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void OnClick_right(PatpatView patpatView) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

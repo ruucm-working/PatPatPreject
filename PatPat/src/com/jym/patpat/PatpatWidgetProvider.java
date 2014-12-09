@@ -81,7 +81,9 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		mPref.EndReady();
 
 		
-		Log.d("serviceSwitch","serviceSwitch : "+serviceSwitch);
+		
+		Log.d("Stop_renotify","onEnabled");
+		Log.d("Stop_renotify","serviceSwitch : "+serviceSwitch);
 		
 		
 		if(serviceSwitch){
@@ -106,9 +108,20 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	@Override
     public void onReceive(Context context, Intent intent) {
             super.onReceive(context, intent);
-            if (intent.getAction().startsWith("com.gueei")) {
+            
+            Log.d("updateClickIntent_right","intent.getAction() : "+intent.getAction());
+            
+            if (intent.getAction().startsWith("click.com")) {
                     int id = intent.getIntExtra("widgetId", 0);
                     ((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
             }
+            else if (intent.getAction().startsWith("click_right.com")) {
+                int id = intent.getIntExtra("widgetId", 0);
+                ((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick_right();
+            
+            
+            
+            
     }
+	}
 }

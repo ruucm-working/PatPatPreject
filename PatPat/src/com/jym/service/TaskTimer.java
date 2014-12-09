@@ -201,7 +201,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 						RemoteViews rviews = new RemoteViews(PatpatWidgetApp
 								.getApplication().getPackageName(),
-								R.layout.coin_block_widget);
+								R.layout.patpat_widget);
 						updateEvolveIntent(rviews,
 								PatpatWidgetApp.getApplication());
 
@@ -216,7 +216,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 						RemoteViews rviews = new RemoteViews(PatpatWidgetApp
 								.getApplication().getPackageName(),
-								R.layout.coin_block_widget);
+								R.layout.patpat_widget);
 						updateEvolveIntent(rviews,
 								PatpatWidgetApp.getApplication());
 
@@ -230,7 +230,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 						RemoteViews rviews = new RemoteViews(PatpatWidgetApp
 								.getApplication().getPackageName(),
-								R.layout.coin_block_widget);
+								R.layout.patpat_widget);
 						updateEvolveIntent(rviews,
 								PatpatWidgetApp.getApplication());
 

@@ -6,6 +6,7 @@ interface IPatpatViewState {
 	public void Draw(PatpatView viewContext);
 
 	public void OnClick(PatpatView viewContext);
+	public void OnClick_right(PatpatView patpatView);
 
 	public boolean NeedRedraw();
 
@@ -16,5 +17,7 @@ interface IPatpatViewState {
 
 	public void OnHeadsetConnected(PatpatView viewContext);
 	public void OnHeadsetDisconnected(PatpatView viewContext);
+
+	
 	
 }

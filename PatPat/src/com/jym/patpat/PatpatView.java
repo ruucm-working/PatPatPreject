@@ -3,11 +3,14 @@ package com.jym.patpat;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -16,18 +19,29 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.Xml;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 public class PatpatView extends Activity{
+	
+	
+	ImageView imageviews;
+	
 	
 	public static RemoteViews rviews;
 	public static AnimationDrawable frameAnimation;
 	
 	
-	public static String INTENT_ON_CLICK_FORMAT = "com.gueei.mario.coinBlock.id.%d.click";
+	public static String INTENT_ON_CLICK_FORMAT = "click.com.jym.id.%d";
+	public static String INTENT_ON_CLICK_FORMAT_Right = "click_right.com.jym.id.%d";
 	private static final int REFRESH_RATE = 0;
 	public static Context Context = null;
 	
@@ -84,8 +98,31 @@ public class PatpatView extends Activity{
 		
 		
 		
-		rviews = new RemoteViews(context.getPackageName(), R.layout.coin_block_widget);
+		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_widget);
+		
  
+		/*
+		
+		AttributeSet attributes = new 
+				
+//				getAttributeFloatValue(R.id.patview02);
+		
+		Resources resources = context.getResources();
+		XmlPullParser parser = resources.getXml(R.id.patview02);
+		 AttributeSet attributes = Xml.asAttributeSet(parser);
+		imageviews=new ImageView(context,attributes);
+		
+		imageviews.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+
+				Toast.makeText(Context, "거긴안대..", Toast.LENGTH_SHORT).show();
+				
+				
+			}
+		});
+		*/
 		
 
 	}
@@ -111,6 +148,11 @@ public class PatpatView extends Activity{
 		state.OnClick(this);
 	}
 
+	public void OnClick_right() {
+		state.OnClick_right(this);
+	}
+
+	
 
 	public void OnOften() {
 		state.OnOften(this);
@@ -136,7 +178,8 @@ public class PatpatView extends Activity{
 		
 		
 		
-		rviews.setImageViewResource(R.id.block, R.drawable.knifing01);
+		rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
+		rviews.setImageViewResource(R.id.patview02, R.drawable.knifing01);
 		
 		
 		//state drawing
@@ -154,6 +197,8 @@ public class PatpatView extends Activity{
 		
 		
 		updateClickIntent(rviews);
+		updateClickIntent_right(rviews);
+//		updateImageViewClickIntent(imageviews);
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
@@ -232,14 +277,32 @@ public class PatpatView extends Activity{
 
 	private void updateClickIntent(RemoteViews rviews)
 	{
+		
+		
+		Log.d("Seperate_ClickIntent","rviews.getLayoutId(); : "+rviews.getLayoutId());
+		
 		Intent intent = new Intent(String.format(INTENT_ON_CLICK_FORMAT, mWidgetId));
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.widget, pi);
+		rviews.setOnClickPendingIntent(R.id.patview01, pi);
 	}
 	
+	private void updateClickIntent_right(RemoteViews rviews)
+	{
+		
+		
+		
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_FORMAT_Right, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+		rviews.setOnClickPendingIntent(R.id.patview02, pi);
+		
+		Log.d("updateClickIntent_right","updateClickIntent_right");
+	}
 	
 	
 	
@@ -255,5 +318,6 @@ public class PatpatView extends Activity{
  
         return bitmap;
     }
+
 	
 }

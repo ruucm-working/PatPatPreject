@@ -92,6 +92,10 @@ public class IntentService_DeviceEvents extends IntentService {
 		public void onReceive(Context context, Intent intent) {
 
 			String action = intent.getAction();
+			
+			Log.v("Stop_renotify", "context : "+context);
+			Log.v("Stop_renotify", "action : "+action);
+			
 			if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
 
 				int plugType = intent.getIntExtra("plugged", 0);
@@ -115,7 +119,7 @@ public class IntentService_DeviceEvents extends IntentService {
 
 			} else if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
 				int id = PatpatView.mWidgetId;
-				Log.v("Stop_renotify", "Entering headset");
+				
 
 				if (intent.getIntExtra("state", -1) == 1) {
 					Toast.makeText(context, "Headset connected",
