@@ -3,6 +3,8 @@ package com.jym.patpat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.jym.service.TaskTimer;
+
 public class Lv3_1State implements IPatpatViewState  {
 
 	public static boolean overlapAnimSwitch = true;
@@ -58,21 +60,16 @@ public class Lv3_1State implements IPatpatViewState  {
 
 		public void OnClick(PatpatView viewContext) {
 
-			Log.d("addClickIntent", "3wait OnClick");
-
-			Log.d("addClickIntent", "3OnClick");
-
-			/*
-			 * RemoteViews rviews = new
-			 * RemoteViews(viewContext.getPackageName(),
-			 * R.layout.coin_block_widget);
-			 * 
-			 * 
-			 * rviews.setImageViewResource(R.id.block,
-			 * R.drawable.spin_animation);
-			 */
-
-			// drawable.stop();
+			
+			//write clickcount_3_1_left (using textpref)
+			TaskTimer.CliCount3_1_left++;			
+			TaskTimer.mPref.Ready();			
+			TaskTimer.mPref.WriteInt("clicount3_1_left", TaskTimer.CliCount3_1_left);	
+			
+			TaskTimer.temp_Count++;
+//			TaskTimer.mPref.WriteInt("temp_count", TaskTimer.temp_Count);
+			TaskTimer.mPref.CommitWrite();
+			
 
 			viewContext.addAnimatable(new Lv3ClickAnim());
 
@@ -118,26 +115,25 @@ public class Lv3_1State implements IPatpatViewState  {
 			}
 
 			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
+			
+			
+			
 
 		}
 		
 		
 		public void OnClick_right(PatpatView viewContext) {
 
-			Log.d("updateClickIntent_right", "OnClick_right");
 
+			
+			//write clickcount_3_1_left (using textpref)
+			TaskTimer.CliCount3_1_right++;			
+			TaskTimer.mPref.Ready();			
+			TaskTimer.mPref.WriteInt("clicount3_1_right", TaskTimer.CliCount3_1_right);	
+			
+			TaskTimer.temp_Count2++;
+			TaskTimer.mPref.CommitWrite();
 
-			/*
-			 * RemoteViews rviews = new
-			 * RemoteViews(viewContext.getPackageName(),
-			 * R.layout.coin_block_widget);
-			 * 
-			 * 
-			 * rviews.setImageViewResource(R.id.block,
-			 * R.drawable.spin_animation);
-			 */
-
-			// drawable.stop();
 
 			viewContext.addAnimatable(new Lv3ClickAnim_right());
 

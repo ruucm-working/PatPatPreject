@@ -94,7 +94,7 @@ public class IntentService_DeviceEvents extends IntentService {
 			String action = intent.getAction();
 			
 			Log.v("Stop_renotify", "context : "+context);
-			Log.v("Stop_renotify", "action : "+action);
+			Log.v("ServiceMonitor", "action : "+action);
 			
 			if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
 

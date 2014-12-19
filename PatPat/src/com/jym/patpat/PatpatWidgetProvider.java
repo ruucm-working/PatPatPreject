@@ -2,24 +2,23 @@ package com.jym.patpat;
 
 import java.io.File;
 
-import com.jym.helper.TextPref;
-
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.bluetooth.BluetoothAdapter;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.hardware.usb.UsbManager;
 import android.os.Environment;
-import android.provider.Settings;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.jym.helper.ServiceMonitor;
+import com.jym.helper.TextPref;
+
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
+	
+	 private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
+
+	
 	
 	// Init pref files at application class
 	static String parentPath = Environment.getExternalStorageDirectory()
@@ -87,41 +86,56 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		
 		
 		if(serviceSwitch){
-		Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
+	/*	Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
 		context.startService(intent);
 		
+		Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
+		context.startService(intent3);
 		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 		
-		Log.d("atActivityRemoved","startService");
+		*/
+			serviceMonitor.startMonitoring(PatpatWidgetApp.getApplication());
+			
+			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
+				Log.v("ServiceMonitor","startMonitoring");
+		
 		
 		mPref.Ready();
 		mPref.WriteBoolean("serviceSwitch", false);
 		mPref.CommitWrite();
+		
 		}
 		
-	
-//		Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
-//		context.startService(intent3);
+		 
+		
 		
 	}
 
 	@Override
-    public void onReceive(Context context, Intent intent) {
-            super.onReceive(context, intent);
-            
-            Log.d("updateClickIntent_right","intent.getAction() : "+intent.getAction());
-            
-            if (intent.getAction().startsWith("click.com")) {
-                    int id = intent.getIntExtra("widgetId", 0);
-                    ((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-            }
-            else if (intent.getAction().startsWith("click_right.com")) {
-                int id = intent.getIntExtra("widgetId", 0);
-                ((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick_right();
-            
-            
-            
-            
-    }
+	public void onReceive(Context context, Intent intent) {
+		super.onReceive(context, intent);
+
+		Log.d("updateHiddenIntent",
+				"intent.getAction() : " + intent.getAction());
+
+		if (intent.getAction().startsWith("click.com")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+					.OnClick();
+		} else if (intent.getAction().startsWith("click_right.com")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+					.OnClick_right();
+
+		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+					.OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+			.OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+			.OnClick();
+
+		}
 	}
 }

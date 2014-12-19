@@ -59,8 +59,12 @@
         </activity>
 
         <receiver android:name="com.jym.patpat.PatpatWidgetProvider" >
+           <!--  ADD BROADCAST INTENT TYPE -->
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                 <action android:name="com.exam.view.INTENT_HIDDEN_FORMAT" />
+                <action android:name="com.exam.view.INTENT_OFTEN_FORMAT" />
+                <action android:name="com.exam.view.INTENT_EVOLVE_FORMAT" />
             </intent-filter>
 
             <meta-data
@@ -78,6 +82,18 @@
                 <action android:name="com.jym.service.IntentService_DeviceEvents" />
             </intent-filter>
         </service>
+        
+        <service
+            android:name="com.jym.service.IntentService_TaskTimer"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.jym.service.IntentService_TaskTimer" />
+            </intent-filter>
+        </service>
+        
+        
+      <!--   SERVICE MONITORING -->
+         <receiver android:name="com.jym.helper.ServiceMonitor$MonitorBR" />
         
         
         

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="692" key="DIALOG_X_ORIGIN"/>
+		<item value="363" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rviews" key="selection"/>
+		<item value="updateOftenIntent" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="rviews"/>
-			<item value="조현아 부사장"/>
-			<item value="ArrayUtil"/>
-			<item value="atActivityRemoved"/>
-			<item value="ImageButton"/>
-			<item value="button"/>
-			<item value="DEVELOPER_MODE"/>
-			<item value="readboole"/>
+			<item value="updateOftenIntent"/>
+			<item value="INTENT_EVOLVE_FORMAT"/>
+			<item value="updateEvolveIntent"/>
+			<item value="context"/>
+			<item value="MonitorBR"/>
+			<item value="get"/>
+			<item value="getcont"/>
+			<item value="Thread"/>
 		</list>
 		<list key="replacehistory">
+			<item value="TaskTimer"/>
 			<item value="ImageView"/>
 			<item value="PatpatView"/>
 			<item value="PatpatWidgetApp"/>
@@ -25,14 +30,13 @@
 			<item value="Activity_Intro"/>
 			<item value=""/>
 			<item value="50"/>
-			<item value="res"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="309" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="166" key="DIALOG_Y_ORIGIN"/>
-		<item value="284" key="DIALOG_X_ORIGIN"/>
+		<item value="183" key="DIALOG_Y_ORIGIN"/>
+		<item value="742" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

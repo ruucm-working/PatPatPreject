@@ -90,6 +90,19 @@
 	</section>
 	<section name="CallHierarchySearchScope">
 	</section>
+	<section name="FatJarPackageWizard">
+		<item value="C:\GitHub\PatPatPreject" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="SelectionSortViewer - multithread_sorting" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="C:\Users\I&apos;m Jamie\Desktop\sorting.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\I&apos;m Jamie\Desktop\sorting.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value=".xml"/>
+		</list>
+	</section>
 	<section name="JavaBuildConfigurationBlock">
 		<item value="true" key="expanded2"/>
 		<item value="true" key="expanded1"/>

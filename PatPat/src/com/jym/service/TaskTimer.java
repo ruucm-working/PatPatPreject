@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jym.helper.TextPref;
 import com.jym.patpat.PatpatView;
@@ -40,6 +41,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	boolean lv2;
 	boolean lv3_1;
 	
+	public static String INTENT_HIDDEN_FORMAT = "com.exam.view.INTENT_HIDDEN_FORMAT";
 	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
 	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
 	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
@@ -51,6 +53,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	int CliCount0_2 ;
 	int CliCount1 ;
 	int CliCount2 ;
+	
+	//Making hidden Action
+	public static int CliCount3_1_left = 0 ;
+	public static int CliCount3_1_right = 0 ;
+	public static int temp_Count = 0 ;
+	public static int temp_Count2 = 0 ;
 	
 
 /*	public void setTextView1(int textViewId) {
@@ -159,13 +167,13 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		
-		Log.d("keep_oftenintent","doInBackground");
+		Log.d("add_hiddenAction","Tasktimer_doInBackground");
 		
 	
 
 			while (time >= 0 && !isCanceled) {
 				try {
-					Thread.sleep(1000); // one second sleep
+					 Thread.sleep(1000); // one second sleep
 					// time++; // decrement time
 
 					mPref.Ready();
@@ -183,13 +191,32 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 					CliCount0_2 = mPref.ReadInt("clicount0_2", 0);
 					CliCount1 = mPref.ReadInt("clicount1", 0);
 					CliCount2 = mPref.ReadInt("clicount2", 0);
-					// CliCount3 = mPref.ReadInt("clicount2", 0);
+					CliCount3_1_left = mPref.ReadInt("clicount3_1_left", 0);
+					CliCount3_1_right = mPref.ReadInt("clicount3_1_right", 0);
 
 					time = (System.currentTimeMillis() - startTime) / 1000;
 
-					Log.d("persist wake","time : "+time);
+					Log.d("ServiceMonitor","time : "+time);
 					
 					
+					Log.v("add_hiddenAction","CliCount3_1_left : "+CliCount3_1_left);
+					Log.v("add_hiddenAction","CliCount3_1_right : "+CliCount3_1_right);
+					
+					
+					Log.v("add_hiddenAction","temp_Count*temp_Count2 : "+temp_Count*temp_Count2);
+					
+					//Making hidden Action
+					if(temp_Count*temp_Count2 == 2){
+						Log.e("add_hiddenAction","temp_Count == 3");
+						
+						
+						updateHiddenIntent(PatpatWidgetApp.getApplication());
+						
+					}
+
+				// init temp_Count for a second
+				temp_Count = 0;
+				temp_Count2 = 0;
 					
 					
 					if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
@@ -235,11 +262,11 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 								PatpatWidgetApp.getApplication());
 
 					} else if (time % 10 ==7){
-						Log.d("keep_oftenintent","time : "+time); 
+						/*Log.d("keep_oftenintent","time : "+time); 
 						Log.d("keep_oftenintent","PatpatWidgetApp.getApplication() : "+PatpatWidgetApp.getApplication()); 
 						updateOftenIntent(PatpatWidgetApp.getApplication());
 						
-						 
+						 */
 					}
 
 					else {
@@ -289,6 +316,28 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		return RESULT_SUCCESS;
 	}
+	
+	
+	
+	private static void updateHiddenIntent(Context context) {
+		// TODO Auto-generated method stub
+		int mWidgetId = PatpatView.mWidgetId;
+		
+		Log.d("updateHiddenIntent","mWidgetId : "+mWidgetId);
+		
+		
+		Intent intent = new Intent(String.format(INTENT_HIDDEN_FORMAT, mWidgetId));
+		
+		
+		intent.putExtra("widgetId", mWidgetId);
+		context.sendBroadcast(intent);
+
+
+		
+		
+	}
+	
+	
 	
 	private static void updateOftenIntent(Context context) {
 		// TODO Auto-generated method stub

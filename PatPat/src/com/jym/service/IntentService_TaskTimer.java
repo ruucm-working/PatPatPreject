@@ -45,9 +45,9 @@ public class IntentService_TaskTimer extends IntentService {
 		taskTimer2 = new TaskTimer();
 		
 		
-		Log.d("IntentService_TaskTimer","taskTimer2 :"+taskTimer2);
-//		taskTimer2.execute();
-		Log.d("IntentService_TaskTimer","execute");
+		Log.d("ServiceMonitor","taskTimer2 :"+taskTimer2);
+		taskTimer2.execute();
+		Log.d("ServiceMonitor","execute");
 		
 		return START_STICKY;
 	}
