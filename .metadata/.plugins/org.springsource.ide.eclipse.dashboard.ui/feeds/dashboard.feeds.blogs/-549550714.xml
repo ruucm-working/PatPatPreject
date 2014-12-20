@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-12-18T22:09:00Z</updated>
+  <updated>2014-12-19T16:36:48Z</updated>
+  <entry>
+    <title>Spring Cloud 1.0.0.RC1 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/19/spring-cloud-1-0-0-rc1-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Dave Syer</name>
+    </author>
+    <id>tag:spring.io,2014-12-19:1898</id>
+    <updated>2014-12-19T16:36:48Z</updated>
+    <content type="html">&lt;p&gt;Another cheerful holiday message from the Spring team: &lt;a href="http://projects.spring.io/spring-cloud/"&gt;Spring Cloud&lt;/a&gt; 1.0.0.RC1 is now available in the &lt;a href="http://repo.spring.io"&gt;http://repo.spring.io&lt;/a&gt; Maven repository. There are plenty of new features including&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;p&gt;Support for Hystrix metrics aggregation via an annotation &lt;code&gt;@EnableTurbine&lt;/code&gt; and &lt;code&gt;@EnableTurbineAmqp&lt;/code&gt; (for an AMQP-based collector)&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;A rehaul of the Ribbon configuration making it more friendly for Spring users. You can now configure each Ribbon client in its own &lt;code&gt;ApplicationContext&lt;/code&gt; using &lt;code&gt;@RibbonClient&lt;/code&gt; and override various bits, like the &lt;code&gt;LoadBalancer&lt;/code&gt;, or the &lt;code&gt;ServerListFilter&lt;/code&gt;, by providing &lt;code&gt;@Bean&lt;/code&gt; definitions.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;&lt;code&gt;DiscoveryHealthIndicator&lt;/code&gt; is now a composite that users can add information to by declaring &lt;code&gt;@Beans&lt;/code&gt; of type &lt;code&gt;DiscoveryHealthIndicator&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Discovery is now abstracted away from Eureka into a new spring-cloud-commons library, and enabled via new annotations like &lt;code&gt;@EnableDiscoveryClient&lt;/code&gt; (instead of the old &lt;code&gt;@EnableEurekaClient&lt;/code&gt;). The same pattern also applies to circuit breakers&lt;br/&gt;and &lt;code&gt;@EnableCircuitBreaker&lt;/code&gt; replaces &lt;code&gt;@EnableHystrix&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Several improvements to the Zuul proxy, including automatic updates when the Eureka catalog changes, support for form-encoded POSTs, external configuration of the routes and authentication scheme for each client.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Declarative configuration of which routes require OAuth2 authentication in Spring Cloud Security.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Support for labels (like git branches) in the &amp;ldquo;native&amp;rdquo; profile of the Config Server (looks in subdirectory of the search locations).&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Fail fast option in Config Server and Client if the required URI to locate config data is invalid.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Out of the box support for JSON messages in the Spring Cloud Bus.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;A nice framework for Feign configuration based on a new &lt;code&gt;@FeignClient&lt;/code&gt; annotation (a bit like Spring Data repositories).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Some of the bus and starter modules have been re-organized and renamed, and there is a new (optional) parent pom for user apps. The full list of starters in RC1 is&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter: provides the config client and basic Spring Boot dependencies&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-bus-amqp: for bus clients over AMQP&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-cloudfoundry: Cloud Foundry specific features&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-eureka: service discovery client with Netflix Eureka&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-eureka-server: service discovery server with Netflix Eureka&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-hystrix: circuit break client with Netflix Hystrix&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-hystrix-dashboard: circuit break dashboard with Netflix Hystrix&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-security: single sign on and OAuth2 resource server short cuts&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-turbine: HTTP-based Hystrix metric aggregation with Netflix Turbine 1.0&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-turbine-amqp: AMQP-based Hystrix metric aggregation with Netflix Turbine 2.0&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;spring-cloud-starter-zuul: basic Zuul proxy with auto-registration of discovered services&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;There are loads of samples in the &lt;a href="https://github.com/spring-cloud-samples/"&gt;spring-cloud-samples&lt;/a&gt; repositories. Please try the bits out that you might use and for those of you who already did, thanks, and continue to hit it as hard as you can and come back with feedback. Happy Holidays!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring for Apache Hadoop 2.1.0.M3 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/12/18/spring-for-apache-hadoop-2-1-0-m3-released" />
@@ -501,67 +537,6 @@
 &lt;p&gt;For a complete list of changes, see the &lt;a href="https://jira.spring.io/browse/ANDROID"&gt;Release Notes&lt;/a&gt; in JIRA. The &lt;a href="http://docs.spring.io/spring-android/docs/2.0.0.M2/reference/htmlsingle/"&gt;reference documentation&lt;/a&gt; has also been updated to cover the new features.&lt;/p&gt;
 
 &lt;p&gt;Thanks again to everyone that has contributed to the release! Please try this new milestone and report any problems in &lt;a href="https://jira.spring.io/browse/ANDROID"&gt;JIRA&lt;/a&gt; or on &lt;a href="https://github.com/spring-projects/spring-android/issues"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - December 2, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/12/02/this-week-in-spring-december-2-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-12-02:1875</id>
-    <updated>2014-12-02T23:02:00Z</updated>
-    <content type="html">&lt;p&gt;
-Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I'm at the  &lt;a href="http://www.therichwebexperience.com/conference/fort_lauderdale/2014/12/home"&gt;Rich Web Experience&lt;/a&gt; in Ft. Lauderdale, FL, joining my pal &lt;a href="http://twitter.com/mstine"&gt;Matt Stine&lt;/a&gt; for a workshop on building microservices with &lt;a href="http://spring.io/projects/spring-boot"&gt;Spring Boot&lt;/a&gt;, &lt;a href="http://spring.io/projects/spring-cloud/"&gt;Spring Cloud&lt;/a&gt; and &lt;a href="http://cloudfoundry.org"&gt;Cloud Foundry&lt;/a&gt;.
-
- &lt;/p&gt;&lt;p&gt;
-  So, without further ado, let's get to it:
-&lt;/p&gt;
- 
-
-&lt;p&gt;&lt;/p&gt;&lt;ul&gt;
-    &lt;li&gt;
-      Dr. Dave Syer &lt;a href="https://spring.io/blog/2014/11/25/spring-cloud-1-0-0-m3-available-now"&gt;just announced the M3 release of Spring Cloud&lt;/a&gt;, complete with &lt;em&gt;loads&lt;/em&gt; of cool stuff, including a smarter Ribbon-enabled load-balancing &lt;code&gt;RestTemplate&lt;/code&gt;, a RabbitMQ-based aggregator for Hystrix Metrics based on Turbine 2, Spring Cloud for AWS support, and &lt;em&gt;much&lt;/em&gt; more
-    &lt;/li&gt;
-    &lt;li&gt;
-      Spring ninja Sebastien Deleuze just announced &lt;a href="https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring"&gt;some of the amazing new features in Spring's Jackson support&lt;/a&gt;. My favorite? JSON + XML marshalling &lt;em&gt;with&lt;/em&gt; dynamic &lt;em&gt;views&lt;/em&gt;. Views are a  logical subset of attributes from a JSON structure that may be rendered  dynamically.
-    &lt;/li&gt;
-    &lt;li&gt;
-      Check out &lt;a href="https://spring.io/blog/2014/11/26/spring-roo-1-3-1-rc1-available-with-important-bug-fixes"&gt;Spring Roo 1.3.1&lt;/a&gt; and includes bug-fixes for reverse engineering and third party addon installations. Thanks, community and  &lt;a href="http://www.disid.com/"&gt;Disid&lt;/a&gt; in particular for the updates!
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href="https://spring.io/blog/2014/12/02/spring-tool-suite-and-groovy-grails-tool-suite-3-6-3-released"&gt;Spring and Groovy &amp;amp; Grails Tool Suite lead Martin Lippert  just announced versions 3.6.3&lt;/a&gt;. The new release includes updated Spring Integration visualizations, a installed-by-default Cloud Foundry plugin and more. Check it out!
-    &lt;/li&gt;
-    &lt;li&gt;
-      Want to learn about the Spring Integration Java configuration DSL in terms of a working, line-by-line example? Check out &lt;a href="https://spring.io/blog/2014/11/25/spring-integration-java-dsl-line-by-line-tutorial"&gt;this post by Java configuration DSL lead Artem Bilan&lt;/a&gt;  and if you want to see how it works on JDK 7 or earlier,  &lt;a href="https://spring.io/blog/2014/12/01/spring-integration-java-dsl-pre-java-8-line-by-line-tutorial"&gt;check out this post&lt;/a&gt;.
-    &lt;/li&gt;
-    &lt;li&gt;
-      Spring Data lead Oliver Gierke just announced the &lt;a href="https://spring.io/blog/2014/12/01/first-milestone-of-spring-data-release-train-fowler-available"&gt;first milestone of the next Spring Data release train, Spring Data Fowler&lt;/a&gt;.
-    &lt;/li&gt;
-    &lt;li&gt;
-      The replay from the &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-security-for-microservices-with-spring-and-oauth2"&gt;good Dr. David Syer's SpringOne2GX 2014 talk on security for microservices&lt;/a&gt; is now available online.
-    &lt;/li&gt;
-    &lt;li&gt;
-      Additionally, check out &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-spring-boot-and-netflix-oss"&gt;Dr. Syer and Spencer Gibb's talk introducing Spring Cloud&lt;/a&gt; to the world at SpringOne2GX 2014!
-    &lt;/li&gt;
-    &lt;li&gt;Check out the SpringOne2GX 2014 replay of Reactor project ninjas Jon Brisbin  and Stephane Maldini's talk: &lt;a href="https://spring.io/blog/2014/12/02/springone2gx-2014-replay-building-reactive-applications-with-reactor-and-the-reactive-streams-standa4d"&gt;Building Reactive applications with Reactor and the Reactive Streams standard&lt;/a&gt;
-&lt;/li&gt;
-    &lt;li&gt;
-      Join Spring Integration project-lead Gary Russell for a not-to-be-missed webinar &lt;a href="https://spring.io/blog/2014/12/02/webinar-introducing-the-java-dsl-for-spring-integration"&gt;on January 27th that introduces the just-released Spring Integration Java configuration DSL&lt;/a&gt;!
-    &lt;/li&gt;
-    &lt;li&gt;
-      You know what they say: go grid or go home! Or something like that¡¦? &lt;em&gt;anyway&lt;/em&gt;, definitely check out my pal Luke Shannon's upcoming webinar &lt;a href="https://spring.io/blog/2014/12/02/webinar-building-scalable-data-applications-with-spring-and-gemfire"&gt;on building scalable data applications with Spring Data Gemfire&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      Adao Feliz put together a nice &lt;a href="http://blog.adaofeliz.com/2014/11/21/first-look-spring-boot-and-docker/"&gt;post on using Spring Boot and Docker&lt;/a&gt;.
-      It's pretty straightforward, so check it out!
-    &lt;/li&gt;
-    &lt;li&gt; The &lt;em&gt;All and Sundry &lt;/em&gt; blog has a nice post
-      &lt;a href="http://www.java-allandsundry.com/2014/11/spring-resttemplate-with-linked-resource.html"&gt;on how to consume linked resources using Spring's &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/a&gt;.
-    &lt;/li&gt;
-    &lt;li&gt;
-      Check out the early bits for the &lt;a href="https://docs.google.com/document/d/1WWoQ_d5nR4-P6VfLbAAbzOZIvRj-Xdff2hsjM_ZWRUQ/mobilebasic?pli=1"&gt;next-gen Cloud Foundry built from the ground up on the Go language and supports Docker as a first-class citizen&lt;/a&gt;. If you know how to use Vagrant, it's dead simple to get a full &lt;em&gt;working&lt;/em&gt; Cloud Foundry cloud running on your laptop if you follow these instructions. Do try it out and let us know!  &lt;/li&gt;
-  &lt;/ul&gt;</content>
   </entry>
 </feed>
 
