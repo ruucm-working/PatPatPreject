@@ -33,7 +33,7 @@ public class DeviceConditionPage extends Fragment  {
 	
 	
 	// 프레퍼런스
-	public static TextPref mPref;
+	static TextPref ePref;
 	// public static TextPref fbPref;
 
 	static boolean init;
@@ -62,14 +62,14 @@ public class DeviceConditionPage extends Fragment  {
 		  
 		
 		try {
-			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			ePref = new TextPref("mnt/sdcard/SsdamSsdam/entitypref.pref");
 		} catch (Exception e) { 
 			e.printStackTrace();
 		}   
 		
-		mPref.Ready();
-		bLevel = mPref.ReadInt("battery_level", 0);
-		mPref.EndReady();
+		ePref.Ready();
+		bLevel = ePref.ReadInt("battery_level", 0);
+		ePref.EndReady();
 
 //		float a = (((float) bLevel / 360) * 100 );
 		 
@@ -169,22 +169,22 @@ public class DeviceConditionPage extends Fragment  {
 	public static void UpdateIntroView() {
 
 		try {
-			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
+			ePref = new TextPref("mnt/sdcard/SsdamSsdam/entitypref.pref");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		mPref.Ready();
+		ePref.Ready();
 
-		init = mPref.ReadBoolean("initstate", false);
+		init = ePref.ReadBoolean("initstate", false);
 
-		lv0_1 = mPref.ReadBoolean("lv0_1state", false);
-		lv0_2 = mPref.ReadBoolean("lv0_2state", false);
-		lv1 = mPref.ReadBoolean("lv1state", false);
-		lv2 = mPref.ReadBoolean("lv2state", false);
-		lv3_1 = mPref.ReadBoolean("lv3_1state", false);
+		lv0_1 = ePref.ReadBoolean("lv0_1state", false);
+		lv0_2 = ePref.ReadBoolean("lv0_2state", false);
+		lv1 = ePref.ReadBoolean("lv1state", false);
+		lv2 = ePref.ReadBoolean("lv2state", false);
+		lv3_1 = ePref.ReadBoolean("lv3_1state", false);
 
-		mPref.EndReady();
+		ePref.EndReady();
 
 		Log.d("viewPager01", "UpdateIntroView" + init + lv0_1 + lv0_2 + lv1
 				+ lv2 + lv3_1);

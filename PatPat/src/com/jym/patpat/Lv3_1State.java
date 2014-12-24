@@ -1,7 +1,7 @@
 package com.jym.patpat;
 
+import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.jym.service.TaskTimer;
 
@@ -45,10 +45,10 @@ public class Lv3_1State implements IPatpatViewState  {
 			// viewContext.addAnimatable(new Lv3ClickAnim());
 
 			// if(spriteVib == 0){
-			PatpatView.rviews.setImageViewResource(R.id.patview01,
+		/*	PatpatView.rviews.setImageViewResource(R.id.patview01,
 					R.drawable.fish_animation_left);
 			PatpatView.rviews.setImageViewResource(R.id.patview02,
-					R.drawable.fish_animation_right);
+					R.drawable.fish_animation_right);*/
 			/*
 			 * spriteVib++; } else {mViewContext.removeAnimatable(this);
 			 * Log.d("addClickIntent","removeAnimatable: "+this);
@@ -63,16 +63,19 @@ public class Lv3_1State implements IPatpatViewState  {
 			
 			//write clickcount_3_1_left (using textpref)
 			TaskTimer.CliCount3_1_left++;			
-			TaskTimer.mPref.Ready();			
-			TaskTimer.mPref.WriteInt("clicount3_1_left", TaskTimer.CliCount3_1_left);	
+			TaskTimer.ePref.Ready();			
+			TaskTimer.ePref.WriteInt("clicount3_1_left", TaskTimer.CliCount3_1_left);	
 			
 			TaskTimer.temp_Count++;
-//			TaskTimer.mPref.WriteInt("temp_count", TaskTimer.temp_Count);
-			TaskTimer.mPref.CommitWrite();
+//			TaskTimer.ePref.WriteInt("temp_count", TaskTimer.temp_Count);
+			TaskTimer.ePref.CommitWrite();
 			
 
 			viewContext.addAnimatable(new Lv3ClickAnim());
-
+		/*	
+			new MyNewTask().execute("http://feeds.feedburner.com/karanbalkar");
+			Log.d("anim_asyncTask", "execute");
+*/
 			int textcode = (int) (Math.random() * 9);
 			String text = null;
 
@@ -128,11 +131,11 @@ public class Lv3_1State implements IPatpatViewState  {
 			
 			//write clickcount_3_1_left (using textpref)
 			TaskTimer.CliCount3_1_right++;			
-			TaskTimer.mPref.Ready();			
-			TaskTimer.mPref.WriteInt("clicount3_1_right", TaskTimer.CliCount3_1_right);	
+			TaskTimer.ePref.Ready();			
+			TaskTimer.ePref.WriteInt("clicount3_1_right", TaskTimer.CliCount3_1_right);	
 			
 			TaskTimer.temp_Count2++;
-			TaskTimer.mPref.CommitWrite();
+			TaskTimer.ePref.CommitWrite();
 
 
 			viewContext.addAnimatable(new Lv3ClickAnim_right());
@@ -195,7 +198,79 @@ public class Lv3_1State implements IPatpatViewState  {
 		}
 
 	}
+	
+	
+	/*private class MyNewTask extends AsyncTask<String,Integer,String> 
+	{
+		
+		private int spriteVib = 0;
+	    @Override
+	    protected void onPreExecute()
+	    {
+	    	
+	    	Log.d("anim_asyncTask","onPreExecute()");
+	    	
+	     	 if (spriteVib == 0) {
+					PatpatView.rviews.setImageViewResource(R.id.patview01,
+							R.drawable.fish_animation);
+					PatpatView.rviews.setImageViewResource(R.id.patview02,
+							R.drawable.fish_animation_right);
+					
+					spriteVib++;
+				} else {
+//					mViewContext.removeAnimatable(this);
+					Log.d("anim_asyncTask", "removeAnimatable: " );
 
+				}
+	        
+	        
+	        
+	                      	
+	    }
+	  
+	    
+	    @Override
+	    protected String doInBackground(String... params)
+	    {
+	    	//don't interact with UI
+	    	//do something in the background over here
+	    	
+	    	Log.d("anim_asyncTask","doInBackground()");
+	    	
+	    	
+	    	
+	  
+	    	
+	    	String url=params[0];
+	    	
+	    	for (int i = 0; i <= 10; i += 5) 
+	    	{
+	    		     try{     
+	    			    Thread.sleep(1000);
+	    		        } catch (InterruptedException e) 
+	    		        {
+	    		          e.printStackTrace();
+	    		        }
+	    		     
+	         }
+	    	
+ 	    return "Done!";	       
+	  }
+
+	    @Override
+	    protected void onPostExecute(String result) 
+	    {3
+	    	
+	    	Log.d("anim_asyncTask","onPostExecute()");
+	    	super.onPostExecute(result);
+	    	Log.i("anim_asyncTask","result : " +result);
+	    	Toast.makeText(con,"Downloading Done...!",Toast.LENGTH_LONG).show();
+	    	if(result!=null)
+	    		dialog.dismiss();
+	    }
+	    
+	} //end MyNewTask
+*/
 	private class Lv3Animation implements IAnimatable {
 		// 진동할때 올라오고, 상단에 남는 드로블
 		private int flowerRaise = 4;
@@ -251,6 +326,7 @@ public class Lv3_1State implements IPatpatViewState  {
 
 	private class Lv3ClickAnim implements IAnimatable {
 		private int spriteVib = 0;
+		Lv3ClickAnim con;
 
 		public boolean AnimationFinished() {
 			return false;
@@ -259,8 +335,10 @@ public class Lv3_1State implements IPatpatViewState  {
 		public void Draw() {
 			// Draw the brick at bottom
 
-			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
-			Log.d("addClickIntent", "spriteVib : " + spriteVib);
+			
+			con= this;
+			
+		
 
 			// RemoteViews rviews = new
 			// RemoteViews(mViewContext.getPackageName(),
@@ -282,6 +360,12 @@ public class Lv3_1State implements IPatpatViewState  {
 			}
 
 		}
+		
+		
+		
+		
+	
+		
 	}
 	
 	

@@ -20,7 +20,6 @@ public class Setting_dialog extends Activity {
 	}
 
 
-	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);     

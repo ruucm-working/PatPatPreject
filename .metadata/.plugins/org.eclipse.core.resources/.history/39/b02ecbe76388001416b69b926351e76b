@@ -1,0 +1,12 @@
+package com.jym.patpat;
+
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
+
+public interface IAnimatable extends AsyncTask<String,Integer,String> {
+
+        public abstract boolean AnimationFinished();
+
+        public abstract void Draw();
+
+}

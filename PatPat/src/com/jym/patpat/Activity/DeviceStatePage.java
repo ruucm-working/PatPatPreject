@@ -113,7 +113,7 @@ public class DeviceStatePage extends ListFragment {
 	
 	public static void updateDeviceVersionView() {
 		
-		 
+		Log.d("mphone","call - updateDeviceVersionView");
 		 
 		 
 	 		bPref.Ready();	 		
@@ -125,7 +125,10 @@ public class DeviceStatePage extends ListFragment {
 			String sub = device_version.substring(device_version.indexOf(":"), device_version.lastIndexOf('.'));
 			
 			
+			Log.d("mphone","updateDeviceVersionView");
 			
+			
+			Log.d("mphone","device_version : "+sub);
 			
 			if (sub.equals(":2.3")){
 				updateview(R.drawable.ds_back_gingerbread);				
@@ -155,13 +158,18 @@ public class DeviceStatePage extends ListFragment {
 	public static void updateview (int drawbleid/*, String txt*/){
 		 
 		 
-		 
+		Log.d("mphone","updateview");
 		 
 			//set newstate's background img
 			LinearLayout a = (LinearLayout) Activity_Intro.getInstance().findViewById(R.id.tab_linear);	
+			
+			Log.d("mphone","LinearLayout");
 			a.setBackgroundResource(drawbleid);
 			
 			 
+			Log.d("mphone","setBackgroundResource");
+			
+			
 		/*	//set new state's text
 			TextView statetxt = (TextView)v.findViewById(R.id.welcome);		
 			statetxt.setText(txt);*/
