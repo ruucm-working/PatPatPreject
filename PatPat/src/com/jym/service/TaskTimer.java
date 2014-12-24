@@ -223,68 +223,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	}
 	
 	
-	
-	private static void updateHiddenIntent(Context context) {
-		// TODO Auto-generated method stub
-		int mWidgetId = PatpatView.mWidgetId;
-		
-		Log.d("updateHiddenIntent","mWidgetId : "+mWidgetId);
-		
-		
-		Intent intent = new Intent(String.format(INTENT_HIDDEN_FORMAT, mWidgetId));
-		
-		
-		intent.putExtra("widgetId", mWidgetId);
-		context.sendBroadcast(intent);
-
-
-		
-		
-	}
-	
-	
-	
-	private static void updateOftenIntent(Context context) {
-		// TODO Auto-generated method stub
-		int mWidgetId = PatpatView.mWidgetId;
-		
-		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
-		
-		
-		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
-		
-		
-		intent.putExtra("widgetId2", mWidgetId);
-		context.sendBroadcast(intent);
-
-
-		
-		
-	}
-	
-	
-	
-	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
-		// TODO Auto-generated method stub				
-		 
-		
-//		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
-		
-		int mWidgetId = PatpatView.mWidgetId;
-//		
-		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
-		intent.putExtra("widgetId11", mWidgetId);		
-
-		context.sendBroadcast(intent);
-
-		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
-		intent2.putExtra("widgetId10", mWidgetId);				
-
-		context.sendBroadcast(intent2);
-
-		Log.d("TaskTimer","updateEvolveIntent");
-	}
-
 	/** this method is used by doInBackground
 	 *  because it's called on the main thread (UI thread),
 	 *  you can directly modify UI */
@@ -300,9 +238,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			
 			
 
-			Log.d("pref_doinB","time : "+time);
-			Log.d("pref_doinB","time : "+time);
-			
+			Log.v("pref_doinB","time : "+time);
+			Log.v("pref_doinB","CliCount3_1_left : "+CliCount3_1_left);
+			Log.v("pref_doinB","CliCount3_1_right : "+CliCount3_1_right);
 			
 			//Making hidden Action
 			if(temp_Count*temp_Count2 == 2){
@@ -373,12 +311,76 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 			}
 
-			publishProgress(); // trigger onProgressUpdate()
 		}
 
 		
 		
 //	}
+	
+	
+	
+	private static void updateHiddenIntent(Context context) {
+		// TODO Auto-generated method stub
+		int mWidgetId = PatpatView.mWidgetId;
+		
+		Log.d("updateHiddenIntent","mWidgetId : "+mWidgetId);
+		
+		
+		Intent intent = new Intent(String.format(INTENT_HIDDEN_FORMAT, mWidgetId));
+		
+		
+		intent.putExtra("widgetId", mWidgetId);
+		context.sendBroadcast(intent);
+
+
+		
+		
+	}
+	
+	
+	
+	private static void updateOftenIntent(Context context) {
+		// TODO Auto-generated method stub
+		int mWidgetId = PatpatView.mWidgetId;
+		
+		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
+		
+		
+		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
+		
+		
+		intent.putExtra("widgetId2", mWidgetId);
+		context.sendBroadcast(intent);
+
+
+		
+		
+	}
+	
+	
+	
+	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
+		// TODO Auto-generated method stub				
+		 
+		
+//		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
+		
+		int mWidgetId = PatpatView.mWidgetId;
+//		
+		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
+		intent.putExtra("widgetId11", mWidgetId);		
+
+		context.sendBroadcast(intent);
+
+		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
+		intent2.putExtra("widgetId10", mWidgetId);				
+
+		context.sendBroadcast(intent2);
+
+		Log.d("TaskTimer","updateEvolveIntent");
+	}
+
+	
 
 	/** this method is executed right AFTER doInBackground()
 	 *  on the main thread (UI thread) */

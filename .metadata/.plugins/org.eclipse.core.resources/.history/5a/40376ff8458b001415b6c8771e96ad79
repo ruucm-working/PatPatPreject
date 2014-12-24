@@ -132,7 +132,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	}
 
 	// Preference
-//	 private TextPref tPref;	
 	public static TextPref mPref;	
 
 	@Override
@@ -143,8 +142,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		
 
 		try {
-			mPref = new TextPref("mnt/sdcard/SsdamSsdam/timerpref.pref");
-//			mPref = new TextPref 
+			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
 		} catch (Exception e) { 
 			e.printStackTrace();
 		}      
@@ -169,7 +167,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		
-		Log.d("erro_writePref","Tasktimer_doInBackground");
+		Log.d("add_hiddenAction","Tasktimer_doInBackground");
 		
 	
 
@@ -187,10 +185,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 					lv1 = mPref.ReadBoolean("lv1state", false);
 					lv2 = mPref.ReadBoolean("lv2state", false);
 					lv3_1 = mPref.ReadBoolean("lv3_1state", false);
-					
-					
-					Log.d("erro_writePref","write_StateVariable");
-					
 
 					// ClickCount Variable
 					CliCount0_1 = mPref.ReadInt("clicount0_1", 0);
@@ -201,15 +195,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 					CliCount3_1_right = mPref.ReadInt("clicount3_1_right", 0);
 
 					time = (System.currentTimeMillis() - startTime) / 1000;
-					
-					
-					Log.d("erro_writePref","write_TimeVariable");
 
-					Log.d("erro_writePref","time : "+time);
+					Log.d("ServiceMonitor","time : "+time);
 					
 					
-					Log.v("erro_writePref","CliCount3_1_left : "+CliCount3_1_left);
-					Log.v("erro_writePref","CliCount3_1_right : "+CliCount3_1_right);
+					Log.v("add_hiddenAction","CliCount3_1_left : "+CliCount3_1_left);
+					Log.v("add_hiddenAction","CliCount3_1_right : "+CliCount3_1_right);
 					
 					
 					Log.v("add_hiddenAction","temp_Count*temp_Count2 : "+temp_Count*temp_Count2);
@@ -314,9 +305,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			mPref.CommitWrite();
 			
 			Log.d("TaskTimer","newstartTime "+startTime);
-
 			
-
 		}*/
 		
 		
