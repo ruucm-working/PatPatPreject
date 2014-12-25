@@ -179,7 +179,7 @@ public class PatpatView extends Activity{
 		
 		
 		rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
-		rviews.setImageViewResource(R.id.patview02, R.drawable.knifing01);
+//		rviews.setImageViewResource(R.id.patview02, R.drawable.knifing01);
 		
 		
 		//state drawing
@@ -197,12 +197,11 @@ public class PatpatView extends Activity{
 		
 		
 		updateClickIntent(rviews);
-		updateClickIntent_right(rviews);
-//		updateImageViewClickIntent(imageviews);
+//		updateClickIntent_right(rviews);
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
-		Log.d("fix_futuretask","updateAppWidget(mWidgetId, rviews)");
+		Log.i("fix_futuretask","updateAppWidget(mWidgetId, rviews)");
 
 		RedrawMillis = SystemClock.uptimeMillis();
 		
@@ -289,7 +288,7 @@ public class PatpatView extends Activity{
 		rviews.setOnClickPendingIntent(R.id.patview01, pi);
 	}
 	
-	private void updateClickIntent_right(RemoteViews rviews)
+/*	private void updateClickIntent_right(RemoteViews rviews)
 	{
 		
 		
@@ -304,7 +303,7 @@ public class PatpatView extends Activity{
 		Log.d("fix_futuretask","updateClickIntent_right");
 	}
 	
-	
+	*/
 	
 	public static Bitmap drawableToBitmap (Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {

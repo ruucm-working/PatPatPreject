@@ -41,8 +41,7 @@ public class Activity_Login extends Activity
 	String userLastName ;
 
 	//프레퍼런스 
-	public static TextPref mPref;	
-	public static TextPref bPref;	
+	public static TextPref initPref;	
 
 	boolean setDialogOn ;
 
@@ -66,39 +65,36 @@ public class Activity_Login extends Activity
 		}
 
 		try {
-			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
-			bPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
+			initPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		mPref.Ready();
-		bPref.Ready();
+		initPref.Ready();
 
-		Log.d("coinBlockLoginActivity","bPref.Ready();.");
+		Log.d("coinBlockLoginActivity","initPref.Ready();.");
 
-		setDialogOn = mPref.ReadBoolean("setdialogon", true);
+		setDialogOn = initPref.ReadBoolean("setdialogon", true);
 
-		userId = bPref.ReadString("userId", "");
-		userFirstName = bPref.ReadString("userFirstName", "");
-		userLastName = bPref.ReadString("userLastName", "");
+		userId = initPref.ReadString("userId", "");
+		userFirstName = initPref.ReadString("userFirstName", "");
+		userLastName = initPref.ReadString("userLastName", "");
 
 		//Write device Profile(bprofile)
-		bPref.WriteString("MANUFACTURER", Build.MANUFACTURER);
-		bPref.WriteString("MODEL", Build.MODEL);
-		bPref.WriteString("PRODUCT", Build.PRODUCT);
+		initPref.WriteString("MANUFACTURER", Build.MANUFACTURER);
+		initPref.WriteString("MODEL", Build.MODEL);
+		initPref.WriteString("PRODUCT", Build.PRODUCT);
 
 		TelephonyManager telephony=(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		bPref.WriteString("NetworkCountryIso", telephony.getNetworkCountryIso());
-		bPref.WriteString("SimCountryIso", telephony.getSimCountryIso());
+		initPref.WriteString("NetworkCountryIso", telephony.getNetworkCountryIso());
+		initPref.WriteString("SimCountryIso", telephony.getSimCountryIso());
 
 		String[] array = Build.FINGERPRINT.split("/");
-		bPref.WriteString("DeviceVersion", array[2]);
+		initPref.WriteString("DeviceVersion", array[2]);
 
-		bPref.CommitWrite();
-		mPref.EndReady();
-		bPref.EndReady();
+		initPref.CommitWrite();
+		initPref.EndReady();
 		
 		
 	/*	//register Receiver
@@ -253,9 +249,9 @@ public class Activity_Login extends Activity
 
 			//for one-time showing dialog										
 			setDialogOn = false;		        	
-			mPref.Ready();
-			mPref.WriteBoolean("setdialogon", setDialogOn);
-			mPref.CommitWrite();
+			initPref.Ready();
+			initPref.WriteBoolean("setdialogon", setDialogOn);
+			initPref.CommitWrite();
 		} else {
 			Intent intent = new Intent(this, Activity_Intro.class);
 			startActivity(intent);		        	
@@ -283,15 +279,15 @@ public class Activity_Login extends Activity
 
 					Log.d("coinBlockLoginActivity","userFirstName2"+userFirstName);
 
-					bPref.Ready();
+					initPref.Ready();
 
-					bPref.WriteString("userId", userId);
-					bPref.WriteString("userFirstName", userFirstName);
-					bPref.WriteString("userLastName", userLastName);
+					initPref.WriteString("userId", userId);
+					initPref.WriteString("userFirstName", userFirstName);
+					initPref.WriteString("userLastName", userLastName);
 
 					Log.d("coinBlockLoginActivity", "WriteString;");
 
-					bPref.CommitWrite();
+					initPref.CommitWrite();
 
 					toIntro();
 					finish();

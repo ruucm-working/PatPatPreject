@@ -13,12 +13,12 @@
     	android:layout_weight="1"
     />
     
-    <ImageView android:id="@+id/patview02"
+<!--     <ImageView android:id="@+id/patview02"
         android:src="@drawable/brick_question"
     	android:layout_width="0dp"
     	android:layout_height="wrap_content"
     	android:adjustViewBounds="false"
     	android:layout_weight="1"
-    />
+    /> -->
     
 </LinearLayout>

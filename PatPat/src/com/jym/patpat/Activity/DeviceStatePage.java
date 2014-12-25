@@ -20,7 +20,7 @@ public class DeviceStatePage extends ListFragment {
 
 
 	// 프레퍼런스
-	public static TextPref bPref;
+	public static TextPref initPref;
 	
 	
 	static String device_version;
@@ -53,24 +53,24 @@ public class DeviceStatePage extends ListFragment {
     		Bundle savedInstanceState) {
     	     	
 		try {
-			bPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
+			initPref = new TextPref("mnt/sdcard/SsdamSsdam/bprofile.txt");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		bPref.Ready();
+		initPref.Ready();
 		
 		
 		device_states = new String[] { 
-				bPref.ReadString("MANUFACTURER", ""),
-				bPref.ReadString("MODEL", ""), bPref.ReadString("PRODUCT", ""),
-				bPref.ReadString("NetworkCountryIso", ""),
-				bPref.ReadString("SimCountryIso", ""),
-				bPref.ReadString("DeviceVersion", "")
+				initPref.ReadString("MANUFACTURER", ""),
+				initPref.ReadString("MODEL", ""), initPref.ReadString("PRODUCT", ""),
+				initPref.ReadString("NetworkCountryIso", ""),
+				initPref.ReadString("SimCountryIso", ""),
+				initPref.ReadString("DeviceVersion", "")
 
 		};
 
-		bPref.EndReady();
+		initPref.EndReady();
 		
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
@@ -116,9 +116,9 @@ public class DeviceStatePage extends ListFragment {
 		Log.d("mphone","call - updateDeviceVersionView");
 		 
 		 
-	 		bPref.Ready();	 		
-	 		device_version = bPref.ReadString("DeviceVersion", "");	 	
-			bPref.EndReady();
+	 		initPref.Ready();	 		
+	 		device_version = initPref.ReadString("DeviceVersion", "");	 	
+			initPref.EndReady();
 			
 			
 			

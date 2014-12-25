@@ -16,7 +16,7 @@ import com.jym.helper.TextPref;
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
 	
-	 private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
+	private ServiceMonitor serviceMonitor /*= ServiceMonitor.getInstance()*/;
 
 	
 	
@@ -94,6 +94,10 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 		
 		*/
+			
+			
+			serviceMonitor =  ServiceMonitor.getInstance();
+			
 			serviceMonitor.startMonitoring(PatpatWidgetApp.getApplication());
 			
 			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
@@ -115,8 +119,8 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	public void onReceive(Context context, Intent intent) {
 		super.onReceive(context, intent);
 
-		Log.d("updateHiddenIntent",
-				"intent.getAction() : " + intent.getAction());
+		Log.d("fix_futuretask",
+				"onReceive_intent.getAction() : " + intent.getAction());
 
 		if (intent.getAction().startsWith("click.com")) {
 			int id = intent.getIntExtra("widgetId", 0);

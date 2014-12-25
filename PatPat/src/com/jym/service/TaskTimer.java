@@ -57,9 +57,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	//Making hidden Action
 	public static int CliCount3_1_left = 0 ;
 	public static int CliCount3_1_right = 0 ;
-	public static int temp_Count = 0 ;
+/*	public static int temp_Count = 0 ;
 	public static int temp_Count2 = 0 ;
-	
+	*/
 
 /*	public void setTextView1(int textViewId) {
 		timer = (TextView)IntroActivity.getInstance()
@@ -240,7 +240,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		Log.v("fix_futuretask","CliCount3_1_left : "+CliCount3_1_left);
 		Log.v("fix_futuretask","CliCount3_1_right : "+CliCount3_1_right);
 		
-		//Making hidden Action
+/*		//Making hidden Action
 		if(temp_Count*temp_Count2 == 2){
 			Log.v("add_hiddenAction","temp_Count == 3");
 			updateHiddenIntent(PatpatWidgetApp.getApplication());
@@ -249,7 +249,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		// init temp_Count for a second
 		temp_Count = 0;
 		temp_Count2 = 0;
-		
+		*/
 		if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
 			lv0_1 = false;
 			lv0_2 = true;

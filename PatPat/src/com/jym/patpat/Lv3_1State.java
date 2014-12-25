@@ -1,6 +1,5 @@
 package com.jym.patpat;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import com.jym.service.TaskTimer;
@@ -60,18 +59,25 @@ public class Lv3_1State implements IPatpatViewState  {
 
 		public void OnClick(PatpatView viewContext) {
 
+			Log.w("fix_futuretask","OnClick");
 			
 			//write clickcount_3_1_left (using textpref)
 			TaskTimer.CliCount3_1_left++;			
 			TaskTimer.ePref.Ready();			
 			TaskTimer.ePref.WriteInt("clicount3_1_left", TaskTimer.CliCount3_1_left);	
 			
-			TaskTimer.temp_Count++;
+//			TaskTimer.temp_Count++;
 //			TaskTimer.ePref.WriteInt("temp_count", TaskTimer.temp_Count);
 			TaskTimer.ePref.CommitWrite();
 			
+			Log.w("fix_futuretask","End_CommitWrite");
 
 			viewContext.addAnimatable(new Lv3ClickAnim());
+//			System.gc();
+			
+			Log.w("fix_futuretask","addAnimatabe(start_scheduledraw)");
+
+			
 		/*	
 			new MyNewTask().execute("http://feeds.feedburner.com/karanbalkar");
 			Log.d("anim_asyncTask", "execute");
@@ -134,7 +140,7 @@ public class Lv3_1State implements IPatpatViewState  {
 			TaskTimer.ePref.Ready();			
 			TaskTimer.ePref.WriteInt("clicount3_1_right", TaskTimer.CliCount3_1_right);	
 			
-			TaskTimer.temp_Count2++;
+//			TaskTimer.temp_Count2++;
 			TaskTimer.ePref.CommitWrite();
 
 
@@ -200,77 +206,6 @@ public class Lv3_1State implements IPatpatViewState  {
 	}
 	
 	
-	/*private class MyNewTask extends AsyncTask<String,Integer,String> 
-	{
-		
-		private int spriteVib = 0;
-	    @Override
-	    protected void onPreExecute()
-	    {
-	    	
-	    	Log.d("anim_asyncTask","onPreExecute()");
-	    	
-	     	 if (spriteVib == 0) {
-					PatpatView.rviews.setImageViewResource(R.id.patview01,
-							R.drawable.fish_animation);
-					PatpatView.rviews.setImageViewResource(R.id.patview02,
-							R.drawable.fish_animation_right);
-					
-					spriteVib++;
-				} else {
-//					mViewContext.removeAnimatable(this);
-					Log.d("anim_asyncTask", "removeAnimatable: " );
-
-				}
-	        
-	        
-	        
-	                      	
-	    }
-	  
-	    
-	    @Override
-	    protected String doInBackground(String... params)
-	    {
-	    	//don't interact with UI
-	    	//do something in the background over here
-	    	
-	    	Log.d("anim_asyncTask","doInBackground()");
-	    	
-	    	
-	    	
-	  
-	    	
-	    	String url=params[0];
-	    	
-	    	for (int i = 0; i <= 10; i += 5) 
-	    	{
-	    		     try{     
-	    			    Thread.sleep(1000);
-	    		        } catch (InterruptedException e) 
-	    		        {
-	    		          e.printStackTrace();
-	    		        }
-	    		     
-	         }
-	    	
- 	    return "Done!";	       
-	  }
-
-	    @Override
-	    protected void onPostExecute(String result) 
-	    {3
-	    	
-	    	Log.d("anim_asyncTask","onPostExecute()");
-	    	super.onPostExecute(result);
-	    	Log.i("anim_asyncTask","result : " +result);
-	    	Toast.makeText(con,"Downloading Done...!",Toast.LENGTH_LONG).show();
-	    	if(result!=null)
-	    		dialog.dismiss();
-	    }
-	    
-	} //end MyNewTask
-*/
 	private class Lv3Animation implements IAnimatable {
 		// 진동할때 올라오고, 상단에 남는 드로블
 		private int flowerRaise = 4;
@@ -347,10 +282,10 @@ public class Lv3_1State implements IPatpatViewState  {
 			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 
 			if (spriteVib == 0) {
-				/*PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.fish_animation_left);*/
-				PatpatView.rviews.setImageViewResource(R.id.patview02,
-						R.drawable.fish_animation_right);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,
+						R.drawable.fish_animation);
+			/*	PatpatView.rviews.setImageViewResource(R.id.patview02,
+						R.drawable.fish_animation_right);*/
 				
 				spriteVib++;
 			} else {
@@ -360,7 +295,6 @@ public class Lv3_1State implements IPatpatViewState  {
 			}
 
 		}
-		
 		
 		
 		
@@ -391,9 +325,9 @@ public class Lv3_1State implements IPatpatViewState  {
 			if (spriteVib == 0) {
 				PatpatView.rviews.setImageViewResource(R.id.patview01,
 						R.drawable.fish_animation_left);
-				PatpatView.rviews.setImageViewResource(R.id.patview02,
+			/*	PatpatView.rviews.setImageViewResource(R.id.patview02,
 						R.drawable.fish_right08);
-				
+				*/
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);

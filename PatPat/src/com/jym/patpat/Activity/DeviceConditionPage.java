@@ -34,7 +34,6 @@ public class DeviceConditionPage extends Fragment  {
 	
 	// 프레퍼런스
 	static TextPref ePref;
-	// public static TextPref fbPref;
 
 	static boolean init;
 	public static boolean lv0_1;
