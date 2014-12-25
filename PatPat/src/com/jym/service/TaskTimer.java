@@ -172,52 +172,52 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		
-		Log.v("pref_doinB","doInBackground(1");
+		Log.d("fix_futuretask","doInBackground(1");
+
 
 		while (time >= 0 && !isCanceled) {
 			
 			
-			 try {
-				Thread.sleep(1000);
-				Log.v("pref_doinB"," Thread.sleep(1");
-			} catch (InterruptedException e) {
-				Log.v("pref_doinB","Thread.error : "+e);
-				e.printStackTrace();
-				
-			} // one second sleep
-				
 			
+		 try {
+			Thread.sleep(1000);
+			Log.v("fix_futuretask"," Thread.sleep(1");
+		} catch (InterruptedException e) {
+			Log.v("fix_futuretask","Thread.error : "+e);
+			e.printStackTrace();
 			
-			ePref.Ready();
-
-			// State Variable
-			init = ePref.ReadBoolean("initstate", false);
-			lv0_1 = ePref.ReadBoolean("lv0_1state", false);
-			lv0_2 = ePref.ReadBoolean("lv0_2state", false);
-			lv1 = ePref.ReadBoolean("lv1state", false);
-			lv2 = ePref.ReadBoolean("lv2state", false);
-			lv3_1 = ePref.ReadBoolean("lv3_1state", false);
+		} // one second sleep
 			
-			
-			Log.d("erro_writePref","write_StateVariable");
-			
-
-			// ClickCount Variable
-			CliCount0_1 = ePref.ReadInt("clicount0_1", 0);
-			CliCount0_2 = ePref.ReadInt("clicount0_2", 0);
-			CliCount1 = ePref.ReadInt("clicount1", 0);
-			CliCount2 = ePref.ReadInt("clicount2", 0);
-			CliCount3_1_left = ePref.ReadInt("clicount3_1_left", 0);
-			CliCount3_1_right = ePref.ReadInt("clicount3_1_right", 0);
-
-			time = (System.currentTimeMillis() - startTime) / 1000;
-			
-
-			publishProgress(); // trigger onProgressUpdate()
-		}
-
-
 		
+		
+		ePref.Ready();
+
+		// State Variable
+		init = ePref.ReadBoolean("initstate", false);
+		lv0_1 = ePref.ReadBoolean("lv0_1state", false);
+		lv0_2 = ePref.ReadBoolean("lv0_2state", false);
+		lv1 = ePref.ReadBoolean("lv1state", false);
+		lv2 = ePref.ReadBoolean("lv2state", false);
+		lv3_1 = ePref.ReadBoolean("lv3_1state", false);
+		
+		
+		Log.d("erro_writePref","write_StateVariable");
+		
+
+		// ClickCount Variable
+		CliCount0_1 = ePref.ReadInt("clicount0_1", 0);
+		CliCount0_2 = ePref.ReadInt("clicount0_2", 0);
+		CliCount1 = ePref.ReadInt("clicount1", 0);
+		CliCount2 = ePref.ReadInt("clicount2", 0);
+		CliCount3_1_left = ePref.ReadInt("clicount3_1_left", 0);
+		CliCount3_1_right = ePref.ReadInt("clicount3_1_right", 0);
+
+		time = (System.currentTimeMillis() - startTime) / 1000;
+		
+
+		publishProgress(); // trigger onProgressUpdate()
+
+	}
 
 			return RESULT_SUCCESS;
 	}
@@ -231,85 +231,86 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		// modify timer's text (remained time)
 //		timer.setText("" + time);
 		
-		Log.d("pref_doinB","onProgressUpdate");
+		Log.d("fix_futuretask","onProgressUpdate");
 		
 
 //		while (time >= 0 && !isCanceled) {
 			
+		Log.v("fix_futuretask","time : "+time);
+		Log.v("fix_futuretask","CliCount3_1_left : "+CliCount3_1_left);
+		Log.v("fix_futuretask","CliCount3_1_right : "+CliCount3_1_right);
+		
+		//Making hidden Action
+		if(temp_Count*temp_Count2 == 2){
+			Log.v("add_hiddenAction","temp_Count == 3");
+			updateHiddenIntent(PatpatWidgetApp.getApplication());
+		}
+
+		// init temp_Count for a second
+		temp_Count = 0;
+		temp_Count2 = 0;
+		
+		if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
+			lv0_1 = false;
+			lv0_2 = true;
+			ePref.WriteBoolean("lv0_1state", lv0_1);
+			ePref.WriteBoolean("lv0_2state", lv0_2);
+			ePref.CommitWrite();
+
+			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
+					.getApplication().getPackageName(),
+					R.layout.patpat_widget);
+			updateEvolveIntent(rviews,
+					PatpatWidgetApp.getApplication());
+
+		}
+
+		else if (time >= 20 && time <= 22 && CliCount1 >= 3 && lv1) {
+			lv1 = false;
+			lv2 = true;
+			ePref.WriteBoolean("lv1state", lv1);
+			ePref.WriteBoolean("lv2state", lv2);
+			ePref.CommitWrite();
+
+			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
+					.getApplication().getPackageName(),
+					R.layout.patpat_widget);
+			updateEvolveIntent(rviews,
+					PatpatWidgetApp.getApplication());
+
+		} else if (time >= 30 && time <= 32 && CliCount2 >= 3
+				&& lv2) {
+			lv2 = false;
+			lv3_1 = true;
+			ePref.WriteBoolean("lv2state", lv2);
+			ePref.WriteBoolean("lv3_1state", lv3_1);
+			ePref.CommitWrite();
+
+			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
+					.getApplication().getPackageName(),
+					R.layout.patpat_widget);
+			updateEvolveIntent(rviews,
+					PatpatWidgetApp.getApplication());
+
+		} else if (time % 10 ==7){
+			Log.d("keep_oftenintent","time : "+time); 
+			Log.d("keep_oftenintent","PatpatWidgetApp.getApplication() : "+PatpatWidgetApp.getApplication()); 
+			updateOftenIntent(PatpatWidgetApp.getApplication());
 			
+			 
+		}
 
-			Log.v("pref_doinB","time : "+time);
-			Log.v("pref_doinB","CliCount3_1_left : "+CliCount3_1_left);
-			Log.v("pref_doinB","CliCount3_1_right : "+CliCount3_1_right);
+		else {
 			
-			//Making hidden Action
-			if(temp_Count*temp_Count2 == 2){
-				Log.v("add_hiddenAction","temp_Count == 3");
-				updateHiddenIntent(PatpatWidgetApp.getApplication());
-			}
+			tPref.Ready();
 
-			// init temp_Count for a second
-			temp_Count = 0;
-			temp_Count2 = 0;
-			
-			if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
-				lv0_1 = false;
-				lv0_2 = true;
-				ePref.WriteBoolean("lv0_1state", lv0_1);
-				ePref.WriteBoolean("lv0_2state", lv0_2);
-				ePref.CommitWrite();
+			tPref.WriteLong("time", time);
+			tPref.CommitWrite();
 
-				RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-						.getApplication().getPackageName(),
-						R.layout.patpat_widget);
-				updateEvolveIntent(rviews,
-						PatpatWidgetApp.getApplication());
+		}
+		
 
-			}
-
-			else if (time >= 20 && time <= 22 && CliCount1 >= 3 && lv1) {
-				lv1 = false;
-				lv2 = true;
-				ePref.WriteBoolean("lv1state", lv1);
-				ePref.WriteBoolean("lv2state", lv2);
-				ePref.CommitWrite();
-
-				RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-						.getApplication().getPackageName(),
-						R.layout.patpat_widget);
-				updateEvolveIntent(rviews,
-						PatpatWidgetApp.getApplication());
-
-			} else if (time >= 30 && time <= 32 && CliCount2 >= 3
-					&& lv2) {
-				lv2 = false;
-				lv3_1 = true;
-				ePref.WriteBoolean("lv2state", lv2);
-				ePref.WriteBoolean("lv3_1state", lv3_1);
-				ePref.CommitWrite();
-
-				RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-						.getApplication().getPackageName(),
-						R.layout.patpat_widget);
-				updateEvolveIntent(rviews,
-						PatpatWidgetApp.getApplication());
-
-			} else if (time % 10 ==7){
-				/*Log.d("keep_oftenintent","time : "+time); 
-				Log.d("keep_oftenintent","PatpatWidgetApp.getApplication() : "+PatpatWidgetApp.getApplication()); 
-				updateOftenIntent(PatpatWidgetApp.getApplication());
-				
-				 */
-			}
-
-			else {
-				
-				tPref.Ready();
-
-				tPref.WriteLong("time", time);
-				tPref.CommitWrite();
-
-			}
+		
 
 		}
 
@@ -389,7 +390,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		
 		
 		if(RESULT_SUCCESS.equals(result))
-			Log.v("pref_doinB","onPostExecute : result "+result);
+			Log.v("fix_futuretask","onPostExecute : result "+result);
+		
+		
+
+			
+
 		
 		
 	}

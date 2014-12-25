@@ -347,8 +347,8 @@ public class Lv3_1State implements IPatpatViewState  {
 			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 
 			if (spriteVib == 0) {
-				/*PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.fish_animation_left);*/
+				PatpatView.rviews.setImageViewResource(R.id.patview01,
+						R.drawable.fish_animation_left);
 				PatpatView.rviews.setImageViewResource(R.id.patview02,
 						R.drawable.fish_animation_right);
 				

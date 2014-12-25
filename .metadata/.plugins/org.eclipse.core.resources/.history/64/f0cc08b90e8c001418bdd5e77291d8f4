@@ -210,7 +210,7 @@ public class PatpatView extends Activity{
 		/*if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
 		*/
-		Log.i("fix_futuretask","Redraw, RedrawMillis : "+RedrawMillis);
+		Log.i("draw_Speeding","Redraw, RedrawMillis : "+RedrawMillis);
 
 		
 	}

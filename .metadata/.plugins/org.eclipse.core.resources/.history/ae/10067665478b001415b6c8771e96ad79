@@ -92,7 +92,7 @@ public class PatpatView extends Activity{
 		Context = context;
 		
 		
-		Log.v("stop_double_Draw","Draw_setState_PatpatView");
+		Log.e("stop_double_Draw","Draw_setState_PatpatView");
 		
 		setState(new Lv3_1State(this));
 		
@@ -202,7 +202,7 @@ public class PatpatView extends Activity{
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
-		Log.d("fix_futuretask","updateAppWidget(mWidgetId, rviews)");
+		Log.d("draw_Speeding","updateAppWidget");
 
 		RedrawMillis = SystemClock.uptimeMillis();
 		
@@ -210,7 +210,7 @@ public class PatpatView extends Activity{
 		/*if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
 		*/
-		Log.i("fix_futuretask","Redraw, RedrawMillis : "+RedrawMillis);
+		Log.i("draw_Speeding","Redraw, RedrawMillis : "+RedrawMillis);
 
 		
 	}
@@ -218,7 +218,7 @@ public class PatpatView extends Activity{
 	void scheduleRedraw() {
 		
 		
-		Log.v("draw_Speeding","scheduleRedraw, RedrawMillis : "+RedrawMillis);
+		Log.e("draw_Speeding","scheduleRedraw, RedrawMillis : "+RedrawMillis);
 		
 		Log.i("draw_Speeding","scheduleRedraw, SystemClock.uptimeMillis() : "+SystemClock.uptimeMillis());
 		
@@ -301,7 +301,7 @@ public class PatpatView extends Activity{
 				PendingIntent.FLAG_UPDATE_CURRENT);
 		rviews.setOnClickPendingIntent(R.id.patview02, pi);
 		
-		Log.d("fix_futuretask","updateClickIntent_right");
+		Log.d("updateClickIntent_right","updateClickIntent_right");
 	}
 	
 	
