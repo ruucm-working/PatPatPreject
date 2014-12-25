@@ -10,16 +10,14 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.exam.CoinBlockWidgetApp;
 import com.jym.helper.ServiceMonitor;
 import com.jym.helper.TextPref;
 
-
 public class PatpatWidgetProvider extends AppWidgetProvider {
-	
-	 private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
 
-	
-	
+	private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
+
 	// Init pref files at application class
 	static String parentPath = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "SsdamSsdam";
@@ -30,40 +28,39 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	File saveDir;
 
 	@Override
-    public void onDeleted(Context context, int[] appWidgetIds) {
-            super.onDeleted(context, appWidgetIds);
-            Log.d("atActivityRemoved","onDeleted");
-            for (int x : appWidgetIds) {
-                    ((PatpatWidgetApp) context.getApplicationContext()).DeleteWidget(x);
-            }
-    }
+	public void onDeleted(Context context, int[] appWidgetIds) {
+		super.onDeleted(context, appWidgetIds);
+		Log.d("atActivityRemoved","onDeleted");
+		for (int x : appWidgetIds) {
+			((PatpatWidgetApp) context.getApplicationContext()).DeleteWidget(x);
+		}
+	}
 
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-            super.onUpdate(context, appWidgetManager, appWidgetIds);
+	@Override
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+		super.onUpdate(context, appWidgetManager, appWidgetIds);
 
-            Log.d("atActivityRemoved","onUpdate");
-            for (int i=0; i<appWidgetIds.length; i++)
-            {
-                    ((PatpatWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
-            }
-    }
+		Log.d("atActivityRemoved","onUpdate");
+		for (int i=0; i<appWidgetIds.length; i++)
+		{
+			((PatpatWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
+		}
+	}
 
 	@Override
 	public void onEnabled(Context context) {
 		super.onEnabled(context);
-		
+
 		Log.d("serviceSwitch", "parentPath : "+parentPath);
-		
+
 		// Init pref files at application class
-		saveDir = new File(parentPath); // dir : 생성하고자 하는 경로
+		saveDir = new File(parentPath); // dir : �깮�꽦�븯怨좎옄 �븯�뒗 寃쎈줈
 		Log.d("serviceSwitch","new File");
 		if (!saveDir.exists()) {
 			Log.d("serviceSwitch","aveDir.exists()");
 			saveDir.mkdirs();
 		}
 
-		
 		Log.d("serviceSwitch","End File");
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -72,43 +69,33 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			e.printStackTrace();
 			Log.d("serviceSwitch","e : "+e);
 		}   
-		
-		
+
 		mPref.Ready();
 		Log.d("serviceSwitch","mPref.Ready();");
 		serviceSwitch = mPref.ReadBoolean("serviceSwitch", true);
 		mPref.EndReady();
 
-		
-		
 		Log.d("Stop_renotify","onEnabled");
 		Log.d("Stop_renotify","serviceSwitch : "+serviceSwitch);
-		
-		
+
 		if(serviceSwitch){
-	/*	Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
-		context.startService(intent);
-		
-		Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
-		context.startService(intent3);
-		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
-		
-		*/
+			/*
+			Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
+			context.startService(intent);
+	
+			Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
+			context.startService(intent3);
+			Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
+			 */
 			serviceMonitor.startMonitoring(PatpatWidgetApp.getApplication());
-			
+
 			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
-				Log.v("ServiceMonitor","startMonitoring");
-		
-		
-		mPref.Ready();
-		mPref.WriteBoolean("serviceSwitch", false);
-		mPref.CommitWrite();
-		
+			Log.v("ServiceMonitor","startMonitoring");
+
+			mPref.Ready();
+			mPref.WriteBoolean("serviceSwitch", false);
+			mPref.CommitWrite();
 		}
-		
-		 
-		
-		
 	}
 
 	@Override
@@ -118,24 +105,30 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		Log.d("updateHiddenIntent",
 				"intent.getAction() : " + intent.getAction());
 
+		// Touch widget's left
 		if (intent.getAction().startsWith("click.com")) {
 			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick();
-		} else if (intent.getAction().startsWith("click_right.com")) {
-			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick_right();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+		}
 
-		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+		// Touch widget's right 
+		else if (intent.getAction().startsWith("click_right.com")) {
 			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick();
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick_right();
+		}
 
+		// Hidden action
+		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+		}
+
+		// OnOften (Automatically activate on few seconds)
+		else if (intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")){
+			int id = intent.getIntExtra("widgetId2", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnOften();
 		}
 	}
 }

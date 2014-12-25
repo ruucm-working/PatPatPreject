@@ -117,7 +117,7 @@ public class PatpatView extends Activity{
 			@Override
 			public void onClick(View v) {
 
-				Toast.makeText(Context, "거긴안대..", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Context, "嫄곌릿�븞��..", Toast.LENGTH_SHORT).show();
 				
 				
 			}
@@ -152,11 +152,9 @@ public class PatpatView extends Activity{
 		state.OnClick_right(this);
 	}
 
-	
-
 	public void OnOften() {
 		state.OnOften(this);
-		//		/scheduleRedraw();
+		//scheduleRedraw();
 	}
 
 	public void OnEvolve() {
