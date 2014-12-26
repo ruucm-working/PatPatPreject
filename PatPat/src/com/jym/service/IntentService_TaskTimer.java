@@ -2,6 +2,7 @@ package com.jym.service;
 
 import android.app.AlarmManager;
 import android.app.IntentService;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.SystemClock;
@@ -40,15 +41,16 @@ public class IntentService_TaskTimer extends IntentService {
 	 */
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		// TODO Auto-generated method stub
+		
+		Log.d("immortal_service","onStartCommand_taskTimer");
+		
+		//foregrounding Service
+		startForeground(1, new Notification());
+
+		
 		
 		taskTimer2 = new TaskTimer();
-		
-		
-		Log.d("ServiceMonitor","taskTimer2 :"+taskTimer2);
 		taskTimer2.execute();
-		Log.d("ServiceMonitor","execute");
-		
 		
 		
 		

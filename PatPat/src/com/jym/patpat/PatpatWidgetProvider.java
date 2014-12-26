@@ -10,13 +10,11 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.jym.helper.ServiceMonitor;
 import com.jym.helper.TextPref;
 
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
 	
-	private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
 
 	
 	
@@ -86,23 +84,22 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		
 		
 		if(serviceSwitch){
-	/*	Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
+		Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
 		context.startService(intent);
 		
 		Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
 		context.startService(intent3);
 		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 		
-		*/
+		
+			
+			/*
 			
 			
-			
-			
-			serviceMonitor.startMonitoring(PatpatWidgetApp.getApplication());
 			
 			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
 				Log.v("ServiceMonitor","startMonitoring");
-		
+		*/
 		
 		mPref.Ready();
 		mPref.WriteBoolean("serviceSwitch", false);
