@@ -4,7 +4,7 @@
 	<item value="2" key="CallHierarchyViewPart.field_mode"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="596" key="CallHierarchyViewPart.ratio1"/>
+	<item value="751" key="CallHierarchyViewPart.ratio1"/>
 	<item value="false" key="delegateUpdating"/>
 	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
 	<item value="500" key="CallHierarchyViewPart.ratio3"/>
@@ -72,7 +72,7 @@
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="679" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="605" key="DIALOG_HEIGHT"/>
 		<item value="655" key="DIALOG_X_ORIGIN"/>
 		<item value="339" key="DIALOG_Y_ORIGIN"/>

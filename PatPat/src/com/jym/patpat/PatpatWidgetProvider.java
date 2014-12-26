@@ -16,7 +16,7 @@ import com.jym.helper.TextPref;
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
 	
-	private ServiceMonitor serviceMonitor /*= ServiceMonitor.getInstance()*/;
+	private ServiceMonitor serviceMonitor = ServiceMonitor.getInstance();
 
 	
 	
@@ -96,7 +96,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		*/
 			
 			
-			serviceMonitor =  ServiceMonitor.getInstance();
+			
 			
 			serviceMonitor.startMonitoring(PatpatWidgetApp.getApplication());
 			

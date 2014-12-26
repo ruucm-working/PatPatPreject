@@ -2,16 +2,32 @@ package com.jym.patpat;
 
 import android.util.Log;
 
+import com.jym.helper.TextPref;
 import com.jym.service.TaskTimer;
 
 public class Lv3_1State implements IPatpatViewState  {
 
+	
+	public static int clickcount_3_1=0;
+	TextPref clickPref;
+	
+	
 	public static boolean overlapAnimSwitch = true;
-
 	PatpatView mViewContext;
 
 	public Lv3_1State(PatpatView viewContext) {
 		mViewContext = viewContext;
+		
+		try {
+			clickPref = new TextPref("mnt/sdcard/SsdamSsdam/clickpref.pref");
+		} catch (Exception e) { 
+			e.printStackTrace();
+		}      
+		
+		
+		clickPref.Ready();
+		clickcount_3_1 = clickPref.ReadInt("ClickCount_3_1", 0);
+		clickPref.EndReady();
 
 	}
 
@@ -59,18 +75,24 @@ public class Lv3_1State implements IPatpatViewState  {
 
 		public void OnClick(PatpatView viewContext) {
 
-			Log.w("fix_futuretask","OnClick");
+			Log.w("seperated_ClickCount","OnClick");
 			
-			//write clickcount_3_1_left (using textpref)
+			/*//write clickcount_3_1_left (using textpref)
 			TaskTimer.CliCount3_1_left++;			
 			TaskTimer.ePref.Ready();			
 			TaskTimer.ePref.WriteInt("clicount3_1_left", TaskTimer.CliCount3_1_left);	
+			TaskTimer.ePref.CommitWrite();*/
 			
-//			TaskTimer.temp_Count++;
-//			TaskTimer.ePref.WriteInt("temp_count", TaskTimer.temp_Count);
-			TaskTimer.ePref.CommitWrite();
 			
-			Log.w("fix_futuretask","End_CommitWrite");
+		
+			clickcount_3_1++;
+			Log.w("seperated_ClickCount","clickcount_3_1 : "+clickcount_3_1);
+			
+			clickPref.Ready();
+			clickPref.WriteInt("ClickCount_3_1", clickcount_3_1);	
+			clickPref.CommitWrite();
+			
+			Log.w("seperated_ClickCount","End_CommitWrite");
 
 			viewContext.addAnimatable(new Lv3ClickAnim());
 //			System.gc();

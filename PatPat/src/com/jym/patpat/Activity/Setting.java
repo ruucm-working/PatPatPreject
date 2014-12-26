@@ -74,7 +74,7 @@ public class Setting extends Activity {
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	public void onCreate(Bundle savedInstanceState) {
 
-	/*	if (DEVELOPER_MODE) {
+		/*if (DEVELOPER_MODE) {
 			StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
 					.detectDiskReads().detectDiskWrites().detectNetwork()
 					.penaltyLog().build());

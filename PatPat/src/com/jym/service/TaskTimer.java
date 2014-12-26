@@ -6,9 +6,9 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jym.helper.TextPref;
+import com.jym.patpat.Lv3_1State;
 import com.jym.patpat.PatpatView;
 import com.jym.patpat.PatpatWidgetApp;
 import com.jym.patpat.R;
@@ -165,6 +165,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 	}
 
+	
 
 	@Override
 	protected String doInBackground(String... params) {
@@ -172,7 +173,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		
 		
-		Log.d("fix_futuretask","doInBackground(1");
+		Log.d("fix_futuretask","doInBackground");
 
 
 		while (time >= 0 && !isCanceled) {
@@ -181,16 +182,16 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			
 		 try {
 			Thread.sleep(1000);
-			Log.v("fix_futuretask"," Thread.sleep(1");
+			Log.d("fix_futuretask"," Thread.sleep(1000)");
 		} catch (InterruptedException e) {
-			Log.v("fix_futuretask","Thread.error : "+e);
+			Log.d("fix_futuretask","Thread.error : "+e);
 			e.printStackTrace();
 			
 		} // one second sleep
 			
 		
 		
-		ePref.Ready();
+	/*	ePref.Ready();
 
 		// State Variable
 		init = ePref.ReadBoolean("initstate", false);
@@ -201,7 +202,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		lv3_1 = ePref.ReadBoolean("lv3_1state", false);
 		
 		
-		Log.d("erro_writePref","write_StateVariable");
+		Log.d("fix_futuretask","write_StateVariable");
 		
 
 		// ClickCount Variable
@@ -211,16 +212,30 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		CliCount2 = ePref.ReadInt("clicount2", 0);
 		CliCount3_1_left = ePref.ReadInt("clicount3_1_left", 0);
 		CliCount3_1_right = ePref.ReadInt("clicount3_1_right", 0);
+		
+		ePref.EndReady();*/
+		 
+		 
+		 Log.i("seperated_ClickCount","clickcount_3_1_At_TaskTimer : "+Lv3_1State.clickcount_3_1);
 
 		time = (System.currentTimeMillis() - startTime) / 1000;
 		
+		
+		Log.d("fix_futuretask","End_doInBackground");
 
 		publishProgress(); // trigger onProgressUpdate()
 
 	}
 
 			return RESULT_SUCCESS;
+			
+			
+		
 	}
+	
+	
+	
+	
 	
 	
 	/** this method is used by doInBackground
@@ -293,8 +308,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 					PatpatWidgetApp.getApplication());
 
 		} else if (time % 10 ==7){
-			Log.d("keep_oftenintent","time : "+time); 
-			Log.d("keep_oftenintent","PatpatWidgetApp.getApplication() : "+PatpatWidgetApp.getApplication()); 
+			Log.d("fix_futuretask","onOften_at_time : "+time); 
 			updateOftenIntent(PatpatWidgetApp.getApplication());
 			
 			 
