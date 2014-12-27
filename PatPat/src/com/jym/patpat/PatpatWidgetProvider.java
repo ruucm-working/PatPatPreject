@@ -40,7 +40,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
             super.onUpdate(context, appWidgetManager, appWidgetIds);
 
-            Log.d("atActivityRemoved","onUpdate");
+            Log.d("refreshing_RemoteView","onUpdate");
             for (int i=0; i<appWidgetIds.length; i++)
             {
                     ((PatpatWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);

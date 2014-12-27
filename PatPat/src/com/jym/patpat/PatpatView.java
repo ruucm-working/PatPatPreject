@@ -98,7 +98,7 @@ public class PatpatView extends Activity{
 		
 		
 		
-		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_widget);
+		
 		
  
 		/*
@@ -176,7 +176,7 @@ public class PatpatView extends Activity{
 		
 		Log.d("draw_Speeding","Redraw");
 		
-		
+		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_widget);
 		
 		rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
 //		rviews.setImageViewResource(R.id.patview02, R.drawable.knifing01);
@@ -195,13 +195,14 @@ public class PatpatView extends Activity{
 				Children.remove(child[i]);
 		}
 		
+		Log.i("refreshing_RemoteView","End_child.draw");
 		
 		updateClickIntent(rviews);
 //		updateClickIntent_right(rviews);
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
-		Log.i("fix_futuretask","updateAppWidget(mWidgetId, rviews)");
+		Log.i("refreshing_RemoteView","updateAppWidget(mWidgetId, rviews)");
 
 		RedrawMillis = SystemClock.uptimeMillis();
 		
@@ -209,7 +210,7 @@ public class PatpatView extends Activity{
 		/*if (state.NeedRedraw() || Children.size() > 0)
 			scheduleRedraw();
 		*/
-		Log.i("fix_futuretask","Redraw, RedrawMillis : "+RedrawMillis);
+		Log.i("draw_Speeding","Redraw, RedrawMillis : "+RedrawMillis);
 
 		
 	}

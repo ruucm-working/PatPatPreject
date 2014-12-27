@@ -42,10 +42,14 @@ public class Activity_Intro extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		instance = this;
 
+		
+		
+//		dalvik.system.VMRuntime.getRuntime().setTargetHeapUtilization(0.7f);
 		// for Activity anim
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 
 		setContentView(R.layout.patpat_layout);
+		
 
 		// for adding listviewpager
 		mTabHost = (TabHost) findViewById(android.R.id.tabhost);

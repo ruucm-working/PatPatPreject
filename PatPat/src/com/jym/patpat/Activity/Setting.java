@@ -71,7 +71,6 @@ public class Setting extends Activity {
 		this.overridePendingTransition(R.anim.end_enter, R.anim.end_exit);
 	}
 
-	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	public void onCreate(Bundle savedInstanceState) {
 
 		/*if (DEVELOPER_MODE) {

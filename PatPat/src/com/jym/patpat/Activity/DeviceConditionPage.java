@@ -2,7 +2,10 @@ package com.jym.patpat.Activity;
 
 import java.io.File;
 
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,12 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jym.helper.TextPref;
-import com.jym.patpat.PatpatWidgetApp;
 import com.jym.patpat.R;
 import com.todddavies.components.progressbar.ProgressWheel;
 
@@ -43,6 +46,8 @@ public class DeviceConditionPage extends Fragment  {
 	public static boolean lv3_1;
 
 	static View v;
+	
+	View rv;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +57,7 @@ public class DeviceConditionPage extends Fragment  {
 		
 		
 		v = inflater.inflate(R.layout.device_condition, container, false);
+		rv = inflater.inflate(R.layout.patpat_widget, container, false);
 		
 		
 		
@@ -118,23 +124,30 @@ public class DeviceConditionPage extends Fragment  {
 			public boolean onLongClick(View v) {
 				
 				
-				//preffile delete
-				//deletePackageFolder();
-				
-				//make new coinblockview
-				
-
-//				coinBlockWidgetProvider a = new coinBlockWidgetProvider();
-				
+			/*	
 				PatpatWidgetApp a = new PatpatWidgetApp();
 				a.UpdateAllWidgets();
-				
-				//set lv0 state 
-				
+				*/
 				
 				
+//				Lv3_1State.recycleAnimDrawable();
 				
-				Toast.makeText(getActivity(), "Initializing...",
+				 dalvik.system.VMRuntime.getRuntime().runFinalizationSync();
+
+			/*	
+				ImageView a = (ImageView) rv.findViewById(R.id.patview01);
+				
+				Drawable drawable = a.getDrawable();
+				
+				Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Config.ARGB_8888);
+		        Canvas canvas = new Canvas(bitmap);
+		        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+		        drawable.draw(canvas);
+		        
+		        bitmap.recycle();
+				*/
+				
+				Toast.makeText(getActivity(), "Recycling...",
 						Toast.LENGTH_SHORT).show();
 				return true;
 			}

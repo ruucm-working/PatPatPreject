@@ -9,3 +9,4 @@ org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 org.eclipse.jdt.core.compiler.problem.methodWithConstructorName=ignore
 org.eclipse.jdt.core.compiler.problem.staticAccessReceiver=ignore
 org.eclipse.jdt.core.compiler.source=1.7
+org.eclipse.jdt.core.userLibrary.android8=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="C\:/android sdk/platforms/android-8/android.jar"/>\r\n</userlibrary>\r\n
