@@ -5794,3 +5794,6 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-12-30 12:48:51.102
 !MESSAGE Failed to load properties file for project 'Piccaexam'
+
+!ENTRY org.eclipse.jdt.core 4 0 2014-12-30 14:08:04.523
+!MESSAGE Invalid ZIP archive: C:\GitHub\PatPatPreject\animlibrary\bin\animlibrary.jar
