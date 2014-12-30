@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rviews" key="selection"/>
+		<item value="OnClick" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="onclick"/>
+			<item value="mWidgetId"/>
 			<item value="rviews"/>
 			<item value="updateClickIntent"/>
-			<item value="onclick"/>
 			<item value="findvie"/>
 			<item value="OnClick"/>
 			<item value="instance"/>
 			<item value="getin"/>
-			<item value="get"/>
 		</list>
 		<list key="replacehistory">
 			<item value="initPref"/>

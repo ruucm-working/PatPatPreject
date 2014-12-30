@@ -252,6 +252,8 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 //		while (time >= 0 && !isCanceled) {
 			
 		Log.v("fix_futuretask","time : "+time);
+		Log.v("fix_futuretask","CliCount3_1_left : "+CliCount3_1_left);
+		Log.v("fix_futuretask","CliCount3_1_right : "+CliCount3_1_right);
 		
 /*		//Making hidden Action
 		if(temp_Count*temp_Count2 == 2){

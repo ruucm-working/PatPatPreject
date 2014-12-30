@@ -24,32 +24,32 @@ public final class R {
 		public static final int textSize = 0x7f010002;
 	}
 	public static final class drawable {
-		public static final int header = 0x7f0200cb;
-		public static final int ic_launcher = 0x7f0200d0;
-		public static final int icon = 0x7f0200d1;
-		public static final int login_gradient = 0x7f0200e3;
-		public static final int login_gradient_flip = 0x7f0200e4;
-		public static final int logo = 0x7f0200e5;
+		public static final int header = 0x7f02005b;
+		public static final int ic_launcher = 0x7f020060;
+		public static final int icon = 0x7f020061;
+		public static final int login_gradient = 0x7f020073;
+		public static final int login_gradient_flip = 0x7f020074;
+		public static final int logo = 0x7f020075;
 	}
 	public static final class id {
-		public static final int RelativeLayout01 = 0x7f080072;
-		public static final int btn_increment = 0x7f080076;
-		public static final int btn_spin = 0x7f080075;
-		public static final int iv_login_header_image = 0x7f08006e;
-		public static final int progressBar = 0x7f080071;
-		public static final int progressBarFour = 0x7f080079;
-		public static final int progressBarThree = 0x7f080078;
-		public static final int progressBarTwo = 0x7f080077;
-		public static final int progressImage = 0x7f080073;
-		public static final int rl_login_header = 0x7f08006d;
-		public static final int tv_progressText = 0x7f080074;
-		public static final int v_login_gradient = 0x7f08006f;
-		public static final int vf_login_flipper = 0x7f080070;
+		public static final int RelativeLayout01 = 0x7f080041;
+		public static final int btn_increment = 0x7f080045;
+		public static final int btn_spin = 0x7f080044;
+		public static final int iv_login_header_image = 0x7f08003d;
+		public static final int progressBar = 0x7f080040;
+		public static final int progressBarFour = 0x7f080048;
+		public static final int progressBarThree = 0x7f080047;
+		public static final int progressBarTwo = 0x7f080046;
+		public static final int progressImage = 0x7f080042;
+		public static final int rl_login_header = 0x7f08003c;
+		public static final int tv_progressText = 0x7f080043;
+		public static final int v_login_gradient = 0x7f08003e;
+		public static final int vf_login_flipper = 0x7f08003f;
 	}
 	public static final class layout {
-		public static final int main = 0x7f03002e;
-		public static final int progress_spinner = 0x7f030030;
-		public static final int progress_wheel_activity = 0x7f030031;
+		public static final int main = 0x7f030019;
+		public static final int progress_spinner = 0x7f03001b;
+		public static final int progress_wheel_activity = 0x7f03001c;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f070001;
