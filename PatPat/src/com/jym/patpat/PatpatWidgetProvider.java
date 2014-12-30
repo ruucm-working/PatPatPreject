@@ -14,10 +14,10 @@ import com.jym.helper.TextPref;
 
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
-	
 
-	
-	
+
+
+
 	// Init pref files at application class
 	static String parentPath = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "SsdamSsdam";
@@ -28,31 +28,31 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	File saveDir;
 
 	@Override
-    public void onDeleted(Context context, int[] appWidgetIds) {
-            super.onDeleted(context, appWidgetIds);
-            Log.d("atActivityRemoved","onDeleted");
-            for (int x : appWidgetIds) {
-                    ((PatpatWidgetApp) context.getApplicationContext()).DeleteWidget(x);
-            }
-    }
+	public void onDeleted(Context context, int[] appWidgetIds) {
+		super.onDeleted(context, appWidgetIds);
+		Log.d("atActivityRemoved","onDeleted");
+		for (int x : appWidgetIds) {
+			((PatpatWidgetApp) context.getApplicationContext()).DeleteWidget(x);
+		}
+	}
 
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-            super.onUpdate(context, appWidgetManager, appWidgetIds);
+	@Override
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+		super.onUpdate(context, appWidgetManager, appWidgetIds);
 
-            Log.d("refreshing_RemoteView","onUpdate");
-            for (int i=0; i<appWidgetIds.length; i++)
-            {
-                    ((PatpatWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
-            }
-    }
+		Log.d("refreshing_RemoteView","onUpdate");
+		for (int i=0; i<appWidgetIds.length; i++)
+		{
+			((PatpatWidgetApp) context.getApplicationContext()).UpdateWidget(appWidgetIds[i]);
+		}
+	}
 
 	@Override
 	public void onEnabled(Context context) {
 		super.onEnabled(context);
-		
+
 		Log.d("serviceSwitch", "parentPath : "+parentPath);
-		
+
 		// Init pref files at application class
 		saveDir = new File(parentPath); // dir : 생성하고자 하는 경로
 		Log.d("serviceSwitch","new File");
@@ -61,7 +61,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			saveDir.mkdirs();
 		}
 
-		
+
 		Log.d("serviceSwitch","End File");
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -70,46 +70,46 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			e.printStackTrace();
 			Log.d("serviceSwitch","e : "+e);
 		}   
-		
-		
+
+
 		mPref.Ready();
 		Log.d("serviceSwitch","mPref.Ready();");
 		serviceSwitch = mPref.ReadBoolean("serviceSwitch", true);
 		mPref.EndReady();
 
-		
-		
+
+
 		Log.d("Stop_renotify","onEnabled");
 		Log.d("Stop_renotify","serviceSwitch : "+serviceSwitch);
-		
-		
+
+
 		if(serviceSwitch){
-		Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
-		context.startService(intent);
-		
-		Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
-		context.startService(intent3);
-		Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
-		
-		
-			
+			Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
+			context.startService(intent);
+
+			Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
+			context.startService(intent3);
+			Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
+
+
+
 			/*
-			
-			
-			
+
+
+
 			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
 				Log.v("ServiceMonitor","startMonitoring");
-		*/
-		
-		mPref.Ready();
-		mPref.WriteBoolean("serviceSwitch", false);
-		mPref.CommitWrite();
-		
+			 */
+
+			mPref.Ready();
+			mPref.WriteBoolean("serviceSwitch", false);
+			mPref.CommitWrite();
+
 		}
-		
-		 
-		
-		
+
+
+
+
 	}
 
 	@Override
@@ -119,23 +119,39 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		Log.d("fix_futuretask",
 				"onReceive_intent.getAction() : " + intent.getAction());
 
-		if (intent.getAction().startsWith("click.com")) {
+		// Click head
+		if (intent.getAction().startsWith("click.head")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick();
-		} else if (intent.getAction().startsWith("click_right.com")) {
+			.OnClickHead();
+		}
+		// Click neck
+		else if (intent.getAction().startsWith("click_neck")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick_right();
+			.OnClickNeck();
+		}
+		// Click body
+		else if (intent.getAction().startsWith("click_body")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+			.OnClickBody();
+		}
+		// Click shoes
+		else if (intent.getAction().startsWith("click_shoes")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
+			.OnClickShoes();
+		}
 
-		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClick();
+			.OnClickHead();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
+			.OnClickHead();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
+			.OnClickHead();
 
 		}
 	}

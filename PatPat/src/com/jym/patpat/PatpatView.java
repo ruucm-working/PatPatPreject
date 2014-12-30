@@ -3,14 +3,11 @@ package com.jym.patpat;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.xmlpull.v1.XmlPullParser;
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -19,19 +16,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.Xml;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 public class PatpatView extends Activity{
 	
+	final public static String INTENT_ON_CLICK_HEAD = "click.head.jym.id.%d";
+	final public static String INTENT_ON_CLICK_NECK = "click_neck.jym.id.%d";
+	final public static String INTENT_ON_CLICK_BODY = "click_body.jym.id.%d";
+	final public static String INTENT_ON_CLICK_SHOES = "click_shoes.jym.id.%d";
 	
 	ImageView imageviews;
 	
@@ -40,8 +36,6 @@ public class PatpatView extends Activity{
 	public static AnimationDrawable frameAnimation;
 	
 	
-	public static String INTENT_ON_CLICK_FORMAT = "click.com.jym.id.%d";
-	public static String INTENT_ON_CLICK_FORMAT_Right = "click_right.com.jym.id.%d";
 	private static final int REFRESH_RATE = 0;
 	public static Context Context = null;
 	
@@ -144,15 +138,21 @@ public class PatpatView extends Activity{
 		return mWidgetId;
 	}
 
-	public void OnClick() {
-		state.OnClick(this);
+	public void OnClickHead() {
+		state.OnClickHead(this);
 	}
 
-	public void OnClick_right() {
-		state.OnClick_right(this);
+	public void OnClickNeck() {
+		state.OnClickNeck(this);
 	}
-
 	
+	public void OnClickBody() {
+		state.OnClickBody(this);
+	}
+	
+	public void OnClickShoes() {
+		state.OnClickShoes(this);
+	}	
 
 	public void OnOften() {
 		state.OnOften(this);
@@ -176,16 +176,17 @@ public class PatpatView extends Activity{
 		
 		Log.d("draw_Speeding","Redraw");
 		
-		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_widget);
+		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_layout);
 		
-		rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
-//		rviews.setImageViewResource(R.id.patview02, R.drawable.knifing01);
-		
+		rviews.setImageViewResource(R.id.widget_head, R.drawable.knifing01);
+		rviews.setImageViewResource(R.id.widget_neck, R.drawable.knifing01);
+		rviews.setImageViewResource(R.id.widget_body, R.drawable.knifing01);
+		rviews.setImageViewResource(R.id.widget_shoes, R.drawable.knifing01);
 		
 		//state drawing
 		state.Draw(this);
 		
-		
+		/*
 		IAnimatable[] child = new IAnimatable[Children.size()];
 		Children.toArray(child);
 
@@ -194,11 +195,14 @@ public class PatpatView extends Activity{
 			if (child[i].AnimationFinished())
 				Children.remove(child[i]);
 		}
-		
+		*/
 		Log.i("refreshing_RemoteView","End_child.draw");
 		
-		updateClickIntent(rviews);
-//		updateClickIntent_right(rviews);
+		updateClickHeadIntent(rviews);
+		updateClickNeckIntent(rviews);
+		updateClickBodyIntent(rviews);
+		updateClickShoesIntent(rviews);
+		
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 		
 		
@@ -265,7 +269,7 @@ public class PatpatView extends Activity{
 		Log.d("addClickIntent","setState : "+newState);
 		
 		state = newState;
-		scheduleRedraw();
+	//	scheduleRedraw();
 	}
 	
 	
@@ -275,36 +279,53 @@ public class PatpatView extends Activity{
 		return state;
 	}
 
-	private void updateClickIntent(RemoteViews rviews)
+	private void updateClickHeadIntent(RemoteViews rviews)
 	{
-		
-		
 		Log.d("Seperate_ClickIntent","rviews.getLayoutId(); : "+rviews.getLayoutId());
 		
-		Intent intent = new Intent(String.format(INTENT_ON_CLICK_FORMAT, mWidgetId));
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_HEAD, mWidgetId));
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		rviews.setOnClickPendingIntent(R.id.widget_head, pi);
 	}
 	
-/*	private void updateClickIntent_right(RemoteViews rviews)
+	private void updateClickNeckIntent(RemoteViews rviews)
 	{
-		
-		
-		
-		Intent intent = new Intent(String.format(INTENT_ON_CLICK_FORMAT_Right, mWidgetId));
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_NECK, mWidgetId));
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.patview02, pi);
+		rviews.setOnClickPendingIntent(R.id.widget_neck, pi);
 		
 		Log.d("fix_futuretask","updateClickIntent_right");
 	}
 	
-	*/
+	private void updateClickBodyIntent(RemoteViews rviews)
+	{
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_NECK, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+		rviews.setOnClickPendingIntent(R.id.widget_body, pi);
+		
+		Log.d("fix_futuretask","updateClickIntent_body");
+	}
+	
+	private void updateClickShoesIntent(RemoteViews rviews)
+	{
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_NECK, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
+				PendingIntent.FLAG_UPDATE_CURRENT);
+		rviews.setOnClickPendingIntent(R.id.widget_shoes, pi);
+		
+		Log.d("fix_futuretask","updateClickIntent_shoes");
+	}
 	
 	public static Bitmap drawableToBitmap (Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {

@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:id="@+id/widget"
-    >
-    <ImageView android:id="@+id/patview01"
-        android:src="@drawable/brick_question"
-    	android:layout_width="0dp"
-    	android:layout_height="wrap_content"
-    	android:adjustViewBounds="false"
-    	android:layout_weight="1"
-    />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="94dp"
+    android:layout_height="140dp" 
+    android:background="#2323A3">
     
-<!--     <ImageView android:id="@+id/patview02"
-        android:src="@drawable/brick_question"
-    	android:layout_width="0dp"
-    	android:layout_height="wrap_content"
-    	android:adjustViewBounds="false"
-    	android:layout_weight="1"
-    /> -->
+    <ImageView
+        android:id="@+id/widget_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#990099"
+        android:src="@drawable/char_head" />
+
+    <ImageView
+        android:id="@+id/widget_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="57dp"
+        android:background="#999999"
+        android:src="@drawable/char_body" />
+
+    <ImageView
+        android:id="@+id/widget_shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="117dp"
+        android:background="#0000AE"
+        android:src="@drawable/char_shoes" />
+
+    <ImageView
+        android:id="@+id/widget_neck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="54dp"
+        android:background="#237F33"
+        android:src="@drawable/char_neck" />
+
     
-</LinearLayout>
+
+</RelativeLayout>

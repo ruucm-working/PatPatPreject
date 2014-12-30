@@ -1,17 +1,12 @@
 package com.jym.patpat;
 
-import java.io.File;
 import java.util.Hashtable;
-
-import com.jym.helper.TextPref;
 
 import android.app.Application;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
