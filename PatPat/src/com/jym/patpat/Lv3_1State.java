@@ -69,27 +69,30 @@ public class Lv3_1State implements IPatpatViewState {
 			Log.d("updateClickIntent_right", "Draw");
 		}
 
-		public void OnClickHead(PatpatView viewContext) {
-
-			viewContext.addAnimatable(new Lv3ClickAnim());
+		@Override
+		public void OnClickHead(PatpatView patpatView) {
+			patpatView.addAnimatable(new Lv3ClickAnim());
 			Toast.makeText(PatpatView.Context, "뀨?",Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		public void OnClickNeck(PatpatView patpatView) {
 			// TODO Auto-generated method stub
+			patpatView.addAnimatable(new Lv3ClickAnim());
 			Toast.makeText(PatpatView.Context, "켁",Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		public void OnClickBody(PatpatView patpatView) {
 			// TODO Auto-generated method stub
+			patpatView.addAnimatable(new Lv3ClickAnim());
 			Toast.makeText(PatpatView.Context, "어딜 만져! 어딜 만지냐고!",Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		public void OnClickShoes(PatpatView patpatView) {
 			// TODO Auto-generated method stub
+			patpatView.addAnimatable(new Lv3ClickAnim());
 			Toast.makeText(PatpatView.Context, "나 버스타고 오다가 똥밟았다",Toast.LENGTH_SHORT).show();
 		}
 

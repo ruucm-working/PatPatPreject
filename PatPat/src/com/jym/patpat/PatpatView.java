@@ -25,9 +25,9 @@ import android.widget.RemoteViews;
 public class PatpatView extends Activity{
 	
 	final public static String INTENT_ON_CLICK_HEAD = "click.head.jym.id.%d";
-	final public static String INTENT_ON_CLICK_NECK = "click_neck.jym.id.%d";
-	final public static String INTENT_ON_CLICK_BODY = "click_body.jym.id.%d";
-	final public static String INTENT_ON_CLICK_SHOES = "click_shoes.jym.id.%d";
+	final public static String INTENT_ON_CLICK_NECK = "click.neck.jym.id.%d";
+	final public static String INTENT_ON_CLICK_BODY = "click.body.jym.id.%d";
+	final public static String INTENT_ON_CLICK_SHOES = "click.shoes.jym.id.%d";
 	
 	ImageView imageviews;
 	
@@ -186,7 +186,6 @@ public class PatpatView extends Activity{
 		//state drawing
 		state.Draw(this);
 		
-		/*
 		IAnimatable[] child = new IAnimatable[Children.size()];
 		Children.toArray(child);
 
@@ -195,7 +194,7 @@ public class PatpatView extends Activity{
 			if (child[i].AnimationFinished())
 				Children.remove(child[i]);
 		}
-		*/
+		
 		Log.i("refreshing_RemoteView","End_child.draw");
 		
 		updateClickHeadIntent(rviews);
@@ -269,7 +268,7 @@ public class PatpatView extends Activity{
 		Log.d("addClickIntent","setState : "+newState);
 		
 		state = newState;
-	//	scheduleRedraw();
+		scheduleRedraw();
 	}
 	
 	
@@ -305,7 +304,7 @@ public class PatpatView extends Activity{
 	
 	private void updateClickBodyIntent(RemoteViews rviews)
 	{
-		Intent intent = new Intent(String.format(INTENT_ON_CLICK_NECK, mWidgetId));
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_BODY, mWidgetId));
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,
@@ -317,7 +316,7 @@ public class PatpatView extends Activity{
 	
 	private void updateClickShoesIntent(RemoteViews rviews)
 	{
-		Intent intent = new Intent(String.format(INTENT_ON_CLICK_NECK, mWidgetId));
+		Intent intent = new Intent(String.format(INTENT_ON_CLICK_SHOES, mWidgetId));
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent,

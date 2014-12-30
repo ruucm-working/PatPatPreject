@@ -15,9 +15,6 @@ import com.jym.helper.TextPref;
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
 
-
-
-
 	// Init pref files at application class
 	static String parentPath = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "SsdamSsdam";
@@ -126,24 +123,25 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			.OnClickHead();
 		}
 		// Click neck
-		else if (intent.getAction().startsWith("click_neck")) {
+		else if (intent.getAction().startsWith("click.neck")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickNeck();
 		}
 		// Click body
-		else if (intent.getAction().startsWith("click_body")) {
+		else if (intent.getAction().startsWith("click.body")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickBody();
 		}
 		// Click shoes
-		else if (intent.getAction().startsWith("click_shoes")) {
+		else if (intent.getAction().startsWith("click.shoes")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickShoes();
 		}
-
+		/*
+		// Hidden action
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
@@ -152,7 +150,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			.OnClickHead();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickHead();
-
 		}
+		*/
 	}
 }
