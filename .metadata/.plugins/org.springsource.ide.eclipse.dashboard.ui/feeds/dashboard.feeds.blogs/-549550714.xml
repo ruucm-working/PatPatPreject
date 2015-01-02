@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2014-12-23T22:12:41Z</updated>
+  <updated>2014-12-30T21:26:00Z</updated>
+  <entry>
+    <title>This Year in Spring - December 30, 2014</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/30/this-year-in-spring-december-30-2014" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2014-12-31:1902</id>
+    <updated>2014-12-30T21:26:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, as is our tradition, we&amp;rsquo;ll look back at a few of the big things that made 2014 a wonderful year to be a Spring developer. And, what a year it was!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The tail end of last year saw &lt;a href="http://spring.io/blog/2013/12/12/announcing-spring-framework-4-0-ga-release"&gt;Spring 4 GA&lt;/a&gt; and this year &lt;a href="https://spring.io/blog/2014/09/04/spring-framework-4-1-ga-is-here"&gt;saw the Spring 4.1 release&lt;/a&gt; just shy of 9 short months after 4.0! Spring 4.x boasts a dizzying array of new features! Java 8 support, Java EE 7 support, new Spring MVC views, JSR 107 support, a powerful resource pipeline and the &lt;code&gt;@Conditional&lt;/code&gt; annotation which of course made possible&amp;hellip;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://spring.io/blog/2014/04/01/spring-boot-1-0-ga-released"&gt;Spring Boot&lt;/a&gt;, whose first 1.0 GA was in April of this year, has seen two &lt;em&gt;epic&lt;/em&gt; updates (&lt;a href="http://spring.io/blog/2014/06/10/spring-boot-1-1-ga-released"&gt;1.1&lt;/a&gt;, and &lt;a href="http://spring.io/blog/2014/12/11/spring-boot-1-2-0-released"&gt;1.2&lt;/a&gt;) since then. Spring Boot&amp;rsquo;s taken the community by storm, spawning all sorts of activity both from our team and, more importantly, from everybody else! The competition have attempted to downplay it, or copy it. Existing Spring users have flocked to it in droves (including the likes of Netflix and Ticketmaster). If you follow this weekly roundup, though, then you need no further evidence of the community&amp;rsquo;s uptake! It&amp;rsquo;s been so much fun watching people blog about using Spring Boot to do&amp;hellip; seemingly everything!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://spring.io/blog/2014/07/29/this-week-in-spring-spring-xd-edition-july-29th-2014"&gt;Spring XD 1.0&lt;/a&gt; was released earlier this year and a followup, &lt;a href="https://spring.io/blog/2014/12/23/spring-xd-1-1-m2-and-1-0-3-released"&gt;Spring XD 1.1&lt;/a&gt; is fast nearing completion. Spring XD (also built on Spring Boot, BTW!), provides a workbench for data processing by building on &lt;a href="http://spring.io/projects/spring-integration"&gt;Spring Integration&lt;/a&gt;, &lt;a href="http://spring.io/projects/spring-data"&gt;Spring Data&lt;/a&gt; and &lt;a href="http://spring.io/projects/spring-batch"&gt;Spring Batch&lt;/a&gt;. It&amp;rsquo;s slick, fast, elegant, and of course people have been &lt;a href="http://hortonworks.com/hadoop-tutorial/using-spring-xd-to-stream-tweets-to-hadoop-for-sentiment-analysis/"&gt;quick to include it in their arsenal&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://projects.spring.io/spring-cloud"&gt;Spring Cloud&lt;/a&gt; was announced this year at SpringOne2GX 2014 in Dallas, TX. Spring Cloud provides support for building cloud-native, microservice-style applications and builds on the programming model exposed by Spring Boot. It integrates popular libraries and infrastructure like many of the &lt;a href="http://netflix.github.io/"&gt;Netflix OSS stack&lt;/a&gt; and &lt;a href="https://consul.io/"&gt;Consul&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://cloudfoundry.org/index.html"&gt;Cloud Foundry&lt;/a&gt; has also had one heckuva year! Late last year we started seeing the first trickle of Cloud Foundry v2 and this year we saw that mature, and we also saw Cloud Foundry v2.1! Exciting work is ongoing already for the next generation Cloud Foundry; it&amp;rsquo;s a bottom-up rewrite of all the components in blazing-fast Go that provides a runtime (&amp;ldquo;Lattice&amp;rdquo;) that can be used independant of the higher PaaS-y bits. Cloud Foundry, of course, is an ideal target for Spring Boot and Spring Cloud-based applications. Pivotal Cloud Foundry, the shrink-wrapped distribution of Cloud Foundry, has grown by leaps and bounds. Coming soon: tiles and support for Spring XD and Spring Cloud! And, of course, we couldn&amp;rsquo;t finish this paragraph without mentioning perhaps the most exciting thing of all: &lt;a href="http://cloudfoundry.org/cloud-foundry-foundation-launch.html"&gt;the Cloud Foundry Foundation is now fully operational&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;What a ride! I&amp;rsquo;m as eager as you are to see what we could possibly top all of this in 2015! Now then, without further ado, let&amp;rsquo;s quickly take an (abbreviated) look at some of the links this week.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Just in time for the new year, the amazing and inimitable Spring project lead Juergen Hoeller &lt;a href="http://spring.io/blog/2014/12/30/spring-framework-4-1-4-4-0-9-3-2-13-released"&gt;announced Spring 4.1.4, 4.0.9, and 3.2.13&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Our pal Nicolas Frankel has a very nice post &lt;a href="http://java.dzone.com/articles/optional-dependencies-spring"&gt;on Spring&amp;rsquo;s new support for &lt;code&gt;Optional&amp;lt;T&amp;gt;&lt;/code&gt; dependencies&lt;/a&gt; - InfoQ has Rossen Stoyanchev&amp;rsquo;s SpringOne2GX 2014 talk on &lt;a href="http://www.infoq.com/presentations/spring-4-mvc-web-app"&gt;Spring 4 web applications, now available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.javahispano.org/portada/2014/12/11/spring-io-2015.html"&gt;Spring I/O&lt;/a&gt;, the Madrid-based conference for Spring users, has announced their next year&amp;rsquo;s show. I personally missed the show in this last year and am glad to have it back!&lt;/li&gt;
+  &lt;li&gt;The &lt;em&gt;Kielczewski.eu&lt;/em&gt; blog has has a very thorough post &lt;a href="http://kielczewski.eu/2014/12/spring-boot-security-application/"&gt;on building a secure web application with Spring Boot&lt;/a&gt;. Nice job!&lt;/li&gt;
+  &lt;li&gt;David Kiss has a nice post on &lt;a href="http://kaviddiss.com/2014/12/28/twitter-feed-using-spring-boot/"&gt;processing a Twitter feed with Spring Boot (and Spring Social)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;That was fun! I hope you&amp;rsquo;ve enjoyed this walk down memory lane. It&amp;rsquo;s always nice this time of year. I&amp;rsquo;m excited for the next installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, too! It will mark (roughly) four years of uninterrupted installments! What a rush!&lt;/p&gt;&lt;p&gt;I&amp;rsquo;m sure I speak on behalf &lt;a href="http://spring.io/team/"&gt;of all the Spring team&lt;/a&gt; when I wish you a very, &lt;em&gt;very&lt;/em&gt; &lt;em&gt;Happy New Year&lt;/em&gt;! C&amp;rsquo;ya in 2015! &lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Framework 4.1.4 &amp; 4.0.9 &amp; 3.2.13 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2014/12/30/spring-framework-4-1-4-4-0-9-3-2-13-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2014-12-30:1901</id>
+    <updated>2014-12-30T18:23:53Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;&lt;p&gt;It&amp;rsquo;s my pleasure to announce that Spring Framework 4.1.4, 4.0.9 and 3.2.13 have been released just in time for New Year&amp;rsquo;s Eve! These maintenance releases fix various minor issues and provide several minor improvements as well; please see JIRA for details.&lt;/p&gt;&lt;p&gt;Note that 4.0.9 is conceived as the last release in the 4.0.x line, concluding twelve months of active 4.0.x maintenance. We strongly recommend an upgrade to 4.1.x; your next maintenance release after 4.0.9 will be 4.1.5 which you need to be prepared to upgrade to.&lt;/p&gt;&lt;p&gt;Furthermore, please note that the 3.2.x line - and therefore the entire 3.x generation - is approaching its end of life in 2015. We are still committed to basic maintenance for critical issues; however, don&amp;rsquo;t expect more than two or three further 3.2.x releases down the road.&lt;/p&gt;&lt;p&gt;The Spring Framework team is now working towards the 4.2 release, with a release candidate scheduled for early May and general availability planned for late June. You may look forward to annotation-driven application events, declarative HTTP caching, first-class support for Server-Sent Events in Spring MVC, data binding and conversion for JSR-354 Money &amp;amp; Currency, and many other new features&amp;hellip; 4.2 will be designed as a straightforward upgrade from 4.1.x, with the same system requirements and general dependencies.&lt;/p&gt;&lt;p&gt;A Happy New Year,&lt;/p&gt;&lt;p&gt;Juergen&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring XD 1.1 M2 and 1.0.3 released</title>
     <link rel="alternate" href="https://spring.io/blog/2014/12/23/spring-xd-1-1-m2-and-1-0-3-released" />
@@ -485,48 +521,6 @@
 &lt;p&gt;The lambda architecture has been proposed as a general purpose data system that aims to solve the problem of computing arbitrary functions on an arbitrary dataset in (near) real-time. In this talk we introduce the lambda architecture and show how it can be implemented with SpringXD, GemFireXD and Hadoop (HDFS and MapReduce) as the foundation of the architecture implementation. To validate the architecture we introduce a CDR (Call Detail Record) mining application as use case of the lambda architecture. We finalise by showing a demo of the CDR (Call Detail Record) mining application.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/tjwW9oWkH0Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay: Spring XD for Real-time Hadoop Workload Analysis</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/12/09/springone2gx-2014-replay-spring-xd-for-real-time-hadoop-workload-analysis" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-12-09:1879</id>
-    <updated>2014-12-09T12:58:00Z</updated>
-    <content type="html">&lt;p&gt; Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speakers: Vineet Goel, Girish Lingappa, Rodrigo Meneses &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/spring-one2gx-2014springxdhadoopworkloadanalysis"&gt;http://www.slideshare.net/SpringCentral/spring-one2gx-2014springxdhadoopworkloadanalysis&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;Big Data Track &lt;/p&gt;
-
-&lt;p&gt;As Hadoop goes mainstream in enterprise big data deployments, IT organizations expect and demand enhanced operational management of their Hadoop clusters in production. Admins require more than just cluster health monitoring; they need the ability to do real time workload analysis for performance tuning and troubleshooting. Real-time log analysis of jobs at a user or application level can allow admins to manage and tune workloads better, especially in multi-tenancy Hadoop cluster services. Join us to learn how Pivotal team leveraged Spring XD data ingestion and batch processing framework, GemFire XD &amp;amp; other components to solve this interesting challenge on a large 1000-node (Analytics Workbench) cluster. Using Spring XD to ingest YARN service and MapReduce application logs through a real-time data pipeline into HDFS, the team leveraged familiar SQL-based queries to analyze fine-grained cluster utilization.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/cBcznXjL840" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2014 Replay:  Develop powerful Big Data Applications easily with Spring XD</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/12/09/springone2gx-2014-replay-develop-powerful-big-data-applications-easily-with-spring-xd" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2014-12-09:1878</id>
-    <updated>2014-12-09T12:55:00Z</updated>
-    <content type="html">&lt;p&gt; Recorded at SpringOne2GX 2014. &lt;/p&gt;
-
-&lt;p&gt;Speakers: Mark Fisher and Mark Pollack &lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/develop-powerful-big-data-applications-easily-with-springxd"&gt;http://www.slideshare.net/SpringCentral/develop-powerful-big-data-applications-easily-with-springxd&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Big Data Track &lt;/p&gt;
-
-&lt;p&gt;Spring XD aims to provide a one stop shop for writing and deploying Big Data Applications. It provides a scalable, fault tolerant, distributed runtime for Data Ingestion, Analytics, and Workflow Orchestration using a single programming, configuration and extensibility model. By not requiring developers to rationalize all of this themselves across the many different solutions available today, Spring XD greatly reduces the inherent complexity of Big Data development. It's all built on proven projects like Spring Integration, and Spring Batch. You'll see for yourself how this heritage combines to provide a scalable runtime environment, that is easily configured and assembled via a simple DSL.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/mcJXjxZ3f9k" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
 

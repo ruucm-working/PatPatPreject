@@ -309,32 +309,39 @@ public class Lv3_1State implements IPatpatViewState {
 
 			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
 
-			if (spriteVib == 0) {
+			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
+			
+			if (spriteVib ==0) {
 
+				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
 				
 //				PatpatView.rviews = new RemoteViews(PatpatView.Context.getPackageName(), R.layout.patpat_widget);
 				
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
+
+				PatpatView.rviews.setImageViewResource(R.id.patview01,
+						R.drawable.animation_baby);
+				
+
+				spriteVib++;
+			}
+			
+		/*	
+			
+			else if (spriteVib ==1  ){
+				
+				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
+				
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
+
 				PatpatView.rviews.setImageViewResource(R.id.patview01,
 						R.drawable.fish_animation);
 				
-				Log.i("refreshing_RemoteView","setImageViewResource");
-
-				
-				/*
-				 * PatpatView.rviews.setImageViewResource(R.id.patview02,
-				 * R.drawable.fish_animation_right);
-				 */
-
-				spriteVib++;
-			} else {
+			}*/
+			
+			
+			else {
 				mViewContext.removeAnimatable(this);
-
-				// recycle for 200 clicks
-				if (clickcount_3_1 % 100 == 0) {
-
-					
-//					recycleAnimDrawabsle();
-				}
 
 				Log.d("addClickIntent", "removeAnimatable: " + this);
 
@@ -343,59 +350,6 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 	}
-
-	
-	public static void recycleAnimDrawable () {
-		
-		
-		Log.d("memory_pb", "mViewContext_atDraw( : "
-				+ PatpatView.Context.getApplicationContext());
-
-
-		InputStream is = null;
-		Bitmap bmp = null;
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish01);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish02);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish03);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish04);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish05);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish06);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish07);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish08);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-		
-	}
-	
 	private class Lv3ClickAnim_right implements IAnimatable {
 		private int spriteVib = 0;
 
