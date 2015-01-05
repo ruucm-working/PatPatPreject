@@ -55,11 +55,11 @@ public class Lv3_1State implements IPatpatViewState {
 	private class Lv3_1WaitState implements IPatpatViewState {
 		public PatpatView context;
 		
-		public void Draw(PatpatView viewContext) {
+		public void Draw(PatpatView patpatView) {
 			Log.d("updateClickIntent_right", "Draw");
 		}
 
-		public void OnClick(PatpatView viewContext) {
+		public void OnClick(PatpatView patpatView) {
 			Log.w("seperated_ClickCount", "OnClick");
 
 			clickcount_3_1++;
@@ -71,7 +71,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 			Log.w("seperated_ClickCount", "End_CommitWrite");
 
-			viewContext.addAnimatable(new Lv3ClickAnim());
+			patpatView.addAnimatable(new Lv3ClickAnim());
 			
 			Log.w("fix_futuretask", "addAnimatabe(start_scheduledraw)");
 
@@ -107,6 +107,10 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void OnClickBody(PatpatView patpatView) {
+			/*
+			// add textpref code here
+			*/
+			
 			patpatView.addAnimatable(new Lv3ClickBodyAnim());
 			
 			int textcode = (int) (Math.random() * 2);
@@ -125,7 +129,7 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 		
 		public void OnClickLeg(PatpatView patpatView) {
-	//		patpatView.addAnimatable(new Lv3ClickLegAnim());
+			patpatView.addAnimatable(new Lv3ClickLegAnim());
 			
 			int textcode = (int) (Math.random() * 3);
 			String text = null;
@@ -226,16 +230,12 @@ public class Lv3_1State implements IPatpatViewState {
 			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
 			
 			if (spriteVib == 0) {
-
 				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
-
-				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.animation_baby);				
-
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_baby);
 				spriteVib++;
 			}			
 			else {
 				mViewContext.removeAnimatable(this);
-
 				Log.d("addClickIntent", "removeAnimatable: " + this);
 			}
 		}
@@ -254,7 +254,7 @@ public class Lv3_1State implements IPatpatViewState {
 			Log.d("addClickIntent", "spriteVib : " + spriteVib);
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.fish_animation);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.fish_animation);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
@@ -276,7 +276,7 @@ public class Lv3_1State implements IPatpatViewState {
 			Log.d("addClickIntent", "spriteVib : " + spriteVib);
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.fish_animation);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.girl_evolve);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
