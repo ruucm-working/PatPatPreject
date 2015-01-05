@@ -14,7 +14,6 @@ import com.jym.helper.TextPref;
 
 
 public class PatpatWidgetProvider extends AppWidgetProvider {
-
 	// Init pref files at application class
 	static String parentPath = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "SsdamSsdam";
@@ -58,7 +57,6 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			saveDir.mkdirs();
 		}
 
-
 		Log.d("serviceSwitch","End File");
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -68,17 +66,13 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			Log.d("serviceSwitch","e : "+e);
 		}   
 
-
 		mPref.Ready();
 		Log.d("serviceSwitch","mPref.Ready();");
 		serviceSwitch = mPref.ReadBoolean("serviceSwitch", true);
 		mPref.EndReady();
 
-
-
 		Log.d("Stop_renotify","onEnabled");
 		Log.d("Stop_renotify","serviceSwitch : "+serviceSwitch);
-
 
 		if(serviceSwitch){
 			Intent intent = new Intent("com.jym.service.IntentService_DeviceEvents");
@@ -88,25 +82,10 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			context.startService(intent3);
 			Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 
-
-
-			/*
-
-
-
-			Toast.makeText(context, "startMonitoring", Toast.LENGTH_SHORT).show();
-				Log.v("ServiceMonitor","startMonitoring");
-			 */
-
 			mPref.Ready();
 			mPref.WriteBoolean("serviceSwitch", false);
 			mPref.CommitWrite();
-
 		}
-
-
-
-
 	}
 
 	@Override
@@ -120,37 +99,28 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		if (intent.getAction().startsWith("click.head")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickHead();
-		}
-		// Click neck
-		else if (intent.getAction().startsWith("click.neck")) {
-			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickNeck();
+			.OnClick();
 		}
 		// Click body
 		else if (intent.getAction().startsWith("click.body")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickBody();
-		}
-		// Click shoes
-		else if (intent.getAction().startsWith("click.shoes")) {
+			// Click leg
+		} else if (intent.getAction().startsWith("click.leg")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickShoes();
-		}
-		/*
-		// Hidden action
-		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+			.OnClickLeg();
+			// Hidden action
+		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickHead();
+			.OnClick();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickHead();
+			.OnClick();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickHead();
+			.OnClick();
+
 		}
-		*/
 	}
 }

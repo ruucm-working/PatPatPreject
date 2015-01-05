@@ -31,25 +31,17 @@ public class Lv3_1State implements IPatpatViewState {
 		clickPref.Ready();
 		clickcount_3_1 = clickPref.ReadInt("ClickCount_3_1", 0);
 		clickPref.EndReady();
-
-
-
+		
 		InputStream is = null;
 		Bitmap bmp = null;
 		is = PatpatView.Context.getApplicationContext()
 				.getResources().openRawResource(R.drawable.fish_animation);
 		bmp = BitmapFactory.decodeStream(is);
-
-
-
 	}
 
 	public void Draw(PatpatView viewContext) {
-
 		Log.e("stop_double_Draw", "Draw_setState_Lv3_1State_");
-
 		viewContext.setState(new Lv3_1WaitState());
-
 	}
 
 	public boolean NeedRedraw() {
@@ -61,40 +53,99 @@ public class Lv3_1State implements IPatpatViewState {
 	}
 
 	private class Lv3_1WaitState implements IPatpatViewState {
-
 		public PatpatView context;
-
+		
 		public void Draw(PatpatView viewContext) {
-
 			Log.d("updateClickIntent_right", "Draw");
 		}
 
-		@Override
-		public void OnClickHead(PatpatView patpatView) {
-			patpatView.addAnimatable(new Lv3ClickAnim());
-			Toast.makeText(PatpatView.Context, "뀨?",Toast.LENGTH_SHORT).show();
+		public void OnClick(PatpatView viewContext) {
+			Log.w("seperated_ClickCount", "OnClick");
+
+			clickcount_3_1++;
+			Log.w("seperated_ClickCount", "clickcount_3_1 : " + clickcount_3_1);
+
+			clickPref.Ready();
+			clickPref.WriteInt("ClickCount_3_1", clickcount_3_1);
+			clickPref.CommitWrite();
+
+			Log.w("seperated_ClickCount", "End_CommitWrite");
+
+			viewContext.addAnimatable(new Lv3ClickAnim());
+			
+			Log.w("fix_futuretask", "addAnimatabe(start_scheduledraw)");
+
+			int textcode = (int) (Math.random() * 6);
+			String text = null;
+
+			switch (textcode) {
+			case 0:
+				text = "머리";
+				break;
+
+			case 1:
+				text = "두부";
+				break;
+
+			case 2:
+				text = "대가리";
+				break;
+
+			case 3:
+				text = "대갈빡";
+				break;
+
+			case 4:
+				text = "대갈통";
+				break;
+
+			case 5:
+				text = "머리통";
+				break;
+			}
+			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 		}
 
-		@Override
-		public void OnClickNeck(PatpatView patpatView) {
-			// TODO Auto-generated method stub
-			patpatView.addAnimatable(new Lv3ClickAnim());
-			Toast.makeText(PatpatView.Context, "켁",Toast.LENGTH_SHORT).show();
-		}
-
-		@Override
 		public void OnClickBody(PatpatView patpatView) {
-			// TODO Auto-generated method stub
-			patpatView.addAnimatable(new Lv3ClickAnim());
-			Toast.makeText(PatpatView.Context, "어딜 만져! 어딜 만지냐고!",Toast.LENGTH_SHORT).show();
+			patpatView.addAnimatable(new Lv3ClickBodyAnim());
+			
+			int textcode = (int) (Math.random() * 2);
+			String text = null;
+
+			switch (textcode) {
+			case 0:
+				text = "어딜 만져!";
+				break;
+
+			case 1:
+				text = "어딜 만지냐구!";
+				break;
+			}
+			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
+		}
+		
+		public void OnClickLeg(PatpatView patpatView) {
+	//		patpatView.addAnimatable(new Lv3ClickLegAnim());
+			
+			int textcode = (int) (Math.random() * 3);
+			String text = null;
+
+			switch (textcode) {
+			case 0:
+				text = "닭발";
+				break;
+
+			case 1:
+				text = "족발";
+				break;
+
+			case 2:
+				text = "뒷다리살";
+				break;
+			}
+			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 		}
 
-		@Override
-		public void OnClickShoes(PatpatView patpatView) {
-			// TODO Auto-generated method stub
-			patpatView.addAnimatable(new Lv3ClickAnim());
-			Toast.makeText(PatpatView.Context, "나 버스타고 오다가 똥밟았다",Toast.LENGTH_SHORT).show();
-		}
 
 		public boolean NeedRedraw() {
 			return false;
@@ -133,22 +184,6 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void Draw() {
-			/*
-			 * SpriteHelper.DrawSprite(canvas, flowerSprite,
-			 * flowerSprite.NextFrame(), SpriteHelper.DrawPosition.BottomCenter,
-			 * 0, -(int) (flowerRaise * 4 * context.getDensity()));
-			 * 
-			 * // Draw the flower if (flowerRaise < 8) flowerRaise++;
-			 * 
-			 * // Draw the brick at bottom SpriteHelper.DrawSprite(canvas,
-			 * flowerSprite, 0, SpriteHelper.DrawPosition.BottomCenter, 0, -
-			 * (int)(heightModifier2[animStage] * context.getDensity()));
-			 * 
-			 * if (animstage < 3) animstage++;
-			 * 
-			 * if (animStage >= heightModifier.length) context.setState(new
-			 * DisabledState(context));
-			 */
 		}
 	}
 
@@ -186,104 +221,27 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			// Draw the brick at bottom
-
 			con = this;
 
-			// RemoteViews rviews = new
-			// RemoteViews(mViewContext.getPackageName(),
-			// R.layout.coin_block_widget);
-
-			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
-
-			/*
+			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
+			
 			if (spriteVib == 0) {
 
+				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
 
-				// PatpatView.rviews = new RemoteViews(PatpatView.Context.getPackageName(), R.layout.patpat_widget);
-
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.fish_animation);
-
-				Log.i("refreshing_RemoteView","setImageViewResource");
-
-
-
-				// PatpatView.rviews.setImageViewResource(R.id.patview02,
-				// R.drawable.fish_animation_right);
-
+				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.animation_baby);				
 
 				spriteVib++;
-			} else {
+			}			
+			else {
 				mViewContext.removeAnimatable(this);
 
-				// recycle for 200 clicks
-				if (clickcount_3_1 % 100 == 0) {
-
-
-					//					recycleAnimDrawabsle();
-				}
-
 				Log.d("addClickIntent", "removeAnimatable: " + this);
-
 			}
-			 */
 		}
-
 	}
-
-
-	public static void recycleAnimDrawable () {
-
-
-		Log.d("memory_pb", "mViewContext_atDraw( : "
-				+ PatpatView.Context.getApplicationContext());
-
-
-		InputStream is = null;
-		Bitmap bmp = null;
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish01);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish02);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish03);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish04);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish05);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish06);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish07);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish08);
-		bmp = BitmapFactory.decodeStream(is);
-		bmp.recycle();
-
-	}
-
-	private class Lv3ClickAnim_right implements IAnimatable {
+	
+	private class Lv3ClickBodyAnim implements IAnimatable {
 		private int spriteVib = 0;
 
 		public boolean AnimationFinished() {
@@ -292,40 +250,40 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			// Draw the brick at bottom
-
 			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
 			Log.d("addClickIntent", "spriteVib : " + spriteVib);
 
-			// RemoteViews rviews = new
-			// RemoteViews(mViewContext.getPackageName(),
-			// R.layout.coin_block_widget);
-
-			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
-
-			/*
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.fish_animation_left);
-
-				// PatpatView.rviews.setImageViewResource(R.id.patview02,
-				// R.drawable.fish_right08);
-
+				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.fish_animation);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
 				Log.d("addClickIntent", "removeAnimatable: " + this);
-
 			}
-			 */
 		}
 	}
+	
+	private class Lv3ClickLegAnim implements IAnimatable {
+		private int spriteVib = 0;
 
-	/*
-	 * private void animeRemove(IAnimatable animeObject) { if(animeSwitch){
-	 * animeSwitch = false; mViewContext.removeAnimatable(animeObject);
-	 * mViewContext.setState(new Lv3_1WaitState()); }else{
-	 * mViewContext.removeAnimatable(animeObject); } }
-	 */
+		public boolean AnimationFinished() {
+			return false;
+		}
+
+		public void Draw() {
+			// Draw the brick at bottom
+			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
+			Log.d("addClickIntent", "spriteVib : " + spriteVib);
+
+			if (spriteVib == 0) {
+				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.fish_animation);
+				spriteVib++;
+			} else {
+				mViewContext.removeAnimatable(this);
+				Log.d("addClickIntent", "removeAnimatable: " + this);
+			}
+		}
+	}
 
 	@Override
 	public void OnHeadsetConnected(PatpatView viewContext) {
@@ -340,27 +298,14 @@ public class Lv3_1State implements IPatpatViewState {
 	}
 
 	@Override
-	public void OnClickHead(PatpatView patpatView) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void OnClickNeck(PatpatView patpatView) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void OnClickBody(PatpatView patpatView) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void OnClickShoes(PatpatView patpatView) {
+	public void OnClickLeg(PatpatView patpatView) {
 		// TODO Auto-generated method stub
-
+		
 	}
-
 }
