@@ -12,10 +12,6 @@ import android.util.Log;
 import android.view.WindowManager;
 
 public class PatpatWidgetApp extends Application {
-	
-	
-	
-	
 	private static PatpatWidgetApp self;
 	private static Hashtable<Integer, PatpatView> views = new Hashtable<Integer, PatpatView>();
 	private static DisplayMetrics metrics;

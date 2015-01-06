@@ -57,7 +57,7 @@ public class DeviceConditionPage extends Fragment  {
 		
 		
 		v = inflater.inflate(R.layout.device_condition, container, false);
-		rv = inflater.inflate(R.layout.patpat_layout, container, false);
+		rv = inflater.inflate(R.layout.patpat_widget, container, false);
 		
 		
 		
@@ -132,7 +132,7 @@ public class DeviceConditionPage extends Fragment  {
 				
 //				Lv3_1State.recycleAnimDrawable();
 				
-			//	 dalvik.system.VMRuntime.getRuntime().runFinalizationSync();
+				// dalvik.system.VMRuntime.getRuntime().runFinalizationSync();
 
 			/*	
 				ImageView a = (ImageView) rv.findViewById(R.id.patview01);
