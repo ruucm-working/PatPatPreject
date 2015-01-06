@@ -1,6 +1,6 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="146dip"
-    android:minHeight="146dip"
+    android:minWidth="400dip"
+    android:minHeight="400dip"
     android:updatePeriodMillis="1000"
     android:initialLayout="@layout/patpat_widget">
 </appwidget-provider>

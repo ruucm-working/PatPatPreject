@@ -119,7 +119,7 @@ public class PatpatView extends Activity{
 	public void OnClickBody() {
 		state.OnClickBody(this);
 	}
-	
+
 	public void OnClickLeg() {
 		state.OnClickLeg(this);
 	}
@@ -160,6 +160,8 @@ public class PatpatView extends Activity{
 		Log.i("refreshing_RemoteView","End_child.draw");
 
 		updateClickIntent(rviews);
+		updateClickBodyIntent(rviews);
+		updateClickLegIntent(rviews);
 		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
 
 		Log.i("refreshing_RemoteView","updateAppWidget(mWidgetId, rviews)");
@@ -218,32 +220,41 @@ public class PatpatView extends Activity{
 		return state;
 	}
 
+	// Insert head intent
 	private void updateClickIntent(RemoteViews rviews)
 	{
 		Log.d("Seperate_ClickIntent","rviews.getLayoutId(); : "+rviews.getLayoutId());
-		PendingIntent pi;
 
-		// Insert head intent
-		Intent headIntent = new Intent(String.format(INTENT_CLICK_HEAD, mWidgetId));
-		headIntent.setClass(getContext(), PatpatWidgetProvider.class);
-		headIntent.putExtra("widgetId", mWidgetId);
-		pi = PendingIntent.getBroadcast(getContext(), 0, headIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		Intent intent = new Intent(String.format(INTENT_CLICK_HEAD, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_head, pi);
+	}
 
-		// Insert body intent
-		Intent bodyIntent = new Intent(String.format(INTENT_CLICK_BODY, mWidgetId));
-		bodyIntent.setClass(getContext(), PatpatWidgetProvider.class);
-		bodyIntent.putExtra("widgetId", mWidgetId);
-		pi = PendingIntent.getBroadcast(getContext(), 0, bodyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+	// Insert body intent
+	private void updateClickBodyIntent(RemoteViews rviews)
+	{
+		Log.d("Seperate_ClickIntent","rviews.getLayoutId(); : "+rviews.getLayoutId());
+
+		Intent intent = new Intent(String.format(INTENT_CLICK_BODY, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_body, pi);
+	}
 
-		// Insert body intent
-		Intent legIntent = new Intent(String.format(INTENT_CLICK_LEG, mWidgetId));
-		legIntent.setClass(getContext(), PatpatWidgetProvider.class);
-		legIntent.putExtra("widgetId", mWidgetId);
-		pi = PendingIntent.getBroadcast(getContext(), 0, legIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+	// Insert leg intent
+	private void updateClickLegIntent(RemoteViews rviews)
+	{
+		Log.d("Seperate_ClickIntent","rviews.getLayoutId(); : "+rviews.getLayoutId());
+
+		Intent intent = new Intent(String.format(INTENT_CLICK_LEG, mWidgetId));
+		intent.setClass(getContext(), PatpatWidgetProvider.class);
+		intent.putExtra("widgetId", mWidgetId);
+		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_leg, pi);
 	}
