@@ -34,13 +34,6 @@ public class Lv3_1State implements IPatpatViewState {
 
 
 
-		InputStream is = null;
-		Bitmap bmp = null;
-		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish_animation);
-		bmp = BitmapFactory.decodeStream(is);
-
-
 
 	}
 
