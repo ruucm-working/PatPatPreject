@@ -3,26 +3,61 @@
     android:id="@+id/selected"
     android:oneshot="true" >
 
-    <item  android:drawable="@drawable/beautygirl2_angry0"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry1"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry2"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry3"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry4"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry5"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry6"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry7"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry8"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry9"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_0"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_1"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_2"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_3"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_4"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_5"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_6"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_7"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_8"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_9"  android:duration="50"/>
     
-    <item  android:drawable="@drawable/beautygirl2_angry0"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry1"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry2"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry3"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry4"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry5"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry6"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry7"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry8"  android:duration="50"/>
-    <item  android:drawable="@drawable/beautygirl2_angry9"  android:duration="50"/>
-
+    <item  android:drawable="@drawable/animtest_10"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_11"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_12"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_13"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_14"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_15"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_16"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_17"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_18"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_19"  android:duration="50"/>
+    
+    <item  android:drawable="@drawable/animtest_20"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_21"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_22"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_23"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_24"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_25"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_26"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_27"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_28"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_29"  android:duration="50"/>
+    
+    <item  android:drawable="@drawable/animtest_30"  android:duration="50"/><!-- 
+    <item  android:drawable="@drawable/animtest_31"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_32"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_33"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_34"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_35"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_36"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_37"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_38"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_39"  android:duration="50"/>
+   
+    <item  android:drawable="@drawable/animtest_40"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_41"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_42"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_43"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_44"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_45"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_46"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_47"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_48"  android:duration="50"/>
+    <item  android:drawable="@drawable/animtest_49"  android:duration="50"/>
+    
+    <item  android:drawable="@drawable/animtest_50"  android:duration="50"/>
+ -->
 </animation-list>

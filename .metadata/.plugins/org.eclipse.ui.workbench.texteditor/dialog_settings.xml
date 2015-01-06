@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="setState" key="selection"/>
+		<item value="animtest_" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="asloth_jump_"/>
 			<item value="updateClickIntent"/>
 			<item value="setstate"/>
 			<item value="onclick"/>
@@ -19,17 +20,16 @@
 			<item value="rviews"/>
 			<item value="findvie"/>
 			<item value="OnClick"/>
-			<item value="instance"/>
 		</list>
 		<list key="replacehistory">
+			<item value="animtest_"/>
+			<item value=""/>
 			<item value="initPref"/>
 			<item value="bugfix_UsingStrictMode"/>
 			<item value="bugfix_Usingstrict"/>
 			<item value="fix_futuretask"/>
 			<item value="Log.v"/>
 			<item value="ePref"/>
-			<item value="tPref"/>
-			<item value="t"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
