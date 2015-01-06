@@ -11,7 +11,7 @@ import android.util.Log;
 public class IntentService_TaskTimer extends IntentService {
 	
 	public static TaskTimer taskTimer2;
-	private static final String TAG =IntentService_TaskTimer.class.getSimpleName();
+	private static final String TAG = IntentService_TaskTimer.class.getSimpleName();
 
 	public static final String INPUT_TEXT="INPUT_TEXT";
 	public static final String OUTPUT_TEXT="OUTPUT_TEXT";
@@ -47,12 +47,8 @@ public class IntentService_TaskTimer extends IntentService {
 		//foregrounding Service
 		startForeground(1, new Notification());
 
-		
-		
-		taskTimer2 = new TaskTimer();
+		taskTimer2 = new TaskTimer(intent.getStringArrayListExtra("evolve"));
 		taskTimer2.execute();
-		
-		
 		
 		return START_STICKY;
 	}

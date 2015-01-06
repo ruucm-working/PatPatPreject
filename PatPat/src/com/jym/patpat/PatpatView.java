@@ -55,9 +55,7 @@ public class PatpatView extends Activity{
 	
 	//for evolve
 	public static long second = 0;
-
-
-
+	
 	//static variables
 	public static IPatpatViewState state;
 
@@ -91,40 +89,10 @@ public class PatpatView extends Activity{
 		//context for toast
 		Context = context;
 		
-		
 		Log.v("stop_double_Draw","Draw_setState_PatpatView");
 		
 		setState(new Lv3_1State(this));
 		
-		
-		
-		
-		
- 
-		/*
-		
-		AttributeSet attributes = new 
-				
-//				getAttributeFloatValue(R.id.patview02);
-		
-		Resources resources = context.getResources();
-		XmlPullParser parser = resources.getXml(R.id.patview02);
-		 AttributeSet attributes = Xml.asAttributeSet(parser);
-		imageviews=new ImageView(context,attributes);
-		
-		imageviews.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-
-				Toast.makeText(Context, "거긴안대..", Toast.LENGTH_SHORT).show();
-				
-				
-			}
-		});
-		*/
-		
-
 	}
 
 	public static PatpatView getInstance() {
