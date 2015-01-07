@@ -4,6 +4,7 @@ import java.io.InputStream;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class Lv3_1State implements IPatpatViewState {
 
 	public static boolean overlapAnimSwitch = true;
 	PatpatView mViewContext;
+	
+	private long clickedTime = 0;
 
 	public Lv3_1State(PatpatView viewContext) {
 		mViewContext = viewContext;
@@ -60,7 +63,7 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void OnClick(PatpatView patpatView) {
-			Log.w("seperated_ClickCount", "OnClick");
+			clickedTime = SystemClock.uptimeMillis();
 
 			clickcount_3_1++;
 			Log.w("seperated_ClickCount", "clickcount_3_1 : " + clickcount_3_1);
@@ -107,6 +110,8 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void OnClickBody(PatpatView patpatView) {
+			clickedTime = SystemClock.uptimeMillis();
+			
 			/*
 			// add textpref code here
 			*/
@@ -129,6 +134,7 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 		
 		public void OnClickLeg(PatpatView patpatView) {
+			clickedTime = SystemClock.uptimeMillis();
 			patpatView.addAnimatable(new Lv3ClickLegAnim());
 			
 			int textcode = (int) (Math.random() * 3);
@@ -231,10 +237,13 @@ public class Lv3_1State implements IPatpatViewState {
 			
 			if (spriteVib == 0) {
 				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
+				
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_baby);
 				spriteVib++;
 			}			
 			else {
+				Log.d("addClickIntent", "Remove head");
 				mViewContext.removeAnimatable(this);
 				Log.d("addClickIntent", "removeAnimatable: " + this);
 			}
@@ -249,16 +258,15 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void Draw() {
+			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
+			
 			// Draw the brick at bottom
-			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
-			Log.d("addClickIntent", "spriteVib : " + spriteVib);
-
 			if (spriteVib == 0) {
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.fish_animation);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
-				Log.d("addClickIntent", "removeAnimatable: " + this);
 			}
 		}
 	}
@@ -271,16 +279,16 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void Draw() {
+			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
+			
 			// Draw the brick at bottom
-			Log.d("addClickIntent", "Draw_Lv3ClickAnim");
-			Log.d("addClickIntent", "spriteVib : " + spriteVib);
-
 			if (spriteVib == 0) {
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.girl_evolve);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
-				Log.d("addClickIntent", "removeAnimatable: " + this);
+				Log.v("draw_Speeding", SystemClock.uptimeMillis()  + " (After)");
 			}
 		}
 	}

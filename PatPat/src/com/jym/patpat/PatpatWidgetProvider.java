@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -106,13 +107,17 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickBody();
-			// Click leg
-		} else if (intent.getAction().startsWith("click.leg")) {
+
+		}
+		// Click leg
+		else if (intent.getAction().startsWith("click.leg")) {
+			Log.v("draw_Speeding", SystemClock.uptimeMillis()  + " (Before)");
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickLeg();
-			// Hidden action
-		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+		}
+		// Hidden action
+		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClick();
