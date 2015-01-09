@@ -244,25 +244,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	@Override
 	protected void onProgressUpdate(String... value) {
 		// modify timer's text (remained time)
-//		timer.setText("" + time);
-		
-		Log.d("fix_futuretask","onProgressUpdate");
-		
-
-//		while (time >= 0 && !isCanceled) {
-			
-		Log.v("fix_futuretask","time : "+time);
-		
-/*		//Making hidden Action
-		if(temp_Count*temp_Count2 == 2){
-			Log.v("add_hiddenAction","temp_Count == 3");
-			updateHiddenIntent(PatpatWidgetApp.getApplication());
-		}
-
-		// init temp_Count for a second
-		temp_Count = 0;
-		temp_Count2 = 0;
-		*/
 		if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
 			lv0_1 = false;
 			lv0_2 = true;

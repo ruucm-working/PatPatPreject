@@ -168,11 +168,11 @@ public class PatpatView extends Activity{
 
 		RedrawMillis = SystemClock.uptimeMillis();
 
-		Log.i("draw_Speeding","Redraw, RedrawMillis : "+RedrawMillis);	
+		Log.i("draw_Speeding","Redraw_End, RedrawMillis : "+RedrawMillis);	
 	}
 
 	void scheduleRedraw() {
-		Log.v("animCount","scheduleRedraw, RedrawMillis : "+RedrawMillis);
+		Log.v("draw_Speeding","scheduleRedraw, RedrawMillis : "+RedrawMillis);
 		Log.i("draw_Speeding","scheduleRedraw, SystemClock.uptimeMillis() : "+SystemClock.uptimeMillis());
 
 		long nextRedraw = RedrawMillis + REFRESH_RATE;
@@ -185,7 +185,7 @@ public class PatpatView extends Activity{
 
 	private void scheduleRedrawAt(long timeMillis) {
 
-		Log.i("animCount","scheduleRedrawAt, nextRedraw : "+timeMillis);
+		Log.i("draw_Speeding","scheduleRedrawAt, nextRedraw : "+timeMillis);
 		(new Handler()).postAtTime(new Runnable() {
 			public void run() {
 				Redraw(PatpatWidgetApp.getApplication());

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+   <item  android:drawable="@drawable/animtest_bottom_0"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_1"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_2"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_3"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_4"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_5"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_6"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_7"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_8"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_9"  android:duration="66"/>
+    
+    <item  android:drawable="@drawable/animtest_bottom_10"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_11"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_12"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_13"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_14"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_15"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_16"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_17"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_18"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_19"  android:duration="66"/>
+    
+    <item  android:drawable="@drawable/animtest_bottom_20"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_21"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_22"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_23"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_24"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_25"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_26"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_27"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_28"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_29"  android:duration="66"/>
+    
+    <item  android:drawable="@drawable/animtest_bottom_30"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_31"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_32"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_33"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_34"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_35"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_36"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_37"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_38"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_39"  android:duration="66"/>
+   
+    <item  android:drawable="@drawable/animtest_bottom_40"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_41"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_42"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_43"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_44"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_45"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_46"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_47"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_48"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_49"  android:duration="66"/>
+    
+    
+    <item  android:drawable="@drawable/animtest_bottom_50"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_51"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_52"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_53"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_54"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_55"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_56"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_57"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_58"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_59"  android:duration="66"/>
+    
+    
+    
+    <item  android:drawable="@drawable/animtest_bottom_60"  android:duration="66"/>
+<!--     <item  android:drawable="@drawable/animtest_bottom_61"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_62"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_63"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_64"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_65"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_66"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_67"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_68"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_69"  android:duration="66"/>
+    
+    <item  android:drawable="@drawable/animtest_bottom_70"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_71"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_72"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_73"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_76"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_75"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_76"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_77"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_78"  android:duration="66"/>
+    <item  android:drawable="@drawable/animtest_bottom_79"  android:duration="66"/>
+    
+    <item  android:drawable="@drawable/animtest_bottom_80"  android:duration="66"/>
+    
+     -->
+    
+    
+
+</animation-list>

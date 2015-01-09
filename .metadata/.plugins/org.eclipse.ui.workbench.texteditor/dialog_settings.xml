@@ -6,35 +6,35 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="OnClick" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="before"/>
+			<item value="draw_Speeding"/>
+			<item value="animtest_"/>
+			<item value="6"/>
+			<item value="4"/>
+			<item value="75"/>
+			<item value="beautygirl2_angry"/>
 			<item value="onclick"/>
-			<item value="mWidgetId"/>
-			<item value="rviews"/>
-			<item value="updateClickIntent"/>
-			<item value="findvie"/>
-			<item value="OnClick"/>
-			<item value="instance"/>
-			<item value="getin"/>
 		</list>
 		<list key="replacehistory">
+			<item value="animtest_bottom_"/>
+			<item value="animtest_top_"/>
+			<item value="7"/>
+			<item value="6"/>
+			<item value="5"/>
+			<item value="66"/>
+			<item value="animtest_"/>
 			<item value="initPref"/>
-			<item value="bugfix_UsingStrictMode"/>
-			<item value="bugfix_Usingstrict"/>
-			<item value="fix_futuretask"/>
-			<item value="Log.v"/>
-			<item value="ePref"/>
-			<item value="tPref"/>
-			<item value="t"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="309" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="305" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
 		<item value="252" key="DIALOG_Y_ORIGIN"/>
 		<item value="575" key="DIALOG_X_ORIGIN"/>

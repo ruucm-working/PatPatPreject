@@ -38,7 +38,7 @@ public class Lv3_1State implements IPatpatViewState {
 		InputStream is = null;
 		Bitmap bmp = null;
 		is = PatpatView.Context.getApplicationContext()
-				.getResources().openRawResource(R.drawable.fish_animation);
+				.getResources().openRawResource(R.drawable.animation_test_body);
 		bmp = BitmapFactory.decodeStream(is);
 	}
 
@@ -238,8 +238,8 @@ public class Lv3_1State implements IPatpatViewState {
 			if (spriteVib == 0) {
 				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
 				
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_baby);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animtest_top_0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_test_top);
 				spriteVib++;
 			}			
 			else {
@@ -262,8 +262,8 @@ public class Lv3_1State implements IPatpatViewState {
 			
 			// Draw the brick at bottom
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.fish_animation);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animtest_top_0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_test_body);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
@@ -283,8 +283,8 @@ public class Lv3_1State implements IPatpatViewState {
 			
 			// Draw the brick at bottom
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
-				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.girl_evolve);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animtest_top_0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_test_bottom);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
