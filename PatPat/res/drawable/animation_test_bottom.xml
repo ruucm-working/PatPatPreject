@@ -24,7 +24,7 @@
     <item  android:drawable="@drawable/animtest_bottom_17"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_18"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_19"  android:duration="66"/>
-    
+    <!--
     <item  android:drawable="@drawable/animtest_bottom_20"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_21"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_22"  android:duration="66"/>
@@ -46,7 +46,7 @@
     <item  android:drawable="@drawable/animtest_bottom_37"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_38"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_39"  android:duration="66"/>
-   
+
     <item  android:drawable="@drawable/animtest_bottom_40"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_41"  android:duration="66"/>
     <item  android:drawable="@drawable/animtest_bottom_42"  android:duration="66"/>
@@ -96,7 +96,7 @@
     
     <item  android:drawable="@drawable/animtest_bottom_80"  android:duration="66"/>
     
-    
+     -->
     
     
 
