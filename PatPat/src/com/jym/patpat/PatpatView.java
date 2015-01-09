@@ -150,7 +150,6 @@ public class PatpatView extends Activity{
 			Handler handler = new Handler(); 
 			handler.postDelayed(new Runnable() { 
 				public void run() {
-					
 					Toast.makeText(Context, "나무늘보가 만사 귀찮다는 듯이 쳐다봅니다", Toast.LENGTH_SHORT).show();
 				} 
 			}, 5000); 
@@ -243,8 +242,8 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.patview01, pi);
-		rviews.setOnClickPendingIntent(R.id.girl_head, pi);
+	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		rviews.setOnClickPendingIntent(R.id.girl_head2, pi);
 	}
 
 	// Insert body intent
@@ -256,8 +255,8 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.patview01, pi);
-		rviews.setOnClickPendingIntent(R.id.girl_body, pi);
+	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		rviews.setOnClickPendingIntent(R.id.girl_body2, pi);
 	}
 
 	// Insert leg intent
@@ -269,8 +268,8 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		rviews.setOnClickPendingIntent(R.id.patview01, pi);
-		rviews.setOnClickPendingIntent(R.id.girl_leg, pi);
+	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		rviews.setOnClickPendingIntent(R.id.girl_leg2, pi);
 	}
 
 	public static Bitmap drawableToBitmap (Drawable drawable) {

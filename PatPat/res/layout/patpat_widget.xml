@@ -39,7 +39,7 @@
 
             <ImageView
                 android:id="@+id/girl_head1"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#1ed2a9" >
@@ -47,7 +47,7 @@
 
             <ImageView
                 android:id="@+id/girl_head2"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#555555" >
@@ -55,7 +55,7 @@
 
             <ImageView
                 android:id="@+id/girl_head3"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#38d785" >
@@ -80,7 +80,7 @@
 
             <ImageView
                 android:id="@+id/girl_body1"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#506123" >
@@ -88,7 +88,7 @@
 
             <ImageView
                 android:id="@+id/girl_body2"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#c0a741" >
@@ -96,7 +96,7 @@
 
             <ImageView
                 android:id="@+id/girl_body3"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#102048" >
@@ -121,7 +121,7 @@
 
             <ImageView
                 android:id="@+id/girl_leg1"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#5021ff" >
@@ -129,7 +129,7 @@
 
             <ImageView
                 android:id="@+id/girl_leg2"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#9821ff" >
@@ -137,7 +137,7 @@
 
             <ImageView
                 android:id="@+id/girl_leg3"
-                android:layout_width="0"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="#1021ff" >
