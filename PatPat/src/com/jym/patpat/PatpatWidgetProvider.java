@@ -102,14 +102,12 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		// Click head
 		if (intent.getAction().startsWith("click.head")) {
 			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
 		}
 		// Click body
 		else if (intent.getAction().startsWith("click.body")) {
 			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClickBody();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClickBody();
 
 		}
 		// Click leg
@@ -122,13 +120,9 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		// Hidden action
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
-			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-			.OnClick();
-
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
 		}
 	}
 }

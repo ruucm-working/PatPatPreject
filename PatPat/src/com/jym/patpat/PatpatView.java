@@ -146,9 +146,20 @@ public class PatpatView extends Activity{
 
 		if(!isAnimationPreload) {
 			Preload();
+			StateDraw();
+			Handler handler = new Handler(); 
+			handler.postDelayed(new Runnable() { 
+				public void run() {
+					
+					Toast.makeText(Context, "나무늘보가 만사 귀찮다는 듯이 쳐다봅니다", Toast.LENGTH_SHORT).show();
+				} 
+			}, 5000); 
 		}
-
-		//state drawing
+		else
+			StateDraw();
+	}
+	
+	private void StateDraw() {
 		state.Draw(this);
 
 		IAnimatable[] child = new IAnimatable[Children.size()];
@@ -165,7 +176,7 @@ public class PatpatView extends Activity{
 		updateClickIntent(rviews);
 		updateClickBodyIntent(rviews);
 		updateClickLegIntent(rviews);
-		AppWidgetManager.getInstance(context).updateAppWidget(mWidgetId, rviews);
+		AppWidgetManager.getInstance(Context).updateAppWidget(mWidgetId, rviews);
 
 		Log.i("refreshing_RemoteView","updateAppWidget(mWidgetId, rviews)");
 
@@ -276,21 +287,20 @@ public class PatpatView extends Activity{
 	}
 
 	public void Preload() {
-		isAnimationPreload = true;
+		
 		Log.v("AnimationPreload","Yoooou are now entering completely darkness");
+		isAnimationPreload = true;
+		
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.beautygirl2_angry0);
+		Log.v("AnimationPreload","time1: " + SystemClock.uptimeMillis());
 
-		for(int i=0; i<2; i++) {
-			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.beautygirl2_angry0);
-			Log.v("AnimationPreload","time1: " + SystemClock.uptimeMillis());
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_baby);
+		Log.v("AnimationPreload","time2: " + SystemClock.uptimeMillis());
 
-			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_baby);
-			Log.v("AnimationPreload","time2: " + SystemClock.uptimeMillis());
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.fish_animation);
+		Log.v("AnimationPreload","time3: " + SystemClock.uptimeMillis());
 
-			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.fish_animation);
-			Log.v("AnimationPreload","time3: " + SystemClock.uptimeMillis());
-
-			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.girl_evolve);
-			Log.v("AnimationPreload","time4: " + SystemClock.uptimeMillis());
-		}
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.girl_evolve);
+		Log.v("AnimationPreload","time4: " + SystemClock.uptimeMillis());
 	}
 }
