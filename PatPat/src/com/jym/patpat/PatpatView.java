@@ -291,16 +291,13 @@ public class PatpatView extends Activity{
 		Log.v("AnimationPreload","Yoooou are now entering completely darkness");
 		isAnimationPreload = true;
 		
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.beautygirl2_angry0);
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_top);
 		Log.v("AnimationPreload","time1: " + SystemClock.uptimeMillis());
 
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_baby);
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_body);
 		Log.v("AnimationPreload","time2: " + SystemClock.uptimeMillis());
 
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.fish_animation);
+		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_bottom);
 		Log.v("AnimationPreload","time3: " + SystemClock.uptimeMillis());
-
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.girl_evolve);
-		Log.v("AnimationPreload","time4: " + SystemClock.uptimeMillis());
 	}
 }
