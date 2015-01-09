@@ -47,7 +47,10 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onEnabled(Context context) {
 		super.onEnabled(context);
+		Toast.makeText(context, "나무늘보를 소환하고 있습니다", Toast.LENGTH_SHORT).show();
 
+		PatpatView.SetPreloadState(false);
+		
 		Log.d("serviceSwitch", "parentPath : "+parentPath);
 
 		// Init pref files at application class

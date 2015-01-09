@@ -88,12 +88,7 @@ public class IntentService_DeviceEvents extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-
 		Log.d("Stop_renotify", "onHandleIntent");
-		
-
-		
-
 	}
 
 	BroadcastReceiver mBRdeviceEvents = new BroadcastReceiver() {

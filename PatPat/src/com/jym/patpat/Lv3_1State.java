@@ -6,14 +6,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.SystemClock;
 import android.util.Log;
-import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.jym.helper.TextPref;
-import com.jym.service.TaskTimer;
 
 public class Lv3_1State implements IPatpatViewState {
-
 	public static int clickcount_3_1 = 0;
 	TextPref clickPref;
 

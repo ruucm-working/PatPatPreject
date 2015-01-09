@@ -3,14 +3,11 @@ package com.jym.patpat;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.xmlpull.v1.XmlPullParser;
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -19,12 +16,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.Xml;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
@@ -46,10 +39,12 @@ public class PatpatView extends Activity{
 
 	private volatile Set<IAnimatable> Children;
 	private static PatpatView instance;
+	private static boolean isAnimationPreload = false;
 
 	private float density;
 	private int cheight, cwidth;
 	private long RedrawMillis = 0;
+
 	public static int mWidgetId;
 
 	//for evolve
@@ -140,10 +135,18 @@ public class PatpatView extends Activity{
 	public void OnHeadsetDisconnected() {
 	}
 
+	public static void SetPreloadState(boolean state) {
+		isAnimationPreload = state;
+	}
+
 	public void Redraw(Context context) {
 		Log.d("animCount","Redraw");
 
 		rviews = new RemoteViews(context.getPackageName(), R.layout.patpat_widget);
+
+		if(!isAnimationPreload) {
+			Preload();
+		}
 
 		//state drawing
 		state.Draw(this);
@@ -270,5 +273,24 @@ public class PatpatView extends Activity{
 		drawable.draw(canvas);
 
 		return bitmap;
-	}	
+	}
+
+	public void Preload() {
+		isAnimationPreload = true;
+		Log.v("AnimationPreload","Yoooou are now entering completely darkness");
+
+		for(int i=0; i<2; i++) {
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.beautygirl2_angry0);
+			Log.v("AnimationPreload","time1: " + SystemClock.uptimeMillis());
+
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_baby);
+			Log.v("AnimationPreload","time2: " + SystemClock.uptimeMillis());
+
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.fish_animation);
+			Log.v("AnimationPreload","time3: " + SystemClock.uptimeMillis());
+
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.girl_evolve);
+			Log.v("AnimationPreload","time4: " + SystemClock.uptimeMillis());
+		}
+	}
 }
