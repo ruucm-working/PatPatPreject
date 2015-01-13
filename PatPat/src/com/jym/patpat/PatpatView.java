@@ -157,7 +157,7 @@ public class PatpatView extends Activity{
 		else
 			StateDraw();
 	}
-	
+
 	private void StateDraw() {
 		state.Draw(this);
 
@@ -242,7 +242,7 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_head2, pi);
 	}
 
@@ -255,7 +255,7 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_body2, pi);
 	}
 
@@ -268,7 +268,7 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-	//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
+		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_leg2, pi);
 	}
 
@@ -286,17 +286,16 @@ public class PatpatView extends Activity{
 	}
 
 	public void Preload() {
-		
+
 		Log.v("AnimationPreload","Yoooou are now entering completely darkness");
 		isAnimationPreload = true;
 		
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_top);
-		Log.v("AnimationPreload","time1: " + SystemClock.uptimeMillis());
-
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_body);
-		Log.v("AnimationPreload","time2: " + SystemClock.uptimeMillis());
-
-		PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_bottom);
-		Log.v("AnimationPreload","time3: " + SystemClock.uptimeMillis());
+		try {
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_top);
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_body);
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.animation_test_bottom);
+		} catch(Exception e) {
+			Log.v("AnimationPreload",e.toString());
+		}
 	}
 }

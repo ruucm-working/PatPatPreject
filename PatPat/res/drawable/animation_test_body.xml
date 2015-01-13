@@ -1,98 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
      android:oneshot="true" android:id="@+id/selected">
-<item  android:drawable="@drawable/animtest_body_0"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_1"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_2"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_3"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_4"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_5"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_6"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_7"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_8"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_9"  android:duration="66"/>
-    
-    <item  android:drawable="@drawable/animtest_body_10"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_11"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_12"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_13"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_14"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_15"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_16"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_17"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_18"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_19"  android:duration="66"/>
-    
-    <item  android:drawable="@drawable/animtest_body_20"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_21"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_22"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_23"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_24"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_25"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_26"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_27"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_28"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_29"  android:duration="66"/>
-    
-    <item  android:drawable="@drawable/animtest_body_30"  android:duration="66"/><!-- 
-    <item  android:drawable="@drawable/animtest_body_31"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_32"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_33"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_34"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_35"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_36"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_37"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_38"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_39"  android:duration="66"/>
-   
-    <item  android:drawable="@drawable/animtest_body_40"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_41"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_42"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_43"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_44"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_45"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_46"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_47"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_48"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_49"  android:duration="66"/>
-    
-    
-    <item  android:drawable="@drawable/animtest_body_50"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_51"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_52"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_53"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_54"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_55"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_56"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_57"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_58"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_59"  android:duration="66"/>
-    
-    
-    
-    <item  android:drawable="@drawable/animtest_body_60"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_61"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_62"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_63"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_64"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_65"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_66"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_67"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_68"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_69"  android:duration="66"/>
-    
-    <item  android:drawable="@drawable/animtest_body_70"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_71"  anotaldroid:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_72"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_73"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_76"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_75"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_76"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_77"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_78"  android:duration="66"/>
-    <item  android:drawable="@drawable/animtest_body_79"  android:duration="66"/>
-    
-    <item  android:drawable="@drawable/animtest_body_80"  android:duration="66"/> -->
-    
-    
+
+    <item android:drawable="@drawable/touch_body0" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body1" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body2" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body3" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body4" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body5" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body6" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body7" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body8" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/touch_body10" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body11" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body12" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body13" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body14" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body15" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body16" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body17" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body18" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body19" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body20" android:duration="66"/>
 </animation-list>

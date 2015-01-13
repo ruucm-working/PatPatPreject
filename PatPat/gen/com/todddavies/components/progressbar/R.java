@@ -24,12 +24,12 @@ public final class R {
 		public static final int textSize = 0x7f010021;
 	}
 	public static final class drawable {
-		public static final int header = 0x7f02011e;
-		public static final int ic_launcher = 0x7f020122;
-		public static final int icon = 0x7f020123;
-		public static final int login_gradient = 0x7f02012f;
-		public static final int login_gradient_flip = 0x7f020130;
-		public static final int logo = 0x7f020134;
+		public static final int header = 0x7f020084;
+		public static final int ic_launcher = 0x7f020088;
+		public static final int icon = 0x7f020089;
+		public static final int login_gradient = 0x7f020095;
+		public static final int login_gradient_flip = 0x7f020096;
+		public static final int logo = 0x7f02009a;
 	}
 	public static final class id {
 		public static final int RelativeLayout01 = 0x7f0e0044;

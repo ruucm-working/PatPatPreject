@@ -47,7 +47,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onEnabled(Context context) {
 		super.onEnabled(context);
-		Toast.makeText(context, "나무늘보를 소환하고 있습니다", Toast.LENGTH_SHORT).show();
+		Toast.makeText(context, "나무늘보를 툭툭 쳐서 불렀습니다", Toast.LENGTH_SHORT).show();
 
 		PatpatView.SetPreloadState(false);
 		
@@ -96,8 +96,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	public void onReceive(Context context, Intent intent) {
 		super.onReceive(context, intent);
 
-		Log.d("fix_futuretask",
-				"onReceive_intent.getAction() : " + intent.getAction());
+		Log.d("fix_futuretask","onReceive_intent.getAction() : " + intent.getAction());
 
 		// Click head
 		if (intent.getAction().startsWith("click.head")) {
@@ -108,7 +107,6 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		else if (intent.getAction().startsWith("click.body")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClickBody();
-
 		}
 		// Click leg
 		else if (intent.getAction().startsWith("click.leg")) {
@@ -116,6 +114,11 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClickLeg();
+		}
+		// OnOften (automatically called)
+		else if(intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnOften();
 		}
 		// Hidden action
 		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {

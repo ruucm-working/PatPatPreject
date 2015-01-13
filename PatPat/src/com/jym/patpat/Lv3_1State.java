@@ -16,7 +16,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 	public static boolean overlapAnimSwitch = true;
 	PatpatView mViewContext;
-	
+
 	private long clickedTime = 0;
 
 	public Lv3_1State(PatpatView viewContext) {
@@ -31,7 +31,7 @@ public class Lv3_1State implements IPatpatViewState {
 		clickPref.Ready();
 		clickcount_3_1 = clickPref.ReadInt("ClickCount_3_1", 0);
 		clickPref.EndReady();
-		
+
 		InputStream is = null;
 		Bitmap bmp = null;
 		is = PatpatView.Context.getApplicationContext()
@@ -54,7 +54,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 	private class Lv3_1WaitState implements IPatpatViewState {
 		public PatpatView context;
-		
+
 		public void Draw(PatpatView patpatView) {
 			Log.d("updateClickIntent_right", "Draw");
 		}
@@ -71,8 +71,8 @@ public class Lv3_1State implements IPatpatViewState {
 
 			Log.w("seperated_ClickCount", "End_CommitWrite");
 
-			patpatView.addAnimatable(new Lv3ClickAnim());
-			
+			patpatView.addAnimatable(new Lv3ClickHeadAnim());
+
 			Log.w("fix_futuretask", "addAnimatabe(start_scheduledraw)");
 
 			int textcode = (int) (Math.random() * 6);
@@ -108,13 +108,13 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void OnClickBody(PatpatView patpatView) {
 			clickedTime = SystemClock.uptimeMillis();
-			
+
 			/*
 			// add textpref code here
-			*/
-			
+			 */
+
 			patpatView.addAnimatable(new Lv3ClickBodyAnim());
-			
+
 			int textcode = (int) (Math.random() * 2);
 			String text = null;
 
@@ -129,11 +129,11 @@ public class Lv3_1State implements IPatpatViewState {
 			}
 			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 		}
-		
+
 		public void OnClickLeg(PatpatView patpatView) {
 			clickedTime = SystemClock.uptimeMillis();
 			patpatView.addAnimatable(new Lv3ClickLegAnim());
-			
+
 			int textcode = (int) (Math.random() * 3);
 			String text = null;
 
@@ -159,13 +159,14 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		@Override
-		public void OnEvolve(PatpatView coinBlockView) {
+		public void OnEvolve(PatpatView viewContext) {
 			// coinBlockView.setState(new InitState(coinBlockView));
 		}
 
 		@Override
-		public void OnOften(PatpatView coinBlockView) {
-
+		public void OnOften(PatpatView viewContext) {
+			clickedTime = SystemClock.uptimeMillis();
+			viewContext.addAnimatable(new Lv3OftenAnim());
 		}
 
 		@Override
@@ -214,13 +215,18 @@ public class Lv3_1State implements IPatpatViewState {
 		}
 
 		public void Draw() {
-
+			if (spriteVib == 0) {
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_test_body);
+				spriteVib++;
+			} else {
+				mViewContext.removeAnimatable(this);
+			}
 		}
 	}
 
-	private class Lv3ClickAnim implements IAnimatable {
+	private class Lv3ClickHeadAnim implements IAnimatable {
 		private int spriteVib = 0;
-		Lv3ClickAnim con;
 
 		public boolean AnimationFinished() {
 			return false;
@@ -228,13 +234,11 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			// Draw the brick at bottom
-			con = this;
-
 			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
-			
+
 			if (spriteVib == 0) {
 				Log.w("animCount","setResource_atChild_Draw : "+spriteVib);
-				
+
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.animation_test_top);
 				spriteVib++;
@@ -246,7 +250,7 @@ public class Lv3_1State implements IPatpatViewState {
 			}
 		}
 	}
-	
+
 	private class Lv3ClickBodyAnim implements IAnimatable {
 		private int spriteVib = 0;
 
@@ -256,7 +260,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
-			
+
 			// Draw the brick at bottom
 			if (spriteVib == 0) {
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
@@ -267,7 +271,7 @@ public class Lv3_1State implements IPatpatViewState {
 			}
 		}
 	}
-	
+
 	private class Lv3ClickLegAnim implements IAnimatable {
 		private int spriteVib = 0;
 
@@ -277,7 +281,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			Log.d("animCount","spriteVib_atChild_Draw : "+spriteVib);
-			
+
 			// Draw the brick at bottom
 			if (spriteVib == 0) {
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.beautygirl2_angry0);
@@ -305,12 +309,12 @@ public class Lv3_1State implements IPatpatViewState {
 	@Override
 	public void OnClickBody(PatpatView patpatView) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void OnClickLeg(PatpatView patpatView) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

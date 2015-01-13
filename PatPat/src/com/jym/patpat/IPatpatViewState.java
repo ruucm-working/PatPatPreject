@@ -10,13 +10,7 @@ interface IPatpatViewState {
 	public boolean NeedRedraw();
 
 	public void OnEvolve(PatpatView viewContext);
-
-	public void OnOften(PatpatView coinBlockView);
-
-
+	public void OnOften(PatpatView viewContext);
 	public void OnHeadsetConnected(PatpatView viewContext);
 	public void OnHeadsetDisconnected(PatpatView viewContext);
-
-	
-	
 }

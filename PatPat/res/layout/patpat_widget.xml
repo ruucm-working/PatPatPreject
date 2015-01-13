@@ -9,9 +9,10 @@
         android:id="@+id/patview01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:adjustViewBounds="false"
-        android:src="@drawable/brick_question" />
+        android:src="@drawable/touch_body0" />
 
     <ImageView
         android:id="@+id/patview_preload"
@@ -41,24 +42,21 @@
                 android:id="@+id/girl_head1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#1ed2a9" >
+                android:layout_weight="1" >
             </ImageView>
 
             <ImageView
                 android:id="@+id/girl_head2"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#555555" >
+                android:layout_weight="1" >
             </ImageView>
 
             <ImageView
                 android:id="@+id/girl_head3"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#38d785" >
+                android:layout_weight="1" >
             </ImageView>
         </LinearLayout>
     </RelativeLayout>
@@ -66,10 +64,10 @@
     <RelativeLayout
         android:id="@+id/girl_body"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_above="@+id/girl_leg"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:adjustViewBounds="false"
         android:padding="0dp" >
 
@@ -82,25 +80,20 @@
                 android:id="@+id/girl_body1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#506123" >
-            </ImageView>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/girl_body2"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#c0a741" >
-            </ImageView>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/girl_body3"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#102048" >
-            </ImageView>
+                android:layout_weight="1" />
+
         </LinearLayout>
     </RelativeLayout>
 
@@ -108,9 +101,9 @@
         android:id="@+id/girl_leg"
         android:layout_width="fill_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/girl_body"
         android:adjustViewBounds="false"
         android:padding="0dp" >
 
@@ -123,25 +116,19 @@
                 android:id="@+id/girl_leg1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#5021ff" >
-            </ImageView>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/girl_leg2"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#9821ff" >
-            </ImageView>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/girl_leg3"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="#1021ff" >
-            </ImageView>
+                android:layout_weight="1" />
         </LinearLayout>
     </RelativeLayout>
 
