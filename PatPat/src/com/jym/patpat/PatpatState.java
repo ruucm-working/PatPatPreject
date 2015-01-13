@@ -14,7 +14,7 @@ import com.jym.helper.TextPref;
 import com.jym.helper.XmlMapping;
 import com.jym.service.TaskTimer;
 
-public class Lv3_1State implements IPatpatViewState {
+public class PatpatState implements IPatpatViewState {
 
 	public static int clickcount_3_1 = 0;
 	
@@ -31,7 +31,7 @@ public class Lv3_1State implements IPatpatViewState {
 	String waitAnimePath;
 	String clickAnimePath;
 
-	public Lv3_1State(PatpatView viewContext) {
+	public PatpatState(PatpatView viewContext) {
 		mViewContext = viewContext;
 		
 		try {
@@ -129,7 +129,7 @@ public class Lv3_1State implements IPatpatViewState {
 		@Override
 		public void OnEvolve(PatpatView coinBlockView) {
 			Log.d("bugfix", "진화합니다~~");
-			coinBlockView.setState(new Lv3_1State(coinBlockView));
+			coinBlockView.setState(new PatpatState(coinBlockView));
 		}
 
 		@Override

@@ -91,7 +91,7 @@ public class PatpatView extends Activity{
 		
 		Log.v("stop_double_Draw","Draw_setState_PatpatView");
 		
-		setState(new Lv3_1State(this));
+		setState(new PatpatState(this));
 		
 	}
 

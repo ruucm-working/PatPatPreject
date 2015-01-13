@@ -31,7 +31,7 @@
 	     </state_anime>
 	</level>
 	
-	<!-- 진화조건입니다.  -->
+	<!-- 레벨별 리소스 및 울음소리  -->
 	
 	<level name="lavel_1">
 	    <howl>

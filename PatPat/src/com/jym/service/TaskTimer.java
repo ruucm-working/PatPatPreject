@@ -10,7 +10,7 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import com.jym.helper.TextPref;
-import com.jym.patpat.Lv3_1State;
+import com.jym.patpat.PatpatState;
 import com.jym.patpat.PatpatView;
 import com.jym.patpat.PatpatWidgetApp;
 import com.jym.patpat.R;
@@ -216,7 +216,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			ePref.EndReady();
 			 
 			 
-			Log.i("seperated_ClickCount","clickcount_3_1_At_TaskTimer : "+Lv3_1State.clickcount_3_1);
+			Log.i("seperated_ClickCount","clickcount_3_1_At_TaskTimer : "+PatpatState.clickcount_3_1);
 			
 			time = (System.currentTimeMillis() - startTime) / 1000;
 			
