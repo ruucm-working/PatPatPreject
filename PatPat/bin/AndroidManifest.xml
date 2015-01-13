@@ -64,9 +64,9 @@
             <!-- ADD BROADCAST INTENT TYPE -->
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.exam.view.INTENT_HIDDEN_FORMAT" />
-                <action android:name="com.exam.view.INTENT_OFTEN_FORMAT" />
-                <action android:name="com.exam.view.INTENT_EVOLVE_FORMAT" />
+                <action android:name="com.jym.patpat.INTENT_HIDDEN_FORMAT" />
+                <action android:name="com.jym.patpat.INTENT_OFTEN_FORMAT" />
+                <action android:name="com.jym.patpat.INTENT_EVOLVE_FORMAT" />
             </intent-filter>
 
             <meta-data

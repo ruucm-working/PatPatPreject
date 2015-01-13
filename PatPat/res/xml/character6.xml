@@ -3,15 +3,15 @@
 <character>
     <evolve>
         <evolve_timer>
+            <item>10</item>
+            <item>20</item>
             <item>30</item>
-            <item>40</item>
-            <item>50</item>
         </evolve_timer>
         
         <evolve_point>
-	        <item>10</item>
-	        <item>20</item>
 	        <item>30</item>
+	        <item>40</item>
+	        <item>50</item>
         </evolve_point>
     </evolve>
     

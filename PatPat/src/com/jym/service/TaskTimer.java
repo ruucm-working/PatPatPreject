@@ -47,13 +47,14 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	int level;
 	
 	ArrayList<String> evolveCountArray;
+	ArrayList<String> evolveTimerArray;
 	
-	public static String INTENT_HIDDEN_FORMAT = "com.exam.view.INTENT_HIDDEN_FORMAT";
-	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
-	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
-	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
+	public static String INTENT_HIDDEN_FORMAT = "com.jym.patpat.INTENT_HIDDEN_FORMAT";
+	public static String INTENT_OFTEN_FORMAT = "com.jym.patpat.INTENT_OFTEN_FORMAT";
+	public String INTENT_EVOLVE_FORMAT = "com.jym.patpat.INTENT_EVOLVE_FORMAT";
+	public String INTENT_INIT_FORMAT = "com.jym.patpat.INTENT_INIT_FORMAT";
 	
-	int clickCount;
+	public static int clickCount;
 	
 	/*
 	int CliCountInit ;
@@ -75,9 +76,13 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 				.findViewById(textViewId);
 	}*/
 	
-	public TaskTimer(ArrayList<String> inputItemArray)
+	public TaskTimer(ArrayList<String> inputCountArray, ArrayList<String> inputTimerArray)
 	{
-		evolveCountArray = inputItemArray;
+		evolveCountArray = inputCountArray;
+		evolveTimerArray = inputTimerArray;
+		Log.d("bugfix", "진화 카운트 받아옴 : " + evolveCountArray.get(0));
+		Log.d("bugfix", "진화 타이머 받아옴 : " + evolveTimerArray.get(0));
+		
 	}
 
 	public void setTime(int time) {
@@ -120,7 +125,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		
 		tPref.Ready();
 		time = tPref.ReadLong("time", 0);
-		
 		
 		startTime = System.currentTimeMillis() - time*1000;
 		tPref.WriteLong("startTime", startTime);	
@@ -181,10 +185,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 				e.printStackTrace();
 			} // one second sleep
 			
+			ePref.Ready();
+			
 			level 		= ePref.ReadInt("level", 0);
 			clickCount  = ePref.ReadInt("click_count", 0);
 			
-		/*	ePref.Ready();
+		/*	
 	
 			// State Variable
 			init = ePref.ReadBoolean("initstate", false);
@@ -205,8 +211,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			CliCount2 = ePref.ReadInt("clicount2", 0);
 			CliCount3_1_left = ePref.ReadInt("clicount3_1_left", 0);
 			CliCount3_1_right = ePref.ReadInt("clicount3_1_right", 0);
+			*/
 			
-			ePref.EndReady();*/
+			ePref.EndReady();
 			 
 			 
 			Log.i("seperated_ClickCount","clickcount_3_1_At_TaskTimer : "+Lv3_1State.clickcount_3_1);
@@ -232,18 +239,29 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	 *  you can directly modify UI */
 	@Override
 	protected void onProgressUpdate(String... value) {
-		Log.d("fix_futuretask","onProgressUpdate");	
-		Log.v("fix_futuretask","time : "+time);
 		
-		if(clickCount >= Integer.parseInt(evolveCountArray.get(level))) {
-			ePref.WriteInt("level", level++);
+		int evolveCount = Integer.parseInt(evolveCountArray.get(level));
+		int evolveTimer = Integer.parseInt(evolveTimerArray.get(level));
+		
+		/*
+		Log.d("bugfix", "현재시간(" + evolveTimer +") : " + time);
+		Log.d("bugfix", "클릭카운터(" + evolveCount + ") : " + clickCount);
+		Log.d("bugfix", "현재레벨(" + evolveCountArray.size() + ") : " + level);
+		*/
+		
+		if(time <= evolveTimer && clickCount >= evolveCount && level < evolveCountArray.size()-1) {
+			
+			Log.d("bugfix", "진화조건 성립");
+			
+			level++;
+			
+			ePref.Ready();
+			ePref.WriteInt("level", level);
 			ePref.CommitWrite();
 			
-			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-					.getApplication().getPackageName(),
-					R.layout.patpat_widget);
-			updateEvolveIntent(rviews,
-					PatpatWidgetApp.getApplication());
+			RemoteViews rviews = new RemoteViews(PatpatWidgetApp.getApplication().getPackageName(),
+												R.layout.patpat_widget);
+			updateEvolveIntent(rviews, PatpatWidgetApp.getApplication());
 			
 		} else if (time % 10 == 7){
 			Log.d("fix_futuretask","onOften_at_time : "+time); 
@@ -254,60 +272,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			tPref.WriteLong("time", time);
 			tPref.CommitWrite();
 		}
-		
-		/*
-		if (time >= 10 && time <= 12 && CliCount0_1 >= 3 && lv0_1) {
-			lv0_1 = false;
-			lv0_2 = true;
-			ePref.WriteBoolean("lv0_1state", lv0_1);
-			ePref.WriteBoolean("lv0_2state", lv0_2);
-			ePref.CommitWrite();
-
-			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-					.getApplication().getPackageName(),
-					R.layout.patpat_widget);
-			updateEvolveIntent(rviews,
-					PatpatWidgetApp.getApplication());
-
-		}
-		else if (time >= 20 && time <= 22 && CliCount1 >= 3 && lv1) {
-			lv1 = false;
-			lv2 = true;
-			ePref.WriteBoolean("lv1state", lv1);
-			ePref.WriteBoolean("lv2state", lv2);
-			ePref.CommitWrite();
-
-			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-					.getApplication().getPackageName(),
-					R.layout.patpat_widget);
-			updateEvolveIntent(rviews,
-					PatpatWidgetApp.getApplication());
-
-		} else if (time >= 30 && time <= 32 && CliCount2 >= 3
-				&& lv2) {
-			lv2 = false;
-			lv3_1 = true;
-			ePref.WriteBoolean("lv2state", lv2);
-			ePref.WriteBoolean("lv3_1state", lv3_1);
-			ePref.CommitWrite();
-
-			RemoteViews rviews = new RemoteViews(PatpatWidgetApp
-					.getApplication().getPackageName(),
-					R.layout.patpat_widget);
-			updateEvolveIntent(rviews,
-					PatpatWidgetApp.getApplication());
-
-		} else if (time % 10 ==7){
-			Log.d("fix_futuretask","onOften_at_time : "+time); 
-			updateOftenIntent(PatpatWidgetApp.getApplication());
-			 
-		} else {	
-			tPref.Ready();
-			tPref.WriteLong("time", time);
-			tPref.CommitWrite();
-
-		}
-		*/
 	}
 
 	private static void updateHiddenIntent(Context context) {
@@ -315,7 +279,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		int mWidgetId = PatpatView.mWidgetId;
 		
 		Log.d("updateHiddenIntent","mWidgetId : "+mWidgetId);
-		
+
 		Intent intent = new Intent(String.format(INTENT_HIDDEN_FORMAT, mWidgetId));
 		
 		intent.putExtra("widgetId", mWidgetId);
@@ -337,29 +301,24 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		context.sendBroadcast(intent);		
 	}
 	
-	
-	
 	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub				
-		
-//		Log.d("CoinBlockView","state " + init+" "+lv0_1+" "+lv0_2+" "+lv1+" "+lv2 );
-		
 		int mWidgetId = PatpatView.mWidgetId;
-//		
+		
+		Log.d("bugfix", "헛! 진화!!!");
+		
 		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
-		intent.putExtra("widgetId11", mWidgetId);		
+		intent.putExtra("widgetId", mWidgetId);
 
 		context.sendBroadcast(intent);
 
 		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
-		intent2.putExtra("widgetId10", mWidgetId);				
+		intent2.putExtra("widgetId", mWidgetId);
 
 		context.sendBroadcast(intent2);
 
 		Log.d("TaskTimer","updateEvolveIntent");
 	}
-
-	
 
 	/** this method is executed right AFTER doInBackground()
 	 *  on the main thread (UI thread) */

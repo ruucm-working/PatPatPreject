@@ -84,13 +84,16 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			context.startService(intent);
 			
 			Intent intent3 = new Intent("com.jym.service.IntentService_TaskTimer");
-			context.startService(intent3);
-			Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 			
 			HashMap evolvePointMap = XmlMapping.fieldMapping("test1", context, "evolve");
-			ArrayList<String> evolveItemArray = (ArrayList<String>) evolvePointMap.get("evolve"); 
+			ArrayList<String> evolvePointArray = (ArrayList<String>) evolvePointMap.get("evolve_point");
+			ArrayList<String> evolveTimerArray = (ArrayList<String>) evolvePointMap.get("evolve_timer");
 			
-			intent3.putStringArrayListExtra("evolvePoint", evolveItemArray);
+			intent3.putStringArrayListExtra("evolvePoint", evolvePointArray);
+			intent3.putStringArrayListExtra("evolveTimer", evolveTimerArray);
+			
+			context.startService(intent3);
+			Toast.makeText(context, "startService", Toast.LENGTH_SHORT).show();
 		
 			mPref.Ready();
 			mPref.WriteBoolean("serviceSwitch", false);
@@ -114,7 +117,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 					.OnClick_right();
 
-		} else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+		} else if (intent.getAction().startsWith("com.jym.view.INTENT_HIDDEN_FORMAT")) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 					.OnClick();
@@ -122,7 +125,10 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			.OnClick();
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
 			.OnClick();
-
+		} else if (intent.getAction().startsWith("com.jym.patpat.INTENT_EVOLVE_FORMAT")) {
+			Log.d("bugfix", "진화명령 받았습니다!!");
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
 		}
 	}
 }

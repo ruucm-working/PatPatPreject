@@ -995,8 +995,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tooltip_bubble_text=0x7f0c0007;
     }
     public static final class xml {
-        public static final int test1=0x7f050000;
-        public static final int widget=0x7f050001;
+        public static final int character2=0x7f050000;
+        public static final int character3=0x7f050001;
+        public static final int character4=0x7f050002;
+        public static final int character5=0x7f050003;
+        public static final int character6=0x7f050004;
+        public static final int character7=0x7f050005;
+        public static final int test1=0x7f050006;
+        public static final int widget=0x7f050007;
     }
     public static final class styleable {
         /** Attributes that can be used with a CirclePageIndicator.

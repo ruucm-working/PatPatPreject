@@ -96,6 +96,11 @@ public class Lv3_1State implements IPatpatViewState {
 			int textcode = (int)(Math.random()*howl.size());
 			text = howl.get(textcode);
 			
+			TaskTimer.clickCount++;
+			TaskTimer.ePref.Ready();
+			TaskTimer.ePref.WriteInt("click_count", TaskTimer.clickCount);
+			TaskTimer.ePref.CommitWrite();
+			
 			Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 			
 			Log.w("seperated_ClickCount", "OnClick");
@@ -123,7 +128,8 @@ public class Lv3_1State implements IPatpatViewState {
 
 		@Override
 		public void OnEvolve(PatpatView coinBlockView) {
-			// coinBlockView.setState(new InitState(coinBlockView));
+			Log.d("bugfix", "진화합니다~~");
+			coinBlockView.setState(new Lv3_1State(coinBlockView));
 		}
 
 		@Override
@@ -192,15 +198,7 @@ public class Lv3_1State implements IPatpatViewState {
 
 		public void Draw() {
 			// Draw the brick at bottom
-
 			con = this;
-
-			// RemoteViews rviews = new
-			// RemoteViews(mViewContext.getPackageName(),
-			// R.layout.coin_block_widget);
-
-			// Log.e("addClickIntent","mViewContext.getPackageName() : "+mViewContext.getPackageName());
-
 			int imageResource = mViewContext.Context.getResources().getIdentifier(clickAnimePath,
 																				 "drawable",
 																				 mViewContext.Context.getPackageName());
