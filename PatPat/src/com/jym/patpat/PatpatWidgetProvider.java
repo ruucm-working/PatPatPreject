@@ -13,6 +13,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.jym.Broadcast.BroadcastDefinition;
 import com.jym.helper.TextPref;
 import com.jym.helper.XmlMapping;
 
@@ -109,6 +110,9 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		super.onReceive(context, intent);
 
 		Log.d("fix_futuretask","onReceive_intent.getAction() : " + intent.getAction());
+		
+		if(context.getApplicationContext() == null)
+			Log.d("fix_futuretask","Umm...");
 
 		// Click head
 		if (intent.getAction().startsWith("click.head")) {
@@ -128,7 +132,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			.OnClickLeg();
 		}
 		// OnOften (automatically called)
-		else if(intent.getAction().startsWith("com.exam.view.INTENT_OFTEN_FORMAT")) {
+		else if(intent.getAction().startsWith(BroadcastDefinition.INTENT_OFTEN_FORMAT)) {
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnOften();
 		}
@@ -144,7 +148,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 		}
 		*/
 		// Evolve
-		else if (intent.getAction().startsWith("com.jym.patpat.INTENT_EVOLVE_FORMAT")) {
+		else if (intent.getAction().startsWith(BroadcastDefinition.INTENT_EVOLVE_FORMAT)) {
 			Log.d("bugfix", "진화명령 받았습니다!!");
 			int id = intent.getIntExtra("widgetId", 0);
 			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();

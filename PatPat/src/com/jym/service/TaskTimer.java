@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
+import com.jym.Broadcast.BroadcastDefinition;
 import com.jym.helper.TextPref;
 import com.jym.patpat.PatpatState;
 import com.jym.patpat.PatpatView;
@@ -54,11 +55,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 	ArrayList<String> evolveCountArray;
 	ArrayList<String> evolveTimerArray;
-
-	public static String INTENT_HIDDEN_FORMAT = "com.jym.patpat.INTENT_HIDDEN_FORMAT";
-	public static String INTENT_OFTEN_FORMAT = "com.jym.patpat.INTENT_OFTEN_FORMAT";
-	public String INTENT_EVOLVE_FORMAT = "com.jym.patpat.INTENT_EVOLVE_FORMAT";
-	public String INTENT_INIT_FORMAT = "com.jym.patpat.INTENT_INIT_FORMAT";
 
 	public static int clickCount;
 
@@ -236,7 +232,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		Log.d("updateHiddenIntent","mWidgetId : "+mWidgetId);
 
-		Intent intent = new Intent(String.format(INTENT_HIDDEN_FORMAT, mWidgetId));
+		Intent intent = new Intent(String.format(BroadcastDefinition.INTENT_HIDDEN_FORMAT, mWidgetId));
 		intent.putExtra("widgetId", mWidgetId);
 		context.sendBroadcast(intent);
 	}
@@ -247,7 +243,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		Log.d("keep_oftenintent","mWidgetId : "+mWidgetId);
 
-		Intent intent = new Intent(String.format(INTENT_OFTEN_FORMAT, mWidgetId));
+		Intent intent = new Intent(String.format(BroadcastDefinition.INTENT_OFTEN_FORMAT, mWidgetId));
 		intent.putExtra("widgetId", mWidgetId);
 		context.sendBroadcast(intent);		
 	}
@@ -258,12 +254,12 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		Log.d("bugfix", "헛! 진화!!!");
 
-		Intent intent = new Intent(String.format(INTENT_INIT_FORMAT, mWidgetId));
+		Intent intent = new Intent(String.format(BroadcastDefinition.INTENT_INIT_FORMAT, mWidgetId));
 		intent.putExtra("widgetId", mWidgetId);
 
 		context.sendBroadcast(intent);
 
-		Intent intent2 = new Intent(String.format(INTENT_EVOLVE_FORMAT, mWidgetId));
+		Intent intent2 = new Intent(String.format(BroadcastDefinition.INTENT_EVOLVE_FORMAT, mWidgetId));
 		intent2.putExtra("widgetId", mWidgetId);
 
 		context.sendBroadcast(intent2);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item android:drawable="@drawable/slothbaby_evolve0" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve1" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve2" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve3" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve4" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve5" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve6" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve7" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve8" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/slothbaby_evolve10" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve11" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve12" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve13" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve14" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve15" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve16" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve17" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve18" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve19" android:duration="66"/>
+	
+	<item android:drawable="@drawable/slothbaby_evolve20" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve21" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve22" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve23" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve24" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve25" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve26" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve27" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve28" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve29" android:duration="66"/>
+	<item android:drawable="@drawable/slothbaby_evolve30" android:duration="66"/>
+
+</animation-list>
