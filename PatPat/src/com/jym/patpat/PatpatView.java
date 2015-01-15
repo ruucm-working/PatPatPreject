@@ -49,9 +49,7 @@ public class PatpatView extends Activity{
 
 	//for evolve
 	public static long second = 0;
-
-
-
+	
 	//static variables
 	public static IPatpatViewState state;
 
@@ -84,11 +82,8 @@ public class PatpatView extends Activity{
 
 		//context for toast
 		Context = context;
-
-
 		Log.v("stop_double_Draw","Draw_setState_PatpatView");
-
-		setState(new Lv3_1State(this));
+		setState(new PatpatState(this));
 	}
 
 	public static PatpatView getInstance() {

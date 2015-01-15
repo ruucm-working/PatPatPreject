@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<character>
+    <evolve>
+        <evolve_timer>
+            <item>30</item>
+            <item>40</item>
+            <item>50</item>
+        </evolve_timer>
+        
+        <evolve_point>
+	        <item>10</item>
+	        <item>20</item>
+	        <item>30</item>
+        </evolve_point>
+    </evolve>
+    
+	<level name="lavel_0">
+        <howl>
+	         <item>1단계 방출기 작동 시작</item>
+	         <item>안녕 고든</item>
+	         <item>나는 지금 좀 밥뻐.</item>
+	     </howl>
+	     
+         <state_anime>
+	         <wait>animation_test_bottom</wait>
+	         <click>fish_animation</click>
+	     </state_anime>
+	</level>
+	
+	<level name="lavel_1">
+	    <howl>
+	         <item>2단계 방출기 작동 시작</item>
+	         <item>프리맨?</item>
+	         <item>이런일이 일어날것 같은 조짐을 느꼈지.</item>
+	         <item>이 모든게 당신들 과학자들 때문이야!</item>
+	     </howl>
+	     
+	    <state_anime>
+			<wait>animation_test_top</wait>
+	        <click>fish_animation</click>
+	     </state_anime>
+	</level>
+	
+	<level name="lavel_2">
+	    <howl>
+	         <item>장비를 정지합니다.</item>
+	         <item>앙대잖아?</item>
+	         <item>정지시킬 수가 없어 앙대!</item>
+	         <item>으아아아아아아아아아</item>
+	     </howl>
+	     
+	    <state_anime>
+	         <wait>animation_test_bottom</wait>
+	         <click>fish_animation</click>
+	     </state_anime>
+	</level>
+	
+</character>

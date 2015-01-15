@@ -61,7 +61,8 @@ public class IntentService_DeviceEvents extends IntentService {
 		Log.d("immortal_service","onStartCommand_deviceEvent");
 		
 		// foregrounding Service
-		startForeground(1, new Notification());
+		//startForeground(1, new Notification());
+		//startForeground(2, const_builder.build());
 
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -186,10 +187,9 @@ public class IntentService_DeviceEvents extends IntentService {
 					getApplicationContext(), 0, nintent,
 					Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 			const_builder.setContentIntent(pIntent);
-			manager.notify(2, const_builder.build());
 			
-			
-			
+			//manager.notify(2, const_builder.build());
+			startForeground(2, const_builder.build());
 
 			// write battery level to pref
 			try {

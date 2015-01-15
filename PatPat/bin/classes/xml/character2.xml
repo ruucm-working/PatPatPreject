@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<character>
+    
+    <!-- 진화조건입니다.  -->
+    
+    <evolve>
+        <evolve_timer>
+            <item>10</item>
+            <item>20</item>
+            <item>30</item>
+        </evolve_timer>
+        
+        <evolve_point>
+	        <item>30</item>
+	        <item>40</item>
+	        <item>50</item>
+        </evolve_point>
+    </evolve>
+    
+	<level name="lavel_0">
+        <howl>
+	         <item>난 1단꼬북</item>
+	         <item>꼬북꼬부기</item>
+	         <item>부기부기 꼬부기</item>
+	     </howl>
+	     
+         <state_anime>
+	         <wait>knifing_animation</wait>
+	         <click>fish_animation</click>
+	     </state_anime>
+	</level>
+	
+	<!-- 레벨별 리소스 및 울음소리  -->
+	
+	<level name="lavel_1">
+	    <howl>
+	         <item>2단꼬북</item>
+	         <item>난 2단계 꼬북이야</item>
+	         <item>북꼬북꼬</item>
+	         <item>파이리</item>
+	     </howl>
+	     
+	    <state_anime>
+	         <wait>knifing_animation</wait>
+	         <click>knifing_animation</click>
+	     </state_anime>
+	</level>
+	
+	<level name="lavel_2">
+	    <howl>
+	         <item>3단꼬북</item>
+	         <item>난 3단계 꼬북이야</item>
+	         <item>북꼬북꼬북꼬</item>
+	         <item>파이리 파이리</item>
+	     </howl>
+	     
+	    <state_anime>
+	         <wait>knifing_animation</wait>
+	         <click>knifing_animation</click>
+	     </state_anime>
+	</level>
+	
+</character>

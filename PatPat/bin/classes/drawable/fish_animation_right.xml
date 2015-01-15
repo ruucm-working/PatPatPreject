@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+     android:oneshot="true" android:id="@+id/selected"
+     >
+    <item android:drawable="@drawable/fish_right01" android:duration="50" />
+    <item android:drawable="@drawable/fish_right02" android:duration="50" />
+    <item android:drawable="@drawable/fish_right03" android:duration="50" />
+    <item android:drawable="@drawable/fish_right04" android:duration="50" />
+    <item android:drawable="@drawable/fish_right05" android:duration="50" />
+    <item android:drawable="@drawable/fish_right06" android:duration="50" />
+    <item android:drawable="@drawable/fish_right07" android:duration="50" />
+    <item android:drawable="@drawable/fish_right08" android:duration="50" />
+
+</animation-list>

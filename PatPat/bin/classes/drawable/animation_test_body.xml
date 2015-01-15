@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+     android:oneshot="true" android:id="@+id/selected">
+
+    <item android:drawable="@drawable/touch_body0" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body1" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body2" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body3" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body4" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body5" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body6" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body7" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body8" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/touch_body10" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body11" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body12" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body13" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body14" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body15" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body16" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body17" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body18" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body19" android:duration="66"/>
+	<item android:drawable="@drawable/touch_body20" android:duration="66"/>
+</animation-list>

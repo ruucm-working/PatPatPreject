@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+	<item android:drawable="@drawable/touch_leg0" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg1" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg2" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg3" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg4" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg5" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg6" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg7" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg8" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/touch_leg10" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg11" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg12" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg13" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg14" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg15" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg16" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg17" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg18" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg19" android:duration="66"/>
+	
+	<item android:drawable="@drawable/touch_leg20" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg21" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg22" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg23" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg24" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg25" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg26" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg27" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg28" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg29" android:duration="66"/>
+	
+	<item android:drawable="@drawable/touch_leg30" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg31" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg32" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg33" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg34" android:duration="66"/>
+	<item android:drawable="@drawable/touch_leg35" android:duration="66"/>
+</animation-list>

@@ -8,20 +8,20 @@ package com.todddavies.components.progressbar;
 
 public final class R {
 	public static final class attr {
-		public static final int barColor = 0x7f010022;
-		public static final int barLength = 0x7f01002a;
-		public static final int barWidth = 0x7f010029;
-		public static final int circleColor = 0x7f010027;
-		public static final int contourColor = 0x7f01002b;
-		public static final int contourSize = 0x7f01002c;
-		public static final int delayMillis = 0x7f010026;
-		public static final int radius2 = 0x7f010028;
-		public static final int rimColor = 0x7f010023;
-		public static final int rimWidth = 0x7f010024;
-		public static final int spinSpeed = 0x7f010025;
-		public static final int text = 0x7f01001f;
-		public static final int textColor = 0x7f010020;
-		public static final int textSize = 0x7f010021;
+		public static final int barColor = 0x7f010003;
+		public static final int barLength = 0x7f01000b;
+		public static final int barWidth = 0x7f01000a;
+		public static final int circleColor = 0x7f010008;
+		public static final int contourColor = 0x7f01000c;
+		public static final int contourSize = 0x7f01000d;
+		public static final int delayMillis = 0x7f010007;
+		public static final int radius2 = 0x7f010009;
+		public static final int rimColor = 0x7f010004;
+		public static final int rimWidth = 0x7f010005;
+		public static final int spinSpeed = 0x7f010006;
+		public static final int text = 0x7f010000;
+		public static final int textColor = 0x7f010001;
+		public static final int textSize = 0x7f010002;
 	}
 	public static final class drawable {
 		public static final int header = 0x7f020084;
@@ -52,11 +52,11 @@ public final class R {
 		public static final int progress_wheel_activity = 0x7f030016;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f0c0001;
-		public static final int hello = 0x7f0c0000;
+		public static final int app_name = 0x7f070001;
+		public static final int hello = 0x7f070000;
 	}
 	public static final class styleable {
-		public static final int[] ProgressWheel = { 0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b, 0x7f01002c };
+		public static final int[] ProgressWheel = { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d };
 		public static final int ProgressWheel_barColor = 3;
 		public static final int ProgressWheel_barLength = 11;
 		public static final int ProgressWheel_barWidth = 10;
