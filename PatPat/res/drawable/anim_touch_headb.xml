@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item  android:drawable="@drawable/slothbaby_touch_headb0"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb1"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb2"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb3"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb4"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb5"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb6"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb7"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb8"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb9"  android:duration="75"/>
+    
+    <item  android:drawable="@drawable/slothbaby_touch_headb10"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb11"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb12"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb13"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb14"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb15"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb16"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb17"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb18"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb19"  android:duration="75"/>
+    
+    <item  android:drawable="@drawable/slothbaby_touch_headb20"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb21"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb22"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb23"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb24"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb25"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb26"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb27"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb28"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb29"  android:duration="75"/>
+    
+    <item  android:drawable="@drawable/slothbaby_touch_headb30"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb31"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb32"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb33"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb34"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb35"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb36"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb37"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb38"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb39"  android:duration="75"/>
+   
+    <item  android:drawable="@drawable/slothbaby_touch_headb40"  android:duration="75"/><!-- 
+    <item  android:drawable="@drawable/slothbaby_touch_headb41"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb42"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb43"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb44"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb45"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb46"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb47"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb48"  android:duration="75"/>
+    <item  android:drawable="@drawable/slothbaby_touch_headb49"  android:duration="75"/>
+    
+    <item  android:drawable="@drawable/slothbaby_touch_headb75"  android:duration="75"/>
+ -->
+</animation-list>

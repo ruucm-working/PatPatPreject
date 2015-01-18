@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-01-15T16:51:46Z</updated>
+  <updated>2015-01-16T15:39:00Z</updated>
+  <entry>
+    <title>Spring Batch and Spring Batch Admin Releases</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/01/16/spring-batch-and-spring-batch-admin-releases" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2015-01-16:1933</id>
+    <updated>2015-01-16T15:39:00Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce a number of Spring Batch related releases today.  A bug fix release for Spring Batch, a bug fix release for Spring Batch Admin and a milestone release for the new version of Spring Batch Admin are all now available.&lt;/p&gt;
+&lt;h2&gt;Spring Batch 3.0.3&lt;/h2&gt;
+&lt;p&gt;Spring Batch 3.0.3 represents the latest maintenance release for Spring Batch, addressing a number of enhancements and minor bug fixes.  New features in Spring Batch 3.0.3 include:&lt;/p&gt;
+&lt;h3&gt;Improved Support For JSR-352 Custom Infrastructures&lt;/h3&gt;
+&lt;p&gt;Before this release, the only way to override the infrastructure provided by Spring Batch out of the box for JSR-352 configured jobs was to include the configuration in the job's context.  This prevented the ability to configure a global override for really shared components.  With 3.0.3, you can now specify the location of a Spring configuration via a System property that can override the existing infrastructure.&lt;/p&gt;
+&lt;h3&gt;Optional Polling For Partitioned Results&lt;/h3&gt;
+&lt;p&gt;When using remote partitioning, the master needs a way to be notified that the slave partitions have completed their work.  Historically that has been accomplished by each slave replying to the master, the results being aggregated, and then the master being notified that all the slaves have completed.  However, this required extra configuration that may not be necessary.  Since the slaves in a partitioned job maintain their state in the same job repository that the master does, the master can just poll the job repository to see if the slaves are complete.  This release adds the ability to configure the &lt;code&gt;MessageChannelPartitionHandler&lt;/code&gt; to poll the job repository instead of waiting for response messages.  You can read more about the configuration of this new feature in the documentation for the &lt;a href="http://docs.spring.io/spring-batch/trunk/apidocs/org/springframework/batch/integration/partition/MessageChannelPartitionHandler.html"&gt;&lt;code&gt;MessageChannelPartitionHandler&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This isn't a complete list of updates, but highlight the major new features.  You can see exactly what changed in Spring Batch's Jira issue tracker here: &lt;a href="https://jira.spring.io/browse/BATCH/"&gt;https://jira.spring.io/browse/BATCH/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Spring Batch Admin&lt;/h2&gt;
+&lt;h3&gt;1.3.1&lt;/h3&gt;
+&lt;p&gt;The first of two Spring Batch Admin releases we are making available today is the first maintenance release for the Spring Batch Admin 1.3 line.  This release addresses a number of minor bugs, the list of which can be found in Jira here: &lt;a href="https://jira.spring.io/browse/BATCHADM/"&gt;https://jira.spring.io/browse/BATCHADM/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;2.0.0.M1&lt;/h3&gt;
+&lt;p&gt;The biggest question I received at SpringOne2GX this past year was "What's going on with Spring Batch Admin?"  Spring Batch Admin had its last update in July (shortly before SpringOne2GX last year), but it wasn't much of a feature upgrade.  It was released to update the dependencies and address some bugs.  Since then, we've been hard at work updating a number of features to bring Spring Batch Admin up to date.  Today we announce the first milestone towards that goal.&lt;/p&gt;
+&lt;h4&gt;JSR-352 Support&lt;/h4&gt;
+&lt;p&gt;Spring Batch Admin, as part of the 2.0.0.M1 release, will now support JSR-352 configured jobs.  By dropping your XML based configuration in the &lt;code&gt;/META-INF/batch-jobs&lt;/code&gt; directory as the spec requires, Spring Batch Admin will load the job to be launchable by the REST endpoints and the current UI.  All of the monitoring aspects provided by Spring Batch Admin (viewing the executions, start/stop/restart, etc) are available.&lt;/p&gt;
+&lt;h4&gt;Java Configuration Support&lt;/h4&gt;
+&lt;p&gt;As the shift within the Spring community has been going from XML based configuration to java based configuration, Spring Batch Admin is keeping up.  As of this release, Spring Batch Admin supports the configuration of a package to scan for java configured Spring Batch jobs.  As with any other batch jobs, these will be loaded and available for execution just like their XML counterparts.&lt;/p&gt;
+&lt;p&gt;It's important to note, that while Spring Batch Admin now supports java based configuration, you won't want to use &lt;code&gt;@EnableBatchProcessing&lt;/code&gt; with it.  There's a reason for that.  &lt;code&gt;@EnableBatchProcessing&lt;/code&gt; provides a collection of infrastructure that is already provided out of the box by Spring Batch Admin.  Configuring jobs via java config for use within Spring Batch Admin is exactly the same as if you were using &lt;code&gt;@EnableBatchProcessing&lt;/code&gt;...without using that annotation.  You still get the ability to autowire the &lt;code&gt;JobBuilderFactory&lt;/code&gt; and &lt;code&gt;StepBuilderFactory&lt;/code&gt; just like you normally would.&lt;/p&gt;
+&lt;h4&gt;REST Endpoint Updates&lt;/h4&gt;
+&lt;p&gt;As part of the work the Spring XD team has been doing in their administration UI, they have created a completely new set of batch related REST endpoints.  This release migrates those endpoints into Spring Batch Admin for all to consume.  Off of the &lt;code&gt;/batch&lt;/code&gt; path lives a collection of endpoints that provide functionality similar to the existing REST API, however goes much further.  The new API follows HATEOAS principles allowing for API discovery and traversal.  While the support of HATEOAS is a work in progress, this release provides a look into where we're going with this.&lt;/p&gt;
+&lt;h4&gt;The Future of Spring Batch Admin&lt;/h4&gt;
+&lt;p&gt;Like all of the Spring projects, we strive to make things backwards compatible as much as reasonable possible.  Because of that, Spring Batch Admin 2.0 is undergoing some major changes to allow backwards compatibility in the future.  These changes include, the removal of an "official" UI, and deprecation of the older version of the REST API.  &lt;em&gt;This release does not contain any of these changes.&lt;/em&gt;  These changes will be coming before Spring Batch Admin 2.0 is generally available.  It is our desire to be open and transparent as to the direction of the project.&lt;/p&gt;
+&lt;p&gt;Anyone that has followed the rate of change in the UI space over the past few years can quickly discern that picking a modern front-end technology and being able to maintain backwards compatibility for the foreseeable future is not possible right now.  The rate of breaking changes is just too great right now.  When factoring this into our desire to provide tools at the forefront of their related space, we've decided to remove the UI as a formal part of the project.  That being said, we still understand that a client is an important piece of what Spring Batch Admin brings to the table.  Because of this, it is our plan to provide a collection of sample projects that demonstrate a couple different client options.  This will allow us to evolve client options independently of the core framework/API in a way that doesn't prevent us from being backwards compatible.&lt;/p&gt;
+&lt;p&gt;We will also be deprecating the older version of the REST API.  The new API takes a step forward in the REST API maturity model, moving from basic CRUD over HTTP to support for true resources.  While the new REST endpoints are still a work in progress, once they are feature complete, we will deprecate the old ones to focus development efforts on improving and evolving the new set.&lt;/p&gt;
+&lt;h3&gt;Where We Go From Here&lt;/h3&gt;
+&lt;p&gt;We will continue to work on the changes mentioned above and currently plan on another release early in the second quarter of this year.  We are excited about the future of Spring Batch Admin and look forward to your feedback in &lt;a href="https://jira.spring.io/browse/BATCH/"&gt;Jira&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Github&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-batch/info"&gt;StackOverflow&lt;/a&gt;, and social media!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring IO Platform 1.1.1 released</title>
     <link rel="alternate" href="https://spring.io/blog/2015/01/15/spring-io-platform-1-1-1-released" />
@@ -1077,17 +1113,6 @@ protected void configure(HttpSecurity http) throws Exception {&#xD;
   &lt;li&gt;The &lt;em&gt;Kielczewski.eu&lt;/em&gt; blog has has a very thorough post &lt;a href="http://kielczewski.eu/2014/12/spring-boot-security-application/"&gt;on building a secure web application with Spring Boot&lt;/a&gt;. Nice job!&lt;/li&gt;
   &lt;li&gt;David Kiss has a nice post on &lt;a href="http://kaviddiss.com/2014/12/28/twitter-feed-using-spring-boot/"&gt;processing a Twitter feed with Spring Boot (and Spring Social)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;p&gt;That was fun! I hope you&amp;rsquo;ve enjoyed this walk down memory lane. It&amp;rsquo;s always nice this time of year. I&amp;rsquo;m excited for the next installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, too! It will mark (roughly) four years of uninterrupted installments! What a rush!&lt;/p&gt;&lt;p&gt;I&amp;rsquo;m sure I speak on behalf &lt;a href="http://spring.io/team/"&gt;of all the Spring team&lt;/a&gt; when I wish you a very, &lt;em&gt;very&lt;/em&gt; &lt;em&gt;Happy New Year&lt;/em&gt;! C&amp;rsquo;ya in 2015! &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 4.1.4 &amp; 4.0.9 &amp; 3.2.13 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/12/30/spring-framework-4-1-4-4-0-9-3-2-13-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Juergen Hoeller</name>
-    </author>
-    <id>tag:spring.io,2014-12-30:1901</id>
-    <updated>2014-12-30T18:23:53Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;&lt;p&gt;It&amp;rsquo;s my pleasure to announce that Spring Framework 4.1.4, 4.0.9 and 3.2.13 have been released just in time for New Year&amp;rsquo;s Eve! These maintenance releases fix various minor issues and provide several minor improvements as well; please see JIRA for details.&lt;/p&gt;&lt;p&gt;Note that 4.0.9 is conceived as the last release in the 4.0.x line, concluding twelve months of active 4.0.x maintenance. We strongly recommend an upgrade to 4.1.x; your next maintenance release after 4.0.9 will be 4.1.5 which you need to be prepared to upgrade to.&lt;/p&gt;&lt;p&gt;Furthermore, please note that the 3.2.x line - and therefore the entire 3.x generation - is approaching its end of life in 2015. We are still committed to basic maintenance for critical issues; however, don&amp;rsquo;t expect more than two or three further 3.2.x releases down the road.&lt;/p&gt;&lt;p&gt;The Spring Framework team is now working towards the 4.2 release, with a release candidate scheduled for early May and general availability planned for late June. You may look forward to annotation-driven application events, declarative HTTP caching, first-class support for Server-Sent Events in Spring MVC, data binding and conversion for JSR-354 Money &amp;amp; Currency, and many other new features&amp;hellip; 4.2 will be designed as a straightforward upgrade from 4.1.x, with the same system requirements and general dependencies.&lt;/p&gt;&lt;p&gt;A Happy New Year,&lt;/p&gt;&lt;p&gt;Juergen&lt;/p&gt;</content>
   </entry>
 </feed>
 

@@ -1,0 +1,5 @@
+package com.jym.service;
+
+public class RestartReceiver {
+
+}
