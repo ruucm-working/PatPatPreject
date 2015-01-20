@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="slothslime_touch_head" key="selection"/>
+		<item value="charterInfo" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="charterInfo"/>
+			<item value="headAnimePath"/>
+			<item value="pre"/>
 			<item value="slothbaby_touch_headb"/>
+			<item value="slothbaby_touch_headb`"/>
 			<item value="slothbaby_touch_headB"/>
 			<item value="slothbaby_touch_head"/>
 			<item value="anim_ev"/>
-			<item value="anim"/>
-			<item value="Toast"/>
-			<item value="toast"/>
-			<item value="animtest_"/>
 		</list>
 		<list key="replacehistory">
 			<item value="slothslime_touch_head"/>

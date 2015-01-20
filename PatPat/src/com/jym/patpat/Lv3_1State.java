@@ -320,7 +320,7 @@ public class Lv3_1State implements IPatpatViewState {
 				PatpatView.rviews.setImageViewResource(R.id.patview01, R.drawable.knifing01);
 
 				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.anim_touch_headb);
+						R.drawable.anim_puberty);
 				
 
 				spriteVib++;

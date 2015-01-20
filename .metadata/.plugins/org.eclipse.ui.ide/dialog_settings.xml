@@ -14,11 +14,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\GitHub\PatPatPreject\animlibrary"/>
+			<item value="C:\GitHub\PatPatPreject\PatPat"/>
 			<item value="C:\GitHub\PatPatPreject"/>
+			<item value="C:\GitHub\PatPatPreject\animlibrary"/>
 			<item value="C:\GitHub\PatPatPreject\Mario"/>
 			<item value="C:\GitHub\Horizontal_view"/>
-			<item value="C:\Github\PatPatPreject"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

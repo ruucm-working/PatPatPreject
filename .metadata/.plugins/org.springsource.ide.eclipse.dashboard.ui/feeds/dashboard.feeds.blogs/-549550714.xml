@@ -5,7 +5,68 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2015-01-16T15:39:00Z</updated>
+  <updated>2015-01-19T15:36:00Z</updated>
+  <entry>
+    <title>Spring Roo 1.3.1 RC2 Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/01/19/spring-roo-1-3-1-rc2-available-now" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2015-01-19:1937</id>
+    <updated>2015-01-19T15:36:00Z</updated>
+    <content type="html">&lt;p&gt;Spring Roo 1.3.1 RC2 Available Now&lt;/p&gt;
+&lt;p&gt; On behalf on the Spring Roo team at &lt;a href="http://www.disid.com/"&gt;Disid Corp&lt;/a&gt;, I am pleased to announce the 1.3.1 RC2 Release Candidate is out.&lt;/p&gt;
+&lt;p&gt; Spring Roo jar files have been published to Maven Central. &lt;/p&gt;
+&lt;p&gt;As always, the release is available in the Spring IO repository. &lt;/p&gt;
+&lt;p&gt;The candidate release fixes the following issues:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+  &lt;li&gt;  NullPointerException at WarPackaging [&lt;a href="https://jira.spring.io/browse/ROO-3566"&gt;ROO-3566&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt;  NullPointerException when run dbre [&lt;a href="https://jira.spring.io/browse/ROO-3567"&gt;ROO-3567&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; Cannot uninstall or update any osgi bundles [&lt;a href="https://jira.spring.io/browse/ROO-3573"&gt;ROO-3573&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; NullPointerException when create repository mongodb [&lt;a href="https://jira.spring.io/browse/ROO-3574"&gt;ROO-3574&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; Roo commands allows to create two entities with the same name [&lt;a href="https://jira.spring.io/browse/ROO-3580"&gt;ROO-3580&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; Focus set on non existing class [&lt;a href="https://jira.spring.io/browse/ROO-3581"&gt;ROO-3581&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; Error adding InnerType constructor on ITD Generation [&lt;a href="https://jira.spring.io/browse/ROO-3583"&gt;ROO-3583&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; JavaBean implementing Interface defining getters and setters [&lt;a href="https://jira.spring.io/browse/ROO-3584"&gt;ROO-3584&lt;/a&gt;]&lt;/li&gt;&#xD;
+  &lt;li&gt; JavaBean implementing Interface and overriding getter causing null pointer [&lt;a href="https://jira.spring.io/browse/ROO-3585"&gt;ROO-3585&lt;/a&gt;]&lt;/li&gt;&#xD;
+&lt;/ul&gt;
+&lt;p&gt;It is recommended that all Spring Roo users upgrade to this version. &lt;/p&gt;
+&lt;p&gt;For full details on the changes made in the release, please refer to the [&lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10340&amp;version=14870"&gt;Release Notes in Jira&lt;/a&gt;] &lt;/p&gt;
+&lt;p&gt;For more project specific information please see the [&lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt;] | [&lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;] &lt;/p&gt;
+&lt;p&gt;Thanks to the awesome users who came up with useful bug reports and suggestions. This is a candidate release, please try out the updates and provide feedback. As always, you'll also find Roo on Twitter - either follow &lt;a href="https://www.twitter.com/springroo"&gt;@SpringRoo&lt;/a&gt; or just include #SpringRoo in your tweets. &lt;/p&gt;
+&lt;p&gt;Our current plan is to go 1.3.1.RELEASE in late january. Stay tuned!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tool Suite and Groovy/Grails Tool Suite 3.6.3.SR1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/01/19/spring-tool-suite-and-groovy-grails-tool-suite-3-6-3-sr1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2015-01-19:1935</id>
+    <updated>2015-01-19T13:09:42Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;&lt;p&gt;We have released a minor service release for STS/GGTS 3.6.3 on Eclipse 4.4.1 to address a&lt;br/&gt;security vulnerability that was found in the JGit client. More details on this can be found here:&lt;br/&gt;&lt;a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=456947"&gt;JGit client (CVE-2014-9390)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;To download the updated distributions, please go visit:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;Groovy/Grails Tool Suite: &lt;a href="https://spring.io/tools/ggts/all"&gt;https://spring.io/tools/ggts/all&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;/ul&gt;&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v363sr1/NewAndNoteworthy.html"&gt;STS/GGTS 3.6.3.SR1 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;STS/GGTS 3.6.4 is scheduled to ship in March 2015, shortly after the Eclipse Luna SR2 release.&lt;/p&gt;&lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar Replay: Building Scalable Data Applications with Spring and GemFire</title>
+    <link rel="alternate" href="https://spring.io/blog/2015/01/19/webinar-replay-building-scalable-data-applications-with-spring-and-gemfire" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2015-01-19:1936</id>
+    <updated>2015-01-19T10:31:00Z</updated>
+    <content type="html">&lt;p&gt;Webinar: Building Scalable Data Applications with Spring and GemFire &lt;/p&gt;
+&lt;p&gt;Speakers: Luke Shannon, Pivotal &lt;/p&gt;
+&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-scalable-web-applications-with-spring-data-gemfire"&gt;http://www.slideshare.net/SpringCentral/building-scalable-web-applications-with-spring-data-gemfire&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GemFire is Pivotal's distributed In Memory Data grid. In this session we will cover simplifying configuring a GemFire grid using Spring Data GemFire, and explore how data is dynamically distributed and made highly available as the grid resources are increased or decreased to meet increased client demand. GemFire access and testing patterns using Spring will be reviewed in detail.  We will walk through creating a domain object and using Spring Data GemFire Repositories to perform CRUD operations on a GemFire grid, creating a Spring MVC/Spring Boot application that uses GemFire as its persistence layer, review how Spring Boot and Spring Data GemFire can be used to help with GemFire test cases and how Spring Data GemFire can make creation and execution of GemFire functions easier. We will also explore how Spring XD can be used to load and monitor data changes in the grid. This will be a hands on, code oriented session.&lt;/p&gt;
+&lt;p&gt; &lt;iframe width="420" height="315" src="//www.youtube.com/embed/HvqLJSZoEJ0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt; &lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Batch and Spring Batch Admin Releases</title>
     <link rel="alternate" href="https://spring.io/blog/2015/01/16/spring-batch-and-spring-batch-admin-releases" />
@@ -1054,65 +1115,6 @@ protected void configure(HttpSecurity http) throws Exception {&#xD;
     <id>tag:spring.io,2014-12-17:1896</id>
     <updated>2015-01-08T14:31:00Z</updated>
     <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2014.&lt;br/&gt;Speaker: Janne Valkealahti&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/spring-one2gx-2014springyarn"&gt;http://www.slideshare.net/SpringCentral/spring-one2gx-2014springyarn&lt;/a&gt;&lt;br/&gt;Big Data Track&lt;br/&gt;Spring&amp;rsquo;s goal, like any good framework, has always been to handle the infrastructure so you can focus on your application code. Join this session to see how Spring provides a simple programming model to develop applications than can easily be tested and deployed as either a YARN application or a traditional application. No longer will you need to struggle with 3rd party library build and packaging issues, XML, and how the YARN Appmasters, Clients and Resource Managers all work together. The magic of Spring Boot, Spring XD, and Spring for Apache Hadoop just make it all work so you can get coding!&lt;br/&gt;&lt;pre&gt;&lt;iframe width="560" height="315" src="//www.youtube.com/embed/qlvX7_r9aUA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/pre&gt;&lt;/p&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 1.2.1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/01/08/spring-boot-1-2-1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Phil Webb</name>
-    </author>
-    <id>tag:spring.io,2015-01-08:1909</id>
-    <updated>2015-01-08T08:31:37Z</updated>
-    <content type="html">&lt;p&gt;Spring Boot 1.2.1 has been released and is available now from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework.boot%22"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;&lt;p&gt;This maintenance release includes over &lt;a href="https://github.com/spring-projects/spring-boot/issues?q=milestone%3A1.2.1"&gt;70 fixes&lt;/a&gt; and enhancements from 1.2.0 and fixes a number of bugs and regressions. If you are still using Spring Boot 1.1, now would be an excellent time to upgrade!&lt;/p&gt;&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.2.1.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - January 6th, 2015</title>
-    <link rel="alternate" href="https://spring.io/blog/2015/01/07/this-week-in-spring-january-6th-2015" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2015-01-07:1908</id>
-    <updated>2015-01-07T02:20:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I hope your holiday and new year was awesome! It&amp;rsquo;s the beginning of a new year (I almost typed &amp;ldquo;2014&amp;rdquo;!), and we&amp;rsquo;ve got a lot of great stuff coming this year! Let&amp;rsquo;s see what the internet has been doing this last week in the Spring community.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Our friend Petri Kainulainen is back, and he&amp;rsquo;s &lt;a href="http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-part-two-crud/"&gt;completely revamped his Spring Data JPA CRUD tutorial&lt;/a&gt;! Check it out! We&amp;rsquo;ve linked to it before in this roundup, but it&amp;rsquo;s always worth re-reading!&lt;/li&gt;
-  &lt;li&gt;I really like this post that looks &lt;a href="http://www.ekito.fr/people/inject-multitenancy-in-your-spring-web-application/"&gt;at introducing multitenancy into an application in terms of a JHipster-based sample&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Inforworld has an interesting post, &lt;a href="http://www.infoworld.com/article/2864453/application-development/why-2015-will-be-the-year-of-microservices.html"&gt;Why 2015 will be the year of the micro service&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Our pals in Spain are putting on their &lt;a href="http://springio.net"&gt;Spring IO (the conference)&lt;/a&gt; conference again this year! It&amp;rsquo;s shaping up to be a really great show, and I can tell you nobody works harder for the community than these guys. If you&amp;rsquo;re in the region, I hope you&amp;rsquo;ll consider it!&lt;/li&gt;
-  &lt;li&gt;Meanwhile, over on the Codeleak.pl blog, there is a great introduction &lt;a href="http://blog.codeleak.pl/2015/01/getting-started-with-jersey-and-spring.html"&gt;to using Jersey and Spring Boot 1.2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&amp;hellip;and a followup post on &lt;a href="http://blog.codeleak.pl/2015/01/building-hateoas-api-with-jax-rs-and.html"&gt;on how to build a HATEOAS API with Spring Boot 1.2 and Jersey&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Marcin Grzejszczak has put together a nice introduction to some of his company&amp;rsquo;s open-source tools for supporting microservices using Spring (and Spring Boot). &lt;a href="https://www.voxxed.com/blog/2014/12/microservices-micro-infra-spring/"&gt;Here&amp;rsquo;s his first post&lt;/a&gt;. I haven&amp;rsquo;t explored everything, but it looks like an interesting read!&lt;/li&gt;
-  &lt;li&gt;This is a new video that shows how to use &lt;a href="https://www.youtube.com/watch?v=K3ZSsF_eXO4"&gt;the Spring Security XML namespace to secure a (in this case JAX-RS-based) REST service&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I &lt;em&gt;think&lt;/em&gt; this is a &lt;a href="https://www.youtube.com/watch?v=MS7GCW5lKkw"&gt;Korean-language video on writing a unit-test for MyBatis&lt;/a&gt;. I don&amp;rsquo;t know why, yet, but I enjoy watching people iterate. Sometimes a (moving picture) is worth a thousand words.&lt;/li&gt;
-  &lt;li&gt;I &lt;em&gt;think&lt;/em&gt; this is a Bengali-language video on &lt;a href="https://www.youtube.com/watch?v=oXbo3k3uhHw"&gt;how to get started with Spring Boot&lt;/a&gt;. Either way, the video speaks for itself!&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Also, this post marks 4 years of writing &amp;ldquo;This Week in Spring&amp;rdquo;! Thanks everybody for the years of great content for me to read and thanks to all those who have sent in suggestions &lt;a href="http://twitter.com/starbuxman"&gt;on Twitter&lt;/a&gt; or &lt;a href="mailto:jlong@pivotal.io?Subject=TWiS"&gt;by email&lt;/a&gt;. Thanks, and keep it up, Spring community, you&amp;rsquo;re amazing! &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Year in Spring - December 30, 2014</title>
-    <link rel="alternate" href="https://spring.io/blog/2014/12/30/this-year-in-spring-december-30-2014" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2014-12-31:1902</id>
-    <updated>2014-12-30T21:26:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week, as is our tradition, we&amp;rsquo;ll look back at a few of the big things that made 2014 a wonderful year to be a Spring developer. And, what a year it was!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The tail end of last year saw &lt;a href="http://spring.io/blog/2013/12/12/announcing-spring-framework-4-0-ga-release"&gt;Spring 4 GA&lt;/a&gt; and this year &lt;a href="https://spring.io/blog/2014/09/04/spring-framework-4-1-ga-is-here"&gt;saw the Spring 4.1 release&lt;/a&gt; just shy of 9 short months after 4.0! Spring 4.x boasts a dizzying array of new features! Java 8 support, Java EE 7 support, new Spring MVC views, JSR 107 support, a powerful resource pipeline and the &lt;code&gt;@Conditional&lt;/code&gt; annotation which of course made possible&amp;hellip;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://spring.io/blog/2014/04/01/spring-boot-1-0-ga-released"&gt;Spring Boot&lt;/a&gt;, whose first 1.0 GA was in April of this year, has seen two &lt;em&gt;epic&lt;/em&gt; updates (&lt;a href="http://spring.io/blog/2014/06/10/spring-boot-1-1-ga-released"&gt;1.1&lt;/a&gt;, and &lt;a href="http://spring.io/blog/2014/12/11/spring-boot-1-2-0-released"&gt;1.2&lt;/a&gt;) since then. Spring Boot&amp;rsquo;s taken the community by storm, spawning all sorts of activity both from our team and, more importantly, from everybody else! The competition have attempted to downplay it, or copy it. Existing Spring users have flocked to it in droves (including the likes of Netflix and Ticketmaster). If you follow this weekly roundup, though, then you need no further evidence of the community&amp;rsquo;s uptake! It&amp;rsquo;s been so much fun watching people blog about using Spring Boot to do&amp;hellip; seemingly everything!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://spring.io/blog/2014/07/29/this-week-in-spring-spring-xd-edition-july-29th-2014"&gt;Spring XD 1.0&lt;/a&gt; was released earlier this year and a followup, &lt;a href="https://spring.io/blog/2014/12/23/spring-xd-1-1-m2-and-1-0-3-released"&gt;Spring XD 1.1&lt;/a&gt; is fast nearing completion. Spring XD (also built on Spring Boot, BTW!), provides a workbench for data processing by building on &lt;a href="http://spring.io/projects/spring-integration"&gt;Spring Integration&lt;/a&gt;, &lt;a href="http://spring.io/projects/spring-data"&gt;Spring Data&lt;/a&gt; and &lt;a href="http://spring.io/projects/spring-batch"&gt;Spring Batch&lt;/a&gt;. It&amp;rsquo;s slick, fast, elegant, and of course people have been &lt;a href="http://hortonworks.com/hadoop-tutorial/using-spring-xd-to-stream-tweets-to-hadoop-for-sentiment-analysis/"&gt;quick to include it in their arsenal&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://projects.spring.io/spring-cloud"&gt;Spring Cloud&lt;/a&gt; was announced this year at SpringOne2GX 2014 in Dallas, TX. Spring Cloud provides support for building cloud-native, microservice-style applications and builds on the programming model exposed by Spring Boot. It integrates popular libraries and infrastructure like many of the &lt;a href="http://netflix.github.io/"&gt;Netflix OSS stack&lt;/a&gt; and &lt;a href="https://consul.io/"&gt;Consul&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://cloudfoundry.org/index.html"&gt;Cloud Foundry&lt;/a&gt; has also had one heckuva year! Late last year we started seeing the first trickle of Cloud Foundry v2 and this year we saw that mature, and we also saw Cloud Foundry v2.1! Exciting work is ongoing already for the next generation Cloud Foundry; it&amp;rsquo;s a bottom-up rewrite of all the components in blazing-fast Go that provides a runtime (&amp;ldquo;Lattice&amp;rdquo;) that can be used independant of the higher PaaS-y bits. Cloud Foundry, of course, is an ideal target for Spring Boot and Spring Cloud-based applications. Pivotal Cloud Foundry, the shrink-wrapped distribution of Cloud Foundry, has grown by leaps and bounds. Coming soon: tiles and support for Spring XD and Spring Cloud! And, of course, we couldn&amp;rsquo;t finish this paragraph without mentioning perhaps the most exciting thing of all: &lt;a href="http://cloudfoundry.org/cloud-foundry-foundation-launch.html"&gt;the Cloud Foundry Foundation is now fully operational&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;What a ride! I&amp;rsquo;m as eager as you are to see what we could possibly top all of this in 2015! Now then, without further ado, let&amp;rsquo;s quickly take an (abbreviated) look at some of the links this week.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Just in time for the new year, the amazing and inimitable Spring project lead Juergen Hoeller &lt;a href="http://spring.io/blog/2014/12/30/spring-framework-4-1-4-4-0-9-3-2-13-released"&gt;announced Spring 4.1.4, 4.0.9, and 3.2.13&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Our pal Nicolas Frankel has a very nice post &lt;a href="http://java.dzone.com/articles/optional-dependencies-spring"&gt;on Spring&amp;rsquo;s new support for &lt;code&gt;Optional&amp;lt;T&amp;gt;&lt;/code&gt; dependencies&lt;/a&gt; - InfoQ has Rossen Stoyanchev&amp;rsquo;s SpringOne2GX 2014 talk on &lt;a href="http://www.infoq.com/presentations/spring-4-mvc-web-app"&gt;Spring 4 web applications, now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.javahispano.org/portada/2014/12/11/spring-io-2015.html"&gt;Spring I/O&lt;/a&gt;, the Madrid-based conference for Spring users, has announced their next year&amp;rsquo;s show. I personally missed the show in this last year and am glad to have it back!&lt;/li&gt;
-  &lt;li&gt;The &lt;em&gt;Kielczewski.eu&lt;/em&gt; blog has has a very thorough post &lt;a href="http://kielczewski.eu/2014/12/spring-boot-security-application/"&gt;on building a secure web application with Spring Boot&lt;/a&gt;. Nice job!&lt;/li&gt;
-  &lt;li&gt;David Kiss has a nice post on &lt;a href="http://kaviddiss.com/2014/12/28/twitter-feed-using-spring-boot/"&gt;processing a Twitter feed with Spring Boot (and Spring Social)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;That was fun! I hope you&amp;rsquo;ve enjoyed this walk down memory lane. It&amp;rsquo;s always nice this time of year. I&amp;rsquo;m excited for the next installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, too! It will mark (roughly) four years of uninterrupted installments! What a rush!&lt;/p&gt;&lt;p&gt;I&amp;rsquo;m sure I speak on behalf &lt;a href="http://spring.io/team/"&gt;of all the Spring team&lt;/a&gt; when I wish you a very, &lt;em&gt;very&lt;/em&gt; &lt;em&gt;Happy New Year&lt;/em&gt;! C&amp;rsquo;ya in 2015! &lt;/p&gt;</content>
   </entry>
 </feed>
 
