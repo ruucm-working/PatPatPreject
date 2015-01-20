@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+	<item android:drawable="@drawable/lv2_leg0" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg1" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg2" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg3" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg4" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg5" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg6" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg7" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg8" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/lv2_leg10" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg11" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg12" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg13" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg14" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg15" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg16" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg17" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg18" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg19" android:duration="66"/>
+	
+	<item android:drawable="@drawable/lv2_leg20" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg21" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg22" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg23" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg24" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg25" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg26" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg27" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg28" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg29" android:duration="66"/>
+	
+	<item android:drawable="@drawable/lv2_leg30" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg31" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg32" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg33" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg34" android:duration="66"/>
+	<item android:drawable="@drawable/lv2_leg35" android:duration="66"/>
+</animation-list>

@@ -51,11 +51,7 @@ public class IntentService_DeviceEvents extends IntentService {
 	public void onCreate() {
 		Log.d("Stop_renotify","onCreate");
 		 
-		
-		Toast.makeText(getApplicationContext(),"onCreate()_registerRestartAlarm(true)", Toast.LENGTH_LONG).show();
-
 		const_builder = new NotificationCompat.Builder(IntentService_DeviceEvents.this);
-		registerRestartAlarm(true);
 	}
 
 	@Override
@@ -65,7 +61,8 @@ public class IntentService_DeviceEvents extends IntentService {
 		Log.d("immortal_service","onStartCommand_deviceEvent");
 		
 		// foregrounding Service
-		startForeground(1, new Notification());
+		//startForeground(1, new Notification());
+		//startForeground(2, const_builder.build());
 
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -86,21 +83,13 @@ public class IntentService_DeviceEvents extends IntentService {
 		super.onDestroy();
 		
 		Log.d("Stop_renotify","onDestroy");
-		
-		Toast.makeText(getApplicationContext(),"onDestroy()_registerRestartAlarm(false)", Toast.LENGTH_LONG).show();
-
-		registerRestartAlarm(false);
+		registerRestartAlarm();
 		
 	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-
 		Log.d("Stop_renotify", "onHandleIntent");
-		
-
-		
-
 	}
 
 	BroadcastReceiver mBRdeviceEvents = new BroadcastReceiver() {
@@ -198,10 +187,9 @@ public class IntentService_DeviceEvents extends IntentService {
 					getApplicationContext(), 0, nintent,
 					Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 			const_builder.setContentIntent(pIntent);
-			manager.notify(2, const_builder.build());
 			
-			
-			
+			//manager.notify(2, const_builder.build());
+			startForeground(2, const_builder.build());
 
 			// write battery level to pref
 			try {
@@ -219,17 +207,21 @@ public class IntentService_DeviceEvents extends IntentService {
 
 	
 	
-	public void registerRestartAlarm(boolean isOn){
-		Intent intent = new Intent(IntentService_DeviceEvents.this, RestartReceiver.class);
-		intent.setAction(RestartReceiver.ACTION_RESTART_SERVICE);
-		PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
-				
-		AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-		if(isOn){
-		am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 1000, 10000, sender);
-		}else{
-		am.cancel(sender);
-		}
-		}
+	  void registerRestartAlarm() {
+		  Log.d("persist wake","registerRestartAlarm");
+		    Intent intent = new Intent( IntentService_DeviceEvents.this, IntentService_DeviceEvents.class );
+		    PendingIntent sender = PendingIntent.getService( IntentService_DeviceEvents.this, 0, intent, 0 );
+		    long firstTime = SystemClock.elapsedRealtime();
+		    firstTime += 10*1000; // 10초 후에 알람이벤트 발생
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, 10*1000, sender);
+		  }
+
+		  void unregisterRestartAlarm() {
+		    Intent intent = new Intent(IntentService_DeviceEvents.this, IntentService_DeviceEvents.class);
+		    PendingIntent sender = PendingIntent.getService( IntentService_DeviceEvents.this, 0, intent, 0 );
+		    AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+		    am.cancel(sender);
+		  }
 	
 }

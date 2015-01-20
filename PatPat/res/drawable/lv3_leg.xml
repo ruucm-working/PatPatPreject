@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+	<item android:drawable="@drawable/lv3_leg0" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg1" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg2" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg3" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg4" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg5" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg6" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg7" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg8" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/lv3_leg10" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg11" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg12" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg13" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg14" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg15" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg16" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg17" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg18" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg19" android:duration="66"/>
+	<item android:drawable="@drawable/lv3_leg20" android:duration="66"/>
+</animation-list>

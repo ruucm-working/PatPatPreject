@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item android:drawable="@drawable/lv2_evolve0" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve1" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve2" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve3" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve4" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve5" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve6" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve7" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve8" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve9" android:duration="66"/>
+    
+    <item android:drawable="@drawable/lv2_evolve10" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve11" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve12" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve13" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve14" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve15" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve16" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve17" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve18" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve19" android:duration="66"/>
+    
+    <item android:drawable="@drawable/lv2_evolve20" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve21" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve22" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve23" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve24" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve25" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve26" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve27" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve28" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve29" android:duration="66"/>
+    <item android:drawable="@drawable/lv2_evolve30" android:duration="66"/>
+
+</animation-list>

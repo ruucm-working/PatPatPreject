@@ -58,10 +58,11 @@ public class Setting extends Activity {
 
 	// static variables
 	public static boolean init = false;
-	public static boolean lv0_1 = false;
-	public static boolean lv0_2 = false;
-	public static boolean lv1 = false;
-	public static boolean lv2 = false;
+//	public static boolean lv0_1 = false;
+//	public static boolean lv0_2 = false;
+//	public static boolean lv1 = false;
+//	public static boolean lv2 = false;
+	public static int level;
 
 	float CliSp0;
 
@@ -112,11 +113,14 @@ public class Setting extends Activity {
 
 		// state's preference
 		preinit = ePref.ReadBoolean("preinitstate", true);
+		/*
 		init = ePref.ReadBoolean("initstate", false);
 		lv0_1 = ePref.ReadBoolean("lv0_1state", false);
 		lv0_2 = ePref.ReadBoolean("lv0_2state", false);
 		lv1 = ePref.ReadBoolean("lv1state", false);
 		lv2 = ePref.ReadBoolean("lv2state", false);
+		*/
+		level = ePref.ReadInt("level", 0);
 
 		checked[0] = initPref.ReadBoolean("checked0", false);
 		checked[1] = initPref.ReadBoolean("checked1", false);
@@ -357,10 +361,13 @@ public class Setting extends Activity {
 			initPref.WriteBoolean("checked12", checked[12]);
 			initPref.WriteBoolean("checked13", checked[13]);
 
+			/*
 			ePref.WriteBoolean("lv0_1state", lv0_1);
 			ePref.WriteBoolean("lv0_2state", lv0_2);
 			ePref.WriteBoolean("lv1state", lv1);
 			ePref.WriteBoolean("lv2state", lv2);
+			*/
+			ePref.WriteInt("level", level);
 
 			ePref.CommitWrite();
 			initPref.CommitWrite();

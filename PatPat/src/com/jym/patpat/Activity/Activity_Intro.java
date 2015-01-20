@@ -27,25 +27,17 @@ public class Activity_Intro extends FragmentActivity {
 	private static final int[] ICONS = new int[] {
         R.drawable.perm_group_banana,
         R.drawable.perm_group_heart,
-        
     };
-	
-
 	
 	private static Activity_Intro instance;
 	public static 	Activity_Intro getInstance() {
         return instance;
-    }
-	
+    }	
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		instance = this;
 
-		
-		
-//		dalvik.system.VMRuntime.getRuntime().setTargetHeapUtilization(0.7f);
-		// for Activity anim
 		this.overridePendingTransition(R.anim.start_enter, R.anim.start_exit);
 
 		setContentView(R.layout.patpat_layout);

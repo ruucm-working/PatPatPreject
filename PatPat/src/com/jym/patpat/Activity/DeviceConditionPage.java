@@ -132,7 +132,7 @@ public class DeviceConditionPage extends Fragment  {
 				
 //				Lv3_1State.recycleAnimDrawable();
 				
-				 dalvik.system.VMRuntime.getRuntime().runFinalizationSync();
+				// dalvik.system.VMRuntime.getRuntime().runFinalizationSync();
 
 			/*	
 				ImageView a = (ImageView) rv.findViewById(R.id.patview01);
