@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+	<item android:drawable="@drawable/slime_leg0" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg1" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg2" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg3" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg4" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg5" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg6" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg7" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg8" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/slime_leg10" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg11" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg12" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg13" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg14" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg15" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg16" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg17" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg18" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg19" android:duration="66"/>
+	<item android:drawable="@drawable/slime_leg20" android:duration="66"/>
+</animation-list>

@@ -24,7 +24,6 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 public class PatpatView extends Activity{
 
@@ -80,6 +79,7 @@ public class PatpatView extends Activity{
 		//context for toast
 		Context = context;
 		Log.v("stop_double_Draw","Draw_setState_PatpatView");
+		Log.d("textPref","setState_PatPatView");
 		setState(new PatpatState(this));
 	}
 
@@ -139,14 +139,6 @@ public class PatpatView extends Activity{
 		if(!isAnimationPreload) {
 			Preload();
 			StateDraw();
-			/*
-			Handler handler = new Handler(); 
-			handler.postDelayed(new Runnable() { 
-				public void run() {
-					Toast.makeText(Context, "나무늘보가 만사 귀찮다는 듯이 쳐다봅니다", Toast.LENGTH_SHORT).show();
-				} 
-			}, 3000);
-			*/
 		}
 		else
 			StateDraw();
@@ -179,9 +171,6 @@ public class PatpatView extends Activity{
 	}
 
 	void scheduleRedraw() {
-		Log.v("animCount","scheduleRedraw, RedrawMillis : "+RedrawMillis);
-		Log.i("draw_Speeding","scheduleRedraw, SystemClock.uptimeMillis() : "+SystemClock.uptimeMillis());
-
 		long nextRedraw = RedrawMillis + REFRESH_RATE;
 
 		nextRedraw = nextRedraw > SystemClock.uptimeMillis() ? nextRedraw :
@@ -191,8 +180,6 @@ public class PatpatView extends Activity{
 	}
 
 	private void scheduleRedrawAt(long timeMillis) {
-
-		Log.i("animCount","scheduleRedrawAt, nextRedraw : "+timeMillis);
 		(new Handler()).postAtTime(new Runnable() {
 			public void run() {
 				Redraw(PatpatWidgetApp.getApplication());
@@ -216,9 +203,7 @@ public class PatpatView extends Activity{
 		Children.remove(child);
 	}
 
-	public  void setState(IPatpatViewState newState) {
-		Log.d("addClickIntent","setState : "+newState);
-
+	public void setState(IPatpatViewState newState) {
 		state = newState;
 		scheduleRedraw();
 	}	
@@ -236,7 +221,6 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_head2, pi);
 	}
 
@@ -249,7 +233,6 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_body2, pi);
 	}
 
@@ -262,7 +245,6 @@ public class PatpatView extends Activity{
 		intent.setClass(getContext(), PatpatWidgetProvider.class);
 		intent.putExtra("widgetId", mWidgetId);
 		PendingIntent pi = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		//	rviews.setOnClickPendingIntent(R.id.patview01, pi);
 		rviews.setOnClickPendingIntent(R.id.girl_leg2, pi);
 	}
 
@@ -282,7 +264,6 @@ public class PatpatView extends Activity{
 	public static void Preload() {
 		isAnimationPreload = true;
 		TextPref mPref = null;
-		int level;
 		
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -292,29 +273,25 @@ public class PatpatView extends Activity{
 		}
 
 		mPref.Ready();
-		level = mPref.ReadInt("level", 0);
+		String level = mPref.ReadString("level", "box");
 		mPref.EndReady();
 		
-		Log.v("fix_futuretask","preload");
 		try {
-			switch(level) {
-			case 0:
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv1_head);
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv1_body);
-				//PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv1_leg);
-				break;
+			if(level.equals("box")) {
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.box_head);
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.box_body);
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.box_leg);
+			}
+			else if(level.equals("slime")) {
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.slime_head);
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.slime_body);
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.slime_leg);
+			}
 
-			case 1:
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv2_head);
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv2_body);
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv2_leg);
-				break;
-
-			case 2:
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv3_head);
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv3_body);
-				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.lv3_leg);
-				break;
+			else if(level.equals("baby")) {
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.baby_head);
+				PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.baby_body);
+			//	PatpatView.rviews.setImageViewResource(R.id.patview_preload, R.drawable.baby_leg);
 			}
 		} catch(Exception e) {
 			Log.v("AnimationPreload",e.toString());

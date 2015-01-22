@@ -9,46 +9,46 @@
         </evolve_timer>
         
         <evolve_point>
+	        <item>5</item>
 	        <item>10</item>
-	        <item>20</item>
-	        <item>30</item>
+	        <item>15</item>
         </evolve_point>
     </evolve_condition>
     
-	<level name="lavel_0">
+	<level name="box">
         <howl>
-			<item>1단계 방출기 작동 시작</item>
-			<item>안녕 고든</item>
-			<item>나는 지금 좀 밥뻐.</item>
+			<item>까딱까딱</item>
+			<item>흔들흔들</item>
+			<item>꿈틀꿈틀</item>
 	     </howl>
 	     
          <state_anime>
-             <head>lv1_head</head>
-             <body>lv1_body</body>
-             <leg>lv1_body</leg>
-	         <wait>lv1_body</wait>
-	         <evolve>lv1_evolve</evolve>
+	         <head>box_head</head>
+             <body>box_body</body>
+             <leg>box_leg</leg>
+	         <wait>box_body</wait>
+	         <evolve>box_evolve</evolve>
 	     </state_anime>
 	</level>
 	
-	<level name="lavel_1">
+	<level name="slime">
 	    <howl>
-			 <item>2단계 방출기 작동 시작</item>
-	         <item>프리맨?</item>
-	         <item>이런일이 일어날것 같은 조짐을 느꼈지.</item>
-	         <item>이 모든게 당신들 과학자들 때문이야!</item>
+			 <item>뀨?</item>
+	         <item>뀨잉?</item>
+	         <item>까르르르르.</item>
+	         <item>뿌뿌뿡!</item>
 	     </howl>
 	     
 	    <state_anime>
-             <head>lv2_head</head>
-             <body>lv2_body</body>
-             <leg>lv2_leg</leg>
-	         <wait>lv2_body</wait>
-	         <evolve>lv2_evolve</evolve>
+             <head>slime_head</head>
+             <body>slime_body</body>
+             <leg>slime_leg</leg>
+	         <wait>slime_body</wait>
+	         <evolve>slime_evolve</evolve>
 	     </state_anime>
 	</level>
 	
-	<level name="lavel_2">
+	<level name="baby">
 	    <howl>
 			 <item>장비를 정지합니다.</item>
 	         <item>앙대잖아?</item>
@@ -58,11 +58,11 @@
 	     </howl>
 	     
 	    <state_anime>
-             <head>lv3_head</head>
-             <body>lv3_body</body>
-             <leg>lv3_leg</leg>
-	         <wait>lv3_body</wait>
-	         <evolve>fish_animation</evolve>
+             <head>baby_head</head>
+             <body>baby_body</body>
+             <leg>baby_leg</leg>
+	         <wait>baby_body</wait>
+	         <evolve>baby_evolve</evolve>
 	     </state_anime>
 	</level>
 	

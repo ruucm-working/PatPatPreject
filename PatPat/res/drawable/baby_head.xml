@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+	<item android:drawable="@drawable/baby_head0" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head1" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head2" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head3" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head4" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head5" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head6" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head7" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head8" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/baby_head10" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head11" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head12" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head13" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head14" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head15" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head16" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head17" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head18" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head19" android:duration="66"/>
+	<item android:drawable="@drawable/baby_head20" android:duration="66"/>
+</animation-list>

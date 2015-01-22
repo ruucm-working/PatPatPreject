@@ -9,7 +9,6 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
@@ -155,7 +154,7 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 				 */
 				// Evolve
 				else if (intent.getAction().startsWith(BroadcastDefinition.INTENT_EVOLVE_FORMAT)) {
-					Log.d("bugfix", "진화명령 받았습니다!!");
+					Log.d("evolve_test", "진화명령 받았습니다!!");
 					int id = intent.getIntExtra("widgetId", 0);
 					((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
 				}

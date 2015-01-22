@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item android:drawable="@drawable/slime_evolve0" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve1" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve2" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve3" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve4" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve5" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve6" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve7" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve8" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve9" android:duration="66"/>
+    
+    <item android:drawable="@drawable/slime_evolve10" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve11" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve12" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve13" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve14" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve15" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve16" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve17" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve18" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve19" android:duration="66"/>
+    
+    <item android:drawable="@drawable/slime_evolve20" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve21" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve22" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve23" android:duration="1000"/>
+    <item android:drawable="@drawable/slime_evolve24" android:duration="1000"/>
+    <item android:drawable="@drawable/slime_evolve25" android:duration="1000"/>
+    <item android:drawable="@drawable/slime_evolve26" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve27" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve28" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve29" android:duration="66"/>
+    
+    <item android:drawable="@drawable/slime_evolve30" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve31" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve32" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve33" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve34" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve35" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve36" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve37" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve38" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve39" android:duration="66"/>
+    
+    <item android:drawable="@drawable/slime_evolve40" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve41" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve42" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve43" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve44" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve45" android:duration="66"/>
+    <item android:drawable="@drawable/slime_evolve46" android:duration="66"/>
+
+</animation-list>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item android:drawable="@drawable/box_evolve0" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve1" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve2" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve3" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve4" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve5" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve6" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve7" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve8" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve9" android:duration="66"/>
+    
+    <item android:drawable="@drawable/box_evolve10" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve11" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve12" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve13" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve14" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve15" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve16" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve17" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve18" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve19" android:duration="66"/>
+    
+    <item android:drawable="@drawable/box_evolve20" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve21" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve22" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve23" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve24" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve25" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve26" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve27" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve28" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve29" android:duration="66"/>
+
+    <item android:drawable="@drawable/box_evolve30" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve31" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve32" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve33" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve34" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve35" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve36" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve37" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve38" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve39" android:duration="66"/>
+    
+    <item android:drawable="@drawable/box_evolve40" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve41" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve42" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve43" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve44" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve45" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve46" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve47" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve48" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve49" android:duration="66"/>
+    <item android:drawable="@drawable/box_evolve50" android:duration="66"/>
+
+</animation-list>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/selected"
+    android:oneshot="true" >
+
+    <item android:drawable="@drawable/baby_evolve0" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve1" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve2" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve3" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve4" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve5" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve6" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve7" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve8" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve9" android:duration="66"/>
+    
+    <item android:drawable="@drawable/baby_evolve10" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve11" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve12" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve13" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve14" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve15" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve16" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve17" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve18" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve19" android:duration="66"/>
+    
+    <item android:drawable="@drawable/baby_evolve20" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve21" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve22" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve23" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve24" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve25" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve26" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve27" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve28" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve29" android:duration="66"/>
+    
+    <item android:drawable="@drawable/baby_evolve30" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve31" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve32" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve33" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve34" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve35" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve36" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve37" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve38" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve39" android:duration="66"/>
+    
+    <item android:drawable="@drawable/baby_evolve40" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve41" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve42" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve43" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve44" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve45" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve46" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve47" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve48" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve49" android:duration="66"/>
+    
+    <item android:drawable="@drawable/baby_evolve50" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve51" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve52" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve53" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve54" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve55" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve56" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve57" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve58" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve59" android:duration="66"/>
+    <item android:drawable="@drawable/baby_evolve60" android:duration="66"/>
+
+</animation-list>

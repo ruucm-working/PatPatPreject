@@ -3,12 +3,9 @@ package com.jym.helper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import android.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
@@ -91,7 +88,7 @@ public class XmlMapping {
 		return null;
 	}
 	
-	public static HashMap levelMapping(String fileName, Context context, int level){
+	public static HashMap levelMapping(String fileName, Context context, String level){
 		HashMap<String, Object> mapingXml = new HashMap<String, Object>();
 		
 		try{
@@ -112,7 +109,7 @@ public class XmlMapping {
 				if(!parsingStartFlag){
 					if(eventType == XmlPullParser.START_TAG){
 						if(parsingXml.getName().equals("level")){
-							if(parsingXml.getAttributeValue(0).equals("lavel_"+level)) parsingStartFlag = true;
+							if(parsingXml.getAttributeValue(0).equals(level)) parsingStartFlag = true;
 						}
 					}
 				}else{

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+     android:oneshot="true" android:id="@+id/selected">
+
+    <item android:drawable="@drawable/baby_body0" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body1" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body2" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body3" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body4" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body5" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body6" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body7" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body8" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body9" android:duration="66"/>
+	
+	<item android:drawable="@drawable/baby_body10" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body11" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body12" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body13" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body14" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body15" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body16" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body17" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body18" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body19" android:duration="66"/>
+	
+	<item android:drawable="@drawable/baby_body20" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body21" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body22" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body23" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body24" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body25" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body26" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body27" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body28" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body29" android:duration="66"/>
+	<item android:drawable="@drawable/baby_body30" android:duration="66"/>
+</animation-list>

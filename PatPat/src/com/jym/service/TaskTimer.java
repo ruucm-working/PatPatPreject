@@ -32,55 +32,18 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	private static final int TEXT_COLOR_FINISHED = 0xFFFF0000;
 
 	private static long startTime = 0;
-
-	/*
->>>>>>> origin/notifiAndXmlUpdate
-	boolean init = false;
-	boolean lv0_1;
-	boolean lv0_2;
-	boolean lv1;
-	boolean lv2;
-	boolean lv;
-<<<<<<< HEAD
-
-	public static String INTENT_HIDDEN_FORMAT = "com.exam.view.INTENT_HIDDEN_FORMAT";
-	public static String INTENT_OFTEN_FORMAT = "com.exam.view.INTENT_OFTEN_FORMAT";
-	public String INTENT_EVOLVE_FORMAT = "com.exam.view.INTENT_EVOLVE_FORMAT";
-	public String INTENT_INIT_FORMAT = "com.exam.view.INTENT_INIT_FORMAT";
-
-=======
-	 */
-
-	int level;
+	
+	public static String level;
+	public static int level_index = 0;
 
 	ArrayList<String> evolveCountArray;
 	ArrayList<String> evolveTimerArray;
 
 	public static int clickCount;
 
-	/*
->>>>>>> origin/notifiAndXmlUpdate
-	int CliCountInit ;
-	int CliCount0_1 ;
-	int CliCount0_2 ;
-	int CliCount1 ;
-	int CliCount2 ;
-<<<<<<< HEAD
-
-=======
-	 */
-
 	//Making hidden Action
 	public static int CliCount_left = 0 ;
 	public static int CliCount_right = 0 ;
-	/*	public static int temp_Count = 0 ;
-	public static int temp_Count2 = 0 ;
-	 */
-
-	/*	public void setTextView1(int textViewId) {
-		timer = (TextView)IntroActivity.getInstance()
-				.findViewById(textViewId);
-	}*/
 
 	public TaskTimer(ArrayList<String> inputCountArray, ArrayList<String> inputTimerArray)
 	{
@@ -182,9 +145,11 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			}
 
 			ePref.Ready();
-			level = ePref.ReadInt("level", 0);
+			level = ePref.ReadString("level", "box");
 			clickCount = ePref.ReadInt("click_count", 0);
 			ePref.EndReady();
+			
+			Log.w("textPref","Read_level : "+level);
 
 			Log.i("seperated_ClickCount","clickcount_1_At_TaskTimer : "+PatpatState.clickcount);
 			time = (System.currentTimeMillis() - startTime) / 1000;
@@ -200,21 +165,19 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	 *  you can directly modify UI */
 	@Override
 	protected void onProgressUpdate(String... value) {
+		
+		SetLevelIndex();
+		int evolveCount = Integer.parseInt(evolveCountArray.get(level_index));
+		int evolveTimer = Integer.parseInt(evolveTimerArray.get(level_index));
 
-		int evolveCount = Integer.parseInt(evolveCountArray.get(level));
-		int evolveTimer = Integer.parseInt(evolveTimerArray.get(level));
-
-		if(time <= evolveTimer && clickCount >= evolveCount && level < evolveCountArray.size()-1) {
-			Log.d("bugfix", "진화조건 성립");
-			level++;
-			ePref.Ready();
-			ePref.WriteInt("level", level);
-			ePref.CommitWrite();
-
+		if(/*time <= evolveTimer &&*/ clickCount >= evolveCount && level_index < evolveCountArray.size()-1) {
+			Log.d("evolve_test", "진화조건 성립: " + level);
+			clickCount = 0;
+			time = 0;
+			
 			RemoteViews rviews = new RemoteViews(PatpatWidgetApp.getApplication().getPackageName(),
 					R.layout.patpat_widget);
 			updateEvolveIntent(rviews, PatpatWidgetApp.getApplication());
-
 		} else if (time % 10 == 7){
 			Log.d("fix_futuretask","onOften_at_time : "+time); 
 			updateOftenIntent(PatpatWidgetApp.getApplication());
@@ -252,7 +215,9 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		// TODO Auto-generated method stub				
 		int mWidgetId = PatpatView.mWidgetId;
 
-		Log.d("bugfix", "헛! 진화!!!");
+		Log.d("evolve_test", "updateEvolveIntent");
+		
+		Log.w("evolve_test", "mWidgetId : "+mWidgetId);
 
 		Intent intent = new Intent(String.format(BroadcastDefinition.INTENT_INIT_FORMAT, mWidgetId));
 		intent.putExtra("widgetId", mWidgetId);
@@ -275,5 +240,36 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	protected void onPostExecute(String result) {
 		if(RESULT_SUCCESS.equals(result))
 			Log.v("fix_futuretask","onPostExecute : result "+result);
+	}
+	
+	public static void SetLevel() {
+		
+		Log.w("textPref","SetLevel_level : "+level);
+		Log.w("textPref","SetLevel_level_index : "+level_index);
+		
+		TaskTimer.ePref.Ready();
+		switch(level_index) {
+		case 0:
+			TaskTimer.ePref.WriteString("level", "box");
+			break;
+			
+		case 1:
+			TaskTimer.ePref.WriteString("level", "slime");
+			break;
+			
+		case 2:
+			TaskTimer.ePref.WriteString("level", "baby");
+			break;
+		}
+		TaskTimer.ePref.CommitWrite();
+	}
+	
+	public static void SetLevelIndex() {
+		if(level.equals("box"))
+			level_index = 0;
+		else if(level.equals("slime"))
+			level_index = 1;
+		else if(level.equals("baby"))
+			level_index = 2;
 	}
 }

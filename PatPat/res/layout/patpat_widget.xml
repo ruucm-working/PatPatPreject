@@ -12,8 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:adjustViewBounds="false"
-        android:alpha="0"
-        android:src="@drawable/lv1_body0" />
+        android:alpha="0"/>
 
     <ImageView
         android:id="@+id/patview01"
