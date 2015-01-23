@@ -262,6 +262,7 @@ public class PatpatView extends Activity{
 	}
 
 	public static void Preload() {
+		Log.v("evolve_test","Preload");
 		isAnimationPreload = true;
 		TextPref mPref = null;
 		

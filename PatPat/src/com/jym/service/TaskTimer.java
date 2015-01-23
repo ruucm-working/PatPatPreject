@@ -51,7 +51,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		evolveTimerArray = inputTimerArray;
 		Log.d("bugfix", "진화 카운트 받아옴 : " + evolveCountArray.get(0));
 		Log.d("bugfix", "진화 타이머 받아옴 : " + evolveTimerArray.get(0));
-
 	}
 
 	public void setTime(int time) {
@@ -172,8 +171,8 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 
 		if(/*time <= evolveTimer &&*/ clickCount >= evolveCount && level_index < evolveCountArray.size()-1) {
 			Log.d("evolve_test", "진화조건 성립: " + level);
-			clickCount = 0;
-			time = 0;
+		//	clickCount = 0;
+		//	time = 0;
 			
 			RemoteViews rviews = new RemoteViews(PatpatWidgetApp.getApplication().getPackageName(),
 					R.layout.patpat_widget);
@@ -188,7 +187,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 			tPref.CommitWrite();
 		}
 	}
-
+	/*
 	private static void updateHiddenIntent(Context context) {
 		// TODO Auto-generated method stub
 		int mWidgetId = PatpatView.mWidgetId;
@@ -199,7 +198,7 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		intent.putExtra("widgetId", mWidgetId);
 		context.sendBroadcast(intent);
 	}
-
+	*/
 	private static void updateOftenIntent(Context context) {
 		// TODO Auto-generated method stub
 		int mWidgetId = PatpatView.mWidgetId;
@@ -211,14 +210,11 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		context.sendBroadcast(intent);		
 	}
 
-	private  void updateEvolveIntent(RemoteViews rviews, Context context) {
+	private void updateEvolveIntent(RemoteViews rviews, Context context) {
 		// TODO Auto-generated method stub				
 		int mWidgetId = PatpatView.mWidgetId;
-
 		Log.d("evolve_test", "updateEvolveIntent");
 		
-		Log.w("evolve_test", "mWidgetId : "+mWidgetId);
-
 		Intent intent = new Intent(String.format(BroadcastDefinition.INTENT_INIT_FORMAT, mWidgetId));
 		intent.putExtra("widgetId", mWidgetId);
 
@@ -228,10 +224,6 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 		intent2.putExtra("widgetId", mWidgetId);
 
 		context.sendBroadcast(intent2);
-		
-		PatpatView.Preload();
-
-		Log.d("TaskTimer","updateEvolveIntent");
 	}
 
 	/** this method is executed right AFTER doInBackground()
@@ -244,8 +236,8 @@ public class TaskTimer extends AsyncTask<String, String, String> {
 	
 	public static void SetLevel() {
 		
-		Log.w("textPref","SetLevel_level : "+level);
-		Log.w("textPref","SetLevel_level_index : "+level_index);
+		Log.w("textPref","SetLevel_level : "+ level);
+		Log.w("textPref","SetLevel_level_index : "+ level_index);
 		
 		TaskTimer.ePref.Ready();
 		switch(level_index) {

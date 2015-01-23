@@ -17,11 +17,9 @@ import com.jym.Broadcast.BroadcastDefinition;
 import com.jym.helper.TextPref;
 import com.jym.helper.XmlMapping;
 
-
 public class PatpatWidgetProvider extends AppWidgetProvider {
 	// Init pref files at application class
-	static String parentPath = Environment.getExternalStorageDirectory()
-			.getAbsolutePath() + "SsdamSsdam";
+	static String parentPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "SsdamSsdam";
 
 	// service Switch for onetime run service
 	public static TextPref mPref;
@@ -57,8 +55,6 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 
 		PatpatView.SetPreloadState(false);
 
-		Log.d("serviceSwitch", "parentPath : "+parentPath);
-
 		// Init pref files at application class
 		saveDir = new File(parentPath); // dir : 생성하고자 하는 경로
 		Log.d("serviceSwitch","new File");
@@ -67,8 +63,6 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 			Log.d("serviceSwitch","aveDir.exists()");
 			saveDir.mkdirs();
 		}
-
-		Log.d("serviceSwitch","End File");
 
 		try {
 			mPref = new TextPref("mnt/sdcard/SsdamSsdam/textpref.pref");
@@ -111,54 +105,50 @@ public class PatpatWidgetProvider extends AppWidgetProvider {
 	public void onReceive(Context context, Intent intent) {
 
 		super.onReceive(context, intent);
-		Log.d("nanotime","clickedtime " + (System.nanoTime() - lastClickedTime));
+		Log.d("widgetID", "Provider's widgetID: " + intent.getIntExtra("widgetId", 0));
+		
+		// Touch actions
 		if(System.nanoTime() - lastClickedTime > 500000000) {
 			lastClickedTime = System.nanoTime();
 
-			Log.d("fix_futuretask","onReceive_intent.getAction() : " + intent.getAction());
-
-			if(PatpatView.isAnimationPreload) {
-
-				// Click head
-				if (intent.getAction().startsWith("click.head")) {
-					int id = intent.getIntExtra("widgetId", 0);
-					((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-				}
-				// Click body
-				else if (intent.getAction().startsWith("click.body")) {
-					int id = intent.getIntExtra("widgetId", 0);
-					((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClickBody();
-				}
-				// Click leg
-				else if (intent.getAction().startsWith("click.leg")) {
-					Log.v("draw_Speeding", SystemClock.uptimeMillis()  + " (Before)");
-					int id = intent.getIntExtra("widgetId", 0);
-					((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-					.OnClickLeg();
-				}
-				// OnOften (automatically called)
-				else if(intent.getAction().startsWith(BroadcastDefinition.INTENT_OFTEN_FORMAT)) {
-					int id = intent.getIntExtra("widgetId", 0);
-					((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnOften();
-				}
-				/*
-			// Hidden action
-			else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+			// Click head
+			if (intent.getAction().startsWith("click.head")) {
 				int id = intent.getIntExtra("widgetId", 0);
 				((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-				((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-				((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
-				((PatpatWidgetApp) context.getApplicationContext()).GetView(id)
-						.OnClick_right();
 			}
-				 */
-				// Evolve
-				else if (intent.getAction().startsWith(BroadcastDefinition.INTENT_EVOLVE_FORMAT)) {
-					Log.d("evolve_test", "진화명령 받았습니다!!");
-					int id = intent.getIntExtra("widgetId", 0);
-					((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
-				}
+			// Click body
+			else if (intent.getAction().startsWith("click.body")) {
+				int id = intent.getIntExtra("widgetId", 0);
+				((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClickBody();
 			}
+			// Click leg
+			else if (intent.getAction().startsWith("click.leg")) {
+				Log.v("draw_Speeding", SystemClock.uptimeMillis()  + " (Before)");
+				int id = intent.getIntExtra("widgetId", 0);
+				((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClickLeg();
+			}
+		}
+		
+		// OnOften (automatically called)
+		if(intent.getAction().startsWith(BroadcastDefinition.INTENT_OFTEN_FORMAT)) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnOften();
+		}
+		/*
+		// Hidden action
+		else if (intent.getAction().startsWith("com.exam.view.INTENT_HIDDEN_FORMAT")) {
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick();
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnClick_right();
+		}
+		 */
+		// Evolve
+		else if(intent.getAction().startsWith(BroadcastDefinition.INTENT_EVOLVE_FORMAT)) {
+			Log.d("evolve_test", "진화명령 받았습니다!!");
+			int id = intent.getIntExtra("widgetId", 0);
+			((PatpatWidgetApp) context.getApplicationContext()).GetView(id).OnEvolve();
 		}
 	}
 }

@@ -53,8 +53,7 @@ public class PatpatState implements IPatpatViewState {
 
 		try {
 			Log.v("evolve_test", "level: " + level);
-			charterInfo = XmlMapping.levelMapping("evolve_data",
-					viewContext.Context, level);
+			charterInfo = XmlMapping.levelMapping("evolve_data",viewContext.Context, level);
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
@@ -91,6 +90,7 @@ public class PatpatState implements IPatpatViewState {
 
 			try {
 				TaskTimer.clickCount++;
+				Log.v("textPref", "clickcount: " + TaskTimer.clickCount);
 				TaskTimer.ePref.Ready();
 				TaskTimer.ePref.WriteInt("click_count", TaskTimer.clickCount);
 				TaskTimer.ePref.CommitWrite();
@@ -99,8 +99,7 @@ public class PatpatState implements IPatpatViewState {
 			}
 
 			if ((int) (Math.random() * 10) < 3)
-				Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(PatpatView.Context, text, Toast.LENGTH_SHORT).show();
 		}
 
 		public void Draw(PatpatView viewContext) {
@@ -141,13 +140,12 @@ public class PatpatState implements IPatpatViewState {
 			TaskTimer.SetLevel();
 			Log.d("evolve_test", "OnEvolve_level: " + level);
 
-			Log.d("evolve_test", "level_after: " + level);
-
-			Toast.makeText(PatpatView.Context, "오잉? 나무늘보의 상태가...?",
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(PatpatView.Context, "오잉? 나무늘보의 상태가...?",Toast.LENGTH_SHORT).show();
 			Log.d("textPref", "setState_PatPatState_OnEvolve");
+			
+			PatpatView.Preload();
+			
 			viewContext.setState(new PatpatState(viewContext));
-
 			viewContext.addAnimatable(new EvolveAnim());
 
 			Handler handler = new Handler();
@@ -158,12 +156,6 @@ public class PatpatState implements IPatpatViewState {
 			}, 5000);
 
 			Log.w("textPref", "OnEvolve_level_index : " + TaskTimer.level_index);
-
-			/*
-			 * // write result on file TaskTimer.ePref.Ready();
-			 * TaskTimer.ePref.WriteString("level", level);
-			 * TaskTimer.ePref.CommitWrite();
-			 */
 		}
 
 		public boolean NeedRedraw() {
@@ -211,13 +203,11 @@ public class PatpatState implements IPatpatViewState {
 
 		public void Draw() {
 			// oftenanim is null
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(oftenAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			int imageResource = mViewContext.Context.getResources().getIdentifier(oftenAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						imageResource);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,imageResource);
 
 				Log.i("refreshing_RemoteView", "setImageViewResource");
 				spriteVib++;
@@ -238,18 +228,13 @@ public class PatpatState implements IPatpatViewState {
 
 		public void Draw() {
 			// Draw the brick at bottom
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(headAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			int imageResource = mViewContext.Context.getResources().getIdentifier(headAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.slime_head0);
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						imageResource);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.slime_head0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,imageResource);
 
-				Log.i("refreshing_RemoteView", "imageResource_atHead : "
-						+ imageResource);
 				spriteVib++;
 			} else {
 				Log.d("addClickIntent", "Remove head");
@@ -267,19 +252,12 @@ public class PatpatState implements IPatpatViewState {
 		}
 
 		public void Draw() {
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(bodyAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			int imageResource = mViewContext.Context.getResources().getIdentifier(bodyAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
 			if (spriteVib == 0) {
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						R.drawable.slime_body0);
-				PatpatView.rviews.setImageViewResource(R.id.patview01,
-						imageResource);
-
-				Log.i("refreshing_RemoteView", "imageResource_atBody : "
-						+ imageResource);
-
+				PatpatView.rviews.setImageViewResource(R.id.patview01,R.drawable.slime_body0);
+				PatpatView.rviews.setImageViewResource(R.id.patview01,imageResource);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
@@ -295,18 +273,14 @@ public class PatpatState implements IPatpatViewState {
 		}
 
 		public void Draw() {
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(legAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			int imageResource = mViewContext.Context.getResources().getIdentifier(legAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
 			if (spriteVib == 0) {
 				PatpatView.rviews.setImageViewResource(R.id.patview01,
 						R.drawable.slime_body0);
 				PatpatView.rviews.setImageViewResource(R.id.patview01,
 						imageResource);
-
-				Log.i("refreshing_RemoteView", "imageResource_atleg : "
-						+ imageResource);
 				spriteVib++;
 			} else {
 				mViewContext.removeAnimatable(this);
@@ -320,14 +294,11 @@ public class PatpatState implements IPatpatViewState {
 
 		public EvolveAnim() {
 			Log.v("evolve_test", "Received signal");
-			Toast.makeText(PatpatView.Context, "오잉? 나무늘보의 상태가...?",
-					Toast.LENGTH_LONG).show();
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(evolveAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			Toast.makeText(PatpatView.Context, "오잉? 나무늘보의 상태가...?",Toast.LENGTH_LONG).show();
+			int imageResource = mViewContext.Context.getResources().getIdentifier(evolveAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
-			PatpatView.rviews.setImageViewResource(R.id.patview_preload,
-					imageResource);
+			PatpatView.rviews.setImageViewResource(R.id.patview_preload,imageResource);
 
 			try {
 				Thread.sleep(5000);
@@ -342,9 +313,8 @@ public class PatpatState implements IPatpatViewState {
 		}
 
 		public void Draw() {
-			int imageResource = mViewContext.Context.getResources()
-					.getIdentifier(evolveAnimePath, "drawable",
-							mViewContext.Context.getPackageName());
+			int imageResource = mViewContext.Context.getResources().getIdentifier(evolveAnimePath, "drawable",
+				mViewContext.Context.getPackageName());
 
 			if (spriteVib == 0) {
 				PatpatView.rviews.setImageViewResource(R.id.patview01,

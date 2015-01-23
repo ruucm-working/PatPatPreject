@@ -58,9 +58,6 @@
             android:name="com.jym.patpat.Activity.Setting"
             android:label="@string/app_name" >
         </activity>
-
-        
-        
         
         <!-- ALARM FOR SERVICE AWAKE -->
         <receiver
@@ -114,5 +111,4 @@
             </intent-filter>
         </receiver>
     </application>
-
 </manifest>
