@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;banana.png&apos; to &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original project: &apos;Mario&apos;&#x0D;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original element: &apos;banana.png&apos;" description="Copy file" element1="res/drawable-mdpi/banana.png" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1414232245607" target="/PicassoTest/res/drawable-mdpi" units="0" version="1.0"/>
-</session>

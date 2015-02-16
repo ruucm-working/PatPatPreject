@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\exploded-aar\PatPat\facebookSDK\unspecified\libs\bolts.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1e5ba33c837d05dcca9dc40a0ab458f8599d7aef">
+        <dex dex="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\pre-dexed\debug\bolts-ad4d2dc97ec61eeab40ae4359611c7a475d05487.jar" />
+    </item>
+    <item
+        jar="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\exploded-aar\PatPat\facebookSDK\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="42444a091f9578c9ec3dbe993693bbc9c050ad24">
+        <dex dex="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\pre-dexed\debug\classes-f71e1f907365c43fe1f0d57f38fab2163e9f3e00.jar" />
+    </item>
+    <item
+        jar="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\exploded-aar\PatPat\library\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="059b1ecef135f8b7efc573ba240f7ec4fcd8789f">
+        <dex dex="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\pre-dexed\debug\classes-7f2873c5db205e4925223720fdda3d3b5fb7fbbf.jar" />
+    </item>
+    <item
+        jar="C:\Users\3180\android-sdks\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\pre-dexed\debug\support-v4-19.1.0-5590fc3fcb9c96fc70a78349ac794358ea1c3209.jar" />
+    </item>
+    <item
+        jar="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\exploded-aar\PatPat\main\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2643d6cb033059330c51018875aae1383ad25ddb">
+        <dex dex="C:\Users\3180\Documents\GitHub\PatPatPreject\PatPat\patPat\build\intermediates\pre-dexed\debug\classes-1116ced07c0bb736f945a58631e105ebb914eb35.jar" />
+    </item>
+
+</items>
